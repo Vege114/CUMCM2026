@@ -1,4 +1,0 @@
-$pdf_mode = 5;
-$xelatex = 'xelatex -interaction=nonstopmode -halt-on-error -file-line-error %O %S';
-$out_dir = 'build';
-$max_repeat = 5;

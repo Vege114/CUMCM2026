@@ -11,14 +11,14 @@
 | `docs/mineru-raw/` | 题目未经校对的 MinerU 原始输出 |
 | `docs/problem-map.md` | 四问的交付物与目录对应关系，仅整理要求 |
 | `docs/conversion.md` | 转换方法、文件校验值与校对记录 |
-| `paper/` | XeLaTeX 中文论文模板，按章节分文件 |
+| `paper/` | 论文目录预留，LaTeX 模板由小组后续自行添加 |
 | `src/` | 通信、公共组件以及问题 1–4 的待实现目录 |
 | `config/` | 不含账号的示例配置 |
 | `data/` | 后续公开输入及整理数据的目录约定 |
 | `experiments/` | 演练记录模板；本地运行输出置于 `runs/` |
 | `results/` | 后续经核验、可供论文引用的结果 |
 | `submission/` | 问题 3、4 正式日志与最终支撑材料 |
-| `scripts/` | 文档转换与论文编译脚本 |
+| `scripts/` | 文档转换脚本 |
 | `tests/` | 后续单元测试和离线协议测试 |
 | `jammers-simulator.exe` | 用户提供的 Windows 模拟器，保留原位置 |
 | `tools/README.md` | 模拟器使用和文件管理说明 |
@@ -32,17 +32,9 @@
 
 原始文档是依据；附件转换保留了 HTML 表格和原有代码排版，代码示例不能直接作为源文件运行。
 
-## 编译论文
+## 论文环境
 
-安装含中文支持的 TeX Live，使用 XeLaTeX + latexmk。从仓库根目录运行：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/build-paper.ps1
-```
-
-输出为 `paper/build/main.pdf`。也可执行 `latexmk -cd -xelatex -interaction=nonstopmode -halt-on-error paper/main.tex`。
-入口为 `paper/main.tex`，正文位于 `paper/sections/`，图片位于 `paper/figures/`，表格位于 `paper/tables/`。
-当前为小组写作骨架，并非已核验的官方提交模板；提交前须对照比赛论文格式规范调整封面、页码和匿名信息。
+小组计划使用 LaTeX 写作，模板由小组后续自行添加到 `paper/`。当前仅预留目录，编译方式待模板加入后补充。
 
 ## 协作约定
 
