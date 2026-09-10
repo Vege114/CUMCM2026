@@ -1,0 +1,29 @@
+% !TeX program = xelatex
+\documentclass[UTF8,a4paper,zihao=-4,fontset=fandol]{ctexart}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,graphicx}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\newcommand{\pending}[1]{\par\noindent\textit{待填写：#1}\par}
+\title{无线电干扰源的快速自动定位与清除}
+\author{}
+\date{}
+\begin{document}
+\pagestyle{plain}
+\maketitle
+\input{sections/00-abstract}
+\clearpage
+\input{sections/01-restatement}
+\input{sections/02-assumptions}
+\input{sections/03-notation}
+\input{sections/04-problem1}
+\input{sections/05-problem2}
+\input{sections/06-problem3}
+\clearpage
+\input{sections/07-problem4}
+\input{sections/08-evaluation}
+\section{参考文献}
+\pending{引用真实、已阅读的资料；条目维护于 references.bib，确定引用方案后接入。}
+\appendix
+\input{sections/09-appendix}
+\end{document}

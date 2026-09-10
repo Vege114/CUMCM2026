@@ -1,0 +1,36 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+config/*.local.*
+**/config.yaml
+# Word locks and operating-system files
+~$*
+Thumbs.db
+.DS_Store
+# Simulator private runtime state (keep exported official logs)
+**/JammersSimulatorData/
+*.sqlite3*
+*.db
+# Local scratch and language caches
+.work/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# LaTeX build artifacts
+paper/build/
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+# Local experiment output; curated results live in results/
+experiments/runs/

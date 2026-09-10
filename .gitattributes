@@ -1,0 +1,12 @@
+* text=auto
+*.md text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.ps1 text eol=crlf
+*.json text eol=lf
+*.pdf binary
+*.docx binary
+*.exe binary
+*.jpg binary
+*.png binary
+*.md whitespace=-blank-at-eol
