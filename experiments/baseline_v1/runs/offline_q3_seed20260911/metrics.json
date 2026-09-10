@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "run_id": "offline_q3_seed20260911",
+    "problem": 3,
+    "mode": "offline",
+    "source": "local_mock",
+    "case_code": "mock-q3-seed20260911",
+    "total_jammers": 16,
+    "total_source": "local_mock_post_run_truth",
+    "algorithm": "baseline_v1",
+    "config": {
+      "arena_radius_m": 1800.0,
+      "reception_min_m": 1000.0,
+      "reception_max_m": 1500.0,
+      "bearing_error_deg": 1.01,
+      "clear_radius_m": 20.0,
+      "survey_ring_m": 1400.0,
+      "survey_ring_count": 6,
+      "directional_grid_m": 700.0,
+      "polygon_sides": 64,
+      "max_local_measurements": 8,
+      "clear_cover_margin_m": 0.1,
+      "optical_grid_m": 25.0,
+      "movement_weight": 0.04,
+      "max_actions": 12000,
+      "max_virtual_time_s": 350000.0,
+      "real_reserve_s": 15.0,
+      "http_timeout_s": 5.0,
+      "http_retries": 2
+    },
+    "git_commit": "9d0009cb78be55df4b0cf297f45f3f8da038f8b2",
+    "source_sha256": "dce71fe43d68f2af96eeff7b53ed881078ee8e816bc74b3c95e2c9dd0c00e378",
+    "created_at": "2026-09-10T15:57:04.537709+00:00",
+    "python_version": "3.12.9 (main, Feb 13 2025, 09:16:23)  [GCC UCRT 14.2.0 64 bit (AMD64)]",
+    "seed": 20260911,
+    "status": "completed",
+    "stop_reason": "all_16_cleared",
+    "client_runtime_s": 0.04700000000048021,
+    "cleared_count": 16,
+    "virtual_total_time_s": 5001.145772,
+    "actions": 100,
+    "survey_points_visited": 6,
+    "directional_jammers": 0
+  },
+  "official_metrics": {
+    "case_code": "mock-q3-seed20260911",
+    "cleared_count": 16,
+    "total_jammers": 16,
+    "cleared_ratio": 1.0,
+    "virtual_total_time_s": 5001.145772,
+    "average_localization_clear_time_s": 312.57161075,
+    "program_runtime_s": 0.045,
+    "program_runtime_source": "server_timestamp_proxy"
+  },
+  "diagnostics": {
+    "request_attempt_count": 102,
+    "accepted_unique_action_count": 102,
+    "duplicate_response_count": 0,
+    "rejected_request_count": 0,
+    "transport_error_count": 0,
+    "measure_count": 81,
+    "channel_switch_count": 76,
+    "clear_attempt_count": 19,
+    "clear_success_count": 16,
+    "clear_failure_count": 3,
+    "travel_distance_m": 22155.72886012622,
+    "measure_results": {
+      "direction": 35,
+      "near": 0,
+      "no_signal": 46
+    },
+    "no_signal_ratio": 0.5679012345679012,
+    "all_cleared": true,
+    "cleared_channels": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      19,
+      20
+    ],
+    "observed_virtual_time_s": 5001.145772,
+    "reconstructed_virtual_time_s": 5001.145772025245,
+    "time_balance_error_s": -2.524484443711117e-08,
+    "remaining_real_duration_s_at_enter": 1200,
+    "final_position": {
+      "x": 880.9945955827113,
+      "y": 1347.9122199698747
+    },
+    "final_measure_channel": 3,
+    "end_reason": "user_exit"
+  },
+  "time_breakdown_s": {
+    "movement": 4431.145772025245,
+    "channel_switch": 76.0,
+    "measurement": 405.0,
+    "optical_localization": 57.0,
+    "laser_clearance": 32.0
+  },
+  "clearance_timeline": [
+    {
+      "virtual_time_s": 399.105821,
+      "cleared_count": 1,
+      "channel": 19
+    },
+    {
+      "virtual_time_s": 524.648561,
+      "cleared_count": 2,
+      "channel": 9
+    },
+    {
+      "virtual_time_s": 731.62484,
+      "cleared_count": 3,
+      "channel": 14
+    },
+    {
+      "virtual_time_s": 932.7349,
+      "cleared_count": 4,
+      "channel": 11
+    },
+    {
+      "virtual_time_s": 1199.832384,
+      "cleared_count": 5,
+      "channel": 8
+    },
+    {
+      "virtual_time_s": 1392.071052,
+      "cleared_count": 6,
+      "channel": 5
+    },
+    {
+      "virtual_time_s": 1519.851424,
+      "cleared_count": 7,
+      "channel": 13
+    },
+    {
+      "virtual_time_s": 1715.728719,
+      "cleared_count": 8,
+      "channel": 15
+    },
+    {
+      "virtual_time_s": 2185.265869,
+      "cleared_count": 9,
+      "channel": 20
+    },
+    {
+      "virtual_time_s": 2575.392645,
+      "cleared_count": 10,
+      "channel": 7
+    },
+    {
+      "virtual_time_s": 2873.049147,
+      "cleared_count": 11,
+      "channel": 6
+    },
+    {
+      "virtual_time_s": 3581.733188,
+      "cleared_count": 12,
+      "channel": 1
+    },
+    {
+      "virtual_time_s": 4100.191103,
+      "cleared_count": 13,
+      "channel": 16
+    },
+    {
+      "virtual_time_s": 4317.609698,
+      "cleared_count": 14,
+      "channel": 10
+    },
+    {
+      "virtual_time_s": 4526.859285,
+      "cleared_count": 15,
+      "channel": 12
+    },
+    {
+      "virtual_time_s": 5001.145772,
+      "cleared_count": 16,
+      "channel": 3
+    }
+  ],
+  "validation": {
+    "valid_run": true,
+    "complete_event_log": true,
+    "all_cleared_verified": true,
+    "formal_submission_ready": false,
+    "formal_submission_note": "正式交付仍需逐局核对 UI 表格与原名加密日志，不由该评价器自动认证。",
+    "errors": [],
+    "warnings": []
+  },
+  "comparison": {
+    "stratum": {
+      "problem": 3,
+      "source": "local_mock",
+      "mode": "offline"
+    },
+    "paired_case_key": 20260911,
+    "priority": [
+      "all_cleared",
+      "cleared_ratio",
+      "average_localization_clear_time_s"
+    ],
+    "official_score": null,
+    "note": "全清优先是内部比较规则；官方不同随机案例不可声称配对改进。"
+  }
+}

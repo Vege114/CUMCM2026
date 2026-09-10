@@ -1,0 +1,58 @@
+<div id="jammers-baseline-comparison">
+  <style>
+    #jammers-baseline-comparison .benchmark-chart { width:100%; display:block; overflow:visible; }
+    #jammers-baseline-comparison .benchmark-chart text { fill:var(--foreground); font-size:12px; }
+    #jammers-baseline-comparison .benchmark-chart .domain,
+    #jammers-baseline-comparison .benchmark-chart .tick line { stroke:var(--border); }
+    #jammers-baseline-comparison .legend { display:flex; flex-wrap:wrap; gap:12px 24px; }
+    #jammers-baseline-comparison .swatch { display:inline-block; width:12px; height:12px; margin-right:6px; }
+  </style>
+  <h3>基础模型：两场官方演练</h3>
+  <div class="legend text-small">
+    <span><span class="swatch" style="background:var(--viz-series-1)"></span>问题3 · 全向 · 清除 13/13</span>
+    <span><span class="swatch" style="background:var(--viz-series-2)"></span>问题4 · 全定向 · 清除 16/16</span>
+  </div>
+  <svg class="benchmark-chart" role="img" aria-label="两场均全清。问题3平均380.40虚拟秒每个，问题4平均1103.17虚拟秒每个。不同题型与随机案例。"></svg>
+  <div class="text-small text-muted">不同题型、不同随机案例；每种题型各 1 场。</div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+    (() => {
+      const root = document.getElementById('jammers-baseline-comparison');
+      const chart = root.querySelector('svg');
+      const rows = [
+        {name:'问题3', value:380.39640523076923, color:'var(--viz-series-1)', detail:'总虚拟时间 4945.15 秒；13/13，清除率 100%'},
+        {name:'问题4', value:1103.1694528125, color:'var(--viz-series-2)', detail:'总虚拟时间 17650.71 秒；16/16，清除率 100%'}
+      ];
+      function draw() {
+        if (!window.d3) return;
+        const width = root.getBoundingClientRect().width;
+        const svg = d3.select(chart).attr('viewBox', `0 0 ${width} 225`);
+        svg.selectAll('*').remove();
+        const left=70, right=20, top=38, bottom=160;
+        const extent = d3.extent([0,...rows.map(d=>d.value)]);
+        const x = d3.scaleLinear().domain([extent[0],extent[1]*1.09]).range([left,width-right]);
+        svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top)
+          .attr('width',width-left-right).attr('height',bottom-top).attr('fill','none').attr('stroke','var(--border)');
+        rows.forEach((d,i)=> {
+          const y=58+i*62;
+          svg.append('text').attr('x',left-9).attr('y',y+22).attr('text-anchor','end').text(d.name);
+          svg.append('rect').attr('x',left+1).attr('y',y).attr('height',29).attr('width',Math.max(0,x(d.value)-left-1))
+            .attr('fill',d.color).attr('data-chart-hit','').attr('data-tooltip',d.detail);
+          svg.append('text').attr('x',x(d.value)).attr('y',y-7).attr('text-anchor','end').text(d.value.toFixed(2));
+        });
+        svg.append('g').attr('transform',`translate(0,${bottom})`).call(d3.axisBottom(x).ticks(width<420?3:6).tickSizeOuter(0));
+        svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(left+width-right)/2)
+          .attr('y',210).attr('text-anchor','middle').text('平均定位清除时间（虚拟秒 / 个）');
+        svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('x',left-9).attr('y',22)
+          .attr('text-anchor','end').text('场景');
+        const tickLabels = [...chart.querySelectorAll('.tick text')];
+        for(let i=1;i<tickLabels.length;i++) {
+          const a=tickLabels[i-1].getBoundingClientRect(), b=tickLabels[i].getBoundingClientRect();
+          if(a.right+4>b.left) tickLabels[i].style.visibility='hidden';
+        }
+      }
+      new ResizeObserver(draw).observe(root);
+      draw();
+    })();
+  </script>
+</div>

@@ -1,0 +1,11 @@
+{
+  "bearing_error_deg": 1.01,
+  "survey_ring_m": 1400.0,
+  "survey_ring_count": 6,
+  "directional_grid_m": 700.0,
+  "max_local_measurements": 8,
+  "optical_grid_m": 25.0,
+  "movement_weight": 0.04,
+  "max_actions": 12000,
+  "real_reserve_s": 15.0
+}

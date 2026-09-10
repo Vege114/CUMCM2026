@@ -1,0 +1,2 @@
+# Only figure generation needs a dependency. The model itself uses Python stdlib.
+matplotlib==3.11.1

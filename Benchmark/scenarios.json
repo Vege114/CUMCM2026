@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "description": "可复用验收集合定义。planned 不代表已执行；本文件不是官方案例。",
+  "cases": [
+    {"id": "q1_rectangle", "kind": "geometry_unit", "status": "planned", "vertices": [[0,0],[3,0],[3,4],[0,4]], "expected_diameter_m": 5, "purpose": "最远顶点对基准"},
+    {"id": "q1_triangle_counterexample", "kind": "geometry_unit", "status": "planned", "vertices": [[0,0],[2,0],[1,1.7320508075688772]], "expected_diameter_m": 2, "expected_enclosing_radius_m": 1.1547005383792517, "diameter_radius_circle_can_cover": false},
+    {"id": "q1_collinear", "kind": "geometry_unit", "status": "planned", "vertices": [[0,0],[1,0],[4,0]], "expected_diameter_m": 4, "purpose": "退化线段处理"},
+    {"id": "q1_empty_parallel_wrap", "kind": "geometry_unit", "status": "planned", "features": ["空交集", "近平行射线", "无界交集", "359.8 度和 0.2 度跨界"], "acceptance": "显式状态且无 NaN/伪有限保证"},
+    {"id": "q2_oblique_and_collinear", "kind": "strategy_unit", "status": "planned", "features": ["源距离 1000/1500 m", "首测误差 -1/0/+1 度", "第二点无信号", "近共线与大交会角"], "outputs": ["candidate_region", "localization_diameter_m", "enclosing_radius_m", "second_measure_signal_rate", "additional_travel_time_s"]},
+    {"id": "protocol_documented_timing", "kind": "protocol_unit", "status": "implemented_in_test_evaluate", "source": "附件2 第10节", "expected_virtual_time_s": 199, "expected_travel_distance_m": 900, "expected_switch_count": 1, "expected_measure_count": 3, "expected_clear_failure_count": 1},
+    {"id": "protocol_retry_and_rejection", "kind": "protocol_unit", "status": "implemented_in_test_evaluate", "features": ["原 ID 成功响应重放不重复计时", "accepted=false 的 virtual_time_s=0 不回滚时钟", "clear 不改变检测频道"]},
+    {"id": "q3_seed_suite", "kind": "local_mock_batch", "status": "planned", "problem": 3, "seeds": [202601,202602,202603,202604,202605,202606,202607], "source_counts": [10,11,12,13,14,15,16], "features": ["全向", "接收半径上下界", "靠近边界", "集中与分散位置"], "acceptance": "逐场报告全清与平均虚拟时间；种子/生成器版本固定"},
+    {"id": "q4_seed_suite", "kind": "local_mock_batch", "status": "planned", "problem": 4, "seeds": [202611,202612,202613,202614,202615,202616,202617], "source_counts": [10,11,12,13,14,15,16], "features": ["全向定向混合", "定向比例变化", "边界源朝外", "同点误差不变", "行进后失去覆盖"], "acceptance": "逐场报告全清与平均虚拟时间；不可将 Q3 覆盖结论直接用于 Q4"},
+    {"id": "q4_outward_edge_stress", "kind": "local_mock_stress", "status": "planned", "problem": 4, "source_count": 16, "features": ["多源靠近半径 1800 m 边界", "定向方向朝圆域外", "接收半径 1000 m", "初始原点少信号"], "acceptance": "策略能到目标域外探测并验证漏检风险"},
+    {"id": "official_practice_smoke_q3", "kind": "official_simulator_practice", "status": "planned", "problem": 3, "mode": "practice", "steps": ["UI 在线登录并启动演练", "接口就绪后 enter", "自动检测定位清除", "exit", "记录案例编码和结束真值", "核对日志和指标"], "acceptance": "完成真实四接口闭环；清除率按结束真值报告"},
+    {"id": "official_practice_smoke_q4", "kind": "official_simulator_practice", "status": "planned", "problem": 4, "mode": "practice", "acceptance": "独立于 Q3 的混合源真实模拟器验证"},
+    {"id": "formal_delivery_q3_q4", "kind": "submission_acceptance", "status": "planned", "formal_count_per_problem": 3, "required_fields": ["case_code", "cleared_count", "average_localization_clear_time_s", "program_runtime_s"], "required_artifacts": ["每问三份原文件名且未修改的加密日志", "日志上传状态核对"], "excluded_fields": ["unknown total_jammers", "unknown cleared_ratio"]}
+  ],
+  "comparability_keys": ["problem", "source", "mode", "scenario_or_case_code", "seed", "generator_or_simulator_version", "physical_rules", "algorithm_config", "git_commit", "runtime_environment"],
+  "batch_policy": "自建固定种子可配对；官方不同随机案例只能分层汇总，不能假定同分布或可复现。"
+}

@@ -1,0 +1,67 @@
+{
+  "source_sha256": "dce71fe43d68f2af96eeff7b53ed881078ee8e816bc74b3c95e2c9dd0c00e378",
+  "run_count": 8,
+  "runs": [
+    {
+      "run_id": "official_q3_001",
+      "events_sha256_lf_utf8": "3cf0b61f09c2667845a2aa58d47c93f3fce83a20e717ca77fabda052cffb7737",
+      "time_balance_error_s": -4.4845000957138836e-07,
+      "verified": true
+    },
+    {
+      "run_id": "official_q4_001",
+      "events_sha256_lf_utf8": "66aff4c185f43a199138c692d98a33bd40758d2b6bbb396d22bfcf8c47b2ce5b",
+      "time_balance_error_s": 2.9570874175988138e-06,
+      "verified": true
+    },
+    {
+      "run_id": "offline_q3_seed20260910",
+      "events_sha256_lf_utf8": "2afa0749fa22d077f03893acaec0fb60ef9eabe0f22b915b31515184df21cc19",
+      "time_balance_error_s": -4.904450179310516e-07,
+      "verified": true
+    },
+    {
+      "run_id": "offline_q3_seed20260911",
+      "events_sha256_lf_utf8": "012bec77dd6d22022c626304910fd3b08f603f878687ca4c483ec3da3dd6b78e",
+      "time_balance_error_s": -2.524484443711117e-08,
+      "verified": true
+    },
+    {
+      "run_id": "offline_q3_seed20260912",
+      "events_sha256_lf_utf8": "5310e4f422137cb7b6ed14dec0c6f1ac52b12e30370174e08ece7d275ca852bb",
+      "time_balance_error_s": 1.8046830518869683e-07,
+      "verified": true
+    },
+    {
+      "run_id": "offline_q4_seed20260910",
+      "events_sha256_lf_utf8": "c743c54f24695711171ecfda63071656fab394aedce1a720607e2587e04327e7",
+      "time_balance_error_s": 4.601533873938024e-07,
+      "verified": true
+    },
+    {
+      "run_id": "offline_q4_seed20260911",
+      "events_sha256_lf_utf8": "47a1ef21080cc2df6468927cc0c34cfddffa00e1f79592215a50448631c1355d",
+      "time_balance_error_s": -1.279622665606439e-07,
+      "verified": true
+    },
+    {
+      "run_id": "offline_q4_seed20260912",
+      "events_sha256_lf_utf8": "5f9ced74996e0795dfe2627b5564be04e501d58e6a49176c3dedd673ca00f9d8",
+      "time_balance_error_s": 2.901597326854244e-07,
+      "verified": true
+    }
+  ],
+  "tests_observed": {
+    "model_tests": 11,
+    "benchmark_evaluator_tests": 7,
+    "model_command": "python -m unittest discover -s experiments/baseline_v1/tests -v",
+    "evaluator_command": "python -m unittest discover -s Benchmark -p test_*.py -v",
+    "status": "passed during implementation; artifact audit does not re-run them"
+  },
+  "figures_visually_inspected": [
+    "official_metrics.png",
+    "time_breakdown.png",
+    "clearance_timeline.png",
+    "routes.png"
+  ]
+}

@@ -4,6 +4,11 @@
 *.bib text eol=lf
 *.ps1 text eol=crlf
 *.json text eol=lf
+*.jsonl text eol=lf
+*.py text eol=lf
+*.svg text eol=lf
+*.html text eol=lf
+*.txt text eol=lf
 *.pdf binary
 *.docx binary
 *.exe binary
