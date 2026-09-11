@@ -37,6 +37,11 @@ def derive(run_id="exp002"):
         migration = json.loads(migration_file.read_text())
         timing_rows[2]["minutes"] += migration["retired_calibration_task_seconds"]/60
         timing_rows[2]["scope"] += "；包含已作废的一次问题 3 初步校准"
+    clipping_file = out / "clipped_information_fix_migration.json"
+    if clipping_file.exists():
+        clipping = json.loads(clipping_file.read_text())
+        timing_rows[2]["minutes"] += clipping["retired_calibration_task_seconds"]/60
+        timing_rows[2]["scope"] += "；也包含裁剪信息修正前已作废的问题 3、4-3 校准"
     data = Data()
     store = ForecastStore(data, run_id, 42)
     day = (pd.Timestamp("2025-03-20") - EPOCH).days
@@ -171,9 +176,16 @@ def derive(run_id="exp002"):
             elapsed["worker_schedule"] = [4, 8, 8]
             elapsed["includes_discarded_preliminary_q3_runs"] = True
             (out / "causal_fix_event.json").write_text(json.dumps(fix, indent=2))
+        if (run_directory / "clipped_information_fix_event.json").exists():
+            fix = json.loads((run_directory / "clipped_information_fix_event.json").read_text())
+            elapsed["third_segment_before_clipped_information_fix_seconds"] = fix["third_segment_seconds"]
+            elapsed["seconds"] += fix["third_segment_seconds"]
+            elapsed["worker_schedule"] = [4, 8, 8, 8]
+            elapsed["includes_discarded_preliminary_q3_and_q43_runs"] = True
+            (out / "clipped_information_fix_event.json").write_text(json.dumps(fix, indent=2))
         (out / "evaluation_walltime.json").write_text(json.dumps(elapsed, indent=2))
         timing_rows.append({"stage": "全年调度", "minutes": elapsed["seconds"]/60,
-                            "scope": "全部核心、基线、消融及三种子；累计全部已记录运行段，包含作废的问题 3 初步回放，不含暂停间隔"})
+                            "scope": "全部核心、基线、消融及三种子；累计全部已记录运行段，包含作废的问题 3、4-3 初步回放，不含暂停间隔"})
         solver = pd.read_csv(out / "solver_metrics.csv", dtype={"scenario": str})
         solver["gap_known"] = solver.mip_gap.notna()
         solver["gap_met"] = solver.mip_gap <= .010001
