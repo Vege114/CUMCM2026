@@ -212,6 +212,7 @@ def main():
             summaries, details, states = baseline_replay(data, scenario, lag)
             if lag == 1:
                 baseline_states[scenario] = states
+                save_details(out / f"warmup_{scenario}.npz", details[:31])
             for s in summaries[31:]:
                 s.update(variant=variant, seed="baseline", model_used=variant, known_price=False,
                          corrected=True, update_schedule="0+6+12+18" if scenario in ("3", "4-3") else "0")

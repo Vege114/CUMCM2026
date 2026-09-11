@@ -27,11 +27,11 @@ def emergency_periods(energy):
             for a, b in zip(np.where(edges == 1)[0], np.where(edges == -1)[0])]
 
 
-def independent_check(d):
+def independent_check(d, days=334):
     for name in ("original", "final", "charge", "discharge", "emergency", "surplus"):
-        assert d[name].shape == (334, 144)
+        assert d[name].shape == (days, 144)
         assert np.isfinite(d[name]).all() and np.min(d[name]) >= -1e-7
-    assert d["states"].shape == (334, 145)
+    assert d["states"].shape == (days, 145)
     np.testing.assert_allclose(d['states'][:-1, -1], d['states'][1:, 0], atol=1e-6)
     assert d['states'].min() >= MIN_SOC - 1e-6
     assert d['states'].max() <= MAX_SOC + 1e-6
@@ -48,7 +48,7 @@ def independent_check(d):
                          np.maximum(-delta, 0) * .5 * d['price'],
                          d['emergency'] * 5 * d['price']), axis=-1)
     np.testing.assert_allclose(expected, d['fees'], atol=1e-6)
-    return {"days": 334, "intervals_per_day": 144, "violations": 0,
+    return {"days": days, "intervals_per_day": 144, "violations": 0,
             "max_energy_residual": float(np.abs(balance).max()),
             "cost_independent_recalculation": "passed",
             "total_cost": float(expected.sum())}
@@ -68,6 +68,12 @@ def main():
         with np.load(out / f"dispatch_{scenario}.npz") as a:
             d = {k: a[k] for k in a.files}
         check = independent_check(d)
+        with np.load(out / f"warmup_{scenario}.npz") as a:
+            warmup = {k:a[k] for k in a.files}
+        independent_check(warmup, days=31)
+        np.testing.assert_allclose(warmup['states'][0,0],6000,atol=1e-8)
+        np.testing.assert_allclose(warmup['states'][-1,-1],d['states'][0,0],atol=1e-6)
+        check['january_warmup_and_february_continuity']='passed'
         template_path = ROOT / "data/templates" / file_name
         template_hash = hashlib.sha256(template_path.read_bytes()).hexdigest()
         w = load_workbook(template_path)
@@ -207,6 +213,7 @@ def main():
 - “充放电量”记录实际执行，每天六个四小时时段；储电量连续跨日传递。
 - 紧急购电连续时段合并，零事件日期记为“无”。
 - dispatch_*.npz 保存完整逐时段计划、最终购电、执行、储电量与费用分项，daily_metrics.csv 保存逐日指标。
+- warmup_*.npz 保留 1 月从 6000 千瓦时起步的完整实际执行轨迹；2 月初状态与 1 月末状态独立核对。
 - ensemble_predictions.npz 与 prediction_archive.json 共同定义逐发布时刻、目标区间、模型和目标变量的全部平均预测。
 - 验证结果见 verification.json；指定日期的论文表格见报告的 specified_dates.md。
 ''')

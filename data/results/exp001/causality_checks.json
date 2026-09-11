@@ -1,0 +1,194 @@
+{
+  "months": [
+    {
+      "month": 2,
+      "decision_origin": 4464,
+      "train_cutoff": 3456,
+      "train_origins": 65,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 3,
+      "decision_origin": 8496,
+      "train_cutoff": 7488,
+      "train_origins": 177,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 4,
+      "decision_origin": 12960,
+      "train_cutoff": 11952,
+      "train_origins": 301,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 5,
+      "decision_origin": 17280,
+      "train_cutoff": 16272,
+      "train_origins": 421,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 6,
+      "decision_origin": 21744,
+      "train_cutoff": 20736,
+      "train_origins": 545,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 7,
+      "decision_origin": 26064,
+      "train_cutoff": 25056,
+      "train_origins": 665,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 8,
+      "decision_origin": 30528,
+      "train_cutoff": 29520,
+      "train_origins": 789,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 9,
+      "decision_origin": 34992,
+      "train_cutoff": 33984,
+      "train_origins": 913,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 10,
+      "decision_origin": 39312,
+      "train_cutoff": 38304,
+      "train_origins": 1033,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 11,
+      "decision_origin": 43776,
+      "train_cutoff": 42768,
+      "train_origins": 1157,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    },
+    {
+      "month": 12,
+      "decision_origin": 48096,
+      "train_cutoff": 47088,
+      "train_origins": 1277,
+      "validation_origins": 25,
+      "perturbation": "All actual values from decision onward, all forecasts published later",
+      "unchanged": [
+        "training inputs",
+        "completed training labels",
+        "validation inputs and labels",
+        "normalization statistics",
+        "month-start inference inputs"
+      ],
+      "feature_configurations": 3,
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "interpretation": "Identical inputs, labels and random seeds define the same learning problem; GPU numerical nondeterminism is not asserted absent.",
+  "selection_and_plan": "Separate unit tests perturb future data and verify validation selection and prior plans."
+}
