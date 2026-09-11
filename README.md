@@ -41,7 +41,7 @@ uv run --locked tensorboard --logdir experiments
 
 新增依赖用 `uv add <包名>`，开发工具用 `uv add --dev <包名>`，同步提交 `pyproject.toml` 和 `uv.lock`。只运行脚本、无需 Notebook/代码检查工具时，可以用 `uv sync --locked --no-dev`。
 
-本机为 Apple Silicon，默认安装 CPU 版 TensorFlow；当前配置不包含 Metal 或 CUDA 加速插件。Python 3.12 在 [TensorFlow 官方支持列表](https://www.tensorflow.org/install/pip) 内。本环境先保证训练与依赖可复现，GPU 环境按实际训练设备另行配置。运行检查只产生临时文件和忽略的工具缓存，不改动原始附件或生成建模结果。
+本机为 Apple M5。TensorFlow 2.21.0 与 Metal 1.2.0 实测有动态库加载冲突；当前锁定的 TensorFlow 2.18.1、Metal 1.2.0、TensorBoard 2.18.0 和 NumPy 2.0.2 已通过 GPU 训练、设备位置和模型保存读取测试。Metal 仅在 Apple Silicon macOS 安装。环境检查和正式训练默认要求 GPU；需要明确检查 CPU 环境时使用 `scripts/check_environment.py --allow-cpu`。Metal 通过 [Apple 官方插件](https://developer.apple.com/metal/tensorflow-plugin/) 工作，关闭即时编译并使用单精度浮点数。运行检查仅产生临时文件和忽略的工具缓存。
 
 ## 目录
 

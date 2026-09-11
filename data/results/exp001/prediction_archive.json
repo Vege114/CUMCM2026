@@ -1,0 +1,21 @@
+{
+  "epoch": "2025-01-01T00:00:00",
+  "origin_unit_minutes": 10,
+  "target_order": [
+    "load",
+    "pv",
+    "price",
+    "pv_corrected"
+  ],
+  "array_dimensions": [
+    "origin",
+    "future_interval",
+    "target"
+  ],
+  "interval_start": "epoch + (origin + future_interval) * 10 minutes",
+  "interval_end": "interval_start + 10 minutes",
+  "issue_time": "epoch + origin * 10 minutes",
+  "model": "array key",
+  "value": "nonnegative prediction in kW or yuan/kWh",
+  "year_end": "future intervals beyond 2025 are forecast but excluded from scores"
+}
