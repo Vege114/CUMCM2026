@@ -1,0 +1,58 @@
+{
+  "title": "首轮神经网络预测与微网调度实验",
+  "status": "reviewed",
+  "generatedAt": "2026-09-11",
+  "report": {
+    "asOf": "2025-12-31"
+  },
+  "filters": [],
+  "queries": {
+    "data_audit": {
+      "rows": [
+        {
+          "source": "小区负载",
+          "days": 365,
+          "intervals": 52560,
+          "missing": 0
+        },
+        {
+          "source": "实际光伏",
+          "days": 365,
+          "intervals": 52560,
+          "missing": 0
+        },
+        {
+          "source": "实时电价",
+          "days": 365,
+          "intervals": 52560,
+          "missing": 0
+        },
+        {
+          "source": "光伏预报",
+          "days": 365,
+          "issues": 1460,
+          "missing": 0
+        }
+      ],
+      "source": {
+        "label": "附件 CSV 完整性检查",
+        "files": [
+          "data/raw/附件1.csv",
+          "data/raw/附件2_光伏发电实际功率.csv",
+          "data/raw/附件2_小区负载.csv",
+          "data/raw/附件3.csv",
+          "data/raw/附件4.csv"
+        ],
+        "filters": [
+          "2025-01-01 至 2025-12-31"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "数值缺失",
+            "definition": "数值区中不能转换为有限数的单元格数量。"
+          }
+        ]
+      }
+    }
+  }
+}

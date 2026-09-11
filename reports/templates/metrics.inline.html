@@ -1,0 +1,82 @@
+<div id="microgrid-metric-visual">
+  <h2>预测方案怎样影响购电费用</h2>
+  <div class="viz-controls">
+    <label class="form-label">问题
+      <select class="form-select" aria-label="比较的问题">
+        <option value="2">问题 2 · 固定电价，凌晨计划</option>
+        <option value="3">问题 3 · 固定电价，日内调整</option>
+        <option value="4-2">问题 4-2 · 预测电价，凌晨计划</option>
+        <option value="4-3">问题 4-3 · 预测电价，日内调整</option>
+      </select>
+    </label>
+  </div>
+  <div class="metric-plots">
+    <div class="metric-plot" data-metric="total_cost"><h3>总费用</h3><svg role="img" aria-label="各方案全年购电总费用，单位万元"></svg></div>
+    <div class="metric-plot" data-metric="emergency_kwh"><h3>紧急购电量</h3><svg role="img" aria-label="各方案全年紧急购电量，单位万千瓦时"></svg></div>
+  </div>
+  <div class="text-small" aria-live="polite">2025 年 2—12 月 · 334 天 · 三个种子平均预测</div>
+  <script type="application/json" class="metric-values">@@DATA@@</script>
+</div>
+<style>
+#microgrid-metric-visual .metric-plots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#microgrid-metric-visual .metric-plot{min-width:0}
+#microgrid-metric-visual .metric-plot svg{display:block;width:100%;overflow:visible}
+#microgrid-metric-visual .metric-plot svg text{fill:var(--foreground);font-size:12px}
+#microgrid-metric-visual .metric-plot svg .domain,#microgrid-metric-visual .metric-plot svg .tick line{stroke:var(--border)}
+@media(max-width:650px){#microgrid-metric-visual .metric-plots{grid-template-columns:1fr}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(()=>{
+ const root=document.getElementById('microgrid-metric-visual');
+ const data=JSON.parse(root.querySelector('.metric-values').textContent);
+ const picker=root.querySelector('select');
+ const order=['selected','yesterday','weekly','mlp','gru','tcn','gru_no_calendar','gru_one_day'];
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function draw(container,animated=false){
+   const metric=container.dataset.metric;
+   const values=data.filter(d=>d.scenario===picker.value).sort((a,b)=>order.indexOf(a.variant)-order.indexOf(b.variant));
+   const width=container.getBoundingClientRect().width;
+   const coarse=window.matchMedia('(pointer: coarse)').matches;
+   const left=116,top=28,bottom=52,right=14,step=coarse?46:36;
+   const height=top+values.length*step+bottom;
+   const svg=d3.select(container.querySelector('svg')).attr('viewBox',`0 0 ${width} ${height}`).attr('height',height);
+   const extent=d3.extent(values,d=>d[metric]/10000);
+   const domainMax=Math.max(extent[1]||0,1e-8)*1.28;
+   const x=d3.scaleLinear().domain([Math.min(0,extent[0]||0),domainMax]).range([left+4,width-right-4]);
+   const y=d3.scaleBand().domain(values.map(d=>d.variant)).range([top, height-bottom]).padding(.28);
+   const number=d3.format(',.2f');
+   svg.selectAll('rect[data-chart-frame]').data([null]).join('rect').attr('data-chart-frame','')
+      .attr('x',left).attr('y',top).attr('width',Math.max(0,width-left-right)).attr('height',height-top-bottom)
+      .attr('fill','none').attr('stroke','var(--border)');
+   const bars=svg.selectAll('rect.value-bar').data(values,d=>d.variant).join('rect').attr('class','value-bar')
+      .attr('x',x(0)).attr('y',d=>y(d.variant)).attr('height',y.bandwidth())
+      .attr('fill',d=>d.variant==='selected'?'var(--viz-series-1)':'var(--muted-foreground)')
+      .attr('opacity',d=>d.variant==='selected'?1:.35);
+   (animated&&!reduced?bars.transition().duration(260):bars).attr('width',d=>Math.max(0,x(d[metric]/10000)-x(0)));
+   svg.selectAll('text.model-name').data(values,d=>d.variant).join('text').attr('class','model-name')
+      .attr('x',left-8).attr('y',d=>y(d.variant)+y.bandwidth()/2).attr('dominant-baseline','middle')
+      .attr('text-anchor','end').text(d=>d.model_label);
+   svg.selectAll('text.value-label').data(values,d=>d.variant).join('text').attr('class','value-label')
+      .attr('x',d=>x(d[metric]/10000)+6).attr('y',d=>y(d.variant)+y.bandwidth()/2)
+      .attr('dominant-baseline','middle').text(d=>number(d[metric]/10000));
+   svg.selectAll('rect.hit-target').data(values,d=>d.variant).join('rect').attr('class','hit-target')
+      .attr('data-chart-hit','').attr('x',left).attr('y',d=>y(d.variant)-(step-y.bandwidth())/2)
+      .attr('width',width-left-right).attr('height',step).attr('fill','transparent')
+      .attr('data-tooltip',d=>`${d.model_label}：${number(d[metric])}${metric==='total_cost'?' 元':' 千瓦时'}`);
+   svg.selectAll('g.x-axis').data([null]).join('g').attr('class','x-axis')
+      .attr('transform',`translate(0,${height-bottom})`).call(d3.axisBottom(x).ticks(width<400?3:4).tickFormat(d3.format('~s')));
+   svg.selectAll('text.axis-title[data-axis="x"]').data([null]).join('text').attr('class','axis-title').attr('data-axis','x')
+      .attr('x',(left+width-right)/2).attr('y',height-7).attr('text-anchor','middle').text(metric==='total_cost'?'总费用（万元）':'紧急购电量（万千瓦时）');
+   svg.selectAll('text.axis-title[data-axis="y"]').data([null]).join('text').attr('class','axis-title').attr('data-axis','y')
+      .attr('x',left-8).attr('y',15).attr('text-anchor','end').text('预测与决策方案');
+   const labels=[...container.querySelectorAll('svg text')];
+   labels.forEach(el=>{const b=el.getBBox();if(b.x+b.width>width-4){el.setAttribute('x',width-4);el.setAttribute('text-anchor','end');}});
+ }
+ const plots=[...root.querySelectorAll('.metric-plot')];
+ const observer=new ResizeObserver(()=>plots.forEach(p=>draw(p)));
+ plots.forEach(p=>observer.observe(p));
+ picker.addEventListener('change',()=>plots.forEach(p=>draw(p,true)));
+ plots.forEach(p=>draw(p));
+})();
+</script>

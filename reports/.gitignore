@@ -1,0 +1,3 @@
+# Rebuildable preview bundles; portable report.html is delivered outside the app.
+experiments/*/app/dist/
+experiments/*/app/.data-app-offline/

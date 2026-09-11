@@ -80,6 +80,8 @@ uv.lock                    可复现的依赖锁文件
 
 ## 协作约定
 
+本轮问题 2—4 的 GPU 神经网络预测与基础调度见 [实验报告索引](reports/latest.md)，可复用的八部分报告模板和历史对比工具见 [报告目录说明](reports/README.md)。`main` 同步保存完整报告包；训练代码、GPU 依赖和四个结果工作簿保存在 [codex/neural-forecasting-v1 实验分支](https://github.com/Vege114/CUMCM2026/tree/codex/neural-forecasting-v1)。
+
 - 原始 PDF、`data/raw/` 和 `data/templates/` 保持原始字节；清洗数据与填好的结果另存。
 - 实验记录写明输入、假设、参数、随机种子（如使用）、依赖版本、运行命令和 Git 提交，论文引用可复现的结果。
 - 区分功率 kW、电量 kWh、电价元/kWh 和费用元；功率转区间电量时明确时间间隔及插值或积分方式。

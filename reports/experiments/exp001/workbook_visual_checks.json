@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "engine": "Artifact Tool import and render",
+  "checked_ranges": [
+    {
+      "filename": "result2.xlsx",
+      "sheetName": "计划购电量",
+      "range": "A1:F5",
+      "preview": "2-计划购电量.png"
+    },
+    {
+      "filename": "result2.xlsx",
+      "sheetName": "充放电量",
+      "range": "A1:F13",
+      "preview": "2-充放电量.png"
+    },
+    {
+      "filename": "result2.xlsx",
+      "sheetName": "紧急购电量",
+      "range": "A1:C10",
+      "preview": "2-紧急购电量.png"
+    },
+    {
+      "filename": "result3.xlsx",
+      "sheetName": "计划购电量",
+      "range": "A1:F5",
+      "preview": "3-计划购电量.png"
+    },
+    {
+      "filename": "result3.xlsx",
+      "sheetName": "充放电量",
+      "range": "A1:F13",
+      "preview": "3-充放电量.png"
+    },
+    {
+      "filename": "result3.xlsx",
+      "sheetName": "紧急购电量",
+      "range": "A1:C10",
+      "preview": "3-紧急购电量.png"
+    },
+    {
+      "filename": "result3.xlsx",
+      "sheetName": "调整购电量",
+      "range": "A1:F5",
+      "preview": "3-调整购电量.png"
+    },
+    {
+      "filename": "result4-2.xlsx",
+      "sheetName": "计划购电量",
+      "range": "A1:F5",
+      "preview": "4-2-计划购电量.png"
+    },
+    {
+      "filename": "result4-2.xlsx",
+      "sheetName": "充放电量",
+      "range": "A1:F13",
+      "preview": "4-2-充放电量.png"
+    },
+    {
+      "filename": "result4-2.xlsx",
+      "sheetName": "紧急购电量",
+      "range": "A1:C10",
+      "preview": "4-2-紧急购电量.png"
+    },
+    {
+      "filename": "result4-3.xlsx",
+      "sheetName": "计划购电量",
+      "range": "A1:F5",
+      "preview": "4-3-计划购电量.png"
+    },
+    {
+      "filename": "result4-3.xlsx",
+      "sheetName": "充放电量",
+      "range": "A1:F13",
+      "preview": "4-3-充放电量.png"
+    },
+    {
+      "filename": "result4-3.xlsx",
+      "sheetName": "紧急购电量",
+      "range": "A1:C10",
+      "preview": "4-3-紧急购电量.png"
+    },
+    {
+      "filename": "result4-3.xlsx",
+      "sheetName": "调整购电量",
+      "range": "A1:F5",
+      "preview": "4-3-调整购电量.png"
+    }
+  ],
+  "findings": "Headers, dates, four-decimal energy values, charge/discharge blocks and merged emergency intervals are legible; no clipping found. Full workbook numeric readback is in verification.json."
+}
