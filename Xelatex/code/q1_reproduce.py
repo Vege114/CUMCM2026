@@ -1,0 +1,484 @@
+"""问题一完整复现：Python >=3.10；pip install numpy scipy matplotlib。
+直接运行 python q1_reproduce.py；输入内嵌为附件1原始144行。
+可选 --input 附件1.csv / 附件1.xlsx；损坏文件默认报错，--fallback才使用内嵌数据。
+全部输出放入 --out 指定的新目录；不覆盖原始附件或队友工作簿。
+"""
+import argparse  # 解析命令行参数。
+import csv  # 读写不依赖Excel软件的表格。
+import io  # 将内嵌文本作为文件读取。
+import json  # 保存完整数值和求解状态。
+import os  # 将绘图缓存限制在本次输出目录。
+import sys  # 向终端返回失败状态。
+import time  # 记录真实求解耗时。
+from pathlib import Path  # 使用跨平台路径，不写入个人绝对路径。
+try:
+    import numpy as np  # 数值计算。
+    import scipy  # 记录实际使用的库版本。
+    from scipy.optimize import milp, Bounds, LinearConstraint  # 混合整数规划。
+    from scipy.sparse import coo_matrix  # 稀疏约束矩阵。
+except ImportError as exc:
+    raise SystemExit("请先安装：pip install numpy scipy matplotlib") from exc
+
+# 以下是附件1逐行数据，顺序为区间右端、电价、负载、光伏功率。
+EMBEDDED_CSV = """时间,电价,小区负载,光伏发电预测功率
+00:10:00,0.4248,3439.8466,0
+00:20:00,0.4245,3437.9792,0
+00:30:00,0.4269,3444.3031,0
+00:40:00,0.4272,3454.4437,0
+00:50:00,0.4271,3458.8273,0
+01:00:00,0.4285,3459.8401,0
+01:10:00,0.4311,3467.1582,0
+01:20:00,0.4302,3467.9632,0
+01:30:00,0.4279,3466.9683,0
+01:40:00,0.4312,3482.4927,0
+01:50:00,0.4333,3495.0841,0
+02:00:00,0.4311,3498.4443,0
+02:10:00,0.4293,3505.2295,0
+02:20:00,0.4324,3512.6387,0
+02:30:00,0.4367,3516.8685,0
+02:40:00,0.4348,3517.9246,0
+02:50:00,0.4335,3518.5518,0
+03:00:00,0.4357,3521.0976,0
+03:10:00,0.4374,3526.9261,0
+03:20:00,0.4371,3537.2854,0
+03:30:00,0.4356,3544.8808,0
+03:40:00,0.4353,3541.2787,0
+03:50:00,0.436,3546.3976,0
+04:00:00,0.4378,3560.207,0
+04:10:00,0.4401,3561.9581,0
+04:20:00,0.4389,3556.7183,0
+04:30:00,0.4364,3560.0272,0
+04:40:00,0.4393,3580.654,0.5994
+04:50:00,0.4422,3586.916,0.2345
+05:00:00,0.4395,3571.2635,0.2885
+05:10:00,0.4333,3562.3171,18.6781
+05:20:00,0.4439,3591.3809,54.4698
+05:30:00,0.4301,3579.7045,108.9718
+05:40:00,0.3713,3486.119,184.1603
+05:50:00,0.5708,3823.8994,277.0582
+06:00:00,0.9099,4398.0727,388.5494
+06:10:00,0.9368,4454.0123,521.2803
+06:20:00,0.8758,4371.7919,672.7677
+06:30:00,0.8759,4392.953,844.2261
+06:40:00,0.8601,4384.5956,1039.6744
+06:50:00,0.8442,4434.7757,1259.3375
+07:00:00,0.8334,4523.4561,1508.6318
+07:10:00,0.8092,4524.0721,1791.4107
+07:20:00,0.7972,4545.8867,2085.4865
+07:30:00,0.7644,4523.2418,2381.2611
+07:40:00,0.6899,4383.3566,2683.1752
+07:50:00,0.86,4910.4599,2986.3552
+08:00:00,1.1617,5799.7327,3289.204
+08:10:00,1.1683,5884.826,3593.3613
+08:20:00,1.0956,5748.0713,3890.7332
+08:30:00,1.0849,5769.0581,4181.3417
+08:40:00,1.061,5754.2105,4471.7657
+08:50:00,1.043,5824.1807,4752.8272
+09:00:00,1.036,5954.2601,5021.9074
+09:10:00,1.0147,5958.9696,5285.4126
+09:20:00,0.9922,5929.5554,5543.1742
+09:30:00,0.97,5923.7828,5788.4093
+09:40:00,0.9422,5907.586,6012.1304
+09:50:00,0.9569,5899.1262,6216.1528
+10:00:00,0.9977,5902.2196,6409.5941
+10:10,0.9919,5897.4793,6599.3808
+10:20,0.9588,5886.7568,6766.7204
+10:30,0.9549,5873.4708,6914.5923
+10:40,0.9839,5858.0308,7064.2053
+10:50,0.799,5844.9948,7197.4315
+11:00,0.5025,5839.0587,7303.1142
+11:10,0.4662,5838.7103,7387.6848
+11:20,0.5007,5823.4378,7459.227
+11:30,0.4827,5814.7932,7520.7191
+11:40,0.4785,5832.3951,7568.2039
+11:50,0.4662,5712.901,7592.1539
+12:00,0.4432,5519.4607,7601.0433
+12:10,0.4411,5494.7907,7612.316
+12:20,0.4551,5514.4524,7602.6524
+12:30,0.4463,5485.829,7554.1872
+12:40,0.4113,5462.3628,7472.7384
+12:50,0.5682,5566.1066,7393.4172
+13:00,0.8279,5725.7548,7312.7979
+13:10,0.8636,5739.4957,7194.541
+13:20,0.8416,5714.6836,7053.1371
+13:30,0.8618,5717.8505,6910.4064
+13:40,0.8623,5708.2486,6772.4075
+13:50,0.9026,5696.9182,6607.36
+14:00,0.9754,5692.2983,6412.5085
+14:10,1.0002,5687.1291,6214.0158
+14:20,0.9978,5678.962,6000.7112
+14:30,1.0271,5669.4508,5766.9816
+14:40,1.0906,5664.1948,5521.5066
+14:50,0.9376,5672.7011,5268.781
+15:00,0.6694,5682.2544,5009.7152
+15:10,0.66,5669.0195,4743.4484
+15:20,0.7217,5656.3651,4471.224
+15:30,0.7308,5657.0867,4188.2025
+15:40,0.7534,5662.6008,3889.3931
+15:50,0.7823,5669.2596,3594.5946
+16:00,0.8055,5673.4767,3303.8878
+16:10,0.8271,5671.0146,2998.4247
+16:20,0.8519,5661.5926,2687.4131
+16:30,0.8791,5665.8922,2383.1779
+16:40,0.9024,5689.0372,2089.1246
+16:50,0.9163,5603.6614,1791.0829
+17:00,0.9264,5466.7124,1501.7283
+17:10,0.9462,5467.3939,1255.1723
+17:20,0.9742,5464.727,1036.3323
+17:30,0.9862,5492.4458,836.7775
+17:40,0.976,5621.7308,665.2313
+17:50,1.0742,5091.2126,516.6758
+18:00,1.2313,4208.5688,386.6731
+18:10,1.2561,4122.7611,275.7933
+18:20,1.2447,4255.9358,182.9526
+18:30,1.2545,4225.9524,108.3414
+18:40,1.2522,4233.3384,54.3121
+18:50,1.2881,4246.4625,18.6569
+19:00,1.3466,4239.1795,0.2753
+19:10,1.3523,4244.6684,0.2296
+19:20,1.3445,4251.9187,0.6007
+19:30,1.3483,4256.6813,0
+19:40,1.349,4267.3947,0
+19:50,1.3473,4269.975,0
+20:00,1.3482,4268.6702,0
+20:10,1.3513,4282.2245,0
+20:20,1.34,4291.7049,0
+20:30,1.3489,4291.3611,0
+20:40,1.3952,4293.9182,0
+20:50,1.2226,4295.2135,0
+21:00,0.9332,4302.0307,0
+21:10,0.9068,4320.9618,0
+21:20,0.9371,4302.3292,0
+21:30,0.9371,4322.6758,0
+21:40,0.9871,4428.8083,0
+21:50,0.7764,4030.1614,0
+22:00,0.4209,3362.7419,0
+22:10,0.3859,3309.3934,0
+22:20,0.4368,3412.9563,0
+22:30,0.4198,3381.9313,0
+22:40,0.4186,3386.5592,0
+22:50,0.4241,3400.4846,0
+23:00,0.4237,3399.2426,0
+23:10,0.4248,3406.9809,0
+23:20,0.424,3416.1518,0
+23:30,0.422,3421.9811,0
+23:40,0.424,3429.6923,0
+23:50,0.4271,3439.061,0
+0:00+1,0.4276,3444.7259,0"""
+T, DT = 144, 1 / 6  # 一天144个10分钟区间，功率转电量乘DT。
+PMAX, PMIN, EMIN, EMAX, EINIT = 5000., 1., 1200., 10800., 6000.
+EPS_C, EPS_S = 1e-4, 1e-7  # 费用和无量纲第二目标的绝对容差。
+
+
+def read_data(path=None, fallback=False):
+    """只读输入；任何缺失、负数、时间错位都显式报错。"""
+    try:
+        if path is None:
+            rows = list(csv.reader(io.StringIO(EMBEDDED_CSV.strip())))[1:]
+        elif Path(path).suffix.lower() == ".xlsx":
+            from openpyxl import load_workbook  # 仅外部XLSX输入需要该可选库。
+            book = load_workbook(path, data_only=True, read_only=True)
+            rows = list(book.active.values)[1:]  # 跳过标题；不会保存或修改源文件。
+            book.close()
+        else:
+            rows = None
+            for encoding in ("utf-8-sig", "gb18030"):  # 兼容常用中文CSV编码。
+                try:
+                    with open(path, encoding=encoding, newline="") as handle:
+                        rows = list(csv.reader(handle))[1:]
+                    break
+                except UnicodeDecodeError:
+                    continue
+            if rows is None:
+                raise ValueError("CSV编码无法识别")
+        if len(rows) != T:
+            raise ValueError(f"应有144行数据，实际{len(rows)}行")
+        for i, row in enumerate(rows):  # 检查右端时刻，避免错位十分钟。
+            label = str(row[0]).strip()
+            if i == T - 1 and label in ("0:00+1", "00:00+1", "24:00", "24:00:00", "00:00:00"):
+                continue
+            pieces = label.split(":")
+            if len(pieces) < 2 or int(pieces[0]) * 60 + int(pieces[1]) != (i + 1) * 10:
+                raise ValueError(f"第{i+1}行时间不连续：{label}")
+        data = np.asarray([[float(x) for x in row[1:4]] for row in rows])
+        if data.shape != (T, 3) or not np.isfinite(data).all():
+            raise ValueError("存在空值、非数值或非有限数")
+        if (data < 0).any() or (data[:, 0] <= 0).any():
+            raise ValueError("本模型要求正电价以及非负负载、光伏")
+        return data
+    except (OSError, ValueError, TypeError, ImportError) as exc:
+        if path is not None and fallback:
+            print(f"警告：读取失败({exc})，明确回退到内嵌附件1", file=sys.stderr)
+            return read_data()
+        raise ValueError(f"输入读取失败：{exc}；可用--fallback允许内嵌回退") from exc
+
+
+def solve(data, delta=.001, ramp=1000., up=3, down=2, eta_rt=.9):
+    """同一可行域内依次求费用、平稳性、购电量；全部层均保留整数互斥。"""
+    if not (0 < eta_rt <= 1 and delta >= 0 and 1 <= up <= T and 1 <= down <= T):
+        raise ValueError("效率、让步比例或持续时间不合法")
+    eta = np.sqrt(eta_rt)  # 本问保持往返效率口径。
+    names = ("g", "c", "d", "w", "E", "zc", "zd", "sc", "sd", "oc", "od", "v",
+             "bc1", "bc2", "bd1", "bd2")  # b为旧基准短段缺额线性化变量。
+    ids, offset = {}, 0
+    for name in names:
+        size = T + 1 if name == "E" else T  # 储电量包含145个边界。
+        ids[name] = np.arange(offset, offset + size)
+        offset += size
+    lo, hi, integer = np.zeros(offset), np.full(offset, np.inf), np.zeros(offset)
+    for name in ("c", "d"):
+        hi[ids[name]] = PMAX
+    lo[ids["E"]], hi[ids["E"]] = EMIN, EMAX
+    lo[ids["E"][[0, -1]]] = EINIT
+    hi[ids["E"][[0, -1]]] = EINIT  # 日初日末均6000kWh。
+    for name in ("zc", "zd", "sc", "sd", "oc", "od", "bc1", "bc2", "bd1", "bd2"):
+        hi[ids[name]] = 1
+    integer[ids["zc"]], integer[ids["zd"]] = 1, 1  # 仅模式变量必须声明整数。
+    ri, ci, av, lower, upper = [], [], [], [], []
+    def add(items, lb=-np.inf, ub=np.inf):
+        """将一行稀疏线性约束加入模型。"""
+        row = len(lower)
+        for col, val in items:
+            ri.append(row); ci.append(int(col)); av.append(float(val))
+        lower.append(float(lb)); upper.append(float(ub))
+    for t in range(T):
+        prev = (t - 1) % T  # 循环日跨午夜连接。
+        ix = lambda key, j=t: int(ids[key][j])
+        net = [(ix("c"), 1), (ix("d"), -1), (ix("c", prev), -1), (ix("d", prev), 1)]
+        rhs = (data[t, 1] - data[t, 2]) * DT
+        add([(ix("g"), 1), (ix("d"), DT), (ix("c"), -DT), (ix("w"), -1)], rhs, rhs)
+        add([(ix("E", t+1), 1), (ix("E"), -1), (ix("c"), -eta*DT), (ix("d"), DT/eta)], 0, 0)
+        add([(ix("zc"), 1), (ix("zd"), 1)], ub=1)  # 禁止同时充放电。
+        add(net, -ramp, ramp)  # 运行功率变化上限，基准可设为10000。
+        add([(ix("v"), 1)] + [(k, -v) for k, v in net], lb=0)
+        add([(ix("v"), 1)] + net, lb=0)  # v不小于净功率差的绝对值。
+        for mode in ("c", "d"):
+            z, oldz, start, stop = ix("z"+mode), ix("z"+mode, prev), ix("s"+mode), ix("o"+mode)
+            add([(ix(mode), 1), (z, -PMAX)], ub=0)
+            add([(ix(mode), 1), (z, -PMIN)], lb=0)
+            add([(start, 1), (z, -1), (oldz, 1)], lb=0)
+            add([(start, 1), (z, -1)], ub=0)
+            add([(start, 1), (oldz, 1)], ub=1)
+            add([(stop, 1), (oldz, -1), (z, 1)], lb=0)
+            add([(stop, 1), (oldz, -1)], ub=0)
+            add([(stop, 1), (z, 1)], ub=1)  # s、o精确表示0-1转换。
+            add([(ix("z"+mode, (t+j)%T), 1) for j in range(up)] + [(start, -up)], lb=0)
+            add([(ix("z"+mode, (t+j)%T), 1) for j in range(down)] + [(stop, down)], ub=down)
+            for k in (1, 2):  # 30分钟参考长度的两级短段缺额。
+                b = ix("b"+mode+str(k))
+                add([(b, 1), (start, -1)], ub=0)
+                for j in range(1, k+1):
+                    add([(b, 1), (start, -1), (ix("z"+mode, (t+j)%T), 1)], lb=0)
+                add([(b, 1)] + [(ix("z"+mode, (t+j)%T), 1) for j in range(1, k+1)], ub=k)
+    cost, smooth, quantity = np.zeros(offset), np.zeros(offset), np.zeros(offset)
+    cost[ids["g"]], quantity[ids["g"]] = data[:, 0], 1
+    smooth[ids["v"]] = 1 / (2 * PMAX * T)
+    for name in ("sc", "sd"):
+        smooth[ids[name]] = 1 / (2 * T)
+    for name in ("bc1", "bc2", "bd1", "bd2"):
+        smooth[ids[name]] = 1 / (4 * T)
+    records, solutions = [], []
+    for stage, objective in enumerate((cost, smooth * 1e6, quantity), 1):
+        matrix = coo_matrix((av, (ri, ci)), shape=(len(lower), offset)).tocsc()
+        began = time.perf_counter()
+        result = milp(objective, integrality=integer, bounds=Bounds(lo, hi),
+                      constraints=LinearConstraint(matrix, lower, upper),
+                      options={"mip_rel_gap": 1e-9, "time_limit": 180.})
+        if not result.success or result.x is None:
+            raise RuntimeError(f"第{stage}层未证最优：{result.message}")
+        x = result.x  # 不对连续解取整，不静默接受超时解。
+        rec = dict(stage=stage, cost=float(cost@x), quantity=float(quantity@x),
+                   smooth=float(smooth@x), gap=float(result.mip_gap),
+                   seconds=time.perf_counter()-began, nodes=int(result.mip_node_count))
+        records.append(rec); solutions.append({k: x[v] for k, v in ids.items()})
+        if stage == 1:
+            budget = (1 + delta) * rec["cost"] + EPS_C
+            add(list(zip(ids["g"], data[:, 0])), ub=budget)
+        elif stage == 2:
+            add([(i, v*1e6) for i, v in enumerate(smooth) if v], ub=(rec["smooth"]+EPS_S)*1e6)
+    config = dict(delta=delta, ramp=ramp, up=up, down=down, eta_rt=eta_rt)
+    result = dict(config=config, stages=records, trajectory=solutions[-1], budget=budget)
+    result["metrics"] = audit(data, result)  # 从物理量独立复算，不只看求解器成功标志。
+    return result
+
+
+def lengths(z, value=1):
+    """读取循环0-1序列的段长，合并跨午夜的同模式段。"""
+    starts = [i for i in range(T) if z[i] == value and z[(i-1)%T] != value]
+    if not starts:
+        return [T] if np.all(z == value) else []
+    return [next(k for k in range(1, T+1) if z[(i+k)%T] != value) for i in starts]
+
+
+def audit(data, result):
+    """独立核验供需、SOC、功率、互斥、段长、费用预算及层次目标。"""
+    q, cfg = result["trajectory"], result["config"]
+    g, c, d, w, E = (q[k] for k in ("g", "c", "d", "w", "E"))
+    eta = np.sqrt(cfg["eta_rt"])
+    net = c-d
+    on, off = [], []
+    for key in ("zc", "zd"):
+        z = np.rint(q[key]).astype(int)  # 仅用于诊断整数变量，不更改求解值。
+        on.extend(lengths(z)); off.extend(lengths(z, 0))
+    balance = g + data[:, 2]*DT + d*DT - data[:, 1]*DT - c*DT - w
+    transition = np.diff(E)-eta*c*DT+d*DT/eta
+    tv = float(np.abs(net-np.roll(net, 1)).sum())
+    short = sum(max(0, 3-k) for k in on)
+    smooth = tv/(2*PMAX*T)+len(on)/(2*T)+short/(4*T)
+    metrics = dict(cost=float(data[:, 0]@g), quantity=float(g.sum()), tv=tv, starts=len(on),
+                   short_deficit=short, short_runs=sum(k<3 for k in on),
+                   min_on=min(on, default=T)*10, min_off=min(off, default=T)*10,
+                   max_step=float(np.abs(net-np.roll(net, 1)).max()),
+                   charge=float(c.sum()*DT), discharge=float(d.sum()*DT),
+                   surplus=float(w.sum()), emin=float(E.min()), emax=float(E.max()),
+                   balance=float(np.abs(balance).max()), state=float(np.abs(transition).max()),
+                   endpoint=float(max(abs(E[0]-EINIT), abs(E[-1]-EINIT))),
+                   simultaneous=float(np.minimum(c, d).max()), smooth=smooth,
+                   max_c=float(c.max()), max_d=float(d.max()),
+                   low=int(np.sum((np.abs(net)>1e-5)&(np.abs(net)<50))))
+    metrics["daily_balance"] = float(abs(g.sum() - (data[:, 1]-data[:, 2]).sum()*DT
+                                        - (c.sum()-d.sum())*DT - w.sum()))
+    metrics["cost_recompute"] = abs(metrics["cost"]-result["stages"][-1]["cost"])
+    tolerance = 2e-5  # kW/kWh诊断容差，目标函数另用各自量尺核查。
+    violations = [
+        metrics["balance"]>tolerance, metrics["state"]>tolerance,
+        metrics["endpoint"]>tolerance, metrics["simultaneous"]>tolerance,
+        E.min()<EMIN-tolerance, E.max()>EMAX+tolerance,
+        c.max()>PMAX+tolerance, d.max()>PMAX+tolerance,
+        min(g.min(), c.min(), d.min(), w.min()) < -tolerance,
+        metrics["max_step"]>cfg["ramp"]+tolerance,
+        metrics["min_on"]<cfg["up"]*10, metrics["min_off"]<cfg["down"]*10,
+        metrics["cost"]>result["budget"]+1e-5,
+        smooth>result["stages"][1]["smooth"]+EPS_S+1e-9,
+        np.max(np.abs(q["zc"]-np.rint(q["zc"])))>1e-6,
+        np.max(np.abs(q["zd"]-np.rint(q["zd"])))>1e-6,
+        np.max(q["zc"]+q["zd"])>1+1e-6,
+        np.max(PMIN*q["zc"]-c)>tolerance, np.max(c-PMAX*q["zc"])>tolerance,
+        np.max(PMIN*q["zd"]-d)>tolerance, np.max(d-PMAX*q["zd"])>tolerance,
+        metrics["daily_balance"]>tolerance, metrics["cost_recompute"]>1e-5,
+    ]
+    metrics["violations"] = sum(bool(v) for v in violations)
+    if metrics["violations"]:
+        raise RuntimeError(f"独立约束检验失败：{metrics}")
+    return metrics
+
+
+def save_case(out, name, data, result):
+    """导出144段完整计划及每层状态，不覆盖用户原始表。"""
+    def serial(value):
+        if isinstance(value, np.ndarray):
+            return value.tolist()
+        if isinstance(value, np.generic):
+            return value.item()
+        raise TypeError(f"无法序列化：{type(value)}")
+    (out/(name+".json")).write_text(json.dumps(result, ensure_ascii=False, indent=2,
+                                               default=serial), encoding="utf-8")
+    q = result["trajectory"]
+    with (out/(name+".csv")).open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["起点/h", "终点/h", "电价/元每kWh", "负载/kW", "光伏/kW",
+                         "购电量/kWh", "充电功率/kW", "放电功率/kW", "剩余/kWh",
+                         "期初储电/kWh", "期末储电/kWh", "区间电费/元"])
+        for t in range(T):
+            writer.writerow([t*DT, (t+1)*DT, *data[t], q["g"][t], q["c"][t], q["d"][t],
+                             q["w"][t], q["E"][t], q["E"][t+1], data[t, 0]*q["g"][t]])
+
+
+def draw(out, data, cases, sweep):
+    """依据真实解绘制阶梯功率、储电轨迹和费用-总变差图。"""
+    os.environ.setdefault("MPLCONFIGDIR", str((out/".mpl-cache").resolve()))
+    import matplotlib
+    matplotlib.use("Agg")  # 无图形界面的机器也能输出。
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({"font.sans-serif": ["Microsoft YaHei", "SimHei", "DejaVu Sans"],
+                         "axes.unicode_minus": False, "font.size": 10,
+                         "axes.spines.top": False, "axes.spines.right": False})
+    edges = np.arange(T+1)*DT
+    fig, axes = plt.subplots(2, 1, figsize=(10, 6.4), sharex=True, layout="constrained")
+    for key, label, color in [("baseline", "严格经济基准", "#8061A8"), ("revised", "平稳运行方案", "#138B99")]:
+        q = cases[key]["trajectory"]
+        axes[0].stairs(q["c"]-q["d"], edges, label=label, color=color, linewidth=1.6)
+        axes[1].plot(edges, q["E"], label=label, color=color, linewidth=1.6)
+    axes[0].axhline(0, color="#777777", linewidth=.6)
+    axes[0].set(title="典型日电池净功率与储电量", ylabel="净充电功率 / kW")
+    axes[1].axhline(EMIN, color="#B27838", linestyle="--", label="安全储电边界")
+    axes[1].axhline(EMAX, color="#B27838", linestyle="--")
+    axes[1].set(xlabel="时刻 / h", ylabel="储电量 / kWh", xlim=(0,24), xticks=np.arange(0,25,2))
+    for ax in axes:
+        ax.legend(ncol=3, fontsize=9); ax.grid(alpha=.16)
+    fig.savefig(out/"q1_dispatch.png", dpi=320); plt.close(fig)
+    rows = sorted(sweep, key=lambda row: row["delta"])
+    fig, axes = plt.subplots(1, 2, figsize=(10, 3.5), layout="constrained")
+    x = [row["delta"]*100 for row in rows]
+    for ax, key, ylabel, color in [(axes[0], "cost", "购电费 / 元", "#B27838"),
+                                   (axes[1], "tv", "循环功率总变差 / kW", "#138B99")]:
+        ax.plot(x, [row[key] for row in rows], "o-", color=color, label="单因素重求解")
+        ax.axvline(.1, color="#8061A8", linestyle="--", label="选定让步比例")
+        ax.set(xlabel="电费让步比例 / %", ylabel=ylabel); ax.grid(alpha=.16); ax.legend(fontsize=8)
+    fig.suptitle("经济让步比例对电费与运行平稳性的影响")
+    fig.savefig(out/"q1_tradeoff.png", dpi=320); plt.close(fig)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", help="可选CSV或XLSX；省略则读取内嵌附件1")
+    parser.add_argument("--fallback", action="store_true", help="外部输入失败时显式回退")
+    parser.add_argument("--out", default="q1_output", help="生成结果目录")
+    parser.add_argument("--quick", action="store_true", help="只做主方案和严格经济基准")
+    args = parser.parse_args()
+    data = read_data(args.input, args.fallback)
+    out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
+    cases, sweep, sensitivity = {}, [], []
+    tasks = [("revised", {}), ("baseline", dict(delta=0, ramp=10000, up=1, down=1))]
+    if not args.quick:
+        tasks += [(f"delta_{v}", dict(delta=v)) for v in (0, .0005, .002, .005)]
+        tasks += [(f"{key}_{factor}", {key: value*factor}) for key, value in
+                  [("delta", .001), ("ramp", 1000.), ("eta_rt", .9)] for factor in (.9, 1.1)]
+    for name, settings in tasks:
+        print(f"求解 {name}", flush=True)
+        result = solve(data, **settings)
+        cases[name] = result; save_case(out, name, data, result)
+        row = dict(name=name, **result["config"], **result["metrics"])
+        sensitivity.append(row)
+        if name == "revised" or name.startswith("delta_") and name not in ("delta_0.9", "delta_1.1"):
+            sweep.append(row)
+        print(json.dumps(row, ensure_ascii=False), flush=True)
+    noise = []
+    if not args.quick:
+        for seed in range(2026, 2029):  # 三次局部压力测试，不宣称统计置信保证。
+            rng = np.random.default_rng(seed)
+            perturbed = data.copy()
+            factors = 1 + np.clip(rng.normal(0, .01, (T,2)), -.03, .03)
+            perturbed[:, 1:] *= factors  # 夜间零光伏保留为零。
+            result = solve(perturbed)
+            save_case(out, f"noise_{seed}", perturbed, result)
+            fixed = cases["revised"]["trajectory"]
+            gap = ((perturbed[:, 1]-perturbed[:, 2])-(data[:, 1]-data[:, 2]))*DT-fixed["w"]
+            row = dict(seed=seed, cost=result["metrics"]["cost"],
+                       change_pct=(result["metrics"]["cost"]/cases["revised"]["metrics"]["cost"]-1)*100,
+                       fixed_plan_deficit_kwh=float(np.maximum(gap,0).sum()),
+                       violations=result["metrics"]["violations"])
+            noise.append(row); print("噪声检验", row, flush=True)
+    final = cases["revised"]["trajectory"]  # 为题目指定时段另外输出便于核对的汇总。
+    specified = [{"start_hour": t/6, "purchase_kwh": float(final["g"][t])}
+                 for t in (60, 72, 84, 96, 108, 120)]
+    blocks = [{"start_hour": 4*j, "end_hour": 4*(j+1),
+               "charge_kwh": float(final["c"][24*j:24*(j+1)].sum()*DT),
+               "discharge_kwh": float(final["d"][24*j:24*(j+1)].sum()*DT)} for j in range(6)]
+    summary = dict(environment=dict(python=sys.version, numpy=np.__version__, scipy=scipy.__version__),
+                   no_storage_cost=float(data[:,0]@np.maximum(data[:,1]-data[:,2],0)*DT),
+                   load_kwh=float(data[:,1].sum()*DT), pv_kwh=float(data[:,2].sum()*DT),
+                   cases=sensitivity, noise=noise, specified=specified, storage_blocks=blocks,
+                   initial_kwh=float(final["E"][0]), final_kwh=float(final["E"][-1]))
+    (out/"summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    if len(sweep)>1:
+        draw(out, data, cases, sweep)
+    print("完成；144段计划、各层求解状态及检验结果位于", out.resolve(), flush=True)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (ValueError, RuntimeError, OSError, ImportError) as exc:
+        print(f"运行终止：{exc}", file=sys.stderr)
+        sys.exit(1)  # 不输出虚构的成功结论。

@@ -1,0 +1,145 @@
+{
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "no_storage_cost": 48052.04659084667,
+  "load_kwh": 111024.80809999998,
+  "pv_kwh": 55482.835666666666,
+  "cases": [
+    {
+      "name": "revised",
+      "delta": 0.001,
+      "ramp": 1000.0,
+      "up": 3,
+      "down": 2,
+      "eta_rt": 0.9,
+      "cost": 34115.03245096837,
+      "quantity": 57560.61607674325,
+      "tv": 33209.31005762344,
+      "starts": 4,
+      "short_deficit": 0,
+      "short_runs": 0,
+      "min_on": 170,
+      "min_off": 430,
+      "max_step": 1000.0000000000091,
+      "charge": 20186.43643409913,
+      "discharge": 18167.792790689215,
+      "surplus": 0.0,
+      "emin": 1200.0,
+      "emax": 10800.000000000378,
+      "balance": 1.5916157281025953e-12,
+      "state": 6.252776074689027e-13,
+      "endpoint": 0.0,
+      "simultaneous": 2.427771841020656e-09,
+      "smooth": 0.0369509097622385,
+      "max_c": 4999.999999999914,
+      "max_d": 4268.747930941118,
+      "low": 0,
+      "daily_balance": 7.275957614183426e-12,
+      "cost_recompute": 0.0,
+      "violations": 0
+    },
+    {
+      "name": "baseline",
+      "delta": 0,
+      "ramp": 10000,
+      "up": 1,
+      "down": 1,
+      "eta_rt": 0.9,
+      "cost": 33801.495642222,
+      "quantity": 57526.243480883495,
+      "tv": 102684.5807690341,
+      "starts": 12,
+      "short_deficit": 10,
+      "short_runs": 6,
+      "min_on": 10,
+      "min_off": 10,
+      "max_step": 8546.841199999955,
+      "charge": 19842.7104755017,
+      "discharge": 17858.439427951525,
+      "surplus": 0.0,
+      "emin": 1199.9999999999989,
+      "emax": 10800.00000000004,
+      "balance": 1.441031222346196e-12,
+      "state": 2.3052945316518633e-13,
+      "endpoint": 0.0,
+      "simultaneous": 1.4733814168721417e-10,
+      "smooth": 0.13033651442294034,
+      "max_c": 5000.000000000039,
+      "max_d": 4293.918199999995,
+      "low": 2,
+      "daily_balance": 7.275957614183426e-12,
+      "cost_recompute": 0.0,
+      "violations": 0
+    }
+  ],
+  "noise": [],
+  "specified": [
+    {
+      "start_hour": 10.0,
+      "purchase_kwh": 0.0
+    },
+    {
+      "start_hour": 12.0,
+      "purchase_kwh": 480.41244999998116
+    },
+    {
+      "start_hour": 14.0,
+      "purchase_kwh": 0.0
+    },
+    {
+      "start_hour": 16.0,
+      "purchase_kwh": 445.43164999999505
+    },
+    {
+      "start_hour": 18.0,
+      "purchase_kwh": 621.8502121077196
+    },
+    {
+      "start_hour": 20.0,
+      "purchase_kwh": 2.246094843144739
+    }
+  ],
+  "storage_blocks": [
+    {
+      "start_hour": 0,
+      "end_hour": 4,
+      "charge_kwh": 5059.644256269452,
+      "discharge_kwh": 4.1751806758391556e-11
+    },
+    {
+      "start_hour": 4,
+      "end_hour": 8,
+      "charge_kwh": -2.2028629865800985e-11,
+      "discharge_kwh": 7357.436146070606
+    },
+    {
+      "start_hour": 8,
+      "end_hour": 12,
+      "charge_kwh": 5071.280471559957,
+      "discharge_kwh": 1702.9969833332998
+    },
+    {
+      "start_hour": 12,
+      "end_hour": 16,
+      "charge_kwh": 4995.867450000378,
+      "discharge_kwh": 3.6788607801273143e-10
+    },
+    {
+      "start_hour": 16,
+      "end_hour": 20,
+      "charge_kwh": -9.023966458250938e-12,
+      "discharge_kwh": 6729.235006128069
+    },
+    {
+      "start_hour": 20,
+      "end_hour": 24,
+      "charge_kwh": 5059.6442562693765,
+      "discharge_kwh": 2378.1246551568343
+    }
+  ],
+  "initial_kwh": 6000.0,
+  "final_kwh": 6000.0
+}
