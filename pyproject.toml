@@ -5,10 +5,11 @@ description = "CUMCM 2026 C: microgrid forecasting and control with TensorFlow"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "tensorflow>=2.21,<2.22",
-    "tensorboard>=2.20,<3",
+    "tensorflow==2.18.1",
+    "tensorflow-metal==1.2.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "tensorboard==2.18.0",
     "gymnasium[classic-control]>=1.2,<2",
-    "numpy>=2.0,<3",
+    "numpy==2.0.2",
     "scipy>=1.14,<2",
     "pandas>=2.2,<3",
     "scikit-learn>=1.6,<2",
@@ -33,3 +34,10 @@ cache-dir = ".cache/uv"
 [tool.ruff]
 target-version = "py312"
 line-length = 100
+
+[tool.ruff.lint]
+extend-select = ["E402"]
+
+[tool.ruff.lint.per-file-ignores]
+# Keep the frozen, checkpoint-hashed training source byte-for-byte reproducible.
+"experiments/common/neural_v1/train.py" = ["RUF100"]

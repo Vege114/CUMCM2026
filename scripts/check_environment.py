@@ -1,5 +1,6 @@
 """Run from the repository root: uv run --locked python scripts/check_environment.py."""
 
+import argparse
 import importlib
 import os
 import platform
@@ -10,6 +11,9 @@ from tempfile import TemporaryDirectory
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--allow-cpu", action="store_true", help="Explicitly allow a CPU-only check")
+    args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     os.environ.setdefault("XDG_CACHE_HOME", str(root / ".cache"))
     os.environ.setdefault("KERAS_HOME", str(root / ".cache" / "keras"))
@@ -42,6 +46,16 @@ def main() -> None:
     import pandas as pd
     import tensorflow as tf
 
+    gpus = tf.config.list_physical_devices("GPU")
+    if not args.allow_cpu and not gpus:
+        raise RuntimeError("GPU required. Check tensorflow-metal; use --allow-cpu only intentionally.")
+    tf.keras.mixed_precision.set_global_policy("float32")
+    with tf.device("/GPU:0" if gpus else "/CPU:0"):
+        probe = tf.linalg.matmul(tf.ones((64, 64)), tf.ones((64, 64)))
+    if gpus and "GPU:0" not in probe.device:
+        raise RuntimeError("GPU matrix operation was not placed on GPU")
+    print(f"PASS device placement: {probe.device}", flush=True)
+
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
@@ -56,7 +70,7 @@ def main() -> None:
             tf.keras.layers.Dense(1),
         ]
     )
-    model.compile(optimizer=tf.keras.optimizers.Adam(1e-3), loss="mse")
+    model.compile(optimizer=tf.keras.optimizers.Adam(1e-3), loss="mse", jit_compile=False)
     before = [weight.numpy().copy() for weight in model.trainable_weights]
     loss = float(model.train_on_batch(x, y))
     if not np.isfinite(loss) or not any(
