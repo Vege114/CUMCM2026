@@ -82,6 +82,41 @@ class ForecastInformationTests(unittest.TestCase):
             np.testing.assert_array_equal(a[key], b[key])
         self.assertEqual(a["metadata"]["tree"], b["metadata"]["tree"])
 
+    def test_clipped_latent_errors_cannot_reveal_information(self):
+        from types import SimpleNamespace
+
+        for channel in range(3):
+            class Store:
+                def get(self, origin, channel=channel, **kwargs):
+                    prediction = np.ones((144, 4)) * 100
+                    prediction[:, channel] = 100 + origin // 144
+                    prediction[:, 3] = prediction[:, 1]
+                    return prediction
+
+            actual = np.ones((50*144, 3)) * 100
+            actual[:, channel] = 0
+            data = SimpleNamespace(actual=actual, fixed_price=np.ones(144))
+            forecast = np.ones((144, 4)) * 100
+            forecast[:, channel] = 1
+            forecast[:, 3] = forecast[:, 1]
+            bundle = ScenarioFactory(data, Store()).build(45*144, forecast, "4-3")
+            # All realized observations and all simulated forecast revisions are identical.
+            np.testing.assert_array_equal(bundle["paths"], np.repeat(bundle["paths"][:1], len(bundle["paths"]), axis=0))
+            self.assertEqual(len(np.unique(bundle["groups"])), 1)
+            self.assertEqual(bundle["metadata"]["tree"], [])
+
+    def test_known_price_counterfactual_has_no_price_revelation(self):
+        origin = 60*144
+        changed = copy.deepcopy(self.data)
+        changed.actual[:, 2] = np.random.default_rng(13).uniform(.1, 2, len(changed.actual))
+        a_store = ForecastStore(self.data, kind="periodic")
+        b_store = ForecastStore(changed, kind="periodic")
+        a = ScenarioFactory(self.data, a_store).build(origin, a_store.get(origin), "4-3", known_price=True)
+        b = ScenarioFactory(changed, b_store).build(origin, b_store.get(origin), "4-3", known_price=True)
+        np.testing.assert_array_equal(a["paths"][:, :, :2], b["paths"][:, :, :2])
+        np.testing.assert_array_equal(a["groups"], b["groups"])
+        self.assertEqual(a["metadata"]["tree"], b["metadata"]["tree"])
+
     def test_scenario_tree_ignores_future_actuals_and_issues(self):
         origin=60*144
         changed=copy.deepcopy(self.data);changed.actual[origin:]*=20

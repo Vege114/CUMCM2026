@@ -36,7 +36,7 @@ def day_run(data,store,day,scenario,initial,method="deterministic",weight=0,
         point=forecast[:144-start,[0,3 if issued else 1,2]].copy()
         if not variable or known_price:point[:,2]=price[start:]
         if method=="risk":
-            bundle=factory.build(o,forecast,scenario,update_hours,raw_pv,anticipate)
+            bundle=factory.build(o,forecast,scenario,update_hours,raw_pv,anticipate,known_price=known_price)
             if known_price:bundle["paths"][:,:,2]=price[start:]
             plan,meta=optimize(bundle,states[start],point,weight=weight,
                                original=None if start==0 else original[start:],adjustable=issued)

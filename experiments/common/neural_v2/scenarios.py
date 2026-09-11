@@ -21,7 +21,7 @@ class ScenarioFactory:
             predictions[stage,start:]=p[:144-start,columns]
         return actual,predictions
 
-    def build(self,origin,forecast,scenario,update_hours=(6,12,18),raw_pv=False,anticipate=True):
+    def build(self,origin,forecast,scenario,update_hours=(6,12,18),raw_pv=False,anticipate=True,known_price=False):
         cfg=protocol()["risk"];issued=scenario in ("3","4-3")
         day,start=divmod(int(origin),144); stage=start//36;n=144-start
         # The latest donor day's final 24-hour issue must already be fully realized.
@@ -65,8 +65,8 @@ class ScenarioFactory:
                                   for r in selected_records])
             innovations*=ratio[boundary:][None,:,:]
             # Only observed prefix and the forecast released at this node can split it.
-            reveal_channels=3 if variable else 2
-            visible=np.concatenate((residual[indices,:boundary,:reveal_channels].reshape(count,-1),
+            reveal_channels=3 if variable and not known_price else 2
+            visible=np.concatenate((paths[:,:boundary,:reveal_channels].reshape(count,-1),
                                     innovations[:,:,:reveal_channels].reshape(count,-1)),axis=1)
             scales=np.maximum(visible.std(0),1e-6);visible=visible/scales
             updated=current.copy()
