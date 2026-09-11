@@ -1,0 +1,184 @@
+{
+  "old_signature": "5206d114040ed6c162316b5b356729cb2c006e25e657c4283f72333c28ef4995",
+  "new_signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+  "ordinary_case_monthly_equivalence_checks": 44,
+  "old_source_sha256": {
+    "evaluate.py": "43f38ee9a2e210fdeb5809d26ea57261a6f720f004e1e5e22227079082cb2ca6",
+    "scenarios.py": "6ba3d93e28f777da0e00390723b4569bcdd4da373643f1d07b0d664942e6bff8"
+  },
+  "new_source_sha256": {
+    "evaluate.py": "5324bd4584dfe5330c21f3e90f585c210ccc576512c3fe1bc3f7078c3d492a30",
+    "scenarios.py": "548329d2db25f3d224fe62b12a7e1158663349c7896315360718592ba9179322"
+  },
+  "scope": "Only known-price counterfactual excludes price from information branching; no ordinary policy changes",
+  "cases": [
+    {
+      "cache_key": "0135ad9caa613e5f",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "0d695527de9c0931",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "11dcc1f0cbd5f8d1",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "1344bf94b6ba9ed3",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "16e3a9445cdce170",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "1acfaf536d6e5435",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "2d529c50020ba6b5",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "31f9cb83c4aae83d",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "3c81861a0e254915",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "416b5b67676417b3",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "46272df7597f09b3",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "53a8d4b1b0b9b0b6",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "540e19939f24aeae",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "5478a3917c4f7159",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "5a6828376dabc98b",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "64a5879e1400da2f",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "6b53bb95cd240737",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "6edfa9deb4ec3b39",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "6ee262ce064de531",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "7e31a46ae0df9f6d",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "83c0a90944fc825e",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "8cb65acf4096b4b3",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "8f9151cfa5f3f9f4",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "9aa9f849181d3430",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "9b2de8e15a33b1f3",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a0953d3b4a0ce63a",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a1a575ec5994fe84",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a61a1d24c26e30a1",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a80ab48d42aaa1b2",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "abdda68ade2cb02f",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "ac7d0f0e72d7f3bb",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "b046af101c7471d7",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "b87651b80904af47",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "b8abf874bdcaf18b",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "bc7351163ac6c6ef",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "c6ff6be61b39ea79",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "c96d3b1a9acba030",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "ca31e70b2467d608",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "ccd9bb3c90d0467c",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "dce87df46036f66f",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "e1adab7c9c5c9092",
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "e9a067aa915e0309",
+      "action": "verified_equivalent_reuse"
+    }
+  ]
+}

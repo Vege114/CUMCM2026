@@ -1,0 +1,771 @@
+{
+  "old_signature": "f2b22ec2d46b90dcebb7da10aee867a311ddd633a7fdc0dafe684fdcadba03fb",
+  "new_signature": "114fd194c0a8f090903163d953e8a4f3390854e4c6a1737eb2d8372bc60ea4dd",
+  "old_source_sha256": "caf7ff0543c217d00123a642215d9b3fcfb8d4b19851805b0735332a136d5a4a",
+  "new_source_sha256": "fc7b67a415a3558852e037408499ee8992e092ec9c8270a7f1ee6c6f3cf5ce75",
+  "checked_source_change": "Only fixed-price branching excludes the price channel; Q2 has no branches and Q4 retains all three channels",
+  "identical_unaffected_tree_checks": 176,
+  "all_saved_days_readable_and_continuous": true,
+  "calibration_3": "discarded; rerun all three January weights before replay",
+  "formal_training_groups": 33,
+  "cases": [
+    {
+      "cache_key": "0135ad9caa613e5f",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "weekly",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "0d695527de9c0931",
+      "case": {
+        "scenario": "2",
+        "seed": 2026,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0.1,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "11dcc1f0cbd5f8d1",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "1344bf94b6ba9ed3",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "legacy",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "16e3a9445cdce170",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "periodic",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "1acfaf536d6e5435",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "retired_and_recompute"
+    },
+    {
+      "cache_key": "2d529c50020ba6b5",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "retired_and_recompute"
+    },
+    {
+      "cache_key": "31f9cb83c4aae83d",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "3c81861a0e254915",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "retired_and_recompute"
+    },
+    {
+      "cache_key": "416b5b67676417b3",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "yesterday",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "46272df7597f09b3",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "yesterday",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "53a8d4b1b0b9b0b6",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "540e19939f24aeae",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "weekly",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "5478a3917c4f7159",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "legacy",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "5a6828376dabc98b",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "64a5879e1400da2f",
+      "case": {
+        "scenario": "4-3",
+        "seed": 2026,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 82,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "6b53bb95cd240737",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 83,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "6edfa9deb4ec3b39",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "6ee262ce064de531",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "7e31a46ae0df9f6d",
+      "case": {
+        "scenario": "3",
+        "seed": 2026,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "retired_and_recompute"
+    },
+    {
+      "cache_key": "83c0a90944fc825e",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "weekly",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "8cb65acf4096b4b3",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 94,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "8f9151cfa5f3f9f4",
+      "case": {
+        "scenario": "4-2",
+        "seed": 3407,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "9aa9f849181d3430",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": true,
+        "known_price": false
+      },
+      "saved_days": 317,
+      "action": "retired_and_recompute"
+    },
+    {
+      "cache_key": "9b2de8e15a33b1f3",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a0953d3b4a0ce63a",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "periodic",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a1a575ec5994fe84",
+      "case": {
+        "scenario": "4-3",
+        "seed": 3407,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 58,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "a61a1d24c26e30a1",
+      "case": {
+        "scenario": "3",
+        "seed": 3407,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "retired_and_recompute"
+    },
+    {
+      "cache_key": "a80ab48d42aaa1b2",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "periodic",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "abdda68ade2cb02f",
+      "case": {
+        "scenario": "2",
+        "seed": 3407,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0.1,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "ac7d0f0e72d7f3bb",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": true,
+        "raw_pv": true,
+        "known_price": false
+      },
+      "saved_days": 30,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "b046af101c7471d7",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "legacy",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "b87651b80904af47",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "weekly",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "b8abf874bdcaf18b",
+      "case": {
+        "scenario": "3",
+        "seed": 42,
+        "kind": "legacy",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "bc7351163ac6c6ef",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 32,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "c6ff6be61b39ea79",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "yesterday",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "c96d3b1a9acba030",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "ca31e70b2467d608",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": true
+      },
+      "saved_days": 309,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "ccd9bb3c90d0467c",
+      "case": {
+        "scenario": "4-2",
+        "seed": 2026,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "dce87df46036f66f",
+      "case": {
+        "scenario": "4-3",
+        "seed": 42,
+        "kind": "periodic",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [
+          6,
+          12,
+          18
+        ],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "e1adab7c9c5c9092",
+      "case": {
+        "scenario": "2",
+        "seed": 42,
+        "kind": "mlp",
+        "method": "risk",
+        "weight": 0.1,
+        "update_hours": [],
+        "anticipate": true,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    },
+    {
+      "cache_key": "e9a067aa915e0309",
+      "case": {
+        "scenario": "4-2",
+        "seed": 42,
+        "kind": "yesterday",
+        "method": "deterministic",
+        "weight": 0,
+        "update_hours": [],
+        "anticipate": false,
+        "raw_pv": false,
+        "known_price": false
+      },
+      "saved_days": 334,
+      "action": "verified_equivalent_reuse"
+    }
+  ],
+  "retired_calibration_task_seconds": 195.83687433274463
+}

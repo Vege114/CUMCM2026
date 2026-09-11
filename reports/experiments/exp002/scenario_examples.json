@@ -1,0 +1,3404 @@
+[
+  {
+    "origin": 4464,
+    "source_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "selected_source_days": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      23,
+      25,
+      27,
+      29
+    ],
+    "paths": 16,
+    "latest_source_target": 4428,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.5087719298245614,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -13.75398615900382,
+      10.082593103448279,
+      -0.006125095785440611
+    ],
+    "variance_mean": [
+      332483.5892859504,
+      57014.16491451717,
+      0.005355502081396315
+    ]
+  },
+  {
+    "origin": 11232,
+    "source_days": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "selected_source_days": [
+      21,
+      25,
+      28,
+      32,
+      36,
+      39,
+      43,
+      47,
+      50,
+      54,
+      58,
+      61,
+      65,
+      69,
+      72,
+      76
+    ],
+    "paths": 16,
+    "latest_source_target": 11196,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -24.541592779444144,
+      4.544831954048509,
+      -0.007907668505384335
+    ],
+    "variance_mean": [
+      32284.606555655475,
+      99968.14894229498,
+      0.003545341721836964
+    ]
+  },
+  {
+    "origin": 24624,
+    "source_days": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169
+    ],
+    "selected_source_days": [
+      114,
+      118,
+      121,
+      125,
+      129,
+      132,
+      136,
+      140,
+      143,
+      147,
+      151,
+      154,
+      158,
+      162,
+      165,
+      169
+    ],
+    "paths": 16,
+    "latest_source_target": 24588,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      74.52177735348658,
+      -58.17235460600068,
+      0.011978225942326358
+    ],
+    "variance_mean": [
+      53169.2747607686,
+      179974.9062008739,
+      0.0031434167112822237
+    ]
+  },
+  {
+    "origin": 38160,
+    "source_days": [
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263
+    ],
+    "selected_source_days": [
+      208,
+      212,
+      215,
+      219,
+      223,
+      226,
+      230,
+      234,
+      237,
+      241,
+      245,
+      248,
+      252,
+      256,
+      259,
+      263
+    ],
+    "paths": 16,
+    "latest_source_target": 38124,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -92.29351926487509,
+      26.39250163775798,
+      -0.01196734500015302
+    ],
+    "variance_mean": [
+      58354.5698598693,
+      133458.44202528714,
+      0.0034180216414845008
+    ]
+  },
+  {
+    "origin": 50976,
+    "source_days": [
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352
+    ],
+    "selected_source_days": [
+      297,
+      301,
+      304,
+      308,
+      312,
+      315,
+      319,
+      323,
+      326,
+      330,
+      334,
+      337,
+      341,
+      345,
+      348,
+      352
+    ],
+    "paths": 16,
+    "latest_source_target": 50940,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      21.918746588231627,
+      -57.30451356337916,
+      0.014682187624470818
+    ],
+    "variance_mean": [
+      29556.41713883164,
+      44408.747039478505,
+      0.00238330180276942
+    ]
+  },
+  {
+    "origin": 4464,
+    "source_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "selected_source_days": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      23,
+      25,
+      27,
+      29
+    ],
+    "paths": 16,
+    "latest_source_target": 4428,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.5087719298245614,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -13.75398615900382,
+      10.082593103448279,
+      -0.006125095785440611
+    ],
+    "variance_mean": [
+      332483.5892859504,
+      57014.16491451717,
+      0.005355502081396315
+    ]
+  },
+  {
+    "origin": 11232,
+    "source_days": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "selected_source_days": [
+      21,
+      25,
+      28,
+      32,
+      36,
+      39,
+      43,
+      47,
+      50,
+      54,
+      58,
+      61,
+      65,
+      69,
+      72,
+      76
+    ],
+    "paths": 16,
+    "latest_source_target": 11196,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -24.541592779444144,
+      4.544831954048509,
+      -0.007907668505384335
+    ],
+    "variance_mean": [
+      32284.606555655475,
+      99968.14894229498,
+      0.003545341721836964
+    ]
+  },
+  {
+    "origin": 24624,
+    "source_days": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169
+    ],
+    "selected_source_days": [
+      114,
+      118,
+      121,
+      125,
+      129,
+      132,
+      136,
+      140,
+      143,
+      147,
+      151,
+      154,
+      158,
+      162,
+      165,
+      169
+    ],
+    "paths": 16,
+    "latest_source_target": 24588,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      74.52177735348658,
+      -58.17235460600068,
+      0.011978225942326358
+    ],
+    "variance_mean": [
+      53169.2747607686,
+      179974.9062008739,
+      0.0031434167112822237
+    ]
+  },
+  {
+    "origin": 38160,
+    "source_days": [
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263
+    ],
+    "selected_source_days": [
+      208,
+      212,
+      215,
+      219,
+      223,
+      226,
+      230,
+      234,
+      237,
+      241,
+      245,
+      248,
+      252,
+      256,
+      259,
+      263
+    ],
+    "paths": 16,
+    "latest_source_target": 38124,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -92.29351926487509,
+      26.39250163775798,
+      -0.01196734500015302
+    ],
+    "variance_mean": [
+      58354.5698598693,
+      133458.44202528714,
+      0.0034180216414845008
+    ]
+  },
+  {
+    "origin": 50976,
+    "source_days": [
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352
+    ],
+    "selected_source_days": [
+      297,
+      301,
+      304,
+      308,
+      312,
+      315,
+      319,
+      323,
+      326,
+      330,
+      334,
+      337,
+      341,
+      345,
+      348,
+      352
+    ],
+    "paths": 16,
+    "latest_source_target": 50940,
+    "issued_forecast_allowed": false,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      21.918746588231627,
+      -57.30451356337916,
+      0.014682187624470818
+    ],
+    "variance_mean": [
+      29556.41713883164,
+      44408.747039478505,
+      0.00238330180276942
+    ]
+  },
+  {
+    "origin": 4464,
+    "source_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "selected_source_days": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      23,
+      25,
+      27,
+      29
+    ],
+    "paths": 16,
+    "latest_source_target": 4428,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.5087719298245614,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          7,
+          15,
+          9,
+          5,
+          4,
+          14,
+          11,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          12,
+          8,
+          2,
+          6,
+          10,
+          0,
+          13,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          1,
+          11,
+          14,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          4,
+          9,
+          7,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          3,
+          13,
+          6,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          10,
+          8,
+          2,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          11,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          5,
+          14
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          15,
+          9
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          7,
+          4
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          3,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          6,
+          13
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          8,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          2,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -13.75398615900382,
+      3.5863091954022996,
+      -0.006125095785440611
+    ],
+    "variance_mean": [
+      332483.5892859504,
+      75169.28508968055,
+      0.005355502081396315
+    ]
+  },
+  {
+    "origin": 11232,
+    "source_days": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "selected_source_days": [
+      21,
+      25,
+      28,
+      32,
+      36,
+      39,
+      43,
+      47,
+      50,
+      54,
+      58,
+      61,
+      65,
+      69,
+      72,
+      76
+    ],
+    "paths": 16,
+    "latest_source_target": 11196,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          12,
+          2,
+          14,
+          0,
+          13,
+          10,
+          1,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          8,
+          4,
+          11,
+          6,
+          3,
+          9,
+          5,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          13,
+          15,
+          1,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          0,
+          14,
+          10,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          4,
+          3,
+          8,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          5,
+          11,
+          9,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          13,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          15,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          14,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          0,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          4,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          8,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          9,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          7,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -24.541592779444144,
+      22.510329751648623,
+      -0.007907668505384335
+    ],
+    "variance_mean": [
+      32284.606555655475,
+      83765.92202538137,
+      0.003545341721836964
+    ]
+  },
+  {
+    "origin": 24624,
+    "source_days": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169
+    ],
+    "selected_source_days": [
+      114,
+      118,
+      121,
+      125,
+      129,
+      132,
+      136,
+      140,
+      143,
+      147,
+      151,
+      154,
+      158,
+      162,
+      165,
+      169
+    ],
+    "paths": 16,
+    "latest_source_target": 24588,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          10,
+          8,
+          6,
+          14,
+          12,
+          11,
+          0,
+          4
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          2,
+          15,
+          13,
+          3,
+          7,
+          1,
+          9,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          11,
+          0,
+          4,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          8,
+          12,
+          14,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          13,
+          1,
+          5,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          15,
+          2,
+          9,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          4,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          6,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          8,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          14,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          7,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          5,
+          13
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          9,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          2,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      74.52177735348658,
+      -65.43302682201234,
+      0.011978225942326358
+    ],
+    "variance_mean": [
+      53169.2747607686,
+      99081.93942097636,
+      0.0031434167112822237
+    ]
+  },
+  {
+    "origin": 38160,
+    "source_days": [
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263
+    ],
+    "selected_source_days": [
+      208,
+      212,
+      215,
+      219,
+      223,
+      226,
+      230,
+      234,
+      237,
+      241,
+      245,
+      248,
+      252,
+      256,
+      259,
+      263
+    ],
+    "paths": 16,
+    "latest_source_target": 38124,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          15,
+          13,
+          10,
+          12,
+          14,
+          11,
+          0,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          7,
+          4,
+          9,
+          6,
+          8,
+          1,
+          3,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          11,
+          12,
+          10,
+          14
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          2,
+          13,
+          15,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          7,
+          8,
+          4,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          9,
+          3,
+          1,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          12,
+          14
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          10,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          2,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          13,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          4,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          6,
+          8
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          5,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          1,
+          9
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -92.29351926487509,
+      25.6756844838834,
+      -0.01196734500015302
+    ],
+    "variance_mean": [
+      58354.5698598693,
+      90820.37421903752,
+      0.0034180216414845008
+    ]
+  },
+  {
+    "origin": 50976,
+    "source_days": [
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352
+    ],
+    "selected_source_days": [
+      297,
+      301,
+      304,
+      308,
+      312,
+      315,
+      319,
+      323,
+      326,
+      330,
+      334,
+      337,
+      341,
+      345,
+      348,
+      352
+    ],
+    "paths": 16,
+    "latest_source_target": 50940,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          0,
+          5,
+          2,
+          3,
+          1,
+          4,
+          8,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          13,
+          15,
+          7,
+          14,
+          12,
+          9,
+          11,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          8,
+          6,
+          4,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          5,
+          3,
+          1,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          15,
+          13,
+          7,
+          9
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          14,
+          12,
+          11,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          4,
+          8
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          2,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          5,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          0,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          13,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          9,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          14,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          11,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      21.918746588231627,
+      -47.907201526622636,
+      0.014682187624470818
+    ],
+    "variance_mean": [
+      29556.41713883164,
+      36814.01386957849,
+      0.00238330180276942
+    ]
+  },
+  {
+    "origin": 4464,
+    "source_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "selected_source_days": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      23,
+      25,
+      27,
+      29
+    ],
+    "paths": 16,
+    "latest_source_target": 4428,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.5087719298245614,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          7,
+          15,
+          9,
+          5,
+          14,
+          4,
+          12,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          11,
+          8,
+          6,
+          2,
+          10,
+          0,
+          13,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          14,
+          5,
+          4,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          12,
+          7,
+          9,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          3,
+          13,
+          0,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          10,
+          8,
+          2,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          5,
+          14
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          4,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          12,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          9,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          0,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          6,
+          13
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          8,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          2,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -13.75398615900382,
+      3.5863091954022996,
+      -0.006125095785440611
+    ],
+    "variance_mean": [
+      332483.5892859504,
+      75169.28508968055,
+      0.005355502081396315
+    ]
+  },
+  {
+    "origin": 11232,
+    "source_days": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "selected_source_days": [
+      21,
+      25,
+      28,
+      32,
+      36,
+      39,
+      43,
+      47,
+      50,
+      54,
+      58,
+      61,
+      65,
+      69,
+      72,
+      76
+    ],
+    "paths": 16,
+    "latest_source_target": 11196,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          7,
+          9,
+          5,
+          3,
+          6,
+          4,
+          11,
+          8
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          15,
+          10,
+          13,
+          1,
+          0,
+          2,
+          14,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          4,
+          3,
+          8,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          5,
+          9,
+          7,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          1,
+          0,
+          2,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          10,
+          13,
+          14,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          4,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          8,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          9,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          7,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          15,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          1,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          10,
+          13
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          14,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -24.541592779444144,
+      22.510329751648623,
+      -0.007907668505384335
+    ],
+    "variance_mean": [
+      32284.606555655475,
+      83765.92202538137,
+      0.003545341721836964
+    ]
+  },
+  {
+    "origin": 24624,
+    "source_days": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169
+    ],
+    "selected_source_days": [
+      114,
+      118,
+      121,
+      125,
+      129,
+      132,
+      136,
+      140,
+      143,
+      147,
+      151,
+      154,
+      158,
+      162,
+      165,
+      169
+    ],
+    "paths": 16,
+    "latest_source_target": 24588,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          5,
+          1,
+          13,
+          15,
+          7,
+          3,
+          9,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          11,
+          0,
+          14,
+          12,
+          4,
+          8,
+          10,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          9,
+          3,
+          5,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          2,
+          7,
+          13,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          10,
+          14,
+          12,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          11,
+          4,
+          8,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          9,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          5,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          1,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          13,
+          2
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          12,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          14,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          8,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          4,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      74.52177735348658,
+      -65.43302682201234,
+      0.011978225942326358
+    ],
+    "variance_mean": [
+      53169.2747607686,
+      99081.93942097636,
+      0.0031434167112822237
+    ]
+  },
+  {
+    "origin": 38160,
+    "source_days": [
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263
+    ],
+    "selected_source_days": [
+      208,
+      212,
+      215,
+      219,
+      223,
+      226,
+      230,
+      234,
+      237,
+      241,
+      245,
+      248,
+      252,
+      256,
+      259,
+      263
+    ],
+    "paths": 16,
+    "latest_source_target": 38124,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          12,
+          15,
+          10,
+          13,
+          14,
+          11,
+          9,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          7,
+          2,
+          4,
+          6,
+          8,
+          1,
+          5,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          11,
+          12,
+          14,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          13,
+          0,
+          15,
+          9
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          7,
+          4,
+          2,
+          8
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          6,
+          3,
+          1,
+          5
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          12,
+          14
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          10,
+          11
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          0,
+          13
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          15,
+          9
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          2,
+          8
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          4,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          5,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          3,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      -92.29351926487509,
+      25.6756844838834,
+      -0.01196734500015302
+    ],
+    "variance_mean": [
+      58354.5698598693,
+      90820.37421903752,
+      0.0034180216414845008
+    ]
+  },
+  {
+    "origin": 50976,
+    "source_days": [
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352
+    ],
+    "selected_source_days": [
+      297,
+      301,
+      304,
+      308,
+      312,
+      315,
+      319,
+      323,
+      326,
+      330,
+      334,
+      337,
+      341,
+      345,
+      348,
+      352
+    ],
+    "paths": 16,
+    "latest_source_target": 50940,
+    "issued_forecast_allowed": true,
+    "shrinkage_weight": 0.6666666666666666,
+    "tree": [
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 1,
+        "members": [
+          0,
+          5,
+          2,
+          1,
+          4,
+          3,
+          8,
+          6
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 36,
+        "parent": 0,
+        "node": 2,
+        "members": [
+          13,
+          15,
+          7,
+          14,
+          12,
+          9,
+          11,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 3,
+        "members": [
+          6,
+          8,
+          4,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 1,
+        "node": 4,
+        "members": [
+          1,
+          2,
+          5,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 5,
+        "members": [
+          15,
+          13,
+          7,
+          9
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 72,
+        "parent": 2,
+        "node": 6,
+        "members": [
+          14,
+          12,
+          11,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 7,
+        "members": [
+          4,
+          8
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 3,
+        "node": 8,
+        "members": [
+          6,
+          0
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 9,
+        "members": [
+          5,
+          1
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 4,
+        "node": 10,
+        "members": [
+          2,
+          3
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 11,
+        "members": [
+          13,
+          15
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 5,
+        "node": 12,
+        "members": [
+          9,
+          7
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 13,
+        "members": [
+          14,
+          12
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      },
+      {
+        "reveal_slot": 108,
+        "parent": 6,
+        "node": 14,
+        "members": [
+          11,
+          10
+        ],
+        "information": "realized prefix and newly issued forecast revision"
+      }
+    ],
+    "terminal_uncertainty_preserved": true,
+    "bias_mean": [
+      21.918746588231627,
+      -47.907201526622636,
+      0.014682187624470818
+    ],
+    "variance_mean": [
+      29556.41713883164,
+      36814.01386957849,
+      0.00238330180276942
+    ]
+  }
+]
