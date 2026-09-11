@@ -47,6 +47,7 @@ export function ReportContent(){
    title=`问题 ${scenario} · ${chosenDay} · ${item.title}`;
   }else if(item.scope==="case"){
    rows=rows.filter(row=>row.scenario===scenario);sourceRows=rows;
+   title=`问题 ${scenario} · ${item.id.startsWith("failure-")&&rows.length?`全年最贵日 ${rows[0].date} · `:""}${item.title}`;
   }else if(item.scope==="history"){
    rows=rows.filter(row=>row.route==="正式调度"?row.task===scenario:row.route.startsWith("正式预测问题")?row.route.startsWith(`正式预测问题${scenario}/`):row.task===target);sourceRows=rows;title=`问题 ${scenario} · ${item.title}`;
   }else if(item.scope==="annual"){
