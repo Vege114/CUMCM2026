@@ -158,7 +158,7 @@ def derive(run_id="exp002"):
                     **{key: float(peers.loc[current, key]-peers.loc[previous, key])
                        for key in ("planned_cost", "up_cost", "down_cost", "emergency_cost", "total_cost", "emergency_kwh")}})
         pd.DataFrame(contributions).to_csv(out / "core_contributions.csv", index=False)
-        cases = []
+        cases, storage = [], []
         for row in main.itertuples():
             date = row.worst_date
             day_index = (pd.Timestamp(date)-pd.Timestamp("2025-02-01")).days
@@ -167,6 +167,8 @@ def derive(run_id="exp002"):
                 d = {k: f[k][day_index].copy() for k in f.files}
             prediction = store.get(absolute_day*144, issued=row.scenario in ("3", "4-3"))
             pv_col = 3 if row.scenario in ("3", "4-3") else 1
+            storage.extend({"scenario": row.scenario, "date": date, "hour": t/6,
+                            "soc": float(d["states"][t])} for t in range(145))
             for t in range(144):
                 cases.append({"scenario": row.scenario, "date": date, "hour": (t+.5)/6,
                     "original": float(d["original"][t]), "final": float(d["final"][t]), "emergency": float(d["emergency"][t]),
@@ -174,6 +176,7 @@ def derive(run_id="exp002"):
                     "predicted_net": float((prediction[t, 0]-prediction[t, pv_col])/6), "price": float(d["price"][t]),
                     "interval_cost": float(d["fees"][t].sum())})
         pd.DataFrame(cases).to_csv(out / "failure_intervals.csv", index=False)
+        pd.DataFrame(storage).to_csv(out / "failure_storage.csv", index=False)
         costs[costs.name == "primary"].to_csv(out / "seed_cost_results.csv", index=False)
         costs[costs.name == "primary"].groupby("scenario").agg(
             mean_cost=("total_cost", "mean"), std_cost=("total_cost", "std"),
@@ -372,6 +375,7 @@ def figures(run_id="exp002"):
     fig.legend(handles, labels, loc="outside lower center", ncol=4)
     save(fig, "cost-components")
     failures = pd.read_csv(out / "failure_intervals.csv", dtype={"scenario": str})
+    storage = pd.read_csv(out / "failure_storage.csv", dtype={"scenario": str})
     fig, axes = plt.subplots(4, 2, figsize=(13, 12), layout="constrained")
     for row, scenario in zip(axes, SCENARIOS):
         x = failures[failures.scenario == scenario]
@@ -379,7 +383,8 @@ def figures(run_id="exp002"):
             row[0].plot(x.hour, x[key], label=label, linewidth=1.1)
         row[0].set(title=f"问题 {scenario} · 最贵日 {x.date.iloc[0]}", ylabel="十分钟电量（kWh）")
         row[0].legend(fontsize=7, ncol=2)
-        row[1].plot(x.hour, x.soc, color="#267c70")
+        states = storage[storage.scenario == scenario]
+        row[1].plot(states.hour, states.soc, color="#267c70")
         row[1].axhline(1200, color="#777", ls="--", linewidth=.8)
         row[1].axhline(10800, color="#777", ls="--", linewidth=.8)
         row[1].set(title="实际储电量轨迹", ylabel="kWh", ylim=(500, 11500))

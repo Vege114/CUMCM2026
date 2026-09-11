@@ -83,7 +83,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
     query("technical_path", [{"step": i+1, "title": t, "input": a, "operation": b, "output": c}
                               for i, (t, a, b, c) in enumerate(ROUTE)], ["protocol.json", "methods.md"], "源代码与已冻结实验协议定义的九步流程。")
     for name in ("forecast_decomposition", "tree_nodes", "official_forecast_comparison", "specified_dates",
-                 "specified_intervals", "battery_blocks", "emergency_periods", "failure_intervals", "solver_summary",
+                 "specified_intervals", "battery_blocks", "emergency_periods", "failure_intervals", "failure_storage", "solver_summary",
                  "phase_timing", "seed_cost_results", "monthly_dispatch", "core_contributions"):
         path = out / f"{name}.csv"
         if path.exists():
@@ -231,7 +231,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
             {"scenario": "问题", "seed": "种子", "total_cost": "全年费用/元", "daily_cvar90": "日费用CVaR90/元", "final_soc": "期末储电量/kWh"})
         calls = int(main.solver_calls.sum())
         sections[5] += f"\n正式种子四个问题共 {calls} 次风险求解，其中 {int(main.timeout_count.sum())} 次超时、{int(main.fallback_count.sum())} 次回退，{int(main.gap_certified_count.sum())} 次有不超过 1% 的全局差距证书。两秒预算限制的是求解器阶段；组装、可行初始计划及独立核验另计。费用结果可以比较，不能把全部可行解称为全局最优解。\n"
-        sections[5] += "\n失败案例按各问题最贵的实际日期固定选择。费用同时受真实净需求、电价、预测误差及日前计划影响；下图用于定位误差和储能不足的时段，不能单凭最贵日期归因于网络。预测误差降低也不保证结算费用降低，因为上调、下调与紧急购电具有不同代价。\n"
+        sections[5] += "\n失败案例按各问题最贵的实际日期固定选择。费用同时受真实净需求、电价、预测误差及日前计划影响；下图用于定位误差和储能不足的时段，不能单凭最贵日期归因于网络。预测误差降低也不保证结算费用降低，因为上调、下调与紧急购电具有不同代价。区间电量画在区间中点，储能轨迹使用 00:00—24:00 的 145 个实际状态节点。\n"
         for row in main.itertuples():
             base = costs[(costs.scenario == row.scenario) & (costs.seed == 42) & (costs.name == "new_deterministic")].iloc[0]
             delta = row.total_cost-base.total_cost
@@ -337,8 +337,8 @@ def build(experiment="exp002", partial=False, code_commit=None):
             {"type": "chart", "id": "failure-energy", "queryId": "failure_intervals", "title": "最贵日期的供需与购电", "scope": "case",
              "spec": {"type": "line", "x": "hour", "y": "actual_net", "fields": ["actual_net", "predicted_net", "final", "emergency"], "stackable": False, "yLabel": "十分钟电量（kWh）",
                       "legend": {"labels": {"actual_net": "实际净需求", "predicted_net": "凌晨预测净需求", "final": "最终购电", "emergency": "紧急购电"}}}},
-            {"type": "chart", "id": "failure-soc", "queryId": "failure_intervals", "title": "最贵日期的实际储电量", "scope": "case",
-             "spec": {"type": "line", "x": "hour", "y": "soc", "yLabel": "千瓦时"}}]
+            {"type": "chart", "id": "failure-soc", "queryId": "failure_storage", "title": "最贵日期的实际储电量 · 145 个状态节点", "scope": "case",
+             "spec": {"type": "line", "x": "hour", "y": "soc", "xLabel": "小时（状态时刻）", "yLabel": "千瓦时"}}]
     if "solver_summary" in queries:
         blocks[5]["blocks"].append({"type": "table", "id": "solver-summary", "queryId": "solver_summary", "title": "三个种子的求解与证书记录", "scope": "case",
                                     "columns": [["seed", "种子"], ["calls", "调用次数"], ["timed_out", "超时"], ["fallback", "回退"], ["gap_known", "有全局差距"], ["gap_met", "差距≤1%"], ["mean_solver_seconds", "平均秒数"]]})
