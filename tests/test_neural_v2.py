@@ -11,6 +11,18 @@ from experiments.common.neural_v2.risk import optimize, weighted_cvar
 from experiments.common.neural_v2.scenarios import ScenarioFactory
 
 
+def setUpModule():
+    # SciPy/HiGHS owns a process-global thread pool. The frozen v1 tests use
+    # its default size, while v2 explicitly uses one thread. Isolate the test
+    # module just as the production seven-stage CLI uses separate processes.
+    from scipy.optimize._highspy._core import _Highs
+    _Highs.resetGlobalScheduler(True)
+
+
+def tearDownModule():
+    setUpModule()
+
+
 class ForecastInformationTests(unittest.TestCase):
     def setUp(self):self.data=Data()
 
