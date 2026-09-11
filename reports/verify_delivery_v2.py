@@ -83,7 +83,7 @@ def verify(experiment="exp002"):
                "training-count-and-time", "fixed-network-architecture", "scenario-information-tree",
                "three-layer-cost-comparison", "cost-components", "failure-case-and-storage",
                "cost-versus-tail-risk", "solver-gap-and-fallback", "lead-and-generating-error",
-               "daily-emergency-and-monthly-cost"]
+               "daily-emergency-and-monthly-cost", "worked-example-training-loss"]
     assert all((report / "figures" / f"{name}.{ext}").stat().st_size > 1000 for name in figures for ext in ("png", "svg"))
     model = json.loads((report / "model_checks.json").read_text())
     assert model["formal_training_groups"] == 33 and model["gpu_output_all"]

@@ -90,6 +90,8 @@ def derive(run_id="exp002"):
                 "prediction": float(pred[t, j]), "actual": float(actual[t])})
     pd.DataFrame(decomposition).to_csv(out / "forecast_decomposition.csv", index=False)
     metadata = next(row for row in training if row["month"] == 3 and row["seed"] == 42)
+    pd.DataFrame({"epoch": np.arange(1, metadata["epochs"]+1), "loss": metadata["history"]["loss"],
+                  "val_loss": metadata["history"]["val_loss"]}).to_csv(out / "training_trace.csv", index=False)
     x, _, _, scale = data.features([origin], int(metadata["train_cutoff"]))
     slot = 60
     (out / "worked_example.json").write_text(json.dumps({
@@ -364,6 +366,14 @@ def figures(run_id="exp002"):
     ax.set(xlim=(-1.7, 10), ylim=(-.7, 3.7), title="一个检查点 · 四个独立分支 · 合计 4356 个参数")
     ax.axis("off")
     save(fig, "fixed-network-architecture")
+    trace = pd.read_csv(out / "training_trace.csv")
+    fig, ax = plt.subplots(figsize=(8, 4), layout="constrained")
+    ax.plot(trace.epoch, trace.loss, label="训练目标", color="#2b788b")
+    ax.plot(trace.epoch, trace.val_loss, label="验证目标", color="#cc8a3d")
+    ax.set(title="3 月检查点 · 种子 42 · 四分支平均 Huber 损失与 L2 正则", xlabel="训练轮次", ylabel="标准化训练目标")
+    ax.grid(alpha=.15)
+    ax.legend()
+    save(fig, "worked-example-training-loss")
     if not (out / "dispatch_metrics.csv").exists():
         return
     costs = pd.read_csv(out / "dispatch_metrics.csv", dtype={"scenario": str})

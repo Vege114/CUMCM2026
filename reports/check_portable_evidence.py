@@ -14,7 +14,7 @@ def run():
     out = ROOT / "data/results/exp002"
     assert (out / "dispatch_metrics.csv").exists(), "Complete annual results are required"
     derive()
-    names = ["january_baselines.csv", "forecast_decomposition.csv", "tree_example.json", "tree_nodes.csv", "worked_example.json",
+    names = ["january_baselines.csv", "training_trace.csv", "forecast_decomposition.csv", "tree_example.json", "tree_nodes.csv", "worked_example.json",
              "official_forecast_comparison.csv", "failure_intervals.csv", "failure_storage.csv", "core_contributions.csv",
              "seed_cost_results.csv", "seed_cost_statistics.csv", "monthly_dispatch.csv",
              "solver_summary.csv", "phase_timing.csv", "evaluation_walltime.json"]
