@@ -154,6 +154,8 @@ def build(experiment="exp002", partial=False, code_commit=None):
 额外扰动检查把二月及以后的实测与预报放大 100 倍，四个问题共 70 个一月决策时刻的预测、路径、概率与信息树逐值一致，训练标签和验证特征也不变。完整证据见 calibration_causality_check.json；购电非预见性另由小型可穷举实例核验。固定墙钟预算的两次搜索可能返回不同可行解，因此因果性检查比较信息和模型输入，并把数值求解重现性单独说明。
 
 固定电价问题的树分支还额外检查了价格信息隔离：任意改变可变电价历史，问题 3 的实际供需场景与信息节点都必须不变。检查发现并修正过一次分支信息错误；受影响的六组问题 3 风险回放与其一月权重校准已作废重算。未受影响的缓存只有在源代码差异和逐月场景等价性通过检查后才保留，迁移记录见 causal_tree_fix_migration.json。所有正式成绩使用修正后的协议，训练仍为 33 组。
+
+补充边界检查发现，非负裁剪之前的隐含误差不能当作已经观测到的发电或负载。修正后，观测与预报修订完全相同的路径不会分支；负载、光伏和价格裁剪均有回归测试。逐项比较保留了 10146 个等价日期，作废了 1694 个受影响日期，并重新校准问题 3、4-3，记录见 clipped_information_fix_migration.json。已知未来价格的反事实同样排除价格信息分支，记录见 known_price_information_migration.json。作废计算的耗时计入本轮总运行段，不隐藏重算成本。
 """
     sections[3] = "## 4. 逐步技术讲解\n\n" + (ROOT / "reports/templates/methods-neural-v2.md").read_text()
     if (out / "worked_example.json").exists():
