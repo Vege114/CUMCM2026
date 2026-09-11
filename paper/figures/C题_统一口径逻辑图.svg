@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="580" viewBox="0 0 1250 580">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#337b74"/></marker></defs>
+<rect width="1250" height="580" fill="#f3f6fa"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="55" y="59" font-size="30" font-weight="700" fill="#21384a">C题 · 团队统一建模主线</text>
+<text x="55" y="90" font-size="16" fill="#647589">2026-09-11统一版 · 方案设计，尚未数值验证</text>
+<g fill="none" stroke="#337b74" stroke-width="3" marker-end="url(#arrow)">
+<path d="M399 198 H444"/><path d="M799 198 H844"/><path d="M1025 275 V339"/><path d="M851 423 H806"/><path d="M451 423 H406"/>
+</g><g><rect x="55" y="125" width="340" height="146" rx="14" fill="white" stroke="#337b74" stroke-width="2"/><rect x="55" y="125" width="340" height="48" rx="12" fill="#337b74"/><text x="77" y="157" fill="white" font-size="21" font-weight="700">1  共同底座</text><text x="225" y="217" text-anchor="middle" fill="#283f51" font-size="16">总程90% · 硬互斥 · 能量平衡</text></g>
+<g><rect x="455" y="125" width="340" height="146" rx="14" fill="white" stroke="#337b74" stroke-width="2"/><rect x="455" y="125" width="340" height="48" rx="12" fill="#337b74"/><text x="477" y="157" fill="white" font-size="21" font-weight="700">2  问题1｜典型日</text><text x="625" y="217" text-anchor="middle" fill="#283f51" font-size="16">电费→运行平稳性→购电量</text></g>
+<g><rect x="855" y="125" width="340" height="146" rx="14" fill="white" stroke="#337b74" stroke-width="2"/><rect x="855" y="125" width="340" height="48" rx="12" fill="#337b74"/><text x="877" y="157" fill="white" font-size="21" font-weight="700">3  问题2｜历史预测</text><text x="1025" y="217" text-anchor="middle" fill="#283f51" font-size="16">滚动多周期＋背景×状态＋备用</text></g>
+<g><rect x="855" y="350" width="340" height="146" rx="14" fill="white" stroke="#337b74" stroke-width="2"/><rect x="855" y="350" width="340" height="48" rx="12" fill="#337b74"/><text x="877" y="382" fill="white" font-size="21" font-weight="700">4  问题3｜预报更新</text><text x="1025" y="442" text-anchor="middle" fill="#283f51" font-size="16">提前量校准＋未来更新机会</text></g>
+<g><rect x="455" y="350" width="340" height="146" rx="14" fill="white" stroke="#337b74" stroke-width="2"/><rect x="455" y="350" width="340" height="48" rx="12" fill="#337b74"/><text x="477" y="382" fill="white" font-size="21" font-weight="700">5  问题4｜价格变化</text><text x="625" y="442" text-anchor="middle" fill="#283f51" font-size="16">滚动预测电价 · 分别重算问2/3</text></g>
+<g><rect x="55" y="350" width="340" height="146" rx="14" fill="white" stroke="#337b74" stroke-width="2"/><rect x="55" y="350" width="340" height="48" rx="12" fill="#337b74"/><text x="77" y="382" fill="white" font-size="21" font-weight="700">6  统一验收</text><text x="225" y="442" text-anchor="middle" fill="#283f51" font-size="16">因果信息 · 连续SOC · 费用与模板</text></g>
+<text x="55" y="545" font-size="16" fill="#647589">阅读顺序：上排从左向右 → 下排从右向左；未决结算、时标和数据问题见《团队统一建模口径》。</text>
+</g></svg>

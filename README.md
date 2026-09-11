@@ -1,10 +1,14 @@
 # CUMCM 2026 · C 题
 
-**微网与外部电网电力调控策略**。当前已完成题目转换、原始附件整理和仓库初始化，尚未开展建模实验。
+**微网与外部电网电力调控策略**。当前已完成题目转换、原始附件整理及两阶段方案统一，尚未实现调度求解或验证数值收益。
+
+## 当前统一方案
+
+以队友最新交接的第四轮决策为准，先读[团队统一建模口径](paper/团队统一建模口径.md)，再读[第一阶段分析](paper/第一阶段_赛题深度结构化分析.md)和[第二阶段模型](paper/第二阶段_各小问模型构建与创新设计.md)。旧稿在paper/archive，仅作追溯。四问主线为：三层词典序调度→滚动周期预测与备用→提前量感知多阶段风险调度→滚动电价预测。
 
 ## Python 环境
 
-统一使用 **Python 3.12 + TensorFlow 2.21 / `tf.keras`**，强化学习使用 **Gymnasium** 定义环境、状态、动作与交互接口，策略网络及训练代码使用 TensorFlow。Gymnasium 本身不提供 PPO、DQN 等训练算法，具体算法随建模实验实现。
+既有环境配置为 **Python 3.12 + TensorFlow 2.21 / `tf.keras`**；已安装依赖不代表模型路线，当前主方案不要求强化学习。若后续另做强化学习对照，则使用 **Gymnasium** 定义环境、状态、动作与交互接口，策略网络及训练代码使用 TensorFlow。Gymnasium 本身不提供 PPO、DQN 等训练算法，具体算法随建模实验实现。
 
 依赖在 [pyproject.toml](pyproject.toml) 中声明，精确版本及包校验信息由 `uv.lock` 锁定；[uv](https://docs.astral.sh/uv/getting-started/installation/) 管理仓库根目录的 `.venv/`。`.venv/`、`venv/`、`env/` 和 `.cache/` 已加入 `.gitignore`，不提交环境和下载缓存。
 
@@ -55,7 +59,7 @@ experiments/               实验区
   problem3/                问题 3：引入日内预报的调整策略
   problem4/                问题 4：波动电价下复算问题 2、3
   record-template.md       实验记录模板
-paper/                     LaTeX 写作区，仅 .gitkeep 占位
+paper/                     统一口径、两阶段分析、新版流程图及旧稿归档
 data/                      数据区
   raw/                     附件 1–4 原始数据
   templates/               附件 5 的五个原始结果模板
@@ -75,6 +79,8 @@ uv.lock                    可复现的依赖锁文件
 4. 将核验后的结果整理到 `data/results/`；论文模板后续由小组加入 `paper/`。
 
 ## 协作约定
+
+本轮问题 2—4 的 GPU 神经网络预测与基础调度见 [实验报告索引](reports/latest.md)，可复用的八部分报告模板和历史对比工具见 [报告目录说明](reports/README.md)。`main` 同步保存完整报告包；训练代码、GPU 依赖和四个结果工作簿保存在 [codex/neural-forecasting-v1 实验分支](https://github.com/Vege114/CUMCM2026/tree/codex/neural-forecasting-v1)。
 
 - 原始 PDF、`data/raw/` 和 `data/templates/` 保持原始字节；清洗数据与填好的结果另存。
 - 实验记录写明输入、假设、参数、随机种子（如使用）、依赖版本、运行命令和 Git 提交，论文引用可复现的结果。

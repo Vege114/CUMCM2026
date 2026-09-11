@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "preview_url": "http://127.0.0.1:4173/?view=1",
+  "tested_window_width_px": 412,
+  "tested_content_width_px": 397,
+  "document_scroll_width_px": 397,
+  "sections": 8,
+  "console_errors": [],
+  "checked_interactions": [
+    "Main results and reviewed narrative tables",
+    "Question 4-3, price, root mean squared error, GRU, December single point",
+    "PV correction, actual generation intervals, weighted absolute percentage error",
+    "Scenario 4-3 dispatch comparison",
+    "February daily costs",
+    "December 21 specified intervals, battery and emergency views",
+    "First experiment history and technical path comparison",
+    "Three network path selections",
+    "Reproduction code block and fixed commit"
+  ],
+  "notes": "Checked in the narrow in-app browser panel. Wide desktop viewport was not separately exercised. Long tables scroll within their own containers; abbreviated chart labels retain tooltips and full names in tables.",
+  "static_figures_reviewed": [
+    "monthly-forecast-error.png",
+    "annual-three-error-metrics.png",
+    "annual-cost-comparison.png",
+    "daily-emergency-energy.png",
+    "technical-route.png",
+    "seed-variation.png",
+    "cost-components.png",
+    "failure-case.png"
+  ]
+}

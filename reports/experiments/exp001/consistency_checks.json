@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "primary_scenarios": 4,
+  "days_per_scenario": 334,
+  "intervals_per_day": 144,
+  "reviewed_narrative_tables": 11,
+  "forecast_records_per_model_target": 192168,
+  "annual_forecast_groups": 130,
+  "comparison_strategies": 32,
+  "specified_day_tables": 16,
+  "checks": [
+    "CSV ↔ app snapshot",
+    "daily ↔ annual sums",
+    "forecast error sums ↔ annual metrics",
+    "workbook verification ↔ report totals",
+    "Markdown displayed totals",
+    "figure files present"
+  ],
+  "browser_checks": "Recorded separately after actual browser inspection."
+}

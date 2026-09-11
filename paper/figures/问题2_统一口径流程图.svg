@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="580" viewBox="0 0 1250 580">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#4b68b8"/></marker></defs>
+<rect width="1250" height="580" fill="#f3f6fa"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="55" y="59" font-size="30" font-weight="700" fill="#21384a">问题2 · 滚动周期预测与备用</text>
+<text x="55" y="90" font-size="16" fill="#647589">2026-09-11统一版 · 方案设计，尚未数值验证</text>
+<g fill="none" stroke="#4b68b8" stroke-width="3" marker-end="url(#arrow)">
+<path d="M399 198 H444"/><path d="M799 198 H844"/><path d="M1025 275 V339"/><path d="M851 423 H806"/><path d="M451 423 H406"/>
+</g><g><rect x="55" y="125" width="340" height="146" rx="14" fill="white" stroke="#4b68b8" stroke-width="2"/><rect x="55" y="125" width="340" height="48" rx="12" fill="#4b68b8"/><text x="77" y="157" fill="white" font-size="21" font-weight="700">1  场景抽象</text><text x="225" y="217" text-anchor="middle" fill="#283f51" font-size="16">0时计划 · 实际到达后因果执行</text></g>
+<g><rect x="455" y="125" width="340" height="146" rx="14" fill="white" stroke="#4b68b8" stroke-width="2"/><rect x="455" y="125" width="340" height="48" rx="12" fill="#4b68b8"/><text x="477" y="157" fill="white" font-size="21" font-weight="700">2  变量定义</text><text x="625" y="217" text-anchor="middle" fill="#283f51" font-size="16">周期特征／背景B／状态K／备用R</text></g>
+<g><rect x="855" y="125" width="340" height="146" rx="14" fill="white" stroke="#4b68b8" stroke-width="2"/><rect x="855" y="125" width="340" height="48" rx="12" fill="#4b68b8"/><text x="877" y="157" fill="white" font-size="21" font-weight="700">3  模型构建</text><text x="1025" y="217" text-anchor="middle" fill="#283f51" font-size="16">周期回归＋B×K · 可选自适应备用</text></g>
+<g><rect x="855" y="350" width="340" height="146" rx="14" fill="white" stroke="#4b68b8" stroke-width="2"/><rect x="855" y="350" width="340" height="48" rx="12" fill="#4b68b8"/><text x="877" y="382" fill="white" font-size="21" font-weight="700">4  数据适配</text><text x="1025" y="442" text-anchor="middle" fill="#283f51" font-size="16">只用历史 · 1月初始化 · SOC连续</text></g>
+<g><rect x="455" y="350" width="340" height="146" rx="14" fill="white" stroke="#4b68b8" stroke-width="2"/><rect x="455" y="350" width="340" height="48" rx="12" fill="#4b68b8"/><text x="477" y="382" fill="white" font-size="21" font-weight="700">5  求解迭代</text><text x="625" y="442" text-anchor="middle" fill="#283f51" font-size="16">预测→计划→执行→成本反馈</text></g>
+<g><rect x="55" y="350" width="340" height="146" rx="14" fill="white" stroke="#4b68b8" stroke-width="2"/><rect x="55" y="350" width="340" height="48" rx="12" fill="#4b68b8"/><text x="77" y="382" fill="white" font-size="21" font-weight="700">6  结果验证</text><text x="225" y="442" text-anchor="middle" fill="#283f51" font-size="16">无／固定／自适应备用 · result2</text></g>
+<text x="55" y="545" font-size="16" fill="#647589">阅读顺序：上排从左向右 → 下排从右向左；未决结算、时标和数据问题见《团队统一建模口径》。</text>
+</g></svg>
