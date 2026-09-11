@@ -12,6 +12,10 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--experiment',default='exp001');args=p.parse_args()
     root=Path(__file__).resolve().parent
     report=root/'experiments'/args.experiment
+    if json.loads((report/'protocol.json').read_text()).get('architecture', {}).get('name') == 'periodic_residual_mlp':
+        from verify_delivery_v2 import verify
+        verify(args.experiment)
+        return
     snapshot=json.loads((report/'app/src/data.json').read_text())
     assert snapshot['buildStatus']=='complete' and len(snapshot['reportContent'])==8
     narrative_tables=0

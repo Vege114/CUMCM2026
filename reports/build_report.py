@@ -157,6 +157,11 @@ def main():
     p.add_argument('--title')
     args=p.parse_args()
     out=ROOT/'data/results'/args.experiment
+    measured_protocol = out / 'protocol.json'
+    if measured_protocol.exists() and json.loads(measured_protocol.read_text()).get('architecture', {}).get('name') == 'periodic_residual_mlp':
+        import build_report_v2
+        build_report_v2.main()
+        return
     report=ROOT/'reports/experiments'/args.experiment
     report.mkdir(parents=True,exist_ok=True)
     commit=args.code_commit or subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
