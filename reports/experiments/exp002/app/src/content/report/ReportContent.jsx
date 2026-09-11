@@ -41,6 +41,7 @@ export function ReportContent(){
    rows=aggregate(sourceRows,["name","model_label"],"cost").sort(comparePolicies);title=`问题 ${scenario} · ${item.title} · ${month==="all"?"2—12月":`${month}月`}`;
   }else if(item.scope==="daily"){
    rows=costRows.filter(row=>row.name==="primary");sourceRows=rows;
+   title=`问题 ${scenario} · ${item.title} · ${month==="all"?"2—12月":`${month}月`}`;
   }else if(item.scope==="specified"){
    rows=rows.filter(row=>row.scenario===scenario&&row.date===chosenDay);sourceRows=rows;
    if(item.id==="specified-intervals")headerControls=<Dropdown label="指定日期" showLabel value={chosenDay} choices={["2025-03-20","2025-06-21","2025-09-23","2025-12-21"]} onChange={setChosenDay}/>;
@@ -52,6 +53,7 @@ export function ReportContent(){
    rows=rows.filter(row=>row.route==="正式调度"?row.task===scenario:row.route.startsWith("正式预测问题")?row.route.startsWith(`正式预测问题${scenario}/`):row.task===target);sourceRows=rows;title=`问题 ${scenario} · ${item.title}`;
   }else if(item.scope==="annual"){
    rows=rows.filter(row=>row.scenario===scenario&&row.seed===42).sort(comparePolicies);sourceRows=rows;
+   title=`问题 ${scenario} · ${item.title}`;
   }else if(item.scope==="decomposition"){
    rows=rows.filter(row=>row.target===target);sourceRows=rows;
    title=`${item.title} · ${labels[target]}`;spec.yLabel=target==="price"?"元/千瓦时":"千瓦";
