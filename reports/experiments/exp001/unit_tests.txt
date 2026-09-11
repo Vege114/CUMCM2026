@@ -1,0 +1,17 @@
+test_all_scenarios_energy_and_cost (tests.test_neural_v1.CausalPipelineTests.test_all_scenarios_energy_and_cost) ... ok
+test_every_month_split_respects_label_completion (tests.test_neural_v1.CausalPipelineTests.test_every_month_split_respects_label_completion) ... ok
+test_first_day_reference_uses_target_clock (tests.test_neural_v1.CausalPipelineTests.test_first_day_reference_uses_target_clock) ... ok
+test_future_data_cannot_change_validation_choice (tests.test_neural_v1.CausalPipelineTests.test_future_data_cannot_change_validation_choice) ... SELECTION month=2 ['tcn', 'tcn', 'tcn', 'tcn']
+SELECTION month=2 ['tcn', 'tcn', 'tcn', 'tcn']
+ok
+test_future_values_do_not_change_features_or_past_plan (tests.test_neural_v1.CausalPipelineTests.test_future_values_do_not_change_features_or_past_plan) ... ok
+test_interpolation_anchor_and_year_end (tests.test_neural_v1.CausalPipelineTests.test_interpolation_anchor_and_year_end) ... ok
+test_settlement_uses_final_deviation_only (tests.test_neural_v1.CausalPipelineTests.test_settlement_uses_final_deviation_only) ... ok
+test_storage_limits_and_emergency (tests.test_neural_v1.CausalPipelineTests.test_storage_limits_and_emergency) ... ok
+test_compares_all_prior_experiments_and_allows_new_models (reports.tests.test_history.HistoryTests.test_compares_all_prior_experiments_and_allows_new_models) ... ok
+test_different_billing_is_not_ranked (reports.tests.test_history.HistoryTests.test_different_billing_is_not_ranked) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.011s
+
+OK

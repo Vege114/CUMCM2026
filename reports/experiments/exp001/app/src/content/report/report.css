@@ -1,0 +1,18 @@
+.experiment-report .experiment-nav{display:flex;flex-wrap:wrap;gap:10px 22px;margin:0 0 36px}
+.experiment-report .experiment-nav a{color:var(--secondary);font-size:14px}
+.experiment-report section{scroll-margin-top:90px;margin-bottom:40px}
+.experiment-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;max-width:100%}
+.experiment-report #prediction-charts,.experiment-report #dispatch-charts,.experiment-report #specified-tables{scroll-margin-top:80px}
+.experiment-table-scroll{overflow-x:auto;width:100%}
+.experiment-table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.55}
+.experiment-table th,.experiment-table td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+.experiment-table th:first-child,.experiment-table td:first-child{text-align:left}
+.experiment-table th{font-weight:500;color:var(--secondary)}
+.experiment-table td.experiment-wrap-cell{white-space:normal;min-width:200px;max-width:360px;text-align:left}
+.experiment-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px;padding:16px 0}
+.experiment-route-node{position:relative;grid-row:var(--node-row);grid-column:var(--node-col);display:flex;align-items:flex-start;gap:12px;line-height:1.6;border-bottom:2px solid var(--chart-1);padding:8px 8px 16px}
+.experiment-route-node:not(:last-child)::after{position:absolute;color:var(--text);top:20%;right:-17px;content:'→'}
+.experiment-route-node.flow-left:not(:last-child)::after{left:-17px;right:auto;content:'←'}
+.experiment-route-node.flow-down:not(:last-child)::after{top:auto;bottom:-27px;left:50%;right:auto;content:'↓'}
+.experiment-route-node span{color:var(--secondary);font-variant-numeric:tabular-nums}
+@media(max-width:600px){.experiment-report{padding-inline:16px;box-sizing:border-box}.experiment-route{grid-template-columns:1fr}.experiment-route-node{grid-row:auto;grid-column:auto}.experiment-route-node:not(:last-child)::after{content:'↓';top:auto;bottom:-27px;left:50%;right:auto}.experiment-table th,.experiment-table td{padding:10px}}
