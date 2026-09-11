@@ -2,7 +2,7 @@
 
 **无线电干扰源的快速自动定位与清除**。已完成模块化基础模型：官方模拟器问题 3、4 各一次演练全清，并建立可复用的 Benchmark。
 
-当前入口：[基础模型与运行方式](experiments/baseline_v1/README.md) · [运行报告与图表](experiments/baseline_v1/REPORT.md) · [题目指标 Benchmark](Benchmark/README.md)。问题 3 演练清除 13/13、平均 380.40 虚拟秒/个；问题 4 演练清除 16/16、平均 1103.17 虚拟秒/个。均为演练结果，尚未使用正式测试机会。
+当前入口：[改进模型 v2 与 Windows 运行方式](experiments/baseline_v2/README.md) · [v2 离线验证报告](experiments/baseline_v2/REPORT.md) · [v1 官方演练报告与图表](experiments/baseline_v1/REPORT.md) · [题目指标 Benchmark](Benchmark/README.md)。v2 已在 macOS 完成代码和配对离线验证，尚待 Windows 官方模拟器演练。v1 问题 3 演练清除 13/13、平均 380.40 虚拟秒/个；问题 4 演练清除 16/16、平均 1103.17 虚拟秒/个。均为演练结果，尚未使用正式测试机会。
 
 ## 目录
 
@@ -18,6 +18,7 @@
 | `config/` | 不含账号的示例配置 |
 | `data/` | 后续公开输入及整理数据的目录约定 |
 | `experiments/baseline_v1/` | 基础模型、配置、测试、每局产物与可视化报告集中管理 |
+| `experiments/baseline_v2/` | 定向可接收性、覆盖与路径改进、Windows 入口、分层配对离线验证 |
 | `Benchmark/` | 题目指标字典、场景规范、独立日志评价器 |
 | `results/` | 后续经核验、可供论文引用的结果 |
 | `submission/` | 问题 3、4 正式日志与最终支撑材料 |

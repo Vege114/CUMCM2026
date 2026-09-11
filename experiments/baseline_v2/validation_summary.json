@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-09-11T03:34:38.823989+00:00",
+  "source_sha256": "07284746dbed216cd04bcf03f9645f874ce5dfcdbbdc584fe532d509d798f397",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "unit_tests": {
+    "v2_solver": 25,
+    "v2_cli_http": 3,
+    "v1": 11,
+    "benchmark": 7,
+    "passed": true
+  },
+  "compatibility": {
+    "python_3_10_syntax": true,
+    "python_3_12_solver_tests": 25,
+    "windows_exe": "not_run",
+    "powershell_wrapper": "not_run"
+  },
+  "paired_cases": 30,
+  "paired_runs": 60,
+  "audit_passed": true,
+  "bearing_updates_audited": 1656,
+  "aggregate": {
+    "3": {
+      "cases_per_algorithm": 13,
+      "mean_seconds_per_source": {
+        "v1": 373.2813922585088,
+        "v2": 327.0416807448439
+      },
+      "change_percent": -12.387360439773133
+    },
+    "4": {
+      "cases_per_algorithm": 17,
+      "mean_seconds_per_source": {
+        "v1": 1003.4834814404062,
+        "v2": 795.9495929315073
+      },
+      "change_percent": -20.681345766748805
+    }
+  },
+  "regressions": [
+    {
+      "scenario": "q3_boundary",
+      "change_percent": 30.200930898108915
+    },
+    {
+      "scenario": "q4_legacy_20260911",
+      "change_percent": 32.07982100372493
+    },
+    {
+      "scenario": "q4_stratified_n16",
+      "change_percent": 3.8171220751364476
+    },
+    {
+      "scenario": "q4_tangent_positive",
+      "change_percent": 10.768816547979654
+    }
+  ]
+}

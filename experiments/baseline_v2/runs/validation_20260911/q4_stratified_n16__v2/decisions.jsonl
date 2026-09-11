@@ -1,0 +1,345 @@
+{"event": "coverage_plan", "virtual_time_s": 0.0, "problem": 4, "points": [[-2450.0, -848.7048957087499], [-2450.0, 848.7048957087499], [-1960.0, -1697.4097914174997], [-1960.0, 0.0], [-1960.0, 1697.4097914174997], [-1470.0, -848.7048957087499], [-1470.0, 848.7048957087499], [-980.0, -1697.4097914174997], [-980.0, 0.0], [-980.0, 1697.4097914174997], [-490.0, -2546.1146871262495], [-490.0, -848.7048957087499], [-490.0, 848.7048957087499], [-490.0, 2546.1146871262495], [0.0, -1697.4097914174997], [0.0, 0.0], [0.0, 1697.4097914174997], [490.0, -2546.1146871262495], [490.0, -848.7048957087499], [490.0, 848.7048957087499], [490.0, 2546.1146871262495], [980.0, -1697.4097914174997], [980.0, 0.0], [980.0, 1697.4097914174997], [1470.0, -848.7048957087499], [1470.0, 848.7048957087499], [1960.0, -1697.4097914174997], [1960.0, 0.0], [1960.0, 1697.4097914174997], [2450.0, -848.7048957087499], [2450.0, 848.7048957087499]], "kind": "triangle"}
+{"event": "signal_miss", "virtual_time_s": 5.0, "channel": 1, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 11.0, "channel": 2, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 17.0, "channel": 3, "position": [0.0, 0.0], "svd_deg": 344.66, "vertices": [[1439.5636573256245, -422.3218996089902], [1453.5552384988096, -371.3172215434431], [6.821210263296962e-13, -2.2737367544323206e-13]], "diameter_m": 1500.233085351097, "enclosing_radius_m": 750.2331034606908}
+{"event": "signal_miss", "virtual_time_s": 23.0, "channel": 4, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 29.0, "channel": 5, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 35.0, "channel": 6, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 41.0, "channel": 7, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 47.0, "channel": 8, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 53.0, "channel": 9, "position": [0.0, 0.0], "svd_deg": 241.45, "vertices": [[-740.1170755308253, -1304.9620779508396], [-693.659397711076, -1330.2390575942286], [-1.1368683772161603e-13, 0.0]], "diameter_m": 1500.2330853510978, "enclosing_radius_m": 750.2331034606913}
+{"event": "signal_miss", "virtual_time_s": 59.0, "channel": 10, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 65.0, "channel": 11, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 71.0, "channel": 12, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 77.0, "channel": 13, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 83.0, "channel": 14, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 89.0, "channel": 15, "position": [0.0, 0.0], "svd_deg": 153.89, "vertices": [[-1358.5642733381696, 636.398008789472], [0.0, 0.0], [-1335.2880613009456, 683.8896868130382]], "diameter_m": 1500.2330853510975, "enclosing_radius_m": 750.2331034606913}
+{"event": "signal_miss", "virtual_time_s": 95.0, "channel": 16, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 101.0, "channel": 17, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 107.0, "channel": 18, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 113.0, "channel": 19, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 119.0, "channel": 20, "position": [0.0, 0.0], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 119.0, "channel": 9, "insertion_score": 188.58064390114347, "onward": [-490.0, -848.7048957087499]}
+{"event": "next_measurement", "virtual_time_s": 119.0, "channel": 9, "position": [-108.55552439639996, -659.005042054371], "objective": 398.65453565896286, "predicted_worst_diameter_m": 259.12110863709313, "visibility_score": 0.8500823068231619, "ranking_hypotheses": 8, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 667.8861784241838, "candidates_evaluated": 29}
+{"event": "bearing_update", "virtual_time_s": 258.577236, "channel": 9, "position": [-108.55552439639996, -659.005042054371], "svd_deg": 117.21, "vertices": [[-222.68945327430936, -427.0542710691817], [-231.75607984078684, -408.6284528834353], [-237.49172981326655, -418.7414552096112], [-227.78584717981045, -436.8276876023583]], "diameter_m": 28.477352161238553, "enclosing_radius_m": 14.238676080619276}
+{"event": "clear_attempt", "virtual_time_s": 316.688436, "channel": 9, "position": [-229.77096351029866, -422.7280702428968], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "signal_miss", "virtual_time_s": 422.523381, "channel": 1, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 428.523381, "channel": 2, "position": [-490.0, -848.7048957087499], "svd_deg": 84.94, "vertices": [[-384.04305898743746, 647.781802205179], [-490.00000000000006, -848.7048957087507], [-331.3602187619605, 643.1170541870213]], "diameter_m": 1500.2330853510987, "enclosing_radius_m": 750.2331034606917}
+{"event": "signal_miss", "virtual_time_s": 434.523381, "channel": 4, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 440.523381, "channel": 5, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 446.523381, "channel": 6, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 452.523381, "channel": 7, "position": [-490.0, -848.7048957087499], "svd_deg": 88.71, "vertices": [[-482.668507253589, 651.5102753904439], [-490.0, -848.7048957087516], [-429.7929570682074, 650.3195945393193]], "diameter_m": 1500.2330853510996, "enclosing_radius_m": 750.2331034606921}
+{"event": "signal_miss", "virtual_time_s": 458.523381, "channel": 8, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 464.523381, "channel": 10, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 470.523381, "channel": 11, "position": [-490.0, -848.7048957087499], "svd_deg": 324.96, "vertices": [[650.6404175022686, -1678.9504640224404], [689.66090502084, -1664.9887103398137], [706.8119920091495, -1656.8768503260953], [-490.0000000000002, -848.7048957087497]], "diameter_m": 1444.1263284238435, "enclosing_radius_m": 722.0631642119217}
+{"event": "signal_miss", "virtual_time_s": 476.523381, "channel": 12, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 482.523381, "channel": 13, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 488.523381, "channel": 14, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 494.523381, "channel": 16, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 500.523381, "channel": 17, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 506.523381, "channel": 18, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 512.523381, "channel": 19, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 518.523381, "channel": 20, "position": [-490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 719.523381, "channel": 20, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 725.523381, "channel": 1, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 731.523381, "channel": 4, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 737.523381, "channel": 5, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 743.523381, "channel": 6, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 749.523381, "channel": 8, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 755.523381, "channel": 10, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 761.523381, "channel": 12, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 767.523381, "channel": 13, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 773.523381, "channel": 14, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 779.523381, "channel": 16, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 785.523381, "channel": 17, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 791.523381, "channel": 18, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 797.523381, "channel": 19, "position": [-1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 998.523381, "channel": 19, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1004.523381, "channel": 1, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1010.523381, "channel": 4, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1016.523381, "channel": 5, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1022.523381, "channel": 6, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 1028.523381, "channel": 8, "position": [-2450.0, -848.7048957087499], "svd_deg": 27.87, "vertices": [[-1136.3461461803906, -124.12718232876887], [-1740.980482380248, -457.62794699434085], [-1733.8688359469452, -486.0192310271363], [-1111.622304587716, -170.88157447748927]], "diameter_m": 698.5694093624196, "enclosing_radius_m": 349.3389801132256}
+{"event": "signal_miss", "virtual_time_s": 1034.523381, "channel": 10, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1040.523381, "channel": 12, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1046.523381, "channel": 13, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1052.523381, "channel": 14, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1058.523381, "channel": 16, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1064.523381, "channel": 17, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1070.523381, "channel": 18, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1076.523381, "channel": 20, "position": [-2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1277.523381, "channel": 20, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1283.523381, "channel": 1, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1289.523381, "channel": 4, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1295.523381, "channel": 5, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1301.523381, "channel": 6, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1307.523381, "channel": 10, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1313.523381, "channel": 12, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1319.523381, "channel": 13, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1325.523381, "channel": 14, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1331.523381, "channel": 16, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1337.523381, "channel": 17, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1343.523381, "channel": 18, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1349.523381, "channel": 19, "position": [-1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1550.523381, "channel": 19, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1556.523381, "channel": 1, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1562.523381, "channel": 4, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1568.523381, "channel": 5, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1574.523381, "channel": 6, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1580.523381, "channel": 10, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1586.523381, "channel": 12, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1592.523381, "channel": 13, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 1598.523381, "channel": 14, "position": [-980.0, -1697.4097914174997], "svd_deg": 13.19, "vertices": [[-733.5721500677247, -1644.2202381671052], [486.4622400170482, -1380.8852126147535], [474.3939883524587, -1329.3915350411314], [-746.1978148609004, -1638.2487434477218]], "diameter_m": 1259.2405639489698, "enclosing_radius_m": 629.718118817473}
+{"event": "signal_miss", "virtual_time_s": 1604.523381, "channel": 16, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1610.523381, "channel": 17, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1616.523381, "channel": 18, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1622.523381, "channel": 20, "position": [-980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1823.523381, "channel": 20, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1829.523381, "channel": 1, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1835.523381, "channel": 4, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1841.523381, "channel": 5, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1847.523381, "channel": 6, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1853.523381, "channel": 10, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1859.523381, "channel": 12, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1865.523381, "channel": 13, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 1871.523381, "channel": 16, "position": [-490.0, -2546.1146871262495], "svd_deg": 64.34, "vertices": [[135.70835162228695, -1182.5941082231677], [-145.33388745236726, -1795.0309975914215], [-113.52186823995788, -1796.593821880133], [183.3813739530558, -1205.4966074349572]], "diameter_m": 674.9848296502595, "enclosing_radius_m": 337.54485785046467}
+{"event": "signal_miss", "virtual_time_s": 1877.523381, "channel": 17, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1883.523381, "channel": 18, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 1889.523381, "channel": 19, "position": [-490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 1889.523381, "channel": 16, "insertion_score": 468.39968363152923, "onward": [0.0, -1697.4097914174997]}
+{"event": "next_measurement", "virtual_time_s": 1889.523381, "channel": 16, "position": [222.50353530695145, -1640.3201672846378], "objective": 156.58145996774422, "predicted_worst_diameter_m": 104.53480169249326, "visibility_score": 1.0, "ranking_hypotheses": 8, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 1152.443057161611, "candidates_evaluated": 32}
+{"event": "bearing_update", "virtual_time_s": 2126.011993, "channel": 16, "position": [222.50353530695145, -1640.3201672846378], "svd_deg": 184.84, "vertices": [[-48.99948878469148, -1668.1378357357012], [-43.988042703651615, -1658.1606734892912], [-83.74664423311276, -1660.8223470122214], [-88.98360072457474, -1672.2345295864425]], "diameter_m": 47.14524013150832, "enclosing_radius_m": 23.57262006575416}
+{"event": "clear_attempt", "virtual_time_s": 2187.023624, "channel": 16, "position": [-66.48582171411317, -1665.1976015378668], "reason": "opportunistic_estimate", "success": false}
+{"event": "next_measurement", "virtual_time_s": 2187.023624, "channel": 16, "position": [-66.48582171411319, -1712.342841669375], "objective": 17.93725622566503, "predicted_worst_diameter_m": 11.718179146795382, "visibility_score": 1.0, "ranking_hypotheses": 3, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 47.14524013150822, "candidates_evaluated": 30}
+{"event": "bearing_update", "virtual_time_s": 2201.452672, "channel": 16, "position": [-66.48582171411319, -1712.342841669375], "svd_deg": 68.62, "vertices": [[-46.428606364319734, -1658.3240591071633], [-50.11490255178061, -1668.2521188471414], [-48.99948878469148, -1668.1378357357012], [-44.969892322792774, -1660.1154132576805], [-44.16961344245641, -1658.1728288974148]], "diameter_m": 11.702074537624089, "enclosing_radius_m": 5.8510372688120444}
+{"event": "clear_attempt", "virtual_time_s": 2217.012912, "channel": 16, "position": [-47.142257997118506, -1663.2124738722782], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "target_schedule", "virtual_time_s": 2217.012912, "channel": 14, "insertion_score": 522.9916723836535, "onward": [0.0, -1697.4097914174997]}
+{"event": "next_measurement", "virtual_time_s": 2217.012912, "channel": 14, "position": [-147.10451763075622, -1964.4025168781473], "objective": 253.70491134844534, "predicted_worst_diameter_m": 138.72243161667586, "visibility_score": 0.9197679585735504, "ranking_hypotheses": 8, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 317.34507299931414, "candidates_evaluated": 32}
+{"event": "bearing_update", "virtual_time_s": 2286.481927, "channel": 14, "position": [-147.10451763075622, -1964.4025168781473], "svd_deg": 84.02, "vertices": [[-104.62430524784301, -1475.9056876898171], [-107.51000957256088, -1509.089547504198], [-90.83858781812683, -1505.4911495333074], [-86.65366207416582, -1471.3584158915953]], "diameter_m": 43.111779408200654, "enclosing_radius_m": 21.555889704100327}
+{"event": "clear_attempt", "virtual_time_s": 2386.84388, "channel": 14, "position": [-97.08183582336335, -1490.2239816978968], "reason": "opportunistic_estimate", "success": true}
+{"event": "signal_miss", "virtual_time_s": 2438.604493, "channel": 1, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2444.604493, "channel": 4, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2450.604493, "channel": 5, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2456.604493, "channel": 6, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2462.604493, "channel": 10, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 2468.604493, "channel": 11, "position": [0.0, -1697.4097914174997], "svd_deg": 103.4, "vertices": [[-155.51142745026317, -1092.1713297836577], [-128.66714523008534, -1111.7106569948296], [-133.57026464259536, -1089.3914177613588], [-160.98175295121996, -1070.8812455427783]], "diameter_m": 52.069902167103336, "enclosing_radius_m": 26.034951083551668}
+{"event": "signal_miss", "virtual_time_s": 2474.604493, "channel": 12, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2480.604493, "channel": 13, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2486.604493, "channel": 17, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2492.604493, "channel": 18, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2498.604493, "channel": 19, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2504.604493, "channel": 20, "position": [0.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2705.604493, "channel": 20, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2711.604493, "channel": 1, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2717.604493, "channel": 4, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2723.604493, "channel": 5, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2729.604493, "channel": 6, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2735.604493, "channel": 10, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2741.604493, "channel": 12, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2747.604493, "channel": 13, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2753.604493, "channel": 17, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2759.604493, "channel": 18, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2765.604493, "channel": 19, "position": [490.0, -2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2966.604493, "channel": 19, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2972.604493, "channel": 1, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2978.604493, "channel": 4, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2984.604493, "channel": 5, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2990.604493, "channel": 6, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 2996.604493, "channel": 10, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3002.604493, "channel": 12, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3008.604493, "channel": 13, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3014.604493, "channel": 17, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3020.604493, "channel": 18, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3026.604493, "channel": 20, "position": [980.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3227.604493, "channel": 20, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3233.604493, "channel": 1, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 3239.604493, "channel": 3, "position": [490.0, -848.7048957087499], "svd_deg": 58.33, "vertices": [[845.9942499542608, -248.18763441327297], [870.5988376187656, -255.40583289216053], [888.7916617371704, -227.04582641665885], [862.5077325220597, -220.3314785137343]], "diameter_m": 47.734625804353286, "enclosing_radius_m": 23.867312902176643}
+{"event": "signal_miss", "virtual_time_s": 3245.604493, "channel": 4, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3251.604493, "channel": 5, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3257.604493, "channel": 6, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3263.604493, "channel": 10, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3269.604493, "channel": 12, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3275.604493, "channel": 13, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3281.604493, "channel": 17, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3287.604493, "channel": 18, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3293.604493, "channel": 19, "position": [490.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 3293.604493, "channel": 3, "insertion_score": 7.145500481345236, "onward": [980.0, 0.0]}
+{"event": "clear_attempt", "virtual_time_s": 3442.250473, "channel": 3, "position": [867.3929558457156, -237.6167304149659], "reason": "opportunistic_estimate", "success": true}
+{"event": "signal_miss", "virtual_time_s": 3499.840227, "channel": 19, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 3505.840227, "channel": 1, "position": [980.0, 0.0], "svd_deg": 42.74, "vertices": [[980.0000000000027, 2.7284841053187847e-12], [1686.339546761252, 629.9893146868495], [1674.0308009696023, 664.3899546386904]], "diameter_m": 960.7771669431478, "enclosing_radius_m": 480.3885834715739}
+{"event": "signal_miss", "virtual_time_s": 3511.840227, "channel": 4, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3517.840227, "channel": 5, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3523.840227, "channel": 6, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3529.840227, "channel": 10, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3535.840227, "channel": 12, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 3541.840227, "channel": 13, "position": [980.0, 0.0], "svd_deg": 89.43, "vertices": [[998.8356432245643, 1499.8868404539307], [968.4791502089208, 1500.1888482461684], [980.0, 4.547473508864641e-13], [1020.9291081783589, 1483.8422121428916], [1001.2324477674224, 1498.4502510963976]], "diameter_m": 1500.233085351097, "enclosing_radius_m": 750.1190956716136}
+{"event": "signal_miss", "virtual_time_s": 3547.840227, "channel": 17, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3553.840227, "channel": 18, "position": [980.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 3559.840227, "channel": 20, "position": [980.0, 0.0], "svd_deg": 56.91, "vertices": [[979.9999999999967, -5.229594535194337e-12], [1573.3167699533803, 876.3252071816297], [1551.7967057159474, 912.2292652594689]], "diameter_m": 1076.621430709724, "enclosing_radius_m": 538.310715354862}
+{"event": "signal_miss", "virtual_time_s": 3761.840227, "channel": 4, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3767.840227, "channel": 5, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3773.840227, "channel": 6, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3779.840227, "channel": 10, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3785.840227, "channel": 12, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3791.840227, "channel": 17, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3797.840227, "channel": 18, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 3803.840227, "channel": 19, "position": [1470.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4004.840227, "channel": 19, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4010.840227, "channel": 4, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4016.840227, "channel": 5, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4022.840227, "channel": 6, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4028.840227, "channel": 10, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4034.840227, "channel": 12, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4040.840227, "channel": 17, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4046.840227, "channel": 18, "position": [1960.0, -1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4247.840227, "channel": 18, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4253.840227, "channel": 4, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4259.840227, "channel": 5, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4265.840227, "channel": 6, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4271.840227, "channel": 10, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4277.840227, "channel": 12, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4283.840227, "channel": 17, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4289.840227, "channel": 19, "position": [2450.0, -848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4490.840227, "channel": 19, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 4496.840227, "channel": 1, "position": [1960.0, 0.0], "svd_deg": 117.37, "vertices": [[1625.9377997161068, 618.3509216784691], [1641.3354321285556, 589.849821626405], [1659.6254438115272, 606.1628144053077], [1644.6902144071146, 636.3024534095085]], "diameter_m": 46.573614458329715, "enclosing_radius_m": 23.286807229164857}
+{"event": "signal_miss", "virtual_time_s": 4502.840227, "channel": 4, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4508.840227, "channel": 5, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4514.840227, "channel": 6, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4520.840227, "channel": 10, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4526.840227, "channel": 12, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4532.840227, "channel": 17, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4538.840227, "channel": 18, "position": [1960.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 4544.840227, "channel": 20, "position": [1960.0, 0.0], "svd_deg": 122.94, "vertices": [[1452.5012666223718, 753.8159611210106], [1471.3830740060669, 725.769767417408], [1490.3047672570995, 753.716991561673], [1471.4271415890742, 784.009798970514]], "diameter_m": 58.240048225071455, "enclosing_radius_m": 29.120024112535727}
+{"event": "target_schedule", "virtual_time_s": 4544.840227, "channel": 1, "insertion_score": 556.6817044199674, "onward": [2450.0, 848.7048957087499]}
+{"event": "clear_attempt", "virtual_time_s": 4687.875472, "channel": 1, "position": [1643.012823267835, 613.0761375179568], "reason": "opportunistic_estimate", "success": true}
+{"event": "target_schedule", "virtual_time_s": 4687.875472, "channel": 20, "insertion_score": 372.29919733299005, "onward": [2450.0, 848.7048957087499]}
+{"event": "clear_attempt", "virtual_time_s": 4737.399766, "channel": 20, "position": [1471.4051077975705, 754.889783193961], "reason": "opportunistic_estimate", "success": true}
+{"event": "bearing_update", "virtual_time_s": 4762.164892, "channel": 4, "position": [1470.0, 848.7048957087499], "svd_deg": 112.8, "vertices": [[1319.9903821778648, 1223.9456192715497], [1289.6489667500432, 1257.4222124192474], [1470.0000000000032, 848.7048957087422]], "diameter_m": 446.7396783064647, "enclosing_radius_m": 223.36983915323236}
+{"event": "signal_miss", "virtual_time_s": 4768.164892, "channel": 5, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4774.164892, "channel": 6, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4780.164892, "channel": 10, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4786.164892, "channel": 12, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 4792.164892, "channel": 13, "position": [1470.0, 848.7048957087499], "svd_deg": 179.89, "vertices": [[1003.2077256821143, 841.3719366883763], [1003.6614681329742, 857.8218969243289], [973.4077290174326, 858.4133629033204], [973.5421792236725, 840.9059130447446]], "diameter_m": 34.544494134613394, "enclosing_radius_m": 17.278651150180313}
+{"event": "signal_miss", "virtual_time_s": 4798.164892, "channel": 17, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4804.164892, "channel": 18, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 4810.164892, "channel": 19, "position": [1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 4810.164892, "channel": 4, "insertion_score": 388.7250788703827, "onward": [2450.0, 848.7048957087499]}
+{"event": "next_measurement", "virtual_time_s": 4810.164892, "channel": 4, "position": [1498.3660605598689, 1032.1264546366715], "objective": 127.72922629256828, "predicted_worst_diameter_m": 66.56741569189447, "visibility_score": 0.8761463999789288, "ranking_hypotheses": 7, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 185.6019980259781, "candidates_evaluated": 32}
+{"event": "bearing_update", "virtual_time_s": 4853.285292, "channel": 4, "position": [1498.3660605598689, 1032.1264546366715], "svd_deg": 137.67, "vertices": [[1341.56583344226, 1169.9758267930113], [1335.0703432130613, 1186.2239346735978], [1311.0736352817587, 1208.868938973021], [1319.7869698005786, 1189.1224998206749]], "diameter_m": 49.421132359610105, "enclosing_radius_m": 24.710566179805053}
+{"event": "clear_attempt", "virtual_time_s": 4904.908011, "channel": 4, "position": [1326.3197343620095, 1189.422382883016], "reason": "opportunistic_estimate", "success": true}
+{"event": "target_schedule", "virtual_time_s": 4904.908011, "channel": 13, "insertion_score": 78.76598464906361, "onward": [490.0, 848.7048957087499]}
+{"event": "clear_attempt", "virtual_time_s": 5005.734942, "channel": 13, "position": [988.371479856618, 849.7740373282303], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "signal_miss", "virtual_time_s": 5304.060725, "channel": 5, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5310.060725, "channel": 6, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5316.060725, "channel": 10, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5322.060725, "channel": 12, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5328.060725, "channel": 17, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5334.060725, "channel": 18, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5340.060725, "channel": 19, "position": [2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5541.060725, "channel": 19, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5547.060725, "channel": 5, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5553.060725, "channel": 6, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5559.060725, "channel": 10, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5565.060725, "channel": 12, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5571.060725, "channel": 17, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5577.060725, "channel": 18, "position": [1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5778.060725, "channel": 18, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5784.060725, "channel": 5, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5790.060725, "channel": 6, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5796.060725, "channel": 10, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5802.060725, "channel": 12, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5808.060725, "channel": 17, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 5814.060725, "channel": 19, "position": [980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6015.060725, "channel": 19, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6021.060725, "channel": 5, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6027.060725, "channel": 6, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6033.060725, "channel": 10, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6039.060725, "channel": 12, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6045.060725, "channel": 17, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6051.060725, "channel": 18, "position": [490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6252.060725, "channel": 18, "position": [0.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6258.060725, "channel": 5, "position": [0.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6264.060725, "channel": 6, "position": [0.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6270.060725, "channel": 10, "position": [0.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6276.060725, "channel": 12, "position": [0.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 6282.060725, "channel": 17, "position": [0.0, 1697.4097914174997], "svd_deg": 239.38, "vertices": [[-786.7699333236645, 420.0326417862916], [-741.2555878143057, 393.09408426829043], [1.7337242752546445e-12, 1697.4097914175027]], "diameter_m": 1500.2330853511012, "enclosing_radius_m": 750.2331034606927}
+{"event": "signal_miss", "virtual_time_s": 6288.060725, "channel": 19, "position": [0.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6489.060725, "channel": 19, "position": [-490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6495.060725, "channel": 5, "position": [-490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6501.060725, "channel": 6, "position": [-490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6507.060725, "channel": 10, "position": [-490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6513.060725, "channel": 12, "position": [-490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6519.060725, "channel": 18, "position": [-490.0, 2546.1146871262495], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6720.060725, "channel": 18, "position": [-980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6726.060725, "channel": 5, "position": [-980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6732.060725, "channel": 6, "position": [-980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6738.060725, "channel": 10, "position": [-980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 6744.060725, "channel": 12, "position": [-980.0, 1697.4097914174997], "svd_deg": 266.6, "vertices": [[-995.0586509855267, 1502.1506824807052], [-1095.3574908787978, 201.6183755843224], [-1042.5616298490872, 198.48172347938134], [-987.9723683493646, 1506.3980368383714]], "diameter_m": 1309.1911735735512, "enclosing_radius_m": 654.6973045482245}
+{"event": "bearing_update", "virtual_time_s": 6750.060725, "channel": 17, "position": [-980.0, 1697.4097914174997], "svd_deg": 328.96, "vertices": [[-257.3049122027121, 1279.656898971371], [-272.7359553922772, 1254.6034988216556], [-257.18455483655146, 1244.8670247604396], [-242.33191443607342, 1271.00177839394]], "diameter_m": 34.79008240156986, "enclosing_radius_m": 17.39504120078493}
+{"event": "signal_miss", "virtual_time_s": 6756.060725, "channel": 19, "position": [-980.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6957.060725, "channel": 19, "position": [-1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6963.060725, "channel": 5, "position": [-1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6969.060725, "channel": 6, "position": [-1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6975.060725, "channel": 10, "position": [-1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 6981.060725, "channel": 18, "position": [-1960.0, 1697.4097914174997], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7182.060725, "channel": 18, "position": [-2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7188.060725, "channel": 5, "position": [-2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7194.060725, "channel": 6, "position": [-2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7200.060725, "channel": 10, "position": [-2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7206.060725, "channel": 19, "position": [-2450.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7407.060725, "channel": 19, "position": [-1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7413.060725, "channel": 5, "position": [-1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7419.060725, "channel": 6, "position": [-1960.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 7425.060725, "channel": 8, "position": [-1960.0, 0.0], "svd_deg": 307.44, "vertices": [[-1619.917815947189, -428.3085719966662], [-1640.6001246833644, -402.2607208131126], [-1656.5921890782365, -411.0815326409543], [-1637.358212194344, -437.1412859221582]], "diameter_m": 40.51889102034445, "enclosing_radius_m": 20.259445510172224}
+{"event": "signal_miss", "virtual_time_s": 7431.060725, "channel": 10, "position": [-1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7437.060725, "channel": 18, "position": [-1960.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7638.060725, "channel": 18, "position": [-1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7644.060725, "channel": 5, "position": [-1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7650.060725, "channel": 6, "position": [-1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 7656.060725, "channel": 10, "position": [-1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 7662.060725, "channel": 12, "position": [-1470.0, 848.7048957087499], "svd_deg": 351.62, "vertices": [[-1017.8637657982786, 790.2233666107741], [-1049.6464243257594, 794.3342923205164], [-1050.7995747242862, 779.381882605805], [-1018.5389301845415, 774.0469522257433]], "diameter_m": 37.138286980781615, "enclosing_radius_m": 18.569143490390807}
+{"event": "signal_miss", "virtual_time_s": 7668.060725, "channel": 19, "position": [-1470.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 7668.060725, "channel": 12, "insertion_score": 251.35184127375095, "onward": [-980.0, 0.0]}
+{"event": "clear_attempt", "virtual_time_s": 7761.191828, "channel": 12, "position": [-1034.0926772551504, 784.1906222731299], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "target_schedule", "virtual_time_s": 7761.191828, "channel": 15, "insertion_score": 431.5788499000614, "onward": [-980.0, 0.0]}
+{"event": "next_measurement", "virtual_time_s": 7761.191828, "channel": 15, "position": [-673.6723990937114, 80.17451177761046], "objective": 395.6846423627954, "predicted_worst_diameter_m": 252.13068299359227, "visibility_score": 0.8518272559917661, "ranking_hypotheses": 8, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 790.9117907498967, "candidates_evaluated": 29}
+{"event": "bearing_update", "virtual_time_s": 7925.374186, "channel": 15, "position": [-673.6723990937114, 80.17451177761046], "svd_deg": 90.65, "vertices": [[-681.4637785967036, 349.0228540386031], [-680.5882163917586, 318.81081684346736], [-672.1976790863914, 314.88040196461213], [-672.0135644437697, 344.1827718236319]], "diameter_m": 35.377501802130936, "enclosing_radius_m": 17.688750901065468}
+{"event": "clear_attempt", "virtual_time_s": 7980.733571, "channel": 15, "position": [-676.8307288415475, 331.9516280016076], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "signal_miss", "virtual_time_s": 8076.645415, "channel": 2, "position": [-980.0, 0.0], "preserved_polygon": true}
+{"event": "bearing_update", "virtual_time_s": 8082.645415, "channel": 5, "position": [-980.0, 0.0], "svd_deg": 110.95, "vertices": [[-980.0, -2.2737367544323206e-13], [-1394.2179860373217, 1141.7733879487616], [-1424.1216528190578, 1101.4529608526727]], "diameter_m": 1214.5875881898385, "enclosing_radius_m": 607.2937940949192}
+{"event": "signal_miss", "virtual_time_s": 8088.645415, "channel": 6, "position": [-980.0, 0.0], "preserved_polygon": false}
+{"event": "bearing_update", "virtual_time_s": 8094.645415, "channel": 7, "position": [-980.0, 0.0], "svd_deg": 12.18, "vertices": [[-450.9323654958836, 123.99427777625581], [-485.28580316224713, 115.94307710781038], [-485.3751066131218, 97.66925532721643], [-451.72279573455575, 104.3142830795473]], "diameter_m": 43.35100024926205, "enclosing_radius_m": 21.675500124631025}
+{"event": "signal_miss", "virtual_time_s": 8100.645415, "channel": 10, "position": [-980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 8106.645415, "channel": 18, "position": [-980.0, 0.0], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 8112.645415, "channel": 19, "position": [-980.0, 0.0], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 8112.645415, "channel": 7, "insertion_score": 287.32353497900067, "onward": [-490.0, 848.7048957087499]}
+{"event": "clear_attempt", "virtual_time_s": 8222.387055, "channel": 7, "position": [-468.1537360545027, 110.83176655173612], "reason": "opportunistic_estimate", "success": true}
+{"event": "target_schedule", "virtual_time_s": 8222.387055, "channel": 2, "insertion_score": 618.5700226818742, "onward": [-490.0, 848.7048957087499]}
+{"event": "next_measurement", "virtual_time_s": 8222.387055, "channel": 2, "position": [-8.679112547219688, -514.8558230701277], "objective": 547.8162235825723, "predicted_worst_diameter_m": 213.45374783874206, "visibility_score": 0.7581803354678491, "ranking_hypotheses": 4, "guaranteed_signal": false, "guaranteed_range": false, "travel_m": 776.2743648053679, "candidates_evaluated": 32}
+{"event": "bearing_update", "virtual_time_s": 8383.641928, "channel": 2, "position": [-8.679112547219688, -514.8558230701277], "svd_deg": 179.84, "vertices": [[-455.20309504036476, -521.4806257172994], [-453.5324859673616, -505.770497618588], [-465.7013456949352, -505.5219706710477], [-466.8435070072433, -521.6533273750733]], "diameter_m": 20.72311661400546, "enclosing_radius_m": 10.36155830700273}
+{"event": "clear_attempt", "virtual_time_s": 8478.943994, "channel": 2, "position": [-460.1879964873025, -513.7119124968307], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "bearing_update", "virtual_time_s": 8757.492582, "channel": 5, "position": [-490.0, 848.7048957087499], "svd_deg": 194.65, "vertices": [[-1237.6945261707153, 639.1005641012989], [-1214.241174218778, 645.6753402803046], [-1223.3378016327936, 670.749787676397], [-1248.0390346909724, 664.7556733847114]], "diameter_m": 38.81178279689091, "enclosing_radius_m": 19.405891398445455}
+{"event": "signal_miss", "virtual_time_s": 8763.492582, "channel": 6, "position": [-490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 8769.492582, "channel": 10, "position": [-490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 8775.492582, "channel": 18, "position": [-490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "signal_miss", "virtual_time_s": 8781.492582, "channel": 19, "position": [-490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "target_schedule", "virtual_time_s": 8781.492582, "channel": 17, "insertion_score": 352.9574831681683, "onward": [490.0, 848.7048957087499]}
+{"event": "clear_attempt", "virtual_time_s": 8881.404006, "channel": 17, "position": [-257.2447335196318, 1262.2619618659053], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "signal_miss", "virtual_time_s": 9057.214327, "channel": 19, "position": [490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "absence_certificate", "virtual_time_s": 9057.214327, "channel": 19, "reference_points_scanned": 31, "reference_points_total": 31, "covered_cells": 0, "cells_total": 0, "complete": true}
+{"event": "signal_miss", "virtual_time_s": 9063.214327, "channel": 6, "position": [490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "absence_certificate", "virtual_time_s": 9063.214327, "channel": 6, "reference_points_scanned": 31, "reference_points_total": 31, "covered_cells": 0, "cells_total": 0, "complete": true}
+{"event": "signal_miss", "virtual_time_s": 9069.214327, "channel": 10, "position": [490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "absence_certificate", "virtual_time_s": 9069.214327, "channel": 10, "reference_points_scanned": 31, "reference_points_total": 31, "covered_cells": 0, "cells_total": 0, "complete": true}
+{"event": "signal_miss", "virtual_time_s": 9075.214327, "channel": 18, "position": [490.0, 848.7048957087499], "preserved_polygon": false}
+{"event": "absence_certificate", "virtual_time_s": 9075.214327, "channel": 18, "reference_points_scanned": 31, "reference_points_total": 31, "covered_cells": 0, "cells_total": 0, "complete": true}
+{"event": "target_schedule", "virtual_time_s": 9075.214327, "channel": 5, "insertion_score": 1736.8334019616445, "onward": null}
+{"event": "clear_attempt", "virtual_time_s": 9426.610712, "channel": 5, "position": [-1231.1401044548752, 655.215506832508], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "target_schedule", "virtual_time_s": 9426.610712, "channel": 8, "insertion_score": 1154.4887389769442, "onward": null}
+{"event": "clear_attempt", "virtual_time_s": 9661.495488, "channel": 8, "position": [-1638.2550025127127, -419.69505231881027], "reason": "opportunistic_estimate", "success": true}
+{"event": "target_schedule", "virtual_time_s": 9661.495488, "channel": 11, "insertion_score": 1644.0015119121847, "onward": null}
+{"event": "clear_attempt", "virtual_time_s": 9991.994043, "channel": 11, "position": [-144.82444909065265, -1091.295951268804], "reason": "opportunistic_estimate", "success": false}
+{"event": "next_measurement", "virtual_time_s": 9991.994043, "channel": 11, "position": [-181.64343000873154, -1128.114932186883], "objective": 20.433379658656065, "predicted_worst_diameter_m": 16.215535764471408, "visibility_score": 1.0, "ranking_hypotheses": 2, "guaranteed_signal": false, "guaranteed_range": true, "travel_m": 52.06990216710342, "candidates_evaluated": 30}
+{"event": "bearing_update", "virtual_time_s": 10008.408023, "channel": 11, "position": [-181.64343000873154, -1128.114932186883], "svd_deg": 18.39, "vertices": [[-129.1262654928797, -1109.6207191164872], [-130.7519159286542, -1110.1932010053013], [-128.83736755173294, -1111.586756135271], [-128.7035642142976, -1111.5448759985115]], "diameter_m": 2.4541332549349657, "enclosing_radius_m": 1.236308196517118}
+{"event": "clear_attempt", "virtual_time_s": 10024.372794, "channel": 11, "position": [-129.64463792444232, -1110.7431040678168], "reason": "guaranteed_enclosing_circle", "success": true}
+{"event": "stop_certificate", "virtual_time_s": 10024.372794, "reason": "all_16_cleared", "cleared": 16}
