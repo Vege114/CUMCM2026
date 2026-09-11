@@ -26,7 +26,8 @@ def main():
         start = time.monotonic()
         if stage in ("predict", "calibrate", "replay", "export", "report"):
             from .manifest import validate_upstream
-            validate_upstream(args.run_id, replay=stage in ("export", "report"))
+            validate_upstream(args.run_id, replay=stage in ("export", "report"),
+                              allow_missing_predictions=stage == "predict")
         if stage == "prepare":
             data = Data()
             assert data.actual.shape == (52560, 3)
@@ -38,6 +39,9 @@ def main():
             from .train import run
             run(args.run_id)
         elif stage == "predict":
+            from .recover import recover_missing
+            recover_missing(args.run_id)
+            validate_upstream(args.run_id)
             from .predict import run
             run(args.run_id)
             from .manifest import run as manifest
