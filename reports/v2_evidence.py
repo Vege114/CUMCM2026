@@ -13,11 +13,30 @@ sys.path.insert(0, str(ROOT))
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".cache/matplotlib"))
 
 from experiments.common.neural_v2.data import EPOCH, Data, month_origins  # noqa: E402
-from experiments.common.neural_v2.predict import ForecastStore, LegacyStore  # noqa: E402
+from experiments.common.neural_v2.predict import LegacyStore  # noqa: E402
 from experiments.common.neural_v2.scenarios import ScenarioFactory  # noqa: E402
 
 SCENARIOS = ("2", "3", "4-2", "4-3")
 LABELS = {"load": "负载", "pv": "历史光伏", "pv_corrected": "光伏预报修正", "price": "电价"}
+
+
+class ReportForecastArchive:
+    """Read published predictions so rebuilding a report needs no local training cache."""
+
+    def __init__(self, data, directory, seed=42):
+        self.data = data
+        with np.load(directory / "predictions.npz") as saved:
+            self.origins = saved["origins"].copy()
+            self.predictions = saved[f"seed_{seed}"].copy()
+        self.lookup = {int(origin): i for i, origin in enumerate(self.origins)}
+
+    def get(self, origin, issued=True, raw_pv=False):
+        if origin < 31*144:
+            return self.data.baseline(origin, issued=issued)
+        result = self.predictions[self.lookup[int(origin)], :, :4 if issued else 3].copy().astype(float)
+        if raw_pv and issued:
+            result[:, 3] = self.data.integrate_points(self.data.issued_points(origin), origin)
+        return result
 
 
 def derive(run_id="exp002"):
@@ -43,7 +62,7 @@ def derive(run_id="exp002"):
         timing_rows[2]["minutes"] += clipping["retired_calibration_task_seconds"]/60
         timing_rows[2]["scope"] += "；也包含裁剪信息修正前已作废的问题 3、4-3 校准"
     data = Data()
-    store = ForecastStore(data, run_id, 42)
+    store = ReportForecastArchive(data, out, 42)
     day = (pd.Timestamp("2025-03-20") - EPOCH).days
     origin = day * 144
     pred = store.get(origin)
@@ -56,9 +75,8 @@ def derive(run_id="exp002"):
                 "base": float(baseline[t, j]), "correction": float(pred[t, j]-baseline[t, j]),
                 "prediction": float(pred[t, j]), "actual": float(actual[t])})
     pd.DataFrame(decomposition).to_csv(out / "forecast_decomposition.csv", index=False)
-    checkpoint = store.month(3)
-    metadata = json.loads((store.directory / "m03_mlp_42.json").read_text())
-    x, _, _, scale = data.features([origin], int(checkpoint["train_cutoff"]))
+    metadata = next(row for row in training if row["month"] == 3 and row["seed"] == 42)
+    x, _, _, scale = data.features([origin], int(metadata["train_cutoff"]))
     slot = 60
     (out / "worked_example.json").write_text(json.dumps({
         "date": "2025-03-20", "issue_hour": 0, "target_interval": "10:00-10:10", "target": "load",
