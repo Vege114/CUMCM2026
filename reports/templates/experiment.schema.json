@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Microgrid experiment record v1",
+  "type": "object",
+  "required": ["experiment_id", "title", "protocol", "code_commit", "data_hashes", "environment", "seeds", "models", "model_configuration", "metric_definitions", "forecast_metrics", "metrics", "technical_path", "artifacts"],
+  "properties": {
+    "experiment_id": {"type": "string"},
+    "title": {"type": "string"},
+    "protocol": {"type": "object", "required": ["version", "period", "time_alignment", "billing", "efficiency"]},
+    "code_commit": {"type": "string"},
+    "data_hashes": {"type": "object"},
+    "environment": {"type": "object"},
+    "seeds": {"type": "array", "items": {"type": "integer"}},
+    "models": {"type": "array"},
+    "model_configuration": {"type": "object"},
+    "metric_definitions": {"type": "object"},
+    "forecast_metrics": {"type": "array"},
+    "metrics": {"type": "array"},
+    "technical_path": {"type": "array"},
+    "artifacts": {"type": "object"}
+  }
+}

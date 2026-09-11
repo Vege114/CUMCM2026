@@ -1,0 +1,40 @@
+<div id="neural-path-visual">
+  <h2>从历史数据到实际购电</h2>
+  <div class="viz-controls"><label class="form-label">历史编码网络
+    <select class="form-select" aria-label="历史编码网络">
+      <option value="mlp">多层感知机</option><option value="gru" selected>门控循环网络</option><option value="tcn">因果一维卷积网络</option>
+    </select>
+  </label></div>
+  <svg role="img" aria-label="数据、因果特征、网络、预测、选模、计划、执行和结算的连接"></svg>
+  <div class="text-small" aria-live="polite" data-path-name>门控循环网络 · 四个目标分支独立参数</div>
+</div>
+<style>
+#neural-path-visual>svg{display:block;width:100%}
+#neural-path-visual>svg text{fill:var(--foreground);font-size:12px}
+</style>
+<script>
+(()=>{
+ const root=document.getElementById('neural-path-visual'),svg=root.querySelector('svg'),picker=root.querySelector('select');
+ const networks={mlp:['多层感知机','168 小时展开','64 → 32 个隐藏单元'],gru:['门控循环网络','逐小时更新状态','32 个循环单元'],tcn:['因果一维卷积网络','四层，每层 32 通道','膨胀率 1、2、4、8']};
+ const ns='http://www.w3.org/2000/svg';
+ function element(tag,attrs,text){const node=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>node.setAttribute(k,v));if(text!==undefined)node.textContent=text;svg.appendChild(node);return node;}
+ function draw(){
+   const width=root.getBoundingClientRect().width,columns=width<600?1:3,gap=24,nodeWidth=(width-16-(columns-1)*gap)/columns,rowHeight=112,nodeHeight=80;
+   const nodes=[['输入数据','实测十分钟序列','预报发布时刻与目标时刻'],['可用历史与目标特征','七天小时历史、同期值','日历、提前量、已发布预报'],networks[picker.value],['逐目标输出','32 个隐藏单元 → 修正量','恢复单位，144 步非负预测'],['平均预测与选模','三个随机种子取平均','每月依据过去验证费用选择'],['线性规划','凌晨原计划','6、12、18 时可重算剩余时段'],['实际储能执行','先供负载，再充放电','仍有缺口才紧急购电'],['逐区间结算','原计划费＋最终调整费','＋紧急购电费']];
+   const height=Math.ceil(nodes.length/columns)*rowHeight-20;
+   svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('height',height);svg.replaceChildren();
+   const coords=nodes.map((n,i)=>{const row=Math.floor(i/columns),col=columns===1?0:row%2?columns-1-i%columns:i%columns;return{x:8+col*(nodeWidth+gap),y:row*rowHeight+8};});
+   for(let i=0;i<coords.length-1;i++){
+     const a=coords[i],b=coords[i+1];let x1,y1,x2,y2,angle;
+     if(a.y===b.y){const direction=b.x>a.x?1:-1;x1=a.x+(direction>0?nodeWidth:0);x2=b.x+(direction>0?0:nodeWidth);y1=y2=a.y+nodeHeight/2;angle=direction>0?0:Math.PI;}
+     else{x1=x2=a.x+nodeWidth/2;y1=a.y+nodeHeight;y2=b.y;angle=Math.PI/2;}
+     element('line',{x1,y1,x2,y2,stroke:'var(--border)','stroke-width':1.5});
+     const size=5,backX=x2-size*Math.cos(angle),backY=y2-size*Math.sin(angle),sideX=3*Math.sin(angle),sideY=3*Math.cos(angle);
+     element('path',{d:`M ${backX+sideX} ${backY-sideY} L ${x2} ${y2} L ${backX-sideX} ${backY+sideY}`,fill:'none',stroke:'var(--muted-foreground)','stroke-width':1.5});
+   }
+   nodes.forEach((lines,i)=>{const {x,y}=coords[i];element('rect',{x,y,width:nodeWidth,height:nodeHeight,rx:6,fill:i===2?'color-mix(in srgb, var(--viz-series-1) 12%, transparent)':'transparent',stroke:'var(--border)'});lines.forEach((line,j)=>element('text',{x:x+nodeWidth/2,y:y+22+j*21,'text-anchor':'middle','font-weight':j===0?500:400},line));});
+   root.querySelector('[data-path-name]').textContent=networks[picker.value][0]+' · 四个目标分支独立参数';
+ }
+ picker.addEventListener('change',draw);new ResizeObserver(draw).observe(root);draw();
+})();
+</script>
