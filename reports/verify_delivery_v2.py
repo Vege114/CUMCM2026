@@ -62,6 +62,13 @@ def verify(experiment="exp002"):
     assert set(specified.date) == {"2025-03-20", "2025-06-21", "2025-09-23", "2025-12-21"}
     assert len(snapshot["queries"]["specified_intervals"]["rows"]) == 16*6
     np.testing.assert_allclose(specified.total_cost, [r["total_cost"] for r in snapshot["queries"]["specified_dates"]["rows"]], rtol=1e-11)
+    storage = pd.read_csv(report / "failure_storage.csv", dtype={"scenario": str})
+    assert len(storage) == 4*145
+    for scenario, part in storage.groupby("scenario"):
+        np.testing.assert_allclose(part.hour, np.arange(145)/6)
+        source = daily[(daily.scenario == scenario) & (daily.name == "primary") &
+                       (daily.seed == 42) & (daily.date == part.date.iloc[0])].iloc[0]
+        np.testing.assert_allclose([part.soc.iloc[0], part.soc.iloc[-1]], [source.initial_soc, source.final_soc])
     workbook = json.loads((report / "verification.json").read_text())
     for row in costs[(costs.name == "primary") & (costs.seed == 42)].itertuples():
         check = workbook[f"result{row.scenario}.xlsx"]
