@@ -9,6 +9,7 @@
 .experiment-table th:first-child,.experiment-table td:first-child {text-align:left;}
 .experiment-table th {font-weight:500;white-space:normal;}
 .experiment-table td {min-width:90px;overflow-wrap:anywhere;}
+.experiment-table td.experiment-numeric {white-space:nowrap;overflow-wrap:normal;}
 .experiment-route {display:grid;grid-template-columns:1fr;list-style:none;gap:18px;padding:10px 0;}
 .experiment-route li {position:relative;display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:2px solid var(--border);}
 .experiment-route li span {font-weight:500;color:var(--secondary);}
