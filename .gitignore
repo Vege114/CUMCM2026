@@ -21,6 +21,8 @@ Thumbs.db
 .work/
 .venv/
 venv/
+env/
+.cache/
 __pycache__/
 *.py[cod]
 .pytest_cache/

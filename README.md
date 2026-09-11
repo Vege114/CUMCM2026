@@ -2,6 +2,43 @@
 
 **微网与外部电网电力调控策略**。当前已完成题目转换、原始附件整理和仓库初始化，尚未开展建模实验。
 
+## Python 环境
+
+统一使用 **Python 3.12 + TensorFlow 2.21 / `tf.keras`**，强化学习使用 **Gymnasium** 定义环境、状态、动作与交互接口，策略网络及训练代码使用 TensorFlow。Gymnasium 本身不提供 PPO、DQN 等训练算法，具体算法随建模实验实现。
+
+依赖在 [pyproject.toml](pyproject.toml) 中声明，精确版本及包校验信息由 `uv.lock` 锁定；[uv](https://docs.astral.sh/uv/getting-started/installation/) 管理仓库根目录的 `.venv/`。`.venv/`、`venv/`、`env/` 和 `.cache/` 已加入 `.gitignore`，不提交环境和下载缓存。
+
+在仓库根目录执行：
+
+```bash
+# 首次安装或同步队友提交的依赖（自动使用 .python-version 指定的 Python）
+uv sync --locked
+
+# 验证 TF 训练/模型保存、Gymnasium 交互、Excel 读写和绘图
+uv run --locked python scripts/check_environment.py
+
+# 启动 Notebook；该命令使用项目 .venv 中的 Python
+uv run --locked jupyter lab
+
+# 查看各实验 runs/ 内的 TensorBoard 日志
+uv run --locked tensorboard --logdir experiments
+```
+
+命令行运行脚本可用 `uv run --locked python <脚本路径>`。也可先激活环境（macOS/Linux：`source .venv/bin/activate`；Windows PowerShell：`.venv\Scripts\Activate.ps1`）；编辑器或 Notebook 的解释器选择项目 `.venv` 中的 Python。退出环境执行 `deactivate`。
+
+| 用途 | 依赖 |
+| --- | --- |
+| 神经网络、预测与强化学习策略训练 | TensorFlow / `tf.keras`、TensorBoard |
+| 强化学习环境接口和经典控制示例 | Gymnasium（含 classic-control） |
+| 数值计算、数据清洗、预处理与评估指标 | NumPy、SciPy、pandas、scikit-learn |
+| 附件读取与结果工作簿导出 | openpyxl |
+| 可视化、配置与进度显示 | Matplotlib、Seaborn、PyYAML、tqdm |
+| 交互实验与代码检查（默认安装的 dev 组） | JupyterLab、ipykernel、Ruff |
+
+新增依赖用 `uv add <包名>`，开发工具用 `uv add --dev <包名>`，同步提交 `pyproject.toml` 和 `uv.lock`。只运行脚本、无需 Notebook/代码检查工具时，可以用 `uv sync --locked --no-dev`。
+
+本机为 Apple Silicon，默认安装 CPU 版 TensorFlow；当前配置不包含 Metal 或 CUDA 加速插件。Python 3.12 在 [TensorFlow 官方支持列表](https://www.tensorflow.org/install/pip) 内。本环境先保证训练与依赖可复现，GPU 环境按实际训练设备另行配置。运行检查只产生临时文件和忽略的工具缓存，不改动原始附件或生成建模结果。
+
 ## 目录
 
 ```text
@@ -25,13 +62,16 @@ data/                      数据区
   processed/               清洗、时间对齐后的派生数据
   results/                 经核验的答题工作簿、论文表格及图片
   manifest.json            10 个原始文件的路径、大小、SHA-256 和工作表名称
+scripts/check_environment.py 环境自检
+pyproject.toml             项目依赖与工具配置
+uv.lock                    可复现的依赖锁文件
 ```
 
 ## 开始工作
 
 1. 阅读 [题目 Markdown](C题/C题.md)，必要时对照 [原始 PDF](C题/C题.pdf) 与 [校对记录](C题/conversion.md)。
 2. 按 [答题交付清单](C题/requirements.md) 确认四问的输入、时间范围和结果文件。
-3. 依据 [数据区说明](data/README.md) 读取附件，在 [实验区](experiments/README.md) 开展建模与验证。
+3. 按上文安装并验证 Python 环境，依据 [数据区说明](data/README.md) 读取附件，在 [实验区](experiments/README.md) 开展建模与验证。
 4. 将核验后的结果整理到 `data/results/`；论文模板后续由小组加入 `paper/`。
 
 ## 协作约定
