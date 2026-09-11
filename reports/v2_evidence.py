@@ -426,11 +426,20 @@ def figures(run_id="exp002"):
             ax.grid(axis="y", alpha=.15)
     save(fig, "failure-case-and-storage")
     fig, axes = plt.subplots(2, 2, figsize=(12, 8), layout="constrained")
+    scatter_styles = {
+        "legacy_rebased": ("#a8b0b5", "s"), "new_deterministic": ("#6098ad", "o"),
+        "primary": ("#237d73", "D"), "risk_zero": ("#b55c9c", "x"),
+        "no_anticipation": ("#bc8545", "^"), "raw_forecast": ("#7457a3", "v"),
+    }
     for ax, scenario in zip(axes.ravel(), SCENARIOS):
-        x = costs[(costs.scenario == scenario) & costs.name.isin([*names, "risk_zero", "no_anticipation", "raw_forecast"])]
-        for row in x.itertuples():
+        x = costs[costs.scenario == scenario].set_index("name")
+        for name, (color, marker) in scatter_styles.items():
+            if name not in x.index:
+                continue
+            row = x.loc[name]
             extra = {"risk_zero": "风险权重为零", "no_anticipation": "不预先考虑更新", "raw_forecast": "原始光伏预报"}
-            ax.scatter(row.total_cost/10000, row.daily_cvar90/10000, s=45, label=names.get(row.name, extra.get(row.name, row.name)))
+            ax.scatter(row.total_cost/10000, row.daily_cvar90/10000, s=45, color=color, marker=marker,
+                       label=names.get(name, extra.get(name, name)))
         ax.set(title=f"问题 {scenario}", xlabel="全年费用（万元）", ylabel="日费用 CVaR90（万元）")
         ax.grid(alpha=.15)
         ax.legend(fontsize=7)

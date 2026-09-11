@@ -99,7 +99,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
         raise RuntimeError("Full dispatch results required; use --partial for a clearly marked preview")
     costs = pd.read_csv(out / "dispatch_metrics.csv", dtype={"scenario": str}) if complete else pd.DataFrame()
     daily = pd.read_csv(out / "daily_metrics.csv", dtype={"scenario": str}) if complete else pd.DataFrame()
-    main = costs[(costs.name == "primary") & (costs.seed == 42)].copy() if complete else pd.DataFrame()
+    main = costs[(costs.name == "primary") & (costs.seed == 42)].sort_values("scenario").copy() if complete else pd.DataFrame()
     if complete:
         for frame in (costs, daily):
             frame["model_label"] = frame.name.map(NAMES)
@@ -252,6 +252,9 @@ def build(experiment="exp002", partial=False, code_commit=None):
             {"scenario": "问题", "seed": "种子", "total_cost": "全年费用/元", "daily_cvar90": "日费用CVaR90/元", "final_soc": "期末储电量/kWh"})
         calls = int(main.solver_calls.sum())
         sections[5] += f"\n正式种子四个问题共 {calls} 次风险求解，其中 {int(main.timeout_count.sum())} 次超时、{int(main.fallback_count.sum())} 次回退，{int(main.gap_certified_count.sum())} 次有不超过 1% 的全局差距证书。两秒预算限制的是求解器阶段；组装、可行初始计划及独立核验另计。费用结果可以比较，不能把全部可行解称为全局最优解。\n"
+        solver_summary = pd.read_csv(out / "solver_summary.csv")
+        measured = solver_summary[solver_summary.seed == 42].mean_solver_seconds
+        sections[5] += f"\n2 秒是传给求解接口的预算设置；实测求解调用平均为 {measured.min():.3f}—{measured.max():.3f} 秒，可能略超过设置值。图表使用实测值，没有把它截断为 2 秒；完整调用耗时与差距保存在 solver_metrics.csv。\n"
         sections[5] += "\n失败案例按各问题最贵的实际日期固定选择。费用同时受真实净需求、电价、预测误差及日前计划影响；下图用于定位误差和储能不足的时段，不能单凭最贵日期归因于网络。预测误差降低也不保证结算费用降低，因为上调、下调与紧急购电具有不同代价。区间电量画在区间中点，储能轨迹使用 00:00—24:00 的 145 个实际状态节点。\n"
         for row in main.itertuples():
             base = costs[(costs.scenario == row.scenario) & (costs.seed == 42) & (costs.name == "new_deterministic")].iloc[0]
