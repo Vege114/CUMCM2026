@@ -179,7 +179,10 @@ def derive(run_id="exp002"):
             mean_cost=("total_cost", "mean"), std_cost=("total_cost", "std"),
             mean_cvar=("daily_cvar90", "mean"), std_cvar=("daily_cvar90", "std")).to_csv(out / "seed_cost_statistics.csv")
         run_directory = ROOT / "experiments/common/neural_v2/runs" / run_id
-        elapsed = json.loads((run_directory / "evaluation_walltime.json").read_text())
+        elapsed_file = run_directory / "evaluation_walltime.json"
+        if not elapsed_file.exists():
+            elapsed_file = out / "evaluation_walltime.json"
+        elapsed = json.loads(elapsed_file.read_text())
         if (run_directory / "resume_events.json").exists():
             resume = json.loads((run_directory / "resume_events.json").read_text())
             elapsed["first_segment_seconds"] = resume["first_segment_seconds"]
@@ -219,8 +222,12 @@ def derive(run_id="exp002"):
             total_cost=("total_cost", "sum"), emergency_kwh=("emergency_kwh", "sum"),
             final_soc=("final_soc", "last")).to_csv(out / "monthly_dispatch.csv")
     stage_file = ROOT / "experiments/common/neural_v2/runs" / run_id / "stage_timings.json"
+    if not stage_file.exists():
+        stage_file = out / "stage_timings.json"
     if stage_file.exists():
-        for row in json.loads(stage_file.read_text()):
+        stage_rows = json.loads(stage_file.read_text())
+        (out / "stage_timings.json").write_text(json.dumps(stage_rows, indent=2))
+        for row in stage_rows:
             if row["stage"] in ("export", "report"):
                 timing_rows.append({"stage": "工作簿导出" if row["stage"] == "export" else "报告构建",
                     "minutes": row["seconds"]/60, "scope": "一次完整阶段的墙钟时间；不含此前预览或人工检查"})
