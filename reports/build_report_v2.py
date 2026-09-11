@@ -70,7 +70,8 @@ def build(experiment="exp002", partial=False, code_commit=None):
     annual_f["target_label"] = annual_f.target.map(TARGETS)
     annual_f["model_label"] = annual_f.variant.map(NAMES)
     annual_f["population_label"] = annual_f.population.map({"all": "全部区间", "generating": "实际发电区间"})
-    seed_forecasts = annual_f[annual_f.variant == "mlp"].copy()
+    seed_forecasts = annual_f[annual_f.variant == "mlp"].sort_values(
+        "seed", key=pd.to_numeric, kind="stable").copy()
     seed_statistics = pd.read_csv(out / "seed_forecast_statistics.csv")
     seed_statistics["target_label"] = seed_statistics.target.map(TARGETS)
     seed_statistics["population_label"] = seed_statistics.population.map({"all": "全部区间", "generating": "实际发电区间"})
