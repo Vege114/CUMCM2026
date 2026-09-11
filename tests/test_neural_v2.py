@@ -70,6 +70,18 @@ class ForecastInformationTests(unittest.TestCase):
         np.testing.assert_allclose(result,(np.arange(144)+.5)*10)
         self.assertAlmostEqual(result.sum()/6,24*1440/2)
 
+    def test_fixed_price_tree_cannot_reveal_variable_price_errors(self):
+        origin = 60*144
+        changed = copy.deepcopy(self.data)
+        changed.actual[:, 2] = np.random.default_rng(13).uniform(.1, 2, len(changed.actual))
+        a_store = ForecastStore(self.data, kind="periodic")
+        b_store = ForecastStore(changed, kind="periodic")
+        a = ScenarioFactory(self.data, a_store).build(origin, a_store.get(origin), "3")
+        b = ScenarioFactory(changed, b_store).build(origin, b_store.get(origin), "3")
+        for key in ("paths", "groups", "probabilities"):
+            np.testing.assert_array_equal(a[key], b[key])
+        self.assertEqual(a["metadata"]["tree"], b["metadata"]["tree"])
+
     def test_scenario_tree_ignores_future_actuals_and_issues(self):
         origin=60*144
         changed=copy.deepcopy(self.data);changed.actual[origin:]*=20

@@ -65,8 +65,9 @@ class ScenarioFactory:
                                   for r in selected_records])
             innovations*=ratio[boundary:][None,:,:]
             # Only observed prefix and the forecast released at this node can split it.
-            visible=np.concatenate((residual[indices,:boundary].reshape(count,-1),
-                                    innovations.reshape(count,-1)),axis=1)
+            reveal_channels=3 if variable else 2
+            visible=np.concatenate((residual[indices,:boundary,:reveal_channels].reshape(count,-1),
+                                    innovations[:,:,:reveal_channels].reshape(count,-1)),axis=1)
             scales=np.maximum(visible.std(0),1e-6);visible=visible/scales
             updated=current.copy()
             for parent in np.unique(current):
