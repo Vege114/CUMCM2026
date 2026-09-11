@@ -41,3 +41,9 @@ extend-select = ["E402"]
 [tool.ruff.lint.per-file-ignores]
 # Keep the frozen, checkpoint-hashed training source byte-for-byte reproducible.
 "experiments/common/neural_v1/train.py" = ["RUF100"]
+# exp002 measured artifacts bind these source bytes. Retain harmless style/unused
+# names; method caches are explicitly bounded (12 checkpoints / 128 donor days).
+"experiments/common/neural_v2/evaluate.py" = ["I001", "F401", "RUF007"]
+"experiments/common/neural_v2/predict.py" = ["I001", "F401", "B019"]
+"experiments/common/neural_v2/risk.py" = ["I001", "RUF059"]
+"experiments/common/neural_v2/scenarios.py" = ["B019", "RUF059"]
