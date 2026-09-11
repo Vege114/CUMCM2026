@@ -41,6 +41,15 @@ class ReportForecastArchive:
 
 def derive(run_id="exp002"):
     out = ROOT / "data/results" / run_id
+    annual = pd.read_csv(out / "annual_forecast_metrics.csv", dtype={"seed": str})
+    seed_forecasts = annual[annual.variant == "mlp"].copy()
+    seed_forecasts.to_csv(out / "seed_forecast_results.csv", index=False)
+    summary = seed_forecasts.groupby(["target", "population"]).agg(
+        seeds=("seed", "nunique"), mae_mean=("mae", "mean"), mae_std=("mae", "std"),
+        rmse_mean=("rmse", "mean"), rmse_std=("rmse", "std"),
+        wape_mean=("wape_pct", "mean"), wape_std=("wape_pct", "std")).reset_index()
+    assert (summary.seeds == 3).all()
+    summary.to_csv(out / "seed_forecast_statistics.csv", index=False)
     training = json.loads((out / "training_metadata.json").read_text())
     calibration = json.loads((out / "risk_calibration.json").read_text())
     timing_rows = [

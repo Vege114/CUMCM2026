@@ -70,6 +70,10 @@ def build(experiment="exp002", partial=False, code_commit=None):
     annual_f["target_label"] = annual_f.target.map(TARGETS)
     annual_f["model_label"] = annual_f.variant.map(NAMES)
     annual_f["population_label"] = annual_f.population.map({"all": "全部区间", "generating": "实际发电区间"})
+    seed_forecasts = annual_f[annual_f.variant == "mlp"].copy()
+    seed_statistics = pd.read_csv(out / "seed_forecast_statistics.csv")
+    seed_statistics["target_label"] = seed_statistics.target.map(TARGETS)
+    seed_statistics["population_label"] = seed_statistics.population.map({"all": "全部区间", "generating": "实际发电区间"})
     main_f = annual_f[(annual_f.seed == "42") & (annual_f.population == "all")]
     calibration = json.loads((out / "risk_calibration.json").read_text())
     cal = pd.DataFrame([{"scenario": c["scenario"], "weight": r["weight"],
@@ -84,7 +88,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
                               for i, (t, a, b, c) in enumerate(ROUTE)], ["protocol.json", "methods.md"], "源代码与已冻结实验协议定义的九步流程。")
     for name in ("forecast_decomposition", "training_trace", "tree_nodes", "official_forecast_comparison", "specified_dates",
                  "specified_intervals", "battery_blocks", "emergency_periods", "failure_intervals", "failure_storage", "solver_summary",
-                 "phase_timing", "seed_cost_results", "monthly_dispatch", "core_contributions"):
+                 "phase_timing", "seed_cost_results", "seed_forecast_results", "seed_forecast_statistics", "monthly_dispatch", "core_contributions"):
         path = out / f"{name}.csv"
         if path.exists():
             query(name, pd.read_csv(path, dtype={"scenario": str}), [path.name],
@@ -190,6 +194,14 @@ def build(experiment="exp002", partial=False, code_commit=None):
 
 {table(annual_f[(annual_f.seed.isin(['42','none']))], {'model_label':'预测方法','target_label':'目标','population_label':'时段','mae':'MAE','rmse':'RMSE','wape_pct':'WAPE/%'})}
 
+三个固定种子的各自全年预测误差。MAE、RMSE 的单位随目标分别为千瓦或元/千瓦时，WAPE 为百分比；这三组独立成绩不构成预测集成：
+
+{table(seed_forecasts, {'seed':'预测种子','target_label':'目标','population_label':'时段','mae':'MAE','rmse':'RMSE','wape_pct':'WAPE/%'})}
+
+以下均值与样本标准差（ddof=1）在三个种子的全年指标之间计算，不是先平均预测再评价。WAPE 的标准差单位为百分点：
+
+{table(seed_statistics, {'target_label':'目标','population_label':'时段','mae_mean':'MAE 均值','mae_std':'MAE 标准差','rmse_mean':'RMSE 均值','rmse_std':'RMSE 标准差','wape_mean':'WAPE 均值/%','wape_std':'WAPE 标准差/百分点'})}
+
 三种子费用稳定性，标准差为样本标准差（ddof=1），不用于挑选正式种子。费用波动同时包含预测差异和限时求解的运行差异；三个重复不足以宣称广泛的统计显著性：
 
 {table(seeds, {'scenario':'问题','mean_cost':'费用均值/元','std_cost':'费用标准差/元','mean_tail':'日费用CVaR90均值/元','std_tail':'尾部费用标准差/元'})}
@@ -283,6 +295,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
                 names = {"预测目标": "正式种子全年预测误差", "原计划费/元": "正式策略全年结算",
                          "一月验证费用/元": "风险权重的七日验证", "累计训练分钟": "正式训练规模与耗时",
                          "预测方法": "全年预测方法对照", "费用均值/元": "三个种子的费用稳定性",
+                         "预测种子": "三个种子的各自全年预测误差", "MAE 均值": "三个种子的预测稳定性",
                          "最差日期": "失败日期、储能与求解统计", "原登记费用/元": "历次正式策略的原始登记",
                          "计时口径": "各阶段实测时间", "旧正式预测/%": "新旧正式预测的全年 WAPE",
                          "一月 MAE": "正式评价之前的一月基线诊断",

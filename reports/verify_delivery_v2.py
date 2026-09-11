@@ -49,6 +49,16 @@ def verify(experiment="exp002"):
     january = pd.read_csv(report / "january_baselines.csv")
     assert len(january) == 9 and (january.origins == 93).all() and (january.n == 93*144).all()
     annual = pd.read_csv(report / "annual_forecast_metrics.csv", dtype={"seed": str})
+    seed_results = pd.read_csv(report / "seed_forecast_results.csv", dtype={"seed": str})
+    pd.testing.assert_frame_equal(seed_results, annual[annual.variant == "mlp"].reset_index(drop=True))
+    seed_statistics = pd.read_csv(report / "seed_forecast_statistics.csv")
+    assert len(seed_results) == 18 and len(seed_statistics) == 6
+    for row in seed_statistics.itertuples():
+        values = seed_results[(seed_results.target == row.target) & (seed_results.population == row.population)]
+        assert set(values.seed) == {"42", "2026", "3407"} and row.seeds == 3
+        for metric, prefix in (("mae", "mae"), ("rmse", "rmse"), ("wape_pct", "wape")):
+            np.testing.assert_allclose([getattr(row, prefix+"_mean"), getattr(row, prefix+"_std")],
+                                       [np.mean(values[metric]), np.std(values[metric], ddof=1)], rtol=1e-11)
     for row in annual.itertuples():
         source = forecast[(forecast.variant == row.variant) & (forecast.seed == row.seed) &
                           (forecast.target == row.target) & (forecast.population == row.population) & (forecast.lead == "all")]
