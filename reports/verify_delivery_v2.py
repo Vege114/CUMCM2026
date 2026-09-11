@@ -46,6 +46,8 @@ def verify(experiment="exp002"):
         if row.name == "primary" and row.seed == 42:
             assert f"{row.total_cost:,.4f}" in body
     forecast = pd.read_csv(report / "forecast_metrics.csv", dtype={"seed": str})
+    january = pd.read_csv(report / "january_baselines.csv")
+    assert len(january) == 9 and (january.origins == 93).all() and (january.n == 93*144).all()
     annual = pd.read_csv(report / "annual_forecast_metrics.csv", dtype={"seed": str})
     for row in annual.itertuples():
         source = forecast[(forecast.variant == row.variant) & (forecast.seed == row.seed) &
