@@ -24,6 +24,14 @@ def prediction_content_digest(path):
 
 def validate_upstream(run_id="exp002", replay=False, allow_missing_predictions=False):
     data = Data()
+    legacy_inputs = {name: digest(ROOT / "data/results/exp001" / name)
+                     for name in ("ensemble_predictions.npz", "model_selection.csv")}
+    legacy_lock = HERE / "runs" / run_id / "legacy_input_fingerprints.json"
+    if legacy_lock.exists():
+        if json.loads(legacy_lock.read_text()) != legacy_inputs:
+            raise RuntimeError("Historical forecasts or official monthly selection changed; refusing stale replay results")
+    else:
+        legacy_lock.write_text(json.dumps(legacy_inputs, indent=2))
     expected = signature(("train.py", "data.py", "protocol.json"),
                          {"data": data.hashes, "epochs": protocol()["training"]["max_epochs"]})
     fingerprints = {}
@@ -47,11 +55,16 @@ def validate_upstream(run_id="exp002", replay=False, allow_missing_predictions=F
     elif old != fingerprints:
         raise RuntimeError("Actual weights or cached forecast values changed; refusing to reuse upstream results")
     if replay:
-        from .evaluate import evaluation_signature
+        from .evaluate import cases, evaluation_signature
         current = evaluation_signature(data, run_id)
         rows = json.loads((ROOT / "data/results" / run_id / "evaluation_manifest.json").read_text())
         if not rows or any(row["signature"] != current for row in rows):
             raise RuntimeError("Replay code or upstream checkpoint changed; regenerate before exporting/reporting")
+        calibration = json.loads((ROOT / "data/results" / run_id / "risk_calibration.json").read_text())
+        expected_cases = cases({row["scenario"]: row["selected_weight"] for row in calibration})
+        encode = lambda row: json.dumps(row, sort_keys=True)
+        if sorted(map(encode, expected_cases)) != sorted(encode(row["job"]) for row in rows):
+            raise RuntimeError("Calibration choices or evaluation configurations changed; replay before exporting/reporting")
 
 
 def run(run_id="exp002"):
@@ -78,6 +91,7 @@ def run(run_id="exp002"):
                    historical_replay={"source": "exp001/ensemble_predictions.npz",
                        "sha256": digest(ROOT / "data/results/exp001/ensemble_predictions.npz"),
                        "selection": "exp001/model_selection.csv; selected monthly official variant",
+                       "selection_sha256": digest(ROOT / "data/results/exp001/model_selection.csv"),
                        "pv_conversion": "adjacent saved ten-minute points and the observed anchor are trapezoidally integrated; no old training"})
     (out / "prediction_archive.json").write_text(json.dumps(archive, ensure_ascii=False, indent=2))
     (out / "protocol.json").write_text(json.dumps(protocol(), indent=2))
