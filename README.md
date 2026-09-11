@@ -1,50 +1,45 @@
-# CUMCM 2026 · B 题
+# CUMCM 2026 · C 题
 
-**无线电干扰源的快速自动定位与清除**。已完成模块化基础模型：官方模拟器问题 3、4 各一次演练全清，并建立可复用的 Benchmark。
-
-当前入口：[改进模型 v2 与 Windows 运行方式](experiments/baseline_v2/README.md) · [v2 离线验证报告](experiments/baseline_v2/REPORT.md) · [v1 官方演练报告与图表](experiments/baseline_v1/REPORT.md) · [题目指标 Benchmark](Benchmark/README.md)。v2 已在 macOS 完成代码和配对离线验证，尚待 Windows 官方模拟器演练。v1 问题 3 演练清除 13/13、平均 380.40 虚拟秒/个；问题 4 演练清除 16/16、平均 1103.17 虚拟秒/个。均为演练结果，尚未使用正式测试机会。
+**微网与外部电网电力调控策略**。当前已完成题目转换、原始附件整理和仓库初始化，尚未开展建模实验。
 
 ## 目录
 
-| 路径 | 用途 |
-| --- | --- |
-| `B题/` | 比赛原始 PDF 和 DOCX，保持原样 |
-| `docs/markdown/` | MinerU 转换后的题目、附件和配图；题目已按原 PDF 校对缺字 |
-| `docs/mineru-raw/` | 题目未经校对的 MinerU 原始输出 |
-| `docs/problem-map.md` | 四问的交付物与目录对应关系，仅整理要求 |
-| `docs/conversion.md` | 转换方法、文件校验值与校对记录 |
-| `paper/` | 论文目录预留，LaTeX 模板由小组后续自行添加 |
-| `src/` | 通信、公共组件以及问题 1–4 的待实现目录 |
-| `config/` | 不含账号的示例配置 |
-| `data/` | 后续公开输入及整理数据的目录约定 |
-| `experiments/baseline_v1/` | 基础模型、配置、测试、每局产物与可视化报告集中管理 |
-| `experiments/baseline_v2/` | 定向可接收性、覆盖与路径改进、Windows 入口、分层配对离线验证 |
-| `Benchmark/` | 题目指标字典、场景规范、独立日志评价器 |
-| `results/` | 后续经核验、可供论文引用的结果 |
-| `submission/` | 问题 3、4 正式日志与最终支撑材料 |
-| `scripts/` | 文档转换脚本 |
-| `tests/` | 后续单元测试和离线协议测试 |
-| `experiments/jammers-simulator.exe` | 用户移入实验目录的 Windows 模拟器，二进制保持不变 |
-| `tools/README.md` | 模拟器使用和文件管理说明 |
+```text
+C题/                       题目资料
+  C题.pdf                  原始题目
+  C题.md                   MinerU 转换并按 PDF 校对的题目
+  conversion.md            转换方法与校对记录
+  requirements.md          四问任务及答题交付清单
+  mineru-raw/               未修改的 MinerU 输出及表格截图
+experiments/               实验区
+  common/                  数据读取、调度约束、计费、评估等公共代码预留
+  problem1/                问题 1：单日计划购电
+  problem2/                问题 2：全年计划与紧急购电
+  problem3/                问题 3：引入日内预报的调整策略
+  problem4/                问题 4：波动电价下复算问题 2、3
+  record-template.md       实验记录模板
+paper/                     LaTeX 写作区，仅 .gitkeep 占位
+data/                      数据区
+  raw/                     附件 1–4 原始数据
+  templates/               附件 5 的五个原始结果模板
+  processed/               清洗、时间对齐后的派生数据
+  results/                 经核验的答题工作簿、论文表格及图片
+  manifest.json            10 个原始文件的路径、大小、SHA-256 和工作表名称
+```
 
-## 阅读顺序
+## 开始工作
 
-1. [题目](docs/markdown/B题.md)
-2. [附件 1：模拟器使用说明](docs/markdown/附件1.md)
-3. [附件 2：通信接口说明及编程指南](docs/markdown/附件2.md)
-4. [任务目录映射](docs/problem-map.md)
-
-原始文档是依据；附件转换保留了 HTML 表格和原有代码排版，代码示例不能直接作为源文件运行。
-
-## 论文环境
-
-小组计划使用 LaTeX 写作，模板由小组后续自行添加到 `paper/`。当前仅预留目录，编译方式待模板加入后补充。
+1. 阅读 [题目 Markdown](C题/C题.md)，必要时对照 [原始 PDF](C题/C题.pdf) 与 [校对记录](C题/conversion.md)。
+2. 按 [答题交付清单](C题/requirements.md) 确认四问的输入、时间范围和结果文件。
+3. 依据 [数据区说明](data/README.md) 读取附件，在 [实验区](experiments/README.md) 开展建模与验证。
+4. 将核验后的结果整理到 `data/results/`；论文模板后续由小组加入 `paper/`。
 
 ## 协作约定
 
-- 原题、原始附件与模拟器不作修改；转换校对记录写入 `docs/conversion.md`。
-- 当前基础版使用 Python 标准库；通信、几何、策略、规划、配置和离线环境在 `experiments/baseline_v1/baseline/` 分模块管理，便于整体复制和逐版比较。
-- 结果记录关联 Git 提交、配置和日志；论文只引用已核验结果。
-- 问题 3 和问题 4 各预留三次正式测试日志，保留模拟器导出文件名及原始内容。
-- token、登录状态、参赛队号配置保存在本机环境或被忽略的本地配置中。
-- 已使用公开 HTTP 接口完成 Q3/Q4 演练；账号和模拟器内部数据不进入代码，正式测试机会未消耗。
+- 原始 PDF、`data/raw/` 和 `data/templates/` 保持原始字节；清洗数据与填好的结果另存。
+- 实验记录写明输入、假设、参数、随机种子（如使用）、依赖版本、运行命令和 Git 提交，论文引用可复现的结果。
+- 区分功率 kW、电量 kWh、电价元/kWh 和费用元；功率转区间电量时明确时间间隔及插值或积分方式。
+- 涉及按时刻制定策略时，记录决策时可用信息，避免使用尚未发布的预报或未来实测数据。
+- Token、密钥和本机配置保存在仓库外或忽略文件中。
+
+本次从 B 题切换到 C 题，当前工作区的 B 题题目、代码、报告和模拟器已清空；既有 Git 历史保留。

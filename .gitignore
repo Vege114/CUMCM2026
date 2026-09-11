@@ -2,30 +2,48 @@
 .env
 .env.*
 !.env.example
-config/*.local.*
-**/config.yaml
-# Word locks and operating-system files
-~$*
-Thumbs.db
+*.local.*
+*token*.txt
+*Token*.txt
+*TOKEN*.txt
+*.pem
+*.key
+
+# Operating system and editor files
 .DS_Store
-# Simulator private runtime state (keep exported official logs)
-**/JammersSimulatorData/
-*.sqlite3*
-*.db
-# Local scratch and language caches
+Thumbs.db
+~$*
+.idea/
+.vscode/
+.statamcp/
+
+# Temporary work, environments and language caches
 .work/
 .venv/
+venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.idea/
-.statamcp/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Regenerable experiment runs and intermediate datasets
+experiments/**/runs/
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+
 # LaTeX build artifacts
 paper/build/
 *.aux
 *.log
 *.out
 *.toc
+*.lof
+*.lot
 *.fls
 *.fdb_latexmk
 *.synctex.gz
@@ -34,5 +52,6 @@ paper/build/
 *.blg
 *.bcf
 *.run.xml
-# Local experiment output; curated results live in results/
-experiments/runs/
+*.nav
+*.snm
+*.vrb

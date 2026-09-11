@@ -2,16 +2,18 @@
 *.md text eol=lf
 *.tex text eol=lf
 *.bib text eol=lf
-*.ps1 text eol=crlf
 *.json text eol=lf
 *.jsonl text eol=lf
 *.py text eol=lf
-*.svg text eol=lf
-*.html text eol=lf
+*.csv text eol=lf
 *.txt text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf
+*.svg text eol=lf
 *.pdf binary
-*.docx binary
-*.exe binary
-*.jpg binary
+*.xlsx binary
 *.png binary
-*.md whitespace=-blank-at-eol
+*.jpg binary
+*.jpeg binary

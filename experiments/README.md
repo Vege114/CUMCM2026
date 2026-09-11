@@ -1,11 +1,19 @@
-# 实验记录
+# 实验区
 
-当前可运行版本位于 [baseline_v2/](baseline_v2/README.md)，基础版本保留在 [baseline_v1/](baseline_v1/README.md)。各版代码、参数、已核验的脱敏运行日志、图表和报告集中管理，每局输出保存至对应版本的 `runs/<run_id>/`，不会覆盖既有证据。
+按四问建立独立实验目录，公共模块集中在 `common/`。当前目录仅占位，算法、依赖和求解器待建模时确定。
 
-[v1 运行报告](baseline_v1/REPORT.md) 包含 Q3/Q4 两场官方演练和六场离线结果；[v2 改进与验证报告](baseline_v2/REPORT.md) 包含另外两场官方演练及 30 对自建场景验证。两份报告均按模块说明实际算法、输入输出、参数、决策依据与流程关系。没有使用正式测试机会。
+| 目录 | 工作内容 |
+| --- | --- |
+| `common/` | 数据读取与时间对齐、储能约束、费用计算、结果验证与模板导出等公共模块 |
+| `problem1/` | 单日计划购电模型与结果 |
+| `problem2/` | 每日计划策略、紧急购电及全年评估 |
+| `problem3/` | 预报驱动的日内调整及对照实验 |
+| `problem4/` | 波动电价下复用并评估问题 2、3 的策略 |
 
-后续实验使用 [实验记录与报告模板](record-template.md)，其中“模块化技术细节与算法实现”为必填部分。技术说明须对应实际运行代码，明确模块与函数、算法过程、目标函数或判据、保证条件与启发式边界，并提供模块关系图；优化建议单列。更新报告时直接修改主报告原文件，并同步其生成模板或内容来源。v1 的生成模板为 [report_template.md](baseline_v1/report_template.md)；v2 主报告独立维护，`make_report.py` 只生成配对套件的 `COMPARISON.md`。
+## 实验组织
 
-[v1 比较索引](baseline_v1/benchmark_index.json) 与 [v2 配对结果](baseline_v2/runs/validation_20260911/COMPARISON.md) 可供后续版本读取。
+每种方案在对应问题目录下新建具名文件夹（例如 `problem1/baseline_v1/`），集中保存代码、配置、依赖说明和实验记录。从 [record-template.md](record-template.md) 复制记录模板，并写出从仓库根目录可执行的完整运行命令。
 
-其他尚未核验或私有的运行输出仍可放在被忽略的 `experiments/runs/`。正式导出日志归档至 `submission/logs/problem3/` 或 `problem4/`，保持原名及内容。
+输入从 `data/raw/` 或可追溯的 `data/processed/` 读取；临时产物存入各实验的 `runs/` 子目录；验证后的答题工作簿和论文图表放入 `data/results/`。共享代码调用方式和运行环境随首个实现补充。
+
+核验重点：供需平衡、储能状态与功率限制、能量单位、费用构成、结果时间覆盖，以及决策时刻可用的信息。只对适用的问题施加相应约束，具体要求见 [答题清单](../C题/requirements.md)。
