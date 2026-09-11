@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "eight_chapters": true,
+  "tree_18h_nodes": 15,
+  "terminal_nodes": 8,
+  "paths_per_terminal_node": 2,
+  "forecast_filters": [
+    "actual_generation",
+    "all_three_seeds",
+    "WAPE",
+    "RMSE",
+    "December",
+    "question_price_boundary"
+  ],
+  "narrow_width_px": 390,
+  "document_scroll_width_px": 390,
+  "runtime_errors": [],
+  "full_cost_and_offline_final_checks": "passed within recorded preview scope",
+  "direct_file_url_check": "blocked by Browser Use URL security policy; not bypassed",
+  "offline_verification_scope": "Verified single-file export; actual interaction checked through existing local HTTP preview",
+  "observable_tree_revision_checked": true,
+  "desktop_width_px": 1280,
+  "narrow_numeric_cells": "no wrap; table has internal horizontal scrolling",
+  "full_cost_filters": [
+    "question 4-3",
+    "December",
+    "cost decomposition",
+    "daily emergency",
+    "annual tail risk kept explicitly annual"
+  ],
+  "source_inspector": "December 4-3: daily_metrics.csv, 403 filtered rows; Overview and Data preview checked",
+  "specified_date_readback": {
+    "scenario": "4-3",
+    "date": "2025-12-21",
+    "total_cost": 78942.969525,
+    "csv_match_4dp": true
+  },
+  "failure_case": "4-3, 2025-07-06, 145 SOC states from 0 to 24 hours",
+  "historical_comparison": "official policy matching; pv_interpolation and physical protocol changes explicitly suppress incompatible direct rankings",
+  "final_render": "48 named strategies, 334 complete dates each; no pending badge",
+  "standalone_resources": "single-file HTML; no external stylesheet; embedded scripts/assets, zero broken images",
+  "figures": "14 PNG/SVG pairs visually inspected; stable scenario colors and markers; all four workbook previews inspected",
+  "frozen_code_commit": "ab359643a10d584546f3c397d021f3ae44487a49"
+}

@@ -1,0 +1,920 @@
+[
+  {
+    "job": {
+      "name": "weekly",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "weekly",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "b87651b80904af47",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "new_deterministic",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "11dcc1f0cbd5f8d1",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0.1,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "e1adab7c9c5c9092",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "periodic",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "periodic",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "a80ab48d42aaa1b2",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "2",
+      "seed": 2026,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0.1,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "0d695527de9c0931",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "yesterday",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "yesterday",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "c6ff6be61b39ea79",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "2",
+      "seed": 3407,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0.1,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "abdda68ade2cb02f",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "legacy_rebased",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "legacy",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "b046af101c7471d7",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "risk_zero",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "31f9cb83c4aae83d",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "new_deterministic",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "53a8d4b1b0b9b0b6",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "periodic",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "periodic",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "16e3a9445cdce170",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "legacy_rebased",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "legacy",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "b8abf874bdcaf18b",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "yesterday",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "yesterday",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "416b5b67676417b3",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "weekly",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "weekly",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "0135ad9caa613e5f",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "no_anticipation",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": false,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "5a6828376dabc98b",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "updates_0",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "6edfa9deb4ec3b39",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "9b2de8e15a33b1f3",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "risk_zero",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "9b2de8e15a33b1f3",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "4-2",
+      "seed": 2026,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "ccd9bb3c90d0467c",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "4-2",
+      "seed": 3407,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "8f9151cfa5f3f9f4",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "new_deterministic",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "6ee262ce064de531",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "legacy_rebased",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "legacy",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "1344bf94b6ba9ed3",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "periodic",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "periodic",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "a0953d3b4a0ce63a",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "yesterday",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "yesterday",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "e9a067aa915e0309",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "weekly",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "weekly",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "83c0a90944fc825e",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "known_price",
+      "scenario": "4-2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": true
+    },
+    "cache_key": "ca31e70b2467d608",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "updates_0_6",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "1acfaf536d6e5435",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "updates_0_6_12",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "2d529c50020ba6b5",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "new_deterministic",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "c96d3b1a9acba030",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "legacy_rebased",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "legacy",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "5478a3917c4f7159",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "periodic",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "periodic",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "dce87df46036f66f",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "yesterday",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "yesterday",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "46272df7597f09b3",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "weekly",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "weekly",
+      "method": "deterministic",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "540e19939f24aeae",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "3",
+      "seed": 2026,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "7e31a46ae0df9f6d",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "3",
+      "seed": 3407,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "a61a1d24c26e30a1",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "raw_forecast",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": true,
+      "known_price": false
+    },
+    "cache_key": "9aa9f849181d3430",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "3c81861a0e254915",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "risk_zero",
+      "scenario": "3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "3c81861a0e254915",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "4-3",
+      "seed": 2026,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "64a5879e1400da2f",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "6b53bb95cd240737",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "risk_zero",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "6b53bb95cd240737",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "updates_0",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "8cb65acf4096b4b3",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "primary",
+      "scenario": "4-3",
+      "seed": 3407,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "a1a575ec5994fe84",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "updates_0_6",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "3fdd33b892ac64b9",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "no_anticipation",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": false,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "bc7351163ac6c6ef",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "updates_0_6_12",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": false
+    },
+    "cache_key": "cb3e5470c6bd5706",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "raw_forecast",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": true,
+      "known_price": false
+    },
+    "cache_key": "ac7d0f0e72d7f3bb",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  },
+  {
+    "job": {
+      "name": "known_price",
+      "scenario": "4-3",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "risk",
+      "weight": 0,
+      "update_hours": [
+        6,
+        12,
+        18
+      ],
+      "anticipate": true,
+      "raw_pv": false,
+      "known_price": true
+    },
+    "cache_key": "c4d32083edeb15ab",
+    "signature": "af8671a0cf63dca9ce67aedb914355b65d0390db99261da2f4304523b39ad1ec",
+    "days": 334
+  }
+]
