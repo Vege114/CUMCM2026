@@ -1,0 +1,22 @@
+{
+  "experiment_id": "exp002",
+  "version": "microgrid-causal-risk-v2",
+  "period": ["2025-02-01", "2025-12-31"],
+  "time_alignment": "interval_end_natural_day",
+  "billing": "full_original_plus_final_adjustment_plus_emergency",
+  "efficiency": {"charge": 0.9486832980505138, "discharge": 0.9486832980505138},
+  "initial_soc_kwh": 6000,
+  "soc_bounds_kwh": [1200, 10800],
+  "max_power_kw": 5000,
+  "warmup": "January common causal periodic baseline initialized from attachment 1",
+  "terminal_condition": "physical_bounds_only_no_daily_reset",
+  "pv_interpolation": "correct_hourly_endpoints_then_piecewise_linear_interval_integral",
+  "execution": "exact_greedy_charge_discharge_then_emergency",
+  "seed_list": [42, 2026, 3407],
+  "primary_seed": 42,
+  "architecture": {"name": "periodic_residual_mlp", "branches": 4, "units": [32, 16], "features": 16, "output_initialization": "zeros", "l2": 0.0001},
+  "training": {"monthly": "from_scratch", "validation_days": 7, "loss": "standardized_huber_delta_1_hourly_pv_correction", "learning_rate": 0.001, "batch_size": 64, "max_epochs": 60, "patience": 6},
+  "risk": {"alpha": 0.9, "lambda_candidates": [0, 0.1, 0.3], "selection_days": [24, 31], "selection": "January_validation_total_replayed_cost_then_smaller_lambda", "history_days": 56, "shrinkage_days": 28, "max_paths": 16, "time_limit_seconds": 2, "mip_rel_gap": 0.01, "scenario_seed": 8675309},
+  "forecast_issuance_hours": [0, 6, 12, 18],
+  "target_order": ["load", "pv", "price", "pv_corrected"]
+}

@@ -1,0 +1,19 @@
+{
+  "seconds": 13370.55637496349,
+  "workers": 8,
+  "case_count": 48,
+  "unique_case_count": 45,
+  "complete": true,
+  "first_segment_seconds": 1921.9950404167175,
+  "resumed_segment_seconds": 6599.029650624958,
+  "worker_schedule": [
+    4,
+    8,
+    8,
+    8
+  ],
+  "second_segment_before_causal_fix_seconds": 3241.801600933075,
+  "includes_discarded_preliminary_q3_runs": true,
+  "third_segment_before_clipped_information_fix_seconds": 1607.730082988739,
+  "includes_discarded_preliminary_q3_and_q43_runs": true
+}

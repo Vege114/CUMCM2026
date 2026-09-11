@@ -1,0 +1,54 @@
+{
+  "result2.xlsx": {
+    "days": 334,
+    "intervals_per_day": 144,
+    "violations": 0,
+    "max_energy_residual": 4.547473508864641e-13,
+    "causal_greedy_controller": "passed",
+    "total_cost": 15128897.452710155,
+    "january_warmup_and_february_continuity": "passed",
+    "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+    "saved_workbook_readback": "passed",
+    "original_template_unchanged": true,
+    "sha256": "5644097bc996b54264b0eeedbc653a8a7d7e2f3cff0a2f6ca469cb7c0aff14b4"
+  },
+  "result3.xlsx": {
+    "days": 334,
+    "intervals_per_day": 144,
+    "violations": 0,
+    "max_energy_residual": 4.547473508864641e-13,
+    "causal_greedy_controller": "passed",
+    "total_cost": 14005062.775875755,
+    "january_warmup_and_february_continuity": "passed",
+    "template_sha256": "c59da470cabd0be23f602c95c8aa9d11ec224a0cdac216b3e1f218e65d006bdc",
+    "saved_workbook_readback": "passed",
+    "original_template_unchanged": true,
+    "sha256": "4062c6ee6479f406fb0e70e63e29b43424096fd4402fa4ed365683e70b056282"
+  },
+  "result4-2.xlsx": {
+    "days": 334,
+    "intervals_per_day": 144,
+    "violations": 0,
+    "max_energy_residual": 4.547473508864641e-13,
+    "causal_greedy_controller": "passed",
+    "total_cost": 15901397.201112418,
+    "january_warmup_and_february_continuity": "passed",
+    "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+    "saved_workbook_readback": "passed",
+    "original_template_unchanged": true,
+    "sha256": "9e177647bf761683194222d3f0a09f5f6fb5184ba34229bd0d5c120d6454b7cd"
+  },
+  "result4-3.xlsx": {
+    "days": 334,
+    "intervals_per_day": 144,
+    "violations": 0,
+    "max_energy_residual": 4.547473508864641e-13,
+    "causal_greedy_controller": "passed",
+    "total_cost": 14734925.124925215,
+    "january_warmup_and_february_continuity": "passed",
+    "template_sha256": "c59da470cabd0be23f602c95c8aa9d11ec224a0cdac216b3e1f218e65d006bdc",
+    "saved_workbook_readback": "passed",
+    "original_template_unchanged": true,
+    "sha256": "0792252eaf11845655a61fca722203323d2cc11b771ebab630bcb9a4be1f7465"
+  }
+}

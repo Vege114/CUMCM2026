@@ -1,0 +1,14 @@
+{
+  "full_suite": {
+    "tests": 26,
+    "status": "passed",
+    "log": "unit_tests.txt"
+  },
+  "history_suite": {
+    "tests": 5,
+    "status": "passed",
+    "log": "report_tests.txt"
+  },
+  "solver_module_isolation": "The installed SciPy 1.18.1 exposes a process-global HiGHS scheduler. v2 unit tests reset it at module boundaries so frozen v1 default-thread tests and v2 single-thread tests can share the test process. Production v2 CLI stages already run separately.",
+  "formal_replays_modified": false
+}

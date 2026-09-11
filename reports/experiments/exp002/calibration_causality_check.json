@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "perturbation": "All February-and-later actuals and forecast releases multiplied by 100",
+  "formal_checkpoint": "m02_mlp_42",
+  "training_labels_and_validation_features": "identical",
+  "calibration_origins_across_four_questions": 70,
+  "predictions_scenario_paths_probabilities_information_tree": "bitwise identical",
+  "january_replay_actuals": "identical",
+  "additional_fits": 0,
+  "scope": "Calibration optimizer inputs and realized January settlement inputs are invariant. Tiny fully solved purchase invariance is checked separately in unit tests; wall-clock bounded searches can vary between identical reruns."
+}
