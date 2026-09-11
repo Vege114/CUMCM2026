@@ -62,6 +62,20 @@ def derive(run_id="exp002"):
         timing_rows[2]["minutes"] += clipping["retired_calibration_task_seconds"]/60
         timing_rows[2]["scope"] += "；也包含裁剪信息修正前已作废的问题 3、4-3 校准"
     data = Data()
+    january_origins = np.arange(7*144, 31*144-144+1, 36)
+    january_ids = january_origins[:, None] + np.arange(144)
+    assert january_ids.max() < 31*144
+    january_truth = data.actual[january_ids]
+    january = []
+    for kind in ("yesterday", "weekly", "periodic"):
+        baseline = np.stack([data.baseline(int(origin), kind, issued=False) for origin in january_origins])
+        for channel, target in enumerate(("load", "pv", "price")):
+            error = baseline[:, :, channel]-january_truth[:, :, channel]
+            january.append({"variant": kind, "target": target, "n": error.size, "origins": len(january_origins),
+                            "mae": float(np.abs(error).mean()), "rmse": float(np.sqrt(np.square(error).mean())),
+                            "wape_pct": float(100*np.abs(error).sum()/np.abs(january_truth[:, :, channel]).sum()),
+                            "unit": "元/kWh" if target == "price" else "kW"})
+    pd.DataFrame(january).to_csv(out / "january_baselines.csv", index=False)
     store = ReportForecastArchive(data, out, 42)
     day = (pd.Timestamp("2025-03-20") - EPOCH).days
     origin = day * 144

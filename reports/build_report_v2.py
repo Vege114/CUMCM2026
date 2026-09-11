@@ -158,6 +158,12 @@ def build(experiment="exp002", partial=False, code_commit=None):
 补充边界检查发现，非负裁剪之前的隐含误差不能当作已经观测到的发电或负载。修正后，观测与预报修订完全相同的路径不会分支；负载、光伏和价格裁剪均有回归测试。逐项比较保留了 10146 个等价日期，作废了 1694 个受影响日期，并重新校准问题 3、4-3，记录见 clipped_information_fix_migration.json。已知未来价格的反事实同样排除价格信息分支，记录见 known_price_information_migration.json。作废计算的耗时计入本轮总运行段，不隐藏重算成本。
 """
     sections[3] = "## 4. 逐步技术讲解\n\n" + (ROOT / "reports/templates/methods-neural-v2.md").read_text()
+    if (out / "january_baselines.csv").exists():
+        january = pd.read_csv(out / "january_baselines.csv")
+        january["target_label"] = january.target.map(TARGETS)
+        january["model_label"] = january.variant.map(NAMES)
+        sections[2] += "\n一月历史基线诊断使用 1 月 8 日至 1 月 31 日 0 时的 93 个发布窗口，每个窗口的完整 24 小时标签都在一月内。只比较历史同期，不训练网络，也不使用二月以后的成绩选择路线。负载和电价的周同期误差更小，历史光伏的昨日同期误差更小；这一诊断支持方案中预先固定的周期组合。\n\n" + table(
+            january, {"target_label": "变量", "model_label": "历史基线", "mae": "一月 MAE", "rmse": "一月 RMSE", "unit": "单位", "wape_pct": "一月 WAPE/%"})
     if (out / "worked_example.json").exists():
         example = json.loads((out / "worked_example.json").read_text())
         sections[3] += f"""\n### 4.9 一个实际样本如何通过网络
@@ -279,6 +285,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
                          "预测方法": "全年预测方法对照", "费用均值/元": "三个种子的费用稳定性",
                          "最差日期": "失败日期、储能与求解统计", "原登记费用/元": "历次正式策略的原始登记",
                          "计时口径": "各阶段实测时间", "旧正式预测/%": "新旧正式预测的全年 WAPE",
+                         "一月 MAE": "正式评价之前的一月基线诊断",
                          "原计划变化/元": "预测与调度的费用贡献", "总费用/元": "三层核心调度对照"}
                 item["title"] = next((label for key, label in names.items() if key in headers), item["title"])
                 if "全年费用/元" in headers:
