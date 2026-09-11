@@ -36,7 +36,8 @@ def verify(experiment="exp002"):
                                  (daily, app_daily, ["scenario", "name", "seed", "date"])):
         a, b = (frame.sort_values(keys).reset_index(drop=True) for frame in (source, target))
         assert a[keys].equals(b[keys])
-        np.testing.assert_allclose(a[["total_cost", "emergency_kwh"]], b[["total_cost", "emergency_kwh"]], rtol=1e-11)
+        # CSV and JSON parsers can differ by a few ULPs near zero.
+        np.testing.assert_allclose(a[["total_cost", "emergency_kwh"]], b[["total_cost", "emergency_kwh"]], rtol=1e-11, atol=1e-9)
     for row in costs.itertuples():
         source = daily[(daily.name == row.name) & (daily.scenario == row.scenario) & (daily.seed == row.seed)]
         assert len(source) == 334 and source.date.nunique() == 334
