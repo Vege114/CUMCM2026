@@ -17,22 +17,94 @@
 
 ![官方演练的清除比例、平均时间和程序时间](figures/official_metrics.png)
 
-## 2. 用了哪些技术和算法
+## 2. 模块化技术细节与算法实现
 
-| 模块 | 技术 / 算法 | 本版作用 | 主要调整位置 |
+本节描述两场 v1 官方演练实际使用的模块、算法和数据流。参数以各局 `metadata.json` 的 `config` 为准，对应 [默认配置](configs/default.json) 与 [Config 默认值](baseline/config.py)。第 3 节进一步给出四问的数学模型与覆盖论证，第 7 节的优化建议不属于本版已实现算法。
+
+### 2.1 模块、算法与接口映射
+
+| 编号 / 模块 | 实际使用的算法或机制 | 输入 → 输出 | 代码与主要函数 |
 | --- | --- | --- | --- |
-| 接口通信 | Python 标准库、HTTP+JSON、串行状态机、幂等重试 | 只使用公开的 `/enter`、`/measure`、`/clear`、`/exit`；网络重试复用原 ID 和内容 | `baseline/protocol.py` |
-| 有界误差定位 | 示向度扇区转线性半平面，Sutherland–Hodgman 凸多边形裁剪 | 保留所有与已有示向度相容的位置，不把有误差的射线交点当真值 | `baseline/geometry.py` |
-| 区域直径 | 枚举最远顶点对，O(v²) | 对输入凸多边形精确求直径，作为 Q1 基准算法 | `polygon_diameter()` |
-| 清除位置 | 枚举 1/2/3 支撑点的最小包围圆；顶点覆盖检验 | 包围圆半径 ≤19.9 m 时执行有几何依据的清除 | `enclosing_circle()`、`Strategy.localize()` |
-| 第二 / 后续测点 | 候选点离散搜索、假想源位置与未来误差的有限样本极小极大准则，加移动惩罚 | 在降低定位区域直径与行走距离间折中 | `baseline/planning.py` |
-| Q3 全局搜索 | 原点 + 半径 1400 m 的正六边形顶点；全频道巡检 | 利用最小接收半径 1000 m 建立覆盖保障 | `survey_points()` |
-| Q4 全局搜索 | 边长 700 m 的方格顶点覆盖，保留圆外测点 | 对未知的 180° 辐射半平面建立接收点覆盖 | `survey_points()` |
-| 调度 | 最近巡检点、最近待定位目标的贪心顺序 | 实现简单可运行的路径安排；未求全局最短路 | `Strategy.run()` |
-| 定向失信号回退 | 保留历史定位区，有限次新位置检测后，用 25 m 方格中心进行光学覆盖 | 即使没有无线电信号，仍可用距离判据清除 | `optical_cover()`、`Strategy.localize()` |
-| 评估与复现 | 独立日志重放、物理计时复算、固定种子测试、Matplotlib 科研图 | 记录可比较指标、运行版本、配置与证据 | `Benchmark/evaluate.py`、`evaluate_runs.py`、`make_report.py` |
+| M1 参数与运行生命周期 | 不可变配置、覆盖约束校验、预算保护、运行状态归档 | CLI / JSON 配置、进入响应 → 有效配置、运行状态与退出原因 | [config.py](baseline/config.py)：`Config.validate()`、`load_config()`；[run.py](run.py)：`run()` |
+| M2 接口通信 | 串行 HTTP+JSON、请求 ID 幂等重试、指数退避 | 动作与坐标 / 频道 → 公开响应、有效虚拟时钟、事件日志 | [protocol.py](baseline/protocol.py)：`HttpTransport.send()`、`Client.call()`、`journal_event()` |
+| M3 有界误差几何 | 外接多边形、Sutherland–Hodgman 半平面裁剪、最远顶点对、支撑点枚举最小包围圆 | 历史区域、测点、示向度 → 新区域 P、直径 D、包围圆中心 c 与半径 r | [geometry.py](baseline/geometry.py)：`outer_circle()`、`clip_bearing()`、`polygon_diameter()`、`enclosing_circle()` |
+| M4 第二 / 后续测点 | 离散候选搜索、有限样本极小极大、移动代价加权 | P、首个示向度、当前位置、已测位置 → 下一测点与预测评分 | [planning.py](baseline/planning.py)：`measurement_candidates()`、`select_measurement()` |
+| M5 全域接收覆盖 | Q3 原点加六边形环；Q4 相交方格的顶点覆盖 | 题型、目标圆与接收半径 → 有覆盖依据的巡检点集 | [planning.py](baseline/planning.py)：`survey_points()` |
+| M6 频道与目标调度 | 最近邻贪心、逐频道 Track 状态机、覆盖完成判定 | 巡检点、20 个频道状态、P → 巡检 / 定位任务顺序、停止原因 | [strategy.py](baseline/strategy.py)：`Track`、`Strategy.run()`、`measure()` |
+| M7 清除与光学回退 | 包围圆覆盖判据、估计中心试探、相交方格中心穷举、最近邻访问 | P、包围圆、near 响应 → 清除动作与逐次成功 / 失败记录 | [strategy.py](baseline/strategy.py)：`localize()`、`clear()`；[geometry.py](baseline/geometry.py)：`optical_cover()` |
+| M8 离线场景与协议替身 | 固定种子随机抽样、固定位置哈希误差、接口与物理计时模拟 | 种子与题型 → 离线源、与官方格式一致的响应 | [mock.py](baseline/mock.py)：`generate_sources()`、`MockTransport` |
+| M9 证据、评价与报告 | 脱敏 JSONL、源码 SHA-256、独立事件重放、计时复算与指标聚合 | 请求响应、决策、事后总数 → 指标、核验结果、图表与报告 | [run.py](run.py)：`source_fingerprint()`；[Benchmark/evaluate.py](../../Benchmark/evaluate.py)：`replay()`、`evaluate()`；[make_report.py](make_report.py)：`build_report()`；[verify_artifacts.py](verify_artifacts.py) |
 
-未使用神经网络、强化学习或预训练模型，也未读取官方模拟器的隐藏案例数据。用于离线验证的场景生成器与策略分离；策略只收到与官方格式相同的协议响应。
+### 2.2 模块关系与观测反馈
+
+下图中的实线表示运行中的调用或观测反馈，虚线表示日志进入事后评价。M8 仅在离线运行时充当 M2 的后端；官方运行使用 HTTP 后端。
+
+```mermaid
+flowchart TD
+    M1["M1 配置校验与生命周期"] --> M5["M5 全域覆盖：六边形环 / 方格顶点"]
+    M5 --> M6["M6 贪心调度与频道 Track"]
+    M6 --> M2["M2 串行请求与幂等重试"]
+    M2 --> R{"检测响应"}
+    R -->|direction| M3["M3 半平面裁剪、直径与包围圆"]
+    R -->|no_signal| KEEP["保留 P，记录已测位置"]
+    KEEP --> M6
+    R -->|near| M7["M7 清除判据与光学回退"]
+    M3 --> M7
+    M7 -->|继续定位| M4["M4 有限样本极小极大选点"]
+    M4 --> M2
+    M7 -->|清除请求| M2
+    M2 -->|清除结果更新 Track| M6
+    M6 --> STOP["16 个全清或完整巡检且已知目标全清"]
+    M2 -.-> M9["M9 日志重放、指标与报告"]
+    M6 -.-> M9
+```
+
+每个 `Track` 保存频道、相容多边形、正观测 `(位置, 示向度)`、全部已测位置及清除状态。只有 `direction` 更新多边形；`no_signal` 保留区域并记录已测位置；`near` 直接触发同点清除。决策输出再经 M2 变成下一次公开观测，构成搜索—定位—清除的反馈过程。
+
+### 2.3 M3：区域表示、直径和清除几何
+
+`outer_circle()` 用半径 1800 m 目标圆的外接正 64 边形初始化 P。`clip_bearing()` 将示向度的 ±1.01° 扇区转成两个线性半平面，并加入沿示向方向投影不超过 1500 m 的半平面；`clip_half_plane()` 逐边保留内侧顶点、计算跨界交点。该距离约束是接收圆盘的外包络，结果 P 是保守位置集合。
+
+`polygon_diameter()` 枚举全部顶点对，返回最大欧氏距离及对应端点；v 个顶点的时间复杂度为 O(v²)。`enclosing_circle()` 对单点直接返回零半径圆，对其他情况枚举二点直径圆和三点外接圆，逐一检查是否包含所有顶点，选最小半径；候选枚举加顶点检查的最坏时间复杂度为 O(v⁴)，适用于本版小规模定位多边形。两者求的是输入多边形的几何量，不是连续物理真值区域的精确几何量。空交集在 `Strategy.measure()` 中直接报错，不作为高精度定位。
+
+### 2.4 M4：离散测点生成与有限样本评分
+
+当 D > 300 m，候选集包含沿首示向方向前进 375 / 750 / 1125 m、横移 ±250 / ±450 m 的 12 点；无论 D 大小，都加入以 c 为中心、每隔 45° 一个方位的 8 点，环半径为 `max(40, min(250, D))` 米。筛去距该频道任一已测点不足 10 m 的候选。若有候选到 P 的所有顶点均不超过 1000 m，则只保留这一组，否则使用剩余全部候选。
+
+对每个候选 s，用 P 的顶点和包围圆中心作为假想源 q，对未来误差枚举 `−1.01°、0、+1.01°`，重做裁剪并取预测直径最大值 W(s)。距离候选不超过 5 m 的假想源跳过该示向模拟。最终最小化 `J(s) = W(s) + 0.04 × distance(当前位置, s)`，输出 `predicted_worst_diameter_m`、`travel_m`、`objective`、`candidates_evaluated` 与 `guaranteed_range`。
+
+这是有限样本极小极大启发式。`guaranteed_range` 只说明当前外包络落在最小接收半径内：Q3 可据此保障接收，Q4 还受未知辐射朝向影响。本版未建立朝向模型；无候选时抛出异常，由运行入口归档失败，不等同于自动进入光学回退。
+
+### 2.5 M5 / M6：全域覆盖、调度与停止
+
+Q3 的参考集合为原点加半径 1400 m 的正六边形顶点，共 7 点。Q4 对所有与目标圆相交的 700 m 方格保留四个顶点，去重后默认共 45 点，与官方演练归档的 `coverage_plan` 一致，包含必要的圆外点。两种构造分别利用最小接收半径和未知 180° 闭半平面的几何覆盖性质，证明见第 3 节。
+
+`Strategy.run()` 每次从剩余巡检点中选离当前位置最近的一点；到点后扫描全部未清除频道，当前检测频道优先，其余按频道号排序。随后按包围圆中心到当前位置的距离，逐一定位并清除全部已发现目标，再选择下一个巡检点。本版没有路径 2-opt、逐频道覆盖位集或沿途补扫调度。
+
+程序在完成当前轮巡检与已知目标定位后，若累计清除 16 个则返回 `all_16_cleared`；否则遍历完整点集后返回 `coverage_complete`。后者依赖该覆盖集合及已知目标定位全部成功，不能从单次无信号或已清除 10 个推断结束。
+
+### 2.6 M7：分层清除与有限回退
+
+| 触发条件 | 执行动作 | 记录与依据 |
+| --- | --- | --- |
+| 检测响应为 `near` | 在同一点执行 `/clear` | `near`：依据公开近距离响应 |
+| 包围圆 r ≤ 19.9 m | 到 c 执行 `/clear` | `guaranteed_enclosing_circle`：整个 P 均在清除范围内；失败时报模型 / 协议不一致 |
+| 至少两次正观测且 r ≤ 65 m | 在 c 试探清除，失败后继续选测点 | `opportunistic_estimate`：中心估计启发式，不保证一次成功 |
+| 最多 8 轮局部循环结束且未清除 | 生成与 P 相交的 25 m 方格中心，按最近邻逐点清除 | `optical_fallback`、`guaranteed_grid_cover`：完整点集覆盖半径为 25/√2 ≈ 17.68 m；单个点可失败 |
+
+8 轮指单次 `localize()` 调用中的循环上限，不是整场每频道检测总数。光学覆盖通过四个轴向半平面裁剪判断方格与 P 是否相交，保留所有相交格的中心；这是确定性覆盖枚举，不依赖无线电可接收性。整组点都执行仍失败则报几何不一致，预算保护也可能提前终止，因此覆盖证明不构成预算内必然全清的证明。
+
+### 2.7 M1 / M2：参数边界、串行协议与预算
+
+`Config.validate()` 检查参数有限性、Q3 巡检环覆盖、Q4 的 `700√2 < 1000` 与光学格的 `25/√2 < 20`。`Client.call()` 为每个新动作生成请求 ID，在收到完整响应后才发送下一新动作；默认超时 5 s，最多重试 2 次，退避 0.25 / 0.5 s，重试复用原 ID 和内容。拒绝响应不会更新有效时钟，`/clear` 只更新位置与清除状态，不改变检测频道。
+
+`Strategy.guard()` 在动作前检查现实截止时间、12000 次动作上限和 350000 s 虚拟预算，并用“移动时间 + 6 s”估计下一动作成本。现实退出预留为 15 s。`run()` 区分 `completed`、`incomplete`、`failed`；若最后请求结果未知，客户端标记 `uncertain`，运行入口不再发送新的 `/exit` 探测。
+
+### 2.8 M8 / M9：离线验证、可追溯日志与报告生成
+
+`generate_sources()` 用固定种子生成场景，`MockTransport` 模拟四接口、接收区域、固定位置误差与计时；抽样分布详见第 5 节。策略仅接收协议响应。离线真值仅供模拟后端和运行结束后的审计，官方后端不使用它；本版没有神经网络、强化学习或预训练模型。
+
+`Client.journal_event()` 保存脱敏事件，`Strategy.record()` 保存 `bearing_update`、`next_measurement`、`clear_attempt`、`optical_fallback` 等决策。`run.py` 另保存配置、Git 提交与源码 SHA-256。独立评价器 `Benchmark/evaluate.py` 中的 `replay()` 依据请求 ID 去重、重建位置和频道、复算物理时间，`evaluate()` 形成清除比例、整场 T/K 等指标；`verify_artifacts.py` 核对已有产物、源码指纹与报告链接。`make_report.py` 汇总既有指标、绘制四组图，并由本模板生成 `REPORT.md`。因此本节也保存在生成模板内，重新生成报告会保留模块说明。
 
 ## 3. 四问对应的基本模型
 
