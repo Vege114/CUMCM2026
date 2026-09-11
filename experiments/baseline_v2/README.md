@@ -1,6 +1,6 @@
 # 改进实验 v2
 
-针对 [v1 报告第 7 节](../baseline_v1/REPORT.md) 的四项问题，完成了定向可接收性建模、覆盖与路径优化、联合调度及分层配对验证。**本版在 macOS 完成代码和离线验证，尚未运行官方 Windows 模拟器。** 已归档的结果见 [REPORT.md](REPORT.md) 和 [逐场配对结果](runs/validation_20260911/COMPARISON.md)。
+针对 [v1 报告第 7 节](../baseline_v1/REPORT.md) 的四项问题，完成了定向可接收性建模、覆盖与路径优化、联合调度及分层配对验证。**本版已完成 macOS 离线验证和 Windows 官方模拟器演练：Q3 14/14、Q4 16/16 全清，未使用正式测试机会。** 已归档的结果与五组可视化见 [REPORT.md](REPORT.md)，逐场离线结果见 [配对比较](runs/validation_20260911/COMPARISON.md)。
 
 运行只需要 Python 3.10+ 标准库。新代码、参数、测试、运行入口和产物集中在本目录；通过仓库包路径直接引用 v1 的稳定实现，因此迁移到 Windows 时请拉取整个仓库。v1、原题、原始附件、exe 和旧实验数据保持原样。
 
@@ -89,4 +89,6 @@ python experiments/baseline_v2/evaluate_runs.py experiments/baseline_v2/runs/my_
 
 测试中的 HTTP 集成使用 `127.0.0.1` 随机端口和本地测试替身，需要允许本机监听端口。它不连接官方 exe，也不使用正式次数。
 
-默认忽略新运行目录，仅本次审核过的 `runs/validation_20260911/` 纳入 Git。每局包含完整配置、源码清单、`events.jsonl`、`decisions.jsonl`、`metrics.json`；自建离线局另有 `offline_truth.json`，策略不能从它读数据。`status=completed` 表示状态机完成；`valid_run` 表示日志计时自洽；离线验收还必须有 `all_cleared_verified=true`。预算退出、异常、未知通信结果、真值未全清均不会报告为离线验收成功。
+默认忽略新运行目录，已审核的 `runs/validation_20260911/`、`runs/official_q3_001/`、`runs/official_q4_001/` 纳入归档。每局包含完整配置、源码清单、`events.jsonl`、`decisions.jsonl`、`metrics.json`；官方演练另含脱敏界面证据与独立审计，自建离线局另有 `offline_truth.json`，策略不能从它读数据。`status=completed` 表示状态机完成；`valid_run` 表示日志计时自洽；验收还必须有全清证据。预算退出、异常、未知通信结果、真值未全清均不会报告为验收成功。
+
+报告图表可由 `python experiments/baseline_v2/reporting/make_figures.py` 重建，需安装 v1 的 `requirements-report.txt`。脚本复用 v1 绘图样式，仅写入 v2 的 `figures/` 与 `report_data.json`，不重写报告正文或 v1 产物。
