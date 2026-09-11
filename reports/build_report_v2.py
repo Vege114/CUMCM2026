@@ -82,7 +82,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
     query("calibration", cal, ["risk_calibration.json"], "1 月 25—31 日七天实际回放总费用，选择在 2 月 1 日完成，此后全年固定。")
     query("technical_path", [{"step": i+1, "title": t, "input": a, "operation": b, "output": c}
                               for i, (t, a, b, c) in enumerate(ROUTE)], ["protocol.json", "methods.md"], "源代码与已冻结实验协议定义的九步流程。")
-    for name in ("forecast_decomposition", "tree_nodes", "official_forecast_comparison", "specified_dates",
+    for name in ("forecast_decomposition", "training_trace", "tree_nodes", "official_forecast_comparison", "specified_dates",
                  "specified_intervals", "battery_blocks", "emergency_periods", "failure_intervals", "failure_storage", "solver_summary",
                  "phase_timing", "seed_cost_results", "monthly_dispatch", "core_contributions"):
         path = out / f"{name}.csv"
@@ -264,7 +264,7 @@ def build(experiment="exp002", partial=False, code_commit=None):
         sections[4] += "\n分阶段实测耗时（累计任务时间与墙钟时间不可直接相加）：\n\n" + table(
             pd.read_csv(out / "phase_timing.csv"), {"stage": "阶段", "minutes": "分钟", "scope": "计时口径"})
     narrative_sections = list(sections)
-    figure_groups = {3: ["fixed-network-architecture", "baseline-correction-decomposition", "scenario-information-tree"],
+    figure_groups = {3: ["fixed-network-architecture", "baseline-correction-decomposition", "worked-example-training-loss", "scenario-information-tree"],
                      4: ["training-count-and-time"],
                      5: ["annual-three-error-metrics", "monthly-forecast-error", "lead-and-generating-error", "cost-components", "failure-case-and-storage", "cost-versus-tail-risk", "solver-gap-and-fallback", "daily-emergency-and-monthly-cost"],
                      6: ["three-layer-cost-comparison"]}
@@ -296,6 +296,12 @@ def build(experiment="exp002", partial=False, code_commit=None):
                              {"type": "prose", "id": "technical-methods", "markdown": narrative_sections[3].split("\n\n", 1)[1]}]
     if "tree_nodes" in queries:
         blocks[3]["blocks"].append({"type": "tree", "id": "scenario-tree"})
+    if "training_trace" in queries:
+        blocks[3]["blocks"].append({"type": "chart", "id": "worked-training-loss", "queryId": "training_trace",
+                                   "title": "实际样本使用的 3 月检查点 · 种子 42 · 训练过程",
+                                   "spec": {"type": "line", "x": "epoch", "y": "loss", "fields": ["loss", "val_loss"],
+                                            "stackable": False, "xLabel": "训练轮次", "yLabel": "标准化训练目标（含 L2 正则）",
+                                            "legend": {"labels": {"loss": "训练目标", "val_loss": "验证目标"}}}})
     if "forecast_decomposition" in queries:
         blocks[3]["blocks"] += [
             {"type": "chart", "id": "forecast-decomposition", "queryId": "forecast_decomposition", "title": "种子 42 · 3 月 20 日凌晨预测的基础与修正", "scope": "decomposition",

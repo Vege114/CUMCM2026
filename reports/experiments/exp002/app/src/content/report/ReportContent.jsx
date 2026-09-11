@@ -4,6 +4,8 @@ import "./report.css";
 
 const labels={load:"小区负载",pv:"历史光伏预测",pv_corrected:"光伏预报修正",price:"电价",all:"全部"};
 const metrics={mae:"平均绝对误差",rmse:"均方根误差",wape_pct:"加权绝对百分比误差"};
+const policyOrder=["legacy_rebased","new_deterministic","primary","periodic","yesterday","weekly","risk_zero","no_anticipation","raw_forecast","updates_0","updates_0_6","updates_0_6_12","known_price"];
+const comparePolicies=(a,b)=>policyOrder.indexOf(a.name)-policyOrder.indexOf(b.name);
 const format=v=>typeof v==="number"?v.toLocaleString("zh-CN",{maximumFractionDigits:4}):typeof v==="boolean"?(v?"是":"否"):v??"—";
 function Table({rows,columns}) {return <div className="experiment-table-scroll"><table className="experiment-table" data-reviewed-rows><thead><tr>{columns.map(([key,label])=><th key={key}>{label}</th>)}</tr></thead><tbody>{rows.map((row,i)=><tr key={i}>{columns.map(([key])=><td key={key}>{format(row[key])}</td>)}</tr>)}</tbody></table></div>;}
 function aggregate(rows,keys,kind){const map=new Map();for(const row of rows){const key=JSON.stringify(keys.map(k=>row[k]));if(!map.has(key))map.set(key,Object.fromEntries(keys.map(k=>[k,row[k]])));const value=map.get(key);for(const field of kind==="forecast"?["n","absolute_error_sum","squared_error_sum","actual_abs_sum"]:["total_cost","planned_cost","up_cost","down_cost","emergency_cost","emergency_kwh","solve_execute_seconds","fallback_count","timeout_count","solver_calls"]){value[field]=(value[field]??0)+(row[field]??0);}}return [...map.values()].map(row=>kind==="forecast"?{...row,mae:row.absolute_error_sum/row.n,rmse:Math.sqrt(row.squared_error_sum/row.n),wape_pct:row.actual_abs_sum?100*row.absolute_error_sum/row.actual_abs_sum:null}:row);}
@@ -36,7 +38,7 @@ export function ReportContent(){
    title=`${item.title} · ${labels[target]} · ${month==="all"?"2—12月":`${month}月`}`;
   }else if(item.scope==="cost"||item.scope==="bridge"){
    sourceRows=costRows.filter(row=>item.scope!=="bridge"||["legacy_rebased","new_deterministic","primary"].includes(row.name));
-   rows=aggregate(sourceRows,["name","model_label"],"cost");title=`问题 ${scenario} · ${item.title} · ${month==="all"?"2—12月":`${month}月`}`;
+   rows=aggregate(sourceRows,["name","model_label"],"cost").sort(comparePolicies);title=`问题 ${scenario} · ${item.title} · ${month==="all"?"2—12月":`${month}月`}`;
   }else if(item.scope==="daily"){
    rows=costRows.filter(row=>row.name==="primary");sourceRows=rows;
   }else if(item.scope==="specified"){
@@ -48,7 +50,7 @@ export function ReportContent(){
   }else if(item.scope==="history"){
    rows=rows.filter(row=>row.route==="正式调度"?row.task===scenario:row.route.startsWith("正式预测问题")?row.route.startsWith(`正式预测问题${scenario}/`):row.task===target);sourceRows=rows;title=`问题 ${scenario} · ${item.title}`;
   }else if(item.scope==="annual"){
-   rows=rows.filter(row=>row.scenario===scenario&&row.seed===42);sourceRows=rows;
+   rows=rows.filter(row=>row.scenario===scenario&&row.seed===42).sort(comparePolicies);sourceRows=rows;
   }else if(item.scope==="decomposition"){
    rows=rows.filter(row=>row.target===target);sourceRows=rows;
    title=`${item.title} · ${labels[target]}`;spec.yLabel=target==="price"?"元/千瓦时":"千瓦";
