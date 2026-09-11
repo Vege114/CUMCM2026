@@ -34,6 +34,8 @@ python reports/register_experiment.py --record reports/experiments/exp003/record
 
 `build_report_v2.py` 与 `templates/methods-neural-v2.md` 支持固定网络、三个种子独立评价、多阶段场景树、费用尾部风险以及旧正式预测在新物理口径下的重算。八部分结构不变，不要求出现三类候选网络。`v2_evidence.py` 从冻结产物生成样本分解、历史正式预测比较和论文图，不触发训练或调度。
 
+报告构建器直接读取已交付的 `predictions.npz` 和训练元数据，不需要本机的 `.keras` 权重或月度训练缓存。重建报告仍需实验分支中的代码、原始数据和结果目录；在 `main` 独立阅读 HTML、Markdown 和工作簿不需要这些训练依赖。
+
 ```bash
 python reports/build_report_v2.py --experiment exp002
 python reports/verify_delivery_v2.py --experiment exp002

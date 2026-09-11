@@ -80,6 +80,8 @@ def verify(experiment="exp002"):
     assert model["formal_training_groups"] == 33 and model["gpu_output_all"]
     recovery = json.loads((report / "prediction_recovery_check.json").read_text())
     assert recovery["exact_match"] and recovery["additional_training_calls"] == 0
+    archive_report = json.loads((report / "report_archive_independence_check.json").read_text())
+    assert archive_report["status"] == "passed" and not archive_report["private_training_cache_required"]
     causality = json.loads((report / "calibration_causality_check.json").read_text())
     assert causality["status"] == "passed" and causality["calibration_origins_across_four_questions"] == 70
     contributions = pd.read_csv(report / "core_contributions.csv")
