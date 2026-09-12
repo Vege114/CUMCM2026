@@ -53,3 +53,6 @@ extend-select = ["E402"]
 "experiments/problem2/exp003/data.py" = ["TRY004"]
 "experiments/problem2/exp003/train.py" = ["I001"]
 "experiments/problem2/exp003/predict.py" = ["B019", "TRY004"]
+# exp004 measured model signatures bind import layout and its 366-day seasonal cache.
+"experiments/problem2/exp004/train.py" = ["I001"]
+"experiments/problem2/exp004/data.py" = ["B019"]
