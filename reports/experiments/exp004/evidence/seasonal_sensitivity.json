@@ -1,0 +1,10 @@
+{
+  "observed_annual_difference_yuan": 14557.573077314511,
+  "seven_day_block_95pct_interval_yuan": [
+    -48338.06023199621,
+    94507.26916106878
+  ],
+  "replicates": 2000,
+  "seed": 42,
+  "interpretation": "单年内七日区块重采样敏感性，不能代表跨年泛化置信区间"
+}

@@ -34,6 +34,8 @@ htmlcov/
 
 # Regenerable experiment runs and intermediate datasets
 experiments/**/runs/
+# Regenerable artifact-tool full-cell inspection logs; checked summaries are committed.
+data/results/exp004/*/*.xlsx.inspect.ndjson
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md

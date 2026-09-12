@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "snapshot_sha256": "c4e6c687ab158c0a0ba90ec2f7502fb946286ea09cd2d80f304da683987db1fa",
+  "preview": "http://127.0.0.1:4174/",
+  "browser": "Codex in-app browser",
+  "viewports_checked": [
+    1200,
+    390,
+    361
+  ],
+  "charts_with_nonzero_painted_marks": 31,
+  "horizontal_page_overflow": false,
+  "category_labels_truncated": false,
+  "browser_error_logs": [],
+  "reviewed_static_png_svg_pairs": 9,
+  "workbook_visual_samples": [
+    "no_season plan",
+    "causal_season storage",
+    "oracle_season daily totals"
+  ],
+  "source_inspection": "history-components: 7 scoped rows and exact source file / definitions verified",
+  "interaction": "specified date 2025-12-21 and oracle_season updated all 4 charts; default restored",
+  "status_indicator": "complete; no Creating or Updating shown",
+  "fixes": [
+    "mobile title wrapping",
+    "Markdown table/diagram replaced by native content flow",
+    "short axis labels with full labels retained in source/tables",
+    "seed figure legend moved above bars"
+  ],
+  "limitations": [
+    "No cross-browser or OS print-dialog testing; chart editor/export controls preserved through unmodified shared runtime."
+  ]
+}

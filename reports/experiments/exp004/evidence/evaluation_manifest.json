@@ -1,0 +1,40 @@
+{
+  "complete": true,
+  "signature": "2d16c5a734c175ab08c42faa591e0ae3ac818ffc68f790955fa622ab9b3fb58e",
+  "cases": [
+    "no_season_seed_42",
+    "no_season_seed_2026",
+    "no_season_seed_3407",
+    "causal_season_seed_42",
+    "causal_season_seed_2026",
+    "causal_season_seed_3407",
+    "oracle_season_seed_42",
+    "oracle_season_seed_2026",
+    "oracle_season_seed_3407"
+  ],
+  "days_per_case": 334,
+  "intervals_per_case": 48096,
+  "initial_soc": 1421.7991105135516,
+  "unchanged_prior_files": 1145,
+  "seconds": 38.895687208045274,
+  "workers": 3,
+  "output_hashes": {
+    "daily_metrics.csv": "95abee932fda159e35e85ba4cbb32f5b4ce651d2cd2832b380d152e16bbfbf1a",
+    "forecast_lead.csv": "7e80a017736af4acf8b7514fa9b8acfd4a8c939e522eba3c058d5d64288e7ca3",
+    "forecast_monthly.csv": "70b974b2e18e8e55d761cc2acd66c92925bf10ecb8f3381262c9894ff6df5cfd",
+    "forecast_annual.csv": "835e4b3ebe940a329fb7e72af637d9440926e2ee57e094c91b3a9ef02e08e8f5",
+    "dispatch_metrics.csv": "c03f6599cb5dd99e266008f23439481901515cb3be349d24eb7e70f19adcf784",
+    "seed_summary.csv": "5f1665361653131d4a02e38721f643a125a32399e2123c1747e9a7bb404527e1",
+    "solver_metrics.csv": "12c28cd2b0c7db1a44cf4a32497d2e05e737ecbbd1f470e52e17474773d84c7e",
+    "dispatch_causal_season_seed_3407.npz": "44762c8c6330adc852fa3179cc2e626c40f0f6290e0d505da9e45a062f83d938",
+    "dispatch_oracle_season_seed_42.npz": "23cf3c956d5a4a7a7d399b91feef64d94fa04408b5bc3710f55298adcce85fd5",
+    "dispatch_no_season_seed_42.npz": "e203db49dde45221207ed565dedde439343ff894fd85d28aaf4ec40bc45c57d0",
+    "dispatch_no_season_seed_2026.npz": "a2174d40668bf8101b850eac367a666b981861fa241de24d068ece65efe5675d",
+    "dispatch_oracle_season_seed_3407.npz": "5ce614713628b40d52492774c3ae762ca630fdcabcb95cc1464639b85ab2ad41",
+    "dispatch_no_season_seed_3407.npz": "fc556efebf7183fab5fa1c45b9c0b93bd5f7bc57bdb47426f19cd903220706c6",
+    "dispatch_oracle_season_seed_2026.npz": "5ea8c3b6adfb26e9b310314f1302d2c02ced625eb72b2309507ea78015097d89",
+    "dispatch_causal_season_seed_2026.npz": "647c4045fbb3feb512f161c51621dc8535b8ee5307dda63552795b2a9c06838f",
+    "dispatch_causal_season_seed_42.npz": "9d6688e5c7b5dc9367717b4fd5d9c2a8583fbb6afc7e238c0b07fcfc16b9e9f7"
+  },
+  "source_sha256": "1db14dac2f1c86cb263edfe50ad546b5a79e7eeec482079608e34d2a4cd1acfb"
+}

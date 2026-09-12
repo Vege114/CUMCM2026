@@ -1,5 +1,9 @@
 # 实验报告与可复用模板
 
+[exp004 预测与季节性报告](experiments/exp004/report.md) · [exp004 离线交互报告](experiments/exp004/report.html) · [预测交接接口](experiments/exp004/README-prediction.md)
+
+exp004在`codex/q2-discussion-seasonality`分支完成，只修改第二问预测；规划与储能执行沿用exp003。比较无季节、历史季节和含未来信息的全年探索，报告同时保留exp001–003的绝对费用、电量、预测误差与相对变化。三份题目工作簿分别位于该报告的三个组目录。
+
 [最新报告索引](latest.md) · [exp003 第二问报告](experiments/exp003/report.md) · [exp003 离线报告](experiments/exp003/report.html) · [exp002 正文](experiments/exp002/report.md) · [exp002 离线交互报告](experiments/exp002/report.html) · [指定日期完整表格](experiments/exp002/specified_dates.md) · [exp001 原报告](experiments/exp001/report.md)
 
 本目录是可以独立浏览的报告包。`main` 与实验分支包含相同的正文、网页、图表、机器可读成绩和模板。交互网页为单文件离线版本，无需训练环境或外部网络；每轮网页源码及完整数据在相应 `experiments/expNNN/app/`。在 GitHub 直接阅读 Markdown；HTML 下载后在浏览器打开。

@@ -1,0 +1,13 @@
+{
+  "experiments": [
+    "exp001",
+    "exp002",
+    "exp003"
+  ],
+  "sha256": {
+    "exp001": "03dcdf0382c96acd2120ab8fbdf2f95c2e33e4353b526a7125345f94017bcd79",
+    "exp002": "0e8c2812f8bcde8dbedabab5f1612b7c3fca65f45990ea28a16c4eb3f82a38b5",
+    "exp003": "dcbbe16820a2eb76a6ea96881ab98132d637825f236789f10ca77a039b2d6fda"
+  },
+  "forecast_note": "exp001/exp002历史共享四目标训练，午夜重评分不移除其共同早停边界"
+}

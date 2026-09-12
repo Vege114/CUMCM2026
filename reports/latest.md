@@ -1,5 +1,7 @@
 # 实验报告索引
 
+- [exp004：第二问预测组合与季节预判消融](experiments/exp004/report.md) · [离线交互报告](experiments/exp004/report.html) · [绝对与相对变化](experiments/exp004/evidence/relative_comparison.csv)
+
 - [exp001：首轮神经网络预测与基础调度](experiments/exp001/report.md)
 - [exp002：固定轻量网络与多阶段风险调度](experiments/exp002/report.md)
 

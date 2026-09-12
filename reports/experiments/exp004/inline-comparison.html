@@ -1,0 +1,62 @@
+<div id="q2-seasonal-comparison">
+  <h2>Q2历次实验：绝对绩效、预测误差与耗时</h2>
+  <div class="text-small">2025年2–12月 · 334天 · 主种子42 · 误差为午夜48,096槽位</div>
+  <div class="q2-figures"></div>
+  <div class="text-small">* 全年季节探索含未来信息；† exp001原物理协议不同；均仅保留原值。002风险还改变了调度。历史001/002采用共享四目标早停。</div>
+  <div class="text-small">耗时为阶段累计秒数：001训练165组，其余每组33次；旧GPU与本轮CPU设备不同。缺失预测耗时不填零。</div>
+</div>
+<style>
+  #q2-seasonal-comparison .q2-figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px;margin-block:18px}
+  #q2-seasonal-comparison .q2-figure{min-width:0}
+  #q2-seasonal-comparison .q2-figure h3{margin-block:0 8px}
+  #q2-seasonal-comparison .q2-plot{display:block;width:100%;overflow:visible}
+  #q2-seasonal-comparison .q2-plot text{fill:var(--foreground);font-size:12px;font-weight:400}
+  @media(max-width:650px){#q2-seasonal-comparison .q2-figures{grid-template-columns:1fr}}
+</style>
+<script>
+(()=>{
+  const root=document.getElementById('q2-seasonal-comparison');
+  const panels=[
+    {title:'总购电费',unit:'万元',rows:[['001重算',1584.2654190685],['002风险',1512.889745271],['002确定',1535.2302279914],['003正式',1498.8622648177],['003未校准',1525.8030091191],['004无季节',1361.1587832914],['004历史季节',1362.6145405991],['004全年*',1357.2926478582],['001原值†',1625.8308217355]]},
+    {title:'净负载RMSE',unit:'kW',rows:[['001午夜',424.9427102838],['002午夜',412.0141544193],['003正式',448.2115490315],['003未校准',404.5945755933],['004无季节',524.8382547956],['004历史季节',524.0699958748],['004全年*',527.1141215839]]},
+    {title:'净负载WAPE',unit:'%',rows:[['001午夜',9.7694640365],['002午夜',9.3643112358],['003正式',10.1244768738],['003未校准',9.1772873004],['004无季节',11.9733002596],['004历史季节',11.9929028046],['004全年*',12.0978468629]]},
+    {title:'训练累计耗时',unit:'秒',rows:[['001',5901.6948309239],['002',675.3243275849],['003',390.4056162114],['004无季节',35.3422208743],['004历史季节',34.712980289],['004全年*',36.0250771649]]},
+    {title:'检查点预测累计耗时',unit:'秒',decimals:3,rows:[['002',3.4017955832],['003',1.4111477102],['004无季节',.2235471229],['004历史季节',.2258814182],['004全年*',.2230394142]]},
+    {title:'调度执行累计耗时',unit:'秒',rows:[['001重算',19.0683570876],['002风险',907.740153215],['002确定',17.6988931331],['003正式',12.3982772132],['003未校准',12.6688868243],['004无季节',11.6773275429],['004历史季节',12.2730911976],['004全年*',12.3318634183]]}
+  ];
+  const ns='http://www.w3.org/2000/svg';
+  function make(tag,attrs,text){const e=document.createElementNS(ns,tag);Object.entries(attrs||{}).forEach(([k,v])=>e.setAttribute(k,v));if(text!==undefined)e.textContent=text;return e;}
+  const fmt=(x,d=2)=>x.toLocaleString('zh-CN',{minimumFractionDigits:d,maximumFractionDigits:d});
+  panels.forEach((panel,index)=>{
+    const fig=document.createElement('figure');fig.className='q2-figure';fig.style.margin='0';
+    const heading=document.createElement('h3');heading.textContent=panel.title;fig.append(heading);
+    const svg=make('svg',{class:'q2-plot',role:'img','aria-label':panel.title+'（'+panel.unit+'）'});fig.append(svg);root.querySelector('.q2-figures').append(fig);
+    function draw(){
+      const w=Math.round(fig.getBoundingClientRect().width);if(w<1)return;
+      const left=96,right=64,top=25,row=30,plotH=panel.rows.length*row,plotW=Math.max(20,w-left-right),h=top+plotH+55;
+      svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('height',h);svg.replaceChildren();
+      svg.append(make('title',{},panel.title),make('desc',{},panel.rows.map(([name,v])=>`${name}: ${fmt(v,panel.decimals??2)}${panel.unit}`).join('；')));
+      const max=Math.max(...panel.rows.map(r=>r[1]));const limit=max*1.03;
+      svg.append(make('rect',{'data-chart-frame':'',x:left,y:top,width:plotW,height:plotH,fill:'none',stroke:'var(--border)','stroke-width':1}));
+      svg.append(make('text',{class:'axis-title','data-axis':'y',x:left-8,y:14,'text-anchor':'end'},'方案'));
+      panel.rows.forEach(([name,value],i)=>{
+        const y=top+i*row+row/2;
+        const color=name.includes('无季节')?'var(--viz-series-1)':name.includes('历史季节')?'var(--viz-series-2)':name.includes('全年')?'var(--viz-series-3)':'var(--muted-foreground)';
+        svg.append(make('text',{x:left-8,y:y+4,'text-anchor':'end'},name));
+        svg.append(make('rect',{x:left,y:y-7,width:value/limit*plotW,height:14,fill:color}));
+        svg.append(make('text',{x:w-1,y:y+4,'text-anchor':'end'},fmt(value,panel.decimals??2)));
+      });
+      [0,max/2,max].forEach((value,i)=>{
+        const x=left+value/limit*plotW;
+        svg.append(make('line',{x1:x,x2:x,y1:top+plotH,y2:top+plotH+4,stroke:'var(--border)'}));
+        const label=max<10?value.toFixed(1):Math.round(value).toLocaleString('zh-CN');
+        svg.append(make('text',{x,y:top+plotH+19,'text-anchor':i===0?'start':i===2?'end':'middle',class:'q2-tick'},label));
+      });
+      svg.append(make('text',{class:'axis-title','data-axis':'x',x:left+plotW/2,y:h-7,'text-anchor':'middle'},panel.unit));
+      const ticks=[...svg.querySelectorAll('.q2-tick')];
+      if(ticks.length===3){const a=ticks[0].getBBox(),b=ticks[1].getBBox(),c=ticks[2].getBBox();if(a.x+a.width+4>b.x||b.x+b.width+4>c.x)ticks[1].remove();}
+    }
+    new ResizeObserver(draw).observe(fig);draw();
+  });
+})();
+</script>

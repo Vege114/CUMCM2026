@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "variants": {
+    "no_season": {
+      "result2.xlsx": {
+        "days": 334,
+        "intervals_per_day": 144,
+        "violations": 0,
+        "max_energy_residual": 4.547473508864641e-13,
+        "causal_greedy_controller": "passed",
+        "total_cost": 13611587.832913524,
+        "january_warmup_and_february_continuity": "passed",
+        "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+        "saved_workbook_readback": "passed",
+        "original_template_unchanged": true,
+        "sha256": "a609b388b5a377ea5863cbb164e73b2fc321d98382bc4b76d6c951930921bd88"
+      }
+    },
+    "causal_season": {
+      "result2.xlsx": {
+        "days": 334,
+        "intervals_per_day": 144,
+        "violations": 0,
+        "max_energy_residual": 4.547473508864641e-13,
+        "causal_greedy_controller": "passed",
+        "total_cost": 13626145.405990839,
+        "january_warmup_and_february_continuity": "passed",
+        "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+        "saved_workbook_readback": "passed",
+        "original_template_unchanged": true,
+        "sha256": "f4bfcada90b3d2e00a5598a9575fab8421682f59be37ec5cd4b2365fd2a3b02c"
+      }
+    },
+    "oracle_season": {
+      "result2.xlsx": {
+        "days": 334,
+        "intervals_per_day": 144,
+        "violations": 0,
+        "max_energy_residual": 4.547473508864641e-13,
+        "causal_greedy_controller": "passed",
+        "total_cost": 13572926.478581836,
+        "january_warmup_and_february_continuity": "passed",
+        "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+        "saved_workbook_readback": "passed",
+        "original_template_unchanged": true,
+        "sha256": "5d81f48e40581dce2070f960fe5349ec44b70c3186d666a6246e77904114bfb7"
+      }
+    }
+  },
+  "seconds": 10.14394674997311,
+  "author": "@oai/artifact-tool; frozen v2 template author with error scan",
+  "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47"
+}

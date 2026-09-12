@@ -26,6 +26,8 @@ def build_figures(frames=None):
     out=REPORT/'figures';out.mkdir(exist_ok=True)
     def save(fig,name):
         for ext in ['png','svg']:fig.savefig(out/f'{name}.{ext}',dpi=170,bbox_inches='tight')
+        vector=out/f'{name}.svg'
+        vector.write_text('\n'.join(line.rstrip() for line in vector.read_text().splitlines())+'\n')
         plt.close(fig)
     def bars(ax,part,field,unit,scale=1):
         values=part[field].to_numpy()/scale;labels=part.label.to_list();positions=np.arange(len(part))

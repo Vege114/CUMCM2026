@@ -1,0 +1,31 @@
+{
+  "buildStatus": "complete",
+  "seconds": 11.180369958980009,
+  "html_sha256": "611162e6d35b15d38d2a2a8662ac8dd7af41ca827798f17f0c56d5da418ae202",
+  "data_sha256": "c4e6c687ab158c0a0ba90ec2f7502fb946286ea09cd2d80f304da683987db1fa",
+  "queries": 36,
+  "components": 66,
+  "evidence": {
+    "relative_comparison.csv": "3d7c49cc68b2e3c94097b5b0fa31db8eab04dc4bf84b11220fda10e17aee3070",
+    "detail.csv": "5833180fc7313dd60238c586ebaba83c27624a21e03e1b94400c16039285d98d",
+    "paired_daily.csv": "0a0be6cc6f411a1cf7c39ab581cc794e29262e0b662976e6de50f6ebb4278118",
+    "registry_coverage.json": "dd961b79bcbabf41bd61dcc47425b7695cd99e4897b84a73c7ddb38c144206e3",
+    "workbook_export.json": "de0b5d06344c67a43ff44a8ac37c2809aaf0a9809a32539f85daafa7ec34434e",
+    "forecast_lead.csv": "5bac829e10ecc72bcd77ae82bbe91fe6ca749d84a3adc9a904eaafcfac292ac4",
+    "seasonal_sensitivity.json": "ee8586cab20a1250b57dd88739e258fab8eeb02cd78be05cdc86777db0830856",
+    "specified.csv": "c284326c9d9568f98a823d11853fa906b84cd62f6804a7fc8acef9c205378357",
+    "evaluation_sources.json": "1db14dac2f1c86cb263edfe50ad546b5a79e7eeec482079608e34d2a4cd1acfb",
+    "prediction_manifest.json": "29b435a99c7c869479293c62aa1dd9e17fb6a611b327b113e4884b964607fd34",
+    "monthly_forecast.csv": "ab07981fc1b339f6a83325f888083aa0aff8a574fa689c524ff276f96a8a90e7",
+    "seed_summary.csv": "9f57ee41ca7ef5f802793e31ac03577d2c34e8423bbab34f68ac7db0747546c5",
+    "protocol.json": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+    "verification.json": "d950a7388f3b16d60afefafc5120defca45822fecb2f184a5e81f903d452f547",
+    "forecast_history.csv": "210e75c06cd072f2a9425334732838e8ac67d8b1694e67d2e97e1ccea73320e3",
+    "cost_history.csv": "5d132dde59083e6505fc1ccee8a4c6ae5e04cdb2c2f680a500ee9aec1c44d21c",
+    "evaluation_manifest.json": "08ae97b8746f6c73a0a9dd648bee7b2c4461dbf6fc595e01fff3c59e703a8bb0",
+    "seed_costs.csv": "e46e526c56b4831055145e834505b23e5b6899151a808df0e67f616b2ef0e055",
+    "timings.csv": "a21f875e72331bda307e78f7af1f1f245388473247e2d22cc45298a6c046285f",
+    "seasonal_shifts.csv": "90f84516117f0a62a1b804ffed0196e042b5a1832af7291391c8fc25c3f38058",
+    "monthly_cost.csv": "1ec83e47e2c6f1d40b63e510b99bdb50f0abbd5d22bdd46856cd5425463bd782"
+  }
+}

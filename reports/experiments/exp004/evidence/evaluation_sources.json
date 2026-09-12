@@ -1,0 +1,18 @@
+{
+  "prediction_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+  "sources": {
+    "experiments/problem2/exp004/evaluate.py": "41f9d96197448adac9d72405959f33fffd8062309b6a7a91442c8c9da85f65c9",
+    "experiments/problem2/exp004/protocol.json": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+    "experiments/problem2/exp004/frozen_prior_manifest.json": "73249797fd26e959139784dd649823b2de474046c944557b2440a541d18b5aae",
+    "experiments/problem2/exp003/dispatch.py": "47764e4633c88a0d27e156892ab23fa85be102e93d8e63899f1420202a73e201",
+    "experiments/problem2/exp003/evaluate.py": "fe01369f1b77a9355371b5e4c37d8fe19eee597d4356bfe80ade197725775ca9",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+    "data/results/exp003/warmup_2.npz": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864"
+  },
+  "data": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "workers": 3
+}
