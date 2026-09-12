@@ -9,6 +9,12 @@
 \usepackage[framemethod=TikZ]{mdframed}  % 框架宏包
 \usepackage{url}  % 网页链接宏包
 \usepackage{subcaption}  % 子图宏包
+% 2026年格式规范：电子版从摘要开始，承诺书及编号专用页另行处理。
+% 附件5明确要求PDF；format2026.doc允许PDF或Word，本模板统一输出PDF。
+% 规范未统一规定字体、字号和行距，保留本文现有设置。
+\geometry{a4paper,top=25mm,bottom=25mm,left=25mm,right=25mm}
+\pagestyle{plain} % 无页眉；阿拉伯页码居中置于页脚。
+\hypersetup{pdfauthor={},pdfsubject={},pdfkeywords={}} % 不写入参赛身份信息。
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}\renewcommand{\textbf}[1]{{\song\bfseries #1}}
@@ -50,9 +56,10 @@
 %% 正文
 \begin{document}
 	
-% 封面和目录页不显示页码
-\pagenumbering{gobble}
+% 摘要专用页为电子版第一页，页码从1开始；全文连续编号。
+\pagenumbering{arabic}
 \maketitle
+\thispagestyle{plain}
 \begin{abstract}
 
 
@@ -74,9 +81,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%\vspace{-1.4cm} 
-%\tableofcontents  % 目录
-%\newpage
+% 2026年规范要求不要目录；摘要结束后直接进入正文。
 
 
 
@@ -89,7 +94,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\pagenumbering{arabic}
+% 正文接续摘要页页码，不重新从1编号。
 % 以下四节直接写入本文件，无需引用其他正文文件。
 \begingroup
 \renewcommand{\baselinestretch}{1.12}\selectfont
@@ -160,6 +165,25 @@
 \textbf{模型影响：}支持滚动回归、备用分位与相关场景生成；采用近期加权、分组收缩、分块重采样和滚动外推检验，发现漂移时更新窗口，避免将该假设当成已验证事实。
 \end{enumerate}
 
+\begin{enumerate}[label=\textbf{假设\arabic*：},leftmargin=4.8em,itemsep=5pt]
+ \item \textbf{假设内容：}微网按单母线聚合系统处理，十分钟内采用区间平均功率，负载不可主动削减，剩余电量允许不被利用。
+ \textbf{设立依据：}附件提供聚合功率，未提供线路阻抗、可转移负荷及售电价格。
+ \textbf{对模型的影响：}以区间能量守恒描述供需关系，不计售电收入；模型用于能量调度，不替代电压、频率及线路安全校核。
+
+ \item \textbf{假设内容：}主方案将90\%解释为往返效率，充、放电效率对称分解为$\eta_c=\eta_d=\sqrt{0.9}$，日内不另计自放电及容量衰减。
+ \textbf{设立依据：}题面仅给出一个效率数值，没有分方向效率曲线和老化参数，对称分解可避免引入额外不可识别参数。
+ \textbf{对模型的影响：}充入与输出电量分别按效率换算；效率解释作为建模约定保留，并通过81\%与99\%往返效率情景检验影响。
+
+ \item \textbf{假设内容：}给定光伏预测作为本问的确定性供给输入，外网可按计划提供所需电量，不额外设置购电容量上限。
+ \textbf{设立依据：}本问要求利用已给定预测制定计划，未给出预测误差分布或外网接入功率限制。
+ \textbf{对模型的影响：}约束保证给定预测下逐段供电；预测偏离时的适用边界另作压力测试，不据此假定实际发电无误差。
+
+ \item \textbf{假设内容：}将给定曲线视为可重复的典型日，以6000\,kWh为日初、日末储电量，并循环连接午夜两侧的运行模式。
+ \textbf{设立依据：}问题一给出相同的日负载、电价，要求日初日末储电量相等，附录给出初始电量6000\,kWh。
+ \textbf{对模型的影响：}排除透支初始储能获得虚假节费的方案；循环运行条件避免把功率跳变和短动作转移到日界处。
+\end{enumerate}
+其中，典型日循环是本问的运行约定，后续随机变化条件下仍需按真实储电量跨日传递。爬坡限值及最短运行时间作为平稳运行方案的可调设置，在模型中单独列出，不视为题面已给定的硬件参数。
+
 \clearpage
 \section{符号说明}
 下表列出贯穿各问的公共符号，局部回归系数和辅助线性化变量在相应模型中定义。上标“$\widehat{\phantom{x}}$”表示预测量；日下标$d$在不致混淆时省略。$E$表示储电量，$e$表示紧急购电量，两者严格区分。
@@ -208,36 +232,30 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
 
 \section{问题一的模型建立与求解}
 \label{sec:q1}
-\subsection{数据准备与建模约定}
-问题一研究给定负载、电价和光伏预测条件下的典型日调度。储能能够将低价时段及光伏富余时段的电量转移至用电高峰，但充放电损耗削弱了时移收益，容量和功率限制又使各时段决策相互关联。因此，需在全天供需平衡的基础上同时确定购电量与储能轨迹。
+\subsection{问题一模型的建立}
+问题一要求我们在给定负载、电价和光伏发电情况的条件下，设计一个能最小化外网购电费用的线性规划模型。其中，储能电池能够将低价时段及光伏富余时段的电量转移至用电高峰，但充放电存在10\%的损耗，容量和功率限制又使各时段决策相互关联。因此，需在全天供需平衡的基础上同时确定购电量与储能轨迹。
 
-将一天划分为$T=144$个区间，区间长度$\Delta t=1/6$\,h。附件中的时间按区间右端解释，$0{:}10$对应$[0{:}00,0{:}10)$，$0{:}00+1$对应$[23{:}50,24{:}00)$。保持原始行序，对电价、负载与光伏三列检查数值类型、有限性及非负性，再将功率换算为区间电量：
+将一天划分为$T=144$个区间，区间长度$\Delta t=1/6$\,h。附件中的时间按区间右端解释，$0{:}10$对应$[0{:}00,0{:}10)$，$0{:}00+1$对应$[23{:}50,24{:}00)$。微网系统存在以下供需关系：
+
 \begin{equation}
- \ell_t=L_t\Delta t,\qquad v_t^{\mathrm{pv}}=V_t\Delta t,\qquad
- Q_L=\sum_{t=1}^{T}\ell_t,\quad Q_V=\sum_{t=1}^{T}v_t^{\mathrm{pv}}.
- \label{eq:q1-data}
+ g_t+V_t\Delta t+P_t^d\Delta t
+ =L_t\Delta t+P_t^c\Delta t+w_t,\qquad g_t,w_t\geq0 .
+ \label{eq:q1-balance}
 \end{equation}
-附件一的全天负载电量为111024.808100\,kWh，光伏预测电量为55482.835667\,kWh，电价范围为0.3713--1.3952元/kWh。虽然光伏约占全天负载电量的一半，其发电集中时段与负载、电价峰值并不重合，仅按全天净电量购电不能保证逐段供电。
+其中，$t=1,\ldots,T$为十分钟区间编号，$g_t$为区间$t$向外网申报的购电量，$w_t$为该区间未被负载或充电利用的剩余电量，单位均为kWh；$V_t$和$L_t$分别是光伏预测功率和负载预测功率，$P_t^c$与$P_t^d$分别为交流侧充电功率与放电功率，单位均为kW，且电池充放电功率应小于5000$\,kWh$。
 
+\begin{equation}
+ E_{t+1}-E_t=\eta_cP_t^c\Delta t-\frac{P_t^d\Delta t}{\eta_d},
+ \qquad \eta_c=\eta_d=\sqrt{0.9}.
+ \label{eq:q1-state}
+\end{equation}
+\begin{equation}
+ 1200\,kWh\leq E_t\leq10800\,kWh\quad,
+ \qquad E_1=E_{T+1}=6000\,kWh.
+ \label{eq:q1-boundary}
+\end{equation}
 
-\begin{enumerate}[label=\textbf{假设\arabic*：},leftmargin=4.8em,itemsep=5pt]
- \item \textbf{假设内容：}微网按单母线聚合系统处理，十分钟内采用区间平均功率，负载不可主动削减，剩余电量允许不被利用。
- \textbf{设立依据：}附件提供聚合功率，未提供线路阻抗、可转移负荷及售电价格。
- \textbf{对模型的影响：}以区间能量守恒描述供需关系，不计售电收入；模型用于能量调度，不替代电压、频率及线路安全校核。
-
- \item \textbf{假设内容：}主方案将90\%解释为往返效率，充、放电效率对称分解为$\eta_c=\eta_d=\sqrt{0.9}$，日内不另计自放电及容量衰减。
- \textbf{设立依据：}题面仅给出一个效率数值，没有分方向效率曲线和老化参数，对称分解可避免引入额外不可识别参数。
- \textbf{对模型的影响：}充入与输出电量分别按效率换算；效率解释作为建模约定保留，并通过81\%与99\%往返效率情景检验影响。
-
- \item \textbf{假设内容：}给定光伏预测作为本问的确定性供给输入，外网可按计划提供所需电量，不额外设置购电容量上限。
- \textbf{设立依据：}本问要求利用已给定预测制定计划，未给出预测误差分布或外网接入功率限制。
- \textbf{对模型的影响：}约束保证给定预测下逐段供电；预测偏离时的适用边界另作压力测试，不据此假定实际发电无误差。
-
- \item \textbf{假设内容：}将给定曲线视为可重复的典型日，以6000\,kWh为日初、日末储电量，并循环连接午夜两侧的运行模式。
- \textbf{设立依据：}问题一给出相同的日负载、电价，要求日初日末储电量相等，附录给出初始电量6000\,kWh。
- \textbf{对模型的影响：}排除透支初始储能获得虚假节费的方案；循环运行条件避免把功率跳变和短动作转移到日界处。
-\end{enumerate}
-其中，典型日循环是本问的运行约定，后续随机变化条件下仍需按真实储电量跨日传递。爬坡限值及最短运行时间作为平稳运行方案的可调设置，在模型中单独列出，不视为题面已给定的硬件参数。
+其中，$E_t$与$E_{t+1}$分别为区间$t$开始和结束时电池内部的储电量，单位为kWh；$\eta_c$与$\eta_d$分别为充电效率和放电效率，$\eta_{\rm rt}=\eta_c\eta_d$为往返效率。
 
 \subsubsection{变量与参数定义}
 决策量统一在交流侧定义；$g_t,w_t$为电量，$P_t^c,P_t^d$为功率。表\ref{tab:q1-vars}区分直接调度变量、辅助量和目标量，表\ref{tab:q1-params}列出已知条件及需要根据运行偏好选定的参数。
@@ -295,86 +313,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
 \end{table}
 待选定参数表示运行偏好，并非从附件辨识出的设备额定值。本文先考察候选组合，再用单因素重求解分析参数变化；模式最小有效功率只用于明确启动计数，不承担寿命估计功能。
 
-\subsection{考虑运行平稳性的分层优化模型}
-\subsubsection{供需平衡与储能耦合}
-\textbf{（1）由逐段保供要求建立能量平衡。}
-区间内，外购电、光伏与电池放电共同供给负载和充电，多余部分由$w_t$表示。因此
-\begin{equation}
- g_t+V_t\Delta t+P_t^d\Delta t
- =L_t\Delta t+P_t^c\Delta t+w_t,\qquad g_t,w_t\geq0 .
- \label{eq:q1-balance}
-\end{equation}
-令$w_t\geq0$等价于允许供给高于需求，同时排除负荷缺供。它表示总剩余电量，既可能来自光伏，也可能来自已经付费的购电。
 
-\textbf{（2）由转换效率推导储电递推。}
-充电时输入$P_t^c\Delta t$，其中$\eta_cP_t^c\Delta t$进入电池；放电时向交流侧供出$P_t^d\Delta t$，电池内部相应减少$P_t^d\Delta t/\eta_d$，故
-\begin{equation}
- E_{t+1}-E_t=\eta_cP_t^c\Delta t-\frac{P_t^d\Delta t}{\eta_d},
- \qquad \eta_c=\eta_d=\sqrt{\eta_{\rm rt}}.
- \label{eq:q1-state}
-\end{equation}
-安全储电范围和周期边界分别给出
-\begin{equation}
- E_{\min}\leq E_t\leq E_{\max}\quad(t=1,\ldots,T+1),
- \qquad E_1=E_{T+1}=6000 .
- \label{eq:q1-boundary}
-\end{equation}
-将式\eqref{eq:q1-state}对一天求和，利用两端储电量相等，可得全天交流侧充放电关系：
-\begin{equation}
- Q_c=\Delta t\sum_tP_t^c,\quad Q_d=\Delta t\sum_tP_t^d,\qquad
- Q_d=\eta_{\rm rt}Q_c,\quad Q_{\rm loss}=(1-\eta_{\rm rt})Q_c.
- \label{eq:q1-loss}
-\end{equation}
-式\eqref{eq:q1-loss}表明储能仅转移电能而不产生电能。低价购入后再放出的等效单价为$p_{\rm low}/\eta_{\rm rt}$，因而具备套利空间的必要价格条件为
-\begin{equation}
- p_{\rm high}>\frac{p_{\rm low}}{\eta_{\rm rt}}.
- \label{eq:q1-arbitrage}
-\end{equation}
-该条件仅用于解释时移机理；能否充入、能否留到高价时段，还受全日状态和功率约束共同限制。
-
-\textbf{（3）由设备运行模式建立互斥约束。}
-同一电池在一个区间内只能充电、放电或停机，引入二元变量后有
-\begin{equation}
- z_t^c,z_t^d\in\{0,1\},\qquad z_t^c+z_t^d\leq1 .
- \label{eq:q1-mode}
-\end{equation}
-模式变量与连续功率通过
-\begin{equation}
- P_{\min}z_t^m\leq P_t^m\leq P_{\max}z_t^m,\qquad m\in\{c,d\}
- \label{eq:q1-power}
-\end{equation}
-连接。模式关闭时功率必须为零；开启时至少达到计数判据$P_{\min}$，避免零功率时任意延长运行段。
-
-\subsubsection{功率变化与运行段约束}
-仅最小化电费时，邻近低价区间的细小价差也可能使充电集中在少数区间，形成短时高功率动作。为限制这一现象，定义净充电功率，并连接循环日的午夜边界：
-\begin{equation}
- P_t^{\mathrm{bat}}=P_t^c-P_t^d,\qquad
- P_0^{\mathrm{bat}}=P_T^{\mathrm{bat}},\qquad z_0^m=z_T^m .
- \label{eq:q1-net}
-\end{equation}
-相邻控制指令的变化不超过候选限值：
-\begin{equation}
- -R_{\rm ramp}\leq P_t^{\mathrm{bat}}-P_{t-1}^{\mathrm{bat}}\leq R_{\rm ramp}.
- \label{eq:q1-ramp}
-\end{equation}
-这里$R_{\rm ramp}=1000$\,kW表示每十分钟两个平均功率指令之差，而非电池最大功率，也不是秒级连续爬坡速度。
-
-为了限制短时启停，令$s_t^m$表示模式$m$由关闭转为开启，$o_t^m$表示相反转换。由0--1状态的逻辑关系得到
-\begin{equation}
- \begin{aligned}
- s_t^m&\geq z_t^m-z_{t-1}^m,&s_t^m&\leq z_t^m,&s_t^m&\leq1-z_{t-1}^m,\\
- o_t^m&\geq z_{t-1}^m-z_t^m,&o_t^m&\leq z_{t-1}^m,&o_t^m&\leq1-z_t^m,
- \end{aligned}
- \qquad 0\leq s_t^m,o_t^m\leq1 .
- \label{eq:q1-switch}
-\end{equation}
-例如$z_{t-1}^m=0,z_t^m=1$时，上述约束共同给出$s_t^m=1,o_t^m=0$，其余状态可同理验证。启动后至少连续运行$U$段，关闭后至少连续关闭$D$段：
-\begin{equation}
- \sum_{j=0}^{U-1}z_{t+j}^m\geq Us_t^m,\qquad
- \sum_{j=0}^{D-1}(1-z_{t+j}^m)\geq Do_t^m .
- \label{eq:q1-duration}
-\end{equation}
-下标均循环取模。关闭时间限制针对同一模式，不能解释为整台电池必须停机$D$段。
 
 \subsubsection{费用优先的三层目标}
 \textbf{第一层：确定运行条件下的最低购电费。}
@@ -383,6 +322,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
  F_1(x)=\sum_{t=1}^{T}p_tg_t,\qquad C^\star=\min_{x\in\mathcal X}F_1(x).
  \label{eq:q1-first}
 \end{equation}
+其中，$x$表示由购电量、充放电功率、储电量、模式及辅助变量组成的完整调度方案，$\mathcal X$为满足上述全部约束的方案集合；$p_t$为区间$t$的已知购电单价，单位为元/kWh；$F_1(x)$为方案$x$的全天购电费用，$C^\star$为同一可行域内第一层的最优费用，单位均为元。
 $C^\star$提供后续费用让步的基准，不与无新增运行限制时的最低电费混用。
 
 \textbf{第二层：在费用预算内减少功率波动与短动作。}
@@ -392,7 +332,8 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  N_s=\sum_t(s_t^c+s_t^d),\qquad B=\sum_j(K-\ell_j^{\rm run})^+ ,
  \label{eq:q1-diagnostics}
 \end{equation}
-其中$\ell_j^{\rm run}$为第$j$个循环运行段的长度。$\mathcal V$减少表示控制指令整体变化较小；$N_s$和$B$分别反映动作分散程度和短动作程度，三者均不是已经标定的电池寿命损失。
+其中，$\mathcal V$为含午夜边界的净功率总变差，单位为kW；$N_s$为全天充、放电模式启动总次数；$B$为短运行段相对于参考长度的累计缺额，单位为十分钟段。此式的$j$为循环运行段编号，$\ell_j^{\rm run}$为第$j$个连续同模式运行段的长度，$K=3$为短段参考长度；$(a)^+=\max(a,0)$表示取正部。
+$\mathcal V$减少表示控制指令整体变化较小；$N_s$和$B$分别反映动作分散程度和短动作程度，三者均不是已经标定的电池寿命损失。
 
 为保持线性结构，以辅助变量$\xi_t$替代绝对值：
 \begin{equation}
@@ -400,6 +341,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \xi_t\geq P_{t-1}^{\rm bat}-P_t^{\rm bat},\qquad \xi_t\geq0 .
  \label{eq:q1-tv-linear}
 \end{equation}
+其中，$\xi_t$为区间$t$与上一段净功率差绝对值的非负辅助上界，单位为kW；两条下界分别覆盖功率差为正和为负的情况，以线性不等式表达绝对值。
 在第二层的正权重最小化下，$\sum_t\xi_t=\mathcal V$。短段项则由启动后是否发生中断表达。对$k=1,\ldots,K-1$，有
 \begin{equation}
  \begin{gathered}
@@ -410,6 +352,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \end{gathered}
  \label{eq:q1-short}
 \end{equation}
+其中，$b_{t,k}^m$为模式$m$在区间$t$启动后、接下来$k$段内是否出现关闭的指示量，出现时取1，否则取0；$k=1,\ldots,K-1$为检查窗口长度，$j=1,\ldots,k$为窗口内相对启动区间的偏移。$\sum_{m,t,k}$对两种模式、全天各启动位置及所有检查窗口求和，得到短段缺额$B$。
 启动后前$k$段内发生关闭时$b=1$，否则$b=0$。本轮$U=K=3$，故改进方案的$B$恒为零；该项保留用于与未限制最短运行时间的经济基准采用相同评价口径。
 
 将不同量纲的指标按上界归一化，得到
@@ -418,12 +361,14 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
        +\frac{N_s}{2T}+\frac{B}{2T(K-1)} .
  \label{eq:q1-second}
 \end{equation}
+其中，$F_2(x)$为方案$x$的归一化运行不平稳程度，无量纲，值越小表示综合运行质量越好；三个分式依次对应功率总变差、启动次数和短段缺额，各自的分母用于将指标转换到可比较的尺度。
 归一化只统一数值尺度；等权系数反映本次运行偏好，不将三项解释为相同的货币损失。若只允许电费偏离$C^\star$一个极小数值容差，第二层可调整空间有限。故引入相对费用让步$\delta$，求解
 \begin{equation}
  S^\star=\min_{x\in\mathcal X}F_2(x),\qquad
  F_1(x)\leq(1+\delta)C^\star+\epsilon_C .
  \label{eq:q1-budget}
 \end{equation}
+其中，$S^\star$为满足费用预算时第二层目标的最优值，无量纲；$\delta$为相对第一层最优费用$C^\star$允许的费用让步比例，$\epsilon_C$为费用约束的绝对数值容差，单位为元。
 其中$\delta=0.001$为主动接受的经济预算，$\epsilon_C=10^{-4}$元为数值容差。两者分别控制运行取舍与浮点误差。
 
 \textbf{第三层：在既定运行质量下减少购电量。}
@@ -437,6 +382,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \end{aligned}
  \label{eq:q1-third}
 \end{equation}
+其中，$F_3(x)$为方案$x$的全天累计购电量，单位为kWh；$\epsilon_S$为保留第二层最优运行质量时允许的数值容差，无量纲，取$10^{-7}$。两条约束分别保留第一层费用预算与第二层运行质量，$\mathrm{s.t.}$表示“满足下列约束”。
 购电费与购电量并不等价：低价多买电有时比高价少买电更经济。因此将购电量置于第三层，避免其削弱费用目标和已取得的运行平稳性。模型的改进集中于费用预算约束下的分层求解，不需要将多个目标换算成缺乏依据的统一货币权重。
 
 \subsection{模型求解与调度结果}
@@ -519,6 +465,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \end{aligned}
  \label{eq:q1-audit-residual}
 \end{equation}
+其中，$r_t^{\rm bal}$为区间$t$的供需能量平衡残差，$r_t^E$为该区间的储电递推残差，单位均为kWh；$r_C$为逐段重新核算的购电费用与求解目标$F_1(x)$之间的绝对差，单位为元。精确满足模型时三者均为零。
 物理残差在各自单位下采用$2\times10^{-5}$的审计容差，整数模式偏差阈值为$10^{-6}$，费用预算另用$10^{-5}$元复核容差。上述数值只用于识别浮点误差，不放宽设备真实边界。
 
 \begin{table}[H]
@@ -545,6 +492,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  Q_g=Q_L-Q_V+Q_{\rm loss}+Q_w,\qquad Q_w=\sum_tw_t.
  \label{eq:q1-daily}
 \end{equation}
+其中，$Q_g=\sum_tg_t$为全天累计外网购电量，$Q_w$为全天累计未利用电量，单位均为kWh；右侧各项依次为全天负载电量、光伏电量的扣减、储能转换损耗和未利用电量。
 实际解满足$Q_c=20186.436434$、$Q_d=18167.792791$\,kWh，转换损耗为2018.643643\,kWh，剩余电量为零。因此
 \begin{equation}
  57560.616077
@@ -552,6 +500,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \quad(\mathrm{kWh}).
  \label{eq:q1-numeric-energy}
 \end{equation}
+其中，等式左侧为全天购电量$Q_g$，右侧三个数值依次为全天负载电量$Q_L$、光伏预测电量$Q_V$和转换损耗$Q_{\rm loss}$，单位均为kWh；本方案$Q_w=0$，故未另列该项，$\simeq$表示舍入后的近似相等。
 式中显示值已舍入；程序使用完整精度核查。由全天守恒、逐段残差与求解器间隙可知，该方案在所设条件下满足保供及周期运行要求。
 
 \subsubsection{经济基准与平稳运行方案对比}
@@ -561,6 +510,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  C^{(0)}=\sum_tp_tg_t^{(0)}=48052.046591\ \text{元}.
  \label{eq:q1-no-storage}
 \end{equation}
+其中，$g_t^{(0)}$为无储能条件下区间$t$直接从外网购买的电量，单位为kWh；$C^{(0)}$为该无储能方案的全天购电费用，单位为元；上标$(0)$表示无储能对照方案，取正部表示光伏超过负载时购电量为零。
 \begin{table}[H]
  \centering\small
  \caption{储能调度方案的经济性与运行指标对比}\label{tab:q1-compare}
@@ -586,6 +536,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  +\underbrace{C_{\rm stable}-C^\star}_{\text{第二层费用让步}}.
  \label{eq:q1-cost-decomp}
 \end{equation}
+其中，$C_{\rm stable}$为三层求解后平稳运行方案的实际全天购电费用，$C_{\rm econ}^{\star}$为不增加爬坡及最短持续时间限制时严格经济基准的第一层最优费用，单位均为元；$C^\star$仍为加入运行限制后的第一层最优费用。
 两项分别约为279.455857元和34.081051元，其中$C_{\rm econ}^{\star}$为严格经济基准第一层最优值。由此可见，0.1\%指新运行条件下的额外费用预算，而非相对原方案的全部费用增幅。
 
 \subsubsection{费用让步比例的选取}
@@ -622,6 +573,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  {(\theta'-\theta)/\theta}.
  \label{eq:q1-sensitivity}
 \end{equation}
+其中，$\theta$为被扰动参数的基准值，$\theta^{\prime}$为扰动后的取值；$J$为所考察的输出指标，如购电费或功率总变差，$J(\theta)$与$J(\theta^{\prime})$分别为扰动前、后重新求解得到的指标值。$D_J(\theta^{\prime})$为该指标的百分比变化，$S_J(\theta^{\prime})$为指标相对变化与参数相对变化之比，是无量纲的有限扰动灵敏度。
 整数模式可能跳变，故$S_J$用于有限扰动比较，不等同于处处存在的导数。参数表中$\delta$的$\pm10\%$是0.09\%与0.11\%，效率的对应值是81\%与99\%，后者为机制压力情景，不表示实测效率误差范围。
 
 \begin{table}[H]
@@ -656,6 +608,7 @@ $\eta_{\rm rt}=99\%$&32897.4785&-3.5690&33591.6607&6\\
  \end{aligned}
  \label{eq:q1-noise}
 \end{equation}
+其中，$\widetilde L_t$与$\widetilde V_t$分别为扰动后的负载功率与光伏功率，单位为kW；$\zeta_t^L$与$\zeta_t^V$为相应的无量纲相对扰动。此式$j\in\{L,V\}$表示扰动对象，$Z_t^j$为均值0、标准差0.01的正态随机扰动，$N(0,0.01^2)$中的第二个参数为方差；$\operatorname{clip}$将扰动截断在$[-0.03,0.03]$，即$\pm3\%$以内。
 使用种子2026、2027、2028，保持电价不变、夜间零光伏不变，各情景独立重求解。同时冻结原购电和充放电指令，计算其不能覆盖的正向净负荷扰动：
 \begin{equation}
  H_{\rm fixed}
@@ -664,6 +617,7 @@ $\eta_{\rm rt}=99\%$&32897.4785&-3.5690&33591.6607&6\\
  \right]^+ .
  \label{eq:q1-fixed-test}
 \end{equation}
+其中，$H_{\rm fixed}$为冻结原购电及充放电指令后，全天各区间供电缺口的累计电量，单位为kWh；方括号内为净负荷新增电量减去原方案剩余电量$w_t$，外侧取正部表示只累计未能覆盖的缺口，不用其他区间的富余电量直接抵消。
 $H_{\rm fixed}$是不允许重新调度或补购时的计划缺口，不是采用实时补救后必然发生的停电量。两项检验分别回答“重新优化是否稳定”与“固定计划能否直接应对扰动”。
 
 \begin{table}[H]
@@ -875,6 +829,12 @@ $H_{\rm fixed}$是不允许重新调度或补购时的计划缺口，不是采�
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 参考文献
+% 附件6第3条：AI工具使用声明放在参考文献之前。
+\section*{AI 工具使用声明}
+本参赛队在竞赛过程中使用了 AI 工具，主要用于模型思路讨论、程序编写与调试、结果分析辅助、论文表述与排版调整，详细使用情况见支撑材料。
+% 提交前补齐“AI 工具使用详情.pdf”：工具名称及型号、使用环节、
+% 主要提示与过程、采纳与人工修改及核验情况；不得把未完成的核验写成已完成。
+
 % 本文已引用文献直接列在本文件内；原ref.bib保留未修改。
 \begin{thebibliography}{99}
 \raggedright
@@ -928,6 +888,7 @@ q1\_reproduce.py & 问题一完整求解、检验与绘图程序（含内嵌数�
 q2.py & 问题二程序代码 \\
 q3.c & 问题三程序代码 \\
 q4.cpp & 问题四程序代码 \\
+AI 工具使用详情.pdf & AI工具、使用过程及人工修改与核验情况说明（提交前补齐） \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bottomrule
 \end{tabularx}
