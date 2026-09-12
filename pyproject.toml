@@ -47,3 +47,9 @@ extend-select = ["E402"]
 "experiments/common/neural_v2/predict.py" = ["I001", "F401", "B019"]
 "experiments/common/neural_v2/risk.py" = ["I001", "RUF059"]
 "experiments/common/neural_v2/scenarios.py" = ["B019", "RUF059"]
+# exp003 model and evaluation signatures bind these measured source bytes.
+# Preserve import layout, the tested ValueError API and bounded 11-month cache.
+"experiments/problem2/exp003/baseline_evidence.py" = ["I001"]
+"experiments/problem2/exp003/data.py" = ["TRY004"]
+"experiments/problem2/exp003/train.py" = ["I001"]
+"experiments/problem2/exp003/predict.py" = ["B019", "TRY004"]
