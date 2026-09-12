@@ -1,7 +1,7 @@
 {
   "buildStatus": "complete",
   "seconds": 11.180369958980009,
-  "html_sha256": "611162e6d35b15d38d2a2a8662ac8dd7af41ca827798f17f0c56d5da418ae202",
+  "html_sha256": "9e69778f17bee43cdb82091e755eaf22c55d9aab16db005bd3d137555c454b47",
   "data_sha256": "c4e6c687ab158c0a0ba90ec2f7502fb946286ea09cd2d80f304da683987db1fa",
   "queries": 36,
   "components": 66,
@@ -27,5 +27,9 @@
     "timings.csv": "a21f875e72331bda307e78f7af1f1f245388473247e2d22cc45298a6c046285f",
     "seasonal_shifts.csv": "90f84516117f0a62a1b804ffed0196e042b5a1832af7291391c8fc25c3f38058",
     "monthly_cost.csv": "1ec83e47e2c6f1d40b63e510b99bdb50f0abbd5d22bdd46856cd5425463bd782"
+  },
+  "battery_power_addendum": {
+    "manifest": "evidence/battery_power_manifest.json",
+    "sha256": "91955b9f9f183b800b6a9784464aa42aa6051a525f66e5fc471b0363480601ac"
   }
 }

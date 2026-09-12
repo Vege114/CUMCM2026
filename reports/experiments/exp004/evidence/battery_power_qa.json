@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "rows": 210240,
+  "checks": [
+    "source/output hashes",
+    "full-year timestamp coverage",
+    "CSV power and differences",
+    "evaluation total variation and denominator",
+    "all SVG vertices retained",
+    "known signed-power example",
+    "single embedded appendix and report hash"
+  ],
+  "browser_visual_check": "not_performed: local file navigation rejected by browser security policy",
+  "command": "python -m reports.verify_battery_power_exp004"
+}

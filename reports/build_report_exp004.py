@@ -225,6 +225,8 @@ def build(complete=False, node=NODE, skip_figures=False):
     write_json(REPORT/'report_build.json',{'buildStatus':snapshot['buildStatus'],'seconds':time.monotonic()-began,
       'html_sha256':sha256(REPORT/'report.html'),'data_sha256':sha256(app/'src/data.json'),'queries':len(queries),
       'components':sum(len(s['blocks']) for s in sections),'evidence':{p.name:sha256(p) for p in EVIDENCE.iterdir() if p.is_file()}})
+    from reports.battery_power_exp004 import build as build_battery_power
+    build_battery_power()
     print('REPORT_BUILT',REPORT/'report.html')
 
 

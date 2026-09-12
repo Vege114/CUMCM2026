@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "sampling_seed": 20260912,
+  "sampling_algorithm": "numpy.random.default_rng.choice without replacement, then date sort",
+  "numpy_version": "2.3.5",
+  "model_seed": 42,
+  "sample_dates": [
+    "2025-04-15",
+    "2025-06-07",
+    "2025-12-06",
+    "2025-12-25"
+  ],
+  "points_per_variant": 52560,
+  "evaluation_points_per_variant": 48096,
+  "variants": {
+    "exp003": "exp003 正式基线",
+    "no_season": "exp004 无季节",
+    "causal_season": "exp004 历史季节（正式）",
+    "oracle_season": "exp004 全年探索（含未来）"
+  },
+  "sources": {
+    "data\\results\\exp003\\warmup_2.npz": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+    "data\\results\\exp003\\dispatch_2.npz": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+    "data\\results\\exp004\\dispatch_no_season_seed_42.npz": "e203db49dde45221207ed565dedde439343ff894fd85d28aaf4ec40bc45c57d0",
+    "data\\results\\exp004\\dispatch_causal_season_seed_42.npz": "9d6688e5c7b5dc9367717b4fd5d9c2a8583fbb6afc7e238c0b07fcfc16b9e9f7",
+    "data\\results\\exp004\\dispatch_oracle_season_seed_42.npz": "23cf3c956d5a4a7a7d399b91feef64d94fa04408b5bc3710f55298adcce85fd5"
+  },
+  "warmup_to_evaluation_delta_kw": {
+    "exp003": 4827.24,
+    "no_season": 4827.24,
+    "causal_season": 4827.24,
+    "oracle_season": 4827.24
+  },
+  "checks": [
+    "finite values",
+    "shape and complete regular time grid",
+    "power bounds",
+    "charge/discharge exclusivity",
+    "SOC equation including efficiencies",
+    "SOC limits",
+    "cross-day continuity",
+    "warmup/evaluation SOC continuity"
+  ],
+  "conclusion": "未观察到功率变化被明显抑制。正式历史季节组的平均相邻功率变化为 695.36 kW，较 exp003 变化 +0.18%；P95 为 4742.86 kW，最大跳变 9707.94 kW。现有执行器仅按供需余额、SOC 和 5000 kW 上限充放电，没有显式爬坡约束或平滑惩罚。波动是否下降应结合下表各项判断；功率贴限不代表变化率受限，此比较也不能证明平滑机制的因果效果或统计显著性。",
+  "reproduction": "python -m reports.battery_power_exp004",
+  "outputs": {
+    "battery-power.html": "4e2cfa6318cc8e82d4231fd138b38dc73bc7d40c81b3043c2416bf9046fa9c04",
+    "figures\\battery-power-full-year.svg": "30ecf016bfe34fb0f74887ed48979610f092f95fa4fc902faa3c7523ec7932cf",
+    "figures\\battery-power-random-days.svg": "ea6ffb027f66d6b04adde671fde755081263e9c93408ee20a9d40ef0ac81dd50",
+    "evidence\\battery_power_comparison.csv": "8de4209c726e6f44c03ccdd8bcccf54f2876abfa99559782f454a769f5d79d81",
+    "evidence\\battery_power_full_year.csv.gz": "3a699d772d13b1bbdd13f1d5f2889792d6efc7fb2cf343299a02a7ab3dbaac7a",
+    "evidence\\battery_power_metrics.csv": "99fa41d4de5e720a4fef97dc6da23073f10b4f0e85b6cc2cb95852107724d0e1",
+    "evidence\\battery_power_random_days.csv": "406a466aebeec3d65a0e08d47bb0dd4ad3d709263b2715b5e3b28bf8566743ce"
+  }
+}
