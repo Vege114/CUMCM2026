@@ -1,0 +1,64 @@
+.report-page:has(.q2-discussion){--data-app-layout-intent:authored-report;--data-app-content-width:1080px;}
+.q2-discussion .discussion-hero{margin:24px 0 32px;}
+.q2-discussion .discussion-hero h1{max-width:950px;}
+.q2-discussion .discussion-nav{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 36px;}
+.q2-discussion .discussion-nav a{color:var(--text-secondary);font-size:13px;padding:7px 11px;background:var(--surface-secondary);border:1px solid var(--border);border-radius:999px;text-decoration:none;}
+.q2-discussion .discussion-section{scroll-margin-top:92px;margin:42px 0;}
+.q2-discussion .discussion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:24px 0;}
+.q2-discussion .discussion-grid>*{min-width:0;}
+.q2-discussion .discussion-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0;}
+.q2-discussion .flow-node{border:1px solid var(--border);padding:16px;border-radius:12px;background:var(--surface-secondary);color:var(--text-primary);text-decoration:none;}
+.q2-discussion .flow-node small{display:block;color:var(--text-secondary);font-size:12px;margin-top:6px;}
+.q2-discussion .flow-node strong{font-size:16px;display:block;}
+.q2-discussion .discussion-table-scroll{overflow-x:auto;margin:12px 0;max-width:100%;}
+.q2-discussion .discussion-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.55;}
+.q2-discussion .discussion-table th,.q2-discussion .discussion-table td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;}
+.q2-discussion .discussion-table th{font-weight:600;color:var(--text-secondary);}
+.q2-discussion .discussion-table .number{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.q2-discussion .discussion-table .wide{min-width:240px;}
+.q2-discussion .module{padding:20px 0;border-top:1px solid var(--border);scroll-margin-top:92px;}
+.q2-discussion .module summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:4px 0;color:var(--text-primary);font-size:20px;font-weight:600;}
+.q2-discussion .module summary::-webkit-details-marker{display:none;}
+.q2-discussion .module summary::after{content:'展开技术选项 ＋';font-size:12px;font-weight:400;white-space:nowrap;color:var(--text-secondary);}
+.q2-discussion .module details[open]>summary::after{content:'收起 −';}
+.q2-discussion .module-intro{margin:14px 0 20px;color:var(--text-secondary);line-height:1.7;}
+.q2-discussion .module-interface{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+.q2-discussion .module-interface>div{border-left:3px solid var(--border);padding:3px 15px;}
+.q2-discussion .module-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0;}
+.q2-discussion .option{border:1px solid var(--border);padding:18px;border-radius:12px;}
+.q2-discussion .option h4{font-size:16px;line-height:1.5;margin:0 0 8px;}
+.q2-discussion .option-status{display:inline-block;font-size:11px;padding:3px 8px;border-radius:999px;background:var(--surface-secondary);color:var(--text-secondary);margin-bottom:10px;}
+.q2-discussion .option ol{padding-left:20px;}
+.q2-discussion .option .rich-narrative{font-size:14px;}
+.q2-discussion .decision-group{margin:24px 0;}
+.q2-discussion .decision-group h3{font-size:18px;}
+.q2-discussion .meeting-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.q2-discussion .meeting-field{display:flex;flex-direction:column;gap:7px;font-size:13px;}
+.q2-discussion .meeting-field input,.q2-discussion .meeting-field select,.q2-discussion .meeting-field textarea{font:inherit;color:var(--text-primary);background:var(--surface);border:1px solid var(--border);padding:10px 12px;border-radius:8px;width:100%;box-sizing:border-box;}
+.q2-discussion .meeting-field textarea{min-height:92px;resize:vertical;}
+.q2-discussion .meeting-field select{min-height:44px;}
+.q2-discussion .meeting-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:20px;}
+.q2-discussion .meeting-action{border:1px solid var(--border);border-radius:8px;padding:10px 15px;background:var(--surface-secondary);color:var(--text-primary);cursor:pointer;font:inherit;font-size:13px;}
+.q2-discussion .meeting-status,.q2-discussion .scope-label{font-size:12px;color:var(--text-secondary);}
+.q2-discussion .empty-evidence{padding:28px;border:1px dashed var(--border);border-radius:12px;color:var(--text-secondary);margin:18px 0;line-height:1.7;}
+.q2-discussion .discussion-disclosure{margin:20px 0;}
+.q2-discussion .discussion-disclosure>summary{cursor:pointer;font-weight:600;}
+.q2-discussion .cost-total{display:flex;gap:26px;flex-wrap:wrap;margin:20px 0;}
+.q2-discussion .cost-total div{border-left:2px solid var(--border);padding-left:15px;}
+.q2-discussion .cost-total span{display:block;color:var(--text-secondary);font-size:12px;}
+.q2-discussion .cost-total strong{display:block;font-size:28px;font-weight:500;font-variant-numeric:tabular-nums;margin-top:5px;}
+.q2-discussion .raw-controls{display:flex;gap:16px;flex-wrap:wrap;align-items:end;margin:18px 0;}
+@media(max-width:720px){.q2-discussion .discussion-grid,.q2-discussion .module-options,.q2-discussion .meeting-grid,.q2-discussion .module-interface{grid-template-columns:1fr;}.q2-discussion .discussion-flow{grid-template-columns:1fr 1fr;}.q2-discussion .module summary{font-size:18px;align-items:start;}.q2-discussion .module summary::after{max-width:68px;white-space:normal;text-align:right;}.q2-discussion .discussion-table th,.q2-discussion .discussion-table td{padding:8px;}.q2-discussion .discussion-hero h1{font-size:34px;}.q2-discussion .cost-total strong{font-size:24px;}}
+@media print{.q2-discussion .discussion-nav,.q2-discussion .meeting-actions{display:none;}.q2-discussion details:not([open])>*:not(summary){display:block!important;}.q2-discussion .module-options{display:block;}.q2-discussion .option{break-inside:avoid;margin:14px 0;}}
+
+.q2-discussion .discussion-hero h1{line-height:1.22;overflow-wrap:anywhere;height:auto;}
+.q2-discussion .tariff-step-chart{height:290px;position:relative;padding:25px 18px 38px 52px;box-sizing:border-box;}
+.q2-discussion .tariff-unit{font-size:12px;color:var(--text-secondary);position:absolute;top:0;left:4px;}
+.q2-discussion .tariff-step-plot{height:100%;width:100%;position:relative;border-left:1px solid var(--border);border-bottom:1px solid var(--border);}
+.q2-discussion .tariff-step-plot svg{display:block;overflow:visible;}
+.q2-discussion .tariff-step-mark{position:absolute;top:0;height:100%;background:transparent;border:0;padding:0;cursor:crosshair;border-radius:0;}
+.q2-discussion .tariff-step-mark:hover,.q2-discussion .tariff-step-mark:focus-visible{background:color-mix(in srgb,var(--chart-1) 8%,transparent);outline:1px solid var(--chart-1);outline-offset:0;}
+.q2-discussion .tariff-y-tick{position:absolute;right:calc(100% + 8px);transform:translateY(-50%);font-size:11px;color:var(--text-secondary);white-space:nowrap;}
+.q2-discussion .tariff-x-tick{position:absolute;top:calc(100% + 10px);transform:translateX(-50%);font-size:11px;color:var(--text-secondary);white-space:nowrap;}
+
+.q2-discussion .module:has(details[open]) > .module-intro{display:none;}

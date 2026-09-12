@@ -1,0 +1,19 @@
+{
+  "report": {
+    "artifact_id": "report:8275202c-eb95-4dda-b6fc-7bb62938658f",
+    "html": "reports/discussions/q2-improvement/report.html",
+    "sha256": "b681e404f142268661bfca886622cc4b49b833bdfdb079938da0447b9ced39f3",
+    "bytes": 10632577
+  },
+  "inputs": {
+    "evidence.json": "a7c81a083606ab006be4cfe97ddc48addfd1ce7c3533ce3ee05292589ab07e2f",
+    "modules.json": "9c6165539743e7317a2e08f58f0302bae9d442fde243b9bda770dd4a332606e0"
+  },
+  "buildStatus": "complete",
+  "template": {
+    "artifact_id": "report:802dd862-8347-4c87-bbe8-9205651ca086",
+    "html": "reports/templates/q2-discussion/template.html",
+    "sha256": "9660dec046dbebdc4b635e34f010f65c7766a1954fea23be10549b210b52b6a6",
+    "bytes": 3013328
+  }
+}

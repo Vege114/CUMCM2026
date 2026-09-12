@@ -1,0 +1,35 @@
+{
+  "status": "passed_with_documented_limit",
+  "checked_at_utc": "2026-09-12T08:35:16.553136+00:00",
+  "artifacts": {
+    "report": "b681e404f142268661bfca886622cc4b49b833bdfdb079938da0447b9ced39f3",
+    "template": "9660dec046dbebdc4b635e34f010f65c7766a1954fea23be10549b210b52b6a6"
+  },
+  "browser": "Codex in-app browser; actual rendered DOM and screenshots",
+  "surfaces": [
+    "split build preview via localhost",
+    "portable report.html via localhost",
+    "portable template.html via localhost"
+  ],
+  "layout_checks": [
+    "360px: title wraps without overlap; page scrollWidth equals clientWidth; module options fit",
+    "1280px: report charts, precise cost table and module handoff layout inspected",
+    "After repair: all 12 month labels visible in horizontal monthly input chart at narrow width",
+    "Tariff is a real 144-interval step curve with Chinese interval/price tooltip"
+  ],
+  "interaction_checks": [
+    "Raw date switched from 2025-03-20 to 2025-01-01; title and data updated",
+    "July fee filter updated cost chart and exact table; full monthly trend retained",
+    "Dispatch date switched to 2025-07-03 and changed all cost, quantity, SOC and table outputs",
+    "M5 expanded with input/output, responsible role, all five options and Q2T identifiers",
+    "Fee source inspector showed three cost definitions and bundled evidence.json",
+    "Meeting choice and participant text saved; export displayed success; reload preserved the draft; test-only draft cleared",
+    "Template showed empty evidence states, 12 unselected choices, and conditional future-tense copy"
+  ],
+  "runtime_errors_observed": [],
+  "limits": [
+    "Direct file:// browser navigation was blocked by the browser URL policy; no workaround attempted. The same complete standalone HTML was tested over localhost.",
+    "At 360px, some strategy names in the shared bar-chart axis are abbreviated; full names remain in the precise fee table and hover labels."
+  ],
+  "scope": "No model training or new optimization experiment; only existing evidence extraction and report construction."
+}
