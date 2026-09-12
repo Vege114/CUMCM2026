@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "sections": 8,
+  "strategies": 48,
+  "primary_scenarios": 4,
+  "days_per_scenario": 334,
+  "intervals_per_day": 144,
+  "formal_training_groups": 33,
+  "specified_dates": 16,
+  "figures_png_and_svg": 14,
+  "cross_checks": [
+    "CSV \u2194 reviewed snapshot",
+    "daily \u2194 annual fees",
+    "forecast sums \u2194 annual errors",
+    "Markdown \u2194 formatted tables",
+    "workbook readback \u2194 annual fees",
+    "full physical audit"
+  ],
+  "browser_checks": "passed; actual interactions and offline rendering recorded in browser_checks.json"
+}

@@ -1,0 +1,15 @@
+{
+  "formal_training_groups": 33,
+  "months": 11,
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "architecture": "one four-branch 4356-parameter MLP",
+  "primary_seed": 42,
+  "gpu_output_all": true,
+  "zero_initialization_all": true,
+  "parameters_updated_all": true,
+  "save_reload_all": true
+}
