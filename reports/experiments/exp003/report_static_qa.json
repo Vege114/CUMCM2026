@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "reviewer": "q2_comparison_audit",
+  "code_commit": "254ccd8a972944b5d8b11b33cc2c6c8f29cb3495",
+  "build_status": "complete",
+  "section_count": 8,
+  "query_count": 18,
+  "q2_relative_rows": 132,
+  "static_visual_checks": [
+    "All six PNGs viewed at delivery resolution; labels, legends, units and limits legible.",
+    "Monthly forecast error is 2x3: load/PV/net load by RMSE(kW)/WAPE(%), Feb-Dec midnight all-period population.",
+    "Calibration heatmap has nine costs in yuan; selected alpha=(0,0).",
+    "Specified-day and worst-day grid series use interval kWh; SOC uses kWh and physical limits."
+  ],
+  "source_binding_checks": "All declared source files exist, metric componentIds resolve to actual rendered consumers, and all report.md local links resolve.",
+  "numerical_and_ml_review": "Final report.md/methods.md/appendix.md reviewed read-only by q2_ml_audit; no pending findings. Underlying independent full_year_audit passed.",
+  "browser_checks": "Performed and recorded separately by root agent; this record does not assert browser QA.",
+  "artifact_sha256": {
+    "report.html": "6c530f40742e2795ae82ed6af9f6ebbe2981913073e90c921612bd8c060c7076",
+    "report.md": "58d628c1809cf646f708ac02f269d4ca413dd57b3446cb2f846f27945be10fdf",
+    "methods.md": "c9c87f3aa9756a106a8392820f079069433915628a7b4aad31a87176b1695d3e",
+    "appendix.md": "9798a14d32243f211354018f06493a45aa561246bb12d527a5606ea4a6a8a534",
+    "figures/q2-alpha-calibration.png": "801e0d3dd1ad8d5bfd019f9405e7671f99eb13aa96c8cbaf27b589c9323747fe",
+    "figures/q2-cost-components.png": "95640a4fca04a620d9af748a15559f5673a80bf418fdb18c599da5e6a217b4bf",
+    "figures/q2-monthly-cost.png": "8847d16047583180235929595345c5d7f32b90f9ba25a36d3ef41257c3147c61",
+    "figures/q2-monthly-error.png": "adc890dcf33c20f80a693fd7465f29b7feab77d013440fcd9c0eafea91f791f3",
+    "figures/q2-specified-days.png": "aceb4c693aeb805dcc759815cdeb0d2dab22de94856c47d23dae16f6c128086a",
+    "figures/q2-worst-day.png": "d7360b01ebf4f3dacb6156b39907341ce65de62e99749aed4089ec83c4f8d822",
+    "figures/q2-alpha-calibration.svg": "6fba9618dd33c5dabb28ea779e70c51b87261019b63d49328e18fb6646634885",
+    "figures/q2-cost-components.svg": "22779151fc3225dfd9bb974819382850942a80a373202e7aa2accd2302332a89",
+    "figures/q2-monthly-cost.svg": "d19664fad98a87c50c1f683bfa1b8087ba8fb1924e4490abc9b6233fe2232f3b",
+    "figures/q2-monthly-error.svg": "eaf86bdbe65ad8fe9c39c963f0695d67464197c0edfdbb0762c35986a8529118",
+    "figures/q2-specified-days.svg": "7da50a5d47cf3e0c1aba08f53fae38d9c263a44be8e942744b221400abec18d4",
+    "figures/q2-worst-day.svg": "1027a81edf50cb2e9151e6c0dc61e914b2ed4c9b5319e297a87104258ed7832d"
+  }
+}

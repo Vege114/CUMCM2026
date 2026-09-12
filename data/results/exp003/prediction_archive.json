@@ -1,0 +1,34 @@
+{
+  "targets": [
+    "load",
+    "pv"
+  ],
+  "origins": 334,
+  "intervals": 48096,
+  "origin_unit_minutes": 10,
+  "issue_hours": [
+    0
+  ],
+  "dimensions": [
+    "origin",
+    "future_interval",
+    "target"
+  ],
+  "primary_seed": 42,
+  "averaged_seeds": false,
+  "raw_prediction_alpha": [
+    1,
+    1
+  ],
+  "residual_unit": "kW",
+  "mixing": "max(0,base+alpha*raw_residual), then historical PV night mask",
+  "january_calibration": "m02 monthly caches; January defaults to causal periodic baseline",
+  "signature": "1b0378acb7fa8e558671c26284e49e86cf0f128e3bd6be9b7a9acc35cdb2b6e0",
+  "data_hashes": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "archive_sha256": "a82b7f77bf7f2d85801749f54a95013e14a1dda078cf600c9d17cd9c4aebdb07",
+  "prediction_content_sha256": "39c93f657bc5d7d45e9c93ac2d4089839d4283307ddb11d4319be522fd0e8bf9"
+}

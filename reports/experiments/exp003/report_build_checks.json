@@ -1,0 +1,59 @@
+{
+  "evaluation_complete": true,
+  "sections": 8,
+  "scope": [
+    "2"
+  ],
+  "app_id": "report:ca66fd36-4e7d-47ce-8d10-984a44056971",
+  "queries": 18,
+  "figures": [
+    "q2-cost-components",
+    "q2-monthly-cost",
+    "q2-monthly-error",
+    "q2-alpha-calibration",
+    "q2-specified-days",
+    "q2-worst-day"
+  ],
+  "rows": {
+    "cost_annual": 8,
+    "cost_daily": 2672,
+    "forecast_annual": 42,
+    "forecast_monthly": 462,
+    "original_cost": 1,
+    "protocol": 28,
+    "training": 33,
+    "timing": 1,
+    "relative_comparison": 132,
+    "calibration": 9,
+    "specified_intervals": 576,
+    "specified_states": 580,
+    "worst_intervals": 144,
+    "worst_states": 145,
+    "primary_result": 1,
+    "routes": 4,
+    "history_cost": 6,
+    "contributions": 2
+  },
+  "browser_checks": "passed: browser_checks.json",
+  "source_hashes": {
+    "evidence/intervals.csv": "c795ae9990262ed662758e646c95e64fa92cff3c80b9dd1db076037820f96065",
+    "evidence/training.csv": "58d6bf1ceb9eba027d55ab3df8f7474634d2806ba5a8ca61b36a632b40ea06c2",
+    "evidence/exp001_original_q2_costs.csv": "e9b9ba6264ae4c943c598a884445749efe3e4efba0aadd176c24e60d13f1c43a",
+    "evidence/cost_annual.csv": "991b05d7b9f71c78562e336902672d5dce9a2849f488220a1c62b8bc33ba96ef",
+    "evidence/workbook_export.json": "398ec5df50b01df9617b848270fab4a5537dff16e812db0d83c83f7925e620e9",
+    "evidence/baseline_manifest.json": "ce038413b1909618304a94c06dc2282a0f4fc772b24724873e478f38f5c5e3d8",
+    "evidence/alpha_calibration.csv": "9af5ab18148c1b0616ad88609f850595b334df063fd2876e64588682b9f0fd87",
+    "evidence/forecast_monthly.csv": "d51e4d56e08c9dc12936c6e55789f5c87b65cdbc5742a5fba374b8e0429aea10",
+    "evidence/forecast_annual.csv": "7b39e35105e5db9ccebacc22e5d7fc72bf7c496e86f9c834505afed20c78fa1b",
+    "evidence/training_metadata.json": "e16d7c7162539b23e3aeebe8acdaf9681fa366106a2169d10a51d4586e7766be",
+    "evidence/protocol.json": "2ed0528fa9fdc6156ad4b1a0d94e71eead11d2a99f3bd7446aab881a054a74b3",
+    "evidence/full_year_audit.json": "a7b7e61cda057b8e77199a48581112dcee7adad9d79ab434cfea09969a31087f",
+    "evidence/verification.json": "e385442bec423fef4131ba25fee6253a18a24148788cb1db2f45048a38126c6b",
+    "evidence/prediction_archive.json": "6ff9b0c5206f547710a236aabc02bb295820280c8efff511d51e02365c894507",
+    "evidence/evaluation_manifest.json": "f08f2eba1456ca6b2a7b9fba307598f61905a879bb2e8edbacc91092ad371ca2",
+    "evidence/alpha_calibration.json": "e23a6eb96a01624f58eae6cc1a2bba75d4127d7ae73b8e85128a8cd2d3d4a6a4",
+    "evidence/states.csv": "ab769bf753bd85011cf7bd0c3368cf469629a8078237eed70979c824d455f21f",
+    "evidence/baseline_boundaries.json": "d15a4fe11326eee4689d20879e981a18ccbcc8bed76f7f9b800b051349428a92",
+    "evidence/cost_daily.csv": "5d29f99f0812ff182316c6098dd81ea8adaed9a48a53394c8010c5461a33f57e"
+  }
+}

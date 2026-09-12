@@ -1,0 +1,132 @@
+{
+  "scenario": "2",
+  "seed": 42,
+  "validation_days": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "initial_soc": 1422.1353484698725,
+  "selection_time": 4464,
+  "selected_alpha": [
+    0.0,
+    0.0
+  ],
+  "selected_cost": 376181.6860004537,
+  "minimum_candidate_cost": 376181.6860004537,
+  "tie_tolerance_yuan": 0.01,
+  "tie_break": [
+    "smaller_alpha_sum",
+    "smaller_alpha_load",
+    "smaller_alpha_pv"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "load_0_pv_0",
+      "alpha": [
+        0.0,
+        0.0
+      ],
+      "cost": 376181.6860004537,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1421.7991531439097,
+      "daily_cvar90": 78200.2379755601
+    },
+    {
+      "candidate_id": "load_0_pv_0.5",
+      "alpha": [
+        0.0,
+        0.5
+      ],
+      "cost": 377610.7465536423,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1421.7991531439097,
+      "daily_cvar90": 79138.51435373923
+    },
+    {
+      "candidate_id": "load_0_pv_1",
+      "alpha": [
+        0.0,
+        1.0
+      ],
+      "cost": 379051.41587684077,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1421.7991531439097,
+      "daily_cvar90": 80082.54438690121
+    },
+    {
+      "candidate_id": "load_0.5_pv_0",
+      "alpha": [
+        0.5,
+        0.0
+      ],
+      "cost": 379315.6708078254,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1414.6813785949992,
+      "daily_cvar90": 79340.79467919498
+    },
+    {
+      "candidate_id": "load_0.5_pv_0.5",
+      "alpha": [
+        0.5,
+        0.5
+      ],
+      "cost": 380761.5621944935,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1414.6813785949992,
+      "daily_cvar90": 80287.20694970923
+    },
+    {
+      "candidate_id": "load_0.5_pv_1",
+      "alpha": [
+        0.5,
+        1.0
+      ],
+      "cost": 382221.96861231007,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1414.6813785949992,
+      "daily_cvar90": 81241.01604496133
+    },
+    {
+      "candidate_id": "load_1_pv_0",
+      "alpha": [
+        1.0,
+        0.0
+      ],
+      "cost": 382595.3243201438,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1407.523062378676,
+      "daily_cvar90": 80492.44249207377
+    },
+    {
+      "candidate_id": "load_1_pv_0.5",
+      "alpha": [
+        1.0,
+        0.5
+      ],
+      "cost": 384088.6802608,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1407.523062378676,
+      "daily_cvar90": 81446.05522144168
+    },
+    {
+      "candidate_id": "load_1_pv_1",
+      "alpha": [
+        1.0,
+        1.0
+      ],
+      "cost": 385594.05218331807,
+      "initial_soc": 1422.1353484698725,
+      "final_soc": 1407.523062378676,
+      "daily_cvar90": 82400.09109818883
+    }
+  ],
+  "selection_note": "Shared January early-stopping/cost-tuning labels; seed 42 only; alpha frozen before formal February–December evaluation for every seed",
+  "signature": "4ec7b9de144d8cc085d22de08e2a504f7ede10f91debde91f0e07821d8415208",
+  "candidate_daily_sha256": "3620c08632650121cfdba8d48fd2b1aa8a58d68a3986507ca3dd26ed8b7e8950",
+  "calibration_signature": "6e7e1359c67ef5042e5214f4d7a3bdb2fed158c77e195ebecaa1db09033eff7c"
+}

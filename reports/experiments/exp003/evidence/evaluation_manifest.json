@@ -1,0 +1,142 @@
+{
+  "status": "complete",
+  "complete": true,
+  "signature": "4ec7b9de144d8cc085d22de08e2a504f7ede10f91debde91f0e07821d8415208",
+  "replay_signature": "cd1da1c5bd341ad4c516f6371157578a1dcf3cec3c153feda1d614c7f6d4b167",
+  "calibration_signature": "6e7e1359c67ef5042e5214f4d7a3bdb2fed158c77e195ebecaa1db09033eff7c",
+  "selected_alpha": [
+    0.0,
+    0.0
+  ],
+  "cases": [
+    {
+      "name": "periodic",
+      "seed": 42,
+      "kind": "periodic",
+      "alpha": [
+        0.0,
+        0.0
+      ],
+      "scenario": "2",
+      "case_id": "periodic_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "method": "deterministic",
+      "weight": 0.0,
+      "updates": 0,
+      "cache_key": "6700959e6a312e4de055",
+      "prediction_content_sha256": "ad02d406fe4b6fcfbaf99e351ea6f668b55e0ec13b4fd4898bbb345927f358f7",
+      "dispatch_file": "dispatch_periodic_seed_42.npz",
+      "dispatch_sha256": "b24368de027c310561ae9a01593022cac0d5b357133b89eb578154f5ff122b05",
+      "days": 334,
+      "total_cost": 14988614.234598085
+    },
+    {
+      "name": "uncalibrated",
+      "seed": 42,
+      "kind": "mlp",
+      "alpha": [
+        1.0,
+        1.0
+      ],
+      "scenario": "2",
+      "case_id": "uncalibrated_seed_42",
+      "alpha_load": 1.0,
+      "alpha_pv": 1.0,
+      "method": "deterministic",
+      "weight": 0.0,
+      "updates": 0,
+      "cache_key": "56bb6a42dd365d5b1dbf",
+      "prediction_content_sha256": "069dce3c562f2d541a5c9de66f57ad2c8c51d2a7ff1c6ba9490c554adc73492a",
+      "dispatch_file": "dispatch_uncalibrated_seed_42.npz",
+      "dispatch_sha256": "1d4429e8819470106ad8b46bc9a96cbb231ebeb1d26684b0b50b15e8ffb544bc",
+      "days": 334,
+      "total_cost": 15258030.091191141
+    },
+    {
+      "name": "primary",
+      "seed": 42,
+      "kind": "mlp",
+      "alpha": [
+        0.0,
+        0.0
+      ],
+      "scenario": "2",
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "method": "deterministic",
+      "weight": 0.0,
+      "updates": 0,
+      "cache_key": "bdb4c350107003ecd7f0",
+      "prediction_content_sha256": "1a605be5bbb99ab227d1b004e4de586b9f7553f0ec25bf6db91bd77620285a32",
+      "dispatch_file": "dispatch_primary_seed_42.npz",
+      "dispatch_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+      "days": 334,
+      "total_cost": 14988622.648176515
+    },
+    {
+      "name": "primary",
+      "seed": 2026,
+      "kind": "mlp",
+      "alpha": [
+        0.0,
+        0.0
+      ],
+      "scenario": "2",
+      "case_id": "primary_seed_2026",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "method": "deterministic",
+      "weight": 0.0,
+      "updates": 0,
+      "cache_key": "bdb4c350107003ecd7f0",
+      "prediction_content_sha256": "1a605be5bbb99ab227d1b004e4de586b9f7553f0ec25bf6db91bd77620285a32",
+      "dispatch_file": "dispatch_primary_seed_2026.npz",
+      "dispatch_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+      "days": 334,
+      "total_cost": 14988622.648176515
+    },
+    {
+      "name": "primary",
+      "seed": 3407,
+      "kind": "mlp",
+      "alpha": [
+        0.0,
+        0.0
+      ],
+      "scenario": "2",
+      "case_id": "primary_seed_3407",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "method": "deterministic",
+      "weight": 0.0,
+      "updates": 0,
+      "cache_key": "bdb4c350107003ecd7f0",
+      "prediction_content_sha256": "1a605be5bbb99ab227d1b004e4de586b9f7553f0ec25bf6db91bd77620285a32",
+      "dispatch_file": "dispatch_primary_seed_3407.npz",
+      "dispatch_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+      "days": 334,
+      "total_cost": 14988622.648176515
+    }
+  ],
+  "days_per_case": 334,
+  "intervals_per_case": 48096,
+  "named_case_count": 5,
+  "unique_case_count": 3,
+  "initial_soc": 1421.7991105135516,
+  "seconds": 41.674443042022176,
+  "output_hashes": {
+    "daily_metrics.csv": "1bb7962c13eefe991fe22f6b1d1a54200b06c33552de74d83db85d6ba0a692cc",
+    "dispatch_metrics.csv": "d4f8d8f22e312b8193da4b820f888bb7ad535d107a4167e273ba13abf2c4afca",
+    "solver_metrics.csv": "894e6ff37fec51f8781c59dbba5ee17e7331f39128f6b89a98154f0c99eab812",
+    "forecast_annual.csv": "ef39f84f6bcf741ac29974b560b666e8032be071c70b9a74c891876c7ba65e9f",
+    "forecast_monthly.csv": "579507eb1f57d594e29d31d9aba12c2a759905a14499016dffd00528aa03afc4",
+    "warmup_2.npz": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+    "dispatch_2.npz": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+    "alpha_calibration.json": "e23a6eb96a01624f58eae6cc1a2bba75d4127d7ae73b8e85128a8cd2d3d4a6a4",
+    "candidate_daily.csv": "3620c08632650121cfdba8d48fd2b1aa8a58d68a3986507ca3dd26ed8b7e8950",
+    "evaluation_predictions.npz": "7e80a3816c9cc74c9b6847905d657695a4ec50b76aa8e2cd4c1301431ad04107",
+    "evaluation_sources.json": "7ce96635798df14457b60d4e2dc0c9226586980871e1d80b865ff8b6b4bb0bd2"
+  }
+}

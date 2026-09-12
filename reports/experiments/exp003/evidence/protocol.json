@@ -1,0 +1,125 @@
+{
+  "experiment_id": "exp003",
+  "version": "microgrid-causal-risk-v2",
+  "algorithm_version": "q2-cost-calibration-v1",
+  "scope": [
+    "2"
+  ],
+  "period": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "time_alignment": "interval_end_natural_day",
+  "billing": "full_original_plus_final_adjustment_plus_emergency",
+  "q2_billing": "sum(price*(original+5*emergency)); final=original",
+  "efficiency": {
+    "charge": 0.9486832980505138,
+    "discharge": 0.9486832980505138
+  },
+  "initial_soc_kwh": 6000,
+  "soc_bounds_kwh": [
+    1200,
+    10800
+  ],
+  "max_power_kw": 5000,
+  "warmup": "January common causal periodic baseline initialized from attachment 1",
+  "terminal_condition": "physical_bounds_only_no_daily_reset",
+  "execution": "exact_greedy_charge_discharge_then_emergency",
+  "allowed_inputs": [
+    "附件1.csv",
+    "附件2_小区负载.csv",
+    "附件2_光伏发电实际功率.csv"
+  ],
+  "seed_list": [
+    42,
+    2026,
+    3407
+  ],
+  "primary_seed": 42,
+  "forecast_issuance_hours": [
+    0
+  ],
+  "forecast_targets": [
+    "load",
+    "pv"
+  ],
+  "diagnostic_targets": [
+    "load",
+    "pv",
+    "net_load"
+  ],
+  "architecture": {
+    "name": "q2_periodic_residual_mlp",
+    "branches": 2,
+    "features": 16,
+    "units": [
+      32,
+      16
+    ],
+    "output_initialization": "zeros",
+    "l2": 0.0001
+  },
+  "training": {
+    "monthly": "from_scratch",
+    "train_issue_hours": [
+      0,
+      6,
+      12,
+      18
+    ],
+    "validation_issue_hours": [
+      0
+    ],
+    "validation_days": 7,
+    "earliest_training_day": 7,
+    "loss": "standardized_huber_delta_1",
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 60,
+    "patience": 6,
+    "pv_mask_history_days": 28
+  },
+  "calibration": {
+    "start": "2025-01-25",
+    "end": "2025-01-31",
+    "role": "shared_early_stopping_and_cost_tuning_period",
+    "alpha_load_candidates": [
+      0,
+      0.5,
+      1
+    ],
+    "alpha_pv_candidates": [
+      0,
+      0.5,
+      1
+    ],
+    "seed": 42,
+    "objective": "total_replayed_cost",
+    "tie_tolerance_yuan": 0.01,
+    "tie_break": [
+      "smaller_alpha_sum",
+      "smaller_alpha_load",
+      "smaller_alpha_pv"
+    ],
+    "freeze_time": "2025-02-01 00:00",
+    "reselect_with_formal_year": false
+  },
+  "dispatch": {
+    "method": "deterministic_milp",
+    "time_limit_seconds": 2,
+    "mip_rel_gap": 0.01
+  },
+  "decisions": {
+    "D001": "A",
+    "D002": "A",
+    "D003": "A",
+    "D004": "A",
+    "D005": "A",
+    "D006": "A"
+  },
+  "decision_origin": {
+    "D001-D003": "explicit_user_choice",
+    "D004-D006": "recommended_defaults_after_user_continue"
+  },
+  "evaluation_label": "retrospective_chronological_evaluation_with_frozen_configuration"
+}

@@ -34,6 +34,7 @@
 .venv/bin/python reports/q2_comparison.py
 .venv/bin/python -m experiments.problem2.exp003.run export --node "$NODE"
 .venv/bin/python -m experiments.problem2.exp003.run report --node "$NODE"
+.venv/bin/python reports/verify_delivery_q2.py
 ```
 
 `run all --node "$NODE"` 顺序执行完整流水线。训练权重与逐日缓存位于忽略的 `runs/`，全新克隆需重训后才可执行完整核验；数值库和设备的非确定性可能导致重训差异。报告构建只消费已保存结果，不需训练权重。年度 `predictions.npz` 的 float32 快照不是正式评分入口，评价统一用 `ForecastStore.get` 的 float64 混合值，并保存 `evaluation_predictions.npz`。

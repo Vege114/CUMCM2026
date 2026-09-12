@@ -1,0 +1,499 @@
+{
+  "experiment_id": "exp003",
+  "title": "第二问独立预测与费用校准",
+  "scope": [
+    "2"
+  ],
+  "protocol": {
+    "experiment_id": "exp003",
+    "version": "microgrid-causal-risk-v2",
+    "algorithm_version": "q2-cost-calibration-v1",
+    "scope": [
+      "2"
+    ],
+    "period": [
+      "2025-02-01",
+      "2025-12-31"
+    ],
+    "time_alignment": "interval_end_natural_day",
+    "billing": "full_original_plus_final_adjustment_plus_emergency",
+    "q2_billing": "sum(price*(original+5*emergency)); final=original",
+    "efficiency": {
+      "charge": 0.9486832980505138,
+      "discharge": 0.9486832980505138
+    },
+    "initial_soc_kwh": 6000,
+    "soc_bounds_kwh": [
+      1200,
+      10800
+    ],
+    "max_power_kw": 5000,
+    "warmup": "January common causal periodic baseline initialized from attachment 1",
+    "terminal_condition": "physical_bounds_only_no_daily_reset",
+    "execution": "exact_greedy_charge_discharge_then_emergency",
+    "allowed_inputs": [
+      "附件1.csv",
+      "附件2_小区负载.csv",
+      "附件2_光伏发电实际功率.csv"
+    ],
+    "seed_list": [
+      42,
+      2026,
+      3407
+    ],
+    "primary_seed": 42,
+    "forecast_issuance_hours": [
+      0
+    ],
+    "forecast_targets": [
+      "load",
+      "pv"
+    ],
+    "diagnostic_targets": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "architecture": {
+      "name": "q2_periodic_residual_mlp",
+      "branches": 2,
+      "features": 16,
+      "units": [
+        32,
+        16
+      ],
+      "output_initialization": "zeros",
+      "l2": 0.0001
+    },
+    "training": {
+      "monthly": "from_scratch",
+      "train_issue_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "validation_issue_hours": [
+        0
+      ],
+      "validation_days": 7,
+      "earliest_training_day": 7,
+      "loss": "standardized_huber_delta_1",
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "max_epochs": 60,
+      "patience": 6,
+      "pv_mask_history_days": 28
+    },
+    "calibration": {
+      "start": "2025-01-25",
+      "end": "2025-01-31",
+      "role": "shared_early_stopping_and_cost_tuning_period",
+      "alpha_load_candidates": [
+        0,
+        0.5,
+        1
+      ],
+      "alpha_pv_candidates": [
+        0,
+        0.5,
+        1
+      ],
+      "seed": 42,
+      "objective": "total_replayed_cost",
+      "tie_tolerance_yuan": 0.01,
+      "tie_break": [
+        "smaller_alpha_sum",
+        "smaller_alpha_load",
+        "smaller_alpha_pv"
+      ],
+      "freeze_time": "2025-02-01 00:00",
+      "reselect_with_formal_year": false
+    },
+    "dispatch": {
+      "method": "deterministic_milp",
+      "time_limit_seconds": 2,
+      "mip_rel_gap": 0.01
+    },
+    "decisions": {
+      "D001": "A",
+      "D002": "A",
+      "D003": "A",
+      "D004": "A",
+      "D005": "A",
+      "D006": "A"
+    },
+    "decision_origin": {
+      "D001-D003": "explicit_user_choice",
+      "D004-D006": "recommended_defaults_after_user_continue"
+    },
+    "evaluation_label": "retrospective_chronological_evaluation_with_frozen_configuration"
+  },
+  "code_commit": "254ccd8a972944b5d8b11b33cc2c6c8f29cb3495",
+  "data_hashes": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "tensorflow": "2.18.1",
+      "keras": "3.15.1",
+      "numpy": "2.0.2",
+      "scipy": "1.18.1",
+      "tensorflow-metal": "1.2.0",
+      "tensorboard": "2.18.0"
+    },
+    "gpu": [
+      "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+    ],
+    "matrix_device": "/job:localhost/replica:0/task:0/device:GPU:0",
+    "float_policy": "float32",
+    "jit_compile": false
+  },
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "models": [
+    "q2_periodic_residual_mlp"
+  ],
+  "primary_seed": 42,
+  "model_configuration": {
+    "architecture": {
+      "name": "q2_periodic_residual_mlp",
+      "branches": 2,
+      "features": 16,
+      "units": [
+        32,
+        16
+      ],
+      "output_initialization": "zeros",
+      "l2": 0.0001
+    },
+    "training": {
+      "monthly": "from_scratch",
+      "train_issue_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "validation_issue_hours": [
+        0
+      ],
+      "validation_days": 7,
+      "earliest_training_day": 7,
+      "loss": "standardized_huber_delta_1",
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "max_epochs": 60,
+      "patience": 6,
+      "pv_mask_history_days": 28
+    },
+    "calibration": {
+      "start": "2025-01-25",
+      "end": "2025-01-31",
+      "role": "shared_early_stopping_and_cost_tuning_period",
+      "alpha_load_candidates": [
+        0,
+        0.5,
+        1
+      ],
+      "alpha_pv_candidates": [
+        0,
+        0.5,
+        1
+      ],
+      "seed": 42,
+      "objective": "total_replayed_cost",
+      "tie_tolerance_yuan": 0.01,
+      "tie_break": [
+        "smaller_alpha_sum",
+        "smaller_alpha_load",
+        "smaller_alpha_pv"
+      ],
+      "freeze_time": "2025-02-01 00:00",
+      "reselect_with_formal_year": false
+    },
+    "formal_training_groups": 33,
+    "selected_alpha": [
+      0.0,
+      0.0
+    ],
+    "selection_outcome": "alpha_zero_rejects_network_residuals"
+  },
+  "metric_definitions": {
+    "mae": "sum(abs(predicted-actual))/n",
+    "rmse": "sqrt(sum((predicted-actual)^2)/n)",
+    "wape_pct": "100*sum(abs(predicted-actual))/sum(abs(actual))",
+    "bias": "sum(predicted-actual)/n",
+    "forecast_sample": "midnight issues only, 144 same-day intervals, observed labels only",
+    "total_cost": "sum(fixed_price*(original+5*emergency)); final=original",
+    "daily_cvar90": "weighted mean of highest 10 percent daily cost probability mass, including fractional boundary day"
+  },
+  "forecast_metrics": [
+    {
+      "predictor_id": "primary_seed_42",
+      "scenario": "2",
+      "issue_hour": 0,
+      "month": 0,
+      "period": "annual",
+      "target": "load",
+      "population": "all",
+      "unit": "kW",
+      "n": 48096,
+      "absolute_error_sum": 8503166.984880272,
+      "squared_error_sum": 2870174500.6181593,
+      "signed_error_sum": 93761.67155566398,
+      "actual_abs_sum": 222048476.9355,
+      "mae": 176.79572074351864,
+      "rmse": 244.28661485193987,
+      "wape_pct": 3.829419189103579,
+      "bias": 1.949469218971723,
+      "policy_label": "Q2独立·费用校准",
+      "experiment": "exp003",
+      "name": "primary",
+      "seed": "42",
+      "order": 6.0,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "target_label": "负载",
+      "month_label": "0月",
+      "role": "primary",
+      "variant": "q2_calibrated_mlp"
+    },
+    {
+      "predictor_id": "primary_seed_42",
+      "scenario": "2",
+      "issue_hour": 0,
+      "month": 0,
+      "period": "annual",
+      "target": "load",
+      "population": "pv_generating",
+      "unit": "kW",
+      "n": 26880,
+      "absolute_error_sum": 4692123.875587891,
+      "squared_error_sum": 1543190217.3653305,
+      "signed_error_sum": 9959.602783203154,
+      "actual_abs_sum": 142806829.5625,
+      "mae": 174.55817989538284,
+      "rmse": 239.60457080033467,
+      "wape_pct": 3.2856438938968,
+      "bias": 0.370520936875117,
+      "policy_label": "Q2独立·费用校准",
+      "experiment": "exp003",
+      "name": "primary",
+      "seed": "42",
+      "order": 6.0,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "target_label": "负载",
+      "month_label": "0月",
+      "role": "primary",
+      "variant": "q2_calibrated_mlp"
+    },
+    {
+      "predictor_id": "primary_seed_42",
+      "scenario": "2",
+      "issue_hour": 0,
+      "month": 0,
+      "period": "annual",
+      "target": "net_load",
+      "population": "all",
+      "unit": "kW",
+      "n": 48096,
+      "absolute_error_sum": 14612966.872370996,
+      "squared_error_sum": 9662178233.786337,
+      "signed_error_sum": 57159.74902228953,
+      "actual_abs_sum": 144333055.96420002,
+      "mae": 303.82915153798643,
+      "rmse": 448.21154903145714,
+      "wape_pct": 10.124476873818535,
+      "bias": 1.188451202226579,
+      "policy_label": "Q2独立·费用校准",
+      "experiment": "exp003",
+      "name": "primary",
+      "seed": "42",
+      "order": 6.0,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "target_label": "净负载",
+      "month_label": "0月",
+      "role": "primary",
+      "variant": "q2_calibrated_mlp"
+    },
+    {
+      "predictor_id": "primary_seed_42",
+      "scenario": "2",
+      "issue_hour": 0,
+      "month": 0,
+      "period": "annual",
+      "target": "net_load",
+      "population": "pv_generating",
+      "unit": "kW",
+      "n": 26880,
+      "absolute_error_sum": 10801924.167173602,
+      "squared_error_sum": 8335200602.494985,
+      "signed_error_sum": -26534.856650363017,
+      "actual_abs_sum": 65091408.59120001,
+      "mae": 401.85729788592266,
+      "rmse": 556.8566315745317,
+      "wape_pct": 16.595007545487288,
+      "bias": -0.987159845623624,
+      "policy_label": "Q2独立·费用校准",
+      "experiment": "exp003",
+      "name": "primary",
+      "seed": "42",
+      "order": 6.0,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "target_label": "净负载",
+      "month_label": "0月",
+      "role": "primary",
+      "variant": "q2_calibrated_mlp"
+    },
+    {
+      "predictor_id": "primary_seed_42",
+      "scenario": "2",
+      "issue_hour": 0,
+      "month": 0,
+      "period": "annual",
+      "target": "pv",
+      "population": "all",
+      "unit": "kW",
+      "n": 48096,
+      "absolute_error_sum": 8914424.861081518,
+      "squared_error_sum": 6769809671.473829,
+      "signed_error_sum": 36601.92253337457,
+      "actual_abs_sum": 114413339.9657,
+      "mae": 185.34649162261977,
+      "rmse": 375.1748780379844,
+      "wape_pct": 7.791420881301058,
+      "bias": 0.761018016745147,
+      "policy_label": "Q2独立·费用校准",
+      "experiment": "exp003",
+      "name": "primary",
+      "seed": "42",
+      "order": 6.0,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "target_label": "光伏",
+      "month_label": "0月",
+      "role": "primary",
+      "variant": "q2_calibrated_mlp"
+    },
+    {
+      "predictor_id": "primary_seed_42",
+      "scenario": "2",
+      "issue_hour": 0,
+      "month": 0,
+      "period": "annual",
+      "target": "pv",
+      "population": "pv_generating",
+      "unit": "kW",
+      "n": 26880,
+      "absolute_error_sum": 8914317.397981707,
+      "squared_error_sum": 6769809120.193029,
+      "signed_error_sum": 36494.459433566146,
+      "actual_abs_sum": 114413339.9657,
+      "mae": 331.63383177015277,
+      "rmse": 501.849596855795,
+      "wape_pct": 7.791326955977452,
+      "bias": 1.35768078249874,
+      "policy_label": "Q2独立·费用校准",
+      "experiment": "exp003",
+      "name": "primary",
+      "seed": "42",
+      "order": 6.0,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "target_label": "光伏",
+      "month_label": "0月",
+      "role": "primary",
+      "variant": "q2_calibrated_mlp"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "primary",
+      "scenario": "2",
+      "seed": 42,
+      "kind": "mlp",
+      "method": "deterministic",
+      "weight": 0.0,
+      "update_hours": null,
+      "anticipate": null,
+      "raw_pv": null,
+      "known_price": null,
+      "planned_kwh": 19576927.868703015,
+      "final_kwh": 19576927.868703015,
+      "emergency_kwh": 549746.4200630353,
+      "emergency_minutes": 34290.0,
+      "charge_kwh": 6341190.389431347,
+      "discharge_kwh": 5707232.234319866,
+      "surplus_kwh": 1553526.638687902,
+      "planned_cost": 11804823.080143536,
+      "up_cost": 0.0,
+      "down_cost": 0.0,
+      "emergency_cost": 3183799.5680329795,
+      "total_cost": 14988622.648176515,
+      "violations": 0.0,
+      "solve_execute_seconds": 12.398277213214897,
+      "solver_calls": 334.0,
+      "timeout_count": 0.0,
+      "fallback_count": 0.0,
+      "incumbent_count": 0.0,
+      "gap_certified_count": 334.0,
+      "final_soc": 1252.2126616066805,
+      "daily_cvar90": 84837.27708831233,
+      "worst_day_cost": 154222.41305861215,
+      "worst_date": "2025-07-03",
+      "cache_key": "bdb4c350107003ecd7f0",
+      "source_experiment": null,
+      "comparison_status": null,
+      "strict_q2_input_isolation_verified": null,
+      "experiment": "exp003",
+      "policy_id": "exp003_primary",
+      "policy_label": "Q2独立·费用校准",
+      "order": 6,
+      "planned_wan": 1180.4823080143535,
+      "emergency_wan": 318.37995680329794,
+      "total_wan": 1498.8622648176515,
+      "days": 334.0,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "initial_soc": 1421.7991105135516,
+      "max_balance_error": 0.0,
+      "max_state_error": 9.09e-13,
+      "case_id": "primary_seed_42",
+      "alpha_load": 0.0,
+      "alpha_pv": 0.0,
+      "updates": 0.0
+    }
+  ],
+  "technical_path": [
+    "Q2独立数据边界",
+    "周期基线与两分支残差MLP",
+    "午夜早停",
+    "一月九候选费用校准",
+    "固定全日计划与因果储能执行",
+    "同口径午夜与费用评价"
+  ],
+  "artifacts": {
+    "report": "experiments/exp003/report.md",
+    "html": "experiments/exp003/report.html",
+    "results": "experiments/exp003",
+    "workbook": "experiments/exp003/result2.xlsx"
+  },
+  "historical_boundary_note": "Archived v1/v2 shared four-target stopping remains explicitly disclosed; original v1 fees are not directly ranked."
+}

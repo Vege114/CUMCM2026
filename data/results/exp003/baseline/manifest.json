@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "experiment_id": "exp003",
+  "scope": [
+    "2"
+  ],
+  "purpose": "Frozen historical evidence; not a new training or dispatch experiment",
+  "period": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "issue_hours": [
+    0
+  ],
+  "days": 334,
+  "intervals_per_day": 144,
+  "intervals": 48096,
+  "pv_generating_intervals": 26880,
+  "forecast_targets": [
+    "load",
+    "pv",
+    "net_load"
+  ],
+  "array_channels": [
+    "load",
+    "pv"
+  ],
+  "definitions": {
+    "origin": "Ten-minute intervals since 2025-01-01 00:00; midnight only",
+    "month_0": "Direct annual aggregation, not mean of monthly metrics",
+    "net_load": "load - pv, without clipping; negative values retained",
+    "population_pv_generating": "Same actual PV > 0 mask for all three targets",
+    "bias": "mean(predicted - actual), kW",
+    "wape_pct": "100 * sum(abs(predicted - actual)) / sum(abs(actual)); null if denominator zero",
+    "cost_unit": "yuan",
+    "energy_unit": "kWh"
+  },
+  "original_protocols": {
+    "exp001": {
+      "experiment_id": "exp001",
+      "version": "neural-microgrid-v1",
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "full_original_plus_final_adjustment_plus_emergency",
+      "efficiency": {
+        "charge": 0.9,
+        "discharge": 0.9
+      },
+      "initial_soc_kwh": 6000,
+      "soc_bounds_kwh": [
+        1200,
+        10800
+      ],
+      "max_power_kw": 5000,
+      "seed_list": [
+        42,
+        2026,
+        3407
+      ],
+      "variants": [
+        "mlp",
+        "gru",
+        "tcn",
+        "gru_no_calendar",
+        "gru_one_day"
+      ],
+      "selection_candidates": [
+        "mlp",
+        "gru",
+        "tcn"
+      ],
+      "selection": "previous_seven_complete_days_total_dispatch_cost_seed_mean",
+      "selection_initial_state": "common_yesterday_baseline_state_at_validation_start",
+      "monthly_fit": "from_scratch_training_prefix_excludes_validation_week",
+      "max_epochs": 60,
+      "early_stopping_patience": 6,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "warmup": "January causal baseline initialized from attachment 1",
+      "terminal_condition": "physical_bounds_only_no_daily_reset",
+      "pv_interpolation": "linear_hourly_endpoints_with_last_observed_anchor",
+      "forecast_issuance_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "target_order": [
+        "load",
+        "pv",
+        "price",
+        "pv_corrected"
+      ],
+      "architecture": {
+        "independent_target_branches": 4,
+        "mlp": {
+          "hidden_units": [
+            64,
+            32
+          ],
+          "activation": "relu"
+        },
+        "gru": {
+          "units": 32,
+          "reset_after": true
+        },
+        "tcn": {
+          "channels": [
+            32,
+            32,
+            32,
+            32
+          ],
+          "kernel_width": 3,
+          "dilation_rates": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "padding": "causal",
+          "pooling": "global_average"
+        },
+        "per_target_head": {
+          "hidden_units": 32,
+          "activation": "relu",
+          "output_units": 1,
+          "output_activation": "linear",
+          "shared_across_future_intervals": true
+        },
+        "history_hours": 168,
+        "one_day_ablation_hours": 24,
+        "forecast_intervals": 144,
+        "dtype": "float32",
+        "jit_compile": false,
+        "optimizer": {
+          "name": "Adam",
+          "learning_rate": 0.001,
+          "beta_1": 0.9,
+          "beta_2": 0.999,
+          "epsilon": 1e-07
+        }
+      }
+    },
+    "exp002": {
+      "experiment_id": "exp002",
+      "version": "microgrid-causal-risk-v2",
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "full_original_plus_final_adjustment_plus_emergency",
+      "efficiency": {
+        "charge": 0.9486832980505138,
+        "discharge": 0.9486832980505138
+      },
+      "initial_soc_kwh": 6000,
+      "soc_bounds_kwh": [
+        1200,
+        10800
+      ],
+      "max_power_kw": 5000,
+      "warmup": "January common causal periodic baseline initialized from attachment 1",
+      "terminal_condition": "physical_bounds_only_no_daily_reset",
+      "pv_interpolation": "correct_hourly_endpoints_then_piecewise_linear_interval_integral",
+      "execution": "exact_greedy_charge_discharge_then_emergency",
+      "seed_list": [
+        42,
+        2026,
+        3407
+      ],
+      "primary_seed": 42,
+      "architecture": {
+        "name": "periodic_residual_mlp",
+        "branches": 4,
+        "units": [
+          32,
+          16
+        ],
+        "features": 16,
+        "output_initialization": "zeros",
+        "l2": 0.0001
+      },
+      "training": {
+        "monthly": "from_scratch",
+        "validation_days": 7,
+        "loss": "standardized_huber_delta_1_hourly_pv_correction",
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "max_epochs": 60,
+        "patience": 6
+      },
+      "risk": {
+        "alpha": 0.9,
+        "lambda_candidates": [
+          0,
+          0.1,
+          0.3
+        ],
+        "selection_days": [
+          24,
+          31
+        ],
+        "selection": "January_validation_total_replayed_cost_then_smaller_lambda",
+        "history_days": 56,
+        "shrinkage_days": 28,
+        "max_paths": 16,
+        "time_limit_seconds": 2,
+        "mip_rel_gap": 0.01,
+        "scenario_seed": 8675309
+      },
+      "forecast_issuance_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "target_order": [
+        "load",
+        "pv",
+        "price",
+        "pv_corrected"
+      ]
+    }
+  },
+  "legacy_q2_monthly_selection": {
+    "2": "tcn",
+    "3": "gru",
+    "4": "gru",
+    "5": "gru",
+    "6": "gru",
+    "7": "tcn",
+    "8": "gru",
+    "9": "gru",
+    "10": "gru",
+    "11": "tcn",
+    "12": "tcn"
+  },
+  "sources": {
+    "data/raw/附件2_小区负载.csv": {
+      "sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+      "bytes": 490298,
+      "purpose": "Ground truth and causal historical lag forecasts"
+    },
+    "data/raw/附件2_光伏发电实际功率.csv": {
+      "sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+      "bytes": 321147,
+      "purpose": "Ground truth and causal historical lag forecasts"
+    },
+    "data/results/exp001/ensemble_predictions.npz": {
+      "sha256": "218ce05fdc849b279d11f567b03d8d9e6f817c3b1f9e878c001323893c0dc87a",
+      "bytes": 13714002,
+      "purpose": "Saved three-seed ensemble forecasts"
+    },
+    "data/results/exp001/model_selection.csv": {
+      "sha256": "46ce951f8baa671e5ae604267ffc4a6165dc207ff71b55e15ccd9bcd6d4b87a7",
+      "bytes": 10466,
+      "purpose": "Original monthly official Q2 selection"
+    },
+    "data/results/exp002/predictions.npz": {
+      "sha256": "389f437387a6f0f7fd4bda887e690fc62a437fcd5f4212c8a9c922b18302249b",
+      "bytes": 7890274,
+      "purpose": "Saved independent seed forecasts"
+    },
+    "reports/registry/exp001.json": {
+      "sha256": "03dcdf0382c96acd2120ab8fbdf2f95c2e33e4353b526a7125345f94017bcd79",
+      "bytes": 33954,
+      "purpose": "Immutable original protocol and registered Q2 cost"
+    },
+    "reports/registry/exp002.json": {
+      "sha256": "0e8c2812f8bcde8dbedabab5f1612b7c3fca65f45990ea28a16c4eb3f82a38b5",
+      "bytes": 22037,
+      "purpose": "Immutable v2 evaluation protocol"
+    },
+    "data/results/exp002/dispatch_metrics.csv": {
+      "sha256": "f790eb72bcafe47a4daf7188dd777dadf017992847245e70207491263d570e2c",
+      "bytes": 18697,
+      "purpose": "Already replayed Q2 v2 costs"
+    },
+    "data/results/exp002/daily_metrics.csv": {
+      "sha256": "c5e97db09b36c1a6500483b96ab9d99c3d877705c9d5f3e7eec9ba89a477b417",
+      "bytes": 5673271,
+      "purpose": "Already replayed Q2 daily states and fees"
+    },
+    "experiments/common/neural_v1/train.py": {
+      "sha256": "f36969929e4e126f102f16228639f0545dd572cfc22bfda5ce7b35ddea1b0324",
+      "bytes": 9065,
+      "purpose": "Evidence for common validation loss and saved-epoch coupling"
+    },
+    "experiments/common/neural_v2/train.py": {
+      "sha256": "a417a8033787ef3d672d96a74238fc77a1814824a9cbb08618a1a8ebc8d1eb7f",
+      "bytes": 7388,
+      "purpose": "Evidence for common validation loss and saved-epoch coupling"
+    },
+    "experiments/problem2/exp003/baseline_evidence.py": {
+      "sha256": "d82eccbea22d31e10a87caed8f16defd966fe8623ce32d5a7864245486c945aa",
+      "bytes": 16562,
+      "purpose": "Evidence extraction implementation"
+    }
+  },
+  "boundary_warning": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+  "comparability": {
+    "forecast": "All arrays rescored over the same midnight observations; historical boundary differences remain labelled",
+    "exp001_original_cost": "Not directly rankable: different efficiency, warmup and executor protocol",
+    "exp002_cost": "Archive only; re-evaluate under a new protocol if physical/billing/warmup/executor assumptions change",
+    "training_time": "Historical shared four-target training time is not Q2-specific runtime",
+    "generalization": "Previously inspected 2025 results are retrospective evidence, not a fresh untouched test set"
+  },
+  "training_calls": 0,
+  "dispatch_replays": 0
+}

@@ -1,0 +1,246 @@
+{
+  "code": {
+    "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+    "experiments/problem2/exp003/dispatch.py": "47764e4633c88a0d27e156892ab23fa85be102e93d8e63899f1420202a73e201",
+    "experiments/problem2/exp003/evaluate.py": "fe01369f1b77a9355371b5e4c37d8fe19eee597d4356bfe80ade197725775ca9",
+    "experiments/problem2/exp003/baseline_evidence.py": "d82eccbea22d31e10a87caed8f16defd966fe8623ce32d5a7864245486c945aa",
+    "experiments/problem2/exp003/train.py": "51fe17b0b5ecacd2c7011c7fb2b75e53649e1fce4c00313ba226ff33704eb572",
+    "experiments/problem2/exp003/predict.py": "2d5d625addd6213fd3d063e67b6ee24a042df9eed103ba7cc1f643a549b5c97b",
+    "experiments/problem2/exp003/protocol.json": "bba3a5c779e545cf9ff312fd3a264f7b7ecbb824f360e68ec8ce1cb4dd9eecac",
+    "experiments/problem2/exp003/provenance.py": "22c25ecae099002270165aebac2b199f33b0248065282d95cd02b8ec6edb0871",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+    "experiments/common/neural_v2/risk.py": "d8b940b45e4cb4017ee20488a313065e0ca37e77359e2ea4120bdd9532d503cf"
+  },
+  "data": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "configuration": {
+    "experiment_id": "exp003",
+    "version": "microgrid-causal-risk-v2",
+    "algorithm_version": "q2-cost-calibration-v1",
+    "scope": [
+      "2"
+    ],
+    "period": [
+      "2025-02-01",
+      "2025-12-31"
+    ],
+    "time_alignment": "interval_end_natural_day",
+    "billing": "full_original_plus_final_adjustment_plus_emergency",
+    "q2_billing": "sum(price*(original+5*emergency)); final=original",
+    "efficiency": {
+      "charge": 0.9486832980505138,
+      "discharge": 0.9486832980505138
+    },
+    "initial_soc_kwh": 6000,
+    "soc_bounds_kwh": [
+      1200,
+      10800
+    ],
+    "max_power_kw": 5000,
+    "warmup": "January common causal periodic baseline initialized from attachment 1",
+    "terminal_condition": "physical_bounds_only_no_daily_reset",
+    "execution": "exact_greedy_charge_discharge_then_emergency",
+    "allowed_inputs": [
+      "附件1.csv",
+      "附件2_小区负载.csv",
+      "附件2_光伏发电实际功率.csv"
+    ],
+    "seed_list": [
+      42,
+      2026,
+      3407
+    ],
+    "primary_seed": 42,
+    "forecast_issuance_hours": [
+      0
+    ],
+    "forecast_targets": [
+      "load",
+      "pv"
+    ],
+    "diagnostic_targets": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "architecture": {
+      "name": "q2_periodic_residual_mlp",
+      "branches": 2,
+      "features": 16,
+      "units": [
+        32,
+        16
+      ],
+      "output_initialization": "zeros",
+      "l2": 0.0001
+    },
+    "training": {
+      "monthly": "from_scratch",
+      "train_issue_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "validation_issue_hours": [
+        0
+      ],
+      "validation_days": 7,
+      "earliest_training_day": 7,
+      "loss": "standardized_huber_delta_1",
+      "learning_rate": 0.001,
+      "batch_size": 64,
+      "max_epochs": 60,
+      "patience": 6,
+      "pv_mask_history_days": 28
+    },
+    "calibration": {
+      "start": "2025-01-25",
+      "end": "2025-01-31",
+      "role": "shared_early_stopping_and_cost_tuning_period",
+      "alpha_load_candidates": [
+        0,
+        0.5,
+        1
+      ],
+      "alpha_pv_candidates": [
+        0,
+        0.5,
+        1
+      ],
+      "seed": 42,
+      "objective": "total_replayed_cost",
+      "tie_tolerance_yuan": 0.01,
+      "tie_break": [
+        "smaller_alpha_sum",
+        "smaller_alpha_load",
+        "smaller_alpha_pv"
+      ],
+      "freeze_time": "2025-02-01 00:00",
+      "reselect_with_formal_year": false
+    },
+    "dispatch": {
+      "method": "deterministic_milp",
+      "time_limit_seconds": 2,
+      "mip_rel_gap": 0.01
+    },
+    "decisions": {
+      "D001": "A",
+      "D002": "A",
+      "D003": "A",
+      "D004": "A",
+      "D005": "A",
+      "D006": "A"
+    },
+    "decision_origin": {
+      "D001-D003": "explicit_user_choice",
+      "D004-D006": "recommended_defaults_after_user_continue"
+    },
+    "evaluation_label": "retrospective_chronological_evaluation_with_frozen_configuration"
+  },
+  "models": {
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_42.json": "da88fde9acc722c61df92751de442a57da7f1e56e107b49e51d6530aaa309015",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_42.npz": "597d75372153008114e27998edc61fe712114c8adf631a412daf66e7c2cacaaf",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_42.keras": "8f6e3bf718f13cc1e5509f63f426340cfb2cb8dfd1a178c2a5dfd3032104c55c",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_2026.json": "397fafc8cdc072bba8591f550745bddb5abeddce06821170598c12d1b77f5013",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_2026.npz": "cd84e231ed41539e663c86c92f12f7a7d41600e4ad538068d21e84131bf874c2",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_2026.keras": "1c94f9f00324025d2588aab748f218d803954518584bde324f045adf9fac3886",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_3407.json": "4e2d2642cf930e8f8a77f4b4da2bb7e8895124f7bc4d706ec4fb4824426cc17b",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_3407.npz": "2a9a9cbc2fc39da980b5c6d342ff2797c4f5dab3e55adf5ce4945f9d917083e5",
+    "experiments/problem2/exp003/runs/exp003/m02_mlp_3407.keras": "3cbd0d401fd8d2926e7f958fcf260fdee6ac9f32cc5cdf805b601c499c604fe5",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_42.json": "82c081cf7b84fb9768ad808a11ae794ecab6646e189a98991faec108f7c13fa0",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_42.npz": "5d7fc4c9d008ab5e269b446d7006b67f6b9417a937253caa68028eca019a3e04",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_42.keras": "4dbd21649b2824a84c7f8b1bafe3b862f2a460a315821c1008fbe59686f27680",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_2026.json": "a2935c61aea5dbdb44212ce79f6dd959c01a4c452a13050d0a2b99e5c3d84b77",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_2026.npz": "bd6a73d348ed472e7f5abbf2ce904118fba2a3e371efdf98d1725fb5bcc51092",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_2026.keras": "065564e3712ee42b6223788c38b63e6ac8949203df9d05785d3880e4c1b154fd",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_3407.json": "51b7d6de365e5da5d3228842c720c1f26ecac840f6d963b7b06e8c5c542e9307",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_3407.npz": "b713233bb2db7e566932f26c7fcac61a6dfed9e113310f5bc83d0124e497cf01",
+    "experiments/problem2/exp003/runs/exp003/m03_mlp_3407.keras": "21ecdefc1a5908c25e672f1639c12f37cd83dd3a292ac9f9b4b1dfb39d003dcd",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_42.json": "559617cc2319dd5aa03143e436ce7aacbabf38205ee66d184d1007c78db56052",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_42.npz": "84f7d7f6330094008acfe06dc45b6bba7d6880e126ae521353ff14025b6fe13e",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_42.keras": "bb231fca5bb78ee7c71f5439f465370e118fc61770b56abb239e085231b8f06d",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_2026.json": "f1c620900bc8aee0a15889df651b57665f631daa2dd7735985699026e7472c08",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_2026.npz": "f89fe025d7ab029be8b0d7f5c9409e6426a00123b89ec9813e45f4a432a5ef07",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_2026.keras": "54441a44279b32dadeaa73dcbd31e991f702030dc1a68f0664e5ce9018c74ede",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_3407.json": "08dbe64fe47e0549f431b7ae1789def9e48576dce7c5eab9b28f79a3226d346c",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_3407.npz": "d3306933be603823fbca0d58c09e15f2151ff657e6dc1c32e1b37a2eee33a808",
+    "experiments/problem2/exp003/runs/exp003/m04_mlp_3407.keras": "29de4c6819f9055a132ae5c20a1d39c2e185a47af1b0dfc0d0aad208f0d08f03",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_42.json": "be30c38688c54481119e19a0ab65b69d6c071f2e4ad6c48362d75e857be3e3d8",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_42.npz": "2b452e5311e6d3ac1c8d03155fb8c8f11ab6be17ea978f0181df347d2a033d70",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_42.keras": "0316852a9c196acecfebb2207044d756e09e3f6acbaf80f356d0754c0a589414",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_2026.json": "6614855e023b6e93e4016e0bbe4060a95c9f695762b2e23b89d1b1969028b101",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_2026.npz": "e07c9a2e7b88157cbe47d7d9a9277d2ed9e50831d01e3639c6cc79145a0cb1fc",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_2026.keras": "8ddcfd7d38d7187c4ccece7648514debc6c25ef05d957a00a25600fa618a7d7c",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_3407.json": "49090edf05c493603200a492854910206aefee589f58fe54e8f30d799f42c2e4",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_3407.npz": "141b399fe0cce5b75ada4a1a7f2aeb00e03dd6c296ada7763d036643dfc55a1f",
+    "experiments/problem2/exp003/runs/exp003/m05_mlp_3407.keras": "a49ec6fa9ec2a756649138f9ff33252aec21bb9c4c5b3041f8aa5b669e49cbe0",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_42.json": "0d09fe02f0599a2f7628e8c2df94ce5dcff7dbc81abcf6840060e9f87ea17c7a",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_42.npz": "fa770e9e9712ab915456bb5d56ca7446de31e89d0eb3a38c2decbbdf4414d9a7",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_42.keras": "7654d3653c689eab66d75d89e04ec121b2acdf5f10dd732ca156624cf465590b",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_2026.json": "0f23d306d3f697058410de8407e2837c7a736d52060f89eb21a00daf00b2f2b4",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_2026.npz": "25176e75175b8ff05b4ff7906e46a27581d948931d0d5698159d3389e30a9a64",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_2026.keras": "9f37e4c564cbeb1d51bd39da9c927febe3c5adf083b27026f824becd2a292a3c",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_3407.json": "8c4203964f61f82a00b9ba8a6845ce2047469a5168d22d0ec3a66e4c4af56b0b",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_3407.npz": "b3bdd4a00de06589195b238575e41e41fdf89f71764b647cb0f470a13f87d337",
+    "experiments/problem2/exp003/runs/exp003/m06_mlp_3407.keras": "d740246257034b71b6c61cd37d218ca69c07c524bae2ade2207965f876e0aef3",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_42.json": "34589c53f2f657883b002b3447dae46515a9179713eba9ba9d426d85061c50ad",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_42.npz": "0a6b57192759528756e96ff495f67bea9a9b1b89e9cf3e04f6cc2135b17d0c72",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_42.keras": "4048deed0a4a09ed11430debb779b3fda30000cc5d3572948e921b6c5210acab",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_2026.json": "97b294e71d18393430501e723f03b7ffa8fbfe15a80ba5b04247a56d852494ff",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_2026.npz": "f7ac91992f98ad6a1f9ab1ec154c51f1056edccaaeab7c8319b7b39397d4c0c8",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_2026.keras": "b1fdbce76d5ee5891b8f5fba5db591cd41aa7ac9a0be2e267a4d4f1e031ea8d7",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_3407.json": "6bd8cc382849cc30a2628b6bdc41f17da61db7d7edb41149bad145b184def11e",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_3407.npz": "ef346ba59b13e647454732b3b1f8f503b8174aed57b86fbcb8f1c8dce706db2c",
+    "experiments/problem2/exp003/runs/exp003/m07_mlp_3407.keras": "b6bf3f5b5b9fc37857c3481d2b1b68586ee7eecb454fb11336dcd866c45c079f",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_42.json": "754edbc9f4cf38864daa31a790745bef515ff1373e2680b567a4cfc8718bc10c",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_42.npz": "d86769490bd3201ea99b7a9f9cfc1a374d373dd2de253d03b5ab1eb8ba8ecc41",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_42.keras": "10cecfdd0a00af13164f1915ea88fceb28fd1328d750346b3568ab67fe033d7b",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_2026.json": "144c62d7cc172fe905d75612d823bf6622bf75ac4bd07d6e8d30454bf8643608",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_2026.npz": "489fa21b1ffdffc0ce704ff08849971d5f57abea6d9f77291b8828fccfef6112",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_2026.keras": "6851c5ce20287381bd287cfdaf4e00f8a7f90aeb043725e4727a0830c8d8368a",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_3407.json": "f31fe7882862e90ba5fcdfabf612ef13368d93248bf886acd677fcc39fb2273f",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_3407.npz": "f3b6f0f05e07b729e595aaa36e2687ef778befd4577f0af3921b7d9cee616d06",
+    "experiments/problem2/exp003/runs/exp003/m08_mlp_3407.keras": "743245f044dfffa1ff82ec4f223848604e82dbfa8498b6bb0d16ea0fc95845fe",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_42.json": "b93e5db8d48739eeb4662500018c4109f3430b0b284ae68c6cfc09aab10c35a5",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_42.npz": "7e66089bd40e8d568a71e0fed3e0f2e4e342bebfcde03013c8430567f9b1f9bf",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_42.keras": "f510c48463dc6a3e85e205b56c430054fad919a5b7af0fc4824fcf8c6320bd24",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_2026.json": "b54a4102b16878cff3658bc38988b1beb2d9288f90f97968619bfa2526242246",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_2026.npz": "0c27dcdfd665b78661da338d044480193d0ec7c28fda96a7bc9896b35c09e13f",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_2026.keras": "ec4e8688ee063046c4e44c0e3af8d3d570527df0674eae8a78e82e6b8c69a201",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_3407.json": "322f53dfd37f3e94831b8c820958baf714ee4b9437df59965422b6dfeab5e6f0",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_3407.npz": "7ea188859320869817af5d8057c82ae0ce0516d11a778667ee98cbe5ea26f286",
+    "experiments/problem2/exp003/runs/exp003/m09_mlp_3407.keras": "b50d94cb7bd6e7a7a6d079250439ada3520be41e45401fbe350365ab71841b7b",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_42.json": "d1358718490358cf3fcc243766a83f42fd9fa5a6889e88fc1c3ad4a79fd9d0b6",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_42.npz": "49ab0278a42a6f5d6a337a2f1e6785bf3a4d23518ce49f8a5597d4b982e4e030",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_42.keras": "f2b8bcf71fb399430a494b0a03ed4fa16168b74039b420c03353a2c59faee7c4",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_2026.json": "1f20d57c20a12892a4afc12de468fb4e7dc891e5a87d5a8563d8f5f98b6de5e8",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_2026.npz": "81ff071e7bd40bfab2c6b60f5bdd8d19b92b72d884c631b8498d794984d26b2b",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_2026.keras": "d07aa672bc5975ab12cd855710efc3a79680ffbdd58193594aa582a918ab2373",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_3407.json": "54a2a1ac2e2d13aad7c4f49aba18f1796ee2804a7fc1cd0b47cb6e59d1e6f9ee",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_3407.npz": "717fc9ed52755ce73287469eacf232956b2ce2c90c0a33b865c4a43480f4b7f6",
+    "experiments/problem2/exp003/runs/exp003/m10_mlp_3407.keras": "79ca6644339537a593be79b23cde7347c983d8fee232df5568ce417a547cbb11",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_42.json": "d94032f8d2829532a59aa39ddece6ae50971f3ef09e0ab33ba223d72ebf34001",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_42.npz": "d1fa2b8ef221c893583dc8c7d5e62b64562ed62526bfdb4f139b875c1a5ab80b",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_42.keras": "6e9adc6a0d87ae70d44260cf5deed79e1c5e484fb5b892b74c6b83d6688707db",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_2026.json": "2a5033fbc68f4f3002d8a836eefcb0c1c0395627dc99d852fce1046d42e342f1",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_2026.npz": "9c1237c7456681ad62541b8c10d61ed10f912ba3190198060cf0434b3816f36b",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_2026.keras": "8bb1a9984810338fbb6b68a7fba33aae0a3c06a323fec38c206eaaee102e9f57",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_3407.json": "b0147cdd738e26f52d0307c1dad49720b7ac9528ba94338a688f585ad6727f4e",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_3407.npz": "92242052f3a11c46ae5a9b18cecf2d79766681585700f5585ab9aad0052561c0",
+    "experiments/problem2/exp003/runs/exp003/m11_mlp_3407.keras": "e70786e979cc844c86fe273e5f2e83fafd7114ab040b0bfad1028dc21b47079b",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_42.json": "d1bc2df061710bcd32ba86334c63c58dc674bbe53cd6430afd99b0d86503ccb3",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_42.npz": "095ccb96151e2a4e29e0bc97d8a77949476af110d87f7956acbf1fe8b714eed7",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_42.keras": "006b53207b341a382fdea4f636983f3d2625029b1216fae5b3a57c38116a5dd6",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_2026.json": "b7f5c09249ea9c0eaa7b3ac25cdebc1ae49f188cf08a1241ba6f9327ec6ebb66",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_2026.npz": "80da15e904934bcd28976cbd47fba62ffdec7a38ee6c8af9d2cfacd0d63b99b7",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_2026.keras": "e7d59cb35255c0d5141732aafbfa46f026231c9b87afbd5947352a339fcfd286",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_3407.json": "081dd78d1e73795eae152445f5aff352e81d4861c041c28e25cced798885d35c",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_3407.npz": "64086894bc3f75afcfab3e8a48494416a14281c8b18f24d461755ddd07ad0018",
+    "experiments/problem2/exp003/runs/exp003/m12_mlp_3407.keras": "167fa35447d5cebbd1ae41d24efcdc702d115cac8c7b90373566bf2b0cdc33dd"
+  },
+  "signature": "4ec7b9de144d8cc085d22de08e2a504f7ede10f91debde91f0e07821d8415208"
+}

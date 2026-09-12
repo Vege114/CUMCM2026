@@ -1,0 +1,392 @@
+[
+  {
+    "predictor_id": "exp001_mlp",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp001_gru",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp001_tcn",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp001_gru_no_calendar",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp001_gru_one_day",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp001_selected",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp002_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp002_seed_2026",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "exp002_seed_3407",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation."
+  },
+  {
+    "predictor_id": "attachment2_yesterday",
+    "source_experiment": "reconstructed_attachment2",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": false,
+    "strict_q2_input_isolation_verified": true,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Reconstructed yesterday/weekly/periodic forecasts read only the two attachment 2 files; all lag indices precede midnight. No training or dispatch replay."
+  },
+  {
+    "predictor_id": "attachment2_weekly",
+    "source_experiment": "reconstructed_attachment2",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": false,
+    "strict_q2_input_isolation_verified": true,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Reconstructed yesterday/weekly/periodic forecasts read only the two attachment 2 files; all lag indices precede midnight. No training or dispatch replay."
+  },
+  {
+    "predictor_id": "attachment2_periodic",
+    "source_experiment": "reconstructed_attachment2",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": false,
+    "strict_q2_input_isolation_verified": true,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Reconstructed yesterday/weekly/periodic forecasts read only the two attachment 2 files; all lag indices precede midnight. No training or dispatch replay."
+  },
+  {
+    "predictor_id": "exp002_dispatch_weekly_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": false,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Archived Q2 execution had no intraday purchase updates; its original full-run loader/signatures were not isolated to Q2 attachments. No strict-run isolation claim.",
+    "record_type": "archived_dispatch",
+    "name": "weekly",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_new_deterministic_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "archived_dispatch",
+    "name": "new_deterministic",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_primary_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "archived_dispatch",
+    "name": "primary",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_periodic_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": false,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Archived Q2 execution had no intraday purchase updates; its original full-run loader/signatures were not isolated to Q2 attachments. No strict-run isolation claim.",
+    "record_type": "archived_dispatch",
+    "name": "periodic",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_primary_seed_2026",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "archived_dispatch",
+    "name": "primary",
+    "seed": 2026,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_yesterday_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": false,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Archived Q2 execution had no intraday purchase updates; its original full-run loader/signatures were not isolated to Q2 attachments. No strict-run isolation claim.",
+    "record_type": "archived_dispatch",
+    "name": "yesterday",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_primary_seed_3407",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "archived_dispatch",
+    "name": "primary",
+    "seed": 3407,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_legacy_rebased_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "archived_dispatch",
+    "name": "legacy_rebased",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp002_dispatch_risk_zero_seed_42",
+    "source_experiment": "exp002",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "archived_dispatch",
+    "name": "risk_zero",
+    "seed": 42,
+    "cost_comparison": "Conditional on preserving the v2 period, physics, billing, warmup and executor"
+  },
+  {
+    "predictor_id": "exp001_registered_q2_cost",
+    "source_experiment": "exp001",
+    "issue_hours_scored": [
+      0
+    ],
+    "targets_scored": [
+      "load",
+      "pv",
+      "net_load"
+    ],
+    "attachment_3_4_common_early_stopping_coupling": true,
+    "strict_q2_input_isolation_verified": false,
+    "historical_four_issue_scores_reused": false,
+    "boundary_note": "Historical four-target checkpoint: load/PV parameters have separate branches, but a common validation loss chooses the saved epoch. Attachment 3 forecast and attachment 4 price targets can therefore indirectly influence Q2 predictions. Midnight filtering does not remove this coupling; do not claim strict Q2 input isolation.",
+    "record_type": "original_registered_cost",
+    "comparison_status": "not_directly_rankable_against_v2"
+  }
+]

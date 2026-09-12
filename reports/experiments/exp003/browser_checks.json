@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "surface": "http://127.0.0.1:8033/report.html",
+  "report_html_sha256": "6c530f40742e2795ae82ed6af9f6ebbe2981913073e90c921612bd8c060c7076",
+  "report_md_sha256": "58d628c1809cf646f708ac02f269d4ca413dd57b3446cb2f846f27945be10fdf",
+  "viewports": [
+    {
+      "width": 361,
+      "height": 709,
+      "observed_document_width": 361,
+      "observed_scroll_width": 361
+    },
+    {
+      "width": 1280,
+      "height": 900
+    }
+  ],
+  "checks": [
+    "final eight-section report and exact annual cost visible",
+    "July filter changes cost/forecast ranges while annual conclusions stay fixed",
+    "forecast load/PV/net-load controls present; PV selected and chart heading updated",
+    "WAPE selection updates units",
+    "actual PV > 0 population changes headings",
+    "seed 2026 selected and series label updated",
+    "2025-12-21 changes both dispatch and SOC charts",
+    "nine-candidate disclosure and selected alpha 0/0 visible",
+    "calibration source definitions, source files, all 9 rows across 2 pages inspected",
+    "heatmap, SOC and route layout visually inspected",
+    "all-year, seed42, net-load, all-period RMSE restored",
+    "final rebuilt route and precise stage-time narrative visible",
+    "final browser error log empty",
+    "viewport override reset and first conclusion retained"
+  ],
+  "not_run": [
+    "No external publication requested; no deployment performed",
+    "No separate dark-theme validation"
+  ],
+  "source_queries": 18
+}

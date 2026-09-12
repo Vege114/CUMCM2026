@@ -300,17 +300,24 @@ def paper_figures(costs, daily, forecasts, calibration, intervals, states, worst
     save(fig, "q2-monthly-cost")
     f = forecasts["monthly"]
     f = f[(f.population == "all") & f.seed.isin(["42", "none", "ensemble"])]
-    fig, axes = plt.subplots(1, 3, figsize=(13, 3.8), layout="constrained")
-    for ax, target in zip(axes, TARGETS):
-        for label, part in f[f.target == target].groupby("policy_label", sort=False):
-            ax.plot(
-                part.month, part.rmse, color=COLORS[label], lw=1.5, marker="o", ms=2.5, label=label
-            )
-        ax.set(
-            title=f"{TARGETS[target]} · 凌晨预测", ylabel="RMSE（kW）", xticks=[2, 4, 6, 8, 10, 12]
-        )
-        ax.grid(alpha=0.15)
-    axes[0].legend(fontsize=7, loc="upper left")
+    fig, axes = plt.subplots(2, 3, figsize=(13, 7), layout="constrained")
+    for row_index, (metric, unit) in enumerate((("rmse", "RMSE（kW）"), ("wape_pct", "WAPE（%）"))):
+        for ax, target in zip(axes[row_index], TARGETS):
+            for label, part in f[f.target == target].groupby("policy_label", sort=False):
+                ax.plot(
+                    part.month,
+                    part[metric],
+                    color=COLORS[label],
+                    lw=1.5,
+                    marker="o",
+                    ms=2.5,
+                    label=label,
+                )
+            ax.set(title=f"{TARGETS[target]} · 凌晨预测", ylabel=unit, xticks=[2, 4, 6, 8, 10, 12])
+            if row_index == 1:
+                ax.set_xlabel("2025年月")
+            ax.grid(alpha=0.15)
+    axes[0, 0].legend(fontsize=7, loc="upper left")
     save(fig, "q2-monthly-error")
     if calibration:
         matrix = np.empty((3, 3))
@@ -544,6 +551,25 @@ def build(partial=False, snapshot_only=False, code_commit=None, node=None):
         ["evidence/training.csv", "evidence/training_metadata.json"],
         "每行一个月和一个种子的实测训练任务；新模型两分支2178参数。只报告本轮Q2时间；历史四分支累计训练时间不是Q2专属耗时。",
     )
+    timing_text = ""
+    if complete and training:
+        timing = {
+            "training_seconds": sum(row["training_seconds"] for row in training),
+            "first_prediction_seconds": sum(row["prediction_seconds"] for row in training),
+            "evaluate_seconds": evaluation["seconds"],
+        }
+        timing_text = (
+            f"本轮33组训练累计{timing['training_seconds']:.3f}秒，首次预测与数组组装累计"
+            f"{timing['first_prediction_seconds']:.3f}秒；整次evaluate为{timing['evaluate_seconds']:.3f}秒，"
+            "包含九候选费用校准、共同预热、三个不同预测的全年回放及评分导出。"
+            "校准未单独计时，41.674秒不是单策略回放时间；上述首次预测累计值也不是单次在线推理延迟。"
+        )
+        query(
+            "timing",
+            [timing],
+            ["evidence/training_metadata.json", "evidence/evaluation_manifest.json"],
+            "33个训练任务的model.fit和首次预测/数组组装分别加总；evaluate从加载数据至完成评价计时，含校准、预热、不同预测回放、评分与输出，不是单策略耗时。",
+        )
     if (REPORT / "relative_comparison.csv").exists():
         relative = pd.read_csv(REPORT / "relative_comparison.csv", dtype={"scenario": str})
         if set(relative.scenario) != {"2"}:
@@ -903,6 +929,49 @@ def build(partial=False, snapshot_only=False, code_commit=None, node=None):
         "费用比较包含两层变化：v2确定性→Q2独立未校准，同时包含训练输入、预测发布验证边界修正；Q2未校准→费用校准只改变修正强度。v2正式风险策略额外改变调度器，不能把其求解耗时差归为预测网络提速。各方案使用相同物理、预热与结算；旧网络仍有附件3/4通过共同早停间接影响Q2的边界差异。",
         ["cost_annual"],
     )
+    route_rows = [
+        {"route": "v1归档", "steps": ["旧月度预测选择", "v2物理协议重算", "legacy_rebased对照"]},
+        {
+            "route": "v2归档",
+            "steps": ["四目标共同早停", "确定性调度／正式风险调度", "两类历史对照"],
+        },
+        {
+            "route": "本轮Q2",
+            "steps": ["两分支＋午夜早停", "未校准α=(1,1)", "九候选费用校准", "正式α=(0,0)"],
+        },
+        {
+            "route": "周期参考",
+            "steps": ["负载上周／PV昨日", "同一确定性调度与执行", "原始float64周期基线"],
+        },
+    ]
+    query(
+        "routes",
+        route_rows,
+        [
+            "evidence/protocol.json",
+            "evidence/baseline_boundaries.json",
+            "evidence/evaluation_manifest.json",
+        ],
+        "技术路线并列；旧v1/v2训练边界保留，不因同物理回放或午夜重评分而获得严格Q2输入隔离。",
+    )
+    sections[6]["blocks"].append(
+        {"type": "routes", "id": "route-comparison", "title": "路线并列", "queryId": "routes"}
+    )
+    route_mermaid = (
+        "```mermaid\nflowchart LR\n"
+        + "\n".join(
+            "  "
+            + " --> ".join(
+                f'r{route_index}s{step_index}["{step}"]'
+                for step_index, step in enumerate([row["route"], *row["steps"]])
+            )
+            for route_index, row in enumerate(route_rows)
+        )
+        + "\n```"
+    )
+    markdown[6].append(route_mermaid)
+    if timing_text:
+        prose(6, timing_text, ["timing"])
     query(
         "history_cost",
         official,
@@ -1022,7 +1091,7 @@ def build(partial=False, snapshot_only=False, code_commit=None, node=None):
     )
     for i, items in enumerate(markdown, 1):
         (REPORT / f"section-{i}.md").write_text("\n\n".join(items) + "\n")
-    write_appendices(protocol, training_frame, costs, forecasts, cal)
+    write_appendices(protocol, training_frame, costs, forecasts, cal, route_mermaid, timing_text)
     if complete:
         write_record(protocol, main, forecasts["annual"], training, code_commit)
     check = {
@@ -1067,7 +1136,7 @@ def build(partial=False, snapshot_only=False, code_commit=None, node=None):
     return check
 
 
-def write_appendices(protocol, training, costs, forecasts, cal):
+def write_appendices(protocol, training, costs, forecasts, cal, route_mermaid, timing_text):
     methods = """# 第二问方法附录
 
 ## 信息、样本与特征
@@ -1104,6 +1173,7 @@ MAE=Σ|ŷ−y|/n；RMSE=√(Σ(ŷ−y)²/n)；WAPE=100Σ|ŷ−y|/Σ|y|；bias=Σ
 
 v2网络的共同四目标早停可能受到附件3/4影响；凌晨重评分不能消除这个历史边界差异。v1原费用不可与新协议直接排名，legacy_rebased保留其旧月度预测选择后用v2物理口径重算。不同调度器的耗时差不能归因预测网络提速。结果是预先冻结配置后的回溯评价，不是新数据上的独立前瞻试验。
 """
+    methods += "\n## 路线与耗时范围\n\n" + route_mermaid + "\n\n" + timing_text + "\n"
     (REPORT / "methods.md").write_text(methods)
     parts = [
         "# 第二问结果附表",

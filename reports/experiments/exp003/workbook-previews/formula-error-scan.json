@@ -1,0 +1,39 @@
+{
+  "records": [
+    {
+      "kind": "workbook",
+      "id": "wb/md5rch",
+      "sheets": 3
+    },
+    {
+      "kind": "sheet",
+      "id": "ws/e3lf09",
+      "name": "计划购电量",
+      "index": 0,
+      "range": "A1:EQ335",
+      "address": "A1:EQ335"
+    },
+    {
+      "kind": "sheet",
+      "id": "ws/foyhij",
+      "name": "充放电量",
+      "index": 1,
+      "range": "A1:F2005",
+      "address": "A1:F2005"
+    },
+    {
+      "kind": "sheet",
+      "id": "ws/ew4vw5",
+      "name": "紧急购电量",
+      "index": 2,
+      "range": "A1:C972",
+      "address": "A1:C972"
+    },
+    {
+      "kind": "notice",
+      "message": "Cell search matched 0 entries."
+    }
+  ],
+  "ndjson": "{\"kind\":\"workbook\",\"id\":\"wb/md5rch\",\"sheets\":3}\n{\"kind\":\"sheet\",\"id\":\"ws/e3lf09\",\"name\":\"计划购电量\",\"index\":0,\"range\":\"A1:EQ335\",\"address\":\"A1:EQ335\"}\n{\"kind\":\"sheet\",\"id\":\"ws/foyhij\",\"name\":\"充放电量\",\"index\":1,\"range\":\"A1:F2005\",\"address\":\"A1:F2005\"}\n{\"kind\":\"sheet\",\"id\":\"ws/ew4vw5\",\"name\":\"紧急购电量\",\"index\":2,\"range\":\"A1:C972\",\"address\":\"A1:C972\"}\n{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "truncated": false
+}
