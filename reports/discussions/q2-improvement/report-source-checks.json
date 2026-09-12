@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "report_sha256": "b681e404f142268661bfca886622cc4b49b833bdfdb079938da0447b9ced39f3",
+  "template_sha256": "9660dec046dbebdc4b635e34f010f65c7766a1954fea23be10549b210b52b6a6",
+  "inputs": {
+    "evidence.json": "a7c81a083606ab006be4cfe97ddc48addfd1ce7c3533ce3ee05292589ab07e2f",
+    "modules.json": "9c6165539743e7317a2e08f58f0302bae9d442fde243b9bda770dd4a332606e0"
+  },
+  "report_artifact_id": "report:8275202c-eb95-4dda-b6fc-7bb62938658f",
+  "template_artifact_id": "report:802dd862-8347-4c87-bbe8-9205651ca086",
+  "raw_rows": 52560,
+  "monthly_strategy_rows": 44,
+  "dispatch_intervals": 720,
+  "dispatch_state_nodes": 725,
+  "modules": 7,
+  "decisions": 12,
+  "options": 33,
+  "initial_selections": "all null",
+  "template_quantitative_rows": 0,
+  "source_scope": "bound query rows reviewed independently by evidence agent",
+  "model_execution": "none; rendering uses bundled JSON only",
+  "browser_checks": "performed by root agent; see its separate browser QA record",
+  "latest_presentation_revision": "原始月电量改为560px高横向分组条形图，12个月、两条电量序列与sourceRows保持不变。"
+}
