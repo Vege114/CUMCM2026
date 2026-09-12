@@ -94,8 +94,16 @@ def verify(experiment="exp002"):
                "training-count-and-time", "fixed-network-architecture", "scenario-information-tree",
                "three-layer-cost-comparison", "cost-components", "failure-case-and-storage",
                "cost-versus-tail-risk", "solver-gap-and-fallback", "lead-and-generating-error",
-               "daily-emergency-and-monthly-cost", "worked-example-training-loss"]
+               "daily-emergency-and-monthly-cost", "worked-example-training-loss",
+               "history-cost-comparison", "history-forecast-relative-change"]
     assert all((report / "figures" / f"{name}.{ext}").stat().st_size > 1000 for name in figures for ext in ("png", "svg"))
+    chapter = snapshot["reportContent"][6]["blocks"]
+    assert {"history-cost-chart", "history-forecast-chart", "history-training-charts"}.issubset({b["type"] for b in chapter})
+    section = (report / "section-7.md").read_text()
+    for name in ("history-cost-comparison", "history-forecast-relative-change", "training-count-and-time"):
+        assert f"(figures/{name}.png)" in section
+    bridge = pd.read_csv(report / "official_forecast_comparison.csv")
+    np.testing.assert_allclose(bridge.relative_change_pct,100*(bridge.current-bridge.previous)/bridge.previous.abs(),rtol=1e-11,atol=1e-9)
     model = json.loads((report / "model_checks.json").read_text())
     assert model["formal_training_groups"] == 33 and model["gpu_output_all"]
     recovery = json.loads((report / "prediction_recovery_check.json").read_text())
@@ -110,6 +118,7 @@ def verify(experiment="exp002"):
         contributions[["planned_cost", "up_cost", "down_cost", "emergency_cost"]].sum(axis=1), atol=1e-6)
     browser = json.loads((report / "browser_checks.json").read_text())
     assert browser["status"] == "passed" and browser["runtime_errors"] == []
+    assert browser["history_comparison_revision"]["status"] == "passed"
     assert (report / "report.html").stat().st_size > 100000
     assert (report / "methods.md").read_text() == (report.parent.parent / "templates/methods-neural-v2.md").read_text()
     status = {"status": "passed", "sections": 8, "strategies": len(costs), "primary_scenarios": 4,

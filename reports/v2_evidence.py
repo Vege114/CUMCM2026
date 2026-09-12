@@ -467,6 +467,8 @@ def figures(run_id="exp002"):
         for ax in row:
             ax.grid(axis="y", alpha=.15)
     save(fig, "daily-emergency-and-monthly-cost")
+    from v2_history_figures import history_figures
+    history_figures(out, save)
 
 
 if __name__ == "__main__":
