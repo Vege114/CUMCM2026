@@ -1,0 +1,257 @@
+{
+  "experiment_id": "exp005",
+  "revision": "strict-mutual-exclusion",
+  "status": {
+    "status": "paused_by_user",
+    "completed_days": 55,
+    "last_completed_date": "2025-03-27",
+    "next_day_index": 55,
+    "next_day_initial_state": {
+      "soc": 1200.01001777637,
+      "previous_power_kw": -16.088940424134638
+    },
+    "pid": 75170,
+    "active_day_note": "Current unfinished-day in-memory state retained by SIGSTOP; only complete days below are durable, audited daily results.",
+    "seconds": null
+  },
+  "formal_334_day_result": false,
+  "protocol": {
+    "config": {
+      "dt": 0.16666666666666666,
+      "eta_rt": 0.9,
+      "soc_min": 1200.0,
+      "soc_max": 10800.0,
+      "power_max": 5000.0,
+      "ramp_kw": 1000.0,
+      "delta": 0.001,
+      "delta_exec": 0.001,
+      "epsilon_cost": 0.0001,
+      "beta": 0.0,
+      "time_limit": 60.0,
+      "tolerance": 1e-06
+    },
+    "mode": "scenario",
+    "forecast": "exp004/no_season/seed42",
+    "archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+    "data_hashes": {
+      "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+      "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+      "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+    },
+    "initial_state": {
+      "soc": 1421.7991105135516,
+      "previous_power_kw": 172.75999999999976
+    },
+    "scenario_window": 56,
+    "scenario_maximum": 16,
+    "seed": 42,
+    "branch_slots": [
+      36,
+      72,
+      108
+    ],
+    "minimum_child": 2,
+    "intraday_weight_update": false,
+    "tree_parameters_user_confirmed": true,
+    "january_residuals": "none archived; Feb1 point-only fallback",
+    "evaluation": "retrospective chronological; 2025-02-01 through 2025-12-31",
+    "D": {
+      "D1": "A",
+      "D2": "A",
+      "D3": "A",
+      "D4": "A",
+      "D5": "A",
+      "D7": "A",
+      "D9": "A"
+    },
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "mip_rel_gap_requested": 0.0,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ],
+    "numerical_retry_same_model": true,
+    "user_amendment": "Strictly forbid simultaneous charge/discharge; keep original experimental code unchanged; rerun and regenerate report",
+    "code_access": "original imported unchanged; separate solver-boundary adapter",
+    "forecast_archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+    "requested_days": 334
+  },
+  "completed_period": {
+    "first_date": "2025-02-01",
+    "last_date": "2025-03-27",
+    "days": 55
+  },
+  "settlement": [
+    {
+      "strategy": "exp004 无季节·原调度器",
+      "days": 55,
+      "planned_cost": 2153447.7721422445,
+      "adjustment_cost": 0.0,
+      "emergency_cost": 33833.85106114118,
+      "total_cost": 2187281.6232033856,
+      "planned_kwh": 3591178.8461595615,
+      "emergency_kwh": 5510.729815093392,
+      "total_wan": 218.72816232033855
+    },
+    {
+      "strategy": "exp005 严格互斥·滚动规划",
+      "days": 55,
+      "planned_cost": 2002817.076279559,
+      "adjustment_cost": 0.0,
+      "emergency_cost": 387236.7003799453,
+      "total_cost": 2390053.776659504,
+      "planned_kwh": 3313595.508362459,
+      "emergency_kwh": 107144.82818873935,
+      "total_wan": 239.0053776659504
+    }
+  ],
+  "physical_audit": {
+    "checks": [
+      {
+        "check": "实际供需平衡最大残差",
+        "value": 2.9558577807620168e-12,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "实际SOC递推最大残差",
+        "value": 1.3073986337985843e-12,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "实际最大充放电重叠",
+        "value": 6.548361852765072e-11,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "实际最大相邻功率变化（含跨日）",
+        "value": 1000.0000000000982,
+        "limit": 1000.0,
+        "passed": true
+      },
+      {
+        "check": "实际电量/SOC边界最大违反量",
+        "value": 1.5833734323678065e-10,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "固定普通计划最大变更量",
+        "value": 0.0,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "实际供需与原始数据最大差",
+        "value": 0.0,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "跨日SOC衔接最大差",
+        "value": 0.0,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "两层全部规划节点最大重叠",
+        "value": 1.8622667856725652e-07,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "两层原约束最大残差",
+        "value": 1.323132892139256e-07,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "第二层超费用预算最大量",
+        "value": 6.257323548197746e-10,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "0/1变量最大整数残差",
+        "value": 9.906873217335743e-07,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "互斥不等式最大残差",
+        "value": 9.799962299439358e-07,
+        "limit": 1e-06,
+        "passed": true
+      },
+      {
+        "check": "已完成求解最大相对gap",
+        "value": 1.0,
+        "limit": null,
+        "passed": "原样披露"
+      },
+      {
+        "check": "原实验源文件哈希变更数",
+        "value": 0,
+        "limit": 0,
+        "passed": true
+      }
+    ],
+    "completed_days": 55,
+    "executed_intervals": 7920,
+    "solver_calls_audited": 15950,
+    "original_code_unchanged": true,
+    "full_evaluation_complete": false,
+    "run_status": {
+      "status": "paused_by_user",
+      "completed_days": 55,
+      "last_completed_date": "2025-03-27",
+      "next_day_index": 55,
+      "next_day_initial_state": {
+        "soc": 1200.01001777637,
+        "previous_power_kw": -16.088940424134638
+      },
+      "pid": 75170,
+      "active_day_note": "Current unfinished-day in-memory state retained by SIGSTOP; only complete days below are durable, audited daily results.",
+      "seconds": null
+    }
+  },
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.0.2",
+    "scipy": "1.18.1",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "old_source_hashes": {
+    "experiments/problem2/exp003/dispatch.py": "47764e4633c88a0d27e156892ab23fa85be102e93d8e63899f1420202a73e201",
+    "experiments/problem2/exp004/__init__.py": "577ca82babfd829c53907519bff416eb9ac0c6d22533563db7a2a75f957877f5",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/problem2/exp004/evaluate.py": "41f9d96197448adac9d72405959f33fffd8062309b6a7a91442c8c9da85f65c9",
+    "experiments/problem2/exp004/export.py": "61bf62f2b1ec47a3bb7992ff61214b5647d1829960abd7bf5de92456a82e5943",
+    "experiments/problem2/exp004/predict.py": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+    "experiments/problem2/exp004/train.py": "b552b245c2add1d6bd21d7c6c872eeaf73e3b8f679eef70e6f430f4c96e6f4d6",
+    "experiments/problem2/exp004/verify.py": "b806434ea6c8a5e647eb40b49ad56b9f056ce0b1533d7799a340c9be9fc12ad5",
+    "experiments/problem2/linear_planning/model.py": "419ee17054f1289d7e7f6030f3c6b0928110bd344b040740157c88817540275f",
+    "experiments/problem2/stochastic_lp/__init__.py": "9fadfeca0a07c862407068b64c87e53d3577963e668125b5188078ad7a7ab5ff",
+    "experiments/problem2/stochastic_lp/model.py": "e8624e546c9c9faa1dac5b46a2798d619f1af43911367651c1d41ff6c5ff56f6",
+    "experiments/problem2/stochastic_lp/run.py": "2c8d5b89d64fe4208638a515983ed67dc62d3e98a97f5ca792d4dfb6f2cc8e4f",
+    "experiments/problem2/stochastic_lp/scenarios.py": "2e8bf7ceda5dd2b3fd400acf6cbb675d5340f1a96d3cdd8da9ccb3e2944273e8"
+  },
+  "new_source_hashes": {
+    "reports/experiments/exp005/strict_rerun/benchmark_gap.py": "3962cc0b89d325d87d3facca16e88d92e141d854c13bc1c40a544f1fee700566",
+    "reports/experiments/exp005/strict_rerun/build_report.py": "5972a10fcfe08aa38bd41c71533dc920634d0fbbe3696f148f5246d9e4168d52",
+    "reports/experiments/exp005/strict_rerun/control_evidence.py": "cc4d65bb33d4217486bb1952c40bef8af71c8e02cd242cf7010aff9d35ec9253",
+    "reports/experiments/exp005/strict_rerun/diagnose.py": "2401f5a46ff507995e2834eba3c18f01b8b1e2eb88dde16f086c4f8da357c8b4",
+    "reports/experiments/exp005/strict_rerun/failure_evidence.py": "6c8c026323f67a1b28edcc71dd9484e66e9cf56ddf6afaba62ff8ef1c0a76565",
+    "reports/experiments/exp005/strict_rerun/gap_backend.py": "2561a0115ab6e6c0468eac95e7a146d7621ef4bdb4bf48c3008ee94e3c6fdc95",
+    "reports/experiments/exp005/strict_rerun/prepare_workbook.py": "4e002a3132b58d3397bb086b609140f8140b7bb4a88d6442acdca3c87933ba07",
+    "reports/experiments/exp005/strict_rerun/run.py": "9a8bbe954885d6fcdcef13c0e0f7e7decbd8ad3573b7aed30bb0d92369920b12",
+    "reports/experiments/exp005/strict_rerun/strict_backend.py": "7a5f784c5048b66b7d305d366ff222364fb61ed5b34ae12d2905aeedc06c980a",
+    "reports/experiments/exp005/strict_rerun/summarize_gap_timing.py": "8d00322d9d1ea3e2631067ae8ccd148c64ec801901b513d40a040a4be3b4056f",
+    "reports/experiments/exp005/strict_rerun/test_strict_backend.py": "c94158250cb97411cfa8f69535952d4341754ff26d46882b48e7ddff4b8d050e"
+  },
+  "version_note": "Old experimental source remains unmodified. New uncommitted adapters are identified by SHA-256; no claim that a Git commit includes them."
+}

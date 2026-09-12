@@ -1,0 +1,24 @@
+experiment,label,stage,seconds,groups,scope,source
+exp001,exp001,训练,5901.694830923923,165.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp001/training_metadata.json
+exp001,exp001,检查点预测,,165.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp001/training_metadata.json
+exp002,exp002,训练,675.3243275849381,33.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp002/training_metadata.json
+exp002,exp002,检查点预测,3.401795583195053,33.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp002/training_metadata.json
+exp003,exp003,训练,390.40561621135566,33.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp003/training_metadata.json
+exp003,exp003,检查点预测,1.4111477101687342,33.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp003/training_metadata.json
+exp004,exp004 无季节,训练,35.342220874270424,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json
+exp004,exp004 无季节,检查点预测,0.2235471229068935,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json
+exp004,exp004 历史季节,训练,34.712980289012194,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json
+exp004,exp004 历史季节,检查点预测,0.22588141821324825,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json
+exp004,exp004 全年探索,训练,36.02507716487162,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json
+exp004,exp004 全年探索,检查点预测,0.2230394141515717,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json
+exp001,exp001 同口径重算,调度执行,19.06835708755534,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv
+exp002,exp002 正式风险,调度执行,907.7401532150108,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv
+exp002,exp002 同确定性,调度执行,17.69889313308522,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv
+exp003,exp003 正式,调度执行,12.398277213214897,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/dispatch_metrics.csv
+exp003,exp003 未校准,调度执行,12.66888682427816,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/dispatch_metrics.csv
+exp004,exp004 无季节,调度执行,11.677327542915007,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv
+exp004,exp004 历史季节,调度执行,12.273091197595932,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv
+exp004,exp004 全年探索,调度执行,12.331863418337887,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv
+exp002,exp002,费用校准,197.38028287503403,,历史阶段记录；exp002含四问。缺失不填零,data/results/exp002/stage_timings.json
+exp003,exp003,费用校准,,,历史阶段记录；exp002含四问。缺失不填零,data/results/exp003/stage_timings.json
+exp004,exp004,费用校准,,0.0,不适用：未实施费用回选,experiments/problem2/exp004/protocol.json

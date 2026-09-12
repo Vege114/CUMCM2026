@@ -1,0 +1,4 @@
+﻿strategy,mode,completed_days,last_date,status,failure_date,failure_slot,failure_status,failed_layer,failed_gap,failed_candidate_executed,numerical_retries,solver_calls,max_reported_gap
+场景计划＋场景滚动,scenario,55,2025-03-27,paused_by_user,,,,,,False,5,15950,1.0
+点计划＋点滚动,point,284,2025-11-11,paused_by_user,,,,,,False,52,82360,inf
+点计划＋场景滚动,point_scenario_control,22,2025-02-22,solver_stopped,2025-02-23,8.0,1.0,2.0,0.8512594690310505,False,46,6380,1.0

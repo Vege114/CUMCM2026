@@ -1,0 +1,74 @@
+{
+  "stages": [
+    {
+      "stage": "cost",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.08220579102635384,
+      "variables": 1152,
+      "nodes": 144,
+      "integer_variables": 144,
+      "objective": 32155.06632819104,
+      "max_constraint_residual": 1.8189894035458565e-12,
+      "max_overlap_kwh": 0.0,
+      "numerical_attempts": [
+        {
+          "status": 0,
+          "mip_feasibility_tolerance": 1e-06,
+          "max_physical_or_integrality_residual": 6.252776074688882e-12
+        }
+      ],
+      "numerical_retry_count": 0,
+      "mip_gap": 0.0,
+      "mip_dual_bound": 32155.06632819104,
+      "mip_node_count": 1,
+      "max_binary_residual": 1.4876988529977098e-14,
+      "max_exclusivity_residual": 6.252776074688882e-12
+    },
+    {
+      "stage": "smoothness",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.3004973749630153,
+      "variables": 1152,
+      "nodes": 144,
+      "integer_variables": 144,
+      "objective": 0.023379841610527762,
+      "max_constraint_residual": 1.0913936421275139e-11,
+      "max_overlap_kwh": 0.0,
+      "numerical_attempts": [
+        {
+          "status": 0,
+          "mip_feasibility_tolerance": 1e-06,
+          "max_physical_or_integrality_residual": 2.8535396268125623e-11
+        }
+      ],
+      "numerical_retry_count": 0,
+      "mip_gap": 0.0,
+      "mip_dual_bound": 0.023379841610527762,
+      "mip_node_count": 1,
+      "max_binary_residual": 3.419486915845482e-14,
+      "max_exclusivity_residual": 2.8535396268125623e-11
+    }
+  ],
+  "stage_count": 2,
+  "first_cost": 32155.06632819104,
+  "second_cost": 32187.22149451924,
+  "budget": 32187.221494519228,
+  "expected_tv_kw": 33666.97191915998,
+  "quality_objective": 0.023379841610527762,
+  "max_overlap_kwh": 0.0,
+  "overlap_nodes": 0,
+  "certified_no_overlap": true,
+  "cost_scope": "tree_expected_total",
+  "first_expected_tv_kw": 45408.29449967489,
+  "model_class": "MILP",
+  "strict_mutual_exclusion": true,
+  "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+  "mip_rel_gap_requested": 0.0,
+  "physical_acceptance_tolerance": 1e-06,
+  "integer_tolerance_retry": [
+    1e-06,
+    1e-10
+  ]
+}

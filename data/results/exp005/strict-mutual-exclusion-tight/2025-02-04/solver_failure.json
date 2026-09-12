@@ -1,0 +1,40 @@
+{
+  "date": "2025-02-04",
+  "scope": "execution",
+  "slot": 0,
+  "state": {
+    "soc": 1200.0,
+    "previous_power_kw": -0.003228449491189167
+  },
+  "horizon": 144,
+  "nodes": 144,
+  "stages": [
+    {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.026479499996639788,
+      "variables": 1152,
+      "integer_variables": 144,
+      "mip_gap": 0.0,
+      "mip_dual_bound": 0.0,
+      "mip_node_count": 1,
+      "max_binary_residual": 2.6867397195928788e-14,
+      "max_exclusivity_residual": 2.2396307031158358e-11,
+      "max_overlap_kwh": 0.0
+    },
+    {
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "seconds": 60.01020812499337,
+      "variables": 1152,
+      "integer_variables": 144,
+      "mip_gap": 0.9782698252516342,
+      "mip_dual_bound": 0.000655465455116376,
+      "mip_node_count": 25628,
+      "max_binary_residual": 1.2878587085651816e-14,
+      "max_exclusivity_residual": 1.1596057447604835e-11,
+      "max_overlap_kwh": 0.0
+    }
+  ],
+  "status": 1
+}

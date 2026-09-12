@@ -1,0 +1,62 @@
+{
+  "scope": "execution",
+  "slot": 34,
+  "state": {
+    "soc": 10800.0,
+    "previous_power_kw": 1000.0000000000072
+  },
+  "metadata": {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.01056479208637029,
+        "variables": 2498,
+        "nodes": 398,
+        "integer_variables": 0,
+        "objective": 231.62907692835557,
+        "max_constraint_residual": 6.934897101018578e-12,
+        "max_overlap_kwh": 0.0,
+        "overlap_nodes": 0,
+        "expected_overlap_kwh": -1.1937117960769683e-12,
+        "expected_throughput_kwh": 29614.136936327784,
+        "current_overlap_kwh": -1.1937117960769683e-12,
+        "horizon": 110
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.04149033303838223,
+        "variables": 2498,
+        "nodes": 398,
+        "integer_variables": 0,
+        "objective": 0.0352595887947752,
+        "max_constraint_residual": 6.934897101018578e-12,
+        "max_overlap_kwh": 1.074340616469271e-11,
+        "overlap_nodes": 0,
+        "expected_overlap_kwh": 1.074340616469271e-11,
+        "expected_throughput_kwh": 29669.709117682793,
+        "current_overlap_kwh": 1.074340616469271e-11,
+        "horizon": 110
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 231.62907692835557,
+    "second_cost": 231.8608060052839,
+    "budget": 231.8608060052839,
+    "expected_tv_kw": 37005.36512719175,
+    "quality_objective": 0.03525958879477519,
+    "max_overlap_kwh": 1.074340616469271e-11,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 40430.229588703514,
+    "model_class": "LP",
+    "strict_mutual_exclusion": false,
+    "beta": 0.01,
+    "physical_acceptance_tolerance": 1e-06,
+    "overlap_is_diagnostic": true
+  }
+}

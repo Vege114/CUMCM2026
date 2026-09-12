@@ -1,0 +1,13 @@
+{
+  "status": "paused_by_user",
+  "completed_days": 284,
+  "last_completed_date": "2025-11-11",
+  "next_day_index": 284,
+  "next_day_initial_state": {
+    "soc": 1200.0,
+    "previous_power_kw": -82.5440819907427
+  },
+  "pid": 76434,
+  "active_day_note": "Current unfinished-day in-memory state retained by SIGSTOP; only complete days below are durable, audited daily results.",
+  "seconds": null
+}

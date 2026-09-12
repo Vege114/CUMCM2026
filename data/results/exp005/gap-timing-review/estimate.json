@@ -1,0 +1,105 @@
+{
+  "scope": "334-day main scenario policy from day one, one job on current machine; excludes controls and report/export",
+  "status": "awaiting_user_decision_no_full_rerun_started",
+  "rows": [
+    {
+      "requested_gap": 0.0,
+      "weighted_55_day_seconds": 2116.6833355833182,
+      "flat_334_day_hours": 3.570566838812264,
+      "mature_seconds_per_day": 55.29092227688085,
+      "warmup_plus_mature_334_day_hours": 4.955853769881653,
+      "planning_range_hours": [
+        5,
+        7
+      ],
+      "max_observed_relative_gap": 1.4050688344824783e-07,
+      "max_constraint_residual": 4.1256985383597566e-08,
+      "max_overlap_kwh": 4.527711897198715e-13,
+      "stratum_current_to_historical_time_ratios": {
+        "midnight": 0.44831342622191445,
+        "rolling_lt_0.2s": 0.6286948121190025,
+        "rolling_0.2_to_0.75s": 0.6732335985158457,
+        "rolling_0.75_to_2s": 0.4895483026878689,
+        "rolling_2_to_7s": 0.48690169587568594,
+        "rolling_ge_7s": 0.5896215831559645
+      },
+      "estimated_speedup_fraction_vs_paired_zero_gap": 0.0
+    },
+    {
+      "requested_gap": 0.0005,
+      "weighted_55_day_seconds": 1806.3515772281805,
+      "flat_334_day_hours": 3.0470779131020826,
+      "mature_seconds_per_day": 47.50826612932548,
+      "warmup_plus_mature_334_day_hours": 4.256986096966446,
+      "planning_range_hours": [
+        4.5,
+        6.5
+      ],
+      "max_observed_relative_gap": 0.00039986665681379424,
+      "max_constraint_residual": 4.345421647714383e-08,
+      "max_overlap_kwh": 2.7644133016503562e-09,
+      "stratum_current_to_historical_time_ratios": {
+        "midnight": 0.40309571496046287,
+        "rolling_lt_0.2s": 0.6223050875953693,
+        "rolling_0.2_to_0.75s": 0.5489682233221802,
+        "rolling_0.75_to_2s": 0.34264551366587975,
+        "rolling_2_to_7s": 0.5794151987742773,
+        "rolling_ge_7s": 0.28287094138861496
+      },
+      "estimated_speedup_fraction_vs_paired_zero_gap": 0.14661227456095416
+    },
+    {
+      "requested_gap": 0.001,
+      "weighted_55_day_seconds": 1714.784324386183,
+      "flat_334_day_hours": 2.8926159815403287,
+      "mature_seconds_per_day": 44.93294425205208,
+      "warmup_plus_mature_334_day_hours": 4.0272657745166995,
+      "planning_range_hours": [
+        4,
+        6
+      ],
+      "max_observed_relative_gap": 0.0008423870298913833,
+      "max_constraint_residual": 2.294690659709886e-09,
+      "max_overlap_kwh": 4.527711897198715e-13,
+      "stratum_current_to_historical_time_ratios": {
+        "midnight": 0.4021987241762817,
+        "rolling_lt_0.2s": 0.6219010600779368,
+        "rolling_0.2_to_0.75s": 0.5290781932140757,
+        "rolling_0.75_to_2s": 0.30871216315828176,
+        "rolling_2_to_7s": 0.5372152628702354,
+        "rolling_ge_7s": 0.28378526329344284
+      },
+      "estimated_speedup_fraction_vs_paired_zero_gap": 0.18987205333970247
+    }
+  ],
+  "method": "Calibrate each of six historical timing strata by sum(current paired wall time)/sum(historical solver time), then apply to all 7,975 saved windows. Mature extrapolation uses first 16 historical days plus 318 times the adjusted final-28-day mean.",
+  "range_type": "Engineering planning allowance, not a statistical confidence interval",
+  "uncertainty": [
+    "18 duration-quantile windows, not a randomized annual sample",
+    "Only February/March states and scenarios observed; later seasons and changed incumbents may alter search complexity",
+    "Historical runs overlapped other jobs; paired gap-zero timing separates current speed from gap relaxation",
+    "Gap relaxation can change the subsequent state and future MILP instances",
+    "Any later unaccepted solve can still stop the run at the unchanged 60-second stage cap"
+  ],
+  "report_and_excel_planning_minutes": [
+    15,
+    30
+  ],
+  "report_and_excel_time_is": "Untimed workflow allowance, conditional on complete validated 334-day replay",
+  "stress_results": [
+    {
+      "gap": 0.001,
+      "success": false,
+      "seconds": 60.20169000001624,
+      "last_status": 1,
+      "last_gap": 0.8512594690310505
+    },
+    {
+      "gap": 0.0005,
+      "success": false,
+      "seconds": 60.22013304196298,
+      "last_status": 1,
+      "last_gap": 0.8512594690310505
+    }
+  ]
+}

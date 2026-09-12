@@ -1,0 +1,17 @@
+{
+  "result2.xlsx": {
+    "days": 334,
+    "intervals_per_day": 144,
+    "total_cost": 14717882.165475884,
+    "violations": 0,
+    "strict_mutual_exclusion": false,
+    "beta": 0.1,
+    "model_class": "LP",
+    "observed_overlap_intervals": 0,
+    "max_raw_overlap_kwh": 7.673861546209079e-12,
+    "original_template_unchanged": true,
+    "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+    "saved_workbook_readback": "passed",
+    "sha256": "a2578c3a3c21c1f2e6263c424d0fc4858c5f01d1c24f973c7a0bd3b178bc08a7"
+  }
+}

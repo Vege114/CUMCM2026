@@ -1,0 +1,594 @@
+[
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.24871441698633134,
+        "variables": 3672,
+        "nodes": 504,
+        "integer_variables": 504,
+        "objective": 0.0,
+        "max_constraint_residual": 1.8189894035458565e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 1.8189894035458565e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 8.553482668558768e-16,
+        "max_exclusivity_residual": 5.702321779039177e-13
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.6411392500158399,
+        "variables": 3672,
+        "nodes": 504,
+        "integer_variables": 504,
+        "objective": 0.022690055089232553,
+        "max_constraint_residual": 6.366462912410498e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 1.2428732176772428e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.022690055089232553,
+        "mip_node_count": 1,
+        "max_binary_residual": 1.2428732176772428e-07,
+        "max_exclusivity_residual": 3.410605131648481e-13
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 0.0001,
+    "budget": 0.0001,
+    "expected_tv_kw": 32673.679328494884,
+    "quality_objective": 0.022690055089232553,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 44960.56341765826,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.28273312491364777,
+        "variables": 3412,
+        "nodes": 467,
+        "integer_variables": 467,
+        "objective": 0.0,
+        "max_constraint_residual": 1.8189894035458565e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 1.8189894035458565e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 8.104628079763643e-15,
+        "max_exclusivity_residual": 2.7755575615628914e-13
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.522761833970435,
+        "variables": 3412,
+        "nodes": 467,
+        "integer_variables": 467,
+        "objective": 0.02209128017626001,
+        "max_constraint_residual": 7.275957614183426e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 3.083777443402269e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.02209128017626001,
+        "mip_node_count": 1,
+        "max_binary_residual": 3.083777443402269e-07,
+        "max_exclusivity_residual": 0.0
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 9.999999996893177e-05,
+    "budget": 0.0001,
+    "expected_tv_kw": 31590.530652051828,
+    "quality_objective": 0.02209128017626001,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 47532.93591270792,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.33747599995695055,
+        "variables": 3404,
+        "nodes": 466,
+        "integer_variables": 466,
+        "objective": 0.0,
+        "max_constraint_residual": 2.8421709430404007e-12,
+        "max_overlap_kwh": 7.579122514774402e-14,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 2.8421709430404007e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 1.1102230246251565e-15,
+        "max_exclusivity_residual": 9.094947017729282e-13
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.5536946249194443,
+        "variables": 3404,
+        "nodes": 466,
+        "integer_variables": 466,
+        "objective": 0.021542627219754796,
+        "max_constraint_residual": 5.4569682106375694e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 2.3881977873063676e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.021542627219754796,
+        "mip_node_count": 1,
+        "max_binary_residual": 2.3881977873063676e-07,
+        "max_exclusivity_residual": 0.0
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 0.0001,
+    "budget": 0.0001,
+    "expected_tv_kw": 30590.53065205182,
+    "quality_objective": 0.021542627219754796,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 49487.1641198496,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.295339958043769,
+        "variables": 3396,
+        "nodes": 465,
+        "integer_variables": 465,
+        "objective": 0.0,
+        "max_constraint_residual": 6.366462912410498e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 6.366462912410498e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 2.4424906541753444e-15,
+        "max_exclusivity_residual": 2.0463630789890885e-12
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.294865750009194,
+        "variables": 3396,
+        "nodes": 465,
+        "integer_variables": 465,
+        "objective": 0.021617089962662907,
+        "max_constraint_residual": 1.035386919884892e-11,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 2.2626405349335243e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.021617089962662907,
+        "mip_node_count": 1,
+        "max_binary_residual": 2.2626405349335243e-07,
+        "max_exclusivity_residual": 5.684341886080801e-13
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 0.0001,
+    "budget": 0.0001,
+    "expected_tv_kw": 30480.096847354715,
+    "quality_objective": 0.021617089962662907,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 51924.97705196477,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.3138653750065714,
+        "variables": 3136,
+        "nodes": 428,
+        "integer_variables": 428,
+        "objective": 0.0,
+        "max_constraint_residual": 1.8189894035458565e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 1.8189894035458565e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 4.440892098500626e-16,
+        "max_exclusivity_residual": 3.410605131648481e-13
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.3461915838997811,
+        "variables": 3136,
+        "nodes": 428,
+        "integer_variables": 428,
+        "objective": 0.021760758836983522,
+        "max_constraint_residual": 1.3642420526593924e-11,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 2.2626405360437474e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.021760758836983522,
+        "mip_node_count": 1,
+        "max_binary_residual": 2.2626405360437474e-07,
+        "max_exclusivity_residual": 2.2737367544323206e-13
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 9.999999999645328e-05,
+    "budget": 0.0001,
+    "expected_tv_kw": 30465.06237177695,
+    "quality_objective": 0.021760758836983522,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 51905.30008719961,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.24398787505924702,
+        "variables": 3128,
+        "nodes": 427,
+        "integer_variables": 427,
+        "objective": 0.0,
+        "max_constraint_residual": 2.1600499167107046e-12,
+        "max_overlap_kwh": 8.515891560038228e-14,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 2.1600499167107046e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 5.322400164507427e-15,
+        "max_exclusivity_residual": 1.2976199017918507e-12
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.21973208396229893,
+        "variables": 3128,
+        "nodes": 427,
+        "integer_variables": 427,
+        "objective": 0.02191731105883233,
+        "max_constraint_residual": 7.389644451905042e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 7.389644451905042e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.02191731105883233,
+        "mip_node_count": 1,
+        "max_binary_residual": 0.0,
+        "max_exclusivity_residual": 0.0
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 9.999999945029004e-05,
+    "budget": 0.0001,
+    "expected_tv_kw": 30465.06237177695,
+    "quality_objective": 0.021917311058832333,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 48099.775504225785,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.27465970802586526,
+        "variables": 3372,
+        "nodes": 462,
+        "integer_variables": 462,
+        "objective": 0.0,
+        "max_constraint_residual": 3.296918293926865e-12,
+        "max_overlap_kwh": 1.8947806286936004e-14,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 6.821210263296962e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 8.215650382226158e-15,
+        "max_exclusivity_residual": 6.821210263296962e-12
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.37120074999984354,
+        "variables": 3372,
+        "nodes": 462,
+        "integer_variables": 462,
+        "objective": 0.022087026700981654,
+        "max_constraint_residual": 1.0231815394945443e-11,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 4.889763928206392e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.022087026700981654,
+        "mip_node_count": 1,
+        "max_binary_residual": 4.889763928206392e-07,
+        "max_exclusivity_residual": 0.0
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 9.999999996893177e-05,
+    "budget": 0.0001,
+    "expected_tv_kw": 30480.096847354704,
+    "quality_objective": 0.022087026700981654,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 47838.792934475045,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  },
+  {
+    "stages": [
+      {
+        "stage": "cost",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.34667116694618016,
+        "variables": 3364,
+        "nodes": 461,
+        "integer_variables": 461,
+        "objective": 0.0,
+        "max_constraint_residual": 1.0913936421275139e-11,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 1.0913936421275139e-11
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 4.002083694694326e-15,
+        "max_exclusivity_residual": 2.3293093074228037e-13
+      },
+      {
+        "stage": "smoothness",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.3562155000399798,
+        "variables": 3364,
+        "nodes": 461,
+        "integer_variables": 461,
+        "objective": 0.022248245873981536,
+        "max_constraint_residual": 6.87805368215777e-12,
+        "max_overlap_kwh": 0.0,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 7.622619273561781e-07
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.022248245873981536,
+        "mip_node_count": 1,
+        "max_binary_residual": 7.622619273561781e-07,
+        "max_exclusivity_residual": 2.0463630789890885e-12
+      }
+    ],
+    "stage_count": 2,
+    "first_cost": 0.0,
+    "second_cost": 0.0001,
+    "budget": 0.0001,
+    "expected_tv_kw": 30480.09684735471,
+    "quality_objective": 0.022248245873981536,
+    "max_overlap_kwh": 0.0,
+    "overlap_nodes": 0,
+    "certified_no_overlap": true,
+    "cost_scope": "remaining_expected_emergency",
+    "first_expected_tv_kw": 51003.532889012546,
+    "model_class": "MILP",
+    "strict_mutual_exclusion": true,
+    "exclusivity": "c <= M*z; d <= M*(1-z); z binary",
+    "mip_rel_gap_requested": 0.0,
+    "physical_acceptance_tolerance": 1e-06,
+    "integer_tolerance_retry": [
+      1e-06,
+      1e-10
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "status": "preflight_complete",
+  "windows": 20,
+  "solves": 100,
+  "seconds": 5.1652709590271115,
+  "original_code_unchanged": true,
+  "model_class": "LP",
+  "full_rerun_started": false,
+  "penalty": "normalized throughput, second layer only",
+  "betas": [
+    0.0,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ]
+}

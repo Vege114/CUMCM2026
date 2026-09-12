@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "check": "失败窗口原样复算最大差",
+      "value": 0.0,
+      "limit": 1e-06,
+      "unit": "数值原单位",
+      "passed": true
+    },
+    {
+      "check": "81段供需平衡最大残差",
+      "value": 2.2737367544323206e-13,
+      "limit": 1e-06,
+      "unit": "kWh",
+      "passed": true
+    },
+    {
+      "check": "81段SOC递推最大残差",
+      "value": 9.094947017729282e-13,
+      "limit": 1e-06,
+      "unit": "kWh",
+      "passed": true
+    },
+    {
+      "check": "81段实际供需与附件2最大差",
+      "value": 0.0,
+      "limit": 0.0,
+      "unit": "kW",
+      "passed": true
+    },
+    {
+      "check": "81段普通计划变更最大量",
+      "value": 0.0,
+      "limit": 0.0,
+      "unit": "kWh",
+      "passed": true
+    },
+    {
+      "check": "81段最大充放电重叠",
+      "value": 2.3836340308965493e-11,
+      "limit": 1e-06,
+      "unit": "kWh",
+      "passed": true
+    },
+    {
+      "check": "81段最大相邻功率变化",
+      "value": 1000.0000000000007,
+      "limit": 1000.0,
+      "unit": "kW",
+      "passed": true
+    },
+    {
+      "check": "第二层失败窗口能量/SOC最大残差",
+      "value": 7.220665093499467e-13,
+      "limit": 1e-06,
+      "unit": "kWh",
+      "passed": true
+    },
+    {
+      "check": "第二层最大相邻功率变化",
+      "value": 1000.0,
+      "limit": 1000.0,
+      "unit": "kW",
+      "passed": true
+    },
+    {
+      "check": "第一层失败窗口能量/SOC最大残差",
+      "value": 8.242295734817162e-13,
+      "limit": 1e-06,
+      "unit": "kWh",
+      "passed": true
+    },
+    {
+      "check": "第一层最大相邻功率变化",
+      "value": 1000.0,
+      "limit": 1000.0,
+      "unit": "kW",
+      "passed": true
+    },
+    {
+      "check": "第二层未来节点最大充放电重叠",
+      "value": 566.5937811694077,
+      "limit": 1e-06,
+      "unit": "kWh",
+      "passed": false
+    }
+  ],
+  "test_suite_passed": true,
+  "physical_certification": false,
+  "completed_days": 0,
+  "executed_intervals": 81,
+  "stopped_before_slot": 81
+}

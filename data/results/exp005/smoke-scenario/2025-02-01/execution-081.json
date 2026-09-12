@@ -1,0 +1,38 @@
+{
+  "stages": [
+    {
+      "stage": "cost",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.0018924999749287963,
+      "variables": 441,
+      "nodes": 63,
+      "integer_variables": 0,
+      "objective": 0.0,
+      "max_constraint_residual": 9.094947017729282e-13,
+      "max_overlap_kwh": 0.0
+    },
+    {
+      "stage": "smoothness",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.0030101670417934656,
+      "variables": 441,
+      "nodes": 63,
+      "integer_variables": 0,
+      "objective": 0.013416674264532307,
+      "max_constraint_residual": 6.821210263296962e-13,
+      "max_overlap_kwh": 566.5937811694077
+    }
+  ],
+  "stage_count": 2,
+  "first_cost": 0.0,
+  "second_cost": 0.0001,
+  "budget": 0.0001,
+  "expected_tv_kw": 8452.504786655352,
+  "quality_objective": 0.013416674264532306,
+  "max_overlap_kwh": 566.5937811694077,
+  "overlap_nodes": 1,
+  "certified_no_overlap": false,
+  "cost_scope": "remaining_expected_emergency"
+}

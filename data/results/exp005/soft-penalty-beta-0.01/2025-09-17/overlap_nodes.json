@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2025-09-17",
+    "scope": "execution",
+    "replay_slot": 36,
+    "layer": 2,
+    "node": 109,
+    "future_slot": 108,
+    "probability": 0.125,
+    "charge_kwh": 256.27736619840897,
+    "discharge_kwh": 230.6496295785681,
+    "overlap_kwh": 230.6496295785681,
+    "end_soc_kwh": 10800.0,
+    "net_power_kw": 153.76641971904525
+  }
+]
