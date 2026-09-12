@@ -1,5 +1,7 @@
 # 实验报告索引
 
+- [exp007：PPO 规划，电池动作减少但费用上升](experiments/exp007/report.md) · [离线交互报告](experiments/exp007/report.html) · [主组工作簿](experiments/exp007/result2.xlsx) · [历次对比证据](experiments/exp007/evidence/relative_comparison.csv)
+
 - [exp006：第二问条件误差树与动态规划替代路径](experiments/exp006/report.md) · [离线交互报告](experiments/exp006/report.html) · [绝对与相对变化](experiments/exp006/evidence/relative_comparison.csv) · [费用优先对照工作簿](experiments/exp006/greedy_execution/result2.xlsx)
 
 - [exp004：第二问预测组合与季节预判消融](experiments/exp004/report.md) · [离线交互报告](experiments/exp004/report.html) · [绝对与相对变化](experiments/exp004/evidence/relative_comparison.csv)

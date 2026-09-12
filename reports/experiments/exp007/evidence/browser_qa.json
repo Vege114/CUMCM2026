@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "review_method": "CUA native browser screenshots, DOM geometry, accessibility state and semantic control actions",
+  "offline_report_html_sha256": "1be4315984c6a11b21e7e526dcbe761844383826ad91578a578e661293d5f407",
+  "source_data_sha256": "1e957ddcf9017c388024fd563c1708d96c88cfb0ab78d9e2086a96ea0c773033",
+  "viewports_checked": [
+    {
+      "width": 1280,
+      "height": 720,
+      "report_document_width": 1280,
+      "report_scroll_width": 1280
+    },
+    {
+      "width": 360,
+      "height": 850,
+      "report_document_width": 360,
+      "report_scroll_width": 360
+    }
+  ],
+  "checks": {
+    "offline_report_loaded_with_complete_status": true,
+    "desktop_home_and_results_table_visually_reviewed": true,
+    "narrow_home_and_single_day_power_chart_visually_reviewed": true,
+    "no_document_horizontal_overflow": true,
+    "full_year_canvas_accessible_label_48096_points": true,
+    "four_random_day_canvas_labels_144_points_each": true,
+    "single_day_selector_changes_48096_to_144_points": true,
+    "native_date_keyboard_change_updates_date_and_curve": true,
+    "baseline_switch_to_exp006_primary": true,
+    "original_slot_slider_keyboard_changes_readout": true,
+    "two_workbook_relative_download_links_present": true,
+    "console_errors_or_warnings": [],
+    "inline_history_four_panels_desktop_and_narrow_reviewed": true,
+    "inline_history_cost_legend_switch_changes_marks": true,
+    "inline_battery_four_panels_desktop_and_narrow_reviewed": true,
+    "inline_battery_narrow_svg_widths": [
+      328,
+      328,
+      328,
+      328
+    ],
+    "inline_battery_text_outside_svg_bounds": [],
+    "inline_battery_legend_switch_updates_series": true,
+    "temporary_viewport_reset": true
+  },
+  "notes": [
+    "Programmatic date fill did not trigger React onChange; native date keyboard interaction was used and passed.",
+    "Browser screenshots were inspected in the tool transcript; this record does not claim saved PNG screenshots.",
+    "Inline output bytes remained identical when their manifest was rebound to final report_data.json."
+  ]
+}

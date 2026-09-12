@@ -1,0 +1,396 @@
+{
+  "passed": true,
+  "manual_visual_review": [
+    "history-costs",
+    "battery-random-days",
+    "history-errors",
+    "learning-curves",
+    "battery-full-evaluation",
+    "seed-costs",
+    "stage-timings",
+    "failure-case",
+    "battery-comparison",
+    "power-variation",
+    "monthly-costs",
+    "history-descriptive-only",
+    "daily-cost-differences",
+    "exp007__regularized_42-full"
+  ],
+  "all_files_parse": true,
+  "records": [
+    {
+      "figure_id": "history-costs",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        1275
+      ],
+      "visual_inspection": true,
+      "png_sha256": "c3e17b0759a323fea97e95f209a07f37c642e930a747326c0e46f8f40294e3f8",
+      "svg_sha256": "4a4918576da54e947665379cfa5671a225296b61d94b069809e662cbd4072fec"
+    },
+    {
+      "figure_id": "history-descriptive-only",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2080,
+        788
+      ],
+      "visual_inspection": true,
+      "png_sha256": "82049a85d0a5dcc81564537870954258d9672158b754a2df340ff3fe64db34a8",
+      "svg_sha256": "3f036ca822489240513b8b62c16c9a01b606f5ab99e1ba2d1cb73d0034b04b10"
+    },
+    {
+      "figure_id": "monthly-costs",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1400
+      ],
+      "visual_inspection": true,
+      "png_sha256": "a6759787b07a5260a67dfdd659186da545cb77675302e00ff3f72323fdb98656",
+      "svg_sha256": "cade57b5eb298a68c5a370653cff371378dac8b04c797eb9376608f6e0108dd3"
+    },
+    {
+      "figure_id": "seed-costs",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2420,
+        975
+      ],
+      "visual_inspection": true,
+      "png_sha256": "1c9a6b94e0f9af9657520d97621310fec64146b0f3457aa5f598e7fa961aaced",
+      "svg_sha256": "de1b69b9bfbdda1b5f9012deac4cd1fe04bc8d8e43a1537f29bc414ad1f6eed8"
+    },
+    {
+      "figure_id": "battery-comparison",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        1570
+      ],
+      "visual_inspection": true,
+      "png_sha256": "4341f2ef8f2074f232619934488fd9de8dcfe9f079aa0955fe0312eb7d084527",
+      "svg_sha256": "f6d26f02d1b847f8cf3fbc5d470446496dccaf78d2a7e18752e5059f17a247ed"
+    },
+    {
+      "figure_id": "power-variation",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        1570
+      ],
+      "visual_inspection": true,
+      "png_sha256": "fab9a975094e2425ba255aee9a1f00cb97c9f0fb6cb677344937d9dd357a692b",
+      "svg_sha256": "953d05ebb7ad6d13f96a1db13f637bbdbc0f38d2615670c246a30132770d9a35"
+    },
+    {
+      "figure_id": "history-errors",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2590,
+        1740
+      ],
+      "visual_inspection": true,
+      "png_sha256": "f3a998eb53d010e60df73b9ce9d4ca3b32fb8358c21364a28a7661faaa823cc5",
+      "svg_sha256": "4c3738240c16520cfdaec77d5d4a5347469714388c0961069a3dfd48e5eb0ca8"
+    },
+    {
+      "figure_id": "stage-timings",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2420,
+        975
+      ],
+      "visual_inspection": true,
+      "png_sha256": "ed906d5c2b813b6d627a8abab4b0cf1bf722d77059cb85c6bcb5b9e0565180ae",
+      "svg_sha256": "7f21c6d770a8b3cceb6769b38deb565c74986548c89f6f2b79999f5c1d001245"
+    },
+    {
+      "figure_id": "learning-curves",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2590,
+        1570
+      ],
+      "visual_inspection": true,
+      "png_sha256": "385d715d1a136d9019e22a0f79f509679dc7441ef6c05cec42cccd59118c7085",
+      "svg_sha256": "73103e89344c4018fb04b9d5c224a071ee795d11bd72bad36601fb56225dd1aa"
+    },
+    {
+      "figure_id": "daily-cost-differences",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2420,
+        1400
+      ],
+      "visual_inspection": true,
+      "png_sha256": "e7925960ba0c9caeecc77b5e81f118a36e3a66eee2189e33ad51d3bef3697ae7",
+      "svg_sha256": "d24c8adf099f97c316665f6893bba2263e295c945ebf6e888ba8a1e609d79313"
+    },
+    {
+      "figure_id": "failure-case",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2420,
+        1740
+      ],
+      "visual_inspection": true,
+      "png_sha256": "c574f464328b469c29dcd3da81877fea86605890f7aade354a9c416b8f3ebd17",
+      "svg_sha256": "4a529269afdd4e6f726ac0e7ae3c06def0e16339da563c2a7e322cd70f782855"
+    },
+    {
+      "figure_id": "battery-random-days",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        1565
+      ],
+      "visual_inspection": true,
+      "png_sha256": "ab10a4def43c7cb380ace2ac1586980c59dfcf8c149e0170a9db3405df791ba1",
+      "svg_sha256": "b432830feccb627897958a7d2a473883cac3217f69a44f0cf26499138dc7ca5e"
+    },
+    {
+      "figure_id": "battery-full-evaluation",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        3176
+      ],
+      "visual_inspection": true,
+      "png_sha256": "26a4495bca618871dc40411c8bac8b828e6fa1ae6bfa11e7ce86086a37e39784",
+      "svg_sha256": "64c0108538c04c0f4358f8762f5fe1b2177c5f00456be1e6b79258c6e07ae3a5"
+    },
+    {
+      "figure_id": "exp004__no_season-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "dfa9498a66bb1eb42a7bfa60d91bb62755105c442c136f25a8d1490eea24240c",
+      "svg_sha256": "90c0b2b800ffa63bf7dc316ddf719010f31b0d05ca9a0a528468a1ee7a01146f"
+    },
+    {
+      "figure_id": "exp004__no_season-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "8688774afa132773108cc17d35136c7fb37b2518f85f4c90977d7db7b87afe13",
+      "svg_sha256": "780b69059176c11c74fb278383ee49b585235b08e3e892b654759df170cc6120"
+    },
+    {
+      "figure_id": "exp006__primary-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "d3882c93349da9e9e0986c3c86060229781ccbaff086c2eff5e8b7e328e38e88",
+      "svg_sha256": "afd337d9fddddfbe417d32b0d19b2f52329ff3bda039422e561dff1f213e29d2"
+    },
+    {
+      "figure_id": "exp006__primary-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "32de48d5d6205c7c74fbf4eae4ad63a07f176023c431c8a47638f3cd9bff0b3e",
+      "svg_sha256": "5e1ec282323741817f32c165869a8541178e3a89ba033d52ce8c6bf88255fa44"
+    },
+    {
+      "figure_id": "exp006__greedy_execution-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "af233117b67531797c01f474a2c906962286645dc8e694b571411b1fbdba0dde",
+      "svg_sha256": "e069a956ab35653dc4d663caf6f338a1c5daba27016da174793a66e4a314f4d3"
+    },
+    {
+      "figure_id": "exp006__greedy_execution-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "7aaa52ee71024f4ed81ccd5e71de1ddd2f2446c07859caa0786d0e4511b50731",
+      "svg_sha256": "b1b7b09ef1068e229378c85511aa96c943398ca26608cd37f44f76fa70449412"
+    },
+    {
+      "figure_id": "exp007__regularized_42-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": true,
+      "png_sha256": "9b9274f4c416a14e2f7d87cdbd1b8674aab2e76fe4a849f48cebff47707c9da9",
+      "svg_sha256": "88bff98279de54543bc954dc70ead2f68434af2dfb9b19e76dc18fe18932f9cd"
+    },
+    {
+      "figure_id": "exp007__regularized_42-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "aac35159ea5d06ca017822809cda9c077b6dd2eb84cd414f941d06f7f629ed50",
+      "svg_sha256": "84c15071abef8963d917b43ef5ebbf85c29b356ac46cebdfa1e148367b465e51"
+    },
+    {
+      "figure_id": "exp007__regularized_2026-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "dca61a7e0d8bdd4db3180b91fb809227e8b959796ecefe4d6855b0e76ca2b1dc",
+      "svg_sha256": "95b394db1629883f7bf294d58d3eea9d46507b53c8fd94d78766af5be322564b"
+    },
+    {
+      "figure_id": "exp007__regularized_2026-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "af961c3d18155347786e8c5a15ca336f055a9135a256db419515bcf49a0b7cd1",
+      "svg_sha256": "10407bef86c0e4e60569c9acdf8dfddd8a8e8f718c020c9048a7fbe8690f2a1f"
+    },
+    {
+      "figure_id": "exp007__regularized_3407-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "534845c7f3af7bcb628d1c752ac353d0d66b3103ebdcc00e283edb5358b5badb",
+      "svg_sha256": "3076adf0acd5046330bec9564ccd070db4276ef581e8c860d1acb7d111da70a8"
+    },
+    {
+      "figure_id": "exp007__regularized_3407-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "66a34d4d7bd0e714a628cae19d9db60e86ff3fb13aae5fd63559150f3c32755a",
+      "svg_sha256": "bddcfad28c2e32fb2f472ce38614d68db8baa181d3bbb7f045ce29ce6d9b7bb9"
+    },
+    {
+      "figure_id": "exp007__cost_only_42-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "8c0c06f212761adaaf91e9008309867a1067bf9f0a245df3f0fb93ff06e76eaf",
+      "svg_sha256": "38742bd4e093d09de060a9798dda21cf957d25ad35d832a0b236272f35b608ef"
+    },
+    {
+      "figure_id": "exp007__cost_only_42-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "2bb06e4f1c0917935bbed872fc15879ae923bb4be1aaa64b00a84bbc4c3c2a8a",
+      "svg_sha256": "7c41fe6c4c13df9a5a3bd7f0081a5607829e3a5c4f255084399e90ecb235faa0"
+    },
+    {
+      "figure_id": "exp007__cost_only_2026-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "354465cac1feeb6a190e8503a3d843b3d80863a51ef6043938a3e1a7423fd6b7",
+      "svg_sha256": "bb87279e946a8014d95a1db19933ca3da6f4679a6b7b3128886f3358192ed431"
+    },
+    {
+      "figure_id": "exp007__cost_only_2026-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "c58a7b956ee914dab40da0471e4b6f857bd7040b09f6cb7cd0d749a7aca6ef28",
+      "svg_sha256": "cf24e84f6f47badd38f06ca03ddcb7b14c7963462247ee2c7bd540ce89f8e09e"
+    },
+    {
+      "figure_id": "exp007__cost_only_3407-full",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2760,
+        805
+      ],
+      "visual_inspection": false,
+      "png_sha256": "7f53e19b2926006028377c322b9799e48a7c1befc27f799a8ec1a8465e7013f9",
+      "svg_sha256": "34b965477d39285dcf7f3b6b20dc9ff289c874618d60503d8322da8f547a3b2a"
+    },
+    {
+      "figure_id": "exp007__cost_only_3407-random",
+      "png_valid": true,
+      "svg_valid": true,
+      "png_pixels": [
+        2250,
+        1315
+      ],
+      "visual_inspection": false,
+      "png_sha256": "4b423859b8607bd738d08886f2605fc190b808eaf81072f5cd6521cc558f8a6b",
+      "svg_sha256": "5ce16d3dcc5836ea09ba0e920cd27ab301a63919f0f0de957175a1257ea38f53"
+    }
+  ],
+  "repair": "Moved history-cost component legend outside marks; added explicit timing values and final 2026-01-01 endpoint label. Re-viewed repaired PNGs; no clipping or overlapping labels observed in reviewed figures.",
+  "scope": "Standalone figure QA; report/browser QA is separate."
+}

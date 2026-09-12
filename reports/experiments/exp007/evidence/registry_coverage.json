@@ -1,0 +1,65 @@
+{
+  "experiments": [
+    {
+      "experiment": "exp001",
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/.work/q2-rl-planning/reports/registry/exp001.json",
+      "sha256": "03dcdf0382c96acd2120ab8fbdf2f95c2e33e4353b526a7125345f94017bcd79",
+      "bytes": 33954,
+      "purpose": "original experiment role and protocol",
+      "snapshot": "evidence/history/registries/exp001.json",
+      "included": true,
+      "restriction": "retain original/exploratory exclusions and original roles"
+    },
+    {
+      "experiment": "exp002",
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/.work/q2-rl-planning/reports/registry/exp002.json",
+      "sha256": "0e8c2812f8bcde8dbedabab5f1612b7c3fca65f45990ea28a16c4eb3f82a38b5",
+      "bytes": 22037,
+      "purpose": "original experiment role and protocol",
+      "snapshot": "evidence/history/registries/exp002.json",
+      "included": true,
+      "restriction": "retain original/exploratory exclusions and original roles"
+    },
+    {
+      "experiment": "exp003",
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/.work/q2-rl-planning/reports/registry/exp003.json",
+      "sha256": "dcbbe16820a2eb76a6ea96881ab98132d637825f236789f10ca77a039b2d6fda",
+      "bytes": 13925,
+      "purpose": "original experiment role and protocol",
+      "snapshot": "evidence/history/registries/exp003.json",
+      "included": true,
+      "restriction": "retain original/exploratory exclusions and original roles"
+    },
+    {
+      "experiment": "exp004",
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/.work/q2-rl-planning/reports/registry/exp004.json",
+      "sha256": "e3342b25e50c9b667b95821689bfc8743831f2e0db26bcfa6177857e7f79b008",
+      "bytes": 52935,
+      "purpose": "original experiment role and protocol",
+      "snapshot": "evidence/history/registries/exp004.json",
+      "included": true,
+      "restriction": "retain original/exploratory exclusions and original roles"
+    },
+    {
+      "experiment": "exp005",
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/registry/exp005.json",
+      "sha256": "5af3de5bdf08706696eea4ceb4a57d072b9a957bad61eef16d46bb0b6b52c43f",
+      "bytes": 10959,
+      "purpose": "original experiment role and protocol",
+      "snapshot": "evidence/history/registries/exp005.json",
+      "included": true,
+      "restriction": "different hard ramp / relaxed controller / emergency charging; descriptive only"
+    },
+    {
+      "experiment": "exp006",
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/.work/q2-rl-planning/reports/registry/exp006.json",
+      "sha256": "92cd6b7d2adeee0df5ef597260070ee40c1ec0c8f34f8ba97c8a6d091e8cd14e",
+      "bytes": 62710,
+      "purpose": "original experiment role and protocol",
+      "snapshot": "evidence/history/registries/exp006.json",
+      "included": true,
+      "restriction": "retain original/exploratory exclusions and original roles"
+    }
+  ],
+  "note": "All exp001–006 read; exp005 is completed but protocol-incompatible. No historical files rewritten."
+}

@@ -1,0 +1,116 @@
+experiment,label,stage,seconds,groups,scope,source,name
+exp001,exp001,训练,5901.69483092392,165,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp001/training_metadata.json,
+exp001,exp001,检查点预测,,165,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp001/training_metadata.json,
+exp002,exp002,训练,675.324327584938,33,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp002/training_metadata.json,
+exp002,exp002,检查点预测,3.40179558319505,33,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp002/training_metadata.json,
+exp003,exp003,训练,390.405616211356,33,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp003/training_metadata.json,
+exp003,exp003,检查点预测,1.41114771016873,33,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp003/training_metadata.json,
+exp004,exp004 无季节,训练,35.3422208742704,33,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,
+exp004,exp004 无季节,检查点预测,0.223547122906893,33,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,
+exp004,exp004 历史季节,训练,34.7129802890122,33,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,
+exp004,exp004 历史季节,检查点预测,0.225881418213248,33,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,
+exp004,exp004 全年探索,训练,36.0250771648716,33,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,
+exp004,exp004 全年探索,检查点预测,0.223039414151572,33,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,
+exp001,exp001 同口径重算,调度执行,19.0683570875553,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv,
+exp002,exp002 正式风险,调度执行,907.740153215011,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv,
+exp002,exp002 同确定性,调度执行,17.6988931330852,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv,
+exp003,exp003 正式,调度执行,12.3982772132149,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/dispatch_metrics.csv,
+exp003,exp003 未校准,调度执行,12.6688868242782,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/dispatch_metrics.csv,
+exp004,exp004 无季节,调度执行,11.677327542915,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv,
+exp004,exp004 历史季节,调度执行,12.2730911975959,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv,
+exp004,exp004 全年探索,调度执行,12.3318634183379,334,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv,
+exp002,exp002,费用校准,197.380282875034,,历史阶段记录；exp002含四问。缺失不填零,data/results/exp002/stage_timings.json,
+exp003,exp003,费用校准,,,历史阶段记录；exp002含四问。缺失不填零,data/results/exp003/stage_timings.json,
+exp004,exp004,费用校准,,0,不适用：未实施费用回选,experiments/problem2/exp004/protocol.json,
+exp006,exp006 正式·树DP,条件分布准备,1.12827545648906,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary
+exp006,exp006 正式·树DP,动态规划,7.49533516680822,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary
+exp006,exp006 正式·树DP,实际执行,0.0743357532192021,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary
+exp006,exp006 正式·树DP,调度执行,8.69794637651648,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary
+exp006,exp006 正式·树DP,存储,0.199688376043923,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary
+exp006,exp006 正式·树DP,树拟合（含在条件准备）,0.801180331269279,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary
+exp006,exp006 树DP·种子2026,条件分布准备,1.17012159526348,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_2026
+exp006,exp006 树DP·种子2026,动态规划,7.87211984570604,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_2026
+exp006,exp006 树DP·种子2026,实际执行,0.0782877800520509,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_2026
+exp006,exp006 树DP·种子2026,调度执行,9.12052922102157,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_2026
+exp006,exp006 树DP·种子2026,存储,0.190573542146012,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_2026
+exp006,exp006 树DP·种子2026,树拟合（含在条件准备）,0.831817289348692,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_2026
+exp006,exp006 树DP·种子3407,条件分布准备,1.17519103363156,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_3407
+exp006,exp006 树DP·种子3407,动态规划,7.88326995866373,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_3407
+exp006,exp006 树DP·种子3407,实际执行,0.0777201170567423,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_3407
+exp006,exp006 树DP·种子3407,调度执行,9.13618110935204,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_3407
+exp006,exp006 树DP·种子3407,存储,0.191867290413938,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_3407
+exp006,exp006 树DP·种子3407,树拟合（含在条件准备）,0.833890376496129,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,seed_3407
+exp006,exp006 历史季节·树DP,条件分布准备,1.16330216627102,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42
+exp006,exp006 历史季节·树DP,动态规划,7.849160992424,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42
+exp006,exp006 历史季节·树DP,实际执行,0.0765647847438231,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42
+exp006,exp006 历史季节·树DP,调度执行,9.08902794343885,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42
+exp006,exp006 历史季节·树DP,存储,0.18802633380983,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42
+exp006,exp006 历史季节·树DP,树拟合（含在条件准备）,0.826357296784408,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42
+exp006,exp006 历史季节·2026,条件分布准备,1.20501359051559,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_2026
+exp006,exp006 历史季节·2026,动态规划,8.1048438725993,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_2026
+exp006,exp006 历史季节·2026,实际执行,0.0786490354221314,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_2026
+exp006,exp006 历史季节·2026,调度执行,9.38850649853703,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_2026
+exp006,exp006 历史季节·2026,存储,0.210057707387023,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_2026
+exp006,exp006 历史季节·2026,树拟合（含在条件准备）,0.85742158757057,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_2026
+exp006,exp006 历史季节·3407,条件分布准备,1.29951930069365,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_3407
+exp006,exp006 历史季节·3407,动态规划,8.66179179702885,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_3407
+exp006,exp006 历史季节·3407,实际执行,0.0880857884185388,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_3407
+exp006,exp006 历史季节·3407,调度执行,10.049396886141,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_3407
+exp006,exp006 历史季节·3407,存储,0.207360500469804,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_3407
+exp006,exp006 历史季节·3407,树拟合（含在条件准备）,0.911854914971627,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_3407
+exp006,exp006 仅费用,条件分布准备,1.21079016814474,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,cost_only
+exp006,exp006 仅费用,动态规划,8.12251258222386,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,cost_only
+exp006,exp006 仅费用,实际执行,0.0794392119860276,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,cost_only
+exp006,exp006 仅费用,调度执行,9.41274196235463,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,cost_only
+exp006,exp006 仅费用,存储,0.194551415974274,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,cost_only
+exp006,exp006 仅费用,树拟合（含在条件准备）,0.861045125173405,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,cost_only
+exp006,exp006 无条件树,条件分布准备,0.153794866288081,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_tree
+exp006,exp006 无条件树,动态规划,8.19689713639673,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_tree
+exp006,exp006 无条件树,实际执行,0.0776612871559336,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_tree
+exp006,exp006 无条件树,调度执行,8.42835328984074,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_tree
+exp006,exp006 无条件树,存储,0.211944499402307,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_tree
+exp006,exp006 无条件树,树拟合（含在条件准备）,0,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_tree
+exp006,exp006 较强吞吐惩罚,条件分布准备,1.24779165664222,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,more_throughput_penalty
+exp006,exp006 较强吞吐惩罚,动态规划,8.41373746609315,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,more_throughput_penalty
+exp006,exp006 较强吞吐惩罚,实际执行,0.0819552926113829,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,more_throughput_penalty
+exp006,exp006 较强吞吐惩罚,调度执行,9.74348441534676,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,more_throughput_penalty
+exp006,exp006 较强吞吐惩罚,存储,0.197603040840477,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,more_throughput_penalty
+exp006,exp006 较强吞吐惩罚,树拟合（含在条件准备）,0.884192337980494,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,more_throughput_penalty
+exp006,exp006 无终值,条件分布准备,1.35599599406123,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,zero_terminal
+exp006,exp006 无终值,动态规划,9.08450554625597,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,zero_terminal
+exp006,exp006 无终值,实际执行,0.0894957087002694,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,zero_terminal
+exp006,exp006 无终值,调度执行,10.5299972490175,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,zero_terminal
+exp006,exp006 无终值,存储,0.238773337099701,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,zero_terminal
+exp006,exp006 无终值,树拟合（含在条件准备）,0.955378992366604,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,zero_terminal
+exp006,exp006 旧执行·重新规划,条件分布准备,1.37638550635893,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,greedy_execution
+exp006,exp006 旧执行·重新规划,动态规划,9.33320054085925,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,greedy_execution
+exp006,exp006 旧执行·重新规划,实际执行,0.0862226305762305,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,greedy_execution
+exp006,exp006 旧执行·重新规划,调度执行,10.7958086777944,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,greedy_execution
+exp006,exp006 旧执行·重新规划,存储,0.216908628121018,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,greedy_execution
+exp006,exp006 旧执行·重新规划,树拟合（含在条件准备）,0.972709537483752,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,greedy_execution
+exp006,exp006 无死区,条件分布准备,1.43926684185863,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_deadband
+exp006,exp006 无死区,动态规划,9.72003200463951,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_deadband
+exp006,exp006 无死区,实际执行,0.092419619555585,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_deadband
+exp006,exp006 无死区,调度执行,11.2517184660537,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_deadband
+exp006,exp006 无死区,存储,0.240957542438991,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_deadband
+exp006,exp006 无死区,树拟合（含在条件准备）,1.01759238680825,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,no_deadband
+exp006,exp006 正式·25kWh,条件分布准备,1.68439774517901,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary_grid25
+exp006,exp006 正式·25kWh,动态规划,39.5187919879099,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary_grid25
+exp006,exp006 正式·25kWh,实际执行,0.111998294829391,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary_grid25
+exp006,exp006 正式·25kWh,调度执行,41.3151880279183,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary_grid25
+exp006,exp006 正式·25kWh,存储,0.257242334890179,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary_grid25
+exp006,exp006 正式·25kWh,树拟合（含在条件准备）,1.18028986291029,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,primary_grid25
+exp006,exp006 历史季节·25kWh,条件分布准备,1.67960983200464,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42_grid25
+exp006,exp006 历史季节·25kWh,动态规划,39.2005284205079,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42_grid25
+exp006,exp006 历史季节·25kWh,实际执行,0.110531501355581,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42_grid25
+exp006,exp006 历史季节·25kWh,调度执行,40.9906697538681,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42_grid25
+exp006,exp006 历史季节·25kWh,存储,0.269100125762634,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42_grid25
+exp006,exp006 历史季节·25kWh,树拟合（含在条件准备）,1.18337270081975,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,causal_42_grid25
+exp006,exp006 固定购电·旧执行,条件分布准备,0,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,fixed_primary_greedy
+exp006,exp006 固定购电·旧执行,动态规划,0,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,fixed_primary_greedy
+exp006,exp006 固定购电·旧执行,实际执行,0.075923926779069,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,fixed_primary_greedy
+exp006,exp006 固定购电·旧执行,调度执行,0.075923926779069,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,fixed_primary_greedy
+exp006,exp006 固定购电·旧执行,存储,0.213927707867697,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,fixed_primary_greedy
+exp006,exp006 固定购电·旧执行,树拟合（含在条件准备）,0,334,单组334日累计；当前CPU与LP并行，阶段有包含关系，不相加所有图项,data/results/exp006/summary.csv,fixed_primary_greedy
+exp006,exp006 复用预测,训练,0,0,冻结exp004预测，不重复训练；原训练费归exp004,experiments/problem2/tree_planning/protocol.approved.json,
+exp006,exp006 复用预测,检查点预测,0,0,直接读取冻结数组，不重新运行预测网络,experiments/problem2/tree_planning/protocol.approved.json,

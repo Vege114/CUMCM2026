@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checked_utc": "2026-09-12T17:32:09.316871+00:00",
+  "checks": {
+    "independent_six_run_recheck": true,
+    "independent_figure_battery_browser_qa": true,
+    "both_workbook_hashes_and_qa": true,
+    "owned_evidence_manifest_files": 74,
+    "complete_report_data_snapshot_and_html_hashes": true,
+    "inline_input_and_output_hashes": true,
+    "unit_tests_passed": 15,
+    "ruff_passed": true,
+    "prespecified_primary_registry": true,
+    "latest_main_report_tree_unchanged": true,
+    "previous_result_and_registry_files_unchanged": true
+  },
+  "frozen_execution_commit": "d5ed43b93f27db4fe30d49505a817d13a096f843",
+  "final_remote_main_checked": "7fffa3102f136ccebe8267b562961df4413fb214",
+  "template_content_commit": "7ecd9b988665ad628dbf048ed295457166170ffc",
+  "formal_training_reinvoked": false,
+  "raw_results_rewritten": false
+}

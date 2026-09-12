@@ -1,0 +1,22 @@
+{
+  "input_sha256": "1e957ddcf9017c388024fd563c1708d96c88cfb0ab78d9e2086a96ea0c773033",
+  "outputs": [
+    {
+      "path": "/Users/vegetarianwolf/.codex/visualizations/2026/09/12/01a09675-854f-74d3-b83e-551b231b00d0/q2-rl-history.html",
+      "sha256": "c18f06f234533696479021f1639801c15006a5ea1b33324e124faac64ed75aa7",
+      "bytes": 13091
+    },
+    {
+      "path": "/Users/vegetarianwolf/.codex/visualizations/2026/09/12/01a09675-854f-74d3-b83e-551b231b00d0/q2-rl-battery.html",
+      "sha256": "0e2dc2f83cbbd1379cf8cbf3c9b4515677a17efff8fe05298e290c87b77ae0a6",
+      "bytes": 39389
+    }
+  ],
+  "battery_days": [
+    "2025-04-15",
+    "2025-06-07",
+    "2025-12-06",
+    "2025-12-25"
+  ],
+  "random_seed": 20260912
+}

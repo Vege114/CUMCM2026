@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "obs_dim": 29,
+  "action_dim": 45,
+  "hidden": 64,
+  "seed": 3407,
+  "learning_rate": 0.0003,
+  "numpy_rng": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 38052288687018179186389530943680672792,
+      "inc": 147959531226636260077994294883542472827
+    },
+    "has_uint32": 1,
+    "uinteger": 1608441809
+  }
+}

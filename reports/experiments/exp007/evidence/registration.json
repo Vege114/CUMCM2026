@@ -1,0 +1,15 @@
+{
+  "registered": true,
+  "registry_sha256": "7386e9f4af83e92369fa2889d9534b7242b6fe22842cefbc7c7adecf1846c41b",
+  "schema_required_fields_checked": true,
+  "old_registry_files_modified": false,
+  "history_coverage": [
+    "exp001",
+    "exp002",
+    "exp003",
+    "exp004",
+    "exp005",
+    "exp006"
+  ],
+  "adapter": "reports/exp007_evidence.py; explicit source and comparability mapping"
+}

@@ -1,0 +1,153 @@
+{
+  "passed": true,
+  "same_numeric_inputs": true,
+  "same_time_labels": true,
+  "same_forecast_bytes": true,
+  "raw_files": [
+    {
+      "file": "附件1.csv",
+      "current_sha256": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+      "exp005_sha256": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+      "same_bytes": false,
+      "same_table_values_and_time_labels": true,
+      "same_after_crlf_normalization": true
+    },
+    {
+      "file": "附件2_小区负载.csv",
+      "current_sha256": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+      "exp005_sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+      "same_bytes": false,
+      "same_table_values_and_time_labels": true,
+      "same_after_crlf_normalization": true
+    },
+    {
+      "file": "附件2_光伏发电实际功率.csv",
+      "current_sha256": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce",
+      "exp005_sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+      "same_bytes": false,
+      "same_table_values_and_time_labels": true,
+      "same_after_crlf_normalization": true
+    }
+  ],
+  "arms": [
+    {
+      "days": 334,
+      "intervals": 48096,
+      "source_actual_equal": true,
+      "source_tariff_equal": true,
+      "midnight_purchase_unchanged": true,
+      "max_balance_error_kwh": 2.1600499167107046e-12,
+      "max_soc_error_kwh": 1.8189894035458565e-12,
+      "max_cross_day_soc_error_kwh": 0.0,
+      "initial_soc_error_kwh": 0.0,
+      "max_slot_fee_error_yuan": 4.547473508864641e-13,
+      "min_soc_kwh": 1199.9999999999989,
+      "max_soc_kwh": 10800.00000000001,
+      "max_charge_kw": 5000.000000000001,
+      "max_discharge_kw": 5000.0,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 7.673861546209079e-12,
+      "emergency_charging_slots": 5248,
+      "emergency_charging_allowed_in_source": true,
+      "planned_cost": 12125606.983119221,
+      "emergency_cost": 2592275.182356661,
+      "total_cost": 14717882.165475888,
+      "reported_cost_excludes_penalties_and_terminal_value": true,
+      "passed": true,
+      "beta": 0.1,
+      "date_order_equal": true,
+      "raw_input_checks": [
+        {
+          "file": "附件1.csv",
+          "current_sha256": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+          "exp005_sha256": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+          "same_bytes": false,
+          "same_table_values_and_time_labels": true,
+          "same_after_crlf_normalization": true
+        },
+        {
+          "file": "附件2_小区负载.csv",
+          "current_sha256": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+          "exp005_sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+          "same_bytes": false,
+          "same_table_values_and_time_labels": true,
+          "same_after_crlf_normalization": true
+        },
+        {
+          "file": "附件2_光伏发电实际功率.csv",
+          "current_sha256": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce",
+          "exp005_sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+          "same_bytes": false,
+          "same_table_values_and_time_labels": true,
+          "same_after_crlf_normalization": true
+        }
+      ],
+      "forecast_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+      "hard_ramp_kw": 1000.0,
+      "max_ramp_kw": 1000.0000000000407,
+      "ranking_allowed": false,
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp005/soft-penalty-beta-0.1/dispatch.npz",
+      "interpretation": "numerically same data and settlement; extra hard ramp, relaxed optimization and emergency charging change feasible controls"
+    },
+    {
+      "days": 334,
+      "intervals": 48096,
+      "source_actual_equal": true,
+      "source_tariff_equal": true,
+      "midnight_purchase_unchanged": true,
+      "max_balance_error_kwh": 2.9558577807620168e-12,
+      "max_soc_error_kwh": 1.043076736095827e-11,
+      "max_cross_day_soc_error_kwh": 0.0,
+      "initial_soc_error_kwh": 0.0,
+      "max_slot_fee_error_yuan": 4.547473508864641e-13,
+      "min_soc_kwh": 1199.9999999999995,
+      "max_soc_kwh": 10800.00000000002,
+      "max_charge_kw": 5000.000000000001,
+      "max_discharge_kw": 5000.0,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 1.2867928944615414e-11,
+      "emergency_charging_slots": 5386,
+      "emergency_charging_allowed_in_source": true,
+      "planned_cost": 12142430.663598316,
+      "emergency_cost": 2598563.2103142114,
+      "total_cost": 14740993.873912528,
+      "reported_cost_excludes_penalties_and_terminal_value": true,
+      "passed": true,
+      "beta": 0.01,
+      "date_order_equal": true,
+      "raw_input_checks": [
+        {
+          "file": "附件1.csv",
+          "current_sha256": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+          "exp005_sha256": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+          "same_bytes": false,
+          "same_table_values_and_time_labels": true,
+          "same_after_crlf_normalization": true
+        },
+        {
+          "file": "附件2_小区负载.csv",
+          "current_sha256": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+          "exp005_sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+          "same_bytes": false,
+          "same_table_values_and_time_labels": true,
+          "same_after_crlf_normalization": true
+        },
+        {
+          "file": "附件2_光伏发电实际功率.csv",
+          "current_sha256": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce",
+          "exp005_sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+          "same_bytes": false,
+          "same_table_values_and_time_labels": true,
+          "same_after_crlf_normalization": true
+        }
+      ],
+      "forecast_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+      "hard_ramp_kw": 1000.0,
+      "max_ramp_kw": 1000.0000000000505,
+      "ranking_allowed": false,
+      "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp005/soft-penalty-beta-0.01/dispatch.npz",
+      "interpretation": "numerically same data and settlement; extra hard ramp, relaxed optimization and emergency charging change feasible controls"
+    }
+  ],
+  "ranking_allowed": false
+}

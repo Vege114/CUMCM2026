@@ -1,0 +1,31 @@
+{
+  "buildStatus": "complete",
+  "built_at_utc": "2026-09-12T17:23:18.869217+00:00",
+  "seconds": 2.201040667016059,
+  "source_data_sha256": "1e957ddcf9017c388024fd563c1708d96c88cfb0ab78d9e2086a96ea0c773033",
+  "html_sha256": "1be4315984c6a11b21e7e526dcbe761844383826ad91578a578e661293d5f407",
+  "snapshot_sha256": "c10de8956b4a8b2d4f8baa3905b12500acb30f06284bb48dbd5c4fc59ab41d31",
+  "main_checked_commit": "bca8dbe3004b0a87cd7be71a06891a4af87a9eb8",
+  "template_content_commit": "7ecd9b988665ad628dbf048ed295457166170ffc",
+  "query_count": 55,
+  "component_count": 85,
+  "battery_curves": 9,
+  "battery_points_per_curve": 48096,
+  "random_dates": [
+    "2025-04-15",
+    "2025-06-07",
+    "2025-12-06",
+    "2025-12-25"
+  ],
+  "training_invoked": false,
+  "solver_invoked": false,
+  "formal_primary": "regularized_42",
+  "static_validation": {
+    "passed": true,
+    "errors": [],
+    "unique_component_ids": 85,
+    "chart_field_bindings_checked": true,
+    "all_original_power_points_checked": true
+  },
+  "browser_visual_check": "separate final evidence; build itself is not visual QA"
+}

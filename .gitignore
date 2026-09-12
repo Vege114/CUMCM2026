@@ -40,6 +40,12 @@ data/results/exp004/*/*.xlsx.inspect.ndjson
 reports/experiments/exp006/app/dist/
 reports/experiments/exp006/app/.data-app-offline/
 reports/experiments/exp006/**/*.xlsx.inspect.ndjson
+# exp007 local report build and workbook inspection caches.
+reports/experiments/exp007/app/dist/
+reports/experiments/exp007/app/.data-app-offline/
+reports/experiments/exp007/**/*.xlsx.inspect.ndjson
+reports/experiments/exp007/**/workbook-previews/*.inspect.ndjson
+reports/experiments/exp007/app/node_modules/
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md

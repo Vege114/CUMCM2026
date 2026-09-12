@@ -1,0 +1,80 @@
+<div id="q2-rl-battery">
+  <h3>电池实际功率 · 同样的随机四日</h3>
+  <div class="viz-row" data-legend></div>
+  <div data-plots></div>
+  <div class="tooltip" role="tooltip" hidden></div>
+  <script type="application/json" data-evidence>@@BATTERY@@</script>
+</div>
+<style>
+#q2-rl-battery{position:relative}
+#q2-rl-battery [data-plots]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#q2-rl-battery [data-plots]>div{min-width:0}
+#q2-rl-battery svg text{fill:var(--foreground);font-size:12px}
+#q2-rl-battery .tick line,#q2-rl-battery .domain{stroke:var(--border)}
+#q2-rl-battery [data-legend] button{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:var(--foreground);font:inherit;cursor:pointer}
+#q2-rl-battery [data-legend] span{width:16px;height:3px}
+#q2-rl-battery .tooltip{position:absolute;pointer-events:none;background:var(--popover);color:var(--popover-foreground);padding:8px;z-index:2}
+@media(max-width:680px){#q2-rl-battery [data-plots]{grid-template-columns:1fr}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(()=>{
+ const root=document.getElementById('q2-rl-battery');
+ const data=JSON.parse(root.querySelector('[data-evidence]').textContent);
+ const colors=data.series.map((_,i)=>`var(--viz-series-${i+1})`);
+ const visible=new Set(data.series.map(s=>s.key));
+ const tip=root.querySelector('[role=tooltip]');
+ const panels=data.days.map(day=>{
+  const panel=document.createElement('div'),title=document.createElement('p');title.textContent=day.date;
+  const svg=d3.create('svg').attr('role','img').attr('aria-label',day.date+' 实际功率，充电为正、放电为负');
+  panel.append(title,svg.node());root.querySelector('[data-plots]').append(panel);
+  return {panel,svg,day};
+ });
+ data.series.forEach((s,i)=>{
+  const b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','true');
+  const mark=document.createElement('span');mark.style.background=colors[i];b.append(mark,document.createTextNode(s.label));
+  b.onclick=()=>{visible.has(s.key)?visible.delete(s.key):visible.add(s.key);b.setAttribute('aria-pressed',String(visible.has(s.key)));tip.hidden=true;draw();};
+  root.querySelector('[data-legend]').append(b);
+ });
+ function draw(){
+  panels.forEach(({panel,svg,day})=>{
+   const w=panel.getBoundingClientRect().width;if(w<1)return;
+   const h=244,l=70,r=w-18,t=14,b=190;
+   svg.attr('width','100%').attr('height',h).attr('viewBox',`0 0 ${w} ${h}`);svg.selectAll('*').remove();
+   const extent=d3.extent(data.days.flatMap(d=>data.series.flatMap(s=>d.values[s.key])).concat([-5000,5000]));
+   const pad=(extent[1]-extent[0])*.06;
+   const x=d3.scaleLinear().domain([0,24]).range([l+3,r-3]);
+   const y=d3.scaleLinear().domain([extent[0]-pad,extent[1]+pad]).range([b-3,t+3]);
+   svg.append('rect').attr('data-chart-frame','').attr('x',l).attr('y',t).attr('width',r-l).attr('height',b-t).attr('fill','none').attr('stroke','var(--border)');
+   [0,-5000,5000].forEach(v=>svg.append('line').attr('x1',l).attr('x2',r).attr('y1',y(v)).attr('y2',y(v)).attr('stroke','var(--border)').attr('stroke-dasharray',v?'3 3':null));
+   svg.append('g').attr('transform',`translate(0,${b})`).call(d3.axisBottom(x).tickValues(w<420?[0,8,16,24]:[0,6,12,18,24]).tickFormat(v=>String(v).padStart(2,'0')+':00'));
+   svg.append('g').attr('transform',`translate(${l},0)`).call(d3.axisLeft(y).tickValues([-5000,0,5000]));
+   svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(l+r)/2).attr('y',232).attr('text-anchor','middle').text('区间终点时刻 / 时');
+   svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform',`translate(15,${(t+b)/2}) rotate(-90)`).attr('text-anchor','middle').text('净充电功率 / kW');
+   data.series.forEach((s,i)=>{if(visible.has(s.key))svg.append('path').datum(day.values[s.key]).attr('d',d3.line().x((v,j)=>x((j+1)/6)).y(v=>y(v))).attr('fill','none').attr('stroke',colors[i]).attr('stroke-width',1.3);});
+   const guide=svg.append('line').attr('data-chart-hover-guide','').attr('y1',t).attr('y2',b).attr('stroke','var(--foreground)').attr('opacity',0);
+   const marks=svg.append('g');
+   function hover(event){
+    const px=Math.max(x(1/6),Math.min(r-3,d3.pointer(event,svg.node())[0])),hour=x.invert(px);
+    const pos=Math.max(0,Math.min(143,hour*6-1)),i=Math.floor(pos),fraction=pos-i;
+    guide.attr('x1',px).attr('x2',px).attr('opacity',.5);marks.selectAll('*').remove();
+    const lines=[day.date+' '+String(Math.floor(hour)).padStart(2,'0')+':'+String(Math.floor((hour%1)*60)).padStart(2,'0')];
+    data.series.forEach((s,k)=>{if(!visible.has(s.key))return;const v=day.values[s.key],value=v[i]+fraction*(v[Math.min(i+1,143)]-v[i]);
+     marks.append('circle').attr('data-chart-hover-marker','').attr('cx',px).attr('cy',y(value)).attr('r',3).attr('fill',colors[k]);
+     lines.push(s.label+'：'+value.toFixed(1)+' kW');
+    });
+    tip.replaceChildren(...lines.map(line=>{const d=document.createElement('div');d.textContent=line;return d;}));tip.hidden=false;
+    const rootBox=root.getBoundingClientRect(),bounds=svg.node().getBoundingClientRect();
+    tip.style.left=Math.max(0,Math.min(rootBox.width-tip.offsetWidth, bounds.left-rootBox.left+px+8))+'px';
+    tip.style.top=Math.max(0,bounds.top-rootBox.top+t+6)+'px';
+   }
+   svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series').attr('x',l).attr('y',t).attr('width',r-l).attr('height',b-t).attr('fill','transparent')
+    .on('pointermove',hover).on('pointerdown',hover).on('pointerleave',event=>{if(event.pointerType!=='touch'){tip.hidden=true;guide.attr('opacity',0);marks.selectAll('*').remove();}});
+   const bounds=svg.node().getBoundingClientRect();let prior=null;
+   svg.selectAll('text').nodes().forEach(el=>{const box=el.getBoundingClientRect();if(box.right>bounds.right-4)el.setAttribute('text-anchor','end');if(box.left<bounds.left+4&&el.closest('.tick'))el.setAttribute('text-anchor','start');});
+   svg.selectAll('g.tick').nodes().filter(g=>g.parentNode.getAttribute('transform')===`translate(0,${b})`).forEach(g=>{const e=g.querySelector('text'),box=e.getBoundingClientRect();if(prior&&box.left<prior.right+4)e.textContent='';else prior=box;});
+  });
+ }
+ new ResizeObserver(draw).observe(root);draw();
+})();
+</script>

@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "full_curves": [
+    {
+      "policy_id": "exp004/no_season",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "0a3234563688b95b46f2fe240497eda1b9f9eb52478656f06d81795bf9aa5525"
+    },
+    {
+      "policy_id": "exp006/primary",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "861cccc277bd4705a4cabcbc495685af39bd6c64a715dce57b5358493220ca20"
+    },
+    {
+      "policy_id": "exp006/greedy_execution",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "9406dfdfbe8710b1c9e4b08cecc739888fdcde3f705e7b547a276804cbf2d6f2"
+    },
+    {
+      "policy_id": "exp007/regularized_42",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "1a062f4f5a0938a460991b051da42ff2d3adb031267f0ec43f2f42b5c9f0b8f0"
+    },
+    {
+      "policy_id": "exp007/regularized_2026",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "48ea7d290c32d5f28f4691983b6a9ab33f4d58f0ef9522b1718933107ca8ec63"
+    },
+    {
+      "policy_id": "exp007/regularized_3407",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "85f7d916374b2db49170e5256e06eeaf689523f8d9388cd8e5b7f32d9190e6ba"
+    },
+    {
+      "policy_id": "exp007/cost_only_42",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "7157c47880aa53976243ccf75ed045eb4ad7e44ac5d2ca93e04393888c4482be"
+    },
+    {
+      "policy_id": "exp007/cost_only_2026",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "d83dac48551e3a8d03e4d3dac7ed0ef2f566f34a5597dc6578117dd35570e075"
+    },
+    {
+      "policy_id": "exp007/cost_only_3407",
+      "passed": true,
+      "csv_rows": 48096,
+      "svg_raw_points": 48096,
+      "first_delta_missing": true,
+      "consecutive_10_minute_timestamps": true,
+      "csv_sha256": "dd40d296ad06acdd8c162d0ff54750f0d9854ac1188e89c8f46e91e7dab3fe7c"
+    }
+  ],
+  "random_curves_checked": 36,
+  "random_points_per_curve": 144,
+  "no_decimation_or_smoothing": true
+}

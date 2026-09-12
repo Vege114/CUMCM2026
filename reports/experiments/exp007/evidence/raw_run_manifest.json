@@ -1,0 +1,71 @@
+{
+  "experiment_id": "exp007",
+  "status": "complete",
+  "complete": true,
+  "signature": "4ad0553b3c1fa5d2e33b3ee39fe09b4fd83a855afd0f00bbadd6661cb38e80f2",
+  "evidence": {
+    "source_sha256": {
+      "experiments/problem2/rl_planning/run.py": "f4b4b68de603468b36186d40af46fe9144dbae429c7044a12bd20e0084010635",
+      "experiments/problem2/rl_planning/environment.py": "5c6170a803da0707c1f1548c41170aca152f4be53d369c258d24b86157e228f2",
+      "experiments/problem2/rl_planning/ppo.py": "05d33abd89b5ed23e78ba209d19528740d4a2582b526bf9ee035586e16ee725a",
+      "experiments/problem2/rl_planning/protocol.approved.json": "c7d2e35796276e74c7ff65e28730b655005adfce84290b179c2bc097db426999",
+      "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+      "experiments/problem2/exp004/predict.py": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+      "experiments/problem2/tree_planning/model.py": "ad0e25ebbeaed12e8051e3837688f9b2fd38d51e1b317da84380ad21988d1417",
+      "experiments/problem2/tree_planning/risk.py": "e6015c369f305e514d4af4f33e7ce17a07b0fa068da34f7df335605abdda2652",
+      "experiments/problem2/tree_planning/verify.py": "50cc28e37eb85d026700eb0a31b88934e9974c517208249199b1553593443f8a"
+    },
+    "data_sha256": {
+      "附件1.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+      "附件2_小区负载.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+      "附件2_光伏发电实际功率.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce"
+    },
+    "predictions_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+    "warmup_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864"
+  },
+  "initial": {
+    "soc": 1421.7991105135516,
+    "mode": 1,
+    "power_kw": 172.75999999999976
+  },
+  "started_utc": "2026-09-12T17:04:59.391082+00:00",
+  "expected_runs": [
+    "regularized_42",
+    "regularized_2026",
+    "regularized_3407",
+    "cost_only_42",
+    "cost_only_2026",
+    "cost_only_3407"
+  ],
+  "completed_runs": [
+    "regularized_42",
+    "regularized_2026",
+    "regularized_3407",
+    "cost_only_42",
+    "cost_only_2026",
+    "cost_only_3407"
+  ],
+  "forecast_retrained": false,
+  "cpu_threads": 1,
+  "import_seconds": 3.314985999953933,
+  "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "pid": 11034,
+  "code_commit": "d5ed43b93f27db4fe30d49505a817d13a096f843",
+  "threadpools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/vegetarianwolf/Projects/CUMCM2026/.venv/lib/python3.12/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    }
+  ],
+  "finished_utc": "2026-09-12T17:14:34.266208+00:00",
+  "formal_wall_seconds": 574.8953720830614,
+  "output_sha256": {
+    "summary.csv": "092a493e44be9cfc458297942bb025a5525f16d5cbe720ea5b1bffed2147ba5f",
+    "timings.csv": "7c0ad5ded9475bfe31a70a1f6e36261e17869415da663b57f9a0316ed8c50009"
+  }
+}
