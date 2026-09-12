@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "artifact_id": "report:8275202c-eb95-4dda-b6fc-7bb62938658f",
+  "kind": "discussion_draft",
+  "model_changed": false,
+  "template": false,
+  "exported_at": "2026-09-12T10:02:46.308Z",
+  "meeting_date": "",
+  "participants": "",
+  "overall_notes": "",
+  "choices": {
+    "Q2T001": "A",
+    "Q2T002": "A",
+    "Q2T004": "C",
+    "Q2T003": "D",
+    "Q2T005": "B",
+    "Q2T006": "B",
+    "Q2T008": "B",
+    "Q2T007": "B",
+    "Q2T009": "C",
+    "Q2T010": "C",
+    "Q2T012": ""
+  },
+  "owners": {},
+  "rationales": {},
+  "options_catalog": [
+    {
+      "module_id": "M1",
+      "decision_id": "Q2T001",
+      "title": "成员之间用什么数据接口",
+      "options": [
+        {
+          "id": "A",
+          "label": "保留数组，补齐显式时点与单位",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "增加带时点和单位的统一记录层",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M2",
+      "decision_id": "Q2T002",
+      "title": "预测负载与PV，还是直接预测差额",
+      "options": [
+        {
+          "id": "A",
+          "label": "分别预测负载和光伏，再相减",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "直接预测净负载",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M2",
+      "decision_id": "Q2T003",
+      "title": "用什么模型提取历史规律",
+      "options": [
+        {
+          "id": "A",
+          "label": "周期预测",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "线性残差修正",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "保留现有小MLP残差网络",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "D",
+          "label": "增加短序列模型",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M2",
+      "decision_id": "Q2T004",
+      "title": "用多长历史更新模型",
+      "options": [
+        {
+          "id": "A",
+          "label": "每月用全部已完成历史重新训练",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "固定长度的近期窗口",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "保留全部历史，但逐渐减小旧数据权重",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M3",
+      "decision_id": "Q2T005",
+      "title": "费用怎样进入模型选择",
+      "options": [
+        {
+          "id": "A",
+          "label": "保留少量修正强度的费用校准",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "在训练中区分少预测与多预测的代价",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "直接按下游调度费用调整少量模型参数",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M4",
+      "decision_id": "Q2T006",
+      "title": "向调度提供哪些未来可能性",
+      "options": [
+        {
+          "id": "A",
+          "label": "只传一条点预测",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "加入完整历史日的联合误差路径",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "让近期或相似历史日有更大权重",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M5",
+      "decision_id": "Q2T007",
+      "title": "怎样把未来曲线转成购电量",
+      "options": [
+        {
+          "id": "A",
+          "label": "单路径确定性优化",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "按多条路径的平均总费用优化",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "搜索少量可解释购电参数",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M5",
+      "decision_id": "Q2T008",
+      "title": "求解时间不足时怎样处理",
+      "options": [
+        {
+          "id": "A",
+          "label": "保留现有预算及固定备用策略",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "固定模型，单独增加搜索预算或初始候选",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M6",
+      "decision_id": "Q2T009",
+      "title": "缺电时电池是否立刻尽量放电",
+      "options": [
+        {
+          "id": "A",
+          "label": "保留当前因果贪心执行",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "按时段保留预设最低备用电量",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "按剩余时段滚动决定储能动作",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M6",
+      "decision_id": "Q2T010",
+      "title": "午夜模型怎样考虑明天还要用电",
+      "options": [
+        {
+          "id": "A",
+          "label": "保留日末自由、实际SOC跨日接续",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "给日末储能设置历史估计的延续价值",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "在计划中预看更长时间，只锁定今天",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M7",
+      "decision_id": "Q2T011",
+      "title": "后续参数何时允许重新选择",
+      "options": [
+        {
+          "id": "A",
+          "label": "沿用一次选择后冻结的比较",
+          "status": "现有实现／已实验做法"
+        },
+        {
+          "id": "B",
+          "label": "预先固定的逐月历史选择",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    },
+    {
+      "module_id": "M7",
+      "decision_id": "Q2T012",
+      "title": "怎样把多人改动合到一个实验",
+      "options": [
+        {
+          "id": "A",
+          "label": "一次只替换一个模块",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "B",
+          "label": "先分别测试，再测试有依据的组合",
+          "status": "待讨论候选，尚未验证"
+        },
+        {
+          "id": "C",
+          "label": "直接比较完整新方案",
+          "status": "待讨论候选，尚未验证"
+        }
+      ]
+    }
+  ]
+}
