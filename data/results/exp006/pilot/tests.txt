@@ -1,0 +1,9 @@
+test_dp_against_two_step_exhaustive_search (test_q2_tree_planning.TreePlanningTests.test_dp_against_two_step_exhaustive_search) ... ok
+test_newsvendor_against_all_breakpoints (test_q2_tree_planning.TreePlanningTests.test_newsvendor_against_all_breakpoints) ... ok
+test_physical_projection_extreme_realizations_and_prefix_causality (test_q2_tree_planning.TreePlanningTests.test_physical_projection_extreme_realizations_and_prefix_causality) ... ok
+test_tree_future_actuals_do_not_change_midnight_support (test_q2_tree_planning.TreePlanningTests.test_tree_future_actuals_do_not_change_midnight_support) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.096s
+
+OK

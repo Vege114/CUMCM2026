@@ -1,0 +1,53 @@
+pilot repeat 1/3 complete; 30 measured plans
+pilot repeat 2/3 complete; 54 measured plans
+pilot repeat 3/3 complete; 78 measured plans
+{
+  "pilot_wall_seconds": 5.205765291000716,
+  "estimates": [
+    {
+      "grid_kwh": 25.0,
+      "sample_plans": 26,
+      "median_day_seconds": 0.13912124995840713,
+      "p95_day_seconds": 0.16172908377484418,
+      "max_day_seconds": 0.17769216687884182,
+      "median_risk_seconds": 0.0061008750344626606,
+      "median_dp_seconds": 0.1329531039809808,
+      "median_execution_seconds": 0.0003659999929368496,
+      "estimated_334_day_seconds_median": 46.46649748610798,
+      "estimated_334_day_seconds_p95": 54.01751398079796,
+      "estimated_12_run_seconds_p95_with_3x_margin": 2125.1201608014526
+    },
+    {
+      "grid_kwh": 50.0,
+      "sample_plans": 26,
+      "median_day_seconds": 0.04226670804200694,
+      "p95_day_seconds": 0.0503850934910588,
+      "max_day_seconds": 0.0701160830212757,
+      "median_risk_seconds": 0.0061008750344626606,
+      "median_dp_seconds": 0.03584950044751167,
+      "median_execution_seconds": 0.0003738959785550833,
+      "estimated_334_day_seconds_median": 14.117080486030318,
+      "estimated_334_day_seconds_p95": 16.828621226013638,
+      "estimated_12_run_seconds_p95_with_3x_margin": 662.0601284725126
+    },
+    {
+      "grid_kwh": 100.0,
+      "sample_plans": 26,
+      "median_day_seconds": 0.01909952162532136,
+      "p95_day_seconds": 0.022825385705800727,
+      "max_day_seconds": 0.04066428996156901,
+      "median_risk_seconds": 0.0061008750344626606,
+      "median_dp_seconds": 0.012668624985963106,
+      "median_execution_seconds": 0.00034814601531252265,
+      "estimated_334_day_seconds_median": 6.379240222857334,
+      "estimated_334_day_seconds_p95": 7.623678825737443,
+      "estimated_12_run_seconds_p95_with_3x_margin": 299.92556817422155
+    }
+  ],
+  "physical_checks": {
+    "simultaneous_slots": 0,
+    "greedy_simultaneous_slots": 0,
+    "max_balance_error": 0.0,
+    "max_state_error": 9.094947017729282e-13
+  }
+}

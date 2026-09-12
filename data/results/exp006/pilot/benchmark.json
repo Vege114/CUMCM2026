@@ -1,0 +1,124 @@
+{
+  "status": "pilot_complete_awaiting_user_confirmation",
+  "created_utc": "2026-09-12T15:25:08.567778+00:00",
+  "base_branch": "codex/q2-discussion-seasonality",
+  "base_commit": "b42168d5271097762953f38d472d0ef5fe1a908d",
+  "branch": "codex/q2-tree-planning",
+  "dates": [
+    "2025-02-01",
+    "2025-02-15",
+    "2025-03-20",
+    "2025-06-21",
+    "2025-08-01",
+    "2025-09-23",
+    "2025-11-01",
+    "2025-12-21"
+  ],
+  "repeats": 3,
+  "config_except_grid": {
+    "grid_kwh": 100.0,
+    "throughput_yuan_per_kwh": 0.002,
+    "reversal_yuan": 0.05,
+    "deadband_kwh": 2.0,
+    "terminal_value": true
+  },
+  "initial_soc_kwh_regular_pilot": 6000.0,
+  "off_grid_checks": {
+    "dates": [
+      "2025-06-21",
+      "2025-12-21"
+    ],
+    "initial_soc_kwh": 6042.75
+  },
+  "full_run_executed": false,
+  "predictor_retrained": false,
+  "lp_working_directory_modified": false,
+  "cpu_threads": 1,
+  "process_priority": {
+    "nice_increment_applied": 0,
+    "reason": "sandbox denies changing process priority; one CPU thread retained"
+  },
+  "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "numpy_version": "2.0.2",
+  "sklearn_version": "1.9.1",
+  "threadpools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/vegetarianwolf/Projects/CUMCM2026/.venv/lib/python3.12/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    }
+  ],
+  "data_hashes": {
+    "附件1.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+    "附件2_小区负载.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+    "附件2_光伏发电实际功率.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce"
+  },
+  "predictions_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+  "source_sha256": {
+    "experiments/problem2/tree_planning/__init__.py": "5264fd748a95e1eeaa5094cdbc04623c576115a8be8f084808d9c4616b2fd10c",
+    "experiments/problem2/tree_planning/benchmark.py": "9beed592034a875236f752ab05c25313a35a41b119462e0a0aa594b6b07ad79b",
+    "experiments/problem2/tree_planning/model.py": "ad0e25ebbeaed12e8051e3837688f9b2fd38d51e1b317da84380ad21988d1417",
+    "experiments/problem2/tree_planning/risk.py": "c64e2c565fd36f9da3aa1b4e411fe31b3417d7310cfc34b1a8219fd9fe6624d4"
+  },
+  "import_seconds": 1.3421374580357224,
+  "data_loading_seconds": 0.03152304096147418,
+  "pilot_wall_seconds": 5.205765291000716,
+  "estimates": [
+    {
+      "grid_kwh": 25.0,
+      "sample_plans": 26,
+      "median_day_seconds": 0.13912124995840713,
+      "p95_day_seconds": 0.16172908377484418,
+      "max_day_seconds": 0.17769216687884182,
+      "median_risk_seconds": 0.0061008750344626606,
+      "median_dp_seconds": 0.1329531039809808,
+      "median_execution_seconds": 0.0003659999929368496,
+      "estimated_334_day_seconds_median": 46.46649748610798,
+      "estimated_334_day_seconds_p95": 54.01751398079796,
+      "estimated_12_run_seconds_p95_with_3x_margin": 2125.1201608014526
+    },
+    {
+      "grid_kwh": 50.0,
+      "sample_plans": 26,
+      "median_day_seconds": 0.04226670804200694,
+      "p95_day_seconds": 0.0503850934910588,
+      "max_day_seconds": 0.0701160830212757,
+      "median_risk_seconds": 0.0061008750344626606,
+      "median_dp_seconds": 0.03584950044751167,
+      "median_execution_seconds": 0.0003738959785550833,
+      "estimated_334_day_seconds_median": 14.117080486030318,
+      "estimated_334_day_seconds_p95": 16.828621226013638,
+      "estimated_12_run_seconds_p95_with_3x_margin": 662.0601284725126
+    },
+    {
+      "grid_kwh": 100.0,
+      "sample_plans": 26,
+      "median_day_seconds": 0.01909952162532136,
+      "p95_day_seconds": 0.022825385705800727,
+      "max_day_seconds": 0.04066428996156901,
+      "median_risk_seconds": 0.0061008750344626606,
+      "median_dp_seconds": 0.012668624985963106,
+      "median_execution_seconds": 0.00034814601531252265,
+      "estimated_334_day_seconds_median": 6.379240222857334,
+      "estimated_334_day_seconds_p95": 7.623678825737443,
+      "estimated_12_run_seconds_p95_with_3x_margin": 299.92556817422155
+    }
+  ],
+  "physical_checks": {
+    "simultaneous_slots": 0,
+    "greedy_simultaneous_slots": 0,
+    "max_balance_error": 0.0,
+    "max_state_error": 9.094947017729282e-13
+  },
+  "limitations": [
+    "Eight independent dates with three timing repeats; no annual performance conclusion.",
+    "Discretized open-loop objective differs from physically projected recourse costs.",
+    "Tree residual supports are marginal distributions, not joint daily scenarios.",
+    "The 3x timing margin is a budget allowance, not a statistical confidence interval.",
+    "Report authoring, debugging, workbook export and visual QA are additional human-agent time."
+  ]
+}
