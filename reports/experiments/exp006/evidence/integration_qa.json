@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "All 15 report cost rows equal independently verified run summaries.",
+    "Both exp006 forecast groups exactly reuse six target/population metric rows from exp004.",
+    "All 205 pre-existing source/result files remain unchanged."
+  ],
+  "review_scope": "report evidence bindings, frozen forecast metrics, and historical source preservation; uses run-level independent physical verification rather than duplicating it",
+  "source_sha256": {
+    "cost_history.csv": "1a00f769ed1554d5918bee3547e2d58c4fd2a48fa77d5c5c8976f345ae805cef",
+    "forecast_history.csv": "8f4b943c626d35f5f9448060745f627b21201f517714fd6bdbdc06774ee6e9cf"
+  }
+}

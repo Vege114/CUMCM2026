@@ -9,7 +9,7 @@ import hashlib
 import json
 import subprocess
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -352,7 +352,7 @@ def verify(payload, evidence):
                     saved_error_cells=0, artifact_formula_error_scan="0 matches", recalculation_tests=sums,
                     native_excel_recalculation="not exercised; artifact-tool input-mutation tests and saved cached values verified",
                     render_engine="artifact-tool; rendered workbook ranges, not native Excel screenshots",
-                    visual_review="pending", checked_utc=datetime.now(timezone.utc).isoformat())
+                    visual_review="pending", checked_utc=datetime.now(UTC).isoformat())
     for workbook in (saved, formulas, template):
         workbook.close()
     write_json(REPORT / "evidence/workbook_qa.json", evidence)

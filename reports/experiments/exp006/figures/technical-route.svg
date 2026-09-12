@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="872.39952pt" height="440.39952pt" viewBox="0 0 872.39952 440.39952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-12T23:50:59.081022</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 440.39952
+L 872.39952 440.39952
+L 872.39952 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 93.593361 153.789494
+L 195.366486 153.789494
+Q 203.766486 153.789494 203.766486 145.389494
+L 203.766486 95.949494
+Q 203.766486 87.549494 195.366486 87.549494
+L 93.593361 87.549494
+Q 85.193361 87.549494 85.193361 95.949494
+L 85.193361 145.389494
+Q 85.193361 153.789494 93.593361 153.789494
+z
+" style="fill: #f7f9f9; stroke: #357c89; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(120.479923 106.449494)">冻结预测</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(144.479923 118.809494)"/>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(94.190548 131.169494)">exp004 144×2 kW</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(93.593361 143.529494)">无季节seed42正式</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 258.018491 120.669494
+Q 292.486251 120.669494 325.835977 120.669494
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+    <path d="M 321.835977 118.669494
+L 325.835977 120.669494
+L 321.835977 122.669494
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 377.261012 153.789494
+L 486.558512 153.789494
+Q 494.958512 153.789494 494.958512 145.389494
+L 494.958512 95.949494
+Q 494.958512 87.549494 486.558512 87.549494
+L 377.261012 87.549494
+Q 368.861012 87.549494 368.861012 95.949494
+L 368.861012 145.389494
+Q 368.861012 153.789494 377.261012 153.789494
+z
+" style="fill: #f7f9f9; stroke: #357c89; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(401.909762 106.449494)">条件误差树</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(431.909762 118.809494)"/>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(377.261012 131.169494)">最近28个完整历史日</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(383.367887 143.529494)">5特征/深度5/叶48</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 545.44833 120.669494
+Q 579.91609 120.669494 613.265816 120.669494
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+    <path d="M 609.265816 118.669494
+L 613.265816 120.669494
+L 609.265816 122.669494
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 668.015227 153.789494
+L 770.663977 153.789494
+Q 779.063977 153.789494 779.063977 145.389494
+L 779.063977 95.949494
+Q 779.063977 87.549494 770.663977 87.549494
+L 668.015227 87.549494
+Q 659.615227 87.549494 659.615227 95.949494
+L 659.615227 145.389494
+Q 659.615227 153.789494 668.015227 153.789494
+z
+" style="fill: #f7f9f9; stroke: #357c89; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(695.339602 106.449494)">边际支持</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(719.339602 118.809494)"/>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(668.015227 131.169494)">每槽9个等权分位点</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(671.339602 143.529494)">不代表联合日路径</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_7">
+     <path d="M 653.543039 362.22722
+L 785.136164 362.22722
+Q 793.536164 362.22722 793.536164 353.82722
+L 793.536164 304.21847
+Q 793.536164 295.81847 785.136164 295.81847
+L 653.543039 295.81847
+Q 645.143039 295.81847 645.143039 304.21847
+L 645.143039 353.82722
+Q 645.143039 362.22722 653.543039 362.22722
+z
+" style="fill: #f7f9f9; stroke: #aa6d37; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(682.259602 314.71847)">SOC动态规划</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(719.339602 327.07847)"/>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(653.543039 339.43847)">50kWh网格+实际初SOC</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(656.405227 351.96722)">购电80%分位+次要惩罚</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 605.801034 329.022845
+Q 571.333274 329.022845 537.983548 329.022845
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+    <path d="M 541.983548 331.022845
+L 537.983548 329.022845
+L 541.983548 327.022845
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <g id="patch_9">
+     <path d="M 373.936637 362.142845
+L 489.882887 362.142845
+Q 498.282887 362.142845 498.282887 353.742845
+L 498.282887 304.302845
+Q 498.282887 295.902845 489.882887 295.902845
+L 373.936637 295.902845
+Q 365.536637 295.902845 365.536637 304.302845
+L 365.536637 353.742845
+Q 365.536637 362.142845 373.936637 362.142845
+z
+" style="fill: #f7f9f9; stroke: #aa6d37; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(407.909762 314.802845)">锁定计划</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(431.909762 327.162845)"/>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(373.936637 339.522845)">144槽原计划全日不变</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(383.909762 351.882845)">充放意图仅单方向</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 318.371195 329.022845
+Q 283.903435 329.022845 250.553709 329.022845
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+    <path d="M 254.553709 331.022845
+L 250.553709 329.022845
+L 254.553709 327.022845
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <g id="patch_11">
+     <path d="M 90.479923 362.400657
+L 198.479923 362.400657
+Q 206.879923 362.400657 206.879923 354.000657
+L 206.879923 304.045032
+Q 206.879923 295.645032 198.479923 295.645032
+L 90.479923 295.645032
+Q 82.079923 295.645032 82.079923 304.045032
+L 82.079923 354.000657
+Q 82.079923 362.400657 90.479923 362.400657
+z
+" style="fill: #f7f9f9; stroke: #aa6d37; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(102.479923 314.545032)">实际执行与结算</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(144.479923 326.905032)"/>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(90.479923 339.265032)">本槽观测后物理裁剪</text>
+    <text style="font-size: 12px; font-family: 'Heiti TC'" transform="translate(103.061173 352.140657)">总费Σp(g+5e)</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 719.339602 186.778681
+Q 719.339602 224.847294 719.339602 261.797873
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+    <path d="M 721.339602 257.797873
+L 719.339602 261.797873
+L 717.339602 257.797873
+" style="fill: none; stroke: #737b80; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12px; font-family: 'Heiti TC'; text-anchor: middle" x="436.19976" y="17.52" transform="rotate(-0 436.19976 17.52)">规划代理与真实结算必须分开 · 实际末SOC连续进入下一天</text>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,2430 @@
+{
+  "status": "passed",
+  "created_utc": "2026-09-12T15:57:43.759145+00:00",
+  "scope": "Archive existence, author local href delivery, run source/output hashes, frozen old archives, and duplicate root CSV contents; no strategies run or existing files changed.",
+  "worktree": "/Users/vegetarianwolf/Projects/CUMCM2026/.work/q2-tree-planning",
+  "run_manifest_sha256": "71233bda84ada140c01e32572d1ab43f34e805856fb1025efa3b790b9661a15f",
+  "required_artifacts": {
+    "app/src/data.json": true,
+    "report.md": true,
+    "report.html": true,
+    "app/dist/index.html": true
+  },
+  "report_title": "exp006：树与动态规划降低电池周转，但总费用上升",
+  "build_status": "complete",
+  "source_checks": [
+    {
+      "path": "experiments/problem2/tree_planning/model.py",
+      "exists": true,
+      "expected_sha256": "ad0e25ebbeaed12e8051e3837688f9b2fd38d51e1b317da84380ad21988d1417",
+      "actual_sha256": "ad0e25ebbeaed12e8051e3837688f9b2fd38d51e1b317da84380ad21988d1417",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/tree_planning/risk.py",
+      "exists": true,
+      "expected_sha256": "e6015c369f305e514d4af4f33e7ce17a07b0fa068da34f7df335605abdda2652",
+      "actual_sha256": "e6015c369f305e514d4af4f33e7ce17a07b0fa068da34f7df335605abdda2652",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/tree_planning/run.py",
+      "exists": true,
+      "expected_sha256": "ac0782fdffdf73f0f31b0d179261bf282dad506e0b37dad92e9fa6369cff54e7",
+      "actual_sha256": "ac0782fdffdf73f0f31b0d179261bf282dad506e0b37dad92e9fa6369cff54e7",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/tree_planning/verify.py",
+      "exists": true,
+      "expected_sha256": "50cc28e37eb85d026700eb0a31b88934e9974c517208249199b1553593443f8a",
+      "actual_sha256": "50cc28e37eb85d026700eb0a31b88934e9974c517208249199b1553593443f8a",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/tree_planning/protocol.approved.json",
+      "exists": true,
+      "expected_sha256": "8c2c7cc772c377d5c649b8235c60b0ba2c36b62e8a21d2168bcd995cd0dc6ff3",
+      "actual_sha256": "8c2c7cc772c377d5c649b8235c60b0ba2c36b62e8a21d2168bcd995cd0dc6ff3",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/exp003/data.py",
+      "exists": true,
+      "expected_sha256": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+      "actual_sha256": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/exp004/predict.py",
+      "exists": true,
+      "expected_sha256": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+      "actual_sha256": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+      "matches": true
+    },
+    {
+      "path": "experiments/problem2/exp004/data.py",
+      "exists": true,
+      "expected_sha256": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+      "actual_sha256": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+      "matches": true
+    }
+  ],
+  "summary_timing_checks": [
+    {
+      "path": "data/results/exp006/summary.csv",
+      "exists": true,
+      "expected_sha256": "2950635b84c48e3308153db594101321d14230904e3781b95622e048761d515b",
+      "actual_sha256": "2950635b84c48e3308153db594101321d14230904e3781b95622e048761d515b",
+      "matches": true
+    },
+    {
+      "path": "data/results/exp006/timings.csv",
+      "exists": true,
+      "expected_sha256": "c484a7858be999f18b5df8e2ffd0de98f08c8b5c6aa5d31a0b6fb3753a6a6f09",
+      "actual_sha256": "c484a7858be999f18b5df8e2ffd0de98f08c8b5c6aa5d31a0b6fb3753a6a6f09",
+      "matches": true
+    }
+  ],
+  "completion_checks": [
+    {
+      "run_id": "primary",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/primary/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "dd5c5f71998f884c55fb15eaaea23b728b4e31dd17e20428b086eb288e56d0b7",
+          "actual_sha256": "dd5c5f71998f884c55fb15eaaea23b728b4e31dd17e20428b086eb288e56d0b7",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/primary/daily.csv",
+          "exists": true,
+          "expected_sha256": "daff0796550f72af1202e6e34192a7cf33ab25331889075ca0bdf455d5d78627",
+          "actual_sha256": "daff0796550f72af1202e6e34192a7cf33ab25331889075ca0bdf455d5d78627",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/primary/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "7e69f344c195ff3b5238b613114dbcba2ff48e366c7ed320c85d6fb9ae4e2108",
+          "actual_sha256": "7e69f344c195ff3b5238b613114dbcba2ff48e366c7ed320c85d6fb9ae4e2108",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/primary/verification.json",
+          "exists": true,
+          "expected_sha256": "3b95c2d0f3659d22f8345b6f6848266de5ca9bf3b913a24d66bac3883510d1a1",
+          "actual_sha256": "3b95c2d0f3659d22f8345b6f6848266de5ca9bf3b913a24d66bac3883510d1a1",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "seed_2026",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/seed_2026/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "472c8cd157e84db1a285e203b6ef757bae10d10d566f99ab2afda9c89da0e3fc",
+          "actual_sha256": "472c8cd157e84db1a285e203b6ef757bae10d10d566f99ab2afda9c89da0e3fc",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/seed_2026/daily.csv",
+          "exists": true,
+          "expected_sha256": "59aed7c8c9524860a3ef7eb67fc38247eec9f4121c3978fcfd1e2a0042be0951",
+          "actual_sha256": "59aed7c8c9524860a3ef7eb67fc38247eec9f4121c3978fcfd1e2a0042be0951",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/seed_2026/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "803f822d803ae108aba07f500ff9bc72f4b0f71f039b6206f72e6af86e7a855a",
+          "actual_sha256": "803f822d803ae108aba07f500ff9bc72f4b0f71f039b6206f72e6af86e7a855a",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/seed_2026/verification.json",
+          "exists": true,
+          "expected_sha256": "8c28781414cc33ba480ad2c7f373951746deef4cbc6c5c93a9958ca6788f1b33",
+          "actual_sha256": "8c28781414cc33ba480ad2c7f373951746deef4cbc6c5c93a9958ca6788f1b33",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "seed_3407",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/seed_3407/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "5ad4d0e56a29ac049c9f644edeb0acd2deba3ac73f97fe3863bc7595164871ce",
+          "actual_sha256": "5ad4d0e56a29ac049c9f644edeb0acd2deba3ac73f97fe3863bc7595164871ce",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/seed_3407/daily.csv",
+          "exists": true,
+          "expected_sha256": "bdc5d6dd8b9dadb51ac6b35e1fe3df2b1a3f9dba98e9a70c508caaefc5054a56",
+          "actual_sha256": "bdc5d6dd8b9dadb51ac6b35e1fe3df2b1a3f9dba98e9a70c508caaefc5054a56",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/seed_3407/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "3b87be18e6656ed533db7961b8c2a6607c5e2b2274a1cef53bd3bbfacbc19a1d",
+          "actual_sha256": "3b87be18e6656ed533db7961b8c2a6607c5e2b2274a1cef53bd3bbfacbc19a1d",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/seed_3407/verification.json",
+          "exists": true,
+          "expected_sha256": "7c0eb4cbb0dab373b0178e8c5e4bc1ce2ff04e706cfd613c4d2807f22875711b",
+          "actual_sha256": "7c0eb4cbb0dab373b0178e8c5e4bc1ce2ff04e706cfd613c4d2807f22875711b",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "causal_42",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/causal_42/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "d94125270f6d01bf15c5766bac33ca2975beab564972ab6c01c37bb0af75c58c",
+          "actual_sha256": "d94125270f6d01bf15c5766bac33ca2975beab564972ab6c01c37bb0af75c58c",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_42/daily.csv",
+          "exists": true,
+          "expected_sha256": "6d73170d73d84499d1a82f510579d95d2c087c87de435207a2ccd2e206bfabf8",
+          "actual_sha256": "6d73170d73d84499d1a82f510579d95d2c087c87de435207a2ccd2e206bfabf8",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_42/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "9628f78efe16c2f298911276f3fb75e2af7c19b7ad67369c5d2919f7fc3ab768",
+          "actual_sha256": "9628f78efe16c2f298911276f3fb75e2af7c19b7ad67369c5d2919f7fc3ab768",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_42/verification.json",
+          "exists": true,
+          "expected_sha256": "09a3fc6faeea9c3c01b20336b7fec0704c55f744cfd145b38733f52432761cc4",
+          "actual_sha256": "09a3fc6faeea9c3c01b20336b7fec0704c55f744cfd145b38733f52432761cc4",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "causal_2026",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/causal_2026/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "3b6a05c3c0b14936e9784c1114e5d826adf381f6eee3bd036b756b6a8c9ed7d5",
+          "actual_sha256": "3b6a05c3c0b14936e9784c1114e5d826adf381f6eee3bd036b756b6a8c9ed7d5",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_2026/daily.csv",
+          "exists": true,
+          "expected_sha256": "0b1541e89e34c6684367dbee325a498950f210fa49b527c7da28539800dfd12e",
+          "actual_sha256": "0b1541e89e34c6684367dbee325a498950f210fa49b527c7da28539800dfd12e",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_2026/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "8a30891e84cd18c4492a19f96aaa714262748da032b0e683adecd0ae0c0df8b2",
+          "actual_sha256": "8a30891e84cd18c4492a19f96aaa714262748da032b0e683adecd0ae0c0df8b2",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_2026/verification.json",
+          "exists": true,
+          "expected_sha256": "ba4fd7251bb12611e8d8ba8f3f55c310cf38265b252ebe05e70664b1da55dc23",
+          "actual_sha256": "ba4fd7251bb12611e8d8ba8f3f55c310cf38265b252ebe05e70664b1da55dc23",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "causal_3407",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/causal_3407/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "259285558346b83fe3732e45636377c45dee347f0d4fdbc5b3609866466df73f",
+          "actual_sha256": "259285558346b83fe3732e45636377c45dee347f0d4fdbc5b3609866466df73f",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_3407/daily.csv",
+          "exists": true,
+          "expected_sha256": "2e83d635137ef20f0406652bf59c453410479d9d398dba9a1990e911a5e93e1d",
+          "actual_sha256": "2e83d635137ef20f0406652bf59c453410479d9d398dba9a1990e911a5e93e1d",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_3407/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "8ed4144e8afce18153a173c2e7a6c710f5f3882cfe6c231e3c2ff9b9af8de2d9",
+          "actual_sha256": "8ed4144e8afce18153a173c2e7a6c710f5f3882cfe6c231e3c2ff9b9af8de2d9",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_3407/verification.json",
+          "exists": true,
+          "expected_sha256": "ed5cc858009bb8d1e4b43856625866e54c32a8a4b01920fd08055501f3278114",
+          "actual_sha256": "ed5cc858009bb8d1e4b43856625866e54c32a8a4b01920fd08055501f3278114",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "cost_only",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/cost_only/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "c0de2b70320836c05b960ba8848f607ace1bc63e4e9bf254b6f3c01c25b93117",
+          "actual_sha256": "c0de2b70320836c05b960ba8848f607ace1bc63e4e9bf254b6f3c01c25b93117",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/cost_only/daily.csv",
+          "exists": true,
+          "expected_sha256": "875e813e2adacf438bd0c52b4197e48bc8518a2649225e7c489e15b3d6048387",
+          "actual_sha256": "875e813e2adacf438bd0c52b4197e48bc8518a2649225e7c489e15b3d6048387",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/cost_only/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "6b81214f0ea459ff15f6caaf8ff5524cdf3b84303735319ff0fd1b2259642a1d",
+          "actual_sha256": "6b81214f0ea459ff15f6caaf8ff5524cdf3b84303735319ff0fd1b2259642a1d",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/cost_only/verification.json",
+          "exists": true,
+          "expected_sha256": "dd47e1e9584f74874f6d86703b286bb64058c7d9bea008fc5d8d39e6df6c14aa",
+          "actual_sha256": "dd47e1e9584f74874f6d86703b286bb64058c7d9bea008fc5d8d39e6df6c14aa",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "no_tree",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/no_tree/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "000a8152a560b24464a351ad91feb0143e0f1b90a0ad0608645be561bb765a83",
+          "actual_sha256": "000a8152a560b24464a351ad91feb0143e0f1b90a0ad0608645be561bb765a83",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/no_tree/daily.csv",
+          "exists": true,
+          "expected_sha256": "a3a5e35d8c23089bceeba543682d0198982dc2c7bdb04a4a1577f37cac6eca50",
+          "actual_sha256": "a3a5e35d8c23089bceeba543682d0198982dc2c7bdb04a4a1577f37cac6eca50",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/no_tree/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "4075bf434994b49c3418b17065be9ea4abf85ee6b9c0e91bb42ea69142a208ba",
+          "actual_sha256": "4075bf434994b49c3418b17065be9ea4abf85ee6b9c0e91bb42ea69142a208ba",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/no_tree/verification.json",
+          "exists": true,
+          "expected_sha256": "eb0958cec43599da8cacf829253daa3ff4d1ee862d67b2606be787d1e9adbd72",
+          "actual_sha256": "eb0958cec43599da8cacf829253daa3ff4d1ee862d67b2606be787d1e9adbd72",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "more_throughput_penalty",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/more_throughput_penalty/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "245a8124afce755c27103ef789d4eacaca856c8c94516211ca5a0572662a3403",
+          "actual_sha256": "245a8124afce755c27103ef789d4eacaca856c8c94516211ca5a0572662a3403",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/more_throughput_penalty/daily.csv",
+          "exists": true,
+          "expected_sha256": "3e4fab344721a1ea0f056721481ddf6657939afe9936924e6e846424d005178f",
+          "actual_sha256": "3e4fab344721a1ea0f056721481ddf6657939afe9936924e6e846424d005178f",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/more_throughput_penalty/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "8932258a015d013b02c5151d621b8acf97533ae2e30b69d67d605e02a06ef77a",
+          "actual_sha256": "8932258a015d013b02c5151d621b8acf97533ae2e30b69d67d605e02a06ef77a",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/more_throughput_penalty/verification.json",
+          "exists": true,
+          "expected_sha256": "92a26903a41b0438592b60b5e23af751526c7cc67c2a0e9fe6cec8260d7660fc",
+          "actual_sha256": "92a26903a41b0438592b60b5e23af751526c7cc67c2a0e9fe6cec8260d7660fc",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "zero_terminal",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/zero_terminal/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "dd5c5f71998f884c55fb15eaaea23b728b4e31dd17e20428b086eb288e56d0b7",
+          "actual_sha256": "dd5c5f71998f884c55fb15eaaea23b728b4e31dd17e20428b086eb288e56d0b7",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/zero_terminal/daily.csv",
+          "exists": true,
+          "expected_sha256": "5af783661ab3d94ddb65dddda72c2b49cada82f3fc02325497cbb34d40fc2413",
+          "actual_sha256": "5af783661ab3d94ddb65dddda72c2b49cada82f3fc02325497cbb34d40fc2413",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/zero_terminal/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "0ad4ce1f31e2d737cbb46aacf4ab9de8ae15aad7d156c622fd0e4b4128b22a30",
+          "actual_sha256": "0ad4ce1f31e2d737cbb46aacf4ab9de8ae15aad7d156c622fd0e4b4128b22a30",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/zero_terminal/verification.json",
+          "exists": true,
+          "expected_sha256": "3b95c2d0f3659d22f8345b6f6848266de5ca9bf3b913a24d66bac3883510d1a1",
+          "actual_sha256": "3b95c2d0f3659d22f8345b6f6848266de5ca9bf3b913a24d66bac3883510d1a1",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "greedy_execution",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/greedy_execution/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "dbcfa37342bffff015042053bd9b22b3a064b2e4fdd82ea7e26380ad1027ee6f",
+          "actual_sha256": "dbcfa37342bffff015042053bd9b22b3a064b2e4fdd82ea7e26380ad1027ee6f",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/greedy_execution/daily.csv",
+          "exists": true,
+          "expected_sha256": "c16f50bde198d9821f7b31199ed687ce4c91726f75bc8c15b2b18cc0185c25cd",
+          "actual_sha256": "c16f50bde198d9821f7b31199ed687ce4c91726f75bc8c15b2b18cc0185c25cd",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/greedy_execution/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "4b9a0ef136d1fff2cd3a7d66d0110647351d6b6352edeab0efda9c2fa5995d79",
+          "actual_sha256": "4b9a0ef136d1fff2cd3a7d66d0110647351d6b6352edeab0efda9c2fa5995d79",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/greedy_execution/verification.json",
+          "exists": true,
+          "expected_sha256": "a8d43e9eb68bf46bc4396479584b4bc5de17a05f95f334aa26869d422b31a51b",
+          "actual_sha256": "a8d43e9eb68bf46bc4396479584b4bc5de17a05f95f334aa26869d422b31a51b",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "no_deadband",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/no_deadband/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "a1aa0dabb5a262f6600aff33b5ca0a6111f55f8e6b3b54da9b491b21521f7798",
+          "actual_sha256": "a1aa0dabb5a262f6600aff33b5ca0a6111f55f8e6b3b54da9b491b21521f7798",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/no_deadband/daily.csv",
+          "exists": true,
+          "expected_sha256": "94146835318636c9b17eb776488b01c33488a48fbb2e4917bf000e4e884070da",
+          "actual_sha256": "94146835318636c9b17eb776488b01c33488a48fbb2e4917bf000e4e884070da",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/no_deadband/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "283e893fafbaf82a5e786beec48f5bca47445f9d1bef7543f0e0674e095cc370",
+          "actual_sha256": "283e893fafbaf82a5e786beec48f5bca47445f9d1bef7543f0e0674e095cc370",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/no_deadband/verification.json",
+          "exists": true,
+          "expected_sha256": "cbe723d48aa2fbdab9fe4d2a6a87cb0890a4703a6a54ddc455c3c8fbf9237b6d",
+          "actual_sha256": "cbe723d48aa2fbdab9fe4d2a6a87cb0890a4703a6a54ddc455c3c8fbf9237b6d",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "primary_grid25",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/primary_grid25/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "064074e65be7e3621c77c7ead84984974059d70e758dd1c6504da0cdefb121c2",
+          "actual_sha256": "064074e65be7e3621c77c7ead84984974059d70e758dd1c6504da0cdefb121c2",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/primary_grid25/daily.csv",
+          "exists": true,
+          "expected_sha256": "117c67175003135160fe7d219286729abfb03d25380642e4abec1ab7e66c57d0",
+          "actual_sha256": "117c67175003135160fe7d219286729abfb03d25380642e4abec1ab7e66c57d0",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/primary_grid25/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "20f8f4b3a9e3825199340ea91c7ef558738c85ef8f2bb89343983b523c0c4988",
+          "actual_sha256": "20f8f4b3a9e3825199340ea91c7ef558738c85ef8f2bb89343983b523c0c4988",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/primary_grid25/verification.json",
+          "exists": true,
+          "expected_sha256": "ae56bf22f35f103bb99612454da8726cea423457de692ca95135d382537fb443",
+          "actual_sha256": "ae56bf22f35f103bb99612454da8726cea423457de692ca95135d382537fb443",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "causal_42_grid25",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/causal_42_grid25/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "e92523525e62e56652ef2c8f1e1b4862bfee86e558e2437dd6cac3545c7034a0",
+          "actual_sha256": "e92523525e62e56652ef2c8f1e1b4862bfee86e558e2437dd6cac3545c7034a0",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_42_grid25/daily.csv",
+          "exists": true,
+          "expected_sha256": "217da5827aca52b23815f47e420c687185e95844b4cb55c7ec67265272e340b6",
+          "actual_sha256": "217da5827aca52b23815f47e420c687185e95844b4cb55c7ec67265272e340b6",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_42_grid25/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "d03ab4862e402936b085962ee3e6da5441d3ea5bc5c0d114be6250c118534de0",
+          "actual_sha256": "d03ab4862e402936b085962ee3e6da5441d3ea5bc5c0d114be6250c118534de0",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/causal_42_grid25/verification.json",
+          "exists": true,
+          "expected_sha256": "fe39c5ce6231bb9c1f283b87d572935428d79546317f19ca4a2da514e555ef59",
+          "actual_sha256": "fe39c5ce6231bb9c1f283b87d572935428d79546317f19ca4a2da514e555ef59",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "run_id": "fixed_primary_greedy",
+      "complete": true,
+      "case_signature_matches": true,
+      "outputs": [
+        {
+          "path": "data/results/exp006/fixed_primary_greedy/dispatch_2.npz",
+          "exists": true,
+          "expected_sha256": "5372759f55cc2bb34f074c65a92e9b230084644b2cf8f7f326107d8eb376f2e6",
+          "actual_sha256": "5372759f55cc2bb34f074c65a92e9b230084644b2cf8f7f326107d8eb376f2e6",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/fixed_primary_greedy/daily.csv",
+          "exists": true,
+          "expected_sha256": "2c4b5273d13a596235e1fa3e351652dd758c58cf754b31906c4f610858f9f962",
+          "actual_sha256": "2c4b5273d13a596235e1fa3e351652dd758c58cf754b31906c4f610858f9f962",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/fixed_primary_greedy/planning_audit.json",
+          "exists": true,
+          "expected_sha256": "3ed881d46392f3252cdea6e3ef24e4059674a6b2581940331d57a0f3d7993ea5",
+          "actual_sha256": "3ed881d46392f3252cdea6e3ef24e4059674a6b2581940331d57a0f3d7993ea5",
+          "matches": true
+        },
+        {
+          "path": "data/results/exp006/fixed_primary_greedy/verification.json",
+          "exists": true,
+          "expected_sha256": "775a432e6626e4e4e40a334f8ee0cfd761f8d6a8c4b8c3ebcba4d09a85439042",
+          "actual_sha256": "775a432e6626e4e4e40a334f8ee0cfd761f8d6a8c4b8c3ebcba4d09a85439042",
+          "matches": true
+        }
+      ]
+    }
+  ],
+  "frozen_old_files": {
+    "expected_count": 205,
+    "checked_count": 205,
+    "matched_count": 205,
+    "checks": [
+      {
+        "path": "data/results/exp001/README.md",
+        "exists": true,
+        "expected_sha256": "99f342c6e13e77b9acc3791d34793627449cc6e7a25b9783d0a1d36d5f85ff5c",
+        "actual_sha256": "99f342c6e13e77b9acc3791d34793627449cc6e7a25b9783d0a1d36d5f85ff5c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/annual_forecast_metrics.csv",
+        "exists": true,
+        "expected_sha256": "e3b22a973bf7992609822d542b2da22b5438f90129c24c7061dce1c755442386",
+        "actual_sha256": "e3b22a973bf7992609822d542b2da22b5438f90129c24c7061dce1c755442386",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/battery_blocks.csv",
+        "exists": true,
+        "expected_sha256": "8edf99d29bf9bc861e9e02ea5963c8be047a04bf8193c2a7ab85217f066ca20b",
+        "actual_sha256": "8edf99d29bf9bc861e9e02ea5963c8be047a04bf8193c2a7ab85217f066ca20b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/causality_checks.json",
+        "exists": true,
+        "expected_sha256": "99815b05a83ffee3696fa7a64df2073fd42f14ce2232e64eaccedb2d30eb278d",
+        "actual_sha256": "99815b05a83ffee3696fa7a64df2073fd42f14ce2232e64eaccedb2d30eb278d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/daily_metrics.csv",
+        "exists": true,
+        "expected_sha256": "441dfea7b83e4e0199e7042e5481ac531c47c7b6655bac3e4456b8c574f1c278",
+        "actual_sha256": "441dfea7b83e4e0199e7042e5481ac531c47c7b6655bac3e4456b8c574f1c278",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/data_hashes.json",
+        "exists": true,
+        "expected_sha256": "814789eff8b56e51896dd0def3daa6b41693e739230e28f9a81c209efa500009",
+        "actual_sha256": "814789eff8b56e51896dd0def3daa6b41693e739230e28f9a81c209efa500009",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/dispatch_2.npz",
+        "exists": true,
+        "expected_sha256": "00cccf99d5b2a143dbd2366aff5c5da9114a7fca436f77fac450ecd23530adfe",
+        "actual_sha256": "00cccf99d5b2a143dbd2366aff5c5da9114a7fca436f77fac450ecd23530adfe",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/dispatch_3.npz",
+        "exists": true,
+        "expected_sha256": "349f90cd8b9ad039966f00310f9d458c67bf724af522f534173f1a72fa86d374",
+        "actual_sha256": "349f90cd8b9ad039966f00310f9d458c67bf724af522f534173f1a72fa86d374",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/dispatch_4-2.npz",
+        "exists": true,
+        "expected_sha256": "76bc762de0e1a855be8f497b06f1ba5040126815ffdd649a3473f029dff98f94",
+        "actual_sha256": "76bc762de0e1a855be8f497b06f1ba5040126815ffdd649a3473f029dff98f94",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/dispatch_4-3.npz",
+        "exists": true,
+        "expected_sha256": "72008334ff4e2ec8f4fb98b818f9a9ebdf782fbd46332d4f54e6d04c98490470",
+        "actual_sha256": "72008334ff4e2ec8f4fb98b818f9a9ebdf782fbd46332d4f54e6d04c98490470",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/dispatch_metrics.csv",
+        "exists": true,
+        "expected_sha256": "969205432f5ed76082a806e02af5bec57f365db1fbfbd53a0dc886b22f21dcef",
+        "actual_sha256": "969205432f5ed76082a806e02af5bec57f365db1fbfbd53a0dc886b22f21dcef",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/emergency_periods.csv",
+        "exists": true,
+        "expected_sha256": "34512a52011b12784bf03246aef23311a5f6166e01f19cebf229410d720f75eb",
+        "actual_sha256": "34512a52011b12784bf03246aef23311a5f6166e01f19cebf229410d720f75eb",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/ensemble_predictions.npz",
+        "exists": true,
+        "expected_sha256": "218ce05fdc849b279d11f567b03d8d9e6f817c3b1f9e878c001323893c0dc87a",
+        "actual_sha256": "218ce05fdc849b279d11f567b03d8d9e6f817c3b1f9e878c001323893c0dc87a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/forecast_metrics.csv",
+        "exists": true,
+        "expected_sha256": "a8680c5e6487257c8c6802f782efd9b5d1d725f0f9c3c8b6e705827f2805c8b5",
+        "actual_sha256": "a8680c5e6487257c8c6802f782efd9b5d1d725f0f9c3c8b6e705827f2805c8b5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/model_selection.csv",
+        "exists": true,
+        "expected_sha256": "46ce951f8baa671e5ae604267ffc4a6165dc207ff71b55e15ccd9bcd6d4b87a7",
+        "actual_sha256": "46ce951f8baa671e5ae604267ffc4a6165dc207ff71b55e15ccd9bcd6d4b87a7",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/prediction_archive.json",
+        "exists": true,
+        "expected_sha256": "c00ad70d9a77d5304d8bda1035cb0e57893aa621c82db50aef7322f06e9417dd",
+        "actual_sha256": "c00ad70d9a77d5304d8bda1035cb0e57893aa621c82db50aef7322f06e9417dd",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/result2.xlsx",
+        "exists": true,
+        "expected_sha256": "e27260be64b16ea0624d7b4ccd9fbf428931644847b552505a1b534743702a68",
+        "actual_sha256": "e27260be64b16ea0624d7b4ccd9fbf428931644847b552505a1b534743702a68",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/result3.xlsx",
+        "exists": true,
+        "expected_sha256": "a95f6b8231afe75f52a26377294fd8573e25082f101671f4d4685ed17b9b50a8",
+        "actual_sha256": "a95f6b8231afe75f52a26377294fd8573e25082f101671f4d4685ed17b9b50a8",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/result4-2.xlsx",
+        "exists": true,
+        "expected_sha256": "a42d7fb8bd6c8b37d21ba52b8d1d4389ac932b00b549fc7aacd83ea6a6207b02",
+        "actual_sha256": "a42d7fb8bd6c8b37d21ba52b8d1d4389ac932b00b549fc7aacd83ea6a6207b02",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/result4-3.xlsx",
+        "exists": true,
+        "expected_sha256": "e5eeb117e0a8d0710d3963886e0f2d874cae8af0f9b263241cfab3bae3ee5850",
+        "actual_sha256": "e5eeb117e0a8d0710d3963886e0f2d874cae8af0f9b263241cfab3bae3ee5850",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/specified_dates.csv",
+        "exists": true,
+        "expected_sha256": "b71d6c8f3b989003aaf002927cfb6d908ea160d9deb955176e44150d4717f41d",
+        "actual_sha256": "b71d6c8f3b989003aaf002927cfb6d908ea160d9deb955176e44150d4717f41d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/training_metadata.json",
+        "exists": true,
+        "expected_sha256": "10f098772ed73ea1d5073460b51def8d84d4183bcab325de55d677cbc7997f8b",
+        "actual_sha256": "10f098772ed73ea1d5073460b51def8d84d4183bcab325de55d677cbc7997f8b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/verification.json",
+        "exists": true,
+        "expected_sha256": "8f9ee2ba6d85885f83e27900dd7d7952cc4f3a387e83313346a7eb95ff5d6a3f",
+        "actual_sha256": "8f9ee2ba6d85885f83e27900dd7d7952cc4f3a387e83313346a7eb95ff5d6a3f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/warmup_2.npz",
+        "exists": true,
+        "expected_sha256": "ea0485389fe3389ab77edce1e4a1ce896dfb2ee4b32724d1cebc71be6695534c",
+        "actual_sha256": "ea0485389fe3389ab77edce1e4a1ce896dfb2ee4b32724d1cebc71be6695534c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/warmup_3.npz",
+        "exists": true,
+        "expected_sha256": "2dcfb6fbab4f732156b5d823f81a64d9b09ee0e48444f2e6f1fa4c8fef38a51d",
+        "actual_sha256": "2dcfb6fbab4f732156b5d823f81a64d9b09ee0e48444f2e6f1fa4c8fef38a51d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/warmup_4-2.npz",
+        "exists": true,
+        "expected_sha256": "b399fcee870ba1eec9012241396a0dee28407a3f998bb0addac179d9a4aae99d",
+        "actual_sha256": "b399fcee870ba1eec9012241396a0dee28407a3f998bb0addac179d9a4aae99d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp001/warmup_4-3.npz",
+        "exists": true,
+        "expected_sha256": "77cda21c9c584a57520df3858afea73b319a390439233e6e94ab662c495a5bad",
+        "actual_sha256": "77cda21c9c584a57520df3858afea73b319a390439233e6e94ab662c495a5bad",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/.gitignore",
+        "exists": true,
+        "expected_sha256": "fcf60cb4dabb3cf7c1fa1a5e6aac395a2bcbe907e8233f67400790e757dbd83a",
+        "actual_sha256": "fcf60cb4dabb3cf7c1fa1a5e6aac395a2bcbe907e8233f67400790e757dbd83a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/README.md",
+        "exists": true,
+        "expected_sha256": "907c191f058b4fb834733696930f8094b322e5c12b49e4f31568c725da0df214",
+        "actual_sha256": "907c191f058b4fb834733696930f8094b322e5c12b49e4f31568c725da0df214",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/annual_forecast_metrics.csv",
+        "exists": true,
+        "expected_sha256": "2d9e8b23d308337df963f07fb12defe226f6188747bbef5e4cfaa6e7c0d20c06",
+        "actual_sha256": "2d9e8b23d308337df963f07fb12defe226f6188747bbef5e4cfaa6e7c0d20c06",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/battery_blocks.csv",
+        "exists": true,
+        "expected_sha256": "91a3772d340130f5456a025bc4a94630ec3a64fb9cddb77629a2090fc957ee2f",
+        "actual_sha256": "91a3772d340130f5456a025bc4a94630ec3a64fb9cddb77629a2090fc957ee2f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/browser_checks.json",
+        "exists": true,
+        "expected_sha256": "2be17da5c83b54dcb2b4b32de2bced53f8eab192197ce8f2e0f77dbb7500ebc4",
+        "actual_sha256": "2be17da5c83b54dcb2b4b32de2bced53f8eab192197ce8f2e0f77dbb7500ebc4",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/calibration_causality_check.json",
+        "exists": true,
+        "expected_sha256": "5621b2bb2dd96de897fda5c2a2a2d8091134ec45924a33781586bd32e2999135",
+        "actual_sha256": "5621b2bb2dd96de897fda5c2a2a2d8091134ec45924a33781586bd32e2999135",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/causal_fix_event.json",
+        "exists": true,
+        "expected_sha256": "b40b90d2411fefbc2d1ac225120462e5f89696d88fffe19b920b1d3cd76e109d",
+        "actual_sha256": "b40b90d2411fefbc2d1ac225120462e5f89696d88fffe19b920b1d3cd76e109d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/causal_tree_fix_migration.json",
+        "exists": true,
+        "expected_sha256": "1658a17217dbf81a2108045cb6ce4a1341beb171b77e50bd48ea7936b135bcea",
+        "actual_sha256": "1658a17217dbf81a2108045cb6ce4a1341beb171b77e50bd48ea7936b135bcea",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/clipped_information_fix_event.json",
+        "exists": true,
+        "expected_sha256": "caa1edd5ab79a06b1af58776cdeff711bb111a5157ee97e40ff5ebe3617eb003",
+        "actual_sha256": "caa1edd5ab79a06b1af58776cdeff711bb111a5157ee97e40ff5ebe3617eb003",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/clipped_information_fix_migration.json",
+        "exists": true,
+        "expected_sha256": "35b27dff6806393026b5a4b29549ee167b176136e9bdc8b6a2a6a1c4a7fce0e7",
+        "actual_sha256": "35b27dff6806393026b5a4b29549ee167b176136e9bdc8b6a2a6a1c4a7fce0e7",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/core_contributions.csv",
+        "exists": true,
+        "expected_sha256": "452a7e2f5dcd2640e0cd9ff6aa4aed073363c2cc01f7a150f4e9d66766eb4e94",
+        "actual_sha256": "452a7e2f5dcd2640e0cd9ff6aa4aed073363c2cc01f7a150f4e9d66766eb4e94",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/daily_metrics.csv",
+        "exists": true,
+        "expected_sha256": "c5e97db09b36c1a6500483b96ab9d99c3d877705c9d5f3e7eec9ba89a477b417",
+        "actual_sha256": "c5e97db09b36c1a6500483b96ab9d99c3d877705c9d5f3e7eec9ba89a477b417",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/data_hashes.json",
+        "exists": true,
+        "expected_sha256": "814789eff8b56e51896dd0def3daa6b41693e739230e28f9a81c209efa500009",
+        "actual_sha256": "814789eff8b56e51896dd0def3daa6b41693e739230e28f9a81c209efa500009",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/dispatch_2.npz",
+        "exists": true,
+        "expected_sha256": "5b1537c4dfe1e0b4edb849ab4d595cb9dfee3397124fd512f93614795a6c5f7e",
+        "actual_sha256": "5b1537c4dfe1e0b4edb849ab4d595cb9dfee3397124fd512f93614795a6c5f7e",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/dispatch_3.npz",
+        "exists": true,
+        "expected_sha256": "9b53cc0bca83a0b158e18499d37a1deb3f2f0c50eca16848906a9e053bc9195b",
+        "actual_sha256": "9b53cc0bca83a0b158e18499d37a1deb3f2f0c50eca16848906a9e053bc9195b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/dispatch_4-2.npz",
+        "exists": true,
+        "expected_sha256": "64f0918a8f6f8b89405bb7f759e95b8c705fd8caa80bc39b5fa7b320cbc522b1",
+        "actual_sha256": "64f0918a8f6f8b89405bb7f759e95b8c705fd8caa80bc39b5fa7b320cbc522b1",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/dispatch_4-3.npz",
+        "exists": true,
+        "expected_sha256": "22b90d81a130bd5559d1640c2975777d0f58ece46aa8db01f4bcc788e9db59f6",
+        "actual_sha256": "22b90d81a130bd5559d1640c2975777d0f58ece46aa8db01f4bcc788e9db59f6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/dispatch_metrics.csv",
+        "exists": true,
+        "expected_sha256": "f790eb72bcafe47a4daf7188dd777dadf017992847245e70207491263d570e2c",
+        "actual_sha256": "f790eb72bcafe47a4daf7188dd777dadf017992847245e70207491263d570e2c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/emergency_periods.csv",
+        "exists": true,
+        "expected_sha256": "46caac7101b1b34df46f07c63482f5a5df94c958b8c1ec943df50c0d3f770a50",
+        "actual_sha256": "46caac7101b1b34df46f07c63482f5a5df94c958b8c1ec943df50c0d3f770a50",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/evaluation_manifest.json",
+        "exists": true,
+        "expected_sha256": "91e68ae486f47f76fb40e701234f4dda2a9541d744841d1d10e1f6d32b3f9a14",
+        "actual_sha256": "91e68ae486f47f76fb40e701234f4dda2a9541d744841d1d10e1f6d32b3f9a14",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/evaluation_walltime.json",
+        "exists": true,
+        "expected_sha256": "8ba9eeade8d9e85e81f2c91025496f5298c8c6be34fe3e8eecb87cbbb8762c2b",
+        "actual_sha256": "8ba9eeade8d9e85e81f2c91025496f5298c8c6be34fe3e8eecb87cbbb8762c2b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/failure_intervals.csv",
+        "exists": true,
+        "expected_sha256": "37c1a32ccc6bbe628e1470842ea2fabe19f9bb6b7e68c06379e6e915cfb6a6fb",
+        "actual_sha256": "37c1a32ccc6bbe628e1470842ea2fabe19f9bb6b7e68c06379e6e915cfb6a6fb",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/failure_storage.csv",
+        "exists": true,
+        "expected_sha256": "674a2a9464ae20f7e6395528276d0284f11d2b9f1d6d2669b5a80d5e4894bb7c",
+        "actual_sha256": "674a2a9464ae20f7e6395528276d0284f11d2b9f1d6d2669b5a80d5e4894bb7c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/forecast_decomposition.csv",
+        "exists": true,
+        "expected_sha256": "830126014bfa082dc27dc7c51a3c8d6a43f6e06dc36098ba4854c3c9c6b9c833",
+        "actual_sha256": "830126014bfa082dc27dc7c51a3c8d6a43f6e06dc36098ba4854c3c9c6b9c833",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/forecast_metrics.csv",
+        "exists": true,
+        "expected_sha256": "d8d8ac7565ba08a0c505f66a74aeacb0091e323aa08d2ea52c1c054e4ac09ef6",
+        "actual_sha256": "d8d8ac7565ba08a0c505f66a74aeacb0091e323aa08d2ea52c1c054e4ac09ef6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/full_year_audit.json",
+        "exists": true,
+        "expected_sha256": "b71f690b86f32928041d5bc53738d267c86ad66d7368fbe90a1e77a6caac7d43",
+        "actual_sha256": "b71f690b86f32928041d5bc53738d267c86ad66d7368fbe90a1e77a6caac7d43",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/january_baselines.csv",
+        "exists": true,
+        "expected_sha256": "a3af0af1507c38a50d28e0b5629f6f444749fd97075c49c44797bdea4045a2a5",
+        "actual_sha256": "a3af0af1507c38a50d28e0b5629f6f444749fd97075c49c44797bdea4045a2a5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/known_price_information_migration.json",
+        "exists": true,
+        "expected_sha256": "4c9ed4a6340595ad17dfa6724d929cf09f6943d2571ba2ada34127ff3cf94c9c",
+        "actual_sha256": "4c9ed4a6340595ad17dfa6724d929cf09f6943d2571ba2ada34127ff3cf94c9c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/model_checks.json",
+        "exists": true,
+        "expected_sha256": "3f9701f2df88c46fa5a835db21b7c222f20ef0e9ecbc466d7857e47cfa6b0d57",
+        "actual_sha256": "3f9701f2df88c46fa5a835db21b7c222f20ef0e9ecbc466d7857e47cfa6b0d57",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/monthly_dispatch.csv",
+        "exists": true,
+        "expected_sha256": "5f5bb20535e487e0eaa56ecf6645b490d53060bc013cce35ae2034f9335d2ca1",
+        "actual_sha256": "5f5bb20535e487e0eaa56ecf6645b490d53060bc013cce35ae2034f9335d2ca1",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/official_forecast_comparison.csv",
+        "exists": true,
+        "expected_sha256": "964eaf67d1f029df85ad59ca234b7259355b075a0c6944401383406a677ace6f",
+        "actual_sha256": "964eaf67d1f029df85ad59ca234b7259355b075a0c6944401383406a677ace6f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/phase_timing.csv",
+        "exists": true,
+        "expected_sha256": "c7be49b1cbdd7f67bcf903c07a77f1c577847e07ceafa56dc8f5f7d02aab85d4",
+        "actual_sha256": "c7be49b1cbdd7f67bcf903c07a77f1c577847e07ceafa56dc8f5f7d02aab85d4",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/prediction_archive.json",
+        "exists": true,
+        "expected_sha256": "f08bda442f73a81c786fd0acfe0ce2c4db2cdfe14b6bde448504a4670e487b81",
+        "actual_sha256": "f08bda442f73a81c786fd0acfe0ce2c4db2cdfe14b6bde448504a4670e487b81",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/prediction_recovery_check.json",
+        "exists": true,
+        "expected_sha256": "d9caac4466b1d1358eb6c3fbf61ee012659634aeb0e472e460a52dd122e44f70",
+        "actual_sha256": "d9caac4466b1d1358eb6c3fbf61ee012659634aeb0e472e460a52dd122e44f70",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/predictions.npz",
+        "exists": true,
+        "expected_sha256": "389f437387a6f0f7fd4bda887e690fc62a437fcd5f4212c8a9c922b18302249b",
+        "actual_sha256": "389f437387a6f0f7fd4bda887e690fc62a437fcd5f4212c8a9c922b18302249b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/protocol.json",
+        "exists": true,
+        "expected_sha256": "cbddb7a4c5941f21d6cbaa50997e1688eda8813ff8ca87fc5f26118e0d1cc1ed",
+        "actual_sha256": "cbddb7a4c5941f21d6cbaa50997e1688eda8813ff8ca87fc5f26118e0d1cc1ed",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/report_archive_independence_check.json",
+        "exists": true,
+        "expected_sha256": "82e5d61ab65b90c712485529bb74e63c5fc21481daa3f23637195bb4784dc921",
+        "actual_sha256": "82e5d61ab65b90c712485529bb74e63c5fc21481daa3f23637195bb4784dc921",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/result2.xlsx",
+        "exists": true,
+        "expected_sha256": "5644097bc996b54264b0eeedbc653a8a7d7e2f3cff0a2f6ca469cb7c0aff14b4",
+        "actual_sha256": "5644097bc996b54264b0eeedbc653a8a7d7e2f3cff0a2f6ca469cb7c0aff14b4",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/result3.xlsx",
+        "exists": true,
+        "expected_sha256": "4062c6ee6479f406fb0e70e63e29b43424096fd4402fa4ed365683e70b056282",
+        "actual_sha256": "4062c6ee6479f406fb0e70e63e29b43424096fd4402fa4ed365683e70b056282",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/result4-2.xlsx",
+        "exists": true,
+        "expected_sha256": "9e177647bf761683194222d3f0a09f5f6fb5184ba34229bd0d5c120d6454b7cd",
+        "actual_sha256": "9e177647bf761683194222d3f0a09f5f6fb5184ba34229bd0d5c120d6454b7cd",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/result4-3.xlsx",
+        "exists": true,
+        "expected_sha256": "0792252eaf11845655a61fca722203323d2cc11b771ebab630bcb9a4be1f7465",
+        "actual_sha256": "0792252eaf11845655a61fca722203323d2cc11b771ebab630bcb9a4be1f7465",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/resume_events.json",
+        "exists": true,
+        "expected_sha256": "6a5c67f187b869558237a87635834a85490a9965d732129d0e070ac3a33aab45",
+        "actual_sha256": "6a5c67f187b869558237a87635834a85490a9965d732129d0e070ac3a33aab45",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/risk_calibration.json",
+        "exists": true,
+        "expected_sha256": "86fc98705445c6e64e7860aa8dfeef3943496260810126a5c24893b20c6a0864",
+        "actual_sha256": "86fc98705445c6e64e7860aa8dfeef3943496260810126a5c24893b20c6a0864",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/scenario_examples.json",
+        "exists": true,
+        "expected_sha256": "01761935ba6bea241a288d41eaaa4264049b481f992f647a6e59a3ffdf103ff7",
+        "actual_sha256": "01761935ba6bea241a288d41eaaa4264049b481f992f647a6e59a3ffdf103ff7",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/seed_cost_results.csv",
+        "exists": true,
+        "expected_sha256": "c701830b49d7cfa97a773406698b18a75969f784b22135b0dad3ac38ee454c59",
+        "actual_sha256": "c701830b49d7cfa97a773406698b18a75969f784b22135b0dad3ac38ee454c59",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/seed_cost_statistics.csv",
+        "exists": true,
+        "expected_sha256": "1aeb23f159acac928149db580112bd0cb0d2e5afff90d45ca8f50ab8f8ca50f6",
+        "actual_sha256": "1aeb23f159acac928149db580112bd0cb0d2e5afff90d45ca8f50ab8f8ca50f6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/seed_forecast_results.csv",
+        "exists": true,
+        "expected_sha256": "1c4c3f43654f45422ccbaa4e91b1032485865c378bf33a44bf77a8cdd82e7fd2",
+        "actual_sha256": "1c4c3f43654f45422ccbaa4e91b1032485865c378bf33a44bf77a8cdd82e7fd2",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/seed_forecast_statistics.csv",
+        "exists": true,
+        "expected_sha256": "0a9216435f7f31bf293d9e11433740517fbab8a2742cf9d8a7bb100b951782b9",
+        "actual_sha256": "0a9216435f7f31bf293d9e11433740517fbab8a2742cf9d8a7bb100b951782b9",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/solver_metrics.csv",
+        "exists": true,
+        "expected_sha256": "a3bd65e2f5eb31a5e780264c4edd61b9ad2eb03828c055e16521afad0c1db774",
+        "actual_sha256": "a3bd65e2f5eb31a5e780264c4edd61b9ad2eb03828c055e16521afad0c1db774",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/solver_summary.csv",
+        "exists": true,
+        "expected_sha256": "542a32ca1015c92ea8ce03f585327de132bd466572ec27c01f4eb1d9f7e052a6",
+        "actual_sha256": "542a32ca1015c92ea8ce03f585327de132bd466572ec27c01f4eb1d9f7e052a6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/source_hashes.json",
+        "exists": true,
+        "expected_sha256": "19954bb163051c6a34e92a62499876efec474d2234f9157e04cb563c4b6cc626",
+        "actual_sha256": "19954bb163051c6a34e92a62499876efec474d2234f9157e04cb563c4b6cc626",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/specified_dates.csv",
+        "exists": true,
+        "expected_sha256": "2557ce83a81711877e059abdd0f1f8aad721ee4e58be9e31edad1611e072efdd",
+        "actual_sha256": "2557ce83a81711877e059abdd0f1f8aad721ee4e58be9e31edad1611e072efdd",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/specified_intervals.csv",
+        "exists": true,
+        "expected_sha256": "2a08095014355bdd666dd01626d4a3d2ecc845181d4d8e79f3ee24d78da2613e",
+        "actual_sha256": "2a08095014355bdd666dd01626d4a3d2ecc845181d4d8e79f3ee24d78da2613e",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/stage_timings.json",
+        "exists": true,
+        "expected_sha256": "eebd108104075b06dc2f21c2ab4af0307d94ef7e7825cbfa075ba54a159c2f26",
+        "actual_sha256": "eebd108104075b06dc2f21c2ab4af0307d94ef7e7825cbfa075ba54a159c2f26",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/training_metadata.json",
+        "exists": true,
+        "expected_sha256": "67174c4136817be55403d07f4f88858cbad0c7a952f05dbc3ac4629c6a06be8a",
+        "actual_sha256": "67174c4136817be55403d07f4f88858cbad0c7a952f05dbc3ac4629c6a06be8a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/training_trace.csv",
+        "exists": true,
+        "expected_sha256": "428fe112a52cf229b0fd2e9bd8da5d2df55abe19086c5fed6454d3eb0e85828e",
+        "actual_sha256": "428fe112a52cf229b0fd2e9bd8da5d2df55abe19086c5fed6454d3eb0e85828e",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/tree_example.json",
+        "exists": true,
+        "expected_sha256": "cc018b8eaa333b28e224ff772a15e3a0c2c153fd0c64af6bb930bc4ed514792c",
+        "actual_sha256": "cc018b8eaa333b28e224ff772a15e3a0c2c153fd0c64af6bb930bc4ed514792c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/tree_nodes.csv",
+        "exists": true,
+        "expected_sha256": "04405460cf174afdac754784e801d074a8d06c7b444600c9ac4bcaf5d3aac8a8",
+        "actual_sha256": "04405460cf174afdac754784e801d074a8d06c7b444600c9ac4bcaf5d3aac8a8",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/verification.json",
+        "exists": true,
+        "expected_sha256": "64c221d8087aaa3f5d237adf3297f469ababa5779839e3ae50e2070e740729fa",
+        "actual_sha256": "64c221d8087aaa3f5d237adf3297f469ababa5779839e3ae50e2070e740729fa",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/warmup_2.npz",
+        "exists": true,
+        "expected_sha256": "5323984f8ebe6427c52877aefe6cf35a53336b44527bfc730bee9157c045ef82",
+        "actual_sha256": "5323984f8ebe6427c52877aefe6cf35a53336b44527bfc730bee9157c045ef82",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/warmup_3.npz",
+        "exists": true,
+        "expected_sha256": "c96b2198a33e8c1dad92a7f45ab51c3877ba74109ce596e11016496cf35fbafb",
+        "actual_sha256": "c96b2198a33e8c1dad92a7f45ab51c3877ba74109ce596e11016496cf35fbafb",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/warmup_4-2.npz",
+        "exists": true,
+        "expected_sha256": "14040fca3b2158c75e7553615798548e9b0e28ceb751d2e58d3040eb9ba28a6a",
+        "actual_sha256": "14040fca3b2158c75e7553615798548e9b0e28ceb751d2e58d3040eb9ba28a6a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/warmup_4-3.npz",
+        "exists": true,
+        "expected_sha256": "05a729acfeb858142e28fdbce24dd2e09b52b33439d512bf0bdd75a5c5ff057f",
+        "actual_sha256": "05a729acfeb858142e28fdbce24dd2e09b52b33439d512bf0bdd75a5c5ff057f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp002/worked_example.json",
+        "exists": true,
+        "expected_sha256": "7d7a140e28cbf09f920950afdb1abb6e68c888beeeb2976f0fbf34939d6851ab",
+        "actual_sha256": "7d7a140e28cbf09f920950afdb1abb6e68c888beeeb2976f0fbf34939d6851ab",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/alpha_calibration.json",
+        "exists": true,
+        "expected_sha256": "e23a6eb96a01624f58eae6cc1a2bba75d4127d7ae73b8e85128a8cd2d3d4a6a4",
+        "actual_sha256": "e23a6eb96a01624f58eae6cc1a2bba75d4127d7ae73b8e85128a8cd2d3d4a6a4",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/README.md",
+        "exists": true,
+        "expected_sha256": "11988ab0f353ac1f6b317fd7a90b39bfae80f5ef46cd080bc38b4fb42fa2a111",
+        "actual_sha256": "11988ab0f353ac1f6b317fd7a90b39bfae80f5ef46cd080bc38b4fb42fa2a111",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/baseline_boundaries.json",
+        "exists": true,
+        "expected_sha256": "0094608cc342504bae472998191d8462f8e9bb873805a39954e48a7f812a2b12",
+        "actual_sha256": "0094608cc342504bae472998191d8462f8e9bb873805a39954e48a7f812a2b12",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/exp001_original_q2_costs.csv",
+        "exists": true,
+        "expected_sha256": "e9b9ba6264ae4c943c598a884445749efe3e4efba0aadd176c24e60d13f1c43a",
+        "actual_sha256": "e9b9ba6264ae4c943c598a884445749efe3e4efba0aadd176c24e60d13f1c43a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/exp002_q2_costs.csv",
+        "exists": true,
+        "expected_sha256": "4d2d983c257f49211255c10c45c32e4fb0d48ca6d527bdfd1bc396e0bf18b957",
+        "actual_sha256": "4d2d983c257f49211255c10c45c32e4fb0d48ca6d527bdfd1bc396e0bf18b957",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/exp002_q2_daily.csv",
+        "exists": true,
+        "expected_sha256": "68c73a31605caaa6c4852216d5c2084539a33f34d40af58cc4cbb14247a9feb4",
+        "actual_sha256": "68c73a31605caaa6c4852216d5c2084539a33f34d40af58cc4cbb14247a9feb4",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/forecast_annual.csv",
+        "exists": true,
+        "expected_sha256": "243853f9ffac473a404611e5f8d808ff8a44e5ceeedc4a20db3e0f32b6359e90",
+        "actual_sha256": "243853f9ffac473a404611e5f8d808ff8a44e5ceeedc4a20db3e0f32b6359e90",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/forecast_monthly.csv",
+        "exists": true,
+        "expected_sha256": "a55bc8a57da97556774b57ef3472898d3869631024c78988b2f0f551864965e2",
+        "actual_sha256": "a55bc8a57da97556774b57ef3472898d3869631024c78988b2f0f551864965e2",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/manifest.json",
+        "exists": true,
+        "expected_sha256": "c4a4f3ab506aa9d04a2386b69362ca0ffe14b017aa10b9cb8b1835ff9792b165",
+        "actual_sha256": "c4a4f3ab506aa9d04a2386b69362ca0ffe14b017aa10b9cb8b1835ff9792b165",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/baseline/midnight_predictions.npz",
+        "exists": true,
+        "expected_sha256": "69a311b355c399c74bc12f0bb72311b958c9fd05e40b086ccd6fa09188da79ab",
+        "actual_sha256": "69a311b355c399c74bc12f0bb72311b958c9fd05e40b086ccd6fa09188da79ab",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/battery_blocks.csv",
+        "exists": true,
+        "expected_sha256": "64808655dfa8b068a14c0e3662928e33751490607ae43b36d12ed8e3fe379fbe",
+        "actual_sha256": "64808655dfa8b068a14c0e3662928e33751490607ae43b36d12ed8e3fe379fbe",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/candidate_daily.csv",
+        "exists": true,
+        "expected_sha256": "3620c08632650121cfdba8d48fd2b1aa8a58d68a3986507ca3dd26ed8b7e8950",
+        "actual_sha256": "3620c08632650121cfdba8d48fd2b1aa8a58d68a3986507ca3dd26ed8b7e8950",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/daily_metrics.csv",
+        "exists": true,
+        "expected_sha256": "1bb7962c13eefe991fe22f6b1d1a54200b06c33552de74d83db85d6ba0a692cc",
+        "actual_sha256": "1bb7962c13eefe991fe22f6b1d1a54200b06c33552de74d83db85d6ba0a692cc",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_2.npz",
+        "exists": true,
+        "expected_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "actual_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_metrics.csv",
+        "exists": true,
+        "expected_sha256": "d4f8d8f22e312b8193da4b820f888bb7ad535d107a4167e273ba13abf2c4afca",
+        "actual_sha256": "d4f8d8f22e312b8193da4b820f888bb7ad535d107a4167e273ba13abf2c4afca",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_periodic_seed_42.npz",
+        "exists": true,
+        "expected_sha256": "b24368de027c310561ae9a01593022cac0d5b357133b89eb578154f5ff122b05",
+        "actual_sha256": "b24368de027c310561ae9a01593022cac0d5b357133b89eb578154f5ff122b05",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_primary_seed_2026.npz",
+        "exists": true,
+        "expected_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "actual_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_primary_seed_3407.npz",
+        "exists": true,
+        "expected_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "actual_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_primary_seed_42.npz",
+        "exists": true,
+        "expected_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "actual_sha256": "5cade10228a593673e2eed67af6c42ca9dec4bc106d5cfff3164e5e38df17f26",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/dispatch_uncalibrated_seed_42.npz",
+        "exists": true,
+        "expected_sha256": "1d4429e8819470106ad8b46bc9a96cbb231ebeb1d26684b0b50b15e8ffb544bc",
+        "actual_sha256": "1d4429e8819470106ad8b46bc9a96cbb231ebeb1d26684b0b50b15e8ffb544bc",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/emergency_periods.csv",
+        "exists": true,
+        "expected_sha256": "328553195ef0556c0e7d85de02871e1fe73dca2f2222d50bce6cea79bf9d9cd2",
+        "actual_sha256": "328553195ef0556c0e7d85de02871e1fe73dca2f2222d50bce6cea79bf9d9cd2",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/evaluation_manifest.json",
+        "exists": true,
+        "expected_sha256": "08b5f8a5f9d2e233171f3be35aeb06f3c64ce52ce6acc7a8cc8ac1510f671bf5",
+        "actual_sha256": "08b5f8a5f9d2e233171f3be35aeb06f3c64ce52ce6acc7a8cc8ac1510f671bf5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/evaluation_predictions.npz",
+        "exists": true,
+        "expected_sha256": "7e80a3816c9cc74c9b6847905d657695a4ec50b76aa8e2cd4c1301431ad04107",
+        "actual_sha256": "7e80a3816c9cc74c9b6847905d657695a4ec50b76aa8e2cd4c1301431ad04107",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/evaluation_sources.json",
+        "exists": true,
+        "expected_sha256": "7ce96635798df14457b60d4e2dc0c9226586980871e1d80b865ff8b6b4bb0bd2",
+        "actual_sha256": "7ce96635798df14457b60d4e2dc0c9226586980871e1d80b865ff8b6b4bb0bd2",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/forecast_annual.csv",
+        "exists": true,
+        "expected_sha256": "ef39f84f6bcf741ac29974b560b666e8032be071c70b9a74c891876c7ba65e9f",
+        "actual_sha256": "ef39f84f6bcf741ac29974b560b666e8032be071c70b9a74c891876c7ba65e9f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/forecast_monthly.csv",
+        "exists": true,
+        "expected_sha256": "579507eb1f57d594e29d31d9aba12c2a759905a14499016dffd00528aa03afc4",
+        "actual_sha256": "579507eb1f57d594e29d31d9aba12c2a759905a14499016dffd00528aa03afc4",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/full_year_audit.json",
+        "exists": true,
+        "expected_sha256": "a7b7e61cda057b8e77199a48581112dcee7adad9d79ab434cfea09969a31087f",
+        "actual_sha256": "a7b7e61cda057b8e77199a48581112dcee7adad9d79ab434cfea09969a31087f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/prediction_archive.json",
+        "exists": true,
+        "expected_sha256": "6ff9b0c5206f547710a236aabc02bb295820280c8efff511d51e02365c894507",
+        "actual_sha256": "6ff9b0c5206f547710a236aabc02bb295820280c8efff511d51e02365c894507",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/predictions.npz",
+        "exists": true,
+        "expected_sha256": "a82b7f77bf7f2d85801749f54a95013e14a1dda078cf600c9d17cd9c4aebdb07",
+        "actual_sha256": "a82b7f77bf7f2d85801749f54a95013e14a1dda078cf600c9d17cd9c4aebdb07",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/relative_comparison.csv",
+        "exists": true,
+        "expected_sha256": "3d735c2fa3e4aa569d7c28a35222d66a23d157822d16fcfc8e7841c8fde39ea5",
+        "actual_sha256": "3d735c2fa3e4aa569d7c28a35222d66a23d157822d16fcfc8e7841c8fde39ea5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/result2.xlsx",
+        "exists": true,
+        "expected_sha256": "e7aa63ce7f26ead5837fafe5c395bd2cb61a09cab9dbb6acd3f5aea07daaed09",
+        "actual_sha256": "e7aa63ce7f26ead5837fafe5c395bd2cb61a09cab9dbb6acd3f5aea07daaed09",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/result2.xlsx.inspect.ndjson",
+        "exists": true,
+        "expected_sha256": "dccf0d990f918650eac3342409ef50e371507864802e973c83cbf8d122c9e47a",
+        "actual_sha256": "dccf0d990f918650eac3342409ef50e371507864802e973c83cbf8d122c9e47a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/solver_metrics.csv",
+        "exists": true,
+        "expected_sha256": "894e6ff37fec51f8781c59dbba5ee17e7331f39128f6b89a98154f0c99eab812",
+        "actual_sha256": "894e6ff37fec51f8781c59dbba5ee17e7331f39128f6b89a98154f0c99eab812",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/specified_dates.csv",
+        "exists": true,
+        "expected_sha256": "cbc9ccbb69e8722cc5f7ed76003ba359966d5185830fc3c342677bb99a116c42",
+        "actual_sha256": "cbc9ccbb69e8722cc5f7ed76003ba359966d5185830fc3c342677bb99a116c42",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/specified_intervals.csv",
+        "exists": true,
+        "expected_sha256": "63e6f837f8096b90e1f44dd3c16c8d1f9e750df6aec5ce7c14d63c31f0b5bee0",
+        "actual_sha256": "63e6f837f8096b90e1f44dd3c16c8d1f9e750df6aec5ce7c14d63c31f0b5bee0",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/stage_timings.json",
+        "exists": true,
+        "expected_sha256": "da9afb9d4e3dcb72bd475354e3df56ab179e3179b2bfbbda9033e488df68c8df",
+        "actual_sha256": "da9afb9d4e3dcb72bd475354e3df56ab179e3179b2bfbbda9033e488df68c8df",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/training_metadata.json",
+        "exists": true,
+        "expected_sha256": "e16d7c7162539b23e3aeebe8acdaf9681fa366106a2169d10a51d4586e7766be",
+        "actual_sha256": "e16d7c7162539b23e3aeebe8acdaf9681fa366106a2169d10a51d4586e7766be",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/verification.json",
+        "exists": true,
+        "expected_sha256": "e385442bec423fef4131ba25fee6253a18a24148788cb1db2f45048a38126c6b",
+        "actual_sha256": "e385442bec423fef4131ba25fee6253a18a24148788cb1db2f45048a38126c6b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/warmup_2.npz",
+        "exists": true,
+        "expected_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "actual_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/warmup_summary.json",
+        "exists": true,
+        "expected_sha256": "63a0754f518aa0b0d8f6b61147a705cb9a373d96002ddfa937ee6af969091048",
+        "actual_sha256": "63a0754f518aa0b0d8f6b61147a705cb9a373d96002ddfa937ee6af969091048",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp003/workbook_export.json",
+        "exists": true,
+        "expected_sha256": "398ec5df50b01df9617b848270fab4a5537dff16e812db0d83c83f7925e620e9",
+        "actual_sha256": "398ec5df50b01df9617b848270fab4a5537dff16e812db0d83c83f7925e620e9",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/battery_blocks.csv",
+        "exists": true,
+        "expected_sha256": "9b05f90a9eb9d92724b7f142776737f1a3959c8814727fb2f725079e0c4a1de6",
+        "actual_sha256": "9b05f90a9eb9d92724b7f142776737f1a3959c8814727fb2f725079e0c4a1de6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/dispatch_2.npz",
+        "exists": true,
+        "expected_sha256": "9d6688e5c7b5dc9367717b4fd5d9c2a8583fbb6afc7e238c0b07fcfc16b9e9f7",
+        "actual_sha256": "9d6688e5c7b5dc9367717b4fd5d9c2a8583fbb6afc7e238c0b07fcfc16b9e9f7",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/emergency_periods.csv",
+        "exists": true,
+        "expected_sha256": "b7d98b1fb07a79deada4c83d080825360e4a15ce794eeed0bc09866ff8c7574a",
+        "actual_sha256": "b7d98b1fb07a79deada4c83d080825360e4a15ce794eeed0bc09866ff8c7574a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/result2.xlsx",
+        "exists": true,
+        "expected_sha256": "f4bfcada90b3d2e00a5598a9575fab8421682f59be37ec5cd4b2365fd2a3b02c",
+        "actual_sha256": "f4bfcada90b3d2e00a5598a9575fab8421682f59be37ec5cd4b2365fd2a3b02c",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/specified_dates.csv",
+        "exists": true,
+        "expected_sha256": "c7f3db60d0f635f9c8d9ec0de6864296288194de1f9b4464b499e9dc97641411",
+        "actual_sha256": "c7f3db60d0f635f9c8d9ec0de6864296288194de1f9b4464b499e9dc97641411",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/specified_intervals.csv",
+        "exists": true,
+        "expected_sha256": "431cff9137640b7b43d1966fe97f7c8004ade5d5a50365f70426f27ca2e0c12d",
+        "actual_sha256": "431cff9137640b7b43d1966fe97f7c8004ade5d5a50365f70426f27ca2e0c12d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/verification.json",
+        "exists": true,
+        "expected_sha256": "a81789b1aa783271b6789eb393d41ca9cf4e9fd62140f8f476b393a0371b14df",
+        "actual_sha256": "a81789b1aa783271b6789eb393d41ca9cf4e9fd62140f8f476b393a0371b14df",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/causal_season/warmup_2.npz",
+        "exists": true,
+        "expected_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "actual_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/daily_metrics.csv",
+        "exists": true,
+        "expected_sha256": "95abee932fda159e35e85ba4cbb32f5b4ce651d2cd2832b380d152e16bbfbf1a",
+        "actual_sha256": "95abee932fda159e35e85ba4cbb32f5b4ce651d2cd2832b380d152e16bbfbf1a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_causal_season_seed_2026.npz",
+        "exists": true,
+        "expected_sha256": "647c4045fbb3feb512f161c51621dc8535b8ee5307dda63552795b2a9c06838f",
+        "actual_sha256": "647c4045fbb3feb512f161c51621dc8535b8ee5307dda63552795b2a9c06838f",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_causal_season_seed_3407.npz",
+        "exists": true,
+        "expected_sha256": "44762c8c6330adc852fa3179cc2e626c40f0f6290e0d505da9e45a062f83d938",
+        "actual_sha256": "44762c8c6330adc852fa3179cc2e626c40f0f6290e0d505da9e45a062f83d938",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_causal_season_seed_42.npz",
+        "exists": true,
+        "expected_sha256": "9d6688e5c7b5dc9367717b4fd5d9c2a8583fbb6afc7e238c0b07fcfc16b9e9f7",
+        "actual_sha256": "9d6688e5c7b5dc9367717b4fd5d9c2a8583fbb6afc7e238c0b07fcfc16b9e9f7",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_metrics.csv",
+        "exists": true,
+        "expected_sha256": "c03f6599cb5dd99e266008f23439481901515cb3be349d24eb7e70f19adcf784",
+        "actual_sha256": "c03f6599cb5dd99e266008f23439481901515cb3be349d24eb7e70f19adcf784",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_no_season_seed_2026.npz",
+        "exists": true,
+        "expected_sha256": "a2174d40668bf8101b850eac367a666b981861fa241de24d068ece65efe5675d",
+        "actual_sha256": "a2174d40668bf8101b850eac367a666b981861fa241de24d068ece65efe5675d",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_no_season_seed_3407.npz",
+        "exists": true,
+        "expected_sha256": "fc556efebf7183fab5fa1c45b9c0b93bd5f7bc57bdb47426f19cd903220706c6",
+        "actual_sha256": "fc556efebf7183fab5fa1c45b9c0b93bd5f7bc57bdb47426f19cd903220706c6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_no_season_seed_42.npz",
+        "exists": true,
+        "expected_sha256": "e203db49dde45221207ed565dedde439343ff894fd85d28aaf4ec40bc45c57d0",
+        "actual_sha256": "e203db49dde45221207ed565dedde439343ff894fd85d28aaf4ec40bc45c57d0",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_oracle_season_seed_2026.npz",
+        "exists": true,
+        "expected_sha256": "5ea8c3b6adfb26e9b310314f1302d2c02ced625eb72b2309507ea78015097d89",
+        "actual_sha256": "5ea8c3b6adfb26e9b310314f1302d2c02ced625eb72b2309507ea78015097d89",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_oracle_season_seed_3407.npz",
+        "exists": true,
+        "expected_sha256": "5ce614713628b40d52492774c3ae762ca630fdcabcb95cc1464639b85ab2ad41",
+        "actual_sha256": "5ce614713628b40d52492774c3ae762ca630fdcabcb95cc1464639b85ab2ad41",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/dispatch_oracle_season_seed_42.npz",
+        "exists": true,
+        "expected_sha256": "23cf3c956d5a4a7a7d399b91feef64d94fa04408b5bc3710f55298adcce85fd5",
+        "actual_sha256": "23cf3c956d5a4a7a7d399b91feef64d94fa04408b5bc3710f55298adcce85fd5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/evaluation_manifest.json",
+        "exists": true,
+        "expected_sha256": "08ae97b8746f6c73a0a9dd648bee7b2c4461dbf6fc595e01fff3c59e703a8bb0",
+        "actual_sha256": "08ae97b8746f6c73a0a9dd648bee7b2c4461dbf6fc595e01fff3c59e703a8bb0",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/evaluation_sources.json",
+        "exists": true,
+        "expected_sha256": "1db14dac2f1c86cb263edfe50ad546b5a79e7eeec482079608e34d2a4cd1acfb",
+        "actual_sha256": "1db14dac2f1c86cb263edfe50ad546b5a79e7eeec482079608e34d2a4cd1acfb",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/forecast_annual.csv",
+        "exists": true,
+        "expected_sha256": "835e4b3ebe940a329fb7e72af637d9440926e2ee57e094c91b3a9ef02e08e8f5",
+        "actual_sha256": "835e4b3ebe940a329fb7e72af637d9440926e2ee57e094c91b3a9ef02e08e8f5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/forecast_lead.csv",
+        "exists": true,
+        "expected_sha256": "7e80a017736af4acf8b7514fa9b8acfd4a8c939e522eba3c058d5d64288e7ca3",
+        "actual_sha256": "7e80a017736af4acf8b7514fa9b8acfd4a8c939e522eba3c058d5d64288e7ca3",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/forecast_monthly.csv",
+        "exists": true,
+        "expected_sha256": "70b974b2e18e8e55d761cc2acd66c92925bf10ecb8f3381262c9894ff6df5cfd",
+        "actual_sha256": "70b974b2e18e8e55d761cc2acd66c92925bf10ecb8f3381262c9894ff6df5cfd",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/battery_blocks.csv",
+        "exists": true,
+        "expected_sha256": "6d1acbd98ad8d5a0dcee4cc0481e5b1b1e721c1d982c3de88632b2290d4dbb3a",
+        "actual_sha256": "6d1acbd98ad8d5a0dcee4cc0481e5b1b1e721c1d982c3de88632b2290d4dbb3a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/dispatch_2.npz",
+        "exists": true,
+        "expected_sha256": "e203db49dde45221207ed565dedde439343ff894fd85d28aaf4ec40bc45c57d0",
+        "actual_sha256": "e203db49dde45221207ed565dedde439343ff894fd85d28aaf4ec40bc45c57d0",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/emergency_periods.csv",
+        "exists": true,
+        "expected_sha256": "aaae0b8f5dcb5a57e9012d36a682f47e4431532bbd5e9ab4d1c3b86496c5e09b",
+        "actual_sha256": "aaae0b8f5dcb5a57e9012d36a682f47e4431532bbd5e9ab4d1c3b86496c5e09b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/result2.xlsx",
+        "exists": true,
+        "expected_sha256": "a609b388b5a377ea5863cbb164e73b2fc321d98382bc4b76d6c951930921bd88",
+        "actual_sha256": "a609b388b5a377ea5863cbb164e73b2fc321d98382bc4b76d6c951930921bd88",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/specified_dates.csv",
+        "exists": true,
+        "expected_sha256": "b3873b41661765856abd879743dc82345de95f9169f12e76b03056ccc392db3b",
+        "actual_sha256": "b3873b41661765856abd879743dc82345de95f9169f12e76b03056ccc392db3b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/specified_intervals.csv",
+        "exists": true,
+        "expected_sha256": "70248f53db87e4638ff8b6d044036181ec8f2b9fdc40e02b6b33050ab2c4fbb6",
+        "actual_sha256": "70248f53db87e4638ff8b6d044036181ec8f2b9fdc40e02b6b33050ab2c4fbb6",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/verification.json",
+        "exists": true,
+        "expected_sha256": "8995c1f6d7834974f7687d35bc3ba5db11c0d4fd6a6c589144d1977a935e2061",
+        "actual_sha256": "8995c1f6d7834974f7687d35bc3ba5db11c0d4fd6a6c589144d1977a935e2061",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/no_season/warmup_2.npz",
+        "exists": true,
+        "expected_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "actual_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/battery_blocks.csv",
+        "exists": true,
+        "expected_sha256": "9af89786051f18836da4a021fd11f774a3f39583e95ac10b5251ff10d3cb020a",
+        "actual_sha256": "9af89786051f18836da4a021fd11f774a3f39583e95ac10b5251ff10d3cb020a",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/dispatch_2.npz",
+        "exists": true,
+        "expected_sha256": "23cf3c956d5a4a7a7d399b91feef64d94fa04408b5bc3710f55298adcce85fd5",
+        "actual_sha256": "23cf3c956d5a4a7a7d399b91feef64d94fa04408b5bc3710f55298adcce85fd5",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/emergency_periods.csv",
+        "exists": true,
+        "expected_sha256": "e21adc8d8eaba3e713ac2daf9bfefe77f90966c6ffa3c323961c3f0c5038455b",
+        "actual_sha256": "e21adc8d8eaba3e713ac2daf9bfefe77f90966c6ffa3c323961c3f0c5038455b",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/result2.xlsx",
+        "exists": true,
+        "expected_sha256": "5d81f48e40581dce2070f960fe5349ec44b70c3186d666a6246e77904114bfb7",
+        "actual_sha256": "5d81f48e40581dce2070f960fe5349ec44b70c3186d666a6246e77904114bfb7",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/specified_dates.csv",
+        "exists": true,
+        "expected_sha256": "e39c8357e69c4b04fe747b8d36364d66b498bc8a95bc992f50039b4f59909acd",
+        "actual_sha256": "e39c8357e69c4b04fe747b8d36364d66b498bc8a95bc992f50039b4f59909acd",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/specified_intervals.csv",
+        "exists": true,
+        "expected_sha256": "1b2d3cb64186375750cb45930a0f689cff094f246d4b659f68778c938b293ba0",
+        "actual_sha256": "1b2d3cb64186375750cb45930a0f689cff094f246d4b659f68778c938b293ba0",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/verification.json",
+        "exists": true,
+        "expected_sha256": "64001c222b9706ca3800517bb5350959c3380552c51be9444728bfe40e47614e",
+        "actual_sha256": "64001c222b9706ca3800517bb5350959c3380552c51be9444728bfe40e47614e",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/oracle_season/warmup_2.npz",
+        "exists": true,
+        "expected_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "actual_sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/prediction_manifest.json",
+        "exists": true,
+        "expected_sha256": "29b435a99c7c869479293c62aa1dd9e17fb6a611b327b113e4884b964607fd34",
+        "actual_sha256": "29b435a99c7c869479293c62aa1dd9e17fb6a611b327b113e4884b964607fd34",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/predictions.npz",
+        "exists": true,
+        "expected_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+        "actual_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/seed_summary.csv",
+        "exists": true,
+        "expected_sha256": "5f1665361653131d4a02e38721f643a125a32399e2123c1747e9a7bb404527e1",
+        "actual_sha256": "5f1665361653131d4a02e38721f643a125a32399e2123c1747e9a7bb404527e1",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/solver_metrics.csv",
+        "exists": true,
+        "expected_sha256": "12c28cd2b0c7db1a44cf4a32497d2e05e737ecbbd1f470e52e17474773d84c7e",
+        "actual_sha256": "12c28cd2b0c7db1a44cf4a32497d2e05e737ecbbd1f470e52e17474773d84c7e",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/training_metadata.json",
+        "exists": true,
+        "expected_sha256": "3c1634e0c5b712a9fcdd477e3e52ad09f0ff89896327574bbe1eaa4019172e77",
+        "actual_sha256": "3c1634e0c5b712a9fcdd477e3e52ad09f0ff89896327574bbe1eaa4019172e77",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/verification.json",
+        "exists": true,
+        "expected_sha256": "d950a7388f3b16d60afefafc5120defca45822fecb2f184a5e81f903d452f547",
+        "actual_sha256": "d950a7388f3b16d60afefafc5120defca45822fecb2f184a5e81f903d452f547",
+        "matches": true
+      },
+      {
+        "path": "data/results/exp004/workbook_export.json",
+        "exists": true,
+        "expected_sha256": "de0b5d06344c67a43ff44a8ac37c2809aaf0a9809a32539f85daafa7ec34434e",
+        "actual_sha256": "de0b5d06344c67a43ff44a8ac37c2809aaf0a9809a32539f85daafa7ec34434e",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/README.md",
+        "exists": true,
+        "expected_sha256": "f93700da41008560605aa3ddcf8c5cd3c5ef3ad1df43e9d985a44474b4ae0d3e",
+        "actual_sha256": "f93700da41008560605aa3ddcf8c5cd3c5ef3ad1df43e9d985a44474b4ae0d3e",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/__init__.py",
+        "exists": true,
+        "expected_sha256": "2788efbc84cb37607019322e7508befd4371a61135873e96449ad5ba16417e7d",
+        "actual_sha256": "2788efbc84cb37607019322e7508befd4371a61135873e96449ad5ba16417e7d",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/baseline_evidence.py",
+        "exists": true,
+        "expected_sha256": "d82eccbea22d31e10a87caed8f16defd966fe8623ce32d5a7864245486c945aa",
+        "actual_sha256": "d82eccbea22d31e10a87caed8f16defd966fe8623ce32d5a7864245486c945aa",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/baseline_manifest.json",
+        "exists": true,
+        "expected_sha256": "dbb150975e122eae51a65242aed738c7afcdb1d32ce863ad500bcc18c2730be9",
+        "actual_sha256": "dbb150975e122eae51a65242aed738c7afcdb1d32ce863ad500bcc18c2730be9",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/data.py",
+        "exists": true,
+        "expected_sha256": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+        "actual_sha256": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/decision-log.md",
+        "exists": true,
+        "expected_sha256": "6a6ea35ef7a61558db48d964d5429cf296b15183811d47ad55abd1cf324f11d7",
+        "actual_sha256": "6a6ea35ef7a61558db48d964d5429cf296b15183811d47ad55abd1cf324f11d7",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/dispatch.py",
+        "exists": true,
+        "expected_sha256": "47764e4633c88a0d27e156892ab23fa85be102e93d8e63899f1420202a73e201",
+        "actual_sha256": "47764e4633c88a0d27e156892ab23fa85be102e93d8e63899f1420202a73e201",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/evaluate.py",
+        "exists": true,
+        "expected_sha256": "fe01369f1b77a9355371b5e4c37d8fe19eee597d4356bfe80ade197725775ca9",
+        "actual_sha256": "fe01369f1b77a9355371b5e4c37d8fe19eee597d4356bfe80ade197725775ca9",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/export.py",
+        "exists": true,
+        "expected_sha256": "00bffdb8f70669f09178e66c90d0cefe126b7f01a6eccc60e71f42a66f32f1bd",
+        "actual_sha256": "00bffdb8f70669f09178e66c90d0cefe126b7f01a6eccc60e71f42a66f32f1bd",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/predict.py",
+        "exists": true,
+        "expected_sha256": "2d5d625addd6213fd3d063e67b6ee24a042df9eed103ba7cc1f643a549b5c97b",
+        "actual_sha256": "2d5d625addd6213fd3d063e67b6ee24a042df9eed103ba7cc1f643a549b5c97b",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/protocol.json",
+        "exists": true,
+        "expected_sha256": "bba3a5c779e545cf9ff312fd3a264f7b7ecbb824f360e68ec8ce1cb4dd9eecac",
+        "actual_sha256": "bba3a5c779e545cf9ff312fd3a264f7b7ecbb824f360e68ec8ce1cb4dd9eecac",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/provenance.py",
+        "exists": true,
+        "expected_sha256": "22c25ecae099002270165aebac2b199f33b0248065282d95cd02b8ec6edb0871",
+        "actual_sha256": "22c25ecae099002270165aebac2b199f33b0248065282d95cd02b8ec6edb0871",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/run.py",
+        "exists": true,
+        "expected_sha256": "edd58afd0d527257c519e5f379de5f5c6d8cc72a313121759058a54b5a9d0cad",
+        "actual_sha256": "edd58afd0d527257c519e5f379de5f5c6d8cc72a313121759058a54b5a9d0cad",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/train.py",
+        "exists": true,
+        "expected_sha256": "51fe17b0b5ecacd2c7011c7fb2b75e53649e1fce4c00313ba226ff33704eb572",
+        "actual_sha256": "51fe17b0b5ecacd2c7011c7fb2b75e53649e1fce4c00313ba226ff33704eb572",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp003/verify.py",
+        "exists": true,
+        "expected_sha256": "19d2d0d1473b6671fd0d107411888835dee08c6b275f680a0071d7d9427d46fd",
+        "actual_sha256": "19d2d0d1473b6671fd0d107411888835dee08c6b275f680a0071d7d9427d46fd",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/README.md",
+        "exists": true,
+        "expected_sha256": "20a65d0b218ecd41e74f9e6717e4e40d0a682812197fcdf9ee4cee9a74e0a62a",
+        "actual_sha256": "20a65d0b218ecd41e74f9e6717e4e40d0a682812197fcdf9ee4cee9a74e0a62a",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/__init__.py",
+        "exists": true,
+        "expected_sha256": "577ca82babfd829c53907519bff416eb9ac0c6d22533563db7a2a75f957877f5",
+        "actual_sha256": "577ca82babfd829c53907519bff416eb9ac0c6d22533563db7a2a75f957877f5",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/data.py",
+        "exists": true,
+        "expected_sha256": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+        "actual_sha256": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/decision-log.md",
+        "exists": true,
+        "expected_sha256": "bed079602060bf4b0b687874ab7d4ac8e19b1c20eb4b7470bde7a5cf96d3c108",
+        "actual_sha256": "bed079602060bf4b0b687874ab7d4ac8e19b1c20eb4b7470bde7a5cf96d3c108",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/evaluate.py",
+        "exists": true,
+        "expected_sha256": "41f9d96197448adac9d72405959f33fffd8062309b6a7a91442c8c9da85f65c9",
+        "actual_sha256": "41f9d96197448adac9d72405959f33fffd8062309b6a7a91442c8c9da85f65c9",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/export.py",
+        "exists": true,
+        "expected_sha256": "61bf62f2b1ec47a3bb7992ff61214b5647d1829960abd7bf5de92456a82e5943",
+        "actual_sha256": "61bf62f2b1ec47a3bb7992ff61214b5647d1829960abd7bf5de92456a82e5943",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/frozen_prior_manifest.json",
+        "exists": true,
+        "expected_sha256": "73249797fd26e959139784dd649823b2de474046c944557b2440a541d18b5aae",
+        "actual_sha256": "73249797fd26e959139784dd649823b2de474046c944557b2440a541d18b5aae",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/predict.py",
+        "exists": true,
+        "expected_sha256": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+        "actual_sha256": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/protocol.json",
+        "exists": true,
+        "expected_sha256": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+        "actual_sha256": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/train.py",
+        "exists": true,
+        "expected_sha256": "b552b245c2add1d6bd21d7c6c872eeaf73e3b8f679eef70e6f430f4c96e6f4d6",
+        "actual_sha256": "b552b245c2add1d6bd21d7c6c872eeaf73e3b8f679eef70e6f430f4c96e6f4d6",
+        "matches": true
+      },
+      {
+        "path": "experiments/problem2/exp004/verify.py",
+        "exists": true,
+        "expected_sha256": "b806434ea6c8a5e647eb40b49ad56b9f056ce0b1533d7799a340c9be9fc12ad5",
+        "actual_sha256": "b806434ea6c8a5e647eb40b49ad56b9f056ce0b1533d7799a340c9be9fc12ad5",
+        "matches": true
+      }
+    ]
+  },
+  "evidence_checks": [
+    {
+      "path": "reports/experiments/exp006/evidence/cost_history.csv",
+      "exists": true,
+      "expected_sha256": "2092ee9a42e4407b669505bc15c744b2a7852b47ccb7374bc835d0fbc063e639",
+      "actual_sha256": "2092ee9a42e4407b669505bc15c744b2a7852b47ccb7374bc835d0fbc063e639",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/forecast_history.csv",
+      "exists": true,
+      "expected_sha256": "8f4b943c626d35f5f9448060745f627b21201f517714fd6bdbdc06774ee6e9cf",
+      "actual_sha256": "8f4b943c626d35f5f9448060745f627b21201f517714fd6bdbdc06774ee6e9cf",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/battery_history.csv",
+      "exists": true,
+      "expected_sha256": "0d7df850a5ce4d4aaec1de07ca8d501c1992bc1905d52f033a4c160262bf40a6",
+      "actual_sha256": "0d7df850a5ce4d4aaec1de07ca8d501c1992bc1905d52f033a4c160262bf40a6",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/relative_comparison.csv",
+      "exists": true,
+      "expected_sha256": "c9af3def5739df86ce08920e590365c19593ad9582550bfb67b6c9cb6aa6fd8b",
+      "actual_sha256": "c9af3def5739df86ce08920e590365c19593ad9582550bfb67b6c9cb6aa6fd8b",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/timings.csv",
+      "exists": true,
+      "expected_sha256": "6d986d1db484336ca83f4f6e6a33787134ddbd2cd4bd620276701303071df4fc",
+      "actual_sha256": "6d986d1db484336ca83f4f6e6a33787134ddbd2cd4bd620276701303071df4fc",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/all_runs.csv",
+      "exists": true,
+      "expected_sha256": "e413e7dfb3c6350f6e0c1706aae8a42ad559395bbbb23d5345129aa0c6b2e3dd",
+      "actual_sha256": "e413e7dfb3c6350f6e0c1706aae8a42ad559395bbbb23d5345129aa0c6b2e3dd",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/daily.csv",
+      "exists": true,
+      "expected_sha256": "c263938255dc6acb45ecf5e31b95a9f77c921333e9b4b6841d854224ee662b6e",
+      "actual_sha256": "c263938255dc6acb45ecf5e31b95a9f77c921333e9b4b6841d854224ee662b6e",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/monthly_cost.csv",
+      "exists": true,
+      "expected_sha256": "f57d512d2506066bca762371bd08e2d3e30abc1ae2cacd3b872f768b7e84ab04",
+      "actual_sha256": "f57d512d2506066bca762371bd08e2d3e30abc1ae2cacd3b872f768b7e84ab04",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/paired_daily.csv",
+      "exists": true,
+      "expected_sha256": "63783ff90298fb9ee89db42c6e90deaf16aa11fa7e0bc1c347a1d2ec91bd187f",
+      "actual_sha256": "63783ff90298fb9ee89db42c6e90deaf16aa11fa7e0bc1c347a1d2ec91bd187f",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/detail.csv",
+      "exists": true,
+      "expected_sha256": "6101b9c7f10106c3c586676fb5d5b77fba117a71d10a903c0e22376a01d07bb9",
+      "actual_sha256": "6101b9c7f10106c3c586676fb5d5b77fba117a71d10a903c0e22376a01d07bb9",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/specified.csv",
+      "exists": true,
+      "expected_sha256": "a7f698223e8fa984ef1361f006a8d69032c7e0ff7392e7a21a9d543688a2b19f",
+      "actual_sha256": "a7f698223e8fa984ef1361f006a8d69032c7e0ff7392e7a21a9d543688a2b19f",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/seed_costs.csv",
+      "exists": true,
+      "expected_sha256": "f3738b9326f0b785d6c8ce1f3aeef087480483f1dccb17d813eb83b48f5f8cab",
+      "actual_sha256": "f3738b9326f0b785d6c8ce1f3aeef087480483f1dccb17d813eb83b48f5f8cab",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/seed_summary.csv",
+      "exists": true,
+      "expected_sha256": "4bb65ab40ae0d82734220d3e7d024eb6b2479cd87b99d0f4e035e627b5510b8b",
+      "actual_sha256": "4bb65ab40ae0d82734220d3e7d024eb6b2479cd87b99d0f4e035e627b5510b8b",
+      "matches": true
+    },
+    {
+      "path": "reports/experiments/exp006/evidence/verification.csv",
+      "exists": true,
+      "expected_sha256": "4036daccda0dff98d7b56eb88ccab9846be4d8cf0002421017be3c51d50a850a",
+      "actual_sha256": "4036daccda0dff98d7b56eb88ccab9846be4d8cf0002421017be3c51d50a850a",
+      "matches": true
+    }
+  ],
+  "authored_local_link_checks": [
+    {
+      "origin": "app/src/data.json:reportContent[4].blocks[3].markdown",
+      "href": "evidence/protocol.json",
+      "dist_path": "reports/experiments/exp006/app/dist/evidence/protocol.json",
+      "exists": true
+    },
+    {
+      "origin": "app/src/data.json:reportContent[5].blocks[25].markdown",
+      "href": "result2.xlsx",
+      "dist_path": "reports/experiments/exp006/app/dist/result2.xlsx",
+      "exists": true
+    },
+    {
+      "origin": "app/src/data.json:reportContent[5].blocks[25].markdown",
+      "href": "specified_dates.md",
+      "dist_path": "reports/experiments/exp006/app/dist/specified_dates.md",
+      "exists": true
+    },
+    {
+      "origin": "app/src/data.json:reportContent[5].blocks[25].markdown",
+      "href": "methods.md",
+      "dist_path": "reports/experiments/exp006/app/dist/methods.md",
+      "exists": true
+    },
+    {
+      "origin": "app/src/data.json:reportContent[5].blocks[26].markdown",
+      "href": "greedy_execution/result2.xlsx",
+      "dist_path": "reports/experiments/exp006/app/dist/greedy_execution/result2.xlsx",
+      "exists": true
+    },
+    {
+      "origin": "app/src/data.json:reportContent[5].blocks[26].markdown",
+      "href": "greedy_execution/specified_dates.md",
+      "dist_path": "reports/experiments/exp006/app/dist/greedy_execution/specified_dates.md",
+      "exists": true
+    },
+    {
+      "origin": "app/src/data.json:reportContent[7].blocks[2].markdown",
+      "href": "report_build.json",
+      "dist_path": "reports/experiments/exp006/app/dist/report_build.json",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/history-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/history-costs.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/technical-route.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/technical-route.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "evidence/protocol.json",
+      "dist_path": "reports/experiments/exp006/app/dist/evidence/protocol.json",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "result2.xlsx",
+      "dist_path": "reports/experiments/exp006/app/dist/result2.xlsx",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "specified_dates.md",
+      "dist_path": "reports/experiments/exp006/app/dist/specified_dates.md",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "methods.md",
+      "dist_path": "reports/experiments/exp006/app/dist/methods.md",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "greedy_execution/result2.xlsx",
+      "dist_path": "reports/experiments/exp006/app/dist/greedy_execution/result2.xlsx",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "greedy_execution/specified_dates.md",
+      "dist_path": "reports/experiments/exp006/app/dist/greedy_execution/specified_dates.md",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/ablation-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/ablation-costs.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/battery-comparison.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/battery-comparison.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/monthly-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/monthly-costs.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/seed-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/seed-costs.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/failure-case.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/failure-case.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/specified-days.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/specified-days.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/history-errors.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/history-errors.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "figures/stage-timings.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/stage-timings.png",
+      "exists": true
+    },
+    {
+      "origin": "report.md",
+      "href": "report_build.json",
+      "dist_path": "reports/experiments/exp006/app/dist/report_build.json",
+      "exists": true
+    }
+  ],
+  "external_links_not_requested": [],
+  "root_raw_csv_duplicates": [
+    {
+      "root_path": "raw_summary.csv",
+      "canonical_path": "data/results/exp006/summary.csv",
+      "root_exists": true,
+      "canonical_exists": true,
+      "root_sha256": "2950635b84c48e3308153db594101321d14230904e3781b95622e048761d515b",
+      "canonical_sha256": "2950635b84c48e3308153db594101321d14230904e3781b95622e048761d515b",
+      "byte_identical": true,
+      "content_duplicate_removable": true
+    },
+    {
+      "root_path": "raw_timings.csv",
+      "canonical_path": "data/results/exp006/timings.csv",
+      "root_exists": true,
+      "canonical_exists": true,
+      "root_sha256": "c484a7858be999f18b5df8e2ffd0de98f08c8b5c6aa5d31a0b6fb3753a6a6f09",
+      "canonical_sha256": "c484a7858be999f18b5df8e2ffd0de98f08c8b5c6aa5d31a0b6fb3753a6a6f09",
+      "byte_identical": true,
+      "content_duplicate_removable": true
+    }
+  ],
+  "issues": [],
+  "counts": {
+    "source_files": 8,
+    "completion_runs": 15,
+    "completion_output_files": 60,
+    "local_href_occurrences": 24,
+    "unique_local_hrefs": 17,
+    "evidence_hash_files": 14
+  },
+  "resolved_issues": [
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/history-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/history-costs.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/technical-route.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/technical-route.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/ablation-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/ablation-costs.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/battery-comparison.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/battery-comparison.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/monthly-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/monthly-costs.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/seed-costs.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/seed-costs.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/failure-case.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/failure-case.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/specified-days.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/specified-days.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/history-errors.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/history-errors.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    },
+    {
+      "check": "authored_local_href_missing_from_dist",
+      "origin": "report.md",
+      "href": "figures/stage-timings.png",
+      "dist_path": "reports/experiments/exp006/app/dist/figures/stage-timings.png",
+      "exists": false,
+      "resolution": "Copied by report builder; bytes equal source figure",
+      "resolved": true
+    }
+  ],
+  "resolved_utc": "2026-09-12T16:04:42.929328+00:00",
+  "duplicate_cleanup": "The two byte-identical temporary root CSVs were removed; formal result CSVs retained."
+}

@@ -1,0 +1,92 @@
+<div id="q2-tree-history">
+  <h3>第二问：费用、储能运行与预测误差</h3>
+  <div class="text-small">2025 年 2–12 月 · 334 日 · 主种子 42 · exp001 使用同物理口径重算</div>
+  <div class="q2-comparison-panels"></div>
+  <script type="application/json" class="q2-comparison-data">@@DATA@@</script>
+</div>
+<style>
+#q2-tree-history .q2-comparison-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:16px}
+#q2-tree-history .q2-comparison-panel{min-width:0}
+#q2-tree-history .q2-comparison-chart{display:block;width:100%;overflow:visible}
+#q2-tree-history .q2-comparison-chart text{fill:var(--foreground);font-size:12px}
+#q2-tree-history .q2-comparison-chart .domain,#q2-tree-history .q2-comparison-chart .tick line{stroke:var(--border)}
+#q2-tree-history .q2-comparison-legend{display:flex;flex-wrap:wrap;gap:12px}
+#q2-tree-history .q2-comparison-legend button{display:inline-flex;align-items:center;gap:5px;border:0;background:transparent;color:var(--foreground);padding:0;font:inherit;cursor:pointer}
+#q2-tree-history .q2-comparison-legend span{display:inline-block;width:10px;height:10px}
+@media(max-width:680px){#q2-tree-history .q2-comparison-panels{grid-template-columns:1fr}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root=document.getElementById('q2-tree-history');
+  const data=JSON.parse(root.querySelector('.q2-comparison-data').textContent);
+  const colors=['var(--viz-series-1)','var(--viz-series-2)'];
+  const formatter=new Intl.NumberFormat('zh-CN',{maximumFractionDigits:2});
+  const sections=data.panels.map(panel=>{
+    const section=document.createElement('section');section.className='q2-comparison-panel';
+    const heading=document.createElement('h3');heading.textContent=panel.title;
+    const canvas=document.createElement('div');
+    section.append(heading);
+    const visibility=panel.series.map(()=>true);
+    if(panel.series.length>1){
+      const legend=document.createElement('div');legend.className='q2-comparison-legend text-small';
+      panel.series.forEach((series,i)=>{
+        const button=document.createElement('button');button.type='button';button.setAttribute('aria-pressed','true');
+        const swatch=document.createElement('span');swatch.style.background=colors[i];
+        button.append(swatch,document.createTextNode(series.label));
+        button.addEventListener('click',()=>{visibility[i]=!visibility[i];button.setAttribute('aria-pressed',String(visibility[i]));draw(item);});
+        legend.append(button);
+      });section.append(legend);
+    }
+    section.append(canvas);root.querySelector('.q2-comparison-panels').append(section);
+    const item={panel,canvas,visibility};return item;
+  });
+  function draw({panel,canvas,visibility}){
+    const width=canvas.getBoundingClientRect().width;if(width<1)return;
+    const left=64,right=16,top=36,bottom=54,step=58;
+    const height=top+step*panel.rows.length+bottom;
+    const totals=panel.rows.map(row=>panel.series.reduce((sum,s,i)=>sum+(visibility[i]&&Number.isFinite(row[s.key])?row[s.key]:0),0));
+    const extent=d3.extent([0,...totals]),span=extent[1]-extent[0]||1;
+    const x=d3.scaleLinear().domain([0,extent[1]+span*.04]).range([left+4,width-right-4]);
+    const svg=d3.select(canvas).selectAll('svg').data([panel]).join('svg').attr('class','q2-comparison-chart')
+      .attr('viewBox',`0 0 ${width} ${height}`).attr('height',height).attr('role','img')
+      .attr('aria-label',panel.title+'，'+panel.rows.map((r,i)=>r.label+' '+formatter.format(totals[i])+' '+panel.unit).join('；'));
+    svg.selectAll('*').remove();
+    svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top-5).attr('width',width-left-right)
+      .attr('height',height-top-bottom+5).attr('fill','none').attr('stroke','var(--border)');
+    panel.rows.forEach((row,index)=>{
+      const y=top+index*step;
+      svg.append('text').attr('x',left+8).attr('y',y+9).attr('font-weight',row.primary?500:400).text(row.label);
+      let accumulated=0;
+      panel.series.forEach((series,seriesIndex)=>{
+        if(!visibility[seriesIndex]||!Number.isFinite(row[series.key]))return;
+        const value=row[series.key];
+        svg.append('rect').attr('x',x(accumulated)).attr('y',y+17).attr('height',11)
+          .attr('width',Math.max(0,x(accumulated+value)-x(accumulated)))
+          .attr('fill',colors[seriesIndex]).attr('opacity',row.primary?1:.65);
+        accumulated+=value;
+      });
+      const available=panel.series.some((s,i)=>visibility[i]&&Number.isFinite(row[s.key]));
+      svg.append('text').attr('class','value-label').attr('x',width-right-7).attr('y',y+43)
+        .attr('text-anchor','end').text(available?formatter.format(totals[index])+' '+panel.unit:'未记录');
+      svg.append('rect').attr('data-chart-hit','').attr('x',left).attr('y',y-4)
+        .attr('width',width-left-right).attr('height',54).attr('fill','transparent')
+        .attr('data-tooltip',row.detail);
+    });
+    svg.append('g').attr('class','x-axis').attr('transform',`translate(0,${height-bottom})`)
+      .call(d3.axisBottom(x).ticks(width<400?3:4).tickFormat(d3.format('~g')));
+    svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(left+width-right)/2)
+      .attr('y',height-9).attr('text-anchor','middle').text(panel.axisTitle);
+    svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('x',left-7)
+      .attr('y',20).attr('text-anchor','end').text('方案');
+    const tickTexts=[...svg.node().querySelectorAll('.tick text')];
+    let prior=null;
+    for(const tick of tickTexts){const box=tick.getBoundingClientRect();if(prior&&box.left<prior.right+4)tick.textContent='';else prior=box;}
+    for(const label of svg.node().querySelectorAll('.value-label')){
+      const box=label.getBBox();if(box.x<left+4){label.setAttribute('x',left+4);label.setAttribute('text-anchor','start');}
+    }
+  }
+  const observer=new ResizeObserver(()=>sections.forEach(draw));
+  sections.forEach(section=>observer.observe(section.canvas));sections.forEach(draw);
+})();
+</script>

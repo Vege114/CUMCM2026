@@ -1,0 +1,21 @@
+{
+  "experiments": [
+    "exp001",
+    "exp002",
+    "exp003",
+    "exp004"
+  ],
+  "sha256": {
+    "exp001": "03dcdf0382c96acd2120ab8fbdf2f95c2e33e4353b526a7125345f94017bcd79",
+    "exp002": "0e8c2812f8bcde8dbedabab5f1612b7c3fca65f45990ea28a16c4eb3f82a38b5",
+    "exp003": "dcbbe16820a2eb76a6ea96881ab98132d637825f236789f10ca77a039b2d6fda",
+    "exp004": "e3342b25e50c9b667b95821689bfc8743831f2e0db26bcfa6177857e7f79b008"
+  },
+  "comparison_included": [
+    "exp001",
+    "exp002",
+    "exp003",
+    "exp004"
+  ],
+  "note": "exp005未纳入本轮冻结比较；exp001原登记不同物理口径，oracle含未来，均不排名。exp001/2原共享四目标早停边界保留。"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "scope": "all 11 generated standalone PNG figures visually inspected using view_image; paired SVG generated from same matplotlib figures",
+  "checks": [
+    "Titles, axis units and full labels readable",
+    "Absolute bars start at zero",
+    "Same reviewed CSV source as report",
+    "Technical-route arrow ordering repaired and re-inspected",
+    "No visible clipping or text overlap in viewed images",
+    "Battery metrics labelled operating-intensity proxies, not lifetime"
+  ],
+  "not_performed": [
+    "Separate SVG viewer inspection",
+    "Automated color-vision simulation"
+  ],
+  "reviewed_figures": [
+    "ablation-costs.png",
+    "absolute-performance.png",
+    "battery-comparison.png",
+    "failure-case.png",
+    "history-costs.png",
+    "history-errors.png",
+    "monthly-costs.png",
+    "seed-costs.png",
+    "specified-days.png",
+    "stage-timings.png",
+    "technical-route.png"
+  ],
+  "sha256": {
+    "ablation-costs.png": "54a945841c39de1000cae3540a882e0cd1e12826aaa40fd85616773b61e6fa28",
+    "absolute-performance.png": "43bcd9a6fa799e4a0c9900d910272c724bf4f9c590a19a0bc78a17c1e785e0b8",
+    "battery-comparison.png": "8784d9b16147e0660b0eb81ae3431f349649f7119f2bf116241b864152193b4e",
+    "failure-case.png": "05959b3d601a1ba55b81e52c45ee49a1c66fd6ba76c2082dc13c98e14ab753c3",
+    "history-costs.png": "3ad3538b9e50cf146e868c6ae7a48cdb4a6917257ed08ce2470002e63acdefe0",
+    "history-errors.png": "75bac40020742a3f0d56409186755e3e88420fabd4aff59fe1b11ad3206e55df",
+    "monthly-costs.png": "a9b84c8384725d72d21bbc6ca2525dc29a4708dd9a405eb80ce1cfd3db175216",
+    "seed-costs.png": "bac9441923d43a51f0b0d6cb52b8f9fa2f14b6a01539fe4e2e596a2ea899b700",
+    "specified-days.png": "c44cce9ebae9b863dab9c011656ba72f7172779cc9cf809fbb01e84402ed5f7c",
+    "stage-timings.png": "b85d00cdbd5e12b3e1b8267b2ec59fb9d17a1fb6a16deef26b72d4db39bdb855",
+    "technical-route.png": "41e1c922ec17b9c846460fd01c2dcdbe4a678574830349778366f94fe39bc8d6"
+  }
+}

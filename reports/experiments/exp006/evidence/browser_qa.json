@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-12T16:07:14.554008+00:00",
+  "report_html_sha256": "fdc8356f6c672570382c536aec5be86b5f226222abab2f17c12f82355d685160",
+  "dist_html_sha256": "b4c429438fe3a47f0acf4ac025b4728897c98d9561dbe0a738e5491463b25e99",
+  "method": "Actual Codex in-app browser screenshots and WebMCP rendered-card PNG inspection; read-only DOM and native UI interactions",
+  "viewports_checked": [
+    [
+      1280,
+      960
+    ],
+    [
+      360,
+      800
+    ]
+  ],
+  "mobile_document_width": 345,
+  "mobile_viewport_width": 360,
+  "rendered_cards_reviewed": [
+    "focal-cost",
+    "monthly-total_cost",
+    "specified-battery",
+    "specified-soc",
+    "history-error-net_load-wape_pct",
+    "history-relative-cost"
+  ],
+  "repairs_verified": [
+    "Unique full categorical labels",
+    "Neutral relative-cost color",
+    "144 genuine ten-minute interval bars",
+    "Responsive battery chart with readable 0/6/12/18/24 axes",
+    "All ten missing Markdown figure copies equal source bytes"
+  ],
+  "interaction": {
+    "date": "2025-06-21",
+    "strategy": "greedy_execution",
+    "five_related_chart_titles_update": true,
+    "keyboard_next_slot": "2025-03-20 00:10-00:20; charge790.57 kWh, discharge0.00 kWh",
+    "keyboard_focus_and_status_match": true
+  },
+  "browser_error_logs": [],
+  "final_build_status": "complete",
+  "all_27_manifest_evidence_hashes_match": true,
+  "preview": "http://127.0.0.1:8776/?view=1",
+  "viewport_override_reset": true,
+  "boundaries": [
+    "Representative chart types visually inspected, not every view permutation",
+    "No native Excel application used; workbook QA records artifact-tool recalculation and actual rendering",
+    "No external publication performed"
+  ]
+}

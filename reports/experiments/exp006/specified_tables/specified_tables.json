@@ -1,0 +1,621 @@
+{
+  "table1_summary": [
+    {
+      "date": "2025-03-20",
+      "planned_kwh": 70346.85763289731,
+      "planned_cost_yuan": 42409.67346176309,
+      "emergency_cost_yuan": 2202.0499200745953,
+      "total_cost_yuan": 44611.723381837684,
+      "emergency_kwh": 516.737303815002,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-06-21",
+      "planned_kwh": 38948.40758149943,
+      "planned_cost_yuan": 23366.294786537554,
+      "emergency_cost_yuan": 84.79051401097318,
+      "total_cost_yuan": 23451.085300548526,
+      "emergency_kwh": 28.96191383170978,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-09-23",
+      "planned_kwh": 68715.05827144219,
+      "planned_cost_yuan": 42981.31362747376,
+      "emergency_cost_yuan": 1360.095341208836,
+      "total_cost_yuan": 44341.408968682605,
+      "emergency_kwh": 297.5049772363555,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-12-21",
+      "planned_kwh": 96470.3643061842,
+      "planned_cost_yuan": 61961.22446314372,
+      "emergency_cost_yuan": 813.9070593030044,
+      "total_cost_yuan": 62775.13152244672,
+      "emergency_kwh": 196.7027646105018,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    }
+  ],
+  "table1_intervals": [
+    {
+      "date": "2025-03-20",
+      "period": "10:00-10:10",
+      "planned_kwh": 8.411737006739575
+    },
+    {
+      "date": "2025-03-20",
+      "period": "12:00-12:10",
+      "planned_kwh": 679.3372154945816
+    },
+    {
+      "date": "2025-03-20",
+      "period": "14:00-14:10",
+      "planned_kwh": 0.0
+    },
+    {
+      "date": "2025-03-20",
+      "period": "16:00-16:10",
+      "planned_kwh": 462.44444243609195
+    },
+    {
+      "date": "2025-03-20",
+      "period": "18:00-18:10",
+      "planned_kwh": 387.61826965528815
+    },
+    {
+      "date": "2025-03-20",
+      "period": "20:00-20:10",
+      "planned_kwh": 27.436458037467446
+    },
+    {
+      "date": "2025-06-21",
+      "period": "10:00-10:10",
+      "planned_kwh": 0.0
+    },
+    {
+      "date": "2025-06-21",
+      "period": "12:00-12:10",
+      "planned_kwh": 27.716541293660498
+    },
+    {
+      "date": "2025-06-21",
+      "period": "14:00-14:10",
+      "planned_kwh": 0.0
+    },
+    {
+      "date": "2025-06-21",
+      "period": "16:00-16:10",
+      "planned_kwh": 235.84884813158556
+    },
+    {
+      "date": "2025-06-21",
+      "period": "18:00-18:10",
+      "planned_kwh": 31.505723432668788
+    },
+    {
+      "date": "2025-06-21",
+      "period": "20:00-20:10",
+      "planned_kwh": 6.367542387331696
+    },
+    {
+      "date": "2025-09-23",
+      "period": "10:00-10:10",
+      "planned_kwh": 0.0
+    },
+    {
+      "date": "2025-09-23",
+      "period": "12:00-12:10",
+      "planned_kwh": 424.6160394501762
+    },
+    {
+      "date": "2025-09-23",
+      "period": "14:00-14:10",
+      "planned_kwh": 0.0
+    },
+    {
+      "date": "2025-09-23",
+      "period": "16:00-16:10",
+      "planned_kwh": 593.6816150782579
+    },
+    {
+      "date": "2025-09-23",
+      "period": "18:00-18:10",
+      "planned_kwh": 800.2913851072985
+    },
+    {
+      "date": "2025-09-23",
+      "period": "20:00-20:10",
+      "planned_kwh": 9.728716966437673
+    },
+    {
+      "date": "2025-12-21",
+      "period": "10:00-10:10",
+      "planned_kwh": 3.4015327708530663
+    },
+    {
+      "date": "2025-12-21",
+      "period": "12:00-12:10",
+      "planned_kwh": 916.0779152994053
+    },
+    {
+      "date": "2025-12-21",
+      "period": "14:00-14:10",
+      "planned_kwh": 0.0
+    },
+    {
+      "date": "2025-12-21",
+      "period": "16:00-16:10",
+      "planned_kwh": 823.6368154204455
+    },
+    {
+      "date": "2025-12-21",
+      "period": "18:00-18:10",
+      "planned_kwh": 523.369087803196
+    },
+    {
+      "date": "2025-12-21",
+      "period": "20:00-20:10",
+      "planned_kwh": 22.22336976500594
+    }
+  ],
+  "table2_battery": [
+    {
+      "date": "2025-03-20",
+      "period": "0:00-4:00",
+      "charge_kwh": 7897.471488290724,
+      "discharge_kwh": 0.0,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-03-20",
+      "period": "4:00-8:00",
+      "charge_kwh": 2371.7082451262845,
+      "discharge_kwh": 5828.018170408744,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-03-20",
+      "period": "8:00-12:00",
+      "charge_kwh": 5533.985905294664,
+      "discharge_kwh": 2670.2740105323232,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-03-20",
+      "period": "12:00-16:00",
+      "charge_kwh": 3488.082083003236,
+      "discharge_kwh": 246.28279462004934,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-03-20",
+      "period": "16:00-20:00",
+      "charge_kwh": 0.0,
+      "discharge_kwh": 6026.32705518183,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-03-20",
+      "period": "20:00-24:00",
+      "charge_kwh": 632.4555320336759,
+      "discharge_kwh": 3319.2446314162225,
+      "initial_soc_kwh": 1716.3068521488308,
+      "final_soc_kwh": 1548.9024779896192
+    },
+    {
+      "date": "2025-06-21",
+      "period": "0:00-4:00",
+      "charge_kwh": 0.0,
+      "discharge_kwh": 0.0,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-06-21",
+      "period": "4:00-8:00",
+      "charge_kwh": 1001.3879257199868,
+      "discharge_kwh": 1748.7531907385446,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-06-21",
+      "period": "8:00-12:00",
+      "charge_kwh": 5533.985905294665,
+      "discharge_kwh": 0.0,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-06-21",
+      "period": "12:00-16:00",
+      "charge_kwh": 3606.892957683358,
+      "discharge_kwh": 0.0,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-06-21",
+      "period": "16:00-20:00",
+      "charge_kwh": 0.0,
+      "discharge_kwh": 5144.342411955981,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-06-21",
+      "period": "20:00-24:00",
+      "charge_kwh": 685.1601597031489,
+      "discharge_kwh": 2969.8034120630873,
+      "initial_soc_kwh": 3021.5486092633364,
+      "final_soc_kwh": 2896.9393097853163
+    },
+    {
+      "date": "2025-09-23",
+      "period": "0:00-4:00",
+      "charge_kwh": 7908.8883392232,
+      "discharge_kwh": 0.0,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-09-23",
+      "period": "4:00-8:00",
+      "charge_kwh": 1633.8434577536627,
+      "discharge_kwh": 6404.971949003576,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-09-23",
+      "period": "8:00-12:00",
+      "charge_kwh": 4825.976037807856,
+      "discharge_kwh": 1792.385621876499,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-09-23",
+      "period": "12:00-16:00",
+      "charge_kwh": 4575.400425828206,
+      "discharge_kwh": 327.0221262767694,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-09-23",
+      "period": "16:00-20:00",
+      "charge_kwh": 0.0,
+      "discharge_kwh": 5531.038257274362,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-09-23",
+      "period": "20:00-24:00",
+      "charge_kwh": 685.1601597031489,
+      "discharge_kwh": 3704.634487319232,
+      "initial_soc_kwh": 1792.1947469010986,
+      "final_soc_kwh": 1693.4148235499188
+    },
+    {
+      "date": "2025-12-21",
+      "period": "0:00-4:00",
+      "charge_kwh": 7601.544210625062,
+      "discharge_kwh": 0.0,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    },
+    {
+      "date": "2025-12-21",
+      "period": "4:00-8:00",
+      "charge_kwh": 3336.034184346454,
+      "discharge_kwh": 2381.113659826785,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    },
+    {
+      "date": "2025-12-21",
+      "period": "8:00-12:00",
+      "charge_kwh": 5176.895427756666,
+      "discharge_kwh": 7179.013119961151,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    },
+    {
+      "date": "2025-12-21",
+      "period": "12:00-16:00",
+      "charge_kwh": 6400.257146247155,
+      "discharge_kwh": 2434.043393299351,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    },
+    {
+      "date": "2025-12-21",
+      "period": "16:00-20:00",
+      "charge_kwh": 0.0,
+      "discharge_kwh": 5964.784566010181,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    },
+    {
+      "date": "2025-12-21",
+      "period": "20:00-24:00",
+      "charge_kwh": 632.4555320336759,
+      "discharge_kwh": 3289.807497204499,
+      "initial_soc_kwh": 2083.6162331697165,
+      "final_soc_kwh": 1644.803421508208
+    }
+  ],
+  "table3_emergency": [
+    {
+      "date": "2025-03-20",
+      "period": "01:30-01:40",
+      "start_slot": 9,
+      "end_slot_exclusive": 10,
+      "emergency_kwh": 2.3504870555283333
+    },
+    {
+      "date": "2025-03-20",
+      "period": "03:10-03:30",
+      "start_slot": 19,
+      "end_slot_exclusive": 21,
+      "emergency_kwh": 25.549884827529127
+    },
+    {
+      "date": "2025-03-20",
+      "period": "03:50-04:00",
+      "start_slot": 23,
+      "end_slot_exclusive": 24,
+      "emergency_kwh": 0.23289398374868142
+    },
+    {
+      "date": "2025-03-20",
+      "period": "04:50-05:00",
+      "start_slot": 29,
+      "end_slot_exclusive": 30,
+      "emergency_kwh": 3.993318187509203
+    },
+    {
+      "date": "2025-03-20",
+      "period": "15:20-16:20",
+      "start_slot": 92,
+      "end_slot_exclusive": 98,
+      "emergency_kwh": 374.11344694677854
+    },
+    {
+      "date": "2025-03-20",
+      "period": "16:30-17:00",
+      "start_slot": 99,
+      "end_slot_exclusive": 102,
+      "emergency_kwh": 36.340388303890904
+    },
+    {
+      "date": "2025-03-20",
+      "period": "17:20-17:30",
+      "start_slot": 104,
+      "end_slot_exclusive": 105,
+      "emergency_kwh": 0.20449261994644985
+    },
+    {
+      "date": "2025-03-20",
+      "period": "18:40-19:00",
+      "start_slot": 112,
+      "end_slot_exclusive": 114,
+      "emergency_kwh": 27.393445340525773
+    },
+    {
+      "date": "2025-03-20",
+      "period": "20:00-20:20",
+      "start_slot": 120,
+      "end_slot_exclusive": 122,
+      "emergency_kwh": 27.132754513332657
+    },
+    {
+      "date": "2025-03-20",
+      "period": "21:10-21:40",
+      "start_slot": 127,
+      "end_slot_exclusive": 130,
+      "emergency_kwh": 15.811328204321285
+    },
+    {
+      "date": "2025-03-20",
+      "period": "23:30-23:50",
+      "start_slot": 141,
+      "end_slot_exclusive": 143,
+      "emergency_kwh": 3.6148638318909434
+    },
+    {
+      "date": "2025-06-21",
+      "period": "02:50-03:00",
+      "start_slot": 17,
+      "end_slot_exclusive": 18,
+      "emergency_kwh": 8.896925093592301
+    },
+    {
+      "date": "2025-06-21",
+      "period": "04:00-04:10",
+      "start_slot": 24,
+      "end_slot_exclusive": 25,
+      "emergency_kwh": 8.73793624875168
+    },
+    {
+      "date": "2025-06-21",
+      "period": "05:00-05:10",
+      "start_slot": 30,
+      "end_slot_exclusive": 31,
+      "emergency_kwh": 0.48000088778769623
+    },
+    {
+      "date": "2025-06-21",
+      "period": "05:40-05:50",
+      "start_slot": 34,
+      "end_slot_exclusive": 35,
+      "emergency_kwh": 1.5465094475398473
+    },
+    {
+      "date": "2025-06-21",
+      "period": "06:10-06:20",
+      "start_slot": 37,
+      "end_slot_exclusive": 38,
+      "emergency_kwh": 9.300542154038254
+    },
+    {
+      "date": "2025-09-23",
+      "period": "02:10-02:20",
+      "start_slot": 13,
+      "end_slot_exclusive": 14,
+      "emergency_kwh": 5.248677844087069
+    },
+    {
+      "date": "2025-09-23",
+      "period": "05:00-05:10",
+      "start_slot": 30,
+      "end_slot_exclusive": 31,
+      "emergency_kwh": 9.480807815119988
+    },
+    {
+      "date": "2025-09-23",
+      "period": "09:30-09:50",
+      "start_slot": 57,
+      "end_slot_exclusive": 59,
+      "emergency_kwh": 48.059099999999795
+    },
+    {
+      "date": "2025-09-23",
+      "period": "10:00-10:10",
+      "start_slot": 60,
+      "end_slot_exclusive": 61,
+      "emergency_kwh": 3.388966666666571
+    },
+    {
+      "date": "2025-09-23",
+      "period": "14:20-14:30",
+      "start_slot": 86,
+      "end_slot_exclusive": 87,
+      "emergency_kwh": 7.512766248558002
+    },
+    {
+      "date": "2025-09-23",
+      "period": "14:40-15:00",
+      "start_slot": 88,
+      "end_slot_exclusive": 90,
+      "emergency_kwh": 114.1362705550566
+    },
+    {
+      "date": "2025-09-23",
+      "period": "18:10-18:20",
+      "start_slot": 109,
+      "end_slot_exclusive": 110,
+      "emergency_kwh": 11.257421315960983
+    },
+    {
+      "date": "2025-09-23",
+      "period": "20:00-20:20",
+      "start_slot": 120,
+      "end_slot_exclusive": 122,
+      "emergency_kwh": 38.11124867196827
+    },
+    {
+      "date": "2025-09-23",
+      "period": "20:50-21:00",
+      "start_slot": 125,
+      "end_slot_exclusive": 126,
+      "emergency_kwh": 37.99735262696572
+    },
+    {
+      "date": "2025-09-23",
+      "period": "21:20-21:30",
+      "start_slot": 128,
+      "end_slot_exclusive": 129,
+      "emergency_kwh": 16.421722715863098
+    },
+    {
+      "date": "2025-09-23",
+      "period": "22:20-22:30",
+      "start_slot": 134,
+      "end_slot_exclusive": 135,
+      "emergency_kwh": 5.8906427761094164
+    },
+    {
+      "date": "2025-12-21",
+      "period": "01:30-01:40",
+      "start_slot": 9,
+      "end_slot_exclusive": 10,
+      "emergency_kwh": 5.817420799862134
+    },
+    {
+      "date": "2025-12-21",
+      "period": "03:00-03:10",
+      "start_slot": 18,
+      "end_slot_exclusive": 19,
+      "emergency_kwh": 8.77091040150708
+    },
+    {
+      "date": "2025-12-21",
+      "period": "03:30-03:50",
+      "start_slot": 21,
+      "end_slot_exclusive": 23,
+      "emergency_kwh": 62.210128536121715
+    },
+    {
+      "date": "2025-12-21",
+      "period": "07:50-08:00",
+      "start_slot": 47,
+      "end_slot_exclusive": 48,
+      "emergency_kwh": 18.897768003706915
+    },
+    {
+      "date": "2025-12-21",
+      "period": "10:30-10:40",
+      "start_slot": 63,
+      "end_slot_exclusive": 64,
+      "emergency_kwh": 47.44178969314652
+    },
+    {
+      "date": "2025-12-21",
+      "period": "16:50-17:00",
+      "start_slot": 101,
+      "end_slot_exclusive": 102,
+      "emergency_kwh": 12.685827662426163
+    },
+    {
+      "date": "2025-12-21",
+      "period": "17:20-17:30",
+      "start_slot": 104,
+      "end_slot_exclusive": 105,
+      "emergency_kwh": 12.05732438461564
+    },
+    {
+      "date": "2025-12-21",
+      "period": "18:30-18:50",
+      "start_slot": 111,
+      "end_slot_exclusive": 113,
+      "emergency_kwh": 11.793062208306878
+    },
+    {
+      "date": "2025-12-21",
+      "period": "19:50-20:00",
+      "start_slot": 119,
+      "end_slot_exclusive": 120,
+      "emergency_kwh": 15.932121819621216
+    },
+    {
+      "date": "2025-12-21",
+      "period": "23:30-23:40",
+      "start_slot": 141,
+      "end_slot_exclusive": 142,
+      "emergency_kwh": 1.0964111011875275
+    }
+  ]
+}

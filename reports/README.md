@@ -1,5 +1,9 @@
 # 实验报告与可复用模板
 
+[exp006 替代规划报告](experiments/exp006/report.md) · [离线交互报告](experiments/exp006/report.html) · [费用优先对照工作簿](experiments/exp006/greedy_execution/result2.xlsx)
+
+exp006 在独立 `codex/q2-tree-planning` 分支完成，复用 exp004 预测。15 项树与动态规划实验实测共 202.34 秒；保留主组费用上升的结果，以及费用更低的预声明贪心执行对照。新记录以正式源码提交和冻结输入哈希绑定，旧实验记录保持不变。
+
 [exp004 预测与季节性报告](experiments/exp004/report.md) · [exp004 离线交互报告](experiments/exp004/report.html) · [预测交接接口](experiments/exp004/README-prediction.md)
 
 exp004在`codex/q2-discussion-seasonality`分支完成，只修改第二问预测；规划与储能执行沿用exp003。比较无季节、历史季节和含未来信息的全年探索，报告同时保留exp001–003的绝对费用、电量、预测误差与相对变化。三份题目工作簿分别位于该报告的三个组目录。

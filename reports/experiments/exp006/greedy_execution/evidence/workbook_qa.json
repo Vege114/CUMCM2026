@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "run_id": "greedy_execution",
+  "role": "executor_comparator",
+  "physical_and_billing": {
+    "days": 334,
+    "intervals": 48096,
+    "violations": 0,
+    "max_balance_error_kwh": 0.0,
+    "max_state_error_kwh": 9.094947017729282e-13,
+    "minimum_soc_kwh": 1200.0,
+    "maximum_soc_kwh": 10800.0,
+    "max_charge_kwh_per_slot": 833.3333333333334,
+    "max_discharge_kwh_per_slot": 833.3333333333334,
+    "simultaneous_slots": 0,
+    "emergency_charging_slots": 0,
+    "fixed_midnight_purchase_plan": "passed",
+    "projection_check": "not applicable; independently verified causal greedy execution with no deadband",
+    "total_cost_yuan": 13534196.72731571,
+    "planned_cost_yuan": 13127816.456705485,
+    "emergency_cost_yuan": 406380.2706102266,
+    "charge_kwh": 6190052.904667723,
+    "discharge_kwh": 5570850.308925394,
+    "equivalent_full_cycles": 489.3579846413736,
+    "direction_reversals_within_evaluation": 6755,
+    "initial_soc_kwh": 1421.7991105135516,
+    "final_soc_kwh": 1629.777132221758
+  },
+  "warmup": {
+    "days": 31,
+    "intervals": 4464,
+    "violations": 0,
+    "max_balance_error_kwh": 0.0,
+    "max_state_error_kwh": 9.094947017729282e-13,
+    "minimum_soc_kwh": 1200.0,
+    "maximum_soc_kwh": 10800.0,
+    "max_charge_kwh_per_slot": 833.3333333333334,
+    "max_discharge_kwh_per_slot": 833.3333333333334,
+    "simultaneous_slots": 0,
+    "emergency_charging_slots": 0,
+    "fixed_midnight_purchase_plan": "passed",
+    "projection_check": "not evaluated for warmup",
+    "total_cost_yuan": 2036420.6113625362,
+    "planned_cost_yuan": 1447390.5476576837,
+    "emergency_cost_yuan": 589030.0637048525,
+    "charge_kwh": 697428.9235710724,
+    "discharge_kwh": 632029.2939329409,
+    "equivalent_full_cycles": 55.32735598449733,
+    "direction_reversals_within_evaluation": 940,
+    "initial_soc_kwh": 6000.0,
+    "final_soc_kwh": 1421.7991105135516,
+    "source": "data/results/exp003/warmup_2.npz",
+    "sha256": "cab752c356d3d6f895c7b82e46922ff89b2d9fe8ca4fc44b188f1aca4e057864",
+    "january_initial_soc_and_february_continuity": "passed"
+  },
+  "source_sha256": {
+    "附件2_小区负载.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+    "附件2_光伏发电实际功率.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce",
+    "附件1.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d"
+  },
+  "dispatch_sha256": "dbcfa37342bffff015042053bd9b22b3a064b2e4fdd82ea7e26380ad1027ee6f",
+  "daily_csv_sha256": "c16f50bde198d9821f7b31199ed687ce4c91726f75bc8c15b2b18cc0185c25cd",
+  "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+  "source_actuals_and_fixed_tariff_match": "passed",
+  "daily_cost_reconciliation": "passed",
+  "specified_dates": [
+    "2025-03-20",
+    "2025-06-21",
+    "2025-09-23",
+    "2025-12-21"
+  ],
+  "battery_rows": 2004,
+  "emergency_rows": 416,
+  "template_interval_header_correction": "B1:EO1 aligned to 00:00–00:10 through 23:50–24:00; original template is shifted by one slot",
+  "efficiency_convention": "eta_charge = eta_discharge = sqrt(0.9), matching the frozen comparison protocol",
+  "workbook_author": "@oai/artifact-tool via existing reports/export_workbooks_v2.mjs",
+  "saved_workbook_readback": "passed",
+  "cached_daily_sum_formulas": "passed",
+  "original_template_unchanged": true,
+  "template_structure_and_header_style": "passed",
+  "workbook_sha256": "82419a12a8e30ec7811b124d195505b3bea9b09727b48cc84aef663779311d0e",
+  "worksheet_names": [
+    "计划购电量",
+    "充放电量",
+    "紧急购电量"
+  ],
+  "workbook_dimensions": {
+    "计划购电量": [
+      335,
+      147
+    ],
+    "充放电量": [
+      2005,
+      6
+    ],
+    "紧急购电量": [
+      417,
+      3
+    ]
+  },
+  "saved_error_cells": 0,
+  "recalculation_tests": [
+    {
+      "cell": "B2",
+      "formulaCell": "EP2",
+      "delta": 1,
+      "observedDelta": 1,
+      "restored": true
+    },
+    {
+      "cell": "EO168",
+      "formulaCell": "EP168",
+      "delta": 2,
+      "observedDelta": 2,
+      "restored": true
+    },
+    {
+      "cell": "EO335",
+      "formulaCell": "EP335",
+      "delta": 3,
+      "observedDelta": 3,
+      "restored": true
+    }
+  ],
+  "native_excel_recalculation": "not exercised; artifact-tool input-mutation tests and saved cached values verified",
+  "render_engine": "artifact-tool; rendered workbook ranges, not native Excel screenshots",
+  "visual_review": "passed",
+  "checked_utc": "2026-09-12T15:45:26.962839+00:00",
+  "export_and_verification_seconds": 3.8006491659907624,
+  "artifact_formula_error_scan": "0 matches",
+  "visual_review_scope": "All three worksheet opening ranges and purchase total columns; text, dates, values, template headers and actual date-event borders inspected in artifact-tool PNG renders.",
+  "preview_sha256": {
+    "2-充放电量.png": "a6a94ef45916253e53213f1dd42618f187019f91bdfd4510475613d9a88f4d1d",
+    "2-紧急购电量.png": "89175a2588f52c6cfcd78340092ffee04ab64d65fec3f3afdd411626dc1850ac",
+    "2-totals.png": "22f88640dae22b464d90e3d23928a4f19f73e3e88577b965f0e9c04686fcfd2b",
+    "2-计划购电量.png": "cea3194ddd1a08eb7a9c176b6c9aab64bad5a9086a0245c130f326a5eaa8b285"
+  }
+}

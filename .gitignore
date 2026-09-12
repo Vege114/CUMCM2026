@@ -36,6 +36,10 @@ htmlcov/
 experiments/**/runs/
 # Regenerable artifact-tool full-cell inspection logs; checked summaries are committed.
 data/results/exp004/*/*.xlsx.inspect.ndjson
+# exp006 local build/export caches; portable report and checked evidence are tracked.
+reports/experiments/exp006/app/dist/
+reports/experiments/exp006/app/.data-app-offline/
+reports/experiments/exp006/**/*.xlsx.inspect.ndjson
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md
