@@ -1,0 +1,95 @@
+<div id="experiment-history-comparison">
+  <h3 class="history-title"></h3>
+  <div class="history-scope text-small"></div>
+  <div class="history-panels"></div>
+  <script type="application/json" class="history-values">@@DATA@@</script>
+</div>
+<style>
+#experiment-history-comparison .history-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#experiment-history-comparison .history-panel{min-width:0}
+#experiment-history-comparison .history-chart{display:block;width:100%}
+#experiment-history-comparison .history-chart text{fill:var(--foreground);font-size:12px}
+#experiment-history-comparison .history-chart .domain,#experiment-history-comparison .history-chart .tick line{stroke:var(--border)}
+#experiment-history-comparison .history-detail{min-height:44px}
+@media(max-width:680px){#experiment-history-comparison .history-panels{grid-template-columns:1fr}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root=document.getElementById('experiment-history-comparison');
+  const data=JSON.parse(root.querySelector('.history-values').textContent);
+  root.querySelector('.history-title').textContent=data.title;
+  root.querySelector('.history-scope').textContent=data.scope;
+  const valid=r=>r.comparable===true&&Number.isFinite(r.previous)&&Number.isFinite(r.current)&&r.previous!==0;
+  const delta=r=>100*(r.current-r.previous)/Math.abs(r.previous);
+  const extent=d3.extent([0,...data.panels.flatMap(p=>p.rows.filter(valid).map(delta))]);
+  const span=extent[1]-extent[0]||1;
+  const domain=[extent[0]-span*.55,extent[1]+span*.55];
+  const number=v=>Number.isFinite(v)?v.toLocaleString('zh-CN',{maximumFractionDigits:4}):'缺失';
+  const signed=v=>(v>0?'+':'')+v.toFixed(2);
+  const panels=data.panels.map(panel=>{
+    const section=document.createElement('section');section.className='history-panel';
+    const heading=document.createElement('h3');heading.textContent=panel.title;
+    const canvas=document.createElement('div');
+    const label=document.createElement('label');label.className='form-label text-small';label.textContent='数值详情';
+    const select=document.createElement('select');select.className='form-select';select.setAttribute('aria-label',panel.title+'数值详情');
+    panel.rows.forEach((r,i)=>{const option=document.createElement('option');option.value=i;option.textContent=r.label;select.append(option);});
+    const detail=document.createElement('div');detail.className='history-detail text-small';detail.setAttribute('aria-live','polite');
+    const show=i=>{
+      const row=panel.rows[i];select.value=i;
+      const absoluteUnit=row.unit==='%'?'个百分点':row.unit;
+      detail.textContent=`${row.label}：${number(row.previous)} → ${number(row.current)} ${row.unit}；`+
+        (valid(row)?`差值 ${number(row.current-row.previous)} ${absoluteUnit}；相对变化 ${signed(delta(row))}%。`:'不可比/缺失。')+` ${row.comparison}`;
+    };
+    select.addEventListener('change',()=>show(Number(select.value)));label.append(select);
+    section.append(heading,canvas,label,detail);root.querySelector('.history-panels').append(section);show(0);
+    return {panel,canvas,show};
+  });
+  function draw({panel,canvas,show}){
+    const width=canvas.getBoundingClientRect().width;if(width<1)return;
+    const left=102,right=14,top=28,bottom=58,step=46,height=top+panel.rows.length*step+bottom;
+    const x=d3.scaleLinear().domain(domain).range([left+8,width-right-8]);
+    const y=i=>top+step*(i+.5);
+    const svg=d3.select(canvas).selectAll('svg').data([panel]).join('svg')
+      .attr('class','history-chart').attr('viewBox',`0 0 ${width} ${height}`).attr('height',height)
+      .attr('role','img').attr('aria-label',`${panel.title}，相对变化：负值下降、正值上升。`);
+    svg.selectAll('*').remove();
+    svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top)
+      .attr('width',width-left-right).attr('height',height-top-bottom).attr('fill','none').attr('stroke','var(--border)');
+    svg.append('line').attr('x1',x(0)).attr('x2',x(0)).attr('y1',top).attr('y2',height-bottom).attr('stroke','var(--border)');
+    panel.rows.forEach((row,i)=>{
+      svg.append('text').attr('x',left-8).attr('y',y(i)+4).attr('text-anchor','end').text(row.label);
+      if(valid(row)){
+        const value=delta(row),end=x(value),zero=x(0);
+        svg.append('rect').attr('x',Math.min(zero,end)).attr('y',y(i)-6)
+          .attr('width',Math.abs(end-zero)).attr('height',12).attr('fill','var(--viz-series-1)');
+        svg.append('text').attr('class','change-value').attr('x',end+(value<0?-5:5)).attr('y',y(i)+4)
+          .attr('text-anchor',value<0?'end':'start').text(signed(value)+'%');
+      }else svg.append('text').attr('x',left+8).attr('y',y(i)+4).text('不可比/缺失');
+      svg.append('rect').attr('data-chart-hit','').attr('x',left).attr('y',y(i)-22)
+        .attr('width',width-left-right).attr('height',44).attr('fill','transparent')
+        .attr('data-tooltip',`${row.label}：${number(row.previous)} → ${number(row.current)} ${row.unit}；${row.comparison}`)
+        .on('pointerenter',()=>show(i)).on('click',()=>show(i));
+    });
+    svg.append('g').attr('class','x-axis').attr('transform',`translate(0,${height-bottom})`)
+      .call(d3.axisBottom(x).ticks(width<400?3:4).tickFormat(d=>d+'%'));
+    svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(left+width-right)/2)
+      .attr('y',height-8).attr('text-anchor','middle').text(panel.axisUnit||'相对变化（%）');
+    svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('x',left-8).attr('y',15)
+      .attr('text-anchor','end').text(panel.axisLabel||'问题 · 变量');
+    // Measure all axis and value text together; avoid edge clipping or tick collisions.
+    const texts=[...svg.node().querySelectorAll('text')];
+    for(const text of texts){const box=text.getBBox();
+      if(text.classList.contains('change-value')&&(box.x<left+4||box.x+box.width>width-right-4)){
+        text.setAttribute('x',text.getAttribute('text-anchor')==='end'?left+4:width-right-4);
+        text.setAttribute('text-anchor',text.getAttribute('text-anchor')==='end'?'start':'end');
+      }
+    }
+    const ticks=svg.selectAll('.tick text').nodes();
+    let previous=null;for(const tick of ticks){const box=tick.getBoundingClientRect();
+      if(previous&&box.left<previous.right+4)tick.textContent='';else previous=box;}
+  }
+  const observer=new ResizeObserver(()=>panels.forEach(draw));
+  panels.forEach(p=>observer.observe(p.canvas));panels.forEach(draw);
+})();
+</script>

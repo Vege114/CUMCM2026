@@ -22,6 +22,8 @@ python reports/register_experiment.py --record reports/experiments/exp003/record
 
 `registry/` 是正式实验注册表；每个实验目录保留当时的历史比较快照。通用登记程序拒绝覆盖旧编号，最新索引和相对比较 CSV 则追加更新。每个新交互报告应把同一份历史比较数据接入图表；本轮源码里的 `history` 和 `relative_history` 查询展示了接口。
 
+每次与此前实验对比时，必须在对话里通过 Visualize 直接展示比较图，同时保留报告中的对应图表。费用、预测误差和阶段耗时分别呈现，标清原登记或新协议重算、数据单位、改善及退步。详细要求见 [历史比较可视化要求](templates/history-comparison.md)；[相对变化图模板](templates/history-comparison.inline.html) 可接入核验后的比较数据。下一轮报告草稿的第七部分会自动带上这项要求。
+
 ## 复现首轮报告
 
 实验分支中的 `reports/build_report.py` 从 `data/results/exp001` 读取经过核验的结果，生成正文、静态图、记录和网页数据；它针对本轮固定的三网络、两个特征消融、三个种子协议。通用模板与登记工具不依赖这个训练配置。
