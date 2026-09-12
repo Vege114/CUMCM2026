@@ -257,7 +257,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
  P_{\min}z_t^m\leq P_t^m\leq P_{\max}z_t^m,\quad m\in\{c,d\}.
  \label{eq:q1-mode-power}
 \end{equation}
-其中，$m=c,d$分别表示充电和放电；$z_t^m$为相应模式是否开启的指示变量，取1表示开启，取0表示关闭。$P_{\max}=5000$\,kW为最大单向功率，$P_{\min}=1$\,kW为有效运行的计数判据，避免零功率状态被计为持续运行。由于存在二元变量，本文模型属于混合整数线性规划。
+其中，$m=c,d$分别表示充电和放电；$z_t^m$为相应模式是否开启的指示变量，取1表示开启，取0表示关闭。$P_{\max}=5000$\,kW为最大单向功率，$P_{\min}=1$\,kW为有效运行的计数判据，避免零功率状态被计为持续运行。
 
 \begin{figure}[H]
  \centering
@@ -288,7 +288,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
  \quad 0\leq s_t^m,o_t^m\leq1.
  \label{eq:q1-switch}
 \end{equation}
-其中，$s_t^m$表示模式$m$在区间$t$开始时是否启动，$o_t^m$表示是否关闭，发生时为1，否则为0。两者由前后两段的二元模式状态确定，不是可以任意取零的启动、关闭计数。
+其中，$s_t^m$、$o_t^m$分别为模式$m$在区间$t$的启动、关闭指示量，由相邻模式状态确定。
 \begin{equation}
  \sum_{j=0}^{U-1}z_{t+j}^m\geq Us_t^m,\qquad
  \sum_{j=0}^{D-1}(1-z_{t+j}^m)\geq Do_t^m.
@@ -303,7 +303,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
  F_1(x)=\sum_{t=1}^{T}p_tg_t,\qquad C^\star=\min_{x\in\mathcal X}F_1(x).
  \label{eq:q1-first}
 \end{equation}
-其中，$x$表示由购电量、充放电功率、储电量、模式及辅助变量组成的完整调度方案，$\mathcal X$为满足上述全部约束的方案集合；$p_t$为区间$t$的已知购电单价，单位为元/kWh；$F_1(x)$为方案$x$的全天购电费用，$C^\star$为同一可行域内第一层的最优费用，单位均为元。
+其中，$x$为完整调度方案，$\mathcal X$为上述约束构成的可行域；$C^\star$为第一层最低购电费，单位为元。
 
 \textbf{第二层：在费用预算内减少功率波动与短动作。}
 用循环总变差$\mathcal V$、启动次数$N_s$和短段缺额$B$衡量运行平稳性，定义如下：
@@ -315,24 +315,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
 其中，$\mathcal V$为含午夜边界的净功率总变差，单位为kW；$N_s$为全天充、放电模式启动总次数；$B$为短运行段统计量，用于估计电池是否存在普遍的碎片化充放电行为，单位为十分钟段。此式的$j$为循环运行段编号，$\ell_j^{\rm run}$为第$j$个连续同模式运行段的长度，$K=3$为短段参考长度；$(a)^+=\max(a,0)$表示取正部。
 
 
-为保持线性结构，引入辅助变量$\xi_t$表示绝对值的上界：
-\begin{equation}
- \xi_t\geq P_t^{\rm bat}-P_{t-1}^{\rm bat},\qquad
- \xi_t\geq P_{t-1}^{\rm bat}-P_t^{\rm bat},\qquad \xi_t\geq0 .
- \label{eq:q1-tv-linear}
-\end{equation}
-其中，$\xi_t$为区间$t$与上一段净功率差绝对值的非负辅助上界，单位为kW；两条下界分别覆盖功率差为正和为负的情况，以线性不等式表达绝对值。
-在第二层的正权重最小化下，$\sum_t\xi_t=\mathcal V$。短段项则由启动后是否发生中断表达。对$k=1,\ldots,K-1$，有
-\begin{equation}
- \begin{gathered}
- 0\leq b_{t,k}^m\leq s_t^m,\qquad
- b_{t,k}^m\geq s_t^m-z_{t+j}^m\quad(j=1,\ldots,k),\\
- b_{t,k}^m\leq k-\sum_{j=1}^{k}z_{t+j}^m,\qquad
- B=\sum_{m,t,k}b_{t,k}^m .
- \end{gathered}
- \label{eq:q1-short}
-\end{equation}
-其中，$b_{t,k}^m$表示模式$m$在区间$t$启动后，接下来$k$段内是否出现关闭，出现时为1，否则为0；$k=1,\ldots,K-1$为检查窗口长度，$j$为窗口内的区间偏移。$\sum_{m,t,k}$对两种模式、全天各启动位置及检查窗口求和，得到短段缺额$B$。主方案取$U=K=3$，最短运行约束已使$B=0$，因此该项在主方案中不再提供额外改善，保留它是为了与允许短动作的经济基准统一比较。
+对总变差采用标准绝对值线性化，以辅助变量$\xi_t\geq|P_t^{\rm bat}-P_{t-1}^{\rm bat}|$替代绝对值项，$\xi_t$的单位为kW。主方案取$U=K=3$，最短运行约束保证$B=0$；比较允许短动作的方案时，短段缺额采用标准逻辑线性化。
 
 将不同量纲的指标按上界归一化，得到
 \begin{equation}
@@ -340,7 +323,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
        +\frac{N_s}{2T}+\frac{B}{2T(K-1)} .
  \label{eq:q1-second}
 \end{equation}
-其中，$F_2(x)$为方案$x$的归一化运行不平稳程度，无量纲，值越小表示运行越平稳；三个分式依次对应功率总变差、启动次数和短段缺额，分母用于统一数值尺度。三项等权是本文的运行偏好，不表示它们具有相同的寿命损耗。若只允许电费偏离$C^\star$一个极小数值容差，第二层可调整的空间有限，故引入相对费用让步$\delta$，求解
+其中，$F_2(x)$为无量纲不平稳度，三项按上界归一化并等权加总。该权重表示运行偏好，不直接对应寿命损耗。引入相对费用让步$\delta$，在预算内求解
 \begin{equation}
  S^\star=\min_{x\in\mathcal X}F_2(x),\qquad
  F_1(x)\leq(1+\delta)C^\star+\epsilon_C .
@@ -428,44 +411,109 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
 原结果中，平稳方案相较严格经济基准，总变差降低67.66\%，启动次数减少8次，购电费增加313.54元，增幅约0.93\%。这些数值待两层模型重算后统一核对。比较的重点是减少功率波动需要付出多少费用，而不是直接据此判断电池能够延长多少寿命；短动作减少也同时受到最短运行时间约束的影响。
 
 
-\section{问题二的模型的建立和求解}
-\subsection{具体分析}
+\section{问题二的模型建立与求解}
+\label{sec:q2-prediction}
+\subsection{问题二预测模型的建立}
+机器学习通过历史样本学习输入特征与预测目标之间的映射。本文采用一维卷积神经网络提取近期功率序列的变化特征，并以残差学习修正历史同期曲线，从而生成未来24小时的负载和光伏预测。两个分支分别训练，采用电价加权的非对称损失，使预测兼顾供需误差与缺电风险。
 
-\subsection{模型准备}
+\textbf{变量与建模假设。}
+沿用$L_{d,t}$、$V_{d,t}$表示负载与光伏功率，$d=0$对应2025年1月1日，$t=1,\ldots,144$为日内十分钟区间。以下以$a\in\{\mathrm L,\mathrm V\}$区分两个分支，统一记$Y^{\mathrm L}=L$、$Y^{\mathrm V}=V$；新增符号见表\ref{tab:q2-pred-symbols}。
 
-\subsection{模型建立}
+\begin{table}[H]
+\centering\small
+\caption{负载与光伏预测模型的主要符号}\label{tab:q2-pred-symbols}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{p{2.3cm}p{1.65cm}p{1.45cm}p{1.1cm}p{1.8cm}X}
+\toprule
+符号 & 类别 & 类型 & 单位 & 范围 & 含义\\
+\midrule
+$g_{d,t}$ & 决策变量 & 连续量 & kWh & $[0,+\infty)$ & 后续规划确定的购电量，本预测模型不优化\\
+$\widehat Y^a_{d,t}$ & 目标变量 & 连续量 & kW & $[0,+\infty)$ & 每日0时发布的负载或光伏预测\\
+$Y^a_{j,t}$，$j<d$ & 已知参数 & 连续量 & kW & $[0,+\infty)$ & 发布前已观测的历史功率\\
+$p_t$ & 已知参数 & 连续量 & 元/kWh & $(0,+\infty)$ & 附件1固定分时电价\\
+$B^a_{d,t}$ & 中间变量 & 连续量 & kW & $[0,+\infty)$ & 历史同期基线\\
+$\mathbf X_d^a,\mathbf c_{d,t}^a$ & 中间变量 & 实数数组 & -- & 实数 & 标准化小时序列和8维时刻特征\\
+$\widehat r^a_{d,t}$ & 中间变量 & 连续量 & -- & $\mathbb R$ & 网络预测的标准化残差\\
+$\mathsf M_{d,t}$ & 中间变量 & 二元量 & -- & $\{0,1\}$ & 光伏可发电时段掩码\\
+$\Theta_m^a$ & 待校准参数 & 实数向量 & -- & $\mathbb R^{2465}$ & 第$m$月分支网络的权重与偏置\\
+$\mu_m^a,S_m^a$ & 待校准参数 & 连续量 & kW & $\mu\geq0$，$S\geq1$ & 训练前缀均值与带下限标准差\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-\subsection{模型求解}
+在公共假设基础上，预测模型采用以下补充假设。
+\begin{enumerate}[label=\textbf{假设\arabic*：},leftmargin=4.8em,itemsep=4pt]
+\item \textbf{假设内容：}每日0时可取得此前完整功率记录。\textbf{设立依据：}题目规定日前计划时点，附件未给出观测延迟。\textbf{对模型的影响：}仅使用目标日前数据及已知日历、电价。
+\item \textbf{假设内容：}历史同期曲线具有短期参考价值。\textbf{设立依据：}居民活动具有星期规律，光伏发电具有日内规律。\textbf{对模型的影响：}采用周期基线，由网络修正日际差异，不假定相邻曲线相等。
+\item \textbf{假设内容：}近期预测关系具有局部可迁移性。\textbf{设立依据：}用电及日照状态随时间变化，且无未来气象输入。\textbf{对模型的影响：}历史样本按时效降权，网络按月更新。
+\item \textbf{假设内容：}可发电时段在相邻日期间缓慢变化。\textbf{设立依据：}日出、日落时间连续变化。\textbf{对模型的影响：}以近28日正发电时段并向两侧各扩展20分钟构造掩码；长期零发电或设备突变时该近似可能失效。
+\end{enumerate}
 
+\textbf{输入数据与周期基线。}
+每天0时，以最近7个完整日的负载、光伏实测值构造输入。各分支将十分钟功率按小时取均值并标准化，得到168点历史序列$\mathbf X_d^a$。均值$\mu_m^a$和尺度$S_m^a$只由当月训练前缀估计，其中标准差下限取1\,kW。负载、光伏分别采用上周同日同刻和昨日同刻功率作为基线：
+\begin{equation}\label{eq:q2-base}
+ B^{\mathrm L}_{d,t}=L_{d-7,t},\qquad B^{\mathrm V}_{d,t}=V_{d-1,t}.
+\end{equation}
+对每个待预测时刻，再提供基础预测、昨日值、上周值、过去7日均值和日历信息，组成8维上下文：
+\begin{equation}\label{eq:q2-context}
+ \mathbf c^a_{d,t}=\left(
+ \frac{B^a_{d,t}-\mu_m^a}{S_m^a},
+ \frac{Y^a_{d-1,t}-\mu_m^a}{S_m^a},
+ \frac{Y^a_{d-7,t}-\mu_m^a}{S_m^a},
+ \frac{\bar Y^a_d-\mu_m^a}{S_m^a},
+ \mathbf a_{d,t}^{\mathsf T}\right)^{\mathsf T}.
+\end{equation}
+其中，$\bar Y_d^a$为过去7日平均功率；$\mathbf a_{d,t}$为日内时刻及星期的正弦、余弦编码，共4维。模型保留日内与周内信息，不另加入年度季节趋势；固定电价用于训练加权，不作为网络输入。
 
+\textbf{双分支卷积残差预测。}
+负载和光伏采用结构相同、参数独立的一维卷积分支。历史序列经两层因果膨胀卷积提取特征，通过平均池化和全连接层形成8维摘要，再与各时刻上下文拼接，由共享预测头输出144个残差。两层卷积均采用8个通道、长度5的卷积核，膨胀率分别为1和2；池化长度与步长均为6，预测头隐藏层为16维，激活函数采用ReLU。上述映射统一写为
+\begin{equation}\label{eq:q2-network}
+ \widehat r^a_{d,t}=f_{\Theta_m^a}(\mathbf X_d^a,\mathbf c^a_{d,t}),\qquad
+ r^a_{d,t}=\frac{Y^a_{d,t}-B^a_{d,t}}{S_m^a}.
+\end{equation}
+其中，$f_{\Theta_m^a}$为卷积残差网络，$r^a_{d,t}$为训练目标，即真实功率相对基线的标准化偏差。两个分支共4930个参数，输出层零初始化，使模型从历史基线开始学习修正。小时聚合仅用于历史特征提取，目标时刻上下文仍保留十分钟分辨率。
 
+\textbf{预测输出与物理约束。}
+将网络残差恢复至功率量纲，并施加非负约束，得到
+\begin{equation}\label{eq:q2-final}
+ \widehat L_{d,t}=\max\{0,B^{\mathrm L}_{d,t}+S_m^{\mathrm L}\widehat r^{\mathrm L}_{d,t}\},\qquad
+ \widehat V_{d,t}=\mathsf M_{d,t}\max\{0,B^{\mathrm V}_{d,t}+S_m^{\mathrm V}\widehat r^{\mathrm V}_{d,t}\}.
+\end{equation}
+光伏掩码$\mathsf M_{d,t}$由最近28个完整日出现过正发电的时段并集确定，向前后各扩展20分钟，集合内取1、其余取0。最终每天输出$144\times2$的负载与光伏功率矩阵，单位为kW；后续规划按$\Delta t=1/6$\,h换算区间电量。
 
+\subsection{预测模型的训练}
+\textbf{面向供电不足风险的损失函数。}
+负载低估或光伏高估均可能导致计划供电不足，题目又对紧急购电按当时电价的5倍计费。因此，采用电价加权的非对称Huber损失，并通过指数时效权重提高近期样本的重要性：
+\begin{equation}\label{eq:q2-weights}
+ \begin{aligned}
+ u^a_{d,t}&=r^a_{d,t}-\widehat r^a_{d,t},&
+ \kappa^{\mathrm L}_{d,t}&=1+4\mathbb I(u^{\mathrm L}_{d,t}>0),&
+ \kappa^{\mathrm V}_{d,t}&=1+4\mathbb I(u^{\mathrm V}_{d,t}<0),\\
+ \pi_t^{\mathrm{pred}}&=\frac{p_t}{T^{-1}\sum_{j=1}^{T}p_j},&
+ \omega_{m,d}&=\frac{2^{-(D_m-1-d)/90}}
+ {|\mathcal T_m|^{-1}\sum_{j\in\mathcal T_m}2^{-(D_m-1-j)/90}}.&&
+ \end{aligned}
+\end{equation}
+其中，$u^a_{d,t}$为标准化残差误差，$\mathbb I$为指示函数，$\kappa^a_{d,t}$为方向惩罚；$\pi_t^{\mathrm{pred}}$为归一化电价；$\mathcal T_m$为当月训练日期集合，$D_m$为其排他截止日，$\omega_{m,d}$为均值归一化的90日半衰期权重。
 
+在卷积核上施加L2正则，训练目标为
+\begin{equation}\label{eq:q2-train-objective}
+ \min_{\Theta_m^{\mathrm L},\Theta_m^{\mathrm V}}
+ \frac{1}{|\mathcal T_m|}\sum_{d\in\mathcal T_m}\frac{\omega_{m,d}}{2T}
+ \sum_{t=1}^{T}\sum_{a\in\{\mathrm L,\mathrm V\}}
+ \pi_t^{\mathrm{pred}}\kappa^a_{d,t}\mathcal H(u^a_{d,t})
+ +10^{-4}\sum_{a\in\{\mathrm L,\mathrm V\}}\sum_{i=1}^{2}\|W^{a,(i)}\|_F^2.
+\end{equation}
+其中，$\mathcal H$为阈值1的标准Huber损失，$W^{a,(i)}$为分支$a$第$i$层卷积核。负载低估、光伏高估的惩罚权重为5，反方向为1，使模型倾向于减少供电准备不足。该损失是购电风险的代理指标，不等同于实际调度费用；非负裁剪及光伏掩码在预测输出阶段实施。
 
+\textbf{时间划分与参数求解。}
+网络每月从头训练一次，使用月初以前的完整历史样本，最近7日留作验证，其余日期用于训练；最早样本为1月8日，以保证7日历史输入完整。采用Adam优化，学习率0.001、批大小32，最多训练60轮，验证损失连续6轮不改善即早停，并恢复最佳参数。90日半衰期、损失权重和网络结构均事先固定。
 
+当月网络参数保持不变，每日更新历史输入和光伏掩码，在0时一次性发布当天144点预测。正式评价覆盖2025年2月至12月共334日，主随机种子固定为42；预测精度与接入规划后的购电费用分别评价。
 
+\clearpage
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{问题三的模型的建立和求解}
 \subsection{具体分析}
 
