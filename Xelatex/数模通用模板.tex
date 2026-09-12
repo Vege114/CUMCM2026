@@ -242,20 +242,23 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
  =L_t\Delta t+P_t^c\Delta t+w_t,\qquad g_t,w_t\geq0 .
  \label{eq:q1-balance}
 \end{equation}
-其中，$t=1,\ldots,T$为十分钟区间编号，$g_t$为区间$t$向外网申报的购电量，$w_t$为该区间未被负载或充电利用的剩余电量，单位均为kWh；$V_t$和$L_t$分别是光伏预测功率和负载预测功率，$P_t^c$与$P_t^d$分别为交流侧充电功率与放电功率，单位均为kW，且电池充放电功率应小于5000$\,kWh$。
-
 \begin{equation}
  E_{t+1}-E_t=\eta_cP_t^c\Delta t-\frac{P_t^d\Delta t}{\eta_d},
  \qquad \eta_c=\eta_d=\sqrt{0.9}.
  \label{eq:q1-state}
 \end{equation}
-\begin{equation}
- 1200\,kWh\leq E_t\leq10800\,kWh\quad,
- \qquad E_1=E_{T+1}=6000\,kWh.
- \label{eq:q1-boundary}
-\end{equation}
 
-其中，$E_t$与$E_{t+1}$分别为区间$t$开始和结束时电池内部的储电量，单位为kWh；$\eta_c$与$\eta_d$分别为充电效率和放电效率，$\eta_{\rm rt}=\eta_c\eta_d$为往返效率。
+其中，$t=1,\ldots,T$为十分钟区间编号，$g_t$为区间$t$向外网申报的购电量，$w_t$为该区间未被负载或充电利用的剩余电量，单位均为kWh；$V_t$和$L_t$分别是光伏预测功率和负载预测功率，$P_t^c$与$P_t^d$分别为交流侧充电功率与放电功率，单位均为kW，且电池充放电功率应小于5000$\,kWh$。
+
+$E_t$与$E_{t+1}$分别为区间$t$开始和结束时电池内部的储电量，单位为kWh，$1200\,kWh\leq E_t\leq10800\,kWh\quad$，$ E_1=E_{T+1}=6000\,kWh$；$\eta_c$与$\eta_d$分别为充电效率和放电效率，$\eta_{\rm rt}=\eta_c\eta_d$为往返效率。
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=\textwidth]{q1_run/q1_day.png}
+ \caption{典型日负载、发电与电价}\label{fig:q1day}
+\end{figure}
+
+基于此，我们建立了一个线性优化模型，来决定当日的购电计划。
 
 \subsubsection{变量与参数定义}
 决策量统一在交流侧定义；$g_t,w_t$为电量，$P_t^c,P_t^d$为功率。表\ref{tab:q1-vars}区分直接调度变量、辅助量和目标量，表\ref{tab:q1-params}列出已知条件及需要根据运行偏好选定的参数。
