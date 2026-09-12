@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {DataComponent, Dropdown, EvidenceChart, RichNarrative, useDataApp} from "../../data-app-public.jsx";
 import "./report.css";
+import {HistoryCosts, HistoryForecast, HistoryTraining} from "./HistoryComparisons.jsx";
 
 const labels={load:"小区负载",pv:"历史光伏预测",pv_corrected:"光伏预报修正",price:"电价",all:"全部"};
 const metrics={mae:"平均绝对误差",rmse:"均方根误差",wape_pct:"加权绝对百分比误差"};
@@ -30,6 +31,9 @@ export function ReportContent(){
   if(item.type==="prose")return <RichNarrative key={item.id} id={item.id} value={item.markdown}/>;
   if(item.type==="route")return <Route key={item.id} rows={query("technical_path")}/>;
   if(item.type==="tree")return <ScenarioTree key={item.id} rows={query("tree_nodes")}/>;
+  if(item.type==="history-cost-chart")return <HistoryCosts key={item.id} rows={query("cost_annual")}/>;
+  if(item.type==="history-forecast-chart")return <HistoryForecast key={item.id} rows={query("official_forecast_comparison")}/>;
+  if(item.type==="history-training-charts")return <HistoryTraining key={item.id} rows={query("timing")}/>;
   let rows=query(item.queryId),sourceRows=rows,spec={...item.spec},headerControls=null,title=item.title;
   if(item.scope?.startsWith("forecast")){
    sourceRows=forecastRows.filter(row=>item.scope==="forecast_lead"?row.lead!=="all":row.lead==="all");

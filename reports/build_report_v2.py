@@ -282,14 +282,30 @@ def build(experiment="exp002", partial=False, code_commit=None):
         sections[4] += "\n分阶段实测耗时（累计任务时间与墙钟时间不可直接相加）：\n\n" + table(
             pd.read_csv(out / "phase_timing.csv"), {"stage": "阶段", "minutes": "分钟", "scope": "计时口径"})
     narrative_sections = list(sections)
+    history_visuals = [
+        ("history-cost", "7.1 全年费用：历史重算、预测变化与调度变化",
+         "本节固定比较 2025 年 2—12 月四个问题，独立于页首问题和月份筛选。exp001 重算保留旧月度正式预测选择；exp002 基础和风险均使用正式种子 42。四种方案采用相同的新物理与结算口径，周期基线也放入图中。原登记费用因协议不同，仅保留在本节明细表，不混入排名。",
+         "history-cost-comparison", "history-cost-chart", "cost_annual"),
+        ("history-errors", "7.2 预测误差：WAPE 与 RMSE 同时比较",
+         "负值表示误差下降，正值表示上升；相对变化按（本次−此前）/此前绝对值计算。默认展示全时段，网页可切换实际发电时段。星号标注的发布光伏先将旧预测按新积分口径重算；原值、指标及口径保留在图表数据来源和本节完整比较表中。全时段 WAPE 均下降，但问题 2、4-2 的历史光伏 RMSE 分别增加 0.708%、1.127%，不能据此宣称所有误差都改善。",
+         "history-forecast-relative-change", "history-forecast-chart", "official_forecast_comparison"),
+        ("history-compute", "7.3 训练规模与实测耗时",
+         f"训练组数从 {len(old_train)} 组降至 {len(train)} 组；累计 GPU 训练时间从 {timing.iloc[0].training_minutes:.4f} 分钟降至 {timing.iloc[1].training_minutes:.4f} 分钟。旧实验包含三种候选网络及两个特征消融，故共五条训练路线；本轮固定一条。这里比较各实验完整训练任务的累计值，不是同等任务量的硬件速度比较，也不代表端到端加速。本轮全部调度实验累计 222.8426 分钟，分阶段计时范围见第五部分。",
+         "training-count-and-time", "history-training-charts", "timing"),
+    ] if complete else []
     figure_groups = {3: ["fixed-network-architecture", "baseline-correction-decomposition", "worked-example-training-loss", "scenario-information-tree"],
                      4: ["training-count-and-time"],
-                     5: ["annual-three-error-metrics", "monthly-forecast-error", "lead-and-generating-error", "cost-components", "failure-case-and-storage", "cost-versus-tail-risk", "solver-gap-and-fallback", "daily-emergency-and-monthly-cost"],
-                     6: ["three-layer-cost-comparison"]}
+                     5: ["annual-three-error-metrics", "monthly-forecast-error", "lead-and-generating-error", "cost-components", "failure-case-and-storage", "cost-versus-tail-risk", "solver-gap-and-fallback", "daily-emergency-and-monthly-cost"]}
     for index, names in figure_groups.items():
         for name in names:
             if (report / "figures" / f"{name}.png").exists():
                 sections[index] += f"\n\n![{name}](figures/{name}.png)\n\n[论文 SVG](figures/{name}.svg)\n"
+    if history_visuals:
+        heading, introduction, detail = sections[6].split("\n\n", 2)
+        visual_markdown = "".join(
+            f"\n\n### {title}\n\n{note}\n\n![{title}](figures/{figure}.png)\n\n[论文 SVG](figures/{figure}.svg)\n"
+            for _, title, note, figure, _, _ in history_visuals)
+        sections[6] = heading + "\n\n" + introduction + visual_markdown + "\n\n### 7.4 历史明细与可比性\n\n" + detail
     blocks = []
     for index, body in enumerate(sections, 1):
         (report / f"section-{index}.md").write_text(body)
@@ -356,6 +372,14 @@ def build(experiment="exp002", partial=False, code_commit=None):
     if "relative_history" in queries:
         blocks[6]["blocks"].append({"type": "table", "id": "all-history-comparability", "queryId": "relative_history", "title": "此前全部实验的指标可比性", "scope": "history",
                                     "columns": [["previous_experiment", "旧实验"], ["task", "任务"], ["route", "策略角色"], ["metric", "指标"], ["previous", "此前"], ["current", "本次"], ["relative_change_pct", "相对变化/%"], ["comparison", "差异说明"]]})
+    history_blocks = []
+    for identity, title, note, _, kind, query_id in history_visuals:
+        history_blocks += [
+            {"type": "prose", "id": identity+"-explanation", "markdown": f"### {title}\n\n{note}"},
+            {"type": kind, "id": identity, "queryId": query_id}]
+    if history_blocks:
+        history_blocks.append({"type": "prose", "id": "history-details-heading", "markdown": "### 7.4 历史明细与可比性"})
+        blocks[6]["blocks"][1:1] = history_blocks
     if "specified_intervals" in queries:
         for name, title, columns in (
             ("specified_intervals", "指定时段购电", [["period", "时段"], ["original", "凌晨计划/kWh"], ["final", "最终购电/kWh"]]),
