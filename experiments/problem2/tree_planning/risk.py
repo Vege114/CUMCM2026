@@ -73,7 +73,10 @@ class TreeResidualScenarios:
     are read later. Treat all constructor inputs as immutable thereafter.
     """
 
-    def __init__(self, origins, values, actual, price144):
+    def __init__(self, origins, values, actual, price144, conditioning="tree"):
+        if conditioning not in ("tree", "per_slot"):
+            raise ValueError("conditioning must be tree or per_slot")
+        self.conditioning = conditioning
         origins = np.asarray(origins)
         if origins.ndim != 1 or origins.dtype.kind not in "iu":
             raise ValueError("origins must be a one-dimensional integer array")
@@ -157,19 +160,26 @@ class TreeResidualScenarios:
         if not training_days:
             raise ValueError("no completed day exists to calibrate even the periodic fallback")
         x_train, y_train = np.concatenate(features), np.concatenate(residuals)
-        tree = DecisionTreeRegressor(max_depth=5, min_samples_leaf=48, random_state=42)
-        began = perf_counter()
-        tree.fit(x_train, y_train)
-        fit_seconds = perf_counter() - began
-        train_leaves = tree.apply(x_train)
-        leaf_supports = {
-            int(leaf): np.quantile(y_train[train_leaves == leaf], QUANTILE_LEVELS, method="linear")
-            for leaf in np.unique(train_leaves)
-        }
         current_forecast = self.values[self._lookup[cutoff]]
         x_current = tree_features(current_forecast, self.price144)
-        current_leaves = tree.apply(x_current)
-        errors = np.vstack([leaf_supports[int(leaf)] for leaf in current_leaves])
+        tree = None
+        fit_seconds = 0.0
+        if self.conditioning == "tree":
+            tree = DecisionTreeRegressor(max_depth=5, min_samples_leaf=48, random_state=42)
+            began = perf_counter()
+            tree.fit(x_train, y_train)
+            fit_seconds = perf_counter() - began
+            train_leaves = tree.apply(x_train)
+            leaf_supports = {
+                int(leaf): np.quantile(y_train[train_leaves == leaf], QUANTILE_LEVELS, method="linear")
+                for leaf in np.unique(train_leaves)
+            }
+            current_leaves = tree.apply(x_current)
+            errors = np.vstack([leaf_supports[int(leaf)] for leaf in current_leaves])
+        else:
+            # Identical completed history and fallback; condition only on slot.
+            errors = np.quantile(np.stack(residuals), QUANTILE_LEVELS,
+                                 axis=0, method="linear").T
         scenarios = x_current[:, 2, None] + errors
         info = {
             "day": day,
@@ -184,8 +194,9 @@ class TreeResidualScenarios:
             "issued_history_days": len(historical_ids),
             "max_observed_index": int((max(training_days) + 1) * STEPS - 1),
             "fit_seconds": float(fit_seconds),
-            "tree_nodes": int(tree.tree_.node_count),
-            "tree_leaves": int(tree.tree_.n_leaves),
+            "tree_nodes": int(tree.tree_.node_count) if tree is not None else 0,
+            "tree_leaves": int(tree.tree_.n_leaves) if tree is not None else 0,
+            "conditioning": self.conditioning,
             "fallback": bool(fallback),
             "residual_source": "periodic_baseline" if fallback else "frozen_exp004_forecast",
             "fallback_reason": "fewer_than_two_completed_issued_forecast_days" if fallback else None,

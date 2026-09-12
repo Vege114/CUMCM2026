@@ -1,0 +1,413 @@
+{
+  "experiment_id": "exp006",
+  "phase": "approved_formal_evaluation",
+  "formal_run_authorized": true,
+  "formal_run_executed": false,
+  "route": "tree_conditioned_marginal_residuals_discrete_soc_dp_with_causal_projection",
+  "primary_forecast": "exp004_no_season_seed_42",
+  "prediction_retraining": false,
+  "evaluation": {
+    "start": "2025-02-01",
+    "end": "2025-12-31",
+    "days": 334,
+    "steps_per_day": 144,
+    "start_soc_source": "data/results/exp003/warmup_2.npz; same frozen warmup used by exp004",
+    "start_soc_kwh": 1421.7991105135516,
+    "cross_day_soc": "each policy carries its own realized terminal state",
+    "purchase_plan": "fixed at midnight; original equals final",
+    "cost_yuan": "sum(price * planned_kwh + 5 * price * emergency_kwh)",
+    "terminal_credit_in_reported_cost": 0,
+    "oracle_allowed": false,
+    "initial_mode": 1,
+    "initial_mode_source": "last non-idle warmup action: slot 4463, charge 28.793333333333294 kWh",
+    "initial_power_kw": 172.75999999999976
+  },
+  "primary_parameters": {
+    "grid_kwh": 50,
+    "throughput_yuan_per_ac_kwh": 0.002,
+    "reversal_yuan": 0.05,
+    "execution_deadband_kwh": 2,
+    "terminal_soc_value_yuan_per_kwh": "minimum fixed tariff / sqrt(0.9); zero on last evaluation day",
+    "eta_charge": "sqrt(0.9)",
+    "eta_discharge": "sqrt(0.9)",
+    "capacity_kwh": 12000,
+    "soc_bounds_kwh": [
+      1200,
+      10800
+    ],
+    "max_power_kw": 5000,
+    "tree_max_depth": 5,
+    "tree_min_samples_leaf": 48,
+    "tree_random_state": 42,
+    "history_days": 28,
+    "equal_probability_support_points": 9
+  },
+  "run_matrix_50kwh": [
+    {
+      "id": "primary",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "none"
+    },
+    {
+      "id": "seed_2026",
+      "forecast": "no_season",
+      "seed": 2026,
+      "change": "none"
+    },
+    {
+      "id": "seed_3407",
+      "forecast": "no_season",
+      "seed": 3407,
+      "change": "none"
+    },
+    {
+      "id": "causal_42",
+      "forecast": "causal_season",
+      "seed": 42,
+      "change": "none"
+    },
+    {
+      "id": "causal_2026",
+      "forecast": "causal_season",
+      "seed": 2026,
+      "change": "none"
+    },
+    {
+      "id": "causal_3407",
+      "forecast": "causal_season",
+      "seed": 3407,
+      "change": "none"
+    },
+    {
+      "id": "cost_only",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "throughput=0, reversal=0, deadband=0"
+    },
+    {
+      "id": "no_tree",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "same-history per-slot residual supports without tree conditioning"
+    },
+    {
+      "id": "more_throughput_penalty",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "throughput=0.01"
+    },
+    {
+      "id": "zero_terminal",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "terminal value=0"
+    },
+    {
+      "id": "greedy_execution",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "old causal greedy executor; planner receives its own carried actual SOC"
+    },
+    {
+      "id": "no_deadband",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "deadband=0"
+    }
+  ],
+  "resolution_checks_25kwh": [
+    "primary",
+    "causal_42"
+  ],
+  "additional_replay": "same archived primary purchases with old greedy executor, for controlled executor-only comparison",
+  "selection_policy": "Primary role fixed before full evaluation; show all results, do not pick primary from test-year costs",
+  "comparison": {
+    "historical": [
+      "exp001_original_not_directly_comparable",
+      "exp001_same_physics_recalculation",
+      "exp002",
+      "exp003",
+      "exp004_no_season",
+      "exp004_causal_season"
+    ],
+    "exp005": "Only add when completed, frozen and compatible; do not modify or interrupt its task",
+    "battery_metrics": [
+      "simultaneous_slots",
+      "charge_kwh",
+      "discharge_kwh",
+      "cell_side_equivalent_full_cycles",
+      "non_idle_direction_reversals",
+      "initial_final_soc",
+      "power_changes"
+    ],
+    "degradation_claim": "operating-intensity proxies only; no chemistry/lifetime data available"
+  },
+  "delivery_after_approval": [
+    "existing eight-section report template in new exp006 directory",
+    "offline interactive HTML and Markdown",
+    "same-source historical cost, prediction-error, timing and battery comparison charts",
+    "in-conversation Visualize comparison",
+    "PNG and SVG publication figures",
+    "result2.xlsx using the existing question template and specified-date tables",
+    "full physical, causal, cost, export and visual QA evidence"
+  ],
+  "time_budget_minutes": {
+    "formal_computation_with_margin": [
+      15,
+      20
+    ],
+    "complete_work_including_report_export_and_qa": [
+      40,
+      60
+    ]
+  },
+  "approval": {
+    "user_message": "开始",
+    "recorded_utc": "2026-09-12T15:32:27.219438+00:00",
+    "scope": "all frozen matrix runs, resolution checks and controlled greedy replay"
+  },
+  "approved_run_matrix": [
+    {
+      "id": "primary",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "none",
+      "role": "primary",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "seed_2026",
+      "forecast": "no_season",
+      "seed": 2026,
+      "change": "none",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "seed_3407",
+      "forecast": "no_season",
+      "seed": 3407,
+      "change": "none",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "causal_42",
+      "forecast": "causal_season",
+      "seed": 42,
+      "change": "none",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "causal_2026",
+      "forecast": "causal_season",
+      "seed": 2026,
+      "change": "none",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "causal_3407",
+      "forecast": "causal_season",
+      "seed": 3407,
+      "change": "none",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "cost_only",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "throughput=0, reversal=0, deadband=0",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.0,
+        "reversal_yuan": 0.0,
+        "deadband_kwh": 0.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "no_tree",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "same-history per-slot residual supports without tree conditioning",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "per_slot",
+      "executor": "projected"
+    },
+    {
+      "id": "more_throughput_penalty",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "throughput=0.01",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.01,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "zero_terminal",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "terminal value=0",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": false
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "greedy_execution",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "old causal greedy executor; planner receives its own carried actual SOC",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "old_greedy"
+    },
+    {
+      "id": "no_deadband",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "deadband=0",
+      "role": "prespecified_comparison",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 0.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "primary_grid25",
+      "forecast": "no_season",
+      "seed": 42,
+      "change": "none",
+      "role": "resolution_check",
+      "config": {
+        "grid_kwh": 25.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "causal_42_grid25",
+      "forecast": "causal_season",
+      "seed": 42,
+      "change": "none",
+      "role": "resolution_check",
+      "config": {
+        "grid_kwh": 25.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "tree",
+      "executor": "projected"
+    },
+    {
+      "id": "fixed_primary_greedy",
+      "forecast": "no_season",
+      "seed": 42,
+      "role": "controlled_executor_replay",
+      "config": {
+        "grid_kwh": 50.0,
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "deadband_kwh": 2.0,
+        "terminal_value": true
+      },
+      "conditioning": "not_refit_archived_primary_purchases",
+      "executor": "old_greedy",
+      "purchase_source": "primary/dispatch_2.npz:original",
+      "change": "fixed primary purchases; each day carries own actual SOC"
+    }
+  ]
+}

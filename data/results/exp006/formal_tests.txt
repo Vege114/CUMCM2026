@@ -1,0 +1,14 @@
+test_completed_signature_mismatch_is_never_overwritten (test_q2_tree_formal.FormalPlanningTests.test_completed_signature_mismatch_is_never_overwritten) ... ok
+test_greedy_matches_frozen_executor_without_calling_solver (test_q2_tree_formal.FormalPlanningTests.test_greedy_matches_frozen_executor_without_calling_solver) ... ok
+test_metrics_separate_warmup_boundary_from_evaluation (test_q2_tree_formal.FormalPlanningTests.test_metrics_separate_warmup_boundary_from_evaluation) ... ok
+test_per_slot_supports_same_history_without_tree (test_q2_tree_formal.FormalPlanningTests.test_per_slot_supports_same_history_without_tree) ... ok
+test_two_day_soc_direction_continuity_and_independent_tamper_detection (test_q2_tree_formal.FormalPlanningTests.test_two_day_soc_direction_continuity_and_independent_tamper_detection) ... ok
+test_dp_against_two_step_exhaustive_search (test_q2_tree_planning.TreePlanningTests.test_dp_against_two_step_exhaustive_search) ... ok
+test_newsvendor_against_all_breakpoints (test_q2_tree_planning.TreePlanningTests.test_newsvendor_against_all_breakpoints) ... ok
+test_physical_projection_extreme_realizations_and_prefix_causality (test_q2_tree_planning.TreePlanningTests.test_physical_projection_extreme_realizations_and_prefix_causality) ... ok
+test_tree_future_actuals_do_not_change_midnight_support (test_q2_tree_planning.TreePlanningTests.test_tree_future_actuals_do_not_change_midnight_support) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.119s
+
+OK

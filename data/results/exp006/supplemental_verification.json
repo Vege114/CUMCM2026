@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "runs_checked": 15,
+  "checks": [
+    {
+      "run_id": "primary",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "seed_2026",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "seed_3407",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "causal_42",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "causal_2026",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "causal_3407",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "cost_only",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "no_tree",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "more_throughput_penalty",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "zero_terminal",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "greedy_execution",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true,
+      "frozen_old_greedy_max_array_error": 0.0,
+      "old_greedy_exact_match": true
+    },
+    {
+      "run_id": "no_deadband",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "primary_grid25",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "causal_42_grid25",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true
+    },
+    {
+      "run_id": "fixed_primary_greedy",
+      "independent_archive_verification": true,
+      "matching_completion_signature": true,
+      "checkpoint_days_reconstructed": 334,
+      "checkpoint_arrays_identical_to_final_archive": true,
+      "output_hashes_validated": true,
+      "frozen_old_greedy_max_array_error": 0.0,
+      "old_greedy_exact_match": true
+    }
+  ],
+  "frozen_source_hashes_unchanged": true,
+  "fixed_primary_greedy_purchase_arrays_identical": true,
+  "frozen_old_greedy_source_sha256": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+  "formal_manifest_untouched_sha256": "71233bda84ada140c01e32572d1ab43f34e805856fb1025efa3b790b9661a15f",
+  "formal_wall_seconds_preserved": 202.3436600830173,
+  "test_file_sha256": "6b91795ee294fcbf930ffea68e3b610204134e30b8c0e4adc59dc668dc833636",
+  "checks_wall_seconds": 4.116097000078298,
+  "notes": [
+    "Reference greedy function extracted with AST; no solver was imported or called.",
+    "Completion/read-only checkpoint reconstruction does not run DP or overwrite first-run timing."
+  ],
+  "lint_passed": true
+}
