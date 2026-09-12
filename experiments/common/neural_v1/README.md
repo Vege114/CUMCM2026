@@ -13,7 +13,7 @@ uv run --locked python -m experiments.common.neural_v1.export
 uv run --locked python reports/build_report.py --experiment exp001
 ```
 
-正式训练默认要求 GPU。Codex 桌面沙箱可能无法枚举 Metal 设备，应在已获授权的本机终端执行，而不是关闭 GPU 检查。
+正式训练默认要求 GPU。NVIDIA Windows 主机使用 WSL2 环境，安装和运行说明见 [机器学习与 CUDA 环境](../../../docs/ml-environment.md)。PowerShell 中用 `scripts/run_ml.ps1 tf` 替代上述命令的 `uv run --locked` 前缀。CUDA 环境适配已更新训练源代码签名，开始新训练请指定新的 `--run-id`，避免接续旧签名的检查点。Apple Silicon 继续使用 Metal。
 
 `protocol.json` 固定数据时标、计费、训练切分、随机种子和选择规则。训练从头拟合每个月的参数，不把当月实际值用于训练。四个预测目标采用相互独立的网络分支：负载、历史光伏、电价和预报修正；各分支不读取其他变量的数值特征。所有分支仅共享已知的日历和提前量。
 

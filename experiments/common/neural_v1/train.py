@@ -76,14 +76,21 @@ def predict(model, h, k, b, scale):
 def environment(require_gpu=True):
     gpus = tf.config.list_physical_devices("GPU")
     if require_gpu and not gpus:
-        raise RuntimeError("GPU required. Run uv sync --locked and check tensorflow-metal.")
+        raise RuntimeError("GPU required. NVIDIA: use scripts/setup_ml.sh tf in WSL2/Linux; "
+                           "Apple Silicon: check tensorflow-metal.")
+    if tf.test.is_built_with_cuda():
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
     tf.keras.mixed_precision.set_global_policy("float32")
     with tf.device("/GPU:0" if gpus else "/CPU:0"):
         probe = tf.linalg.matmul(tf.ones((64, 64)), tf.ones((64, 64)))
     assert float(tf.reduce_sum(probe).numpy()) == 262144
+    packages = ["tensorflow", "keras", "numpy", "scipy", "tensorboard"]
+    if platform.system() == "Darwin" and platform.machine() == "arm64":
+        packages.append("tensorflow-metal")
     return {"python": platform.python_version(), "platform": platform.platform(),
-            "packages": {p: version(p) for p in ("tensorflow", "keras", "numpy", "scipy",
-                                                 "tensorflow-metal", "tensorboard")},
+            "packages": {p: version(p) for p in packages},
+            "tensorflow_build": tf.sysconfig.get_build_info(),
             "gpu": [str(g) for g in gpus], "matrix_device": probe.device,
             "float_policy": "float32", "jit_compile": False}
 

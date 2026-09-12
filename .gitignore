@@ -20,9 +20,12 @@ Thumbs.db
 # Temporary work, environments and language caches
 .work/
 .venv/
+.venv-*/
 venv/
 env/
 .cache/
+.cuda/
+.nv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -34,6 +37,21 @@ htmlcov/
 
 # Regenerable experiment runs and intermediate datasets
 experiments/**/runs/
+checkpoints/
+logs/
+runs/
+wandb/
+mlruns/
+events.out.tfevents.*
+*.keras
+*.h5
+*.hdf5
+*.ckpt
+*.ckpt.*
+*.pt
+*.pth
+*.onnx
+# SB3 models and replay buffers belong in ignored runs/ or checkpoints/ directories.
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md
