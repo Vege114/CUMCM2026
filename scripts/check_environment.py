@@ -19,6 +19,8 @@ def main() -> None:
     os.environ.setdefault("KERAS_HOME", str(root / ".cache" / "keras"))
     os.environ.setdefault("MPLCONFIGDIR", str(root / ".cache" / "matplotlib"))
     os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
+    os.environ.setdefault("TF_FORCE_GPU_ALLOW_GROWTH", "true")
+    os.environ.setdefault("CUDA_CACHE_PATH", str(root / ".cache" / "cuda"))
 
     print(
         f"Python {platform.python_version()} / {platform.system()} {platform.machine()}", flush=True
@@ -48,7 +50,14 @@ def main() -> None:
 
     gpus = tf.config.list_physical_devices("GPU")
     if not args.allow_cpu and not gpus:
-        raise RuntimeError("GPU required. Check tensorflow-metal; use --allow-cpu only intentionally.")
+        raise RuntimeError(
+            "GPU required. NVIDIA: use WSL2/Linux and scripts/setup_ml.sh tf; "
+            "Apple Silicon: check tensorflow-metal. Use --allow-cpu only intentionally."
+        )
+    if tf.test.is_built_with_cuda():
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+    print(f"TensorFlow build: {tf.sysconfig.get_build_info()}", flush=True)
     tf.keras.mixed_precision.set_global_policy("float32")
     with tf.device("/GPU:0" if gpus else "/CPU:0"):
         probe = tf.linalg.matmul(tf.ones((64, 64)), tf.ones((64, 64)))
@@ -90,6 +99,23 @@ def main() -> None:
         if not list((Path(temp) / "tensorboard").glob("events.out.tfevents.*")):
             raise RuntimeError("TensorBoard did not create an event file")
     print(f"PASS TensorFlow training, model save/load, TensorBoard (loss={loss:.4f})", flush=True)
+
+    # GRU and convolution exercise cuDNN, which a matrix multiply alone does not test.
+    sequence_model = tf.keras.Sequential(
+        [
+            tf.keras.Input(shape=(16, 3)),
+            tf.keras.layers.Conv1D(8, 3, activation="relu"),
+            tf.keras.layers.GRU(8),
+            tf.keras.layers.Dense(1),
+        ]
+    )
+    sequence_model.compile(optimizer="adam", loss="mse", jit_compile=False)
+    sequence_loss = float(sequence_model.train_on_batch(
+        rng.normal(size=(4, 16, 3)).astype(np.float32), np.ones((4, 1), dtype=np.float32)
+    ))
+    if not np.isfinite(sequence_loss):
+        raise RuntimeError("Conv1D/GRU training returned non-finite loss")
+    print(f"PASS Conv1D + GRU forward/backward (loss={sequence_loss:.4f})", flush=True)
 
     # Exercise the TensorFlow -> Gymnasium interface, without training a task-specific policy.
     env = gym.make("CartPole-v1")

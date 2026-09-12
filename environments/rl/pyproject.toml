@@ -1,0 +1,37 @@
+[project]
+name = "cumcm2026-rl"
+version = "0.1.0"
+description = "Isolated Gymnasium and Stable-Baselines3 CUDA environment"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "stable-baselines3>=2.7,<3",
+    "gymnasium[classic-control]>=1.2,<2",
+    "torch==2.8.0",
+    "tensorboard>=2.18,<3",
+    "numpy==2.0.2",
+    "pandas>=2.2,<3",
+    "scipy>=1.14,<2",
+    "scikit-learn>=1.6,<2",
+    "openpyxl>=3.1,<4",
+    "matplotlib>=3.9,<4",
+    "pyyaml>=6,<7",
+    "tqdm>=4.67,<5",
+    "rich>=13,<15",
+]
+
+[dependency-groups]
+dev = ["ipykernel>=6.30,<8"]
+
+[tool.uv]
+package = false
+cache-dir = "../../.cache/uv"
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

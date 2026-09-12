@@ -8,11 +8,28 @@
 
 ## Python 环境
 
-既有环境配置为 **Python 3.12 + TensorFlow 2.21 / `tf.keras`**；已安装依赖不代表模型路线，当前主方案不要求强化学习。若后续另做强化学习对照，则使用 **Gymnasium** 定义环境、状态、动作与交互接口，策略网络及训练代码使用 TensorFlow。Gymnasium 本身不提供 PPO、DQN 等训练算法，具体算法随建模实验实现。
+主环境为 **Python 3.12 + TensorFlow 2.18.1 / `tf.keras`**。另有独立的 **Gymnasium + Stable-Baselines3 2.9.0 + PyTorch 2.8.0** 强化学习环境，可直接使用 PPO、DQN、SAC 等算法；Gymnasium 提供环境接口，Stable-Baselines3 提供基于 PyTorch 的训练算法。安装强化学习库不改变当前建模方案。
+
+**本机 Windows + RTX 4070 Laptop 使用现有 Ubuntu WSL2 运行 GPU 任务。** TensorFlow 环境在 `.venv-wsl/`，强化学习环境在 `.venv-rl-wsl/`，两者分别锁定 CUDA/cuDNN 依赖。详细配置、Notebook、GPU 故障排查见 [机器学习与 CUDA 环境](docs/ml-environment.md)。在本仓库根目录的 PowerShell 中执行：
+
+```powershell
+# 安装两个环境并执行实际 GPU 训练自检；可重复执行
+.\scripts\setup_ml.ps1
+
+# 验证 TensorFlow GPU、Conv1D/GRU 训练、模型读写及数据附件
+.\scripts\run_ml.ps1 tf python scripts/check_environment.py
+
+# 验证强化学习 GPU、DQN 训练、模型读写及 TensorBoard
+.\scripts\run_ml.ps1 rl python scripts/check_rl_environment.py
+
+# 启动自己的任务（参数原样传给 WSL 中的程序）
+.\scripts\run_ml.ps1 tf python your_script.py
+.\scripts\run_ml.ps1 rl python your_rl_script.py
+```
 
 依赖在 [pyproject.toml](pyproject.toml) 中声明，精确版本及包校验信息由 `uv.lock` 锁定；[uv](https://docs.astral.sh/uv/getting-started/installation/) 管理仓库根目录的 `.venv/`。`.venv/`、`venv/`、`env/` 和 `.cache/` 已加入 `.gitignore`，不提交环境和下载缓存。
 
-在仓库根目录执行：
+macOS 或 Windows 原生 CPU 环境可在仓库根目录执行以下命令。Windows 原生 TensorFlow 2.18 不支持 CUDA，自检需显式加 `--allow-cpu`；NVIDIA GPU 训练使用上面的 WSL 启动脚本。
 
 ```bash
 # 首次安装或同步队友提交的依赖（自动使用 .python-version 指定的 Python）
@@ -34,6 +51,7 @@ uv run --locked tensorboard --logdir experiments
 | --- | --- |
 | 神经网络、预测与强化学习策略训练 | TensorFlow / `tf.keras`、TensorBoard |
 | 强化学习环境接口和经典控制示例 | Gymnasium（含 classic-control） |
+| PPO、DQN、SAC 等强化学习算法（独立 RL 环境） | Stable-Baselines3、PyTorch CUDA |
 | 数值计算、数据清洗、预处理与评估指标 | NumPy、SciPy、pandas、scikit-learn |
 | 附件读取与结果工作簿导出 | openpyxl |
 | 可视化、配置与进度显示 | Matplotlib、Seaborn、PyYAML、tqdm |
@@ -41,7 +59,7 @@ uv run --locked tensorboard --logdir experiments
 
 新增依赖用 `uv add <包名>`，开发工具用 `uv add --dev <包名>`，同步提交 `pyproject.toml` 和 `uv.lock`。只运行脚本、无需 Notebook/代码检查工具时，可以用 `uv sync --locked --no-dev`。
 
-本机为 Apple M5。TensorFlow 2.21.0 与 Metal 1.2.0 实测有动态库加载冲突；当前锁定的 TensorFlow 2.18.1、Metal 1.2.0、TensorBoard 2.18.0 和 NumPy 2.0.2 已通过 GPU 训练、设备位置和模型保存读取测试。Metal 仅在 Apple Silicon macOS 安装。环境检查和正式训练默认要求 GPU；需要明确检查 CPU 环境时使用 `scripts/check_environment.py --allow-cpu`。Metal 通过 [Apple 官方插件](https://developer.apple.com/metal/tensorflow-plugin/) 工作，关闭即时编译并使用单精度浮点数。运行检查仅产生临时文件和忽略的工具缓存。
+保留队友 Apple Silicon 环境的 TensorFlow 2.18.1、Metal 1.2.0、TensorBoard 2.18.0 和 NumPy 2.0.2 锁定版本。Metal 仅在 Apple Silicon macOS 安装，通过 [Apple 官方插件](https://developer.apple.com/metal/tensorflow-plugin/) 工作。Linux/WSL2 的 `cuda` 扩展安装 TensorFlow 官方 NVIDIA 运行库，无需在 Windows 手工配置 CUDA Toolkit。环境检查和正式训练默认要求 GPU；TensorFlow 使用单精度、关闭即时编译，CUDA 显存按需增长。运行检查仅产生临时文件和忽略的工具缓存。
 
 ## 目录
 

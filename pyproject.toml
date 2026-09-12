@@ -20,6 +20,12 @@ dependencies = [
     "tqdm>=4.67,<5",
 ]
 
+[project.optional-dependencies]
+# NVIDIA runtime wheels are installed inside the Linux / WSL2 environment.
+cuda = [
+    "tensorflow[and-cuda]==2.18.1; sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
 [dependency-groups]
 dev = [
     "ipykernel>=6.30,<8",
@@ -39,5 +45,5 @@ line-length = 100
 extend-select = ["E402"]
 
 [tool.ruff.lint.per-file-ignores]
-# Keep the frozen, checkpoint-hashed training source byte-for-byte reproducible.
+# Preserve legacy formatting; intentional training edits require a new run-id.
 "experiments/common/neural_v1/train.py" = ["RUF100"]
