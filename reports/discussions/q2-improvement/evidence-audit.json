@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "raw_days": 365,
+  "formal_days_per_case": 334,
+  "compared_cases": 4,
+  "detailed_dispatch_days": 5,
+  "checks": [
+    "附件1、附件2原始XLSX与CSV/JSON全部数值一致",
+    "365天输入和334天结果边界分离",
+    "全年与逐月输入电量=十分钟功率之和÷6",
+    "四方案逐日/逐月/总费用和电量与存档CSV/NPZ一致",
+    "固定电价与5倍紧急结算独立重算一致",
+    "四方案供需平衡/充放电限制/储电量递推和跨日连续满足",
+    "四指定日与最贵日表1/表2/表3和144区间/145储电量一致",
+    "v2与exp003结果XLSX三张工作表全部数值回读一致",
+    "源文件SHA256未变化"
+  ],
+  "source_count": 21,
+  "numeric_tolerance": {
+    "csv_xlsx_raw": 0,
+    "cost_energy": 1e-06
+  },
+  "builder_sha256": "7465de1dbf8f398d8b60a1a3db4a0b3d6879675a77652bde94d227b42f0483ff",
+  "evidence_sha256": "a7c81a083606ab006be4cfe97ddc48addfd1ce7c3533ce3ee05292589ab07e2f",
+  "authoring_policy": "仅读取已有结果；未重训、未调参、未运行新调度；未修改旧结果。"
+}
