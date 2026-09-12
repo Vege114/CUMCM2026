@@ -1,4 +1,5 @@
 # C题论文前四节（统一口径稿）
+> 2026-09-13版本说明：这是早期文字稿，尚未按exp004预测与exp006规划实验更新。引用前须对照[当前统一口径](团队统一建模口径.md)；实际问题一模型与数值以[主TeX](../Xelatex/数模通用模板.tex)为准。
 
 本稿参考C023、C132的章节组织，文字为本题原创表述；与团队最新口径衔接。排版请以配套PDF为准。
 
@@ -123,4 +124,3 @@
 [1] Babić L, Lauricella M, Ceusters G, et al. Data-driven non-parametric chance-constrained model predictive control for microgrids energy management using small data batches. Frontiers in Control Engineering, 2023, 4: 1237759. [出版记录](https://doi.org/10.3389/fcteg.2023.1237759).
 
 [2] Geslin A, Xu L, Ganapathi D, et al. Dynamic cycling enhances battery lifetime. Nature Energy, 2025, 10: 172–180（2024年12月在线发表）. [出版记录](https://doi.org/10.1038/s41560-024-01675-8).
-
