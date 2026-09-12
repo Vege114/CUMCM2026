@@ -206,7 +206,7 @@ def read_data(path=None, fallback=False):
         if (data < 0).any() or (data[:, 0] <= 0).any():
             raise ValueError("本模型要求正电价以及非负负载、光伏")
         return data
-    except (OSError, ValueError, TypeError, ImportError) as exc:
+    except Exception as exc:  # 同时兼容Excel压缩包损坏、编码和格式解析异常。
         if path is not None and fallback:
             print(f"警告：读取失败({exc})，明确回退到内嵌附件1", file=sys.stderr)
             return read_data()
@@ -400,12 +400,15 @@ def draw(out, data, cases, sweep):
         axes[0].stairs(q["c"]-q["d"], edges, label=label, color=color, linewidth=1.6)
         axes[1].plot(edges, q["E"], label=label, color=color, linewidth=1.6)
     axes[0].axhline(0, color="#777777", linewidth=.6)
-    axes[0].set(title="典型日电池净功率与储电量", ylabel="净充电功率 / kW")
+    axes[0].set_ylabel("净充电功率 / kW")  # 标题与图例分别留出空间。
+    axes[0].set_title("典型日电池净功率与储电量", pad=34)
     axes[1].axhline(EMIN, color="#B27838", linestyle="--", label="安全储电边界")
     axes[1].axhline(EMAX, color="#B27838", linestyle="--")
     axes[1].set(xlabel="时刻 / h", ylabel="储电量 / kWh", xlim=(0,24), xticks=np.arange(0,25,2))
     for ax in axes:
-        ax.legend(ncol=3, fontsize=9); ax.grid(alpha=.16)
+        ax.legend(ncol=3, fontsize=9, loc="lower center",
+                  bbox_to_anchor=(.5, 1.01), frameon=False)  # 图例不遮挡数据轨迹。
+        ax.grid(alpha=.16)
     fig.savefig(out/"q1_dispatch.png", dpi=320); plt.close(fig)
     rows = sorted(sweep, key=lambda row: row["delta"])
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.5), layout="constrained")

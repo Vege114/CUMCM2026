@@ -244,7 +244,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
 \subsubsection{变量与参数定义}
 决策量统一在交流侧定义；$g_t,w_t$为电量，$P_t^c,P_t^d$为功率。表\ref{tab:q1-vars}区分直接调度变量、辅助量和目标量，表\ref{tab:q1-params}列出已知条件及需要根据运行偏好选定的参数。
 
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{问题一的变量定义}\label{tab:q1-vars}
  \renewcommand{\arraystretch}{1.12}
@@ -271,7 +271,7 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
  \smallskip\parbox{\textwidth}{\footnotesize 注：$m\in\{c,d\}$；$\mathcal V$单位为kW，$N_s$单位为次，$B$单位为十分钟段。$s,o,b$由二元模式唯一确定，实现时可使用$[0,1]$连续辅助变量。}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{问题一的已知参数与运行偏好参数}\label{tab:q1-params}
  \renewcommand{\arraystretch}{1.12}
@@ -452,7 +452,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \item \textbf{独立复算与输出。}从最终144段决策重算能量、费用、模式段长及层次目标，输出完整计划、指定时段汇总与对比图。
 \end{enumerate}
 本次实际运行的三层结果见表\ref{tab:q1-stages}。三层的MIP间隙均为0，求解时间分别为0.308、4.125、8.440秒，耗时仅对应本次运行环境。
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{三层混合整数规划的实际求解结果}\label{tab:q1-stages}
  \begin{tabular}{lrrrr}
@@ -469,7 +469,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
 
 \subsubsection{指定时段购电与储能安排}
 将最终方案按题目表1、表2的口径汇总，分别得到表\ref{tab:q1-purchase}和表\ref{tab:q1-storage}。所有电量均在交流侧统计，日初日末储电量为电池内部能量。
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{指定时段购电量及全天购电结果}\label{tab:q1-purchase}
  \begin{tabular}{lrlrlr}
@@ -484,7 +484,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \bottomrule
  \end{tabular}
 \end{table}
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{储能分时充放电量与起止储电量}\label{tab:q1-storage}
  \begin{tabular}{lrrlrr}
@@ -502,7 +502,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
 \end{table}
 10:00--10:10和14:00--14:10无需购电，表明光伏与储能已覆盖当段负载。部分四小时区间同时出现充、放电汇总，是不同十分钟动作相加的结果，并非同一时刻同时充放电。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
  \centering
  \includegraphics[width=\textwidth]{q1_run/q1_dispatch.png}
  \caption{典型日电池净充电功率与储电轨迹}\label{fig:q1-power}
@@ -523,7 +523,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
 \end{equation}
 物理残差在各自单位下采用$2\times10^{-5}$的审计容差，整数模式偏差阈值为$10^{-6}$，费用预算另用$10^{-5}$元复核容差。上述数值只用于识别浮点误差，不放宽设备真实边界。
 
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{主方案的独立约束检验}\label{tab:q1-audit}
  \begin{tabular}{lrl}
@@ -563,7 +563,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  C^{(0)}=\sum_tp_tg_t^{(0)}=48052.046591\ \text{元}.
  \label{eq:q1-no-storage}
 \end{equation}
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{储能调度方案的经济性与运行指标对比}\label{tab:q1-compare}
  \begin{tabular}{lrr}
@@ -580,7 +580,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
  \bottomrule
  \end{tabular}
 \end{table}
-平稳方案总变差下降67.6589\%，启动次数减少66.6667\%，代价是购电费增加313.536809元，即0.9276\%。该代价包含两部分：
+相较严格经济基准，平稳方案的总变差降低67.66\%，启动次数减少8次。购电费增加313.54元，增幅约0.93\%，其经济代价可分解为
 \begin{equation}
  \underbrace{C_{\rm stable}-C_{\rm econ}^{\star}}_{\text{总经济代价}}
  =
@@ -592,7 +592,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
 
 \subsubsection{费用让步比例的选取}
 固定其他设置，在$\delta=0,0.0005,0.001,0.002,0.005$上重新执行三层优化，结果见表\ref{tab:q1-delta}。将有效运行且净功率绝对值小于50\,kW的区间称为低功率段，仅用于诊断短小动作，不另作硬约束。
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{电费让步比例的单因素重求解结果}\label{tab:q1-delta}
  \begin{tabular}{rrrrrr}
@@ -609,7 +609,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
 \end{table}
 由0提高至0.05\%已大幅降低总变差，但启动仍为6次；提高至0.10\%后，启动降至4次且无低功率段。继续增加预算仍可降低总变差，却未继续减少启动。因此选取0.10\%作为本组候选中的折中值，而不将其解释为连续参数空间中的唯一最优点。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
  \centering
  \includegraphics[width=\textwidth]{q1_run/q1_tradeoff.png}
  \caption{费用让步比例与运行平稳性的关系}\label{fig:q1-tradeoff}
@@ -626,7 +626,7 @@ $C^\star$提供后续费用让步的基准，不与无新增运行限制时的�
 \end{equation}
 整数模式可能跳变，故$S_J$用于有限扰动比较，不等同于处处存在的导数。参数表中$\delta$的$\pm10\%$是0.09\%与0.11\%，效率的对应值是81\%与99\%，后者为机制压力情景，不表示实测效率误差范围。
 
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{核心参数相对变化10\%时的局部敏感性}\label{tab:q1-robust}
  \begin{tabular}{lrrrr}
@@ -645,15 +645,17 @@ $\eta_{\rm rt}=99\%$&32897.4785&-3.5690&33591.6607&6\\
 
 费用让步比例的局部变化仅使电费变动约$\pm0.0100\%$，启动数均为4；但总变差与低功率段仍会变化，说明局部轨迹并非完全不敏感。爬坡限值由1000降低至900\,kW，费用增加约0.1128\%；放宽至1100\,kW，费用下降约0.0873\%，体现了连续运行与经济支出的权衡。
 
-相比之下，往返效率降至81\%时费用增加约3.9735\%，升至99\%时费用下降约3.56897\%，且后者启动次数增至6。效率影响单位放电的购入成本，还会改变有利套利时段和模式选择。因此只能认为本轮方案对费用预算及爬坡参数的局部扰动较稳定，不能据此声称对全部参数均不敏感。各情景的独立约束违反项均为0。
+相比之下，往返效率降至81\%时费用增加约3.9735\%，升至99\%时费用下降约3.5690\%，且后者启动次数增至6。效率影响单位放电的购入成本，还会改变有利套利时段和模式选择。因此只能认为本轮方案对费用预算及爬坡参数的局部扰动较稳定，不能据此声称对全部参数均不敏感。各情景的独立约束违反项均为0。
 
 \subsubsection{输入噪声与固定计划压力测试}
 在缺乏实测误差分布的条件下，设置小幅、可重复的数值扰动，检验模型对输入变化的反应：
 \begin{equation}
- \widetilde L_t=L_t(1+\zeta_t^L),\quad
- \widetilde V_t=V_t(1+\zeta_t^V),\qquad
- \zeta_t^j=\operatorname{clip}(Z_t^j,-0.03,0.03),\
+ \begin{aligned}
+ \widetilde L_t&=L_t(1+\zeta_t^L),\qquad
+ \widetilde V_t=V_t(1+\zeta_t^V),\\
+ \zeta_t^j&=\operatorname{clip}(Z_t^j,-0.03,0.03),\qquad
  Z_t^j\sim N(0,0.01^2).
+ \end{aligned}
  \label{eq:q1-noise}
 \end{equation}
 使用种子2026、2027、2028，保持电价不变、夜间零光伏不变，各情景独立重求解。同时冻结原购电和充放电指令，计算其不能覆盖的正向净负荷扰动：
@@ -666,7 +668,7 @@ $\eta_{\rm rt}=99\%$&32897.4785&-3.5690&33591.6607&6\\
 \end{equation}
 $H_{\rm fixed}$是不允许重新调度或补购时的计划缺口，不是采用实时补救后必然发生的停电量。两项检验分别回答“重新优化是否稳定”与“固定计划能否直接应对扰动”。
 
-\begin{table}[htbp]
+\begin{table}[H]
  \centering\small
  \caption{1\%尺度输入扰动下的重求解与固定计划检验}\label{tab:q1-noise}
  \begin{tabular}{rrrrr}
@@ -923,6 +925,7 @@ SciPy 1.15.3 documentation.
 文件名   & 功能描述 \\
 \midrule
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+q1\_reproduce.py & 问题一完整求解、检验与绘图程序（含内嵌数据） \\
 数据预处理.py & 预处理程序代码 \\
 q2.py & 问题二程序代码 \\
 q3.c & 问题三程序代码 \\
@@ -970,6 +973,8 @@ python q1_reproduce.py
 若希望读取外部Excel，另安装\texttt{openpyxl}，并使用\texttt{--input}传入文件名。外部文件损坏或缺失时默认停止，只有显式加入\texttt{--fallback}才回退到内嵌数据，避免悄悄替换输入。\texttt{--quick}只运行主方案与严格经济基准；默认运行12组参数方案和3组噪声方案。
 
 输出目录默认为\texttt{q1\_output}，其中\texttt{revised.csv}包含144段完整购电、充放电及储电量；各情景的JSON文件保存三层求解状态与完整轨迹，\texttt{summary.json}包含指定时段、四小时汇总及检验结果。CSV可直接用表格软件打开，输入附件和已有结果工作簿均不修改。两幅PNG图由同一批计算结果绘制，正文采用本次完整运行的输出。
+\begingroup
+\renewcommand{\baselinestretch}{1}\selectfont
 \begin{lstlisting}[language=Python,basicstyle=\ttfamily\fontsize{8}{10}\selectfont,
  numberstyle=\tiny\color{gray},frame=single,breaklines=true,
  columns=fullflexible,keepspaces=true,showstringspaces=false,
@@ -1183,7 +1188,7 @@ def read_data(path=None, fallback=False):
         if (data < 0).any() or (data[:, 0] <= 0).any():
             raise ValueError("本模型要求正电价以及非负负载、光伏")
         return data
-    except (OSError, ValueError, TypeError, ImportError) as exc:
+    except Exception as exc:  # 同时兼容Excel压缩包损坏、编码和格式解析异常。
         if path is not None and fallback:
             print(f"警告：读取失败({exc})，明确回退到内嵌附件1", file=sys.stderr)
             return read_data()
@@ -1377,12 +1382,15 @@ def draw(out, data, cases, sweep):
         axes[0].stairs(q["c"]-q["d"], edges, label=label, color=color, linewidth=1.6)
         axes[1].plot(edges, q["E"], label=label, color=color, linewidth=1.6)
     axes[0].axhline(0, color="#777777", linewidth=.6)
-    axes[0].set(title="典型日电池净功率与储电量", ylabel="净充电功率 / kW")
+    axes[0].set_ylabel("净充电功率 / kW")  # 标题与图例分别留出空间。
+    axes[0].set_title("典型日电池净功率与储电量", pad=34)
     axes[1].axhline(EMIN, color="#B27838", linestyle="--", label="安全储电边界")
     axes[1].axhline(EMAX, color="#B27838", linestyle="--")
     axes[1].set(xlabel="时刻 / h", ylabel="储电量 / kWh", xlim=(0,24), xticks=np.arange(0,25,2))
     for ax in axes:
-        ax.legend(ncol=3, fontsize=9); ax.grid(alpha=.16)
+        ax.legend(ncol=3, fontsize=9, loc="lower center",
+                  bbox_to_anchor=(.5, 1.01), frameon=False)  # 图例不遮挡数据轨迹。
+        ax.grid(alpha=.16)
     fig.savefig(out/"q1_dispatch.png", dpi=320); plt.close(fig)
     rows = sorted(sweep, key=lambda row: row["delta"])
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.5), layout="constrained")
@@ -1461,5 +1469,6 @@ if __name__ == "__main__":
         sys.exit(1)  # 不输出虚构的成功结论。
 \end{lstlisting}
 
+\endgroup
 \end{appendices}
 \end{document}
