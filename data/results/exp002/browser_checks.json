@@ -39,6 +39,31 @@
   "historical_comparison": "official policy matching; pv_interpolation and physical protocol changes explicitly suppress incompatible direct rankings",
   "final_render": "48 named strategies, 334 complete dates each; no pending badge",
   "standalone_resources": "single-file HTML; no external stylesheet; embedded scripts/assets, zero broken images",
-  "figures": "14 PNG/SVG pairs visually inspected; stable scenario colors and markers; all four workbook previews inspected",
-  "frozen_code_commit": "ab359643a10d584546f3c397d021f3ae44487a49"
+  "figures": "16 PNG/SVG pairs; 14 original figures retained and 2 new historical comparison figures visually inspected",
+  "frozen_code_commit": "ab359643a10d584546f3c397d021f3ae44487a49",
+  "history_comparison_revision": {
+    "status": "passed",
+    "date": "2026-09-12",
+    "sections": [
+      "7.1 costs",
+      "7.2 forecast errors",
+      "7.3 training"
+    ],
+    "chart_ids": [
+      "history-cost-comparison",
+      "history-forecast-comparison",
+      "history-training-count",
+      "history-training-time"
+    ],
+    "placement": "Chapter 7 introduction followed by charts, then historical detail tables",
+    "desktop_width_px": 1280,
+    "narrow_width_px": 390,
+    "narrow_document_scroll_width_px": 375,
+    "cost_comparison": "Four questions and four policies; common zero-based scale in 10,000 yuan; same colors as PNG/SVG",
+    "forecast_filter": "All-day 20 WAPE/RMSE rows; actual-generation 8 rows; positive and negative changes shown",
+    "source_inspector": "official_forecast_comparison.csv; Overview and Data preview checked; 20 and 8 scoped rows confirmed",
+    "training_layout": "Two charts side by side on desktop and vertically stacked on narrow screen",
+    "runtime_errors": [],
+    "render_scope": "Final single-file HTML through local HTTP preview; static PNGs inspected separately; direct file URL policy unchanged"
+  }
 }
