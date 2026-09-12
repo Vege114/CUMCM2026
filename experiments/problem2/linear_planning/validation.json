@@ -1,0 +1,78 @@
+{
+  "base_commit": "dd8a6fd",
+  "branch": "codex/q2-linear-planning",
+  "test_command": "python -m unittest discover -s tests -p test_q2_linear_planning.py -v",
+  "tests_passed": 16,
+  "scope": "2025-01-01 and 2025-01-02 warmup smoke only; not formal evaluation",
+  "source_data_hashes": {
+    "附件1.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+    "附件2_小区负载.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+    "附件2_光伏发电实际功率.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce"
+  },
+  "config": {
+    "dt": 0.16666666666666666,
+    "eta_rt": 0.9,
+    "soc_min": 1200.0,
+    "soc_max": 10800.0,
+    "power_max": 5000.0,
+    "ramp_kw": 1000.0,
+    "cost_relaxation": 0.001,
+    "cost_tolerance": 0.0001,
+    "throughput_weight": 0.001,
+    "time_limit": 30.0,
+    "audit_tolerance": 1e-06
+  },
+  "lp_solves": 580,
+  "all_lp_optimal": true,
+  "max_solver_residual": 1.2424643038618706e-10,
+  "formal_days": 0,
+  "daily": [
+    {
+      "day": 0,
+      "period": "warmup",
+      "planned_cost": 31986.538765839658,
+      "emergency_cost": 142373.5616348175,
+      "total_cost": 174360.1004006572,
+      "planned_kwh": 52503.73000816752,
+      "emergency_kwh": 36604.6780072776,
+      "initial_soc": 6000.0,
+      "final_soc": 1200.0,
+      "plan_max_overlap_kwh": -0.0,
+      "balance_residual_kwh": 1.496580637194711e-12,
+      "state_residual_kwh": 1.1368683763691274e-12,
+      "initial_state_residual_kwh": 0.0,
+      "max_overlap_kwh": 0.0,
+      "max_power_step_kw": 1000.0000000000008,
+      "total_variation_kw": 50229.817154279954
+    },
+    {
+      "day": 1,
+      "period": "warmup",
+      "planned_cost": 60972.83070948252,
+      "emergency_cost": 8028.209098533499,
+      "total_cost": 69001.03980801601,
+      "planned_kwh": 94309.45621917443,
+      "emergency_kwh": 2106.703328317857,
+      "initial_soc": 1200.0,
+      "final_soc": 1200.0,
+      "plan_max_overlap_kwh": -0.0,
+      "balance_residual_kwh": 1.7257306694773433e-12,
+      "state_residual_kwh": 1.818989403545857e-12,
+      "initial_state_residual_kwh": 0.0,
+      "max_overlap_kwh": 1.0838145196127394e-11,
+      "max_power_step_kw": 1000.0000000000056,
+      "total_variation_kw": 49654.740562008126
+    }
+  ],
+  "source_hashes": {
+    "model.py": "419ee17054f1289d7e7f6030f3c6b0928110bd344b040740157c88817540275f",
+    "run.py": "34ca4ed101f7367cccc30f95037e61addc771e7cda2843049b949a1bce5cba89"
+  },
+  "known_limitations": [
+    "No scenario emergency-cost expectation in midnight objective",
+    "No integer start/minimum-duration constraints",
+    "No terminal energy value",
+    "Overlap relaxation can fail on physical boundary cases; execution refuses those cases",
+    "No formal result2.xlsx or annual cost comparison"
+  ]
+}
