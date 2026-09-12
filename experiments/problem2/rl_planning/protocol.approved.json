@@ -1,0 +1,235 @@
+{
+  "experiment_id": "exp007",
+  "status": "approved_before_formal_execution",
+  "formal_run_executed": false,
+  "branch": "codex/q2-rl-planning",
+  "base_commit": "090bf46",
+  "forecast_branch": "codex/q2-discussion-seasonality",
+  "report_main_commit": "7ecd9b988665ad628dbf048ed295457166170ffc",
+  "recheck_main_before_report": true,
+  "primary_run": "regularized_42",
+  "runs": [
+    {
+      "id": "regularized_42",
+      "role": "primary",
+      "rl_seed": 42,
+      "reward": {
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "ramp_yuan_per_kw": 0.0002,
+        "deadband_kwh": 2.0,
+        "reward_scale_yuan": 1000.0,
+        "terminal_value": true
+      }
+    },
+    {
+      "id": "regularized_2026",
+      "role": "stability",
+      "rl_seed": 2026,
+      "reward": {
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "ramp_yuan_per_kw": 0.0002,
+        "deadband_kwh": 2.0,
+        "reward_scale_yuan": 1000.0,
+        "terminal_value": true
+      }
+    },
+    {
+      "id": "regularized_3407",
+      "role": "stability",
+      "rl_seed": 3407,
+      "reward": {
+        "throughput_yuan_per_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "ramp_yuan_per_kw": 0.0002,
+        "deadband_kwh": 2.0,
+        "reward_scale_yuan": 1000.0,
+        "terminal_value": true
+      }
+    },
+    {
+      "id": "cost_only_42",
+      "role": "cost_only_ablation",
+      "rl_seed": 42,
+      "reward": {
+        "throughput_yuan_per_kwh": 0.0,
+        "reversal_yuan": 0.0,
+        "ramp_yuan_per_kw": 0.0,
+        "deadband_kwh": 2.0,
+        "reward_scale_yuan": 1000.0,
+        "terminal_value": true
+      }
+    },
+    {
+      "id": "cost_only_2026",
+      "role": "cost_only_ablation",
+      "rl_seed": 2026,
+      "reward": {
+        "throughput_yuan_per_kwh": 0.0,
+        "reversal_yuan": 0.0,
+        "ramp_yuan_per_kw": 0.0,
+        "deadband_kwh": 2.0,
+        "reward_scale_yuan": 1000.0,
+        "terminal_value": true
+      }
+    },
+    {
+      "id": "cost_only_3407",
+      "role": "cost_only_ablation",
+      "rl_seed": 3407,
+      "reward": {
+        "throughput_yuan_per_kwh": 0.0,
+        "reversal_yuan": 0.0,
+        "ramp_yuan_per_kw": 0.0,
+        "deadband_kwh": 2.0,
+        "reward_scale_yuan": 1000.0,
+        "terminal_value": true
+      }
+    }
+  ],
+  "forecast": {
+    "variant": "no_season",
+    "seed": 42,
+    "archive": "data/results/exp004/predictions.npz",
+    "sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+    "retrain": false
+  },
+  "evaluation": {
+    "start": "2025-02-01",
+    "end": "2025-12-31",
+    "days": 334,
+    "steps_per_day": 144,
+    "initial_soc_kwh": 1421.7991105135516,
+    "initial_mode": 1,
+    "initial_power_kw": 172.75999999999976,
+    "carry_real_states_across_days": true,
+    "midnight_lock_all_purchases": true,
+    "no_actuals_in_planning_observations": true,
+    "cost": "sum(price * purchase + 5 * price * emergency)",
+    "terminal_credit_in_reported_cost": false
+  },
+  "battery": {
+    "nominal_capacity_kwh": 12000,
+    "min_soc_kwh": 1200,
+    "max_soc_kwh": 10800,
+    "max_power_kw": 5000,
+    "charge_efficiency": 0.9486832980505138,
+    "discharge_efficiency": 0.9486832980505138,
+    "simultaneous_charge_discharge": "forbidden_by_signed_action_and_projection",
+    "emergency_charging": false,
+    "hard_ramp_limit_kw": null,
+    "aging_proxy_only": true
+  },
+  "algorithm": {
+    "name": "categorical_PPO",
+    "observations": 29,
+    "actions": 45,
+    "battery_levels": 9,
+    "purchase_margin_levels": 5,
+    "hidden_layers": [
+      64,
+      64
+    ],
+    "activation": "tanh",
+    "learning_rate": 0.0003,
+    "clip_ratio": 0.2,
+    "entropy_coefficient": 0.01,
+    "value_coefficient": 0.5,
+    "max_gradient_norm": 0.5,
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "epochs_per_update": 4,
+    "minibatch_size": 512,
+    "parallel_envs": 32
+  },
+  "training": {
+    "first_cutoff_day": 31,
+    "initial_iterations": 218,
+    "continue_every_days": 14,
+    "online_iterations_each": 44,
+    "online_updates": 23,
+    "total_iterations_per_run": 1230,
+    "transitions_per_run": 5667840,
+    "history_days_max": 90,
+    "january_first_training_day": 8,
+    "january_days": 23,
+    "january_source": "past_only_periodic_baseline_not_exp004",
+    "history_cutoff_exclusive": true,
+    "actual_reward_only_after_complete_day_plan": true,
+    "sample_complete_day_paths": true,
+    "random_training_soc": [
+      1200,
+      10800
+    ],
+    "hyperparameter_selection": "fixed_before_formal_evaluation; env count selected by pilot speed only",
+    "policy_selection": "fixed final update at each causal cutoff; do not select using future evaluation",
+    "terminal_training_shaping": "min_tariff/eta * (final_actual_soc-initial_soc); no reported credit; final evaluation day disabled",
+    "pilot_policy_reuse": false
+  },
+  "formal_implementation_remaining": [
+    "causal annual runner with signed resumable checkpoints",
+    "independent annual source/physics/cost/boundary verification",
+    "worksheet export and report/evidence builders"
+  ],
+  "comparisons": {
+    "history": [
+      "exp001",
+      "exp002",
+      "exp003",
+      "exp004",
+      "exp005",
+      "exp006"
+    ],
+    "same_forecast_anchors": [
+      "exp004/no_season_seed42",
+      "exp006/primary",
+      "exp006/greedy_execution"
+    ],
+    "exp005": "audit and explicit differing ramp/execution protocol; never silently rank",
+    "primary_role_immutable": true
+  },
+  "battery_figures": {
+    "random_day_seed": 20260912,
+    "random_days": 4,
+    "full_evaluation_points_per_strategy": 48096,
+    "big_ramp_threshold_kw": 1000,
+    "zero_tolerance_kwh": 1e-06,
+    "no_smoothing": true
+  },
+  "budget": {
+    "single_run_reserved_minutes": [
+      2,
+      3
+    ],
+    "six_run_compute_reserved_minutes": [
+      15,
+      20
+    ],
+    "end_to_end_reserved_minutes": [
+      40,
+      60
+    ],
+    "basis": "pilot/benchmark.json short samples, extrapolation only; not convergence evidence"
+  },
+  "references": {
+    "ppo": "https://arxiv.org/abs/1707.06347",
+    "battery_life": "https://www.nrel.gov/transportation/battery-lifespan.html"
+  },
+  "source_sha256": {
+    "experiments/problem2/rl_planning/benchmark.py": "86bef8c7665703d36364f0fcf21a7dc876e3cf61ab255194debfc857ba430b63",
+    "experiments/problem2/rl_planning/__init__.py": "4790b1d9a68679e2d0a9254aeb3167e1c3f6ff1e27b2ba5f0e6e85c4730ef02b",
+    "experiments/problem2/rl_planning/environment.py": "5c6170a803da0707c1f1548c41170aca152f4be53d369c258d24b86157e228f2",
+    "experiments/problem2/rl_planning/ppo.py": "05d33abd89b5ed23e78ba209d19528740d4a2582b526bf9ee035586e16ee725a"
+  },
+  "data_sha256": {
+    "附件1.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+    "附件2_小区负载.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+    "附件2_光伏发电实际功率.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce"
+  },
+  "formal_run_authorized": true,
+  "approved_utc": "2026-09-12T17:04:34.898252+00:00",
+  "authorization_text": "开始，完成之后把分支推送到远程仓库",
+  "push_authorized": true,
+  "formal_runner": "experiments/problem2/rl_planning/run.py"
+}
