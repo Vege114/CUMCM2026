@@ -1,0 +1,19 @@
+test_extreme_actuals_and_soc_boundaries_obey_independent_physics (test_q2_rl_planning.RLPlanningTests.test_extreme_actuals_and_soc_boundaries_obey_independent_physics) ... ok
+test_full_day_must_be_locked_before_execution (test_q2_rl_planning.RLPlanningTests.test_full_day_must_be_locked_before_execution) ... ok
+test_future_execution_changes_do_not_change_executed_prefix (test_q2_rl_planning.RLPlanningTests.test_future_execution_changes_do_not_change_executed_prefix) ... ok
+test_hidden_training_actuals_cannot_change_policy_observations_or_plans (test_q2_rl_planning.RLPlanningTests.test_hidden_training_actuals_cannot_change_policy_observations_or_plans) ... ok
+test_real_archive_future_mutations_preserve_issued_features_and_training_cutoff (test_q2_rl_planning.RLPlanningTests.test_real_archive_future_mutations_preserve_issued_features_and_training_cutoff) ... ok
+test_secondary_penalties_change_reward_but_not_real_billed_cost (test_q2_rl_planning.RLPlanningTests.test_secondary_penalties_change_reward_but_not_real_billed_cost) ... ok
+test_terminal_shaping_is_only_last_reward_and_disabled_on_final_day (test_q2_rl_planning.RLPlanningTests.test_terminal_shaping_is_only_last_reward_and_disabled_on_final_day) ... ok
+test_checkpoint_preserves_optimizer_and_random_streams (test_q2_rl_ppo.PPOTests.test_checkpoint_preserves_optimizer_and_random_streams) ... No supported GPU was found.
+ok
+test_gae_zero_terminal_and_discounted_returns (test_q2_rl_ppo.PPOTests.test_gae_zero_terminal_and_discounted_returns) ... ok
+test_seed_repeat_and_on_policy_ratio (test_q2_rl_ppo.PPOTests.test_seed_repeat_and_on_policy_ratio) ... ok
+test_update_changes_parameters_and_has_finite_metrics (test_q2_rl_ppo.PPOTests.test_update_changes_parameters_and_has_finite_metrics) ... WARNING:tensorflow:5 out of the last 9 calls to <bound method PPO._sample_impl of <experiments.problem2.rl_planning.ppo.PPO object at 0x1103de1e0>> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:5 out of the last 9 calls to <bound method PPO._sample_impl of <experiments.problem2.rl_planning.ppo.PPO object at 0x1103de1e0>> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.991s
+
+OK

@@ -1,0 +1,408 @@
+{
+  "status": "speed_pilot_only_awaiting_user_confirmation",
+  "formal_run_executed": false,
+  "created_at": "2026-09-12T16:38:25.833204+00:00",
+  "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "device": "CPU only; TensorFlow intra/inter-op 1; BLAS 1",
+  "import_seconds": 11.063789666979574,
+  "setup_seconds": 0.020399625063873827,
+  "network_initialization_seconds": 0.025129124987870455,
+  "pilot_wall_seconds_excluding_import": 1.428969458094798,
+  "causal_dataset_builds": [
+    {
+      "cutoff_day": 31,
+      "days": 23,
+      "seconds": 0.004454249981790781,
+      "max_observed_index": 4463
+    },
+    {
+      "cutoff_day": 243,
+      "days": 90,
+      "seconds": 0.31157895794603974,
+      "max_observed_index": 34991
+    }
+  ],
+  "timings": [
+    {
+      "n_envs": 16,
+      "repeat": 0,
+      "warmup": true,
+      "cutoff_day": 31,
+      "transitions": 2304,
+      "rollout_seconds": 0.07212733302731067,
+      "update_seconds": 0.14127604104578495,
+      "iteration_seconds": 0.21340337407309562,
+      "transitions_per_second": 10796.455351314298,
+      "loss": 44.74317317538791,
+      "policy_loss": -0.0011322172876033518,
+      "value_loss": 89.56474431355794,
+      "entropy": 3.8066321545177035,
+      "approx_kl": 2.3550607945171327e-05,
+      "clip_fraction": 0.0,
+      "gradient_norm": 36.81957859463162
+    },
+    {
+      "n_envs": 16,
+      "repeat": 1,
+      "warmup": false,
+      "cutoff_day": 243,
+      "transitions": 2304,
+      "rollout_seconds": 0.03318741696421057,
+      "update_seconds": 0.013713583000935614,
+      "iteration_seconds": 0.046900999965146184,
+      "transitions_per_second": 49124.75217398744,
+      "loss": 36.39766057332357,
+      "policy_loss": -0.0012759329854614204,
+      "value_loss": 72.87400139702692,
+      "entropy": 3.8064511815706887,
+      "approx_kl": 5.117293495023508e-05,
+      "clip_fraction": 0.0,
+      "gradient_norm": 32.73583936691284
+    },
+    {
+      "n_envs": 16,
+      "repeat": 2,
+      "warmup": false,
+      "cutoff_day": 243,
+      "transitions": 2304,
+      "rollout_seconds": 0.033280542003922164,
+      "update_seconds": 0.013619334087707102,
+      "iteration_seconds": 0.04689987609162927,
+      "transitions_per_second": 49125.92936276904,
+      "loss": 39.97450574239095,
+      "policy_loss": -0.0019483218331717784,
+      "value_loss": 80.02902560763889,
+      "entropy": 3.8058194716771445,
+      "approx_kl": 0.000159969523742297,
+      "clip_fraction": 0.0,
+      "gradient_norm": 38.17010445064969
+    },
+    {
+      "n_envs": 16,
+      "repeat": 3,
+      "warmup": false,
+      "cutoff_day": 243,
+      "transitions": 2304,
+      "rollout_seconds": 0.03276024991646409,
+      "update_seconds": 0.013610207941383123,
+      "iteration_seconds": 0.046370457857847214,
+      "transitions_per_second": 49686.80721383252,
+      "loss": 35.08089198006524,
+      "policy_loss": -0.0032523593658374417,
+      "value_loss": 70.24436357286241,
+      "entropy": 3.8037586410840354,
+      "approx_kl": 0.0003540120347022619,
+      "clip_fraction": 0.0,
+      "gradient_norm": 37.768596437242294
+    },
+    {
+      "n_envs": 32,
+      "repeat": 0,
+      "warmup": true,
+      "cutoff_day": 31,
+      "transitions": 4608,
+      "rollout_seconds": 0.03752929100301117,
+      "update_seconds": 0.02564862498547882,
+      "iteration_seconds": 0.06317791598848999,
+      "transitions_per_second": 72936.8787795961,
+      "loss": 44.60004160139296,
+      "policy_loss": -0.0034748054006033475,
+      "value_loss": 89.28296046786838,
+      "entropy": 3.7963372667630515,
+      "approx_kl": 0.0015227895913135904,
+      "clip_fraction": 0.001193576388888889,
+      "gradient_norm": 49.50592168172201
+    },
+    {
+      "n_envs": 32,
+      "repeat": 1,
+      "warmup": false,
+      "cutoff_day": 243,
+      "transitions": 4608,
+      "rollout_seconds": 0.036985959042795,
+      "update_seconds": 0.02542166691273451,
+      "iteration_seconds": 0.06240762595552951,
+      "transitions_per_second": 73837.13014950405,
+      "loss": 32.64307345284356,
+      "policy_loss": -0.003507087550436457,
+      "value_loss": 65.36883544921875,
+      "entropy": 3.7837276591195,
+      "approx_kl": 0.0018183063933874008,
+      "clip_fraction": 0.015950520833333332,
+      "gradient_norm": 42.90046056111654
+    },
+    {
+      "n_envs": 32,
+      "repeat": 2,
+      "warmup": false,
+      "cutoff_day": 243,
+      "transitions": 4608,
+      "rollout_seconds": 0.036910458002239466,
+      "update_seconds": 0.0258254170184955,
+      "iteration_seconds": 0.06273587502073497,
+      "transitions_per_second": 73450.79666900319,
+      "loss": 30.633983029259575,
+      "policy_loss": -0.006178216258477833,
+      "value_loss": 61.35571606953939,
+      "entropy": 3.769679413901435,
+      "approx_kl": 0.003272402112416886,
+      "clip_fraction": 0.036783854166666664,
+      "gradient_norm": 42.596672693888344
+    },
+    {
+      "n_envs": 32,
+      "repeat": 3,
+      "warmup": false,
+      "cutoff_day": 243,
+      "transitions": 4608,
+      "rollout_seconds": 0.0371939999749884,
+      "update_seconds": 0.0253526660380885,
+      "iteration_seconds": 0.0625466660130769,
+      "transitions_per_second": 73672.99160336677,
+      "loss": 35.8542480998569,
+      "policy_loss": -0.005289591279708677,
+      "value_loss": 71.79392846425374,
+      "entropy": 3.742627832624647,
+      "approx_kl": 0.0031496443627677057,
+      "clip_fraction": 0.025607638888888888,
+      "gradient_norm": 46.63436381022135
+    }
+  ],
+  "inference": [
+    {
+      "day": 31,
+      "repeat": 0,
+      "risk_seconds": 0.0037340839626267552,
+      "planning_seconds": 0.04673204093705863,
+      "execution_seconds": 0.00028195802588015795,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 31,
+      "repeat": 1,
+      "risk_seconds": 0.0037340839626267552,
+      "planning_seconds": 0.02573925000615418,
+      "execution_seconds": 0.00023329106625169516,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 31,
+      "repeat": 2,
+      "risk_seconds": 0.0037340839626267552,
+      "planning_seconds": 0.026303916005417705,
+      "execution_seconds": 0.00023333309218287468,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 73,
+      "repeat": 0,
+      "risk_seconds": 0.003454957972280681,
+      "planning_seconds": 0.025402334053069353,
+      "execution_seconds": 0.0002490419428795576,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 73,
+      "repeat": 1,
+      "risk_seconds": 0.003454957972280681,
+      "planning_seconds": 0.025433333008550107,
+      "execution_seconds": 0.00022241694387048483,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 73,
+      "repeat": 2,
+      "risk_seconds": 0.003454957972280681,
+      "planning_seconds": 0.02555154205765575,
+      "execution_seconds": 0.00022554199676960707,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 171,
+      "repeat": 0,
+      "risk_seconds": 9.170034900307655e-07,
+      "planning_seconds": 0.02549391600769013,
+      "execution_seconds": 0.00022062507923692465,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 171,
+      "repeat": 1,
+      "risk_seconds": 9.170034900307655e-07,
+      "planning_seconds": 0.025543915922753513,
+      "execution_seconds": 0.00022425001952797174,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 171,
+      "repeat": 2,
+      "risk_seconds": 9.170034900307655e-07,
+      "planning_seconds": 0.025350083014927804,
+      "execution_seconds": 0.00022299995180219412,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 265,
+      "repeat": 0,
+      "risk_seconds": 0.003426334005780518,
+      "planning_seconds": 0.025865082978270948,
+      "execution_seconds": 0.00022245803847908974,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 265,
+      "repeat": 1,
+      "risk_seconds": 0.003426334005780518,
+      "planning_seconds": 0.025692249997518957,
+      "execution_seconds": 0.0002240829635411501,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 265,
+      "repeat": 2,
+      "risk_seconds": 0.003426334005780518,
+      "planning_seconds": 0.0254795829532668,
+      "execution_seconds": 0.00024524994660168886,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 354,
+      "repeat": 0,
+      "risk_seconds": 0.0035070000449195504,
+      "planning_seconds": 0.026485958020202816,
+      "execution_seconds": 0.00023583299480378628,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 354,
+      "repeat": 1,
+      "risk_seconds": 0.0035070000449195504,
+      "planning_seconds": 0.02583362499717623,
+      "execution_seconds": 0.0002187499776482582,
+      "max_balance_error_kwh": 0.0
+    },
+    {
+      "day": 354,
+      "repeat": 2,
+      "risk_seconds": 0.0035070000449195504,
+      "planning_seconds": 0.025596250081434846,
+      "execution_seconds": 0.00024750002194195986,
+      "max_balance_error_kwh": 0.0
+    }
+  ],
+  "reward": {
+    "throughput_yuan_per_kwh": 0.002,
+    "reversal_yuan": 0.05,
+    "ramp_yuan_per_kw": 0.0002,
+    "deadband_kwh": 2.0,
+    "reward_scale_yuan": 1000.0,
+    "terminal_value": true
+  },
+  "checks": [
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    },
+    {
+      "simultaneous_slots": 0,
+      "finite_training_batch": true,
+      "finite_update": true
+    }
+  ],
+  "estimates": [
+    {
+      "n_envs": 16,
+      "iteration_median_seconds": 0.04689987609162927,
+      "iteration_p95_seconds": 0.046900887577794495,
+      "initial_iterations": 435,
+      "online_iterations_each": 87,
+      "online_updates": 23,
+      "total_iterations_per_run": 2436,
+      "transitions_per_run": 5612544,
+      "initial_training_seconds": 20.40144609985873,
+      "single_run_median_seconds": 125.2064555946039,
+      "single_run_p95_extrapolation_seconds": 125.2089195749024,
+      "six_runs_median_seconds": 751.2387335676234,
+      "six_runs_p95_with_1_5_budget_seconds": 1126.8802761741215,
+      "caveat": "sample extrapolation, not measured full run or confidence interval"
+    },
+    {
+      "n_envs": 32,
+      "iteration_median_seconds": 0.0625466660130769,
+      "iteration_p95_seconds": 0.06271695411996916,
+      "initial_iterations": 218,
+      "online_iterations_each": 44,
+      "online_updates": 23,
+      "total_iterations_per_run": 1230,
+      "transitions_per_run": 5667840,
+      "initial_training_seconds": 13.635173190850765,
+      "single_run_median_seconds": 87.89075663147959,
+      "single_run_p95_extrapolation_seconds": 88.10021100295707,
+      "six_runs_median_seconds": 527.3445397888776,
+      "six_runs_p95_with_1_5_budget_seconds": 792.9018990266136,
+      "caveat": "sample extrapolation, not measured full run or confidence interval"
+    }
+  ],
+  "threadpools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/vegetarianwolf/Projects/CUMCM2026/.venv/lib/python3.12/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    }
+  ],
+  "source_sha256": {
+    "experiments/problem2/rl_planning/benchmark.py": "86bef8c7665703d36364f0fcf21a7dc876e3cf61ab255194debfc857ba430b63",
+    "experiments/problem2/rl_planning/__init__.py": "4790b1d9a68679e2d0a9254aeb3167e1c3f6ff1e27b2ba5f0e6e85c4730ef02b",
+    "experiments/problem2/rl_planning/environment.py": "5c6170a803da0707c1f1548c41170aca152f4be53d369c258d24b86157e228f2",
+    "experiments/problem2/rl_planning/ppo.py": "05d33abd89b5ed23e78ba209d19528740d4a2582b526bf9ee035586e16ee725a"
+  },
+  "data_sha256": {
+    "\u9644\u4ef61.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+    "\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+    "\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce"
+  },
+  "forecast_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+  "pilot_training_transitions": 27648,
+  "speed_model_is_not_formal_policy": true,
+  "limitations": [
+    "Tiny update count does not establish PPO convergence.",
+    "Mixed-cutoff speed model discarded; never rank its replay costs.",
+    "No hyperparameters selected using evaluation costs.",
+    "Report/export/QA time is an additional workflow estimate."
+  ]
+}

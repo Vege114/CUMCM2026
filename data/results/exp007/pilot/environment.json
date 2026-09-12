@@ -1,0 +1,14 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "packages": {
+    "tensorflow": "2.18.1",
+    "numpy": "2.0.2",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "gymnasium": "1.3.0"
+  },
+  "tests_sha256": "94c92d2dc30261907681e18d6dd65374cf297d7157ef6816b00e923e76feb49c",
+  "protocol_sha256": "a5b39d399ce35d6753151b43d28b2d27cb0c6d722938e0fe46e1df5cfa547403",
+  "formal_run_executed": false
+}

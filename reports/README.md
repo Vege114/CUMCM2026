@@ -1,21 +1,13 @@
 # 实验报告与可复用模板
 
-[exp006 替代规划报告](experiments/exp006/report.md) · [离线交互报告](experiments/exp006/report.html) · [费用优先对照工作簿](experiments/exp006/greedy_execution/result2.xlsx)
-
-exp006 在独立 `codex/q2-tree-planning` 分支完成，复用 exp004 预测。15 项树与动态规划实验实测共 202.34 秒；保留主组费用上升的结果，以及费用更低的预声明贪心执行对照。新记录以正式源码提交和冻结输入哈希绑定，旧实验记录保持不变。
-
-[exp004 预测与季节性报告](experiments/exp004/report.md) · [exp004 离线交互报告](experiments/exp004/report.html) · [预测交接接口](experiments/exp004/README-prediction.md)
-
-exp004在`codex/q2-discussion-seasonality`分支完成，只修改第二问预测；规划与储能执行沿用exp003。比较无季节、历史季节和含未来信息的全年探索，报告同时保留exp001–003的绝对费用、电量、预测误差与相对变化。三份题目工作簿分别位于该报告的三个组目录。
-
-[最新报告索引](latest.md) · [exp003 第二问报告](experiments/exp003/report.md) · [exp003 离线报告](experiments/exp003/report.html) · [exp002 正文](experiments/exp002/report.md) · [exp002 离线交互报告](experiments/exp002/report.html) · [指定日期完整表格](experiments/exp002/specified_dates.md) · [exp001 原报告](experiments/exp001/report.md)
+[最新报告索引](latest.md) · [exp002 正文](experiments/exp002/report.md) · [exp002 离线交互报告](experiments/exp002/report.html) · [指定日期完整表格](experiments/exp002/specified_dates.md) · [exp001 原报告](experiments/exp001/report.md)
 
 本目录是可以独立浏览的报告包。`main` 与实验分支包含相同的正文、网页、图表、机器可读成绩和模板。交互网页为单文件离线版本，无需训练环境或外部网络；每轮网页源码及完整数据在相应 `experiments/expNNN/app/`。在 GitHub 直接阅读 Markdown；HTML 下载后在浏览器打开。
 
 ## 创建下一次报告
 
 ```bash
-python reports/new_experiment.py --id exp004 --title "下一次实验的具体名称"
+python reports/new_experiment.py --id exp003 --title "下一次实验的具体名称"
 ```
 
 这会创建八部分正文草稿和 `record.draft.json`，不会产生虚构成绩或进入正式比较。按 `templates/experiment.schema.json` 填入真实数据校验值、代码提交、环境、种子、模型配置、技术路径、指标定义、预测与调度成绩。技术讲解可参考 `templates/methods-neural-v1.md`，应按下一次真实实现改写。
@@ -23,7 +15,7 @@ python reports/new_experiment.py --id exp004 --title "下一次实验的具体�
 完成报告与核验后登记：
 
 ```bash
-python reports/register_experiment.py --record reports/experiments/exp004/record.draft.json
+python reports/register_experiment.py --record reports/experiments/exp003/record.draft.json
 ```
 
 登记会读取此前全部记录，并为每个可匹配的调度和预测指标计算“（本次值－此前值）／此前值绝对值”。数据、评价时期、时间对齐、计费、储能物理条件或指标定义改变时，仍保留两次结果和差异说明，但不计算直接排名。零分母标为缺失。模型结构和随机种子允许改变，它们正是技术对比的内容。
@@ -54,7 +46,3 @@ python reports/verify_delivery_v2.py --experiment exp002
 构建器默认使用本机 Codex 捆绑 Node 与 Data 插件，也可通过 `--node`、`--data-plugin` 指定安装位置。`--snapshot-only` 只重建正文与完整数据快照；`--partial` 生成明确标示未完成的预览，不得作为正式全年结论交付。
 
 每次报告的机器可读成绩、模板、论文图、工作簿与 HTML 同包保存，网页所有交互数据已完整内嵌。需要从头训练或调度时切换至相应实验分支；在 `main` 阅读报告不依赖训练模块。
-
-## 第二问独立优化报告
-
-exp003 从 v2 分支分出，只改变第二问。八节结构保留，完整方法和候选放在附件；历史比较仅含第二问，旧报告与登记保持不变。`q2_comparison.py` 从同午夜样本与同物理费用生成范围明确的比较，`build_report_q2.py` 构建离线报告。此轮独立校验记录后登记，未使用会追加全题历史表的通用登记程序。复现命令见 [实验说明](../experiments/problem2/exp003/README.md)。
