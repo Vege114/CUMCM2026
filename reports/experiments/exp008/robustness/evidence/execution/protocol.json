@@ -1,0 +1,73 @@
+{
+  "scope": "Q2 frozen issued purchases and mode masks; own continuous SOC feedback replay",
+  "dates": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "n_days": 334,
+  "n_slots": 48096,
+  "reoptimized": false,
+  "refitted": false,
+  "baseline_schedule_acceptance_unchanged": true,
+  "biases": [
+    -0.1,
+    -0.05,
+    -0.02,
+    0.0,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "hardware": {
+    "capacity_factors": [
+      0.9,
+      0.95,
+      1.0,
+      1.05,
+      1.1
+    ],
+    "power_factors": [
+      0.9,
+      0.95,
+      1.0,
+      1.05,
+      1.1
+    ],
+    "round_trip_efficiency": [
+      0.85,
+      0.875,
+      0.9,
+      0.925,
+      0.95
+    ]
+  },
+  "noise": {
+    "relative_log_std": [
+      0.01,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "replicates": 30,
+    "seed": 20260913,
+    "log_noise_AR1": 0.95,
+    "cross_channel_correlation": -0.3,
+    "construction": "Stationary correlated AR(1) Gaussian z; multiply actual by exp(sigma*z - sigma^2/2). PV zeros preserved. Common random numbers across levels.",
+    "assumption": "Synthetic stress law, not estimated weather uncertainty or confidence interval"
+  },
+  "capacity_initial_state": "Same initial SOC fraction as accepted trajectory; other changes retain initial kWh",
+  "limitations": [
+    "Future daily schedules remain archived even though earlier perturbed history differs. This isolates execution robustness and is not end-to-end policy performance.",
+    "Unlimited emergency purchase guarantees load service in this model; physical feasibility alone does not imply economic robustness.",
+    "Costs under perturbed inputs are compared to unperturbed exp008 only, not to unperturbed exp006.",
+    "2025 data were repeatedly used for model development; this is not an untouched external test."
+  ],
+  "sources_sha256": {
+    "experiments/exp008/final_selection.json": "244b6dc05e2e1627b64419b0be21dbd2ba4cf9926476e9aebdfd6382b21b672a",
+    "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/dispatch.npz": "8b97181d2f82659774c609632d39a2bd812e69598fcd37696a2d793debcfe6d7",
+    "data/raw/附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "data/raw/附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "data/raw/附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "experiments/exp008/robustness/execution_analysis.py": "baeca9f20409d30f46f0b51bc42b6340d048514f834f98d070488f888af8d2c7"
+  }
+}

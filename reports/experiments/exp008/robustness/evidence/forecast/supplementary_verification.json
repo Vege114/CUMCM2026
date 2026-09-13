@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "data": "sensitivity",
+      "daily_to_aggregate_reconciled": true,
+      "rows": 54
+    },
+    {
+      "data": "hyperparameter",
+      "daily_to_aggregate_reconciled": true,
+      "rows": 36
+    }
+  ],
+  "frozen_input_hashes_still_match": true,
+  "genuinely_refitted_saved_models": 60,
+  "all_core_metrics_independent_fsum_verified_during_runs": true
+}

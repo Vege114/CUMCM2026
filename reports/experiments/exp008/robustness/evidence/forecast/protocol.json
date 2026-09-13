@@ -1,0 +1,252 @@
+{
+  "purpose": "已选定exp008的Q2最终预测：局部敏感性与时间顺序重训稳定性；不替换最终模型",
+  "candidates": [
+    {
+      "name": "baseline",
+      "factor": "baseline",
+      "factor_value": 0.0,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "weight_0.3",
+      "factor": "weight",
+      "factor_value": 0.3,
+      "weight": 0.3,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "weight_0.4",
+      "factor": "weight",
+      "factor_value": 0.4,
+      "weight": 0.4,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "weight_0.6",
+      "factor": "weight",
+      "factor_value": 0.6,
+      "weight": 0.6,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "weight_0.7",
+      "factor": "weight",
+      "factor_value": 0.7,
+      "weight": 0.7,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "window_14",
+      "factor": "window",
+      "factor_value": 14,
+      "weight": 0.5,
+      "window": 14,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "window_21",
+      "factor": "window",
+      "factor_value": 21,
+      "weight": 0.5,
+      "window": 21,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "window_35",
+      "factor": "window",
+      "factor_value": 35,
+      "weight": 0.5,
+      "window": 35,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "window_42",
+      "factor": "window",
+      "factor_value": 42,
+      "weight": 0.5,
+      "window": 42,
+      "penalty_multiplier": 1.0,
+      "gain": 0.5
+    },
+    {
+      "name": "penalty_multiplier_0.5",
+      "factor": "penalty_multiplier",
+      "factor_value": 0.5,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 0.5,
+      "gain": 0.5
+    },
+    {
+      "name": "penalty_multiplier_0.75",
+      "factor": "penalty_multiplier",
+      "factor_value": 0.75,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 0.75,
+      "gain": 0.5
+    },
+    {
+      "name": "penalty_multiplier_1.25",
+      "factor": "penalty_multiplier",
+      "factor_value": 1.25,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.25,
+      "gain": 0.5
+    },
+    {
+      "name": "penalty_multiplier_1.5",
+      "factor": "penalty_multiplier",
+      "factor_value": 1.5,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.5,
+      "gain": 0.5
+    },
+    {
+      "name": "penalty_multiplier_2",
+      "factor": "penalty_multiplier",
+      "factor_value": 2.0,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 2.0,
+      "gain": 0.5
+    },
+    {
+      "name": "gain_0.25",
+      "factor": "gain",
+      "factor_value": 0.25,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.25
+    },
+    {
+      "name": "gain_0.4",
+      "factor": "gain",
+      "factor_value": 0.4,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.4
+    },
+    {
+      "name": "gain_0.6",
+      "factor": "gain",
+      "factor_value": 0.6,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.6
+    },
+    {
+      "name": "gain_0.75",
+      "factor": "gain",
+      "factor_value": 0.75,
+      "weight": 0.5,
+      "window": 28,
+      "penalty_multiplier": 1.0,
+      "gain": 0.75
+    }
+  ],
+  "sensitivity_origin_range": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "raw_data_range": [
+    "2025-01-01",
+    "2025-12-31"
+  ],
+  "sensitivity_days": 334,
+  "slots_per_day": 144,
+  "raw_fixed_source": "Signed monthly HGB and ExtraTrees issued archives, 31 historical/calendar features, seed42",
+  "parameter_definition": {
+    "weight": "raw HGB share, ExtraTrees=1-weight; both channels same",
+    "window": "joint Ridge history in prior issued days; half-life remains window/2 as original family definition",
+    "penalty_multiplier": "multiply intercept penalty2 and other penalties20 equally",
+    "gain": "nonrecursive previous underlying Ridge daily mean load residual coefficient; PV unchanged"
+  },
+  "cv": {
+    "fold_months": [
+      4,
+      7,
+      10
+    ],
+    "validation_days": [
+      7,
+      14,
+      21
+    ],
+    "test_prefix_days": [
+      7,
+      14,
+      28
+    ],
+    "training_start": "2025-01-08",
+    "training_end": "day before validation window",
+    "repeated_fits": 9,
+    "models_per_fit": 4,
+    "model_parameters": "exact frozen HGB and ExtraTrees parameters",
+    "validation_role": "HGB explicit temporal early stopping; ExtraTrees diagnostic only, no model selection",
+    "fit_rule": "genuinely reinstantiate and fit all4 models for everyfold/validation setting",
+    "issue_rule": "00:00 next144slots; model held fixed within each28day block; features and postprocessing update after completed days",
+    "warm_start": "shared frozen issued raw/Ridge prefix before fold start; new policy begins exactly at fold start; no retrospective in-sample history predictions",
+    "reference_check": "val7 refits reproduce archived monthly raw and final forecasts within1e-8kW",
+    "horizon_role": "7/14/28 are nested scoring windows of the genuinely retrained28day forecast, not independent test samples",
+    "no_random_shuffle": true,
+    "no_test_driven_parameter_selection": true
+  },
+  "limitations": [
+    "2025全期已经参与开发，所有结果均为开发期敏感性/时间顺序回测，非未触碰独立测试。",
+    "融合权重、后处理参数单因素变化；窗口变化同步保留原半衰期=window/2规则，不宣称隔离半衰期影响。",
+    "重训部分3个固定起点，不能代表所有月份或多年度稳定性。",
+    "7/14/28日窗口嵌套且相邻每日误差相关，不当作独立样本或显著性检验。",
+    "CV前历史为共同已发布归档暖启动，比较在起点切换验证方案；并非各方案从1月独立全程训练。",
+    "单seed42，无跨随机种子的方差结论；预测变化不直接代表调度费用变化。"
+  ],
+  "input_sha256": {
+    "experiments/exp008/robustness/forecast_analysis.py": "58823583f7ebdbf3fc2db68c1f3735c5dd04a02e92ae341f63fa2408ad3c4d8b",
+    "experiments/exp008/forecast_absolute_hgb.py": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+    "experiments/exp008/forecast_absolute_extra_trees.py": "d546662bc67fb8c5c51a4125c070c3520f5869c832db83ed6268b959e95547b7",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "experiments/exp008/forecast_shape_diagnostic.py": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+    "experiments/exp008/forecast_net_hgb.py": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+    "data/raw/附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "data/raw/附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "data/raw/附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "data/results/exp008/forecast_absolute_hgb/causality_verification.json": "2304b92248abe318a3e1d22fb967ff582c095e4c3659131323f8f5ff3e6583cc",
+    "data/results/exp008/forecast_absolute_hgb/independent_verification.json": "99a7aad6829f08cb3eadd9d3962a64e112f40c4fa63fe0145ead689c3a580145",
+    "data/results/exp008/forecast_absolute_extra_trees/protocol.json": "ea3e888d9d7bbaded17e2644b6f4c1eff741da17ee7b65c62a155cb212bded2e",
+    "data/results/exp008/forecast_absolute_extra_trees/provenance.json": "0b56f9cd29f653d41cef37b5b22804f30f0a8dddc562ac8f7ed693c138009b6f",
+    "data/results/exp008/forecast_absolute_extra_trees/causality_verification.json": "db4e2a31082ad91762b01a009e3f1f73725bfd08b855fcb1cc87a638b82ab86f",
+    "data/results/exp008/forecast_absolute_extra_trees/independent_verification.json": "c84fccc1223d24f21700f0b2a50ea8f4c4c44b41bdf17268ed836e0bd6ca8681",
+    "data/results/exp008/forecast_hgb_extra_trees_half/protocol.json": "22133990f741e67240e9091d546d21b706e721640f5c647e0722e0a2ed801a61",
+    "data/results/exp008/forecast_hgb_extra_trees_half/provenance.json": "00c5d7103fb1453ba0e579470c57c39279e8b1afd2041b14b77b9d02b3157230",
+    "data/results/exp008/forecast_hgb_extra_trees_half/causality_verification.json": "e37c8be558267b4c3f7f7fedbb1ddb24a8ea5cde19a06cad50b87abb272536c6",
+    "data/results/exp008/forecast_hgb_extra_trees_half/independent_verification.json": "78475e909ba8931f3dd70c1bde68158018efe55239dd8f9f507983c54d3105b6",
+    "data/results/exp008/forecast_absolute_hgb/direct_hgb_raw.npz": "a95bf4e98dc46cf1224301c25ee6c42fd33c31f963197157e105572807aa586b",
+    "data/results/exp008/forecast_absolute_extra_trees/absolute_extra_trees_raw.npz": "8941f57ab464f94c13fa11fa8f6657d35e9b70d641d4dfecd7a4b5e9f6532d49"
+  },
+  "numpy_version": "2.0.2",
+  "sklearn_version": "1.9.1"
+}

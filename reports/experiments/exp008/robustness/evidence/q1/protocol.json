@@ -1,0 +1,125 @@
+{
+  "created_utc": "2026-09-13T03:03:39.153310+00:00",
+  "design": "One-at-a-time deterministic MILP reoptimization; same final two-stage model; no final selection changes",
+  "center": {
+    "delta": 0.001,
+    "ramp": 1000.0,
+    "up": 3,
+    "down": 2,
+    "eta_rt": 0.9
+  },
+  "cases": [
+    {
+      "name": "center",
+      "parameter": "center",
+      "value": null
+    },
+    {
+      "name": "delta_0p0005",
+      "parameter": "delta",
+      "value": 0.0005
+    },
+    {
+      "name": "delta_0p0009",
+      "parameter": "delta",
+      "value": 0.0009
+    },
+    {
+      "name": "delta_0p0011",
+      "parameter": "delta",
+      "value": 0.0011
+    },
+    {
+      "name": "delta_0p0020",
+      "parameter": "delta",
+      "value": 0.002
+    },
+    {
+      "name": "ramp_900",
+      "parameter": "ramp",
+      "value": 900.0
+    },
+    {
+      "name": "ramp_1100",
+      "parameter": "ramp",
+      "value": 1100.0
+    },
+    {
+      "name": "up_2",
+      "parameter": "up",
+      "value": 2
+    },
+    {
+      "name": "up_4",
+      "parameter": "up",
+      "value": 4
+    },
+    {
+      "name": "down_1",
+      "parameter": "down",
+      "value": 1
+    },
+    {
+      "name": "down_3",
+      "parameter": "down",
+      "value": 3
+    },
+    {
+      "name": "eta_rt_0p855",
+      "parameter": "eta_rt",
+      "value": 0.855
+    },
+    {
+      "name": "eta_rt_0p945",
+      "parameter": "eta_rt",
+      "value": 0.945
+    },
+    {
+      "name": "capacity_0p9",
+      "parameter": "capacity_factor",
+      "value": 0.9
+    },
+    {
+      "name": "capacity_1p1",
+      "parameter": "capacity_factor",
+      "value": 1.1
+    }
+  ],
+  "solver": {
+    "backend": "scipy.optimize.milp / HiGHS",
+    "mip_rel_gap": 1e-09,
+    "time_limit_seconds_per_stage": 180.0,
+    "acceptance": "Both stages must return success and pass q1.audit; timeout incumbents excluded"
+  },
+  "objectives": {
+    "stage1": "minimize electricity purchasing cost",
+    "stage2": "minimize original normalized total variation + mode starts + short-run deficit",
+    "cost_budget": "(1 + delta) * each case's own stage1 optimum + 1e-4 yuan"
+  },
+  "input": {
+    "source": "experiments/exp008/q1.py::EMBEDDED_CSV, 144 right-ended 10-minute intervals",
+    "array_sha256": "bb5e991f7b5399b9cfbe5b96072a7028c19a1044a15f57b811a16e3af362f082"
+  },
+  "protected_hashes": {
+    "data/results/exp008/q1/revised.json": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+    "experiments/exp008/final_selection.json": "244b6dc05e2e1627b64419b0be21dbd2ba4cf9926476e9aebdfd6382b21b672a"
+  },
+  "source_hashes": {
+    "experiments/exp008/q1.py": "7cf7a452f9cd67aeb4634d01d30b8a1e52bb90cec8efbcdc0c4ec89c5267d155",
+    "experiments/exp008/robustness/q1_analysis.py": "eccfc90440ada015daf90a1dae323efc9a23176f45825017838b621b36979850"
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "units": {
+    "delta": "fraction",
+    "ramp": "kW per 10 min",
+    "up": "10-minute steps",
+    "down": "10-minute steps",
+    "eta_rt": "round-trip efficiency fraction; one-way efficiency sqrt(eta_rt)",
+    "capacity_factor": "nominal 12000-kWh capacity multiplier; 5000-kW power unchanged"
+  }
+}

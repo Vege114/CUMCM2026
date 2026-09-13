@@ -1,0 +1,60 @@
+{
+  "settings": [
+    {
+      "name": "hgb_learning_rate_0.064",
+      "family": "hgb",
+      "parameter": "learning_rate",
+      "value": 0.064,
+      "default": 0.08
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "family": "hgb",
+      "parameter": "learning_rate",
+      "value": 0.096,
+      "default": 0.08
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "family": "extra_trees",
+      "parameter": "min_samples_leaf",
+      "value": 8,
+      "default": 10
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "family": "extra_trees",
+      "parameter": "min_samples_leaf",
+      "value": 12,
+      "default": 10
+    }
+  ],
+  "fold_months": [
+    4,
+    7,
+    10
+  ],
+  "validation_days": 7,
+  "test_days": 28,
+  "fits": 12,
+  "models_fitted_per_setting_fold": 2,
+  "rule": "Only changed family is genuinely refitted for each setting/fold; unchanged family uses the signed original monthly issued predictions. Both baseline families were separately genuinely refitted and reproduced by forecast_analysis.",
+  "fixed": "Original31features,seed42,expandingtrain,agehalfLife90,rawblend0.5,Ridge28andgain0.5",
+  "warm_start": "Shared causal frozen issued prefix before each fold; new predictions from fold start",
+  "role": "2025development_sensitivity_not_independent_test; no final model replacement or score-based selection",
+  "source_sha256": "ed1d5c5c4a70fbec38c985a75a88a8e8cd323a4e84c8e53cf606f5ba36c24130",
+  "data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "input_sha256": {
+    "data/results/exp008/robustness/forecast/protocol.json": "cc9763ba1d169b04483e66c88e4118374013a7aa70b1a587e892f6997be1ae70",
+    "data/results/exp008/robustness/forecast/summary.json": "8dbb7f7752eec8305cd892e87dce59ab4f4c7ca4115fca12555fdbb24d3019a1",
+    "data/results/exp008/robustness/forecast/cv_metrics.csv": "5fa83be8575e8c8c9a2dcaf36df3d6ebcf78cae2e33701a935f1ec5151119624",
+    "experiments/exp008/robustness/forecast_analysis.py": "58823583f7ebdbf3fc2db68c1f3735c5dd04a02e92ae341f63fa2408ad3c4d8b",
+    "data/results/exp008/forecast_absolute_hgb/direct_hgb_raw.npz": "a95bf4e98dc46cf1224301c25ee6c42fd33c31f963197157e105572807aa586b",
+    "data/results/exp008/forecast_absolute_extra_trees/absolute_extra_trees_raw.npz": "8941f57ab464f94c13fa11fa8f6657d35e9b70d641d4dfecd7a4b5e9f6532d49",
+    "data/results/exp008/forecast_hgb_extra_trees_half/hgb_extra_trees_half_ridge28.npz": "546fdf2d6a4d2903d84d02fd5aedcc2531a3a9d2a04138c58a8b54ab9a343e44"
+  }
+}

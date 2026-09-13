@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "comparisons": 12,
+  "array_hash_comparisons": 48,
+  "method": "Read generated cv_training_audit val7 and hyperparameter_training_audit; explicitly compare four actual fitted array hashes and three timing boundaries. No model refitting or source modification.",
+  "audits_sha256": {
+    "cv_training_audit.json": "8262e4cf45646fe5b6286c71c8d985a2beb3834f55512ad311d0e91f6b8a5393",
+    "hyperparameter_training_audit.json": "137149043642fedb4eab194712e553f6247b98a9269876385f694f9a3a77f6fc"
+  },
+  "checks": [
+    {
+      "name": "hgb_learning_rate_0.064",
+      "fold_month": 4,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "fold_month": 4,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "fold_month": 4,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "fold_month": 4,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "hgb_learning_rate_0.064",
+      "fold_month": 7,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "fold_month": 7,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "fold_month": 7,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "fold_month": 7,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "hgb_learning_rate_0.064",
+      "fold_month": 10,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "fold_month": 10,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "fold_month": 10,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "fold_month": 10,
+      "input_array_hash_matches": {
+        "xtrain_sha256": true,
+        "ytrain_sha256": true,
+        "xval_sha256": true,
+        "yval_sha256": true
+      },
+      "label_and_first_test_boundaries_exactly_match": true
+    }
+  ]
+}

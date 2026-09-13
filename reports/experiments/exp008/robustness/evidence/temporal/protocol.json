@@ -1,0 +1,467 @@
+{
+  "purpose": "Sensitivity and robustness evidence for the already accepted exp008 final selection; no reselection.",
+  "script": {
+    "path": "experiments/exp008/robustness/temporal_analysis.py",
+    "sha256": "1a4959c6fc7cd66df8434b8e5d471dade9bd540928ab37fe448fde661726a9bd",
+    "bytes": 35139
+  },
+  "final_selection": {
+    "path": "experiments/exp008/final_selection.json",
+    "sha256": "244b6dc05e2e1627b64419b0be21dbd2ba4cf9926476e9aebdfd6382b21b672a",
+    "bytes": 5982
+  },
+  "raw_sources": [
+    {
+      "path": "data/raw/附件2_小区负载.csv",
+      "sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+      "bytes": 490298
+    },
+    {
+      "path": "data/raw/附件2_光伏发电实际功率.csv",
+      "sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+      "bytes": 321147
+    },
+    {
+      "path": "data/raw/附件4.csv",
+      "sha256": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3",
+      "bytes": 367989
+    },
+    {
+      "path": "data/raw/附件1.csv",
+      "sha256": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+      "bytes": 4614
+    }
+  ],
+  "archive_sources": [
+    {
+      "path": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/dispatch.npz",
+      "sha256": "8b97181d2f82659774c609632d39a2bd812e69598fcd37696a2d793debcfe6d7",
+      "bytes": 1870490
+    },
+    {
+      "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/3/dispatch_3.npz",
+      "sha256": "793c9b872814c0b157f34b43fa93cc3aa6649164a4c0d2c6b17684632051ca1e",
+      "bytes": 2028505
+    },
+    {
+      "path": "data/results/exp008/q4_hgb_linked_price_physical/full334/dispatch_4-2.npz",
+      "sha256": "09f1e6f131df6cc1e34874479cfd8dfd7c576a045c441ea7ec31e3e9a67e9b72",
+      "bytes": 2176098
+    },
+    {
+      "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/dispatch_4-3.npz",
+      "sha256": "be922b20ea385882362607373083211d8a854f8f15617060bb7448ffda30a437",
+      "bytes": 2157666
+    },
+    {
+      "path": "data/results/exp006/primary/dispatch_2.npz",
+      "sha256": "dd5c5f71998f884c55fb15eaaea23b728b4e31dd17e20428b086eb288e56d0b7",
+      "bytes": 1945565
+    }
+  ],
+  "definition_source": {
+    "path": "C题/C题.md",
+    "sha256": "f6d92aa24076a563cf95f1b29da3a99c14046737b01b78148a7e39cb23928a6e",
+    "bytes": 8307
+  },
+  "sample": {
+    "start": "2025-02-01",
+    "end": "2025-12-31",
+    "days": 334,
+    "intervals_per_day": 144,
+    "source_calendar": "2025 local dates, no timezone conversion",
+    "january": "Warmup excluded; each final scenario inherits its own accepted initial battery state."
+  },
+  "analysis_labels": {
+    "windows": "frozen_trajectory_rescoring",
+    "stress": "posthoc_observed_stress_group",
+    "bootstrap": "conditional_descriptive_percentile_resampling_interval",
+    "billing": "fixed_action_billing_rescoring_not_reoptimization"
+  },
+  "windows": {
+    "calendar_months": 11,
+    "quarters": "Q1 contains only February/March; Q2/Q3/Q4 complete",
+    "rolling_days": [
+      30,
+      60,
+      90
+    ],
+    "rolling_stride_days": 1,
+    "chronological_tail_fractions": [
+      0.2,
+      0.3,
+      0.4
+    ],
+    "tail_count_rule": "ceil(334 * fraction)",
+    "state_rule": "Every subset retains recorded inherited SOC; no boundary reset or independent rerun.",
+    "operation_count_rule": "Date attribution on original continuous trace; incoming formal-boundary operation attributed to occurrence date. Warmup transition excluded. Not restarted per subset.",
+    "test_set_warning": "Head/tail windows are retrospective scoring subsets, neither retraining splits nor untouched holdouts."
+  },
+  "bootstrap": {
+    "replicates": 4096,
+    "seed": 20260913,
+    "block_days": [
+      7,
+      14,
+      28
+    ],
+    "methods": [
+      "paired_moving_block",
+      "paired_quarter_stratified_moving_block"
+    ],
+    "pairing": "Exactly the same resampled date indices index exp006 and exp008 daily costs.",
+    "block_construction": "Uniform overlapping noncircular contiguous blocks; concatenate ceil(n/L) blocks and truncate to n days.",
+    "quarter_stratification": "Independently sample blocks within each calendar quarter, preserving each quarter's original day count; Q1 has 59 days.",
+    "statistic": "100 * (sum baseline cost - sum final cost) / sum baseline cost; ratio of sums, not mean daily percentages.",
+    "interval": "2.5 and 97.5 percentiles; descriptive conditional resampling interval, not a formal post-selection inferential guarantee.",
+    "serial_dependence": "Contiguous blocks preserve within-block serial dependence. Correlation beyond block length and across artificial joins is not preserved.",
+    "seasonality": "Whole-period sampling assumes approximate block exchangeability despite observed seasonality; quarter stratification controls quarter composition only and does not establish stationarity.",
+    "edge_effect": "Noncircular MBB samples end dates less frequently than interior dates; percentile centers may differ from point estimate.",
+    "sign_fraction": "Fraction of bootstrap replicates with positive saving; not a p value or probability of future improvement."
+  },
+  "stress_groups": {
+    "quantile_method": "pandas linear empirical quantile; >= upper and <= lower threshold; ties retained",
+    "tail_fractions": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "high_load": "daily actual load energy",
+    "low_pv": "daily actual PV energy",
+    "high_net_load": "daily actual load energy minus PV energy",
+    "high_price": "actual daily mean settlement tariff; Q4 scenarios only",
+    "fixed_tariff_scenarios": "Q2/Q3 share the same daily tariff profile; no distinct high-price-day group is defined.",
+    "joint_group": "Actual daily load >= full-period q80 and PV <= q20; tiny group explicitly flagged.",
+    "selection_rule": "All thresholds from full 334-day observed sample, solely for posthoc descriptive grouping; never fed to a forecasting or dispatch decision.",
+    "small_group_rule": "n < 10 flagged; single-day composite extreme is descriptive and cannot establish robust generalization.",
+    "noncontiguous_soc_warning": "First/last selected SOC fields do not form a connected trajectory for noncontiguous stress groups."
+  },
+  "accounting": {
+    "formula": "sum p*g0 + alpha_up*p*max(g-g0,0) + alpha_down*p*max(g0-g,0) + alpha_emergency*p*e",
+    "nominal": {
+      "alpha_up": 1.5,
+      "alpha_down": 0.5,
+      "alpha_emergency": 5.0
+    },
+    "down_adjustment": "Additional breach penalty; original scheduled quantity remains fully paid; no refund is subtracted.",
+    "emergency_values": [
+      4.0,
+      4.5,
+      5.0,
+      5.5,
+      6.0
+    ],
+    "up_values": [
+      1.2,
+      1.35,
+      1.5,
+      1.65,
+      1.8
+    ],
+    "down_values": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "one_factor_at_a_time": true,
+    "actions_fixed": true,
+    "physical_metric_response": "No response by construction; accepted actions and SOC remain identical.",
+    "purpose": "Accounting exposure only; altered prices are hypothetical and do not replace the original problem's tariffs."
+  },
+  "physical_units": {
+    "raw_load_pv": "kW; divide by 6 for interval kWh",
+    "charge_discharge": "AC kWh per 10 minutes",
+    "soc": "kWh",
+    "capacity_kwh": 12000.0,
+    "one_way_efficiency": 0.9486832980505138,
+    "efficiency_convention": "accepted exp008 convention: round-trip 0.9, both one-way sqrt(0.9)",
+    "efc": "sum(eta*charge + discharge/eta)/(2*12000)",
+    "power_tv": "sum abs adjacent signed battery power difference; formal warmup boundary excluded"
+  },
+  "limitations": [
+    "The 334 days have repeatedly informed development and model selection; they are not a new independent test set.",
+    "All costs condition on one accepted fitted strategy per scenario; no refitting, policy adaptation or seed replication occurs here.",
+    "These temporal checks and block intervals do not correct model-selection bias or prove future-year performance.",
+    "Rolling windows overlap substantially and must not be counted as independent experiments.",
+    "Only Q2 has the established same-physics, same-settlement exp006 primary comparator; Q3/Q4 absolute metrics are descriptive.",
+    "Bootstrap operates on recorded daily costs, not a physically simulated battery trace across resampled block joins.",
+    "Stress groups use actual outcomes post hoc; membership cannot be known ex ante and must not be described as forecast inputs.",
+    "Changing billing multipliers with unchanged actions measures accounting sensitivity, not optimized policy response.",
+    "Battery throughput and EFC are operational proxies, not calibrated lifetime or degradation estimates."
+  ],
+  "output_tables": {
+    "daily_metrics.csv": {
+      "rows": 1670,
+      "columns": [
+        "scenario",
+        "strategy",
+        "analysis_label",
+        "date",
+        "day_index",
+        "month",
+        "quarter",
+        "planned_cost_yuan",
+        "up_cost_yuan",
+        "down_cost_yuan",
+        "emergency_cost_yuan",
+        "total_cost_yuan",
+        "original_purchase_kwh",
+        "final_purchase_kwh",
+        "up_adjustment_kwh",
+        "down_adjustment_kwh",
+        "emergency_kwh",
+        "surplus_kwh",
+        "charge_kwh",
+        "discharge_kwh",
+        "throughput_kwh",
+        "equivalent_full_cycles",
+        "active_slots",
+        "emergency_slots",
+        "nonidle_reversals",
+        "charge_episodes",
+        "discharge_episodes",
+        "power_tv_kw",
+        "soc_start_kwh",
+        "soc_end_kwh",
+        "soc_min_kwh",
+        "soc_max_kwh",
+        "load_kwh",
+        "pv_kwh",
+        "net_load_kwh",
+        "load_peak_kw",
+        "net_load_peak_kw",
+        "mean_settlement_price_yuan_per_kwh",
+        "mean_external_dynamic_price_yuan_per_kwh",
+        "balance_max_abs_kwh",
+        "soc_equation_max_abs_kwh"
+      ],
+      "path": "data/results/exp008/robustness/temporal/daily_metrics.csv",
+      "sha256": "aeba321969f21b6fd4ca8346fb9a40f232d3055754dfdf2bf8dae502ae7a597b",
+      "bytes": 703733
+    },
+    "window_metrics.csv": {
+      "rows": 4235,
+      "columns": [
+        "scenario",
+        "strategy",
+        "analysis_label",
+        "window_type",
+        "window_label",
+        "window_days",
+        "requested_tail_fraction",
+        "realized_sample_fraction",
+        "start",
+        "end",
+        "planned_cost_yuan",
+        "up_cost_yuan",
+        "down_cost_yuan",
+        "emergency_cost_yuan",
+        "total_cost_yuan",
+        "original_purchase_kwh",
+        "final_purchase_kwh",
+        "up_adjustment_kwh",
+        "down_adjustment_kwh",
+        "emergency_kwh",
+        "surplus_kwh",
+        "charge_kwh",
+        "discharge_kwh",
+        "throughput_kwh",
+        "equivalent_full_cycles",
+        "active_slots",
+        "emergency_slots",
+        "nonidle_reversals",
+        "charge_episodes",
+        "discharge_episodes",
+        "power_tv_kw",
+        "load_kwh",
+        "pv_kwh",
+        "net_load_kwh",
+        "n_days",
+        "mean_daily_cost_yuan",
+        "mean_daily_emergency_kwh",
+        "mean_daily_throughput_kwh",
+        "soc_min_kwh",
+        "soc_max_kwh",
+        "soc_start_kwh",
+        "soc_end_kwh",
+        "max_balance_abs_kwh",
+        "max_soc_equation_abs_kwh",
+        "emergency_energy_fraction_pct",
+        "cost_per_load_kwh",
+        "baseline_strategy",
+        "baseline_cost_yuan",
+        "cost_saving_yuan",
+        "cost_reduction_pct",
+        "paired_day_win_fraction",
+        "paired_day_cost_saving_sd_yuan",
+        "baseline_emergency_kwh",
+        "baseline_throughput_kwh"
+      ],
+      "path": "data/results/exp008/robustness/temporal/window_metrics.csv",
+      "sha256": "f6edc3a444b045b38895d4e3eb6f114162c9ed573804471b1737ff19c8c81ac0",
+      "bytes": 2255281
+    },
+    "stress_group_metrics.csv": {
+      "rows": 61,
+      "columns": [
+        "scenario",
+        "strategy",
+        "analysis_label",
+        "stress_group",
+        "nominal_tail_fraction",
+        "threshold_field",
+        "threshold_value",
+        "first_selected_date",
+        "last_selected_date",
+        "small_group_lt10_days",
+        "threshold_load_q80_kwh",
+        "threshold_pv_q20_kwh",
+        "planned_cost_yuan",
+        "up_cost_yuan",
+        "down_cost_yuan",
+        "emergency_cost_yuan",
+        "total_cost_yuan",
+        "original_purchase_kwh",
+        "final_purchase_kwh",
+        "up_adjustment_kwh",
+        "down_adjustment_kwh",
+        "emergency_kwh",
+        "surplus_kwh",
+        "charge_kwh",
+        "discharge_kwh",
+        "throughput_kwh",
+        "equivalent_full_cycles",
+        "active_slots",
+        "emergency_slots",
+        "nonidle_reversals",
+        "charge_episodes",
+        "discharge_episodes",
+        "power_tv_kw",
+        "load_kwh",
+        "pv_kwh",
+        "net_load_kwh",
+        "n_days",
+        "mean_daily_cost_yuan",
+        "mean_daily_emergency_kwh",
+        "mean_daily_throughput_kwh",
+        "soc_min_kwh",
+        "soc_max_kwh",
+        "soc_start_kwh",
+        "soc_end_kwh",
+        "max_balance_abs_kwh",
+        "max_soc_equation_abs_kwh",
+        "emergency_energy_fraction_pct",
+        "cost_per_load_kwh",
+        "baseline_strategy",
+        "baseline_cost_yuan",
+        "cost_saving_yuan",
+        "cost_reduction_pct",
+        "paired_day_win_fraction",
+        "paired_day_cost_saving_sd_yuan",
+        "baseline_emergency_kwh",
+        "baseline_throughput_kwh"
+      ],
+      "path": "data/results/exp008/robustness/temporal/stress_group_metrics.csv",
+      "sha256": "7e74cc02510ca64c8cc5a7e4a3d61a6d70ca5ba515d0eb72fa10269552afe67d",
+      "bytes": 33602
+    },
+    "stress_group_membership.csv": {
+      "rows": 5092,
+      "columns": [
+        "scenario",
+        "strategy",
+        "date",
+        "stress_group",
+        "nominal_tail_fraction"
+      ],
+      "path": "data/results/exp008/robustness/temporal/stress_group_membership.csv",
+      "sha256": "7cfdb9a48556b2a780207580931f6e74171a0a94a0f50d81e0e7db582e6cb669",
+      "bytes": 206622
+    },
+    "bootstrap_summary.csv": {
+      "rows": 6,
+      "columns": [
+        "scenario",
+        "method",
+        "block_days",
+        "replicates",
+        "seed",
+        "n_original_days",
+        "point_cost_reduction_pct",
+        "bootstrap_median_pct",
+        "percentile_95_lower_pct",
+        "percentile_95_upper_pct",
+        "bootstrap_sd_pct",
+        "bootstrap_fraction_positive",
+        "point_mean_daily_saving_yuan",
+        "mean_daily_saving_95_lower_yuan",
+        "mean_daily_saving_95_upper_yuan",
+        "interval_label"
+      ],
+      "path": "data/results/exp008/robustness/temporal/bootstrap_summary.csv",
+      "sha256": "b7cdf32fb773a5e585c64681fc0068c8300bd86e922d5515b349c8f387fb03de",
+      "bytes": 1637
+    },
+    "bootstrap_replicates.csv": {
+      "rows": 24576,
+      "columns": [
+        "method",
+        "block_days",
+        "replicate",
+        "baseline_cost_yuan",
+        "final_cost_yuan",
+        "cost_saving_yuan",
+        "cost_reduction_pct"
+      ],
+      "path": "data/results/exp008/robustness/temporal/bootstrap_replicates.csv",
+      "sha256": "9e7a9227e024623434e78c24cd76456a08fcce2d7a4c695612f96f2c19a9cee3",
+      "bytes": 2271953
+    },
+    "paired_autocorrelation.csv": {
+      "rows": 60,
+      "columns": [
+        "lag_days",
+        "paired_daily_saving_correlation",
+        "exp006_daily_cost_correlation",
+        "exp008_daily_cost_correlation"
+      ],
+      "path": "data/results/exp008/robustness/temporal/paired_autocorrelation.csv",
+      "sha256": "8673764612f6be9985af3a5f7f16ba025b94c06aeb50da92cff48a9c2c51547f",
+      "bytes": 3118
+    },
+    "billing_sensitivity.csv": {
+      "rows": 45,
+      "columns": [
+        "scenario",
+        "strategy",
+        "analysis_label",
+        "parameter",
+        "value",
+        "nominal_value",
+        "parameter_change_pct",
+        "emergency_multiplier",
+        "up_adjustment_multiplier",
+        "down_adjustment_multiplier",
+        "total_cost_yuan",
+        "nominal_total_cost_yuan",
+        "cost_change_pct",
+        "cost_change_yuan",
+        "emergency_kwh",
+        "throughput_kwh",
+        "baseline_cost_yuan",
+        "cost_saving_yuan",
+        "cost_reduction_pct"
+      ],
+      "path": "data/results/exp008/robustness/temporal/billing_sensitivity.csv",
+      "sha256": "0ec6f6d738edb1574a0891121991afec7ed146333175aefb50f154aef3de615d",
+      "bytes": 8964
+    }
+  },
+  "summary": {
+    "path": "data/results/exp008/robustness/temporal/summary.json",
+    "sha256": "1198e61bce6bac5781274f7eb27455acfc3c62ab896e0ce3890407fefbe5009a",
+    "bytes": 15209
+  }
+}

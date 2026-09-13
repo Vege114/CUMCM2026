@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "checks": {
+    "q1_source_hashes": 2,
+    "q1_protected_hashes": 2,
+    "forecast_input_sha256": 26,
+    "execution_sources_sha256": 6,
+    "independent_forecast_metric_rows": 54,
+    "max_independent_forecast_metric_difference": 4.547473508864641e-13,
+    "genuine_cv_fits": 9,
+    "q1_center_and_all15_physical_checks": true,
+    "hyperparameter_independent_input_hash_crosscheck": true,
+    "four_scenarios_independent_physics_billing": true,
+    "execution_conditional_records": 157,
+    "figure_groups": 15,
+    "image_files": 45,
+    "pdf_collection_pages": 15,
+    "png_dpi": 450,
+    "png_dimensions": {
+      "01_forecast_sensitivity": [
+        4500,
+        3465
+      ],
+      "02_temporal_cv": [
+        4500,
+        2205
+      ],
+      "03_test_window": [
+        4365,
+        2205
+      ],
+      "04_q1_budget": [
+        4230,
+        3510
+      ],
+      "05_q1_parameters": [
+        4950,
+        3330
+      ],
+      "06_monthly_saving": [
+        4050,
+        2160
+      ],
+      "07_rolling_and_tail": [
+        4725,
+        2250
+      ],
+      "08_block_bootstrap": [
+        4050,
+        2115
+      ],
+      "09_all_scenarios_monthly": [
+        4725,
+        2250
+      ],
+      "10_observed_stress_groups": [
+        3870,
+        2160
+      ],
+      "11_billing_sensitivity": [
+        4500,
+        2205
+      ],
+      "12_execution_bias": [
+        4500,
+        2205
+      ],
+      "13_hardware_sensitivity": [
+        4950,
+        2115
+      ],
+      "14_correlated_noise": [
+        3690,
+        2160
+      ],
+      "15_tree_hyperparameters": [
+        4500,
+        2205
+      ]
+    },
+    "local_links_resolved": true
+  },
+  "visual_review": {
+    "all15_figures_contact_sheet_inspected": true,
+    "representative_pdf_rasterization_inspected": "02_temporal_cv.pdf",
+    "repairs": [
+      "Pressure-group axis expanded to include all data points.",
+      "Bootstrap legend moved away from interval bars.",
+      "Q1 numerical-zero cost changes displayed as zero at stated tolerance.",
+      "Q1 TV, combined smoothness and starts shown separately."
+    ]
+  },
+  "limitations": [
+    "Charts use only reviewed development-period evidence; no independent external-test claim.",
+    "Visual review is contact-sheet coverage plus representative full-size PDF, not all-format pixel-by-pixel equivalence."
+  ],
+  "verified_figure_sha256": {
+    "paper/figures/exp008_robustness/01_forecast_sensitivity.png": "13d74fb0cff783687d7cb6e248ccf25f8ae1bbc70e70d3d863014b664f9ff1f5",
+    "paper/figures/exp008_robustness/01_forecast_sensitivity.pdf": "3dd33b04fad403a88c22201c4f6db778f015b7dabdcb7f878ab16a96d9d559c6",
+    "paper/figures/exp008_robustness/01_forecast_sensitivity.svg": "1a48fa75cfbea7709f1d4037ac90c406d50f78d5d3079cfd4ed8a2dde9dcddd4",
+    "paper/figures/exp008_robustness/02_temporal_cv.png": "c17e230728152f8a3ccc316eb63d1132f02470ae235e240dfc57baf5f970bc36",
+    "paper/figures/exp008_robustness/02_temporal_cv.pdf": "ee81aee3c4952c59ccae19b0c2b56e092a1086c9931f6524cafda71bfc451ece",
+    "paper/figures/exp008_robustness/02_temporal_cv.svg": "7ecb83a7b3bc6c55bc5e31fc1e5b54e69ffcf16cbc9b03919723973ebbbe9e2b",
+    "paper/figures/exp008_robustness/03_test_window.png": "03f15f38ed0a64c81795e16b7d5bc5b51e77a5a2d6378030daec984ebb376311",
+    "paper/figures/exp008_robustness/03_test_window.pdf": "f5d0158a3469d4d600618620b8abadb117d095902e0635abee1700fc38a328a3",
+    "paper/figures/exp008_robustness/03_test_window.svg": "8849c77683ec490ad32c1829ad0378f60e474a7c28968856d622163d515f4c86",
+    "paper/figures/exp008_robustness/04_q1_budget.png": "843b3ac422a4f9adcc6d838d8605a46d0c55353abc9f4ca0e035eeb7b620c3bf",
+    "paper/figures/exp008_robustness/04_q1_budget.pdf": "4c42e73d45e9273873d3c7cf03066e6b48e7788b7bc52d9e0e663ed98f659e7b",
+    "paper/figures/exp008_robustness/04_q1_budget.svg": "f569cdbb631cba75cfe9ba3f96d304f2612887db005e93fafa44f96f24ed3af3",
+    "paper/figures/exp008_robustness/05_q1_parameters.png": "2d0ba7099b20c9f1e4668d12ae25cf60370897505268087164488b99581f785d",
+    "paper/figures/exp008_robustness/05_q1_parameters.pdf": "10a2b8081fda350beca81156e940b9a0adadeec88a1828760f297cf9e9e7cfc2",
+    "paper/figures/exp008_robustness/05_q1_parameters.svg": "701c60ff36a08917625c55cd76e6a36e154710975dcc2fd0af5f32bda8138512",
+    "paper/figures/exp008_robustness/06_monthly_saving.png": "df307421a2dd18fe2c53982f1c81abda2e7c5d8141462b10271e8023ddacb93b",
+    "paper/figures/exp008_robustness/06_monthly_saving.pdf": "e40ff824820dcafa1d995c8b99023a922014ffd53c345dc48a5895a42d1b371b",
+    "paper/figures/exp008_robustness/06_monthly_saving.svg": "7e406962e6f3eb54989b8ab2c71bdc78752a95e8813a4ce7f5bf65a4c1d3c4c9",
+    "paper/figures/exp008_robustness/07_rolling_and_tail.png": "7e1bd23d7ddacd608036f4e41dad9ea34f3837b0d0c52fd81b6ed3f3437b4780",
+    "paper/figures/exp008_robustness/07_rolling_and_tail.pdf": "c4d2e8f3c39fdbebfb89b696a3bf9a7fa3333c4958dd0e20432e57f8af3ec2c6",
+    "paper/figures/exp008_robustness/07_rolling_and_tail.svg": "896570d537c92c5093d036bc80f3726b8369beb5f12d00832696b60ac093e6c9",
+    "paper/figures/exp008_robustness/08_block_bootstrap.png": "f8c78d5b4998c7275d64ade10c1bf24cb9a96a996deeecb1ed377037700f75ca",
+    "paper/figures/exp008_robustness/08_block_bootstrap.pdf": "7c9379e4ccee871c9ce0ff1d6eb188ea720203a35201be1e18fb6defad6483ff",
+    "paper/figures/exp008_robustness/08_block_bootstrap.svg": "2b8dd4d5e52667983dee654507b9474e7379cf60c957bc2f85d821e44302cef8",
+    "paper/figures/exp008_robustness/09_all_scenarios_monthly.png": "222afa8136af231fd29eafa3a2908d06e487f41278d76d484eefb86e228028e0",
+    "paper/figures/exp008_robustness/09_all_scenarios_monthly.pdf": "b7f9c5785c7df9b3ba8535fe9b7bd20e44689214d8f20f290e1b1c026fadf5bd",
+    "paper/figures/exp008_robustness/09_all_scenarios_monthly.svg": "ebd30063de7960c918c32920e99dd84178ee19e49f1ce6662a57b9131f1e09c6",
+    "paper/figures/exp008_robustness/10_observed_stress_groups.png": "7a73b22e42807667edd667e49e2c8961d721605971aea56508f4aa1a52425f17",
+    "paper/figures/exp008_robustness/10_observed_stress_groups.pdf": "ae75768661261daf6bbbc9eb90570d99495dcd3b331e41b3e62155b16bd8ae03",
+    "paper/figures/exp008_robustness/10_observed_stress_groups.svg": "d25f5d7a3f9408ba90a158b9df7c0b873886e4a435902b005464b2ada6d1ae2d",
+    "paper/figures/exp008_robustness/11_billing_sensitivity.png": "bb0e0753695e158f7c40a244cc087256a61e86c2d103282b9afafd6e69d51e8e",
+    "paper/figures/exp008_robustness/11_billing_sensitivity.pdf": "38280710002edda4f2934d6eab3bdf57c0eb695aeebbd61c669d9c7b4d6156ff",
+    "paper/figures/exp008_robustness/11_billing_sensitivity.svg": "ed6d89a0cbdb946547d790afdc5c4b048bfe4835bf4f59075e75f93185281597",
+    "paper/figures/exp008_robustness/12_execution_bias.png": "eb33b347746348b063096f0600c16028579d784d2dd5df3e5590c1ae5bd976bd",
+    "paper/figures/exp008_robustness/12_execution_bias.pdf": "be11b162ae03ad07aea0487f77be0a5bb20bb7ed42a33bf154e77023f6ad9ca2",
+    "paper/figures/exp008_robustness/12_execution_bias.svg": "85246449b0f3b6f726febdc39f8b85884f8910016abf880b6365d41a92101843",
+    "paper/figures/exp008_robustness/13_hardware_sensitivity.png": "55d840b0583d4d4f00099a91c7993012bb3182ed6802e233ecf446079dbfa01b",
+    "paper/figures/exp008_robustness/13_hardware_sensitivity.pdf": "c7557a609c61f41d7fe3faf88112f62201f2f4f19df452aed58b2dc84693d875",
+    "paper/figures/exp008_robustness/13_hardware_sensitivity.svg": "b922ae013889ab19580846751f036dffc46860a385c8a9116d630aa5eb5f64b2",
+    "paper/figures/exp008_robustness/14_correlated_noise.png": "eb9f9a26785a9e0d1ff2d920ab39f4fe6b83930ab8dbd6c9f12af51158296d82",
+    "paper/figures/exp008_robustness/14_correlated_noise.pdf": "bbc763299629d3636caa06320c4598f43951174addb7bea50b4d9fc4133ac113",
+    "paper/figures/exp008_robustness/14_correlated_noise.svg": "0c7fcda7c6b5646e7f42d3526d2de03cc9fb443c372625e0a8938897aabb5eab",
+    "paper/figures/exp008_robustness/15_tree_hyperparameters.png": "e30379bdeac90e353599f52e5dd90b28cc78eff1cfdc86255b1a744cd32ccbd0",
+    "paper/figures/exp008_robustness/15_tree_hyperparameters.pdf": "d18d13747c23f0d22804b55379e71d00a672f2a5fe6aaed90ddf61d837d15cde",
+    "paper/figures/exp008_robustness/15_tree_hyperparameters.svg": "c0074786c0af6baec33c5bec94f9d37f53807faacdec66ae949d37331823eed9"
+  }
+}

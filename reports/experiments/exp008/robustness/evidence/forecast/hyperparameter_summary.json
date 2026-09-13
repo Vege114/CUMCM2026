@@ -1,0 +1,87 @@
+{
+  "complete": true,
+  "seconds": 55.18608904199209,
+  "settings": 4,
+  "folds": 3,
+  "genuine_refits": 12,
+  "saved_models": 24,
+  "all_inputs_unchanged": true,
+  "development_not_independent_test": true,
+  "net_rmse_relative_changes_pct": [
+    {
+      "name": "baseline",
+      "fold_month": 4,
+      "change_pct": 0.0
+    },
+    {
+      "name": "baseline",
+      "fold_month": 7,
+      "change_pct": 0.0
+    },
+    {
+      "name": "baseline",
+      "fold_month": 10,
+      "change_pct": 0.0
+    },
+    {
+      "name": "hgb_learning_rate_0.064",
+      "fold_month": 4,
+      "change_pct": -0.04413788538171204
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "fold_month": 4,
+      "change_pct": 0.1704118842669633
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "fold_month": 4,
+      "change_pct": -0.23294962793968255
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "fold_month": 4,
+      "change_pct": 0.05604832124954662
+    },
+    {
+      "name": "hgb_learning_rate_0.064",
+      "fold_month": 7,
+      "change_pct": -0.06618493081008703
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "fold_month": 7,
+      "change_pct": -0.9720322563954054
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "fold_month": 7,
+      "change_pct": -0.10032889553327484
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "fold_month": 7,
+      "change_pct": 0.17352934150662858
+    },
+    {
+      "name": "hgb_learning_rate_0.064",
+      "fold_month": 10,
+      "change_pct": 0.32523402871265095
+    },
+    {
+      "name": "hgb_learning_rate_0.096",
+      "fold_month": 10,
+      "change_pct": 0.6608824439180205
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_8",
+      "fold_month": 10,
+      "change_pct": 0.06627536424839153
+    },
+    {
+      "name": "extra_trees_min_samples_leaf_12",
+      "fold_month": 10,
+      "change_pct": 0.10908966773373052
+    }
+  ]
+}
