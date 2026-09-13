@@ -1,0 +1,23 @@
+{
+  "metrics": {
+    "conditional": {
+      "slot_crps_kwh": 32.813465597157574,
+      "price_weighted_slot_crps": 33.25248902305623,
+      "prefix_crps_kwh": 1104.4006924178957,
+      "daily_energy_crps_kwh": 2078.5661127948756,
+      "central80_coverage": 0.7788381570192948,
+      "quantile80_coverage": 0.7924359614105122
+    },
+    "raw": {
+      "slot_crps_kwh": 32.099573065046556,
+      "price_weighted_slot_crps": 32.60773007143855,
+      "prefix_crps_kwh": 1079.7947380247726,
+      "daily_energy_crps_kwh": 2031.6619575489294,
+      "central80_coverage": 0.750187125748503,
+      "quantile80_coverage": 0.7835163007318696
+    }
+  },
+  "gate_passed": false,
+  "all_labels_before_issue": true,
+  "role": "2025 development risk diagnostic; not realized purchase bills"
+}

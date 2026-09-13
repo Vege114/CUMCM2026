@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "primary": "absolute_net_hgb_projected_ridge28_memory_half",
+  "seed": 42,
+  "days": 334,
+  "monthly_models": 11,
+  "source_sha256": "1ef258cb594a718487484994801bdc9aaee85ddbca47d898b8cf292f68b5e774",
+  "protocol_sha256": "43376cb33a9d1aee76ade478ff4ce61de86151bd94d43b2db38c502bb58d532f",
+  "archives": {
+    "absolute_net_hgb_projected_raw": "85f037178b04655c4bd80b3df731f36afe0c4361e013ff8f9c661ab865b3e32f",
+    "absolute_net_hgb_projected_ridge28": "2f50fc56a79fb68f193c7ab0938769d3bf80ff55098ac3afbc1ddc5848c3db34",
+    "absolute_net_hgb_projected_ridge28_memory_half": "72bd4a09d80887ef7d4350e675defa3ff9d4edff59ab3003b31b96bf8745ed11"
+  },
+  "raw_absolute_net_sha256": "f9dcbb622a5d8f607a8d9013d09e5e6b8dd62b5c7555fa6de67125baba815970",
+  "source_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "feature_tensor_sha256": "b5677b8fa64c1f956dfe414eec9125213ff4ed2bf9d218650393e60374f7f236",
+  "same31_feature_tensor_as_original_absolute_HGB": true,
+  "all11_models_reloaded_all_formal_outputs_exact": true,
+  "causal_checks_passed": true,
+  "all_source_and_input_hashes_unchanged": true,
+  "prediction_semantics": "absolute_Net_HGB_then_physical_loadPV_reconstruction_Ridge28_memory",
+  "sklearn_version": "1.9.1",
+  "numpy_version": "2.0.2",
+  "dispatch_gate_passed": false,
+  "development_not_independent_test": true
+}

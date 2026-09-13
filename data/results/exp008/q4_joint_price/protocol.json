@@ -1,0 +1,48 @@
+{
+  "config": {
+    "days": 30,
+    "scenario": "4-2",
+    "calibration": "ridge_28",
+    "initialization_scenarios": 3,
+    "refinement_history_days": 28,
+    "block_slots": 6,
+    "switching": 50.0,
+    "wear": 0.002,
+    "seconds": 5.0,
+    "gap": 0.002,
+    "refinement_maxiter": 120,
+    "deadband": 0.0,
+    "variation": 0.0,
+    "terminal_initialization": "minimum_current_forecast_price / ETA",
+    "terminal_refinement": 0.45,
+    "price_floor": 0.01,
+    "price_and_net_pairing": "identical historical issued day rows and identical selected indices",
+    "baseline": "q4_physical/pilot30",
+    "gate": "strictly lower true 30-day bill and fewer non-idle reversals than frozen physical control",
+    "no_automatic_annual_extension": true
+  },
+  "initial_soc": 1390.382746315672,
+  "initial_mode": 1,
+  "initial_power_kw": 172.75999999999976,
+  "source_data_hashes": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "baseline_sha256": "33de6c334ab9b779a7235bb3b635706ce10a0e9ae7d195298c17a73045514ae3",
+  "ridge28_values_sha256": "a7287dc6edff41e94b783525eae0a104d3d3b2c052185cdce607e8a7028a9046",
+  "source_hashes": {
+    "run_q4_joint_price.py": "49815d84343ebb1df7642e9000798f18d699d05f1f41c2184af387c26f689647",
+    "joint_price_physical.py": "5fd941133d36c30bce3ee87fa3a90b0a61725c1e0384c73cdfdba7fa64350003",
+    "joint_price_closed_loop.py": "84f754cd5eaa4c13e715a1737de649b477640f68e0c1b49bbbf04747ad984788",
+    "planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "unified_forecast.py": "184e91502f70bf83088e3bc752661577f58f38cb34fa30ea9bd41a997480223c",
+    "forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "verify.py": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36"
+  },
+  "copied_physical_constraints_source_sha256": "6d0314ebb028bdef720bdd35fd3ce1b6fbc766e9fd68e049cf706389d98df559",
+  "copied_closed_loop_source_sha256": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec"
+}

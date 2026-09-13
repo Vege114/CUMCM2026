@@ -1,0 +1,22 @@
+{
+  "complete_diagnostic": true,
+  "eligible_as_causal_strategy": false,
+  "oracle_uses_future_actual": true,
+  "oracle_action_traces_exported": false,
+  "included_in_dispatch_index": false,
+  "protected_original_oracle_unchanged": true,
+  "source_purchase_archive_unchanged": true,
+  "target_8pct_yuan": 12940956.879076244,
+  "frozen_purchase_cost_yuan": 12654352.022876121,
+  "minimum_emergency_primal_yuan": 466714.99889800604,
+  "minimum_emergency_dual_yuan": 466714.99889800325,
+  "minimum_total_primal_yuan": 13121067.021774128,
+  "minimum_total_dual_yuan": 13121067.021774124,
+  "primal_dual_gap_yuan": 2.7939677238464355e-09,
+  "source_actual_total_yuan": 13254749.360522216,
+  "maximum_execution_only_saving_yuan": 133682.3387480881,
+  "dual_bound_above_target_yuan": 180110.14269788004,
+  "execution_only_8pct_ruled_out": true,
+  "conclusion": "Even perfect-future physically valid battery execution of this exact Q cannot reach the 8% cost target; changing Q is necessary.",
+  "no_formal_forecast_or_controller_changed": true
+}

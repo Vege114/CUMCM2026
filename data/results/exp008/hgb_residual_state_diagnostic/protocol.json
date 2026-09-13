@@ -1,0 +1,41 @@
+{
+  "candidate_count": 1,
+  "new_point_model_training": false,
+  "strategy_execution": false,
+  "candidate": "whole historical paired load/PV error paths with mild state-similarity weights",
+  "state_names": [
+    "previous_complete_load_mean_residual_kw",
+    "current_load_mean_minus_previous_7_actual_mean_kw",
+    "current_PV_energy_minus_previous_7_actual_mean_kwh",
+    "previous_complete_PV_AM_minus_PM_shape_residual_kw"
+  ],
+  "pool": "last56 complete same-model days strictly before current month start; exclude first issued state",
+  "scored_period": "March1 to December31, 306 days; February descriptive only",
+  "held_month_target_labels_used": false,
+  "current_day_state": "known current issued forecasts and actual history strictly before current midnight",
+  "scaling": "per-feature std from month-frozen historical state pool, floor1 in recorded physical units",
+  "weights": "0.5 uniform + 0.5 normalized exp(-0.5 * mean(standardized squared distances))",
+  "fitting_or_bandwidth_search": false,
+  "conditional_marginal_or_copula_transformation": false,
+  "references": [
+    "same monthly frozen pool with uniform weights",
+    "online unweighted raw past28 same-model paths",
+    "original HGB complete pipeline point forecast",
+    "stored Tree28 slot marginal CDF only"
+  ],
+  "CRPS": "proper score of weighted empirical CDF; no iid scenario assumption",
+  "gate": "weighted improves price-weighted slot, prefix and daily-energy CRPS vs both historical-path references; also improves cumulative and daily-energy mean prediction RMSE vs frozen uniform and original forecast",
+  "development_not_independent_test": true,
+  "source_sha256": "c413a59971d6b1f122bc513e56391df697af9c7ae880cb1172c914526404b2b3",
+  "input_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days/dispatch_2.npz": "c900745ca1157faad28a937ea1602fc3009cd8391ae7df5a442ef2f3de93114c",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days/supports.npz": "e051d7f5ebc34586b690b1d4a2cc0fd79c66cdefca4e5713ee095836274faecb"
+  },
+  "prediction_values_sha256": "7c95d0bbb2129ad2ebee9df66d2014cdb72cb2c0b7f824a679766737c8c0b47a",
+  "raw_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

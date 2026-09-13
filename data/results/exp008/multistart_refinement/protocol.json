@@ -1,0 +1,23 @@
+{
+  "days": [
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "fixed_starts": [
+    "archived_three_path_MIP",
+    "tree_quantile_0.8_LP"
+  ],
+  "selection": "minimum same all-28-history closed_loop objective, before reading actual",
+  "same_masks_and_starting_soc": true,
+  "maxiter": 120,
+  "variation": 0.0,
+  "wear": 0.002,
+  "terminal": 0.45,
+  "role": "five conditional daily interventions, not continuous annual replay",
+  "source_sha256": "c06a2311f1f7a40a391e79c574e8c30def07ef0cb3fedc7c23403b1ff8fa11dd",
+  "support_sha256": "66f3db08b8f3f9ed36c6955d080d762a82c18f0492999f34f1ef1e76be9047a6",
+  "reference_sha256": "cca08f0f70d6569292320442b89eb18fa5919ebc10938c7401f1c64baf3efda8"
+}

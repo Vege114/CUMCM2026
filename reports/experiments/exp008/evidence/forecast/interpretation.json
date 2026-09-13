@@ -1,0 +1,228 @@
+{
+  "source_csv_sha256": {
+    "annual_metrics.csv": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+    "monthly_metrics.csv": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+    "daily_metrics.csv": "d04f592f74b58a31c792d55fd01307d2392c5e5a739ddd1389350ef5b1a1748f",
+    "daily_energy_metrics.csv": "57a9e3d908234933ee67cc971a07eb0bbccc2e181ef06b893fb08afd9dc00cb9",
+    "lead_metrics.csv": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+    "stage_metrics.csv": "bacffe870919e01bbbdec68fbf882a9841624d50e1f45fd91bacccbca5c8bd54"
+  },
+  "annual_deltas_vs_single_HGB": [
+    {
+      "target": "load",
+      "metric": "mae_kw",
+      "blend": 136.9730927360006,
+      "single_HGB": 144.7735784301409,
+      "delta_blend_minus_HGB": -7.800485694140292,
+      "relative_delta_pct": -5.388058911526006
+    },
+    {
+      "target": "load",
+      "metric": "rmse_kw",
+      "blend": 182.98698621729875,
+      "single_HGB": 192.85525876759695,
+      "delta_blend_minus_HGB": -9.868272550298201,
+      "relative_delta_pct": -5.116932052234113
+    },
+    {
+      "target": "load",
+      "metric": "wape_pct",
+      "blend": 2.9668556880686503,
+      "single_HGB": 3.135815261727131,
+      "delta_blend_minus_HGB": -0.1689595736584808,
+      "relative_delta_pct": -5.388058911525995
+    },
+    {
+      "target": "pv",
+      "metric": "mae_kw",
+      "blend": 153.25935231883813,
+      "single_HGB": 153.6606726940242,
+      "delta_blend_minus_HGB": -0.40132037518608854,
+      "relative_delta_pct": -0.26117312136542115
+    },
+    {
+      "target": "pv",
+      "metric": "rmse_kw",
+      "blend": 307.0503899088877,
+      "single_HGB": 307.5828489793913,
+      "delta_blend_minus_HGB": -0.5324590705035916,
+      "relative_delta_pct": -0.17311078048414252
+    },
+    {
+      "target": "pv",
+      "metric": "wape_pct",
+      "blend": 6.44257200369873,
+      "single_HGB": 6.459442330857028,
+      "delta_blend_minus_HGB": -0.016870327158297727,
+      "relative_delta_pct": -0.26117312136541004
+    },
+    {
+      "target": "net_load",
+      "metric": "mae_kw",
+      "blend": 242.02055095275423,
+      "single_HGB": 247.98163997237435,
+      "delta_blend_minus_HGB": -5.961089019620118,
+      "relative_delta_pct": -2.403842889451091
+    },
+    {
+      "target": "net_load",
+      "metric": "rmse_kw",
+      "blend": 357.1618393483832,
+      "single_HGB": 362.89918485267737,
+      "delta_blend_minus_HGB": -5.737345504294183,
+      "relative_delta_pct": -1.5809750321217453
+    },
+    {
+      "target": "net_load",
+      "metric": "wape_pct",
+      "blend": 8.064833340403238,
+      "single_HGB": 8.26347427928751,
+      "delta_blend_minus_HGB": -0.1986409388842727,
+      "relative_delta_pct": -2.403842889451091
+    }
+  ],
+  "monthly_RMSE_increases_preserved": [
+    {
+      "target": "load",
+      "month": 6,
+      "blend_rmse_kw": 230.4577295435282,
+      "single_hgb_rmse_kw": 229.0570882508528,
+      "increase_kw": 1.4006412926754024
+    },
+    {
+      "target": "pv",
+      "month": 2,
+      "blend_rmse_kw": 236.3158034415727,
+      "single_hgb_rmse_kw": 236.0651698190569,
+      "increase_kw": 0.25063362251580656
+    },
+    {
+      "target": "pv",
+      "month": 3,
+      "blend_rmse_kw": 316.0473166553531,
+      "single_hgb_rmse_kw": 314.75564869560685,
+      "increase_kw": 1.2916679597462348
+    },
+    {
+      "target": "pv",
+      "month": 8,
+      "blend_rmse_kw": 332.5569366106678,
+      "single_hgb_rmse_kw": 327.681621762256,
+      "increase_kw": 4.87531484841179
+    },
+    {
+      "target": "pv",
+      "month": 9,
+      "blend_rmse_kw": 303.9164326766795,
+      "single_hgb_rmse_kw": 301.4819189443873,
+      "increase_kw": 2.434513732292203
+    },
+    {
+      "target": "pv",
+      "month": 11,
+      "blend_rmse_kw": 191.2759822621624,
+      "single_hgb_rmse_kw": 191.0096008279503,
+      "increase_kw": 0.2663814342120929
+    },
+    {
+      "target": "net_load",
+      "month": 3,
+      "blend_rmse_kw": 343.9658501813086,
+      "single_hgb_rmse_kw": 343.85378991982793,
+      "increase_kw": 0.11206026148067849
+    }
+  ],
+  "worst5_net_daily_RMSE": [
+    {
+      "date": "2025-06-01",
+      "mae_kw": 793.0425977499092,
+      "rmse_kw": 1052.8269815856972,
+      "wape_pct": 26.309458566669296
+    },
+    {
+      "date": "2025-06-08",
+      "mae_kw": 621.9120368460469,
+      "rmse_kw": 838.6611301770217,
+      "wape_pct": 20.612449918948705
+    },
+    {
+      "date": "2025-10-01",
+      "mae_kw": 530.5796799960195,
+      "rmse_kw": 754.2332007184026,
+      "wape_pct": 16.684298865513327
+    },
+    {
+      "date": "2025-05-02",
+      "mae_kw": 554.2960664893823,
+      "rmse_kw": 716.746433151338,
+      "wape_pct": 22.42065508846869
+    },
+    {
+      "date": "2025-09-08",
+      "mae_kw": 531.5986820188584,
+      "rmse_kw": 702.0466083170971,
+      "wape_pct": 17.56843396092156
+    }
+  ],
+  "worst5_absolute_net_daily_energy_error": [
+    {
+      "date": "2025-06-01",
+      "signed_energy_error_kwh": -18827.088356411332
+    },
+    {
+      "date": "2025-06-08",
+      "signed_energy_error_kwh": 14760.101307232551
+    },
+    {
+      "date": "2025-05-02",
+      "signed_energy_error_kwh": -12643.138077340214
+    },
+    {
+      "date": "2025-09-08",
+      "signed_energy_error_kwh": -12493.163499463457
+    },
+    {
+      "date": "2025-10-01",
+      "signed_energy_error_kwh": 12199.08702530742
+    }
+  ],
+  "largest5_PV_lead_WAPE_from_small_actual_denominators": [
+    {
+      "lead_slot": 124,
+      "lead_end_inclusive_minutes": 1240,
+      "wape_pct": 15768863.602261089,
+      "actual_absolute_sum_kw": 0.0149,
+      "absolute_error_sum_kw": 2349.560676736902
+    },
+    {
+      "lead_slot": 20,
+      "lead_end_inclusive_minutes": 200,
+      "wape_pct": 10421657.9634936,
+      "actual_absolute_sum_kw": 0.0145,
+      "absolute_error_sum_kw": 1511.140404706572
+    },
+    {
+      "lead_slot": 125,
+      "lead_end_inclusive_minutes": 1250,
+      "wape_pct": 2423380.2988853143,
+      "actual_absolute_sum_kw": 0.0663,
+      "absolute_error_sum_kw": 1606.7011381609632
+    },
+    {
+      "lead_slot": 19,
+      "lead_end_inclusive_minutes": 190,
+      "wape_pct": 2394221.8526038225,
+      "actual_absolute_sum_kw": 0.064,
+      "absolute_error_sum_kw": 1532.3019856664466
+    },
+    {
+      "lead_slot": 121,
+      "lead_end_inclusive_minutes": 1210,
+      "wape_pct": 326731.3506489732,
+      "actual_absolute_sum_kw": 0.4196,
+      "absolute_error_sum_kw": 1370.9647473230918
+    }
+  ],
+  "no_missing_or_extreme_values_replaced": true,
+  "no_new_model_or_dispatch": true
+}

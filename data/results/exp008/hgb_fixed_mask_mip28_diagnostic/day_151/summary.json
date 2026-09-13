@@ -1,0 +1,19 @@
+{
+  "day": 151,
+  "selected": "MIP28_then_greedy120",
+  "historical_objective_original": 34589.140165293145,
+  "historical_objective_MIP28_raw": 34938.279364603,
+  "historical_objective_MIP28_refined": 34580.04240330111,
+  "historical_objective_improvement": 9.097761992037704,
+  "MIP_seconds": 4.518224709085189,
+  "MIP_gap": 0.00037708658984071056,
+  "actual_fee_original": 118066.70649631436,
+  "actual_fee_selected": 117826.79251213404,
+  "actual_fee_change": -239.91398418032622,
+  "actual_final_SOC_original": 1386.4789946958936,
+  "actual_final_SOC_selected": 1318.6656330650758,
+  "actual_direction_reversals_original": 4,
+  "actual_direction_reversals_selected": 4,
+  "initial_soc": 3614.4522379403998,
+  "independent_physics_passed": true
+}

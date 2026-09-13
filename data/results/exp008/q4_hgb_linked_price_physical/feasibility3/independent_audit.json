@@ -1,0 +1,135 @@
+{
+  "days": 3,
+  "passed": true,
+  "independent_physical_and_settlement": {
+    "passed": true,
+    "errors": [],
+    "scenario": "4-2",
+    "days": 3,
+    "intervals": 432,
+    "start_day": 31,
+    "max_balance_error_kwh": 0.0,
+    "max_soc_error_kwh": 9.094947017729282e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 2.2737367544323206e-13,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 133573.01181504235,
+      "up_cost": 0.0,
+      "down_cost": 0.0,
+      "emergency_cost": 11138.244437772608,
+      "total_cost": 144711.25625281502
+    },
+    "recomputed_total_cost": 144711.25625281502,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 61320.35429275985,
+      "discharge_kwh": 53487.16301272744,
+      "throughput_kwh": 114807.5173054873,
+      "equivalent_full_cycles": 4.773084007571897,
+      "direction_reversals": 20,
+      "direction_reversals_including_warmup_boundary": 20,
+      "charging_slots": 169,
+      "discharging_slots": 177,
+      "active_slots": 346,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 20,
+      "discharge_starts": 21,
+      "power_changes_count": 359,
+      "power_ramp_total_kw": 240666.1935923418,
+      "power_ramp_total_kw_including_warmup_boundary": 245407.5514966474,
+      "power_ramp_max_kw_per_10min": 5479.400899447732,
+      "power_ramp_p95_kw_per_10min": 3347.8444770023793,
+      "mean_absolute_power_kw": 1594.5488514651015,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 4936.9881000000005,
+      "initial_soc": 1390.382746315672,
+      "final_soc": 3183.5584607529313,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 1,
+      "final_mode": 1,
+      "initial_power_kw": 172.75999999999976,
+      "final_power_kw": 207.827739518111,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": true,
+      "checked_fields": 12,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/q4_hgb_linked_price_physical/feasibility3/dispatch_4-2.npz",
+    "source_sha256": "095ba9295f8d4832282e4f21c18493b46672d465b885902626bb85710e62f3c0"
+  },
+  "all_days": [
+    {
+      "day": 31,
+      "same_HGB_midnight_and_history_paths_exact": true,
+      "own_issued_linked_HGB_price_forecast_exact": true,
+      "old_HGB_net_paths_unchanged": true,
+      "own_historical_price_errors_exact": true,
+      "price_information_boundary_passed": true,
+      "scenario_physics_passed": true,
+      "actual_greedy_arrays_exact": true,
+      "actual_ten_minute_transaction_price_settlement_exact": true,
+      "scenario_history_source": "same_direct_HGB_Ridge28_memory_with_labelled_January_periodic_cold_start",
+      "planning_archive_sha256": "46271c7624f751b0a56290031b101a39a4f3ecfb81ce7d4eed2a385468f3c583"
+    },
+    {
+      "day": 32,
+      "same_HGB_midnight_and_history_paths_exact": true,
+      "own_issued_linked_HGB_price_forecast_exact": true,
+      "old_HGB_net_paths_unchanged": true,
+      "own_historical_price_errors_exact": true,
+      "price_information_boundary_passed": true,
+      "scenario_physics_passed": true,
+      "actual_greedy_arrays_exact": true,
+      "actual_ten_minute_transaction_price_settlement_exact": true,
+      "scenario_history_source": "same_direct_HGB_Ridge28_memory_with_labelled_January_periodic_cold_start",
+      "planning_archive_sha256": "537bcef87f7afda26df70e076bce48bf4638d6256e4612d6da5d6ec36f22f846"
+    },
+    {
+      "day": 33,
+      "same_HGB_midnight_and_history_paths_exact": true,
+      "own_issued_linked_HGB_price_forecast_exact": true,
+      "old_HGB_net_paths_unchanged": true,
+      "own_historical_price_errors_exact": true,
+      "price_information_boundary_passed": true,
+      "scenario_physics_passed": true,
+      "actual_greedy_arrays_exact": true,
+      "actual_ten_minute_transaction_price_settlement_exact": true,
+      "scenario_history_source": "same_direct_HGB_Ridge28_memory_with_labelled_January_periodic_cold_start",
+      "planning_archive_sha256": "c2d144d9ce89fcb622102e90c6345a784358fca24b63c28c267f2d1802281c76"
+    }
+  ],
+  "refinement_reconstruction": [
+    {
+      "day": 31,
+      "purchase_refinement_reconstruction_exact": true,
+      "optimizer_price_is_causal_midnight_forecast": true
+    },
+    {
+      "day": 33,
+      "purchase_refinement_reconstruction_exact": true,
+      "optimizer_price_is_causal_midnight_forecast": true
+    }
+  ],
+  "fresh_future_actual_mutation_test": {
+    "passed": true,
+    "all_current_future_actual_channels_perturbed": true,
+    "unchanged_planning_input_days": [
+      31,
+      90,
+      273
+    ],
+    "actual_price_optimization_forbidden": true
+  },
+  "input_sources_unchanged": true,
+  "model_id": "direct_hgb_ridge28_memory_half",
+  "price_model": "Ridge28_plus_own_issued_HGB_load_PV",
+  "maximum_price_forecast_change_from_baseline": 0.054447007478454434,
+  "this_is_not_a_Q2_8pct_goal_test": true,
+  "audit_source_sha256": "68d2df788e7a4a09bf2a8ebbc6e44dad633e8dc0de73c3bcd19ede27ab78eb5f",
+  "dispatch_sha256": "095ba9295f8d4832282e4f21c18493b46672d465b885902626bb85710e62f3c0"
+}

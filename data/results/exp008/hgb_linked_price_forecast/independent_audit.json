@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "raw_price_csv_sha256": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3",
+  "existing_artifacts_unchanged_sha256": {
+    "summary.json": "8297e39c1ad805b351dc4567a54e4b14e2679184e293465d5c962786aa40f7c7",
+    "source_snapshot.py": "d5a575cb61158a6908a5b7c6bcd5e43a0bf827be7c1017afb33c69adb64dd394",
+    "causality_audit.json": "c4a67668f097f7ce63b24aaa1f07912f3fce5ef2183c8333552d962d6b71f05d",
+    "prediction_audit.json": "7cac300a7db6dd91324d4423938af01a5b6dcc60bcfd2cd9210770d328a8da44",
+    "price_predictions.npz": "acb2cc5aca100f5ffe4049ce65bdbb32a28fa9bf471b23459cc9055bb07abba0",
+    "protocol.json": "2b4eb124ea1c9702a910947e4c1bc545696b981db9b9c4a4af7adb3e6700702a",
+    "daily_scores.csv": "22e78612a90fec7e30194734ec94071a5b5ab2d2db5f4ff43b8a97c706388685"
+  },
+  "all364_own_issued_load_PV_features_reconstructed": true,
+  "all334_designs_equal_independent_raw_row_build": true,
+  "maximum_feature_error": 0.0,
+  "maximum_augmented_lstsq_coefficient_error": 7.243372568410678e-13,
+  "maximum_augmented_lstsq_prediction_error": 1.709743457922741e-13,
+  "known_current_forecast_feature_dependence_nonvacuous_checks": [
+    {
+      "day": 31,
+      "current_known_load_forecast_mutation_kw": 1000,
+      "maximum_price_response_yuan_per_kwh": 0.021515943208549215,
+      "expected_coefficient_response_yuan_per_kwh": 0.02151594320854916
+    },
+    {
+      "day": 90,
+      "current_known_load_forecast_mutation_kw": 1000,
+      "maximum_price_response_yuan_per_kwh": 0.037547411874863545,
+      "expected_coefficient_response_yuan_per_kwh": 0.03754741187486333
+    },
+    {
+      "day": 151,
+      "current_known_load_forecast_mutation_kw": 1000,
+      "maximum_price_response_yuan_per_kwh": 0.039547881396207796,
+      "expected_coefficient_response_yuan_per_kwh": 0.03954788139620754
+    },
+    {
+      "day": 243,
+      "current_known_load_forecast_mutation_kw": 1000,
+      "maximum_price_response_yuan_per_kwh": 0.027282326201605978,
+      "expected_coefficient_response_yuan_per_kwh": 0.0272823262016058
+    },
+    {
+      "day": 364,
+      "current_known_load_forecast_mutation_kw": 1000,
+      "maximum_price_response_yuan_per_kwh": 0.03061610871407683,
+      "expected_coefficient_response_yuan_per_kwh": 0.030616108714076645
+    }
+  ],
+  "source_sha256": "c02e415dcaab84247f238e6a689a7a0442f935f35b16a53bec3cba23fa7a3651"
+}

@@ -1,0 +1,134 @@
+{
+  "scored_days": 306,
+  "scoring_period": [
+    "2025-03-01",
+    "2025-12-31"
+  ],
+  "metrics": {
+    "frozen_uniform56": {
+      "slot_crps_kwh": 31.0481703519,
+      "price_weighted_slot_crps": 31.6525885331,
+      "prefix_crps_kwh": 1070.4918617237,
+      "daily_energy_crps_kwh": 2027.7130975924,
+      "point_net_mse_kw2": 139765.8649261043,
+      "point_prefix_mse_kwh2": 5696061.174696815,
+      "point_daily_energy_squared_error_kwh2": 14451712.936040953,
+      "point_daily_energy_bias_kwh": -37.9226095617,
+      "point_net_rmse": 373.8527316018,
+      "point_prefix_rmse": 2386.6422385219,
+      "point_daily_energy_rmse": 3801.5408633922
+    },
+    "online_raw28": {
+      "slot_crps_kwh": 31.0506247131,
+      "price_weighted_slot_crps": 31.6223707598,
+      "prefix_crps_kwh": 1046.5128915695,
+      "daily_energy_crps_kwh": 1961.5671660968,
+      "point_net_mse_kw2": 141329.5966989115,
+      "point_prefix_mse_kwh2": 5545588.538904017,
+      "point_daily_energy_squared_error_kwh2": 13907756.269797208,
+      "point_daily_energy_bias_kwh": 10.1913867313,
+      "point_net_rmse": 375.9382884183,
+      "point_prefix_rmse": 2354.9073312774,
+      "point_daily_energy_rmse": 3729.3104281887
+    },
+    "original_point": {
+      "slot_crps_kwh": 42.0929258908,
+      "price_weighted_slot_crps": 42.8708374745,
+      "prefix_crps_kwh": 1396.6059402114,
+      "daily_energy_crps_kwh": 2603.7053378402,
+      "point_net_mse_kw2": 136515.5298691812,
+      "point_prefix_mse_kwh2": 5432429.833743603,
+      "point_daily_energy_squared_error_kwh2": 13620857.98610681,
+      "point_daily_energy_bias_kwh": -322.1270082211,
+      "point_net_rmse": 369.4800804769,
+      "point_prefix_rmse": 2330.757351966,
+      "point_daily_energy_rmse": 3690.6446572526
+    },
+    "state_weighted56": {
+      "slot_crps_kwh": 31.053747557,
+      "price_weighted_slot_crps": 31.6480121247,
+      "prefix_crps_kwh": 1069.4601921784,
+      "daily_energy_crps_kwh": 2023.8198376064,
+      "point_net_mse_kw2": 139827.2315776271,
+      "point_prefix_mse_kwh2": 5702779.349661364,
+      "point_daily_energy_squared_error_kwh2": 14471787.131276766,
+      "point_daily_energy_bias_kwh": -23.6939097367,
+      "point_net_rmse": 373.9347958904,
+      "point_prefix_rmse": 2388.0492770589,
+      "point_daily_energy_rmse": 3804.1802180334
+    },
+    "tree28_slot_only": {
+      "slot_crps_kwh": 31.7234646914,
+      "price_weighted_slot_crps": 32.2635300973,
+      "prefix_crps_kwh": null,
+      "daily_energy_crps_kwh": null,
+      "point_net_mse_kw2": null,
+      "point_prefix_mse_kwh2": null,
+      "point_daily_energy_squared_error_kwh2": null,
+      "point_daily_energy_bias_kwh": null,
+      "point_net_rmse": null,
+      "point_prefix_rmse": null,
+      "point_daily_energy_rmse": null
+    }
+  },
+  "proper_distribution_gate": false,
+  "point_energy_gate": false,
+  "worth_one_followup_trial": false,
+  "candidate_count": 1,
+  "new_predictor_trained": false,
+  "dispatch_rerun": false,
+  "scoring_is_month_forward_development_not_independent_test": true,
+  "future_mutation_checks": [
+    {
+      "day": 59,
+      "future_actual_and_forecast_mutation_unchanged": true
+    },
+    {
+      "day": 90,
+      "future_actual_and_forecast_mutation_unchanged": true
+    },
+    {
+      "day": 151,
+      "future_actual_and_forecast_mutation_unchanged": true
+    },
+    {
+      "day": 243,
+      "future_actual_and_forecast_mutation_unchanged": true
+    },
+    {
+      "day": 364,
+      "future_actual_and_forecast_mutation_unchanged": true
+    }
+  ],
+  "same_model_history_adapter_checks": [
+    {
+      "day": 59,
+      "same_model_error_paths_exact": true,
+      "complete_days": 28
+    },
+    {
+      "day": 90,
+      "same_model_error_paths_exact": true,
+      "complete_days": 28
+    },
+    {
+      "day": 151,
+      "same_model_error_paths_exact": true,
+      "complete_days": 28
+    },
+    {
+      "day": 243,
+      "same_model_error_paths_exact": true,
+      "complete_days": 28
+    },
+    {
+      "day": 364,
+      "same_model_error_paths_exact": true,
+      "complete_days": 28
+    }
+  ],
+  "stored_tree_support_reconstruction_checks": 5,
+  "monthly_pool_labels_stop_before_held_month": true,
+  "mean_effective_sample_size": 48.73479476950828,
+  "source_and_inputs_unchanged": true
+}

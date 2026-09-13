@@ -1,0 +1,44 @@
+{
+  "complete": true,
+  "bounds": [
+    {
+      "method": "prefix",
+      "actual_cost_yuan": 13706239.587825214,
+      "fixed_planned_cost_yuan": 12140480.405504646,
+      "actual_emergency_cost_yuan": 1565759.182320572,
+      "oracle_minimum_emergency_cost_yuan": 1211661.823474361,
+      "oracle_minimum_total_cost_yuan": 13352142.228979006,
+      "total_dual_bound_yuan": 13352142.228979008,
+      "maximum_execution_only_saving_yuan": 354097.3588462081,
+      "oracle_minus_8pct_target_yuan": 411185.3498790059,
+      "frozen_Q_execution_only_8pct_ruled_out_by_dual": true,
+      "primal_dual_gap_yuan": 1.3969838619232178e-09,
+      "max_constraint_residual_kwh": 1.8189894035458565e-12,
+      "source_sha256": "d04079efce1ad650f9797c48fd8c86b3665790d89879254755dc2e1759de07e3"
+    },
+    {
+      "method": "point",
+      "actual_cost_yuan": 13190724.676222105,
+      "fixed_planned_cost_yuan": 12762853.091265382,
+      "actual_emergency_cost_yuan": 427871.5849567217,
+      "oracle_minimum_emergency_cost_yuan": 331721.44416934764,
+      "oracle_minimum_total_cost_yuan": 13094574.53543473,
+      "total_dual_bound_yuan": 13094574.535434732,
+      "maximum_execution_only_saving_yuan": 96150.14078737423,
+      "oracle_minus_8pct_target_yuan": 153617.65633472987,
+      "frozen_Q_execution_only_8pct_ruled_out_by_dual": true,
+      "primal_dual_gap_yuan": 2.3283064365386963e-09,
+      "max_constraint_residual_kwh": 1.8189894035458565e-12,
+      "source_sha256": "294e8c3149f56b47dab9d1800a090d681e55d8a767f2125d0b1aebe2124dda3f"
+    }
+  ],
+  "source_tree_hashes_unchanged": true,
+  "oracle_actions_exported": false,
+  "added_to_dispatch_index": false,
+  "actual_prefix_minus_point_yuan": 515514.9116031099,
+  "oracle_prefix_minus_point_yuan": 257567.69354427606,
+  "prefix_extra_execution_headroom_vs_point_yuan": 257947.21805883385,
+  "interpretation": "A dual bound above the target rules out reaching it with the frozen Q even with perfect future execution. A lower bound below the target establishes only that impossibility is not certified; it does not construct a causal or low-switch controller.",
+  "state_buffer_attribution_limit": "Execution headroom includes perfect foresight and all timing changes, not only releasing state_buffer500. This is not a causal attribution to that buffer.",
+  "no_causal_goal_claim": true
+}

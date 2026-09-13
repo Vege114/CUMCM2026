@@ -1,0 +1,12 @@
+{
+  "name": "hourly_ridge_s7_switch50_pilot30",
+  "days": 30,
+  "calibration": "ridge_28",
+  "switching": 50.0,
+  "scenarios": 7,
+  "block_slots": 6,
+  "seconds": 5.0,
+  "deadband": 0.0,
+  "development_on_evaluation_year": true,
+  "source_sha256": "7546c0c725e58ef2acd9d82b36d3212288399f2aeaa5b7f09a4f4d7cbf3b2b48"
+}

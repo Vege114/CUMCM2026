@@ -1,0 +1,334 @@
+{
+  "passed": true,
+  "payload_sha256": "c473ce4ea2878ad71dc069d2c38e6706be534703a7ed18e43cd28a2c1f3d9165",
+  "files": [
+    {
+      "scenario": "1",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/result1.xlsx",
+      "sha256": "4be37d5a19e8381e95cbf77f30aea49a7b8fcea64b2cda78c58e356403f483ec",
+      "source_copy_sha256": "4be37d5a19e8381e95cbf77f30aea49a7b8fcea64b2cda78c58e356403f483ec",
+      "source_archive": {
+        "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/q1/revised.json",
+        "sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+        "bytes": 37702
+      },
+      "all_exported_cell_values_compared": true,
+      "scalar_comparisons": 318,
+      "sheets": [
+        {
+          "name": "计划购电量",
+          "all_data_reimported": true
+        },
+        {
+          "name": "充放电量",
+          "all_data_reimported": true
+        }
+      ],
+      "sum_formulas_checked": 0,
+      "input_change_recalculation_checks": 0,
+      "unexpected_formula_errors": 0,
+      "engine": "Artifact Tool 2.8.58+ bundled runtime; Excel desktop not launched",
+      "units": "kWh for purchase, battery charge/discharge and SOC; yuan for settled bill",
+      "formula_scan_file": "result1-formula-scan.ndjson",
+      "saved_file_previews": [
+        {
+          "sheet": "计划购电量",
+          "range": "A1:B12",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-1-计划购电量.png",
+          "sha256": "6259f58d53c93e9830c13ec86d5c11b492e6f4d1334f3a1c2deb356c2b339657"
+        },
+        {
+          "sheet": "充放电量",
+          "range": "A1:E7",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-1-充放电量.png",
+          "sha256": "486ea1e90180e73fbc045341f2d4bac973caf8018cf27a64a2b98a46bca0d5ea"
+        }
+      ]
+    },
+    {
+      "scenario": "2",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/result2.xlsx",
+      "sha256": "e529ae928ff8c09455f72f72fbb25253be215df2cbfbd820e6959b2a410b9ea0",
+      "source_copy_sha256": "e529ae928ff8c09455f72f72fbb25253be215df2cbfbd820e6959b2a410b9ea0",
+      "source_archive": {
+        "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/dispatch.npz",
+        "sha256": "8b97181d2f82659774c609632d39a2bd812e69598fcd37696a2d793debcfe6d7",
+        "bytes": 1870490
+      },
+      "all_exported_cell_values_compared": true,
+      "scalar_comparisons": 64006,
+      "sheets": [
+        {
+          "name": "计划购电量",
+          "rows": 334,
+          "ten_minute_slots": 144,
+          "all_data_reimported": true,
+          "fee_column": "EQ",
+          "fee_semantics": "daily total settled bill, repeated on both purchase sheets; count once"
+        },
+        {
+          "name": "充放电量",
+          "rows": 2004,
+          "all_data_reimported": true
+        },
+        {
+          "name": "紧急购电量",
+          "rows": 802,
+          "all_data_reimported": true
+        }
+      ],
+      "sum_formulas_checked": 334,
+      "input_change_recalculation_checks": 3,
+      "unexpected_formula_errors": 0,
+      "engine": "Artifact Tool 2.8.58+ bundled runtime; Excel desktop not launched",
+      "units": "kWh for purchase, battery charge/discharge and SOC; yuan for settled bill",
+      "formula_scan_file": "result2-formula-scan.ndjson",
+      "saved_file_previews": [
+        {
+          "sheet": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-2-计划购电量.png",
+          "sha256": "5018d488f67089e912b25d84fcbb49d0033ac52e7bf25c8ee1b60ee380637e81"
+        },
+        {
+          "sheet": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-2-充放电量.png",
+          "sha256": "9fa45cc4d33462138a524f7a21901e8b6ab9785b7d60e4be9b4f9a60015d0390"
+        },
+        {
+          "sheet": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-2-紧急购电量.png",
+          "sha256": "3874429729b06f6ef293e48043cf75d1063192675b398c2acdb5bfdbcb7ccc63"
+        }
+      ]
+    },
+    {
+      "scenario": "3",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/result3.xlsx",
+      "sha256": "c51c5833bcc398e9dfb612263a7ff074c6936e6c9bce30d074d4e4491de7c285",
+      "source_copy_sha256": "c51c5833bcc398e9dfb612263a7ff074c6936e6c9bce30d074d4e4491de7c285",
+      "source_archive": {
+        "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/absolute_hgb_update_dispatch/full334/3/dispatch_3.npz",
+        "sha256": "793c9b872814c0b157f34b43fa93cc3aa6649164a4c0d2c6b17684632051ca1e",
+        "bytes": 2028505
+      },
+      "all_exported_cell_values_compared": true,
+      "scalar_comparisons": 112625,
+      "sheets": [
+        {
+          "name": "计划购电量",
+          "rows": 334,
+          "ten_minute_slots": 144,
+          "all_data_reimported": true,
+          "fee_column": "EQ",
+          "fee_semantics": "daily total settled bill, repeated on both purchase sheets; count once"
+        },
+        {
+          "name": "调整购电量",
+          "rows": 334,
+          "ten_minute_slots": 144,
+          "all_data_reimported": true,
+          "fee_column": "EQ",
+          "fee_semantics": "daily total settled bill, repeated on both purchase sheets; count once"
+        },
+        {
+          "name": "充放电量",
+          "rows": 2004,
+          "all_data_reimported": true
+        },
+        {
+          "name": "紧急购电量",
+          "rows": 483,
+          "all_data_reimported": true
+        }
+      ],
+      "sum_formulas_checked": 668,
+      "input_change_recalculation_checks": 6,
+      "unexpected_formula_errors": 0,
+      "engine": "Artifact Tool 2.8.58+ bundled runtime; Excel desktop not launched",
+      "units": "kWh for purchase, battery charge/discharge and SOC; yuan for settled bill",
+      "formula_scan_file": "result3-formula-scan.ndjson",
+      "saved_file_previews": [
+        {
+          "sheet": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-3-计划购电量.png",
+          "sha256": "9d1bedbd582b02fca08531f487132d0d8dbccac3f2d5ecc45e258dc123cf1b2d"
+        },
+        {
+          "sheet": "调整购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-3-调整购电量.png",
+          "sha256": "9d1bedbd582b02fca08531f487132d0d8dbccac3f2d5ecc45e258dc123cf1b2d"
+        },
+        {
+          "sheet": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-3-充放电量.png",
+          "sha256": "d9426c5f98339a4c51ccc7905ca98850c0ac6fadf51cd5ffc37285ea18897d6c"
+        },
+        {
+          "sheet": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-3-紧急购电量.png",
+          "sha256": "bca2f90a17fe22158a8474a4056396850793975d79746de3a0b16e6828292b3b"
+        }
+      ]
+    },
+    {
+      "scenario": "4-2",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/result4-2.xlsx",
+      "sha256": "e9d7f7dfe50ffb0084331cbf141db548f701d62d010e4edaf1db5f0b2793cae8",
+      "source_copy_sha256": "e9d7f7dfe50ffb0084331cbf141db548f701d62d010e4edaf1db5f0b2793cae8",
+      "source_archive": {
+        "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/q4_hgb_linked_price_physical/full334/dispatch_4-2.npz",
+        "sha256": "09f1e6f131df6cc1e34874479cfd8dfd7c576a045c441ea7ec31e3e9a67e9b72",
+        "bytes": 2176098
+      },
+      "all_exported_cell_values_compared": true,
+      "scalar_comparisons": 63739,
+      "sheets": [
+        {
+          "name": "计划购电量",
+          "rows": 334,
+          "ten_minute_slots": 144,
+          "all_data_reimported": true,
+          "fee_column": "EQ",
+          "fee_semantics": "daily total settled bill, repeated on both purchase sheets; count once"
+        },
+        {
+          "name": "充放电量",
+          "rows": 2004,
+          "all_data_reimported": true
+        },
+        {
+          "name": "紧急购电量",
+          "rows": 713,
+          "all_data_reimported": true
+        }
+      ],
+      "sum_formulas_checked": 334,
+      "input_change_recalculation_checks": 3,
+      "unexpected_formula_errors": 0,
+      "engine": "Artifact Tool 2.8.58+ bundled runtime; Excel desktop not launched",
+      "units": "kWh for purchase, battery charge/discharge and SOC; yuan for settled bill",
+      "formula_scan_file": "result4-2-formula-scan.ndjson",
+      "saved_file_previews": [
+        {
+          "sheet": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-2-计划购电量.png",
+          "sha256": "4a425982f729a5e105ea2527b46381b0f244b9d7cb9312539d5d31bc5d02cbf9"
+        },
+        {
+          "sheet": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-2-充放电量.png",
+          "sha256": "cf9d036c4f330ce9b549fd98023164fc25b2bcd6ad2859b99063456952d2e6fb"
+        },
+        {
+          "sheet": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-2-紧急购电量.png",
+          "sha256": "b19d8195a141fbc40649a45a02144da30a23626e299bd89937d0f064bdcf8bfa"
+        }
+      ]
+    },
+    {
+      "scenario": "4-3",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/result4-3.xlsx",
+      "sha256": "3f9cb04ad2801f0c183628f4d8ea5832c4367b4023e57a0b3937a246b9638b29",
+      "source_copy_sha256": "3f9cb04ad2801f0c183628f4d8ea5832c4367b4023e57a0b3937a246b9638b29",
+      "source_archive": {
+        "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/dispatch_4-3.npz",
+        "sha256": "be922b20ea385882362607373083211d8a854f8f15617060bb7448ffda30a437",
+        "bytes": 2157666
+      },
+      "all_exported_cell_values_compared": true,
+      "scalar_comparisons": 112775,
+      "sheets": [
+        {
+          "name": "计划购电量",
+          "rows": 334,
+          "ten_minute_slots": 144,
+          "all_data_reimported": true,
+          "fee_column": "EQ",
+          "fee_semantics": "daily total settled bill, repeated on both purchase sheets; count once"
+        },
+        {
+          "name": "调整购电量",
+          "rows": 334,
+          "ten_minute_slots": 144,
+          "all_data_reimported": true,
+          "fee_column": "EQ",
+          "fee_semantics": "daily total settled bill, repeated on both purchase sheets; count once"
+        },
+        {
+          "name": "充放电量",
+          "rows": 2004,
+          "all_data_reimported": true
+        },
+        {
+          "name": "紧急购电量",
+          "rows": 533,
+          "all_data_reimported": true
+        }
+      ],
+      "sum_formulas_checked": 668,
+      "input_change_recalculation_checks": 6,
+      "unexpected_formula_errors": 0,
+      "engine": "Artifact Tool 2.8.58+ bundled runtime; Excel desktop not launched",
+      "units": "kWh for purchase, battery charge/discharge and SOC; yuan for settled bill",
+      "formula_scan_file": "result4-3-formula-scan.ndjson",
+      "saved_file_previews": [
+        {
+          "sheet": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-3-计划购电量.png",
+          "sha256": "28101cab0f370100ada82d1838d41a9ef72acf6327981dc91e170ad9b83d94c0"
+        },
+        {
+          "sheet": "调整购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-3-调整购电量.png",
+          "sha256": "28101cab0f370100ada82d1838d41a9ef72acf6327981dc91e170ad9b83d94c0"
+        },
+        {
+          "sheet": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-3-充放电量.png",
+          "sha256": "225501adb2e1d89ebd0dc5d95c2473b3f0635d1ca0ee678ddfdf3848ab26e4c3"
+        },
+        {
+          "sheet": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/workbook-previews/saved-4-3-紧急购电量.png",
+          "sha256": "c024297c70a6243673d9d75be5b69c6f44a48ee4c1160fa863f2e6d3df8a58ce"
+        }
+      ]
+    }
+  ],
+  "total_scalar_comparisons": 353463,
+  "visual_QA_status": "passed: all 16 worksheets and 10 detail previews visually inspected",
+  "no_optimizer_rerun": true,
+  "visual_QA": {
+    "sheet_count": 16,
+    "additional_detail_views": 10,
+    "all_labels_dates_numbers_readable": true,
+    "no_clipped_headers_or_formula_errors": true,
+    "Q1_midday_and_last_interval_inspected": true,
+    "Excel_desktop_used": false
+  },
+  "audit_script_sha256": "12abe015b07d1a721ff7096745e571248fd86dc784180c0fe70290b5bd4a534b",
+  "payload_metadata_refresh": {
+    "latest_payload_sha256": "9f7e89d8a5f887016154651bbcfece95211168037395b6379d89289e65375ca5",
+    "original_export_payload_sha256": "c473ce4ea2878ad71dc069d2c38e6706be534703a7ed18e43cd28a2c1f3d9165",
+    "reason": "supporting evidence metadata refreshed after export",
+    "four_annual_workbook_data_exact_match_to_export_inputs": true,
+    "Q1_workbook_data_exact_match_confirmed_by_parent": true,
+    "xlsx_reexported": false,
+    "xlsx_unchanged": true
+  }
+}

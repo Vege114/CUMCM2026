@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "tests": 4,
+  "failures": 0,
+  "errors": 0,
+  "evidence": {
+    "signed_sources_and_exact31_feature_tensor": true,
+    "all22_model_hashes_parameters_structures_and334_raw_predictions": true,
+    "independent_all_month_reload_max_difference_kw": 1.8189894035458565e-12,
+    "all334_Ridge28_and_independent_nonrecursive_half_memory": true,
+    "all_issued_prediction_errors_reconstruct_exactly": true,
+    "selected_future_features_unchanged_and_all_four_gate_metrics_independently_recomputed": true
+  },
+  "auditor_source_sha256": "072cfb4a57b038ccb2e4941561dd284aa1c1e43bb64c4ef139814cb78a457bdb"
+}

@@ -1,0 +1,22 @@
+{
+  "mode": "--export",
+  "status": "Q1 workbook exported from final payload",
+  "template_sha256": "28360e0974e7d6065394a8aba4e14a86773ae0036cc7d3ea1b211b515b03d688",
+  "input_sha256": "c473ce4ea2878ad71dc069d2c38e6706be534703a7ed18e43cd28a2c1f3d9165",
+  "output_sha256": "4be37d5a19e8381e95cbf77f30aea49a7b8fcea64b2cda78c58e356403f483ec",
+  "source": {
+    "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/q1/revised.json",
+    "sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+    "bytes": 37702
+  },
+  "plan_rows": 144,
+  "four_hour_blocks": 6,
+  "units": "kWh; Q1 source powers converted once in report_payload",
+  "all_exported_cells_reimported_and_compared": true,
+  "first_interval": "00:00-00:10",
+  "last_interval": "23:50-24:00",
+  "total_purchase_kwh": 57560.64380388696,
+  "total_charge_kwh": 20186.71370553619,
+  "total_discharge_kwh": 18168.04233498257,
+  "formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}

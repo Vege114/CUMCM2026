@@ -1,0 +1,221 @@
+<div id="exp008-history-inline">
+  <h2>历史实验：费用与预测误差</h2>
+  <div class="text-small text-muted">2025-02-01—12-31 · 334日 · exp008为已接受版本</div>
+  <section aria-label="各问题实际费用">
+    <h3>各问题实际费用 · 统一万元尺度</h3>
+    <div class="comparison-facets" id="exp008-question-plots"></div>
+    <div class="text-small text-muted">Q2参考exp006；Q3/Q4参考exp002。物理与结算可比，预测模型及控制器不同；费用变化不是单一因素归因。</div>
+  </section>
+  <section aria-label="Q2历史费用与角色">
+    <h3>Q2历史费用 · 按角色保留</h3>
+    <table class="table table-sm">
+      <thead><tr><th scope="col">实验与角色</th><th scope="col" class="text-end">实际费用（万元）</th></tr></thead>
+      <tbody id="exp008-history-cost-rows"></tbody>
+      <tbody id="exp008-history-separate-rows"></tbody>
+    </table>
+    <div class="text-small text-muted">原协议单列：001的单向效率与初态不同；005另有1000kW/10min爬坡约束、允许紧急电充电。二者不参与同物理口径排名。</div>
+  </section>
+  <section aria-label="统一午夜预测误差">
+    <h3>同午夜预测 · RMSE与WAPE同时展示</h3>
+    <div class="text-small text-muted">● 负载　■ 光伏　· 同一指标共用尺度 · 全天48,096槽；实际PV&gt;0为26,880槽</div>
+    <div class="comparison-facets" id="exp008-forecast-plots"></div>
+    <div class="text-small text-muted">001/002为已有午夜重评分；004/005/006复用无季节预测。005为原登记值，发电时段负载缺失。008为Q2融合；此处不是Q3/Q4其他发布时间的合并评分。全部属于开发期比较。</div>
+  </section>
+  <section aria-label="历史计时描述">
+    <h3>已有计时 · 保留原阶段</h3>
+    <table class="table table-sm">
+      <thead><tr><th scope="col">记录及阶段</th><th scope="col" class="text-end">秒</th></tr></thead>
+      <tbody id="exp008-runtime-rows"></tbody>
+    </table>
+    <div class="text-small text-muted">计时阶段、算法与原运行环境不同，只作描述。exp008 Q2总墙钟、纯训练、正式预测及校准分阶段计时缺失；缺失不记0，不计算加速倍数。</div>
+  </section>
+  <div class="text-small text-muted">来源：已核验调度账单、历史登记及同午夜重评分。exp007按要求排除。</div>
+  <div id="exp008-comparison-error" role="alert" hidden></div>
+</div>
+<style>
+#exp008-history-inline { width: 100%; color: var(--foreground); }
+#exp008-history-inline section { margin-top: 1.5rem; }
+#exp008-history-inline .comparison-facets { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+#exp008-history-inline .comparison-plot { min-width: 0; }
+#exp008-history-inline .comparison-plot h3 { margin-bottom: .25rem; }
+#exp008-history-inline svg.history-plot { width: 100%; display: block; overflow: visible; }
+#exp008-history-inline svg.history-plot text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+#exp008-history-inline svg.history-plot .axis-title { font-weight: 500; }
+#exp008-history-inline svg.history-plot .plot-frame { fill: transparent; stroke: var(--border); stroke-width: 1px; }
+#exp008-history-inline svg.history-plot .plot-grid { stroke: var(--border); stroke-width: 1px; }
+#exp008-history-inline .cost-selected { font-weight: 500; }
+#exp008-history-inline .source-role { display: block; }
+@media (max-width: 680px) {
+  #exp008-history-inline .comparison-facets { grid-template-columns: minmax(0,1fr); }
+}
+</style>
+<script type="application/json" id="exp008-comparison-data">
+{
+  "questions": [
+    {"id":"2","label":"第二问","reference":"exp006","previous":14066257.477256786,"current":13201981.947942203,"delta_pct":-6.144317567853415},
+    {"id":"3","label":"第三问","reference":"exp002","previous":14005062.775875755,"current":12826263.074326914,"delta_pct":-8.416954071633063},
+    {"id":"4-2","label":"第四问·方案2","reference":"exp002","previous":15901397.201112418,"current":13994531.257936869,"delta_pct":-11.99181379509311},
+    {"id":"4-3","label":"第四问·方案3","reference":"exp002","previous":14734925.124925215,"current":13579870.464961825,"delta_pct":-7.838890596122064}
+  ],
+  "history_costs": [
+    {"id":"exp001/legacy_rebased","label":"exp001 · 同物理口径重算","cost":15842654.1906855,"separate":false},
+    {"id":"exp002/primary","label":"exp002 · 正式风险策略","cost":15128897.4527102,"separate":false},
+    {"id":"exp003/primary","label":"exp003 · 当轮正式","cost":14988622.6481765,"separate":false},
+    {"id":"exp004/causal_season","label":"exp004 · 当轮正式（历史季节）","cost":13626145.4059908,"separate":false},
+    {"id":"exp004/no_season","label":"exp004 · 无季节预测基线","cost":13611587.8329135,"separate":false},
+    {"id":"exp006/primary","label":"exp006 · 正式树DP","cost":14066257.4772568,"separate":false},
+    {"id":"exp008/final","label":"exp008 · 最终融合","cost":13201981.947942203,"separate":false},
+    {"id":"exp001/original","label":"原协议单列：exp001 · 原登记","cost":16258308.2173546,"separate":true},
+    {"id":"exp005/beta_0.1","label":"原协议单列：exp005 · β=0.1","cost":14717882.165475883,"separate":true}
+  ],
+  "forecasts": [
+    {"id":"exp001","label":"001 重评","load":[247.45161352437,3.90433946618678,252.351585808532,3.44334264219711],"pv":[341.262159873401,7.55001291278804,455.78901713816,7.20222702024081]},
+    {"id":"exp002","label":"002 重评","load":[220.779862383218,3.54468934304015,219.950898830724,3.08509370557757],"pv":[343.496709148628,7.25215961784986,459.437308296373,7.21707306485631]},
+    {"id":"exp003","label":"003","load":[244.28661485194,3.82941918910358,239.604570800335,3.2856438938968],"pv":[375.174878037984,7.79142088130106,501.849596855795,7.79132695597745]},
+    {"id":"exp004","label":"004 无季节","load":[258.311774693521,4.23363721849061,252.128225661351,3.61076236939042],"pv":[423.999134245203,8.929502475256,567.140999457829,8.91194962722239]},
+    {"id":"exp005","label":"005 复用","load":[258.3117746935,4.2336372185,null,null],"pv":[423.9991342452,8.9295024753,567.1409994578,8.9119496272]},
+    {"id":"exp006","label":"006","load":[258.311774693521,4.23363721849061,252.128225661351,3.61076236939042],"pv":[423.999134245203,8.929502475256,567.140999457829,8.91194962722239]},
+    {"id":"exp008","label":"008 融合","load":[182.98698621729875,2.9668556880686503,181.23777819084373,2.567863712137439],"pv":[307.0503899088877,6.44257200369873,410.62933761117824,6.398001015169905]}
+  ],
+  "runtime": [
+    {"id":"exp001","label":"exp001 原协议 · 求解+执行","seconds":1.197190367267,"field":"solve_execute_seconds"},
+    {"id":"exp002","label":"exp002 · 求解+执行（334次超时）","seconds":907.740153215011,"field":"solve_execute_seconds"},
+    {"id":"exp003","label":"exp003 正式 · 求解+执行","seconds":12.398277213214897,"field":"solve_execute_seconds"},
+    {"id":"exp004","label":"exp004 无季节 · 求解+执行","seconds":11.677327542915007,"field":"solve_execute_seconds"},
+    {"id":"exp005","label":"exp005 β=0.1 · 四类LP求解之和","seconds":959.6525492203655,"field":"overlap_summary[*].solver_seconds; beta=0.1"},
+    {"id":"exp006","label":"exp006 正式 · 运行墙钟","seconds":8.954869084060192,"field":"run_wall_seconds"},
+    {"id":"exp008_mip","label":"exp008 Q2 · 物理MIP求解","seconds":699.0726444264874,"field":"Q2.solver_seconds.sum"},
+    {"id":"exp008_refine","label":"exp008 Q2 · 固定掩码Q精化","seconds":304.3245660071261,"field":"Q2.refinement_seconds.sum"},
+    {"id":"exp008_hgb","label":"exp008 HGB · 拟合+验证预测","seconds":44.97184687713161,"field":"HGB.training_seconds.sum"},
+    {"id":"exp008_et","label":"exp008 ExtraTrees · 拟合+验证预测","seconds":63.233388833119534,"field":"ET.training_seconds.sum"},
+    {"id":"exp008_wall","label":"exp008 Q2 · 运行总墙钟","seconds":null,"field":"run_wall_seconds"}
+  ]
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root = document.getElementById('exp008-history-inline');
+  const source = document.getElementById('exp008-comparison-data');
+  const problem = document.getElementById('exp008-comparison-error');
+  const data = JSON.parse(source.textContent);
+  if (typeof d3 === 'undefined') {
+    problem.hidden = false;
+    problem.textContent = '比较图未能加载；报告内的已核验数据仍可查阅。';
+    return;
+  }
+  const format = (v, digits=2) => Number(v).toLocaleString('zh-CN', {minimumFractionDigits:digits,maximumFractionDigits:digits});
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const charts = [];
+  const mk = (tag, attrs, parent, text) => {
+    const item = document.createElementNS(svgNS, tag);
+    Object.entries(attrs || {}).forEach(([k,v]) => item.setAttribute(k,String(v)));
+    if (text !== undefined) item.textContent = text;
+    parent.appendChild(item);
+    return item;
+  };
+  const label = (svg,x,y,value,extra={}) => mk('text',{x,y,...extra},svg,value);
+  const inspectLabels = (svg) => {
+    const bounds = [...svg.querySelectorAll('text')].map(el => ({text:el.textContent,box:el.getBoundingClientRect()}));
+    const conflicts = [];
+    for (let i=0;i<bounds.length;i++) for (let j=i+1;j<bounds.length;j++) {
+      const a=bounds[i].box,b=bounds[j].box;
+      if (a.left<b.right+4 && a.right+4>b.left && a.top<b.bottom+4 && a.bottom+4>b.top) conflicts.push([bounds[i].text,bounds[j].text]);
+    }
+    const frame=svg.getBoundingClientRect();
+    const outside=bounds.filter(({box}) => box.left<frame.left-.5 || box.right>frame.right+.5 || box.top<frame.top-.5 || box.bottom>frame.bottom+.5).map(({text})=>text);
+    svg.dataset.labelConflicts=JSON.stringify(conflicts);
+    svg.dataset.labelsOutside=JSON.stringify(outside);
+  };
+  const plot = (host,title,rows,options) => {
+    const cell=document.createElement('div');cell.className='comparison-plot';
+    const heading=document.createElement('h3');heading.textContent=title;cell.appendChild(heading);
+    const svg=mk('svg',{class:'history-plot',role:'img','aria-label':title},cell);
+    host.appendChild(cell);
+    charts.push({cell,svg,rows,...options});
+  };
+  const questionHost=document.getElementById('exp008-question-plots');
+  const moneyExtent=d3.extent(data.questions.flatMap(q=>[0,q.previous/10000,q.current/10000]));
+  data.questions.forEach(q=>plot(questionHost,`${q.label} · ${q.delta_pct.toFixed(2)}%`,[
+    {label:q.reference,value:q.previous/10000,color:'var(--viz-series-2)'},
+    {label:'exp008',value:q.current/10000,color:'var(--viz-series-1)'}
+  ],{kind:'bar',extent:moneyExtent,unit:'实际费用（万元）',rowHeight:38}));
+  const forecastHost=document.getElementById('exp008-forecast-plots');
+  [0,2].forEach(offset=>[0,1].forEach(metric=>{
+    const index=offset+metric;
+    const allValues=data.forecasts.flatMap(r=>['load','pv'].flatMap(c=>[r[c][metric],r[c][metric+2]])).filter(v=>v!==null);
+    const extent=d3.extent([0,...allValues]);
+    const title=`${offset===0?'全天':'实际PV>0'} · ${metric===0?'RMSE':'WAPE'}`;
+    plot(forecastHost,title,data.forecasts.map(r=>({label:r.label,load:r.load[index],pv:r.pv[index],id:r.id})),
+      {kind:'paired',extent,unit:metric===0?'预测RMSE（kW）':'预测WAPE（%）',rowHeight:46});
+  }));
+  data.history_costs.forEach(row=>{
+    const host=document.getElementById(row.separate?'exp008-history-separate-rows':'exp008-history-cost-rows');
+    const tr=document.createElement('tr');tr.dataset.policy=row.id;
+    if(row.id==='exp008/final') tr.className='cost-selected';
+    const th=document.createElement('th');th.scope='row';th.textContent=row.label;
+    const td=document.createElement('td');td.className='text-end tabular-nums';td.textContent=format(row.cost/10000);
+    tr.append(th,td);host.appendChild(tr);
+  });
+  data.runtime.forEach(row=>{
+    const tr=document.createElement('tr');tr.dataset.runtime=row.id;
+    const th=document.createElement('th');th.scope='row';th.textContent=row.label;
+    const td=document.createElement('td');td.className='text-end tabular-nums';td.textContent=row.seconds===null?'未记录':format(row.seconds);
+    tr.append(th,td);document.getElementById('exp008-runtime-rows').appendChild(tr);
+  });
+  const draw = (chart) => {
+    const {svg,rows,extent,kind,rowHeight,unit}=chart;
+    const width=chart.cell.getBoundingClientRect().width;
+    const left=kind==='paired'?86:76, right=width-10, top=25, bottom=top+rows.length*rowHeight;
+    const height=bottom+55;
+    svg.replaceChildren();svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('height',height);
+    mk('title',{},svg,`${chart.cell.querySelector('h3').textContent}；全部数据与缺失同时显示`);
+    const accessible=rows.map(r=>kind==='bar'?`${r.label}：${r.value.toFixed(2)}`:
+      `${r.label}：负载${r.load===null?'缺失':r.load.toFixed(2)}，光伏${r.pv===null?'缺失':r.pv.toFixed(2)}`).join('；');
+    mk('desc',{},svg,accessible+'。'+unit+'；缺失不是零。');
+    const domain=[Math.min(0,extent[0]),extent[1]+(extent[1]-Math.min(0,extent[0]))*.50];
+    const x=d3.scaleLinear().domain(domain).range([left,right]);
+    const rawTicks=d3.ticks(domain[0],domain[1],width<500?3:4);
+    const tickValues=width<=400 && rawTicks.length>4 ?
+      [rawTicks[0],rawTicks[Math.floor((rawTicks.length-1)/2)],rawTicks[rawTicks.length-1]] : rawTicks;
+    mk('rect',{x:left,y:top,width:right-left,height:bottom-top,class:'plot-frame','data-chart-frame':''},svg);
+    tickValues.forEach(value=>{
+      const at=x(value);
+      mk('line',{x1:at,x2:at,y1:top,y2:bottom,class:'plot-grid'},svg);
+      label(svg,at,bottom+19,d3.format('~g')(value),{'text-anchor':value===tickValues[0]?'start':value===tickValues[tickValues.length-1]?'end':'middle'});
+    });
+    label(svg,5,14,'实验',{class:'axis-title','data-axis':'y'});
+    label(svg,(left+right)/2,height-5,unit,{class:'axis-title','data-axis':'x','text-anchor':'middle'});
+    rows.forEach((r,i)=>{
+      const cy=top+(i+.5)*rowHeight;
+      label(svg,left-8,cy+4,r.label,{'text-anchor':'end'});
+      if(kind==='bar') {
+        mk('rect',{x:left,y:cy-7,width:x(r.value)-left,height:14,fill:r.color},svg);
+        label(svg,x(r.value)+5,cy+4,format(r.value),{class:'tabular-nums'});
+      } else {
+        [['load',-11,'负'],['pv',11,'光']].forEach(([key,offset,prefix])=>{
+          const value=r[key], y=cy+offset;
+          if(value===null) {
+            label(svg,left+6,y+4,`${prefix} 缺失`);
+            return;
+          }
+          const point=x(value),color=key==='load'?'var(--viz-series-1)':'var(--viz-series-2)';
+          if(key==='load') mk('circle',{cx:point,cy:y,r:3.5,fill:color},svg);
+          else mk('rect',{x:point-3.5,y:y-3.5,width:7,height:7,fill:color},svg);
+          label(svg,point+7,y+4,`${prefix} ${value.toFixed(2)}`,{class:'tabular-nums'});
+        });
+      }
+    });
+    requestAnimationFrame(()=>inspectLabels(svg));
+  };
+  let previousWidth=-1;
+  const redraw=()=>{
+    const width=root.getBoundingClientRect().width;
+    if(Math.abs(width-previousWidth)<.5) return;
+    previousWidth=width;charts.forEach(draw);
+    root.dataset.rendered='true';
+  };
+  new ResizeObserver(redraw).observe(root);
+  redraw();
+})();
+</script>

@@ -1,0 +1,39 @@
+{
+  "price_mae": 0.046318006975575025,
+  "price_bias_pred_minus_actual": 2.1122205309000837e-05,
+  "price_rmse": 0.061947789175901255,
+  "actual_top_decile_threshold": 1.24905,
+  "top_decile_bias": -0.01710529171497018,
+  "top_decile_mae": 0.05093302623076692,
+  "top_decile_mean_true": 1.3704869646569646,
+  "top_decile_mean_pred": 1.3533816729419945,
+  "case_weighted_price_residuals": [
+    {
+      "case": "latest_forecast_old_dispatch",
+      "actual_minus_predicted_bill_same_flows": 277661.0060924156,
+      "grid_energy_weighted_pred_bias": -0.010257156100515016,
+      "emergency_at_top_price_decile_kwh": 82424.93913188897,
+      "emergency_at_top_price_decile_cost": 602388.0149241455,
+      "high_price_discharge_kwh": 2452146.9407731984,
+      "high_price_charge_kwh": 11743.200791533764
+    },
+    {
+      "case": "joint_initial",
+      "actual_minus_predicted_bill_same_flows": 242663.8867235038,
+      "grid_energy_weighted_pred_bias": -0.00884830669110353,
+      "emergency_at_top_price_decile_kwh": 137889.72492459507,
+      "emergency_at_top_price_decile_cost": 979839.0573834332,
+      "high_price_discharge_kwh": 2277269.1202882202,
+      "high_price_charge_kwh": 6624.298872677705
+    },
+    {
+      "case": "calibrated_quantile",
+      "actual_minus_predicted_bill_same_flows": 192191.83440876365,
+      "grid_energy_weighted_pred_bias": -0.00661440610635678,
+      "emergency_at_top_price_decile_kwh": 36640.458588145775,
+      "emergency_at_top_price_decile_cost": 263745.91575797333,
+      "high_price_discharge_kwh": 2353684.123000462,
+      "high_price_charge_kwh": 8884.455238289838
+    }
+  ]
+}

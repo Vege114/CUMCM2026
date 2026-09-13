@@ -1,0 +1,21 @@
+{
+  "diagnostic_only": true,
+  "sources_sha256": {
+    "data/results/exp006/primary/dispatch_2.npz": "dd5c5f71998f884c55fb15eaaea23b728b4e31dd17e20428b086eb288e56d0b7",
+    "data/results/exp008/mode_budget_hold1_physical/direct_hgb_memory_hold1_cap8_kappa0_334days/dispatch.npz": "0bae80f584382ba80779f996342f8650ac5aa885174a8543a04a8d1aab6ebd2f",
+    "reports/experiments/exp006/report.md": "3b24f8118b72a61e8b8918b0630f1e584b600e4ecfcaecaa76b3661fc0332713",
+    "experiments/problem2/tree_planning/verify.py": "50cc28e37eb85d026700eb0a31b88934e9974c517208249199b1553593443f8a",
+    "experiments/exp008/closed_loop.py": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+    "experiments/exp008/run_hgb_mode_budget_hold1.py": "cfa014276980ffed382e21c42bfa6fcc0ae584362b29e265083ba1da85f107bb"
+  },
+  "no_new_purchase_plans_or_annual_policy_run": true,
+  "fixed_initial_inventory_probes_kwh": [
+    100.0,
+    1000.0
+  ],
+  "probe_uses_realized_future_for_retrospective_evaluation": true,
+  "probe_policy_selected_using_future": false,
+  "probe_start_SOC_is_free_intervention_not_reachable_continuous_dispatch": true,
+  "probe_actions_not_exported": true,
+  "source_sha256": "0fcfe3513857610f2cf123cc957f2039aaca7467330ce884ae965413d49f16e4"
+}

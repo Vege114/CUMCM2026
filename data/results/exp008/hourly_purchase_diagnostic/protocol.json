@@ -1,0 +1,29 @@
+{
+  "days": [
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "base_directory": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/load_memory_half_physical3_30days",
+  "comparison": "same_initial_SOC_and_mask_per_day_not_continuous_replacement",
+  "purchase": "max(0, fixed_memory_forecast_net_kwh + delta_hour_kwh)",
+  "dimensions": 24,
+  "initial_delta": "hourly_mean(original_refined_q-forecast_net)",
+  "bounds": "plus/minus LIMIT+max(abs(historical_net_path-forecast_net))",
+  "maxiter": 120,
+  "objective": {
+    "throughput": 0.002,
+    "variation": 0.0,
+    "terminal": 0.45,
+    "deadband": 0.0
+  },
+  "current_actual_access": "all five optimizations finish before settlement reads",
+  "terminal_inventory_bound": "positive(original_final_SOC-candidate_final_SOC)*ETA*5*max(price)",
+  "source_sha256": "fd30a2fe9b66016fd371461602453bb89ffcc6da9cfe4f4a1af9aaccf0134509",
+  "base_dispatch_sha256": "cca08f0f70d6569292320442b89eb18fa5919ebc10938c7401f1c64baf3efda8",
+  "base_forecast_sha256": "615004efbc7c9e5bca76e77d90706a43ee00883f8126b096df165c81c6d0b44b",
+  "known_kinks": "zero-purchase point and clipped storage are nonsmooth; finite differences use interior probes",
+  "full_policy_or_global_optimum_claimed": false
+}

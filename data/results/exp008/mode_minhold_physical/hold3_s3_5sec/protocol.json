@@ -1,0 +1,42 @@
+{
+  "candidate_count": 1,
+  "forecast": "monthly_Joint_then_fixed_Ridge28_no_memory",
+  "scenario_count": 3,
+  "scenario_selection": "equally_spaced_in_complete_history_origins",
+  "common_mode_resolution_slots": 1,
+  "minimum_planned_mode_hold_slots": 3,
+  "mode_hold_is_planned_mask_not_guaranteed_nonidle_battery_activity": true,
+  "initial_planned_mode": 1,
+  "initial_planned_run_slots": 1,
+  "initial_state_interpretation": "warmup ended charging; conservatively count one known slot and lock first2 slots",
+  "cross_midnight": "carry exact last planned mode and its completed run length; lock pending initial slots",
+  "switching_cost": 50.0,
+  "wear": 0.002,
+  "mip_seconds": 5.0,
+  "target_mip_gap": 0.002,
+  "greedy_refinement": "all28 complete daily paths, maxiter120, wear.002, TV0, terminal.45, deadband0",
+  "actual_execution": "strict_mask_and_deadband0_with_continuous_SOC",
+  "computational_gate": "all first3 days feasible, physically checked, mip_gap<=.05",
+  "if_gate_passes": "continue same fixed configuration and all states to30 days",
+  "if_gate_fails": "stop_without_time_limit_or_parameter_search",
+  "nonanticipative_recourse_certificate": false,
+  "development_year_not_independent_test": true,
+  "forecast_values_sha256": "389b4e5d127aecfc9e61e9f6e7b374a9fca29b47f518d217cbcec7aaa5e86514",
+  "source_data_hashes": {
+    "\u9644\u4ef61.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "source_sha256": {
+    "experiments/exp008/run_mode_minhold.py": "e4736e58b4a15def1a157a6fe2cf4c7a60e1125be63c1487e4238d4b721e720b",
+    "experiments/exp008/mode_minhold_physical.py": "9484482336fc2e9587ccb3c12c27e2b6a261bb6ae739c03feff5afbddbc08491",
+    "experiments/exp008/closed_loop.py": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/exp008/neural_joint_dispatch.py": "840b72e4ec79e33b74dad9463c9a35729bd3c4d40a3dd6e91630f9cf678ba4ad",
+    "experiments/exp008/neural_joint_calibration.py": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+    "experiments/exp008/verify.py": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+    "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce"
+  }
+}

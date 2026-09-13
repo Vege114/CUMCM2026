@@ -1,0 +1,19 @@
+{
+  "data_sha256": {
+    "\u9644\u4ef61.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "forecast_values_sha256": "389b4e5d127aecfc9e61e9f6e7b374a9fca29b47f518d217cbcec7aaa5e86514",
+  "sources": {
+    "weighted_mode_planning": "29185a406eca63b75566452d36993627c062d44620d46fe810ac0ab742157658",
+    "neural_joint_dispatch": "840b72e4ec79e33b74dad9463c9a35729bd3c4d40a3dd6e91630f9cf678ba4ad",
+    "neural_joint_calibration": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+    "neural_joint": "a838d59748af0fb0858045ebde254e0409e076d75f296718aac9c8ca37745ec3",
+    "forecast": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "forecast_calibration": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "closed_loop": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+    "planner": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "verify": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36"
+  }
+}

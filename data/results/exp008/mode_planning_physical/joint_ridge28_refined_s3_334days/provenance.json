@@ -1,0 +1,15 @@
+{
+  "source_data_hashes": {
+    "\u9644\u4ef61.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "calibrated_forecast_values_sha256": "389b4e5d127aecfc9e61e9f6e7b374a9fca29b47f518d217cbcec7aaa5e86514",
+  "dependency_source_sha256": {
+    "experiments/exp008/closed_loop.py": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "experiments/exp008/unified_forecast.py": "184e91502f70bf83088e3bc752661577f58f38cb34fa30ea9bd41a997480223c",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62"
+  }
+}

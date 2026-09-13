@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "metrics": {
+    "base": {
+      "slot_crps_kwh": 30.420266818277707,
+      "high_price_slot_crps_kwh": 29.888138298790157,
+      "prefix_energy_crps_kwh": 1030.3210575002338,
+      "daily_energy_crps_kwh": 1925.4610135452438
+    },
+    "scaled": {
+      "slot_crps_kwh": 30.434784053095473,
+      "high_price_slot_crps_kwh": 29.886710726466898,
+      "prefix_energy_crps_kwh": 1030.5763484976214,
+      "daily_energy_crps_kwh": 1926.181833547929
+    }
+  },
+  "gate_components": {
+    "slot_crps_kwh": false,
+    "high_price_slot_crps_kwh": true,
+    "prefix_energy_crps_kwh": false,
+    "daily_energy_crps_kwh": false
+  },
+  "lp_continuation_gate_passed": false,
+  "final_model_selection": false
+}

@@ -1,0 +1,211 @@
+{
+  "scope": "raw CSV schema, original bytes, dates, right-end10minute time semantics and final selected archive source equality",
+  "source_is_task_provided_not_live_data": true,
+  "files": [
+    {
+      "source": {
+        "path": "data/raw/附件1.csv",
+        "sha256": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+        "bytes": 4614
+      },
+      "shape": [
+        144,
+        4
+      ],
+      "column_count": 4,
+      "duplicate_columns": 0,
+      "original_null_cells": 0,
+      "exact_right_end_grid_10_to_1440_minutes": true,
+      "known_before_operation": true,
+      "column_units": [
+        "time_right_endpoint",
+        "yuan/kWh",
+        "kW",
+        "kW"
+      ],
+      "numeric_finite": true,
+      "numeric_missing_count": 0,
+      "numeric_negative_count": 0,
+      "numeric_min": 0.0,
+      "numeric_max": 7612.316
+    },
+    {
+      "source": {
+        "path": "data/raw/附件2_光伏发电实际功率.csv",
+        "sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+        "bytes": 321147
+      },
+      "shape": [
+        365,
+        145
+      ],
+      "column_count": 145,
+      "duplicate_columns": 0,
+      "original_null_cells": 0,
+      "dates_exact2025": true,
+      "duplicate_dates": 0,
+      "exact_right_end_grid_10_to_1440_minutes": true,
+      "chronological_intervals": 52560,
+      "value_unit": "kW",
+      "formal_slice_rows": [
+        31,
+        365
+      ],
+      "numeric_finite": true,
+      "numeric_missing_count": 0,
+      "numeric_negative_count": 0,
+      "numeric_min": 0.0,
+      "numeric_max": 10216.2
+    },
+    {
+      "source": {
+        "path": "data/raw/附件2_小区负载.csv",
+        "sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+        "bytes": 490298
+      },
+      "shape": [
+        365,
+        145
+      ],
+      "column_count": 145,
+      "duplicate_columns": 0,
+      "original_null_cells": 0,
+      "dates_exact2025": true,
+      "duplicate_dates": 0,
+      "exact_right_end_grid_10_to_1440_minutes": true,
+      "chronological_intervals": 52560,
+      "value_unit": "kW",
+      "formal_slice_rows": [
+        31,
+        365
+      ],
+      "numeric_finite": true,
+      "numeric_missing_count": 0,
+      "numeric_negative_count": 0,
+      "numeric_min": 1995.7176,
+      "numeric_max": 7978.8849
+    },
+    {
+      "source": {
+        "path": "data/raw/附件3.csv",
+        "sha256": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+        "bytes": 218723
+      },
+      "shape": [
+        1460,
+        26
+      ],
+      "column_count": 26,
+      "duplicate_columns": 0,
+      "original_null_cells": 1095,
+      "date_forward_fill_only_for_merged_date_cells": true,
+      "null_dates_before_ffill": 1095,
+      "null_cells_after_date_ffill": 0,
+      "release_count": 1460,
+      "unique_release_count": 1460,
+      "each_day_releases": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "all_days_exact_four_releases": true,
+      "lead_hours": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "value_semantics": "24 hourly forecast knots after issue; linear interpolation plus interval integration; observed preceding10minute anchor is legal",
+      "future_issue_access_rule": "release origin <= current issue; future releases forbidden",
+      "numeric_finite": true,
+      "numeric_missing_count": 0,
+      "numeric_negative_count": 0,
+      "numeric_min": 0.0,
+      "numeric_max": 9995.8875
+    },
+    {
+      "source": {
+        "path": "data/raw/附件4.csv",
+        "sha256": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3",
+        "bytes": 367989
+      },
+      "shape": [
+        365,
+        145
+      ],
+      "column_count": 145,
+      "duplicate_columns": 0,
+      "original_null_cells": 0,
+      "dates_exact2025": true,
+      "duplicate_dates": 0,
+      "exact_right_end_grid_10_to_1440_minutes": true,
+      "chronological_intervals": 52560,
+      "value_unit": "yuan/kWh",
+      "formal_slice_rows": [
+        31,
+        365
+      ],
+      "numeric_finite": true,
+      "numeric_missing_count": 0,
+      "numeric_negative_count": 0,
+      "numeric_min": 0.0076,
+      "numeric_max": 1.7936
+    }
+  ],
+  "unit_contract": {
+    "raw_load_PV": "interval kW; planning energy kWh=value/6",
+    "charge_discharge_annual_archives": "AC kWh/10min; plotted signed power =6*(charge-discharge)",
+    "soc": "kWh;145 boundaries/day",
+    "price": "yuan/kWh",
+    "fees": "yuan; four components original/up/down/emergency"
+  },
+  "time_semantics": {
+    "timezone": "source local calendar; no timezone conversion",
+    "interval": "row endpoint00:10 corresponds[00:00,00:10); 0:00+1 means24:00 end of same row day",
+    "issue_origin_index": "zero-based day*144+slot; observed indices strictly beloworigin",
+    "formal_start_index": 4464,
+    "formal_stop_index_exclusive": 52560,
+    "formal_days": 334,
+    "formal_intervals": 48096
+  },
+  "train_validation_protocol": {
+    "forecast_absolute_hgb": {
+      "path": "data/results/exp008/forecast_absolute_hgb/protocol.json",
+      "sha256": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+      "bytes": 3967
+    },
+    "forecast_absolute_extra_trees": {
+      "path": "data/results/exp008/forecast_absolute_extra_trees/protocol.json",
+      "sha256": "ea3e888d9d7bbaded17e2644b6f4c1eff741da17ee7b65c62a155cb212bded2e",
+      "bytes": 6856
+    },
+    "forecast_hgb_extra_trees_half": {
+      "path": "data/results/exp008/forecast_hgb_extra_trees_half/protocol.json",
+      "sha256": "22133990f741e67240e9091d546d21b706e721640f5c647e0722e0a2ed801a61",
+      "bytes": 6072
+    }
+  },
+  "no_future_label_claim_scope": "full stored cutoff audit plus sampled future-mutation audits, see final_selection_audit.json",
+  "raw_data_checks_passed": true
+}

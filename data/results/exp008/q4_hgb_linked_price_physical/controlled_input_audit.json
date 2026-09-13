@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "all_original_HGB_issued_arrays_equal": {
+    "origins": true,
+    "values": true
+  },
+  "same_warmup_raw_inputs_initial_SOC_mode": true,
+  "only_config_differences": {
+    "change": {
+      "old": null,
+      "new": "price model appends own-issued HGB load/PV; load/PV predictions unchanged"
+    },
+    "price_information": {
+      "old": "midnight causal forecast for optimization; actual price only for settlement",
+      "new": "own-issued HGB-linked midnight causal forecast for optimization; actual price only for settlement"
+    },
+    "price_model": {
+      "old": null,
+      "new": "Ridge28_plus_own_issued_HGB_load_PV"
+    }
+  },
+  "all_plan_refine_execute_calls_AST_equal": true,
+  "old_runner_sha256": "514a1ca547f1ce63f45325b67dfee550d89e50623367b27cf886c38362309e4b",
+  "new_runner_sha256": "9a0b521fc59d2825d5a61b7ce48d502b063f168c3597e6719c3ad704b272ba52",
+  "not_a_dispatch_outcome_or_global_optimality_claim": true
+}

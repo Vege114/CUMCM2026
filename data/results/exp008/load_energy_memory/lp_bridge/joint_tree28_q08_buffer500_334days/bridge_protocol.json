@@ -1,0 +1,31 @@
+{
+  "name": "joint",
+  "days": 334,
+  "gain": null,
+  "forecast": "joint_ridge28",
+  "risk": "tree28_built_from_this_store_current_and_prior_outputs",
+  "planner": {
+    "calibration": "joint_ridge28",
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0
+  },
+  "initial_soc": 1421.7991105135516,
+  "same_continuous_soc_start": true,
+  "stage": "forecast_only_fast_LP_bridge_not_final_action_constrained_policy",
+  "comparison": "full334day_predeclared_pair_not_selected_month_subset",
+  "source_sha256": "05d8b10fa4f9fe2bf2200d11dc276fd5d113ba7cd91081bd7ad42349e9e7a238",
+  "source_data_hashes": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "forecast_values_sha256": "389b4e5d127aecfc9e61e9f6e7b374a9fca29b47f518d217cbcec7aaa5e86514",
+  "dependencies": {
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "experiments/exp008/neural_joint_calibration.py": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+    "experiments/exp008/risk_window.py": "4cc8a38daa4fe1c9bd0419fb07da41fd3480be817b6c59b63ed9969116dfead9",
+    "experiments/exp008/controller_candidate.py": "aea1b54c736c6efc9b1e1942996119a6c3eba37917f3e047c277d8f2ad004b1d",
+    "experiments/exp008/verify.py": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36"
+  }
+}

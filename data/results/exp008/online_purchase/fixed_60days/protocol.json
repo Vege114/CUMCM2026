@@ -1,0 +1,22 @@
+{
+  "calibration": "ridge_28",
+  "history_days": 28,
+  "quantile": 0.8,
+  "blocks": 24,
+  "slots_per_block": 6,
+  "step_kwh": 20.0,
+  "theta_bound_kwh": 150.0,
+  "decay": 0.995,
+  "adagrad_epsilon": 1e-08,
+  "wear": 0.0,
+  "variation": 0.0,
+  "deadband": 0.0,
+  "theta_unit": "kWh per 10-minute slot, shared across six slots of the hour",
+  "terminal": "minimum known fixed tariff / sqrt(.9)",
+  "gradient_at_zero_purchase": "zero projection derivative as predeclared",
+  "update": "theta_next=clip(decay*theta-step*gradient/sqrt(cumulative_gradient_squared),bounds)",
+  "parameter_selection": "fixed before evaluation; no hyperparameter sweep",
+  "parameter_availability": "gradient from completed day d first usable at midnight d+1",
+  "evaluation_role": "2025 development exploration; not independent validation",
+  "days": 60
+}

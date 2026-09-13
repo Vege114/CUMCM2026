@@ -1,0 +1,14 @@
+{
+  "name": "halfhour_ridge_s7_switch50_refine_pilot30",
+  "days": 30,
+  "calibration": "ridge_28",
+  "switching": 50.0,
+  "scenarios": 7,
+  "block_slots": 3,
+  "seconds": 5.0,
+  "deadband": 0.0,
+  "refinement": true,
+  "rank_paths": false,
+  "development_on_evaluation_year": true,
+  "source_sha256": "2756370f8798285c886bef776121f5fcd3e336cf4e9f2cff29c516f0a8229c36"
+}

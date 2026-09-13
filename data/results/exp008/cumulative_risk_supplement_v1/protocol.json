@@ -1,0 +1,30 @@
+{
+  "supplement_only": true,
+  "original_artifacts_read_only_sha256": {
+    "experiments/exp008/cumulative_risk_planning.py": "1f6d0f5dfb8c38859fddf197d8098e0cc441e7a0d613f4acd1be785272e47c4f",
+    "data/results/exp008/cumulative_risk_planning/source_snapshot.py": "1f6d0f5dfb8c38859fddf197d8098e0cc441e7a0d613f4acd1be785272e47c4f",
+    "data/results/exp008/cumulative_risk_planning/protocol.json": "f028a102e49c74e3d788ca2e1d48d2cf1bb571a86f794d2204ee1fec8e16c99d",
+    "data/results/exp008/cumulative_risk_planning/risk_inputs.npz": "86f0876da5469d44bad0fdffb654bb5c2ed4755bc0d903aa7e8843116fa68509",
+    "data/results/exp008/cumulative_risk_planning/causality_verification.json": "d83d81accb2970d361347f94c1988752a0e0fed1ccf7729081815fc72fe76d6e",
+    "data/results/exp008/cumulative_risk_planning/summary.json": "b553d565f1053dced73975fd1a703658b50e68d2e65c2f56583c14b847e33f62",
+    "data/results/exp008/cumulative_risk_planning/prefix/dispatch_2.npz": "d04079efce1ad650f9797c48fd8c86b3665790d89879254755dc2e1759de07e3",
+    "data/results/exp008/cumulative_risk_planning/prefix/audit.json": "842e33211b50533db2f2624a62e22ffde85b529fe716a318f19fc0f06475697f",
+    "data/results/exp008/cumulative_risk_planning/prefix/summary.json": "9054dbf4ee056fc709187e201919359a139a50a0c870c48ba4436e19b4cfe238",
+    "data/results/exp008/cumulative_risk_planning/prefix/daily.csv": "9d28ccbb913418ebb0a4a718f41d0e96b815947645a79962668c113387b752f3",
+    "data/results/exp008/cumulative_risk_planning/point/dispatch_2.npz": "294e8c3149f56b47dab9d1800a090d681e55d8a767f2125d0b1aebe2124dda3f",
+    "data/results/exp008/cumulative_risk_planning/point/audit.json": "07a01153764c7f73868bdf58c045ac59a45da10b12e5f3a3f9075f4c824b9acb",
+    "data/results/exp008/cumulative_risk_planning/point/summary.json": "5c885cc7a09b9e263c6ee728f28e51b543b51b9de0735cba4a75dbb1be4b9bd8",
+    "data/results/exp008/cumulative_risk_planning/point/daily.csv": "83e3c5078e5355fe1f7a4041eeb4518be6fb7358b84a3c285f677d8d881bd7ed"
+  },
+  "why_new_test": "original future-store +60000 on both channels cancels in net; use asymmetric +[60000,20000]",
+  "future_mutation_days": [
+    31,
+    32,
+    60,
+    151,
+    243,
+    364
+  ],
+  "source_sha256": "3eb42dbdb2f76e585247fa12467db3d98237b824bc5e2d5e9110b9a55e009648",
+  "new_policies_or_annual_plans_run": false
+}

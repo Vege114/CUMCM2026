@@ -1,0 +1,23 @@
+{
+  "days": 334,
+  "one_fixed_candidate": true,
+  "scale": "max(100kW,p95 positivePV from preceding <=28 complete days)",
+  "formula": "currentNetForecast+(historicalLoadError-historicalPVError*currentScale/historicalIssueScale)/6",
+  "sample_count": 28,
+  "january_fallback_labelled": true,
+  "raw_joint_chronological_path_pairing_preserved": true,
+  "no_current_day_truth_in_distribution_or_scale": true,
+  "no_ratio_clipping_or_error_recentering": true,
+  "no_rated_capacity_or_weather_interpretation": true,
+  "matched_control": "same complete28 raw errors in cumulative_risk_planning/point",
+  "gate_before_lp": "all four empirical CRPS metrics strictly decrease versus matched raw paths",
+  "lp_spec": {
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0,
+    "wear": 0.002
+  },
+  "true_empirical_lp_quantile": 0.8,
+  "development_not_independent_test": true,
+  "source_sha256": "e68e9a163705211902f5e503b915ddb12b42b3a6d0abd355a2ee825b8872c4c5"
+}

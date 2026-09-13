@@ -1,0 +1,298 @@
+{
+  "candidate_count": 1,
+  "model_id": "absolute_net_hgb_projected_ridge28_memory_half",
+  "seed": 42,
+  "target": "absolute net demand N=actual_load-actual_PV in kW, unchanged across all months",
+  "models_per_month": 1,
+  "months": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "features": [
+    "yesterday_load",
+    "yesterday_pv",
+    "yesterday_net",
+    "previous_week_load",
+    "previous_week_pv",
+    "previous_week_net",
+    "mean3_load",
+    "mean3_pv",
+    "mean3_net",
+    "mean7_load",
+    "mean7_pv",
+    "mean7_net",
+    "std7_load",
+    "std7_pv",
+    "std7_net",
+    "slot_sin",
+    "slot_cos",
+    "slot_sin2",
+    "slot_cos2",
+    "weekday_sin",
+    "weekday_cos",
+    "yesterday_mean_load",
+    "yesterday_mean_pv",
+    "yesterday_std_load",
+    "yesterday_std_pv",
+    "yesterday_min_load",
+    "yesterday_min_pv",
+    "yesterday_max_load",
+    "yesterday_max_pv",
+    "yesterday_mean_net",
+    "yesterday_std_net"
+  ],
+  "feature_count": 31,
+  "model_configuration": {
+    "loss": "squared_error",
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 2.0,
+    "learning_rate": 0.08,
+    "early_stopping": true,
+    "random_state": 42,
+    "n_iter_no_change": 10,
+    "tol": 1e-07,
+    "scoring": "loss",
+    "validation_fraction": null
+  },
+  "training": "split_days(month): days7..month_start-8 training, last7 complete days validation; explicit X_val/y_val; never refit on formal month",
+  "validation": "fixed HGB patience10 loss early stopping; final fitted estimator retained, no iteration search on formal scores",
+  "history_weight_half_life_days": 90,
+  "official_PV_or_future_actual_price": false,
+  "CNN_or_periodic_forecast_reference_features_or_labels": false,
+  "load_PV_interface_semantics": "variance-weighted physically constrained reconstruction around signed existing raw absolute HGB L0/P0; not independently new load/PV estimators",
+  "projection_variances_known_before_each_month": {
+    "2": {
+      "load_variance_kw2": 21411.8543772304,
+      "pv_variance_kw2": 63756.96335603246,
+      "load_delta_weight": 0.2514048562267168,
+      "validation_days": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "validation_label_stop_exclusive": 4464,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "3": {
+      "load_variance_kw2": 17441.279814130456,
+      "pv_variance_kw2": 89206.12681086463,
+      "load_delta_weight": 0.16354152778847528,
+      "validation_days": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "validation_label_stop_exclusive": 8496,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "4": {
+      "load_variance_kw2": 17240.12527338662,
+      "pv_variance_kw2": 127538.0544662017,
+      "load_delta_weight": 0.1190795830172498,
+      "validation_days": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "validation_label_stop_exclusive": 12960,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "5": {
+      "load_variance_kw2": 14588.242567515459,
+      "pv_variance_kw2": 163616.43856948247,
+      "load_delta_weight": 0.08186228596487033,
+      "validation_days": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "validation_label_stop_exclusive": 17280,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "6": {
+      "load_variance_kw2": 22036.07583228102,
+      "pv_variance_kw2": 101249.0579538516,
+      "load_delta_weight": 0.17874073828323725,
+      "validation_days": [
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "validation_label_stop_exclusive": 21744,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "7": {
+      "load_variance_kw2": 33213.53221858515,
+      "pv_variance_kw2": 146506.50837379237,
+      "load_delta_weight": 0.18480705940811945,
+      "validation_days": [
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ],
+      "validation_label_stop_exclusive": 26064,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "8": {
+      "load_variance_kw2": 51583.939878056655,
+      "pv_variance_kw2": 80323.7842998329,
+      "load_delta_weight": 0.3910607979900481,
+      "validation_days": [
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211
+      ],
+      "validation_label_stop_exclusive": 30528,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "9": {
+      "load_variance_kw2": 36797.98828969084,
+      "pv_variance_kw2": 139516.8651879078,
+      "load_delta_weight": 0.2087061161546786,
+      "validation_days": [
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242
+      ],
+      "validation_label_stop_exclusive": 34992,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "10": {
+      "load_variance_kw2": 27685.933012299334,
+      "pv_variance_kw2": 56801.34582219057,
+      "load_delta_weight": 0.32769351071817476,
+      "validation_days": [
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272
+      ],
+      "validation_label_stop_exclusive": 39312,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "11": {
+      "load_variance_kw2": 15349.614261337343,
+      "pv_variance_kw2": 63145.09475409067,
+      "load_delta_weight": 0.19554966766384724,
+      "validation_days": [
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "validation_label_stop_exclusive": 43776,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    },
+    "12": {
+      "load_variance_kw2": 16783.38111280783,
+      "pv_variance_kw2": 43526.12046512721,
+      "load_delta_weight": 0.27828751148141195,
+      "validation_days": [
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333
+      ],
+      "validation_label_stop_exclusive": 48096,
+      "source": "original absolute load/PV HGB validation RMSE before nonnegativity/daylight postprocessing"
+    }
+  },
+  "projection": "delta=N-(L0-P0); w=varL/(varL+varP); daylight L=max(L0+w*delta,max(N,0)), P=L-N",
+  "night_rule": "same causal past28day union daylight mask expanded20min; night PV0 and load=max(N,0); count all N<0 night corrections",
+  "fixed_postprocessing": [
+    "constrained projection",
+    "same unmodified Ridge28",
+    "same nonrecursive underlying-load memory gain0.5"
+  ],
+  "primary_candidate": "absolute_net_hgb_projected_ridge28_memory_half",
+  "primary_comparator": "direct_hgb_ridge28_memory_half",
+  "dispatch_gate": {
+    "metrics": [
+      "rmse_kw",
+      "high_price_rmse_kw",
+      "daily_energy_rmse_kwh",
+      "cumulative_error_rmse_kwh"
+    ],
+    "rule": "all four full-pipeline metrics strictly better than original absolute full pipeline and causal tests pass"
+  },
+  "raw_net_and_physical_projected_net_reported_separately": true,
+  "price_weighted_rmse_is_additional_not_selection_metric": true,
+  "conditional_bridge": "one signed-store tree28/q.8/buffer500 full334 bridge, own historical residuals; only after fixed gate",
+  "formal_month_truth_used_to_choose_projection_weight_or_Net_model": false,
+  "development_on_examined2025_not_independent_test": true,
+  "source_sha256": {
+    "experiments/exp008/forecast_absolute_net_hgb.py": "1ef258cb594a718487484994801bdc9aaee85ddbca47d898b8cf292f68b5e774",
+    "experiments/exp008/forecast_absolute_hgb.py": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+    "experiments/exp008/forecast_net_hgb.py": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "experiments/exp008/forecast_shape_diagnostic.py": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/exp008/audited_store_bridge.py": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6"
+  },
+  "input_artifact_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/training_audit.json": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/causality_verification.json": "2304b92248abe318a3e1d22fb967ff582c095e4c3659131323f8f5ff3e6583cc",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_raw.npz": "a95bf4e98dc46cf1224301c25ee6c42fd33c31f963197157e105572807aa586b",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095"
+  },
+  "raw_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

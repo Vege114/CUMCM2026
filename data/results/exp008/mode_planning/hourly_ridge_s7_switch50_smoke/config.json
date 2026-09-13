@@ -1,0 +1,12 @@
+{
+  "name": "hourly_ridge_s7_switch50_smoke",
+  "days": 3,
+  "calibration": "ridge_28",
+  "switching": 50.0,
+  "scenarios": 7,
+  "block_slots": 6,
+  "seconds": 5.0,
+  "deadband": 0.0,
+  "development_on_evaluation_year": true,
+  "source_sha256": "ce86e0ee6e725d4b6830d42756b00815b63217ad9db3f01210cc19c13a45bd56"
+}

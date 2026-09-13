@@ -1,0 +1,82 @@
+{
+  "reason": "original diagnostic episode counter used sign without1e-6kWh tolerance; numerical residual flows could inflate episodes",
+  "threshold_kwh": 1e-06,
+  "original_files_preserved_sha256": {
+    "data/results/exp008/budget_feedback/grid100_fixed5_diagnostic/matched_metrics.csv": "77e7e40c2414c344c7b93b2c8880521c8aa695013b11c963023995c5b8243d7a",
+    "data/results/exp008/budget_feedback/grid100_fixed5_diagnostic/deltas.csv": "b7ab9a15d8130b59c7faad4b6cb4630089a34efa13937e465aa6aa3164e3a289"
+  },
+  "physical_arrays_purchases_and_cash_fees_unchanged": true,
+  "counts": [
+    {
+      "day": 31,
+      "grid_kwh": 200,
+      "old_unthresholded_episodes": 14,
+      "corrected_episodes": 14,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 31,
+      "grid_kwh": 100,
+      "old_unthresholded_episodes": 14,
+      "corrected_episodes": 14,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 90,
+      "grid_kwh": 200,
+      "old_unthresholded_episodes": 16,
+      "corrected_episodes": 16,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 90,
+      "grid_kwh": 100,
+      "old_unthresholded_episodes": 17,
+      "corrected_episodes": 17,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 151,
+      "grid_kwh": 200,
+      "old_unthresholded_episodes": 13,
+      "corrected_episodes": 13,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 151,
+      "grid_kwh": 100,
+      "old_unthresholded_episodes": 13,
+      "corrected_episodes": 13,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 243,
+      "grid_kwh": 200,
+      "old_unthresholded_episodes": 8,
+      "corrected_episodes": 8,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 243,
+      "grid_kwh": 100,
+      "old_unthresholded_episodes": 11,
+      "corrected_episodes": 11,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 364,
+      "grid_kwh": 200,
+      "old_unthresholded_episodes": 12,
+      "corrected_episodes": 12,
+      "subtolerance_nonzero_slots": 0
+    },
+    {
+      "day": 364,
+      "grid_kwh": 100,
+      "old_unthresholded_episodes": 12,
+      "corrected_episodes": 12,
+      "subtolerance_nonzero_slots": 0
+    }
+  ],
+  "use_for_episode_comparison": "matched_metrics_thresholded.csv/deltas_thresholded.csv"
+}

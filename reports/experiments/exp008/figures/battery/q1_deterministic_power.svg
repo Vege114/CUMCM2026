@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="854.549219pt" height="313.96pt" viewBox="0 0 854.549219 313.96" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-13T08:47:14.959741</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 313.96 
+L 854.549219 313.96 
+L 854.549219 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 53.682813 255.28 
+L 834.882812 255.28 
+L 834.882812 25.24 
+L 53.682813 25.24 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m98dbe8b450" d="M 0 0 
+L 0 3.5 
+" style="stroke: #51545a; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m98dbe8b450" x="53.682813" y="255.28" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: middle; fill: #51545a" x="53.682813" y="270.88" transform="rotate(-0 53.682813 270.88)">00:00</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m98dbe8b450" x="248.982812" y="255.28" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: middle; fill: #51545a" x="248.982812" y="270.88" transform="rotate(-0 248.982812 270.88)">06:00</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m98dbe8b450" x="444.282812" y="255.28" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: middle; fill: #51545a" x="444.282812" y="270.88" transform="rotate(-0 444.282812 270.88)">12:00</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m98dbe8b450" x="639.582813" y="255.28" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: middle; fill: #51545a" x="639.582813" y="270.88" transform="rotate(-0 639.582813 270.88)">18:00</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m98dbe8b450" x="834.882812" y="255.28" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: middle; fill: #51545a" x="834.882812" y="270.88" transform="rotate(-0 834.882812 270.88)">24:00</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <path d="M 53.682813 245.782936 
+L 834.882812 245.782936 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke: #e5e7eb; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <defs>
+       <path id="m8905d696c8" d="M 0 0 
+L -3.5 0 
+" style="stroke: #51545a; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m8905d696c8" x="53.682813" y="245.782936" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: end; fill: #51545a" x="46.682813" y="250.082936" transform="rotate(-0 46.682813 250.082936)">-5000</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <path d="M 53.682813 140.26 
+L 834.882812 140.26 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke: #e5e7eb; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m8905d696c8" x="53.682813" y="140.26" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: end; fill: #51545a" x="46.682813" y="144.56" transform="rotate(-0 46.682813 144.56)">0</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <path d="M 53.682813 34.737064 
+L 834.882812 34.737064 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke: #e5e7eb; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m8905d696c8" x="53.682813" y="34.737064" style="fill: #51545a; stroke: #51545a; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: end; fill: #51545a" x="46.682813" y="39.037064" transform="rotate(-0 46.682813 39.037064)">5000</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 10px; font-family: 'Heiti TC'; text-anchor: middle; fill: #30343b" x="15.8" y="140.26" transform="rotate(-90 15.8 140.26)">净电池功率 / kW</text>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <path d="M 59.107813 86.743272 
+L 64.532813 86.743272 
+L 69.957813 86.743272 
+L 75.382812 86.743272 
+L 80.807813 86.743272 
+L 86.232813 86.743272 
+L 91.657813 86.743272 
+L 97.082813 86.743272 
+L 102.507812 86.743272 
+L 107.932813 87.34748 
+L 113.357812 108.452067 
+L 118.782813 108.452067 
+L 124.207813 108.452067 
+L 129.632812 129.556654 
+L 135.057813 140.26 
+L 140.482812 140.26 
+L 145.907813 140.26 
+L 151.332812 140.26 
+L 156.757812 140.26 
+L 162.182813 140.26 
+L 167.607812 140.26 
+L 173.032812 140.26 
+L 178.457812 140.26 
+L 183.882812 140.26 
+L 189.307813 140.26 
+L 194.732812 140.26 
+L 200.157813 140.26 
+L 205.582813 140.26 
+L 211.007812 140.26 
+L 216.432813 140.26 
+L 221.857812 140.26 
+L 227.282812 140.26 
+L 232.707812 161.156655 
+L 238.132812 182.261243 
+L 243.557812 203.36583 
+L 248.982812 224.470417 
+L 254.407813 223.258685 
+L 259.832812 218.326379 
+L 265.257812 215.154416 
+L 270.682813 210.853181 
+L 276.107813 207.276312 
+L 281.532812 203.886622 
+L 286.957812 197.931691 
+L 292.382812 192.18573 
+L 297.807812 185.465618 
+L 303.232813 176.141627 
+L 308.657812 180.867435 
+L 314.082812 193.243672 
+L 319.507812 188.620416 
+L 324.932813 179.458354 
+L 330.357812 173.768099 
+L 335.782812 167.325468 
+L 341.207812 162.870473 
+L 346.632812 159.936919 
+L 352.057812 154.475142 
+L 357.482813 148.414416 
+L 362.907812 143.117002 
+L 368.332812 138.053634 
+L 373.757812 133.569284 
+L 379.182813 129.552071 
+L 384.607812 125.446659 
+L 390.032812 121.688732 
+L 395.457812 118.287561 
+L 400.882812 114.804185 
+L 406.307813 111.717382 
+L 411.732812 109.361713 
+L 417.157812 88.257126 
+L 422.582812 88.257126 
+L 428.007812 67.152539 
+L 433.432812 46.047952 
+L 438.857813 34.744843 
+L 444.282812 34.744843 
+L 449.707812 34.744843 
+L 455.132812 34.744843 
+L 460.557812 43.452349 
+L 465.982812 64.556936 
+L 471.407812 85.661523 
+L 476.832812 106.766111 
+L 482.257812 109.55187 
+L 487.682813 112.012491 
+L 493.107812 115.0916 
+L 498.532812 117.801366 
+L 503.957812 121.045502 
+L 509.382812 125.060261 
+L 514.807812 129.140274 
+L 520.232812 133.469616 
+L 525.657812 138.201653 
+L 531.082812 140.26 
+L 536.507812 140.26 
+L 541.932812 140.26 
+L 547.357812 140.26 
+L 552.782812 140.26 
+L 558.207813 140.26 
+L 563.632812 140.26 
+L 569.057812 140.26 
+L 574.482812 140.26 
+L 579.907813 140.26 
+L 585.332812 140.26 
+L 590.757812 140.26 
+L 596.182812 140.26 
+L 601.607812 140.26 
+L 607.032812 140.26 
+L 612.457813 140.26 
+L 617.882812 140.26 
+L 623.307812 140.26 
+L 628.732812 140.26 
+L 634.157812 140.26 
+L 639.582813 140.26 
+L 645.007812 142.705643 
+L 650.432812 163.81023 
+L 655.857812 184.914818 
+L 661.282813 206.019405 
+L 666.707812 227.123992 
+L 672.132812 229.720323 
+L 677.557812 229.837129 
+L 682.982812 229.982311 
+L 688.407812 230.095501 
+L 693.832813 230.321603 
+L 699.257812 230.348522 
+L 704.682812 230.348522 
+L 710.107812 230.348522 
+L 715.532812 224.678349 
+L 720.957813 203.573761 
+L 726.382812 182.469174 
+L 731.807812 161.364587 
+L 737.232812 140.26 
+L 742.657813 140.26 
+L 748.082812 140.26 
+L 753.507812 140.26 
+L 758.932812 140.26 
+L 764.357812 140.26 
+L 769.782812 119.155413 
+L 775.207813 98.050826 
+L 780.632812 98.050826 
+L 786.057812 86.743272 
+L 791.482812 86.743272 
+L 796.907812 86.743272 
+L 802.332813 86.743272 
+L 807.757812 86.743272 
+L 813.182812 86.743272 
+L 818.607812 86.743272 
+L 824.032813 86.743272 
+L 829.457812 86.743272 
+L 834.882812 86.743272 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke: #245a82; stroke-width: 1.3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 53.682813 140.26 
+L 834.882812 140.26 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke: #52565d; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 53.682813 245.782936 
+L 834.882812 245.782936 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #a8abb0; stroke-width: 0.7"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 53.682813 34.737064 
+L 834.882812 34.737064 
+" clip-path="url(#p01346ba411)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #a8abb0; stroke-width: 0.7"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 53.682813 255.28 
+L 53.682813 25.24 
+" style="fill: none; stroke: #51545a; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 53.682813 255.28 
+L 834.882812 255.28 
+" style="fill: none; stroke: #51545a; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 14px; font-family: 'Heiti TC'; text-anchor: start; fill: #30343b" x="53.682813" y="19.24" transform="rotate(-0 53.682813 19.24)">第一问：附录 1 确定性调度功率（完整 144 点）</text>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="font-size: 9px; font-family: 'Heiti TC'; text-anchor: start; fill: #30343b" x="8.322813" y="305.5" transform="rotate(-0 8.322813 305.5)">这是一日计划，不是全年实测曲线。原数据充、放电分量已经为 kW；充电为正、放电为负。</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p01346ba411">
+   <rect x="53.682813" y="25.24" width="781.2" height="230.04"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,22 @@
+{
+  "model_id": "hgb_extra_trees_half_ridge28_memory",
+  "days": 334,
+  "conditioning": "tree",
+  "history_days": 28,
+  "quantile": 0.8,
+  "state_buffer": 500.0,
+  "values_sha256": "211702540cef6d59718f24979da11e5b3d3e7f1274245c8a7b726be7751110cd",
+  "origins_sha256": "29289a670ccea3a9d908e5bba54033aeb5a729f46302ddebbd0513dc1cdb1832",
+  "model_evidence_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_hgb_extra_trees_half/summary.json": "9b05923073a47ec00dfa36c1225ba9ae7fecec649f504575ef18063cdb97e11b",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_hgb_extra_trees_half/protocol.json": "22133990f741e67240e9091d546d21b706e721640f5c647e0722e0a2ed801a61",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_hgb_extra_trees_half/hgb_extra_trees_half_ridge28_memory.npz": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_hgb_extra_trees_half/causality_verification.json": "e37c8be558267b4c3f7f7fedbb1ddb24a8ea5cde19a06cad50b87abb272536c6",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/provenance.json": "0b56f9cd29f653d41cef37b5b22804f30f0a8dddc562ac8f7ed693c138009b6f"
+  },
+  "source_sha256": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6",
+  "one_fixed_comparison": true,
+  "development_not_independent_test": true,
+  "final_model_selection": false
+}

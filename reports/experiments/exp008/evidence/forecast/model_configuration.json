@@ -1,0 +1,341 @@
+{
+  "selected_Q2_model": "hgb_extra_trees_half_ridge28_memory",
+  "Q3_Q4_single_HGB_model": "direct_hgb_ridge28_memory_half",
+  "seed": 42,
+  "number_of_formal_seeds": 1,
+  "sample_seed_standard_deviation": null,
+  "seed_std_missing_reason": "Only one seed; no multi-seed stability estimate exists.",
+  "families": {
+    "HGB": {
+      "estimator": "sklearn.ensemble.HistGradientBoostingRegressor",
+      "fixed_configuration": {
+        "loss": "squared_error",
+        "max_leaf_nodes": 15,
+        "max_iter": 100,
+        "min_samples_leaf": 50,
+        "l2_regularization": 2.0,
+        "learning_rate": 0.08,
+        "early_stopping": true,
+        "random_state": 42,
+        "n_iter_no_change": 10,
+        "tol": 1e-07,
+        "scoring": "loss",
+        "validation_fraction": null
+      },
+      "protocol_source": "data/results/exp008/forecast_absolute_hgb/protocol.json",
+      "sklearn_version": "1.9.1",
+      "numpy_version": "2.0.2",
+      "features": [
+        "yesterday_load",
+        "yesterday_pv",
+        "yesterday_net",
+        "previous_week_load",
+        "previous_week_pv",
+        "previous_week_net",
+        "mean3_load",
+        "mean3_pv",
+        "mean3_net",
+        "mean7_load",
+        "mean7_pv",
+        "mean7_net",
+        "std7_load",
+        "std7_pv",
+        "std7_net",
+        "slot_sin",
+        "slot_cos",
+        "slot_sin2",
+        "slot_cos2",
+        "weekday_sin",
+        "weekday_cos",
+        "yesterday_mean_load",
+        "yesterday_mean_pv",
+        "yesterday_std_load",
+        "yesterday_std_pv",
+        "yesterday_min_load",
+        "yesterday_min_pv",
+        "yesterday_max_load",
+        "yesterday_max_pv",
+        "yesterday_mean_net",
+        "yesterday_std_net"
+      ],
+      "model_count": 22,
+      "targets": [
+        "absolute load kW",
+        "absolute PV kW"
+      ]
+    },
+    "ExtraTrees": {
+      "estimator": "sklearn.ensemble.ExtraTreesRegressor",
+      "fixed_configuration": {
+        "n_estimators": 128,
+        "min_samples_leaf": 10,
+        "max_features": 1.0,
+        "bootstrap": false,
+        "random_state": 42,
+        "n_jobs": 2,
+        "criterion": "squared_error"
+      },
+      "protocol_source": "data/results/exp008/forecast_absolute_extra_trees/protocol.json",
+      "sklearn_version": "1.9.1",
+      "numpy_version": "2.0.2",
+      "features": [
+        "yesterday_load",
+        "yesterday_pv",
+        "yesterday_net",
+        "previous_week_load",
+        "previous_week_pv",
+        "previous_week_net",
+        "mean3_load",
+        "mean3_pv",
+        "mean3_net",
+        "mean7_load",
+        "mean7_pv",
+        "mean7_net",
+        "std7_load",
+        "std7_pv",
+        "std7_net",
+        "slot_sin",
+        "slot_cos",
+        "slot_sin2",
+        "slot_cos2",
+        "weekday_sin",
+        "weekday_cos",
+        "yesterday_mean_load",
+        "yesterday_mean_pv",
+        "yesterday_std_load",
+        "yesterday_std_pv",
+        "yesterday_min_load",
+        "yesterday_min_pv",
+        "yesterday_max_load",
+        "yesterday_max_pv",
+        "yesterday_mean_net",
+        "yesterday_std_net"
+      ],
+      "model_count": 22,
+      "targets": [
+        "absolute load kW",
+        "absolute PV kW"
+      ],
+      "resolved_model_parameters": {
+        "bootstrap": false,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": null,
+        "max_features": 1.0,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 10,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 128,
+        "n_jobs": 2,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      }
+    }
+  },
+  "unique_raw_models_for_blend": 44,
+  "architecture": "Two separate target regressors per monthly family; 31 engineered causal features per ten-minute slot. No CNN in this final forecast.",
+  "train_validation_schedule": "For zero-based month-start day D: train day7..D-8, validate dayD-7..D-1, issue only within current month. Daily features use earlier actuals; monthly fitted model remains frozen.",
+  "training_weights": "2**(-(train_cutoff_day-1-training_day)/90), normalized to mean1 and repeated144 times; train_cutoff_day=D-7.",
+  "HGB_early_stopping": "Prior7day explicit validation, patience10, tol1e-7; retain final fitted iteration. Not the later best-stage400 variant.",
+  "ExtraTrees_validation": "Same prior7day holdout, metrics only; no early stopping or model selection/refit on this holdout.",
+  "raw_physical_postprocessing": "Both channels nonnegative. PV daylight mask is past28complete days positive-PV union by slot, expanded20minutes each side.",
+  "raw_blend": {
+    "HGB_weight": 0.5,
+    "ExtraTrees_weight": 0.5,
+    "both_channels": true,
+    "fixed_before_evaluation": true,
+    "grid_or_weight_tuning": false,
+    "order": [
+      "causal raw HGB and raw ExtraTrees outputs",
+      "fixed arithmetic mean of both raw channels",
+      "Ridge28 recalibrated on that blend history",
+      "nonrecursive half daily load memory"
+    ]
+  },
+  "Ridge28": {
+    "regressions": "Separate load/PV residual ridge fits, each with cross-channel forecast feature",
+    "prior_issued_day_window": 28,
+    "half_life_days": 14,
+    "intercept_penalty": 2,
+    "other_coefficient_penalty": 20,
+    "feature_count_per_channel": 10,
+    "features": [
+      "1",
+      "raw_channel/1000",
+      "(yesterday_channel-raw_channel)/1000",
+      "(previous_week_channel-raw_channel)/1000",
+      "(mean3_channel-raw_channel)/1000",
+      "raw_other_channel/1000",
+      "sin(slot)",
+      "cos(slot)",
+      "sin(2slot)",
+      "cos(2slot)"
+    ],
+    "target": "(actual_channel-raw_channel)/1000",
+    "PV_sample_weight": "1 if rawPV>1 or actualPV>1; otherwise0.1, multiplied by age weight",
+    "correction_clip_kw": "plus/minus max(100,3*prior residualRMSE)",
+    "postprocess": "Nonnegative channels and same causal PV mask"
+  },
+  "load_memory": {
+    "coefficient": 0.5,
+    "formula": "load_final[d,t]=max(0,load_ridge[d,t]+0.5*mean_t(actual_load[d-1,t]-load_ridge[d-1,t]))",
+    "PV_unchanged": true,
+    "nonrecursive": true,
+    "residual_basis": "Previous underlying Ridge28 forecast, not its memory-adjusted output"
+  },
+  "cold_start": "Feb1 has no earlier issued output: calibration/memory pass through. January dispatch residual cold-start uses explicitly labelled periodic forecasts.",
+  "timing_evidence": [
+    {
+      "family": "HGB",
+      "stage": "22 primary fit plus validation-predict blocks",
+      "seconds": 44.97184687713161,
+      "measured": true,
+      "source": "data/results/exp008/forecast_absolute_hgb/training_audit.json",
+      "scope": "Original timer starts before model.fit and ends after the following model.predict(X_val), including surrounding call overhead. Excludes feature construction, formal prediction, calibration, audit retraining, dispatch and report; not pure fit time."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "22 primary fit plus validation-predict blocks",
+      "seconds": 63.233388833119534,
+      "measured": true,
+      "source": "data/results/exp008/forecast_absolute_extra_trees/training_audit.json",
+      "scope": "Original timer starts before model.fit and ends after the following model.predict(X_val), including surrounding call overhead. Excludes feature construction, formal prediction, calibration, audit retraining, dispatch and report; not pure fit time."
+    },
+    {
+      "family": "HGB",
+      "stage": "original pre-bridge pipeline wall time",
+      "seconds": 52.487478957977146,
+      "measured": true,
+      "source": "data/results/exp008/forecast_absolute_hgb/provenance.json:total_seconds_before_bridge",
+      "scope": "Whole original workflow before LP bridge, including audits; not pure inference time and not directly comparable to fit sums."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "original pre-bridge pipeline wall time",
+      "seconds": 83.76314004103187,
+      "measured": true,
+      "source": "data/results/exp008/forecast_absolute_extra_trees/provenance.json:elapsed_seconds_before_bridge",
+      "scope": "Whole original workflow before LP bridge, including audits; not pure inference time and not directly comparable to fit sums."
+    },
+    {
+      "family": "HGB",
+      "stage": "feature construction",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "HGB",
+      "stage": "prediction only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "HGB",
+      "stage": "Ridge28 only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "HGB",
+      "stage": "memory only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "feature construction",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "prediction only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "Ridge28 only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "memory only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "fixed_half_blend",
+      "stage": "feature construction",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "fixed_half_blend",
+      "stage": "prediction only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "fixed_half_blend",
+      "stage": "Ridge28 only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "fixed_half_blend",
+      "stage": "memory only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+    },
+    {
+      "family": "HGB",
+      "stage": "fit only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "Original training_seconds also includes the subsequent validation prediction; a pure fit duration cannot be recovered."
+    },
+    {
+      "family": "ExtraTrees",
+      "stage": "fit only",
+      "seconds": null,
+      "measured": false,
+      "source": "",
+      "scope": "Original training_seconds also includes the subsequent validation prediction; a pure fit duration cannot be recovered."
+    }
+  ],
+  "development_not_independent_test": true,
+  "selection_context": "2025 outputs informed prior development. Final fixed0.5 design was frozen before this candidate evaluation, but2025 is not an untouched independent test set."
+}

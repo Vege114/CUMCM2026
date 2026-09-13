@@ -1,0 +1,109 @@
+{
+  "artifact": {
+    "path": "reports/experiments/exp008/methods.md",
+    "sha256": "3016805ab88954436e7a2d294964bcaf3675239defac98beec7459cc04d88c47"
+  },
+  "assessment": "Ready within reviewed mathematical and source-description scope; report rendering/export reviewed separately",
+  "review_depth": "selected implementation and governing equations, no experiment rerun",
+  "sources": [
+    {
+      "path": "experiments/exp008/q1.py",
+      "sha256": "7cf7a452f9cd67aeb4634d01d30b8a1e52bb90cec8efbcdc0c4ec89c5267d155"
+    },
+    {
+      "path": "experiments/exp008/forecast_absolute_hgb.py",
+      "sha256": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80"
+    },
+    {
+      "path": "experiments/exp008/forecast_absolute_extra_trees.py",
+      "sha256": "d546662bc67fb8c5c51a4125c070c3520f5869c832db83ed6268b959e95547b7"
+    },
+    {
+      "path": "experiments/exp008/forecast_hgb_extra_trees_half.py",
+      "sha256": "ed16c2f490e6b331cf193253caa201d4b492c62cdc7d7d3e001587fca781d2cc"
+    },
+    {
+      "path": "experiments/exp008/forecast_calibration.py",
+      "sha256": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62"
+    },
+    {
+      "path": "experiments/exp008/load_energy_memory.py",
+      "sha256": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed"
+    },
+    {
+      "path": "experiments/exp008/forecast.py",
+      "sha256": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349"
+    },
+    {
+      "path": "experiments/exp008/absolute_hgb_forecast_adapter.py",
+      "sha256": "196f48b19e75c5cd94b905e55026c38d83bef70d0376b580a02d5d4b958aefb6"
+    },
+    {
+      "path": "experiments/exp008/issued_residual_paths.py",
+      "sha256": "e18d82efa97713af0fc946fc31e0fcc340488c67fb95ac4fa88894047d9e2b7c"
+    },
+    {
+      "path": "experiments/exp008/planner.py",
+      "sha256": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557"
+    },
+    {
+      "path": "experiments/exp008/run.py",
+      "sha256": "ce05d4c0bce8721a1cc845fd00195558876d708436c39ca6454a231955122011"
+    },
+    {
+      "path": "experiments/exp008/mode_budget_hold1_physical.py",
+      "sha256": "fdf742a6685acb6d9fd3336d7df7604fb1fc77c3ddd108a1f81e5c657b0a6bb7"
+    },
+    {
+      "path": "experiments/exp008/run_blend_mode_budget_hold1.py",
+      "sha256": "62a401400ccfd99242b50453b539638c9dae00902c07661725ae9030890da44b"
+    },
+    {
+      "path": "experiments/exp008/closed_loop.py",
+      "sha256": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec"
+    },
+    {
+      "path": "experiments/exp008/hgb_linked_price_forecast.py",
+      "sha256": "d5a575cb61158a6908a5b7c6bcd5e43a0bf827be7c1017afb33c69adb64dd394"
+    },
+    {
+      "path": "experiments/exp008/run_q4_hgb_linked_price_physical.py",
+      "sha256": "9a0b521fc59d2825d5a61b7ce48d502b063f168c3597e6719c3ad704b272ba52"
+    }
+  ],
+  "verified_topics": [
+    "HGB/ExtraTrees configurations and seed42 monthly split",
+    "raw blend then joint-channel Ridge and nonrecursive load memory",
+    "Q1 normalized second objective TV+starts+shortfall, cyclic boundaries, minimum mode power and per-mode on/off duration",
+    "Ridge feature10columns, /1000 residual target, penalties and physical postprocessing",
+    "Q2 physical MIP planned cap8 vs actual nonidle direction, continuous actual SOC",
+    "Q3/Q4-3 same-issue residual histories and distinct official24h calibration boundary",
+    "Q3/Q4-3 optimistic LP versus strict actual greedy execution,20kWh charging deadband",
+    "original plus final net1.5/0.5adjustment plus5emergency settlement",
+    "Q4 price original8plus2ownissued regressors, nonzero prior, penalties, point-forecast use",
+    "6.144317568% accepted improvement and countervailing episodes/active slots"
+  ],
+  "source_corrections_applied": [
+    "replaced incorrect Q1 TV-only objective with complete normalized smoothness objective",
+    "clarified Q1 cyclic constraints/1kW minimum/per-mode shutdown and numerical cost tolerance",
+    "clarified efficiency as team round-trip assumption",
+    "made Ridge residual scale and postcorrection units explicit",
+    "changed Q2 cross-day mode description from actual mode to planned mode and run length",
+    "made LP physical relaxation and absence of closed-loop refinement inQ3/Q4-3 explicit",
+    "documented actual intraday load/PV calibration and price-regression prior",
+    "clarified archived historical price errors are not used as a joint price-risk scenario",
+    "training_seconds clarified as model.fit plus immediate validation-set predict; pure_fit_seconds and validation_prediction_seconds unavailable"
+  ],
+  "not_claimed": [
+    "same final blended forecaster in all four questions",
+    "global optimality or nonanticipative recourse certificate for annual final policies",
+    "8% threshold achieved",
+    "all charging/discharging frequency metrics declined",
+    "measured battery lifetime benefit"
+  ],
+  "matplotlib_mathtext_parse": {
+    "passed": true,
+    "equations": 12,
+    "scope": "all displayed method equations; rendered layout inspection separate"
+  }
+}

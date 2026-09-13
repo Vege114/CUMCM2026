@@ -1,0 +1,135 @@
+{
+  "candidate_count": 1,
+  "model_id": "periodic_residual_load_pv_HGB_seed42_then_fixed_ridge28_memory_half",
+  "targets": [
+    "absolute_load_minus_previous_week_same_slot_load_kw",
+    "absolute_PV_minus_yesterday_same_slot_PV_kw"
+  ],
+  "models_per_month": 2,
+  "months": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "model_configuration": {
+    "loss": "squared_error",
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 2.0,
+    "learning_rate": 0.08,
+    "early_stopping": true,
+    "random_state": 42,
+    "n_iter_no_change": 10,
+    "tol": 1e-07,
+    "scoring": "loss",
+    "validation_fraction": null
+  },
+  "excluded_features": [
+    "base_load",
+    "base_pv",
+    "base_net",
+    "base_is_cnn"
+  ],
+  "features": [
+    "yesterday_load",
+    "yesterday_pv",
+    "yesterday_net",
+    "previous_week_load",
+    "previous_week_pv",
+    "previous_week_net",
+    "mean3_load",
+    "mean3_pv",
+    "mean3_net",
+    "mean7_load",
+    "mean7_pv",
+    "mean7_net",
+    "std7_load",
+    "std7_pv",
+    "std7_net",
+    "slot_sin",
+    "slot_cos",
+    "slot_sin2",
+    "slot_cos2",
+    "weekday_sin",
+    "weekday_cos",
+    "yesterday_mean_load",
+    "yesterday_mean_pv",
+    "yesterday_std_load",
+    "yesterday_std_pv",
+    "yesterday_min_load",
+    "yesterday_min_pv",
+    "yesterday_max_load",
+    "yesterday_max_pv",
+    "yesterday_mean_net",
+    "yesterday_std_net"
+  ],
+  "feature_count": 31,
+  "training": "split_days(month): days7..month_start-8 training, last7 complete days validation; explicit X_val/y_val; never refit on formal month",
+  "validation": "fixed HGB patience10 loss early stopping; final fitted estimator retained, no iteration search on formal scores",
+  "history_weight_half_life_days": 90,
+  "output_nonnegative": true,
+  "pv_mask": "same _daylight: past28 complete days nonzero-PV union expanded by 2 ten-minute slots on each side; strictly before daily issue",
+  "base_CNN_feature_used": false,
+  "periodic_forecast_feature_used": false,
+  "official_PV_used": false,
+  "future_actual_price_used": false,
+  "annual_seasonal_shape_used": false,
+  "known_calendar": [
+    "intraday sin/cos harmonics",
+    "weekday sin/cos"
+  ],
+  "comparison_changes": [
+    "two labels become residuals against their one fixed causal periodic baseline",
+    "add the same known daily baseline to model outputs before unchanged nonnegative/daylight postprocessing"
+  ],
+  "single_factor_attribution": "fixed label/reference comparison against direct HGB with all inputs and model/postprocessing settings preserved",
+  "fixed_postprocessing": [
+    "raw nonnegative+causalPVmask",
+    "same unmodified ridge_28",
+    "same fixed nonrecursive prior-day underlying load-residual memory gain0.5"
+  ],
+  "primary_candidate": "periodic_residual_hgb_ridge28_memory_half",
+  "primary_comparator": "direct_hgb_ridge28_memory_half",
+  "postprocessing_not_selected_on_full_year_scores": true,
+  "dispatch_gate": {
+    "net": [
+      "rmse_kw"
+    ],
+    "high_price": [
+      "high_price_rmse_kw",
+      "price_weighted_rmse_kw"
+    ],
+    "daily_accumulation": [
+      "daily_energy_rmse_kwh",
+      "cumulative_error_rmse_kwh"
+    ],
+    "rule": "each listed metric must strictly improve in primary candidate vs current absolute-HGB primary comparator; otherwise no LP bridge"
+  },
+  "conditional_bridge": "only if fixed gate passes: unchanged tree28/q0.8/statebuffer500 full334 LP bridge with own complete historical predictions; not final action-constrained policy",
+  "evaluation": "334 already examined 2025 development days; not independent validation",
+  "source_before_training": {
+    "experiments/exp008/forecast_absolute_hgb.py": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+    "experiments/exp008/forecast_net_hgb.py": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a"
+  },
+  "secondary_comparator": "joint_ridge28_load_energy_memory_half",
+  "periodic_baseline": {
+    "load_lag_days": 7,
+    "pv_lag_days": 1,
+    "semantics": "same bounded previous-actual baseline for every historical training/validation and formal prediction issue; no CNN reference or regime switch"
+  },
+  "same_features_complexity_validation_mask_and_postprocessing_as_absolute_HGB": true,
+  "periodic_baseline_in_labels_and_output_reconstruction": true,
+  "absolute_protocol_sha256": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235"
+}

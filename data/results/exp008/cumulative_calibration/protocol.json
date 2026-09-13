@@ -1,0 +1,14 @@
+{
+  "training_candidate_count": 1,
+  "calibrator": {
+    "name": "ridge_28",
+    "method": "ridge",
+    "window": 28
+  },
+  "memory_gain": 0.5,
+  "comparison": "same Ridge28 and same memory before/after CNN loss change",
+  "source_sha256": "59f42c4c0af5e948ccf5848c1bf4f8c6348b9bbe6f71e75168029ad51d159918",
+  "raw_values_sha256": "6966bcca34518729f663b9137e7abdb12d1069bddc5af1decdeb20ec388a881b",
+  "gate_for_lp_bridge": "daily energy, prefix energy and high-price RMSE all beat Joint+Ridge28+Memory",
+  "development_on_previously_examined_2025": true
+}

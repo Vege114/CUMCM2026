@@ -1,0 +1,1493 @@
+{
+  "complete": true,
+  "observations": [
+    {
+      "width": 736,
+      "theme": "light",
+      "errors": [],
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/comparison-736-light.png",
+      "layout": {
+        "rootWidth": 736,
+        "rootScrollWidth": 736,
+        "rootHeight": 2361.125,
+        "svg": [
+          {
+            "label": "第二问 · -6.14%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第三问 · -8.42%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案2 · -11.99%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案3 · -7.84%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          }
+        ],
+        "tables": [
+          {
+            "width": 736,
+            "scrollWidth": 736
+          },
+          {
+            "width": 736,
+            "scrollWidth": 736
+          }
+        ],
+        "visibleTitles": [
+          "各问题实际费用 · 统一万元尺度",
+          "第二问 · -6.14%",
+          "第三问 · -8.42%",
+          "第四问·方案2 · -11.99%",
+          "第四问·方案3 · -7.84%",
+          "Q2历史费用 · 按角色保留",
+          "同午夜预测 · RMSE与WAPE同时展示",
+          "全天 · RMSE",
+          "全天 · WAPE",
+          "实际PV>0 · RMSE",
+          "实际PV>0 · WAPE",
+          "已有计时 · 保留原阶段"
+        ],
+        "missingValues": [
+          "负 缺失",
+          "负 缺失"
+        ],
+        "bodyOverflow": false,
+        "sourceData": {
+          "questions": [
+            {
+              "id": "2",
+              "label": "第二问",
+              "reference": "exp006",
+              "previous": 14066257.477256786,
+              "current": 13201981.947942203,
+              "delta_pct": -6.144317567853415
+            },
+            {
+              "id": "3",
+              "label": "第三问",
+              "reference": "exp002",
+              "previous": 14005062.775875755,
+              "current": 12826263.074326914,
+              "delta_pct": -8.416954071633063
+            },
+            {
+              "id": "4-2",
+              "label": "第四问·方案2",
+              "reference": "exp002",
+              "previous": 15901397.201112418,
+              "current": 13994531.257936869,
+              "delta_pct": -11.99181379509311
+            },
+            {
+              "id": "4-3",
+              "label": "第四问·方案3",
+              "reference": "exp002",
+              "previous": 14734925.124925215,
+              "current": 13579870.464961825,
+              "delta_pct": -7.838890596122064
+            }
+          ],
+          "history_costs": [
+            {
+              "id": "exp001/legacy_rebased",
+              "label": "exp001 · 同物理口径重算",
+              "cost": 15842654.1906855,
+              "separate": false
+            },
+            {
+              "id": "exp002/primary",
+              "label": "exp002 · 正式风险策略",
+              "cost": 15128897.4527102,
+              "separate": false
+            },
+            {
+              "id": "exp003/primary",
+              "label": "exp003 · 当轮正式",
+              "cost": 14988622.6481765,
+              "separate": false
+            },
+            {
+              "id": "exp004/causal_season",
+              "label": "exp004 · 当轮正式（历史季节）",
+              "cost": 13626145.4059908,
+              "separate": false
+            },
+            {
+              "id": "exp004/no_season",
+              "label": "exp004 · 无季节预测基线",
+              "cost": 13611587.8329135,
+              "separate": false
+            },
+            {
+              "id": "exp006/primary",
+              "label": "exp006 · 正式树DP",
+              "cost": 14066257.4772568,
+              "separate": false
+            },
+            {
+              "id": "exp008/final",
+              "label": "exp008 · 最终融合",
+              "cost": 13201981.947942203,
+              "separate": false
+            },
+            {
+              "id": "exp001/original",
+              "label": "原协议单列：exp001 · 原登记",
+              "cost": 16258308.2173546,
+              "separate": true
+            },
+            {
+              "id": "exp005/beta_0.1",
+              "label": "原协议单列：exp005 · β=0.1",
+              "cost": 14717882.165475883,
+              "separate": true
+            }
+          ],
+          "forecasts": [
+            {
+              "id": "exp001",
+              "label": "001 重评",
+              "load": [
+                247.45161352437,
+                3.90433946618678,
+                252.351585808532,
+                3.44334264219711
+              ],
+              "pv": [
+                341.262159873401,
+                7.55001291278804,
+                455.78901713816,
+                7.20222702024081
+              ]
+            },
+            {
+              "id": "exp002",
+              "label": "002 重评",
+              "load": [
+                220.779862383218,
+                3.54468934304015,
+                219.950898830724,
+                3.08509370557757
+              ],
+              "pv": [
+                343.496709148628,
+                7.25215961784986,
+                459.437308296373,
+                7.21707306485631
+              ]
+            },
+            {
+              "id": "exp003",
+              "label": "003",
+              "load": [
+                244.28661485194,
+                3.82941918910358,
+                239.604570800335,
+                3.2856438938968
+              ],
+              "pv": [
+                375.174878037984,
+                7.79142088130106,
+                501.849596855795,
+                7.79132695597745
+              ]
+            },
+            {
+              "id": "exp004",
+              "label": "004 无季节",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp005",
+              "label": "005 复用",
+              "load": [
+                258.3117746935,
+                4.2336372185,
+                null,
+                null
+              ],
+              "pv": [
+                423.9991342452,
+                8.9295024753,
+                567.1409994578,
+                8.9119496272
+              ]
+            },
+            {
+              "id": "exp006",
+              "label": "006",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp008",
+              "label": "008 融合",
+              "load": [
+                182.98698621729875,
+                2.9668556880686503,
+                181.23777819084373,
+                2.567863712137439
+              ],
+              "pv": [
+                307.0503899088877,
+                6.44257200369873,
+                410.62933761117824,
+                6.398001015169905
+              ]
+            }
+          ],
+          "runtime": [
+            {
+              "id": "exp001",
+              "label": "exp001 原协议 · 求解+执行",
+              "seconds": 1.197190367267,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp002",
+              "label": "exp002 · 求解+执行（334次超时）",
+              "seconds": 907.740153215011,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp003",
+              "label": "exp003 正式 · 求解+执行",
+              "seconds": 12.398277213214897,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp004",
+              "label": "exp004 无季节 · 求解+执行",
+              "seconds": 11.677327542915007,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp005",
+              "label": "exp005 β=0.1 · 四类LP求解之和",
+              "seconds": 959.6525492203655,
+              "field": "overlap_summary[*].solver_seconds; beta=0.1"
+            },
+            {
+              "id": "exp006",
+              "label": "exp006 正式 · 运行墙钟",
+              "seconds": 8.954869084060192,
+              "field": "run_wall_seconds"
+            },
+            {
+              "id": "exp008_mip",
+              "label": "exp008 Q2 · 物理MIP求解",
+              "seconds": 699.0726444264874,
+              "field": "Q2.solver_seconds.sum"
+            },
+            {
+              "id": "exp008_refine",
+              "label": "exp008 Q2 · 固定掩码Q精化",
+              "seconds": 304.3245660071261,
+              "field": "Q2.refinement_seconds.sum"
+            },
+            {
+              "id": "exp008_hgb",
+              "label": "exp008 HGB · 拟合+验证预测",
+              "seconds": 44.97184687713161,
+              "field": "HGB.training_seconds.sum"
+            },
+            {
+              "id": "exp008_et",
+              "label": "exp008 ExtraTrees · 拟合+验证预测",
+              "seconds": 63.233388833119534,
+              "field": "ET.training_seconds.sum"
+            },
+            {
+              "id": "exp008_wall",
+              "label": "exp008 Q2 · 运行总墙钟",
+              "seconds": null,
+              "field": "run_wall_seconds"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 360,
+      "theme": "light",
+      "errors": [],
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/comparison-360-light.png",
+      "layout": {
+        "rootWidth": 360,
+        "rootScrollWidth": 360,
+        "rootHeight": 3746.6875,
+        "svg": [
+          {
+            "label": "第二问 · -6.14%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第三问 · -8.42%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案2 · -11.99%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案3 · -7.84%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          }
+        ],
+        "tables": [
+          {
+            "width": 360,
+            "scrollWidth": 360
+          },
+          {
+            "width": 360,
+            "scrollWidth": 360
+          }
+        ],
+        "visibleTitles": [
+          "各问题实际费用 · 统一万元尺度",
+          "第二问 · -6.14%",
+          "第三问 · -8.42%",
+          "第四问·方案2 · -11.99%",
+          "第四问·方案3 · -7.84%",
+          "Q2历史费用 · 按角色保留",
+          "同午夜预测 · RMSE与WAPE同时展示",
+          "全天 · RMSE",
+          "全天 · WAPE",
+          "实际PV>0 · RMSE",
+          "实际PV>0 · WAPE",
+          "已有计时 · 保留原阶段"
+        ],
+        "missingValues": [
+          "负 缺失",
+          "负 缺失"
+        ],
+        "bodyOverflow": false,
+        "sourceData": {
+          "questions": [
+            {
+              "id": "2",
+              "label": "第二问",
+              "reference": "exp006",
+              "previous": 14066257.477256786,
+              "current": 13201981.947942203,
+              "delta_pct": -6.144317567853415
+            },
+            {
+              "id": "3",
+              "label": "第三问",
+              "reference": "exp002",
+              "previous": 14005062.775875755,
+              "current": 12826263.074326914,
+              "delta_pct": -8.416954071633063
+            },
+            {
+              "id": "4-2",
+              "label": "第四问·方案2",
+              "reference": "exp002",
+              "previous": 15901397.201112418,
+              "current": 13994531.257936869,
+              "delta_pct": -11.99181379509311
+            },
+            {
+              "id": "4-3",
+              "label": "第四问·方案3",
+              "reference": "exp002",
+              "previous": 14734925.124925215,
+              "current": 13579870.464961825,
+              "delta_pct": -7.838890596122064
+            }
+          ],
+          "history_costs": [
+            {
+              "id": "exp001/legacy_rebased",
+              "label": "exp001 · 同物理口径重算",
+              "cost": 15842654.1906855,
+              "separate": false
+            },
+            {
+              "id": "exp002/primary",
+              "label": "exp002 · 正式风险策略",
+              "cost": 15128897.4527102,
+              "separate": false
+            },
+            {
+              "id": "exp003/primary",
+              "label": "exp003 · 当轮正式",
+              "cost": 14988622.6481765,
+              "separate": false
+            },
+            {
+              "id": "exp004/causal_season",
+              "label": "exp004 · 当轮正式（历史季节）",
+              "cost": 13626145.4059908,
+              "separate": false
+            },
+            {
+              "id": "exp004/no_season",
+              "label": "exp004 · 无季节预测基线",
+              "cost": 13611587.8329135,
+              "separate": false
+            },
+            {
+              "id": "exp006/primary",
+              "label": "exp006 · 正式树DP",
+              "cost": 14066257.4772568,
+              "separate": false
+            },
+            {
+              "id": "exp008/final",
+              "label": "exp008 · 最终融合",
+              "cost": 13201981.947942203,
+              "separate": false
+            },
+            {
+              "id": "exp001/original",
+              "label": "原协议单列：exp001 · 原登记",
+              "cost": 16258308.2173546,
+              "separate": true
+            },
+            {
+              "id": "exp005/beta_0.1",
+              "label": "原协议单列：exp005 · β=0.1",
+              "cost": 14717882.165475883,
+              "separate": true
+            }
+          ],
+          "forecasts": [
+            {
+              "id": "exp001",
+              "label": "001 重评",
+              "load": [
+                247.45161352437,
+                3.90433946618678,
+                252.351585808532,
+                3.44334264219711
+              ],
+              "pv": [
+                341.262159873401,
+                7.55001291278804,
+                455.78901713816,
+                7.20222702024081
+              ]
+            },
+            {
+              "id": "exp002",
+              "label": "002 重评",
+              "load": [
+                220.779862383218,
+                3.54468934304015,
+                219.950898830724,
+                3.08509370557757
+              ],
+              "pv": [
+                343.496709148628,
+                7.25215961784986,
+                459.437308296373,
+                7.21707306485631
+              ]
+            },
+            {
+              "id": "exp003",
+              "label": "003",
+              "load": [
+                244.28661485194,
+                3.82941918910358,
+                239.604570800335,
+                3.2856438938968
+              ],
+              "pv": [
+                375.174878037984,
+                7.79142088130106,
+                501.849596855795,
+                7.79132695597745
+              ]
+            },
+            {
+              "id": "exp004",
+              "label": "004 无季节",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp005",
+              "label": "005 复用",
+              "load": [
+                258.3117746935,
+                4.2336372185,
+                null,
+                null
+              ],
+              "pv": [
+                423.9991342452,
+                8.9295024753,
+                567.1409994578,
+                8.9119496272
+              ]
+            },
+            {
+              "id": "exp006",
+              "label": "006",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp008",
+              "label": "008 融合",
+              "load": [
+                182.98698621729875,
+                2.9668556880686503,
+                181.23777819084373,
+                2.567863712137439
+              ],
+              "pv": [
+                307.0503899088877,
+                6.44257200369873,
+                410.62933761117824,
+                6.398001015169905
+              ]
+            }
+          ],
+          "runtime": [
+            {
+              "id": "exp001",
+              "label": "exp001 原协议 · 求解+执行",
+              "seconds": 1.197190367267,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp002",
+              "label": "exp002 · 求解+执行（334次超时）",
+              "seconds": 907.740153215011,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp003",
+              "label": "exp003 正式 · 求解+执行",
+              "seconds": 12.398277213214897,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp004",
+              "label": "exp004 无季节 · 求解+执行",
+              "seconds": 11.677327542915007,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp005",
+              "label": "exp005 β=0.1 · 四类LP求解之和",
+              "seconds": 959.6525492203655,
+              "field": "overlap_summary[*].solver_seconds; beta=0.1"
+            },
+            {
+              "id": "exp006",
+              "label": "exp006 正式 · 运行墙钟",
+              "seconds": 8.954869084060192,
+              "field": "run_wall_seconds"
+            },
+            {
+              "id": "exp008_mip",
+              "label": "exp008 Q2 · 物理MIP求解",
+              "seconds": 699.0726444264874,
+              "field": "Q2.solver_seconds.sum"
+            },
+            {
+              "id": "exp008_refine",
+              "label": "exp008 Q2 · 固定掩码Q精化",
+              "seconds": 304.3245660071261,
+              "field": "Q2.refinement_seconds.sum"
+            },
+            {
+              "id": "exp008_hgb",
+              "label": "exp008 HGB · 拟合+验证预测",
+              "seconds": 44.97184687713161,
+              "field": "HGB.training_seconds.sum"
+            },
+            {
+              "id": "exp008_et",
+              "label": "exp008 ExtraTrees · 拟合+验证预测",
+              "seconds": 63.233388833119534,
+              "field": "ET.training_seconds.sum"
+            },
+            {
+              "id": "exp008_wall",
+              "label": "exp008 Q2 · 运行总墙钟",
+              "seconds": null,
+              "field": "run_wall_seconds"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 736,
+      "theme": "dark",
+      "errors": [],
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/comparison-736-dark.png",
+      "layout": {
+        "rootWidth": 736,
+        "rootScrollWidth": 736,
+        "rootHeight": 2361.125,
+        "svg": [
+          {
+            "label": "第二问 · -6.14%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第三问 · -8.42%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案2 · -11.99%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案3 · -7.84%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          }
+        ],
+        "tables": [
+          {
+            "width": 736,
+            "scrollWidth": 736
+          },
+          {
+            "width": 736,
+            "scrollWidth": 736
+          }
+        ],
+        "visibleTitles": [
+          "各问题实际费用 · 统一万元尺度",
+          "第二问 · -6.14%",
+          "第三问 · -8.42%",
+          "第四问·方案2 · -11.99%",
+          "第四问·方案3 · -7.84%",
+          "Q2历史费用 · 按角色保留",
+          "同午夜预测 · RMSE与WAPE同时展示",
+          "全天 · RMSE",
+          "全天 · WAPE",
+          "实际PV>0 · RMSE",
+          "实际PV>0 · WAPE",
+          "已有计时 · 保留原阶段"
+        ],
+        "missingValues": [
+          "负 缺失",
+          "负 缺失"
+        ],
+        "bodyOverflow": false,
+        "sourceData": {
+          "questions": [
+            {
+              "id": "2",
+              "label": "第二问",
+              "reference": "exp006",
+              "previous": 14066257.477256786,
+              "current": 13201981.947942203,
+              "delta_pct": -6.144317567853415
+            },
+            {
+              "id": "3",
+              "label": "第三问",
+              "reference": "exp002",
+              "previous": 14005062.775875755,
+              "current": 12826263.074326914,
+              "delta_pct": -8.416954071633063
+            },
+            {
+              "id": "4-2",
+              "label": "第四问·方案2",
+              "reference": "exp002",
+              "previous": 15901397.201112418,
+              "current": 13994531.257936869,
+              "delta_pct": -11.99181379509311
+            },
+            {
+              "id": "4-3",
+              "label": "第四问·方案3",
+              "reference": "exp002",
+              "previous": 14734925.124925215,
+              "current": 13579870.464961825,
+              "delta_pct": -7.838890596122064
+            }
+          ],
+          "history_costs": [
+            {
+              "id": "exp001/legacy_rebased",
+              "label": "exp001 · 同物理口径重算",
+              "cost": 15842654.1906855,
+              "separate": false
+            },
+            {
+              "id": "exp002/primary",
+              "label": "exp002 · 正式风险策略",
+              "cost": 15128897.4527102,
+              "separate": false
+            },
+            {
+              "id": "exp003/primary",
+              "label": "exp003 · 当轮正式",
+              "cost": 14988622.6481765,
+              "separate": false
+            },
+            {
+              "id": "exp004/causal_season",
+              "label": "exp004 · 当轮正式（历史季节）",
+              "cost": 13626145.4059908,
+              "separate": false
+            },
+            {
+              "id": "exp004/no_season",
+              "label": "exp004 · 无季节预测基线",
+              "cost": 13611587.8329135,
+              "separate": false
+            },
+            {
+              "id": "exp006/primary",
+              "label": "exp006 · 正式树DP",
+              "cost": 14066257.4772568,
+              "separate": false
+            },
+            {
+              "id": "exp008/final",
+              "label": "exp008 · 最终融合",
+              "cost": 13201981.947942203,
+              "separate": false
+            },
+            {
+              "id": "exp001/original",
+              "label": "原协议单列：exp001 · 原登记",
+              "cost": 16258308.2173546,
+              "separate": true
+            },
+            {
+              "id": "exp005/beta_0.1",
+              "label": "原协议单列：exp005 · β=0.1",
+              "cost": 14717882.165475883,
+              "separate": true
+            }
+          ],
+          "forecasts": [
+            {
+              "id": "exp001",
+              "label": "001 重评",
+              "load": [
+                247.45161352437,
+                3.90433946618678,
+                252.351585808532,
+                3.44334264219711
+              ],
+              "pv": [
+                341.262159873401,
+                7.55001291278804,
+                455.78901713816,
+                7.20222702024081
+              ]
+            },
+            {
+              "id": "exp002",
+              "label": "002 重评",
+              "load": [
+                220.779862383218,
+                3.54468934304015,
+                219.950898830724,
+                3.08509370557757
+              ],
+              "pv": [
+                343.496709148628,
+                7.25215961784986,
+                459.437308296373,
+                7.21707306485631
+              ]
+            },
+            {
+              "id": "exp003",
+              "label": "003",
+              "load": [
+                244.28661485194,
+                3.82941918910358,
+                239.604570800335,
+                3.2856438938968
+              ],
+              "pv": [
+                375.174878037984,
+                7.79142088130106,
+                501.849596855795,
+                7.79132695597745
+              ]
+            },
+            {
+              "id": "exp004",
+              "label": "004 无季节",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp005",
+              "label": "005 复用",
+              "load": [
+                258.3117746935,
+                4.2336372185,
+                null,
+                null
+              ],
+              "pv": [
+                423.9991342452,
+                8.9295024753,
+                567.1409994578,
+                8.9119496272
+              ]
+            },
+            {
+              "id": "exp006",
+              "label": "006",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp008",
+              "label": "008 融合",
+              "load": [
+                182.98698621729875,
+                2.9668556880686503,
+                181.23777819084373,
+                2.567863712137439
+              ],
+              "pv": [
+                307.0503899088877,
+                6.44257200369873,
+                410.62933761117824,
+                6.398001015169905
+              ]
+            }
+          ],
+          "runtime": [
+            {
+              "id": "exp001",
+              "label": "exp001 原协议 · 求解+执行",
+              "seconds": 1.197190367267,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp002",
+              "label": "exp002 · 求解+执行（334次超时）",
+              "seconds": 907.740153215011,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp003",
+              "label": "exp003 正式 · 求解+执行",
+              "seconds": 12.398277213214897,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp004",
+              "label": "exp004 无季节 · 求解+执行",
+              "seconds": 11.677327542915007,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp005",
+              "label": "exp005 β=0.1 · 四类LP求解之和",
+              "seconds": 959.6525492203655,
+              "field": "overlap_summary[*].solver_seconds; beta=0.1"
+            },
+            {
+              "id": "exp006",
+              "label": "exp006 正式 · 运行墙钟",
+              "seconds": 8.954869084060192,
+              "field": "run_wall_seconds"
+            },
+            {
+              "id": "exp008_mip",
+              "label": "exp008 Q2 · 物理MIP求解",
+              "seconds": 699.0726444264874,
+              "field": "Q2.solver_seconds.sum"
+            },
+            {
+              "id": "exp008_refine",
+              "label": "exp008 Q2 · 固定掩码Q精化",
+              "seconds": 304.3245660071261,
+              "field": "Q2.refinement_seconds.sum"
+            },
+            {
+              "id": "exp008_hgb",
+              "label": "exp008 HGB · 拟合+验证预测",
+              "seconds": 44.97184687713161,
+              "field": "HGB.training_seconds.sum"
+            },
+            {
+              "id": "exp008_et",
+              "label": "exp008 ExtraTrees · 拟合+验证预测",
+              "seconds": 63.233388833119534,
+              "field": "ET.training_seconds.sum"
+            },
+            {
+              "id": "exp008_wall",
+              "label": "exp008 Q2 · 运行总墙钟",
+              "seconds": null,
+              "field": "run_wall_seconds"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "errors": [],
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/comparison-360-dark.png",
+      "layout": {
+        "rootWidth": 360,
+        "rootScrollWidth": 360,
+        "rootHeight": 3746.6875,
+        "svg": [
+          {
+            "label": "第二问 · -6.14%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第三问 · -8.42%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案2 · -11.99%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "第四问·方案3 · -7.84%",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "全天 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · RMSE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          },
+          {
+            "label": "实际PV>0 · WAPE",
+            "width": 360,
+            "xTickCount": 3,
+            "conflicts": [],
+            "outside": []
+          }
+        ],
+        "tables": [
+          {
+            "width": 360,
+            "scrollWidth": 360
+          },
+          {
+            "width": 360,
+            "scrollWidth": 360
+          }
+        ],
+        "visibleTitles": [
+          "各问题实际费用 · 统一万元尺度",
+          "第二问 · -6.14%",
+          "第三问 · -8.42%",
+          "第四问·方案2 · -11.99%",
+          "第四问·方案3 · -7.84%",
+          "Q2历史费用 · 按角色保留",
+          "同午夜预测 · RMSE与WAPE同时展示",
+          "全天 · RMSE",
+          "全天 · WAPE",
+          "实际PV>0 · RMSE",
+          "实际PV>0 · WAPE",
+          "已有计时 · 保留原阶段"
+        ],
+        "missingValues": [
+          "负 缺失",
+          "负 缺失"
+        ],
+        "bodyOverflow": false,
+        "sourceData": {
+          "questions": [
+            {
+              "id": "2",
+              "label": "第二问",
+              "reference": "exp006",
+              "previous": 14066257.477256786,
+              "current": 13201981.947942203,
+              "delta_pct": -6.144317567853415
+            },
+            {
+              "id": "3",
+              "label": "第三问",
+              "reference": "exp002",
+              "previous": 14005062.775875755,
+              "current": 12826263.074326914,
+              "delta_pct": -8.416954071633063
+            },
+            {
+              "id": "4-2",
+              "label": "第四问·方案2",
+              "reference": "exp002",
+              "previous": 15901397.201112418,
+              "current": 13994531.257936869,
+              "delta_pct": -11.99181379509311
+            },
+            {
+              "id": "4-3",
+              "label": "第四问·方案3",
+              "reference": "exp002",
+              "previous": 14734925.124925215,
+              "current": 13579870.464961825,
+              "delta_pct": -7.838890596122064
+            }
+          ],
+          "history_costs": [
+            {
+              "id": "exp001/legacy_rebased",
+              "label": "exp001 · 同物理口径重算",
+              "cost": 15842654.1906855,
+              "separate": false
+            },
+            {
+              "id": "exp002/primary",
+              "label": "exp002 · 正式风险策略",
+              "cost": 15128897.4527102,
+              "separate": false
+            },
+            {
+              "id": "exp003/primary",
+              "label": "exp003 · 当轮正式",
+              "cost": 14988622.6481765,
+              "separate": false
+            },
+            {
+              "id": "exp004/causal_season",
+              "label": "exp004 · 当轮正式（历史季节）",
+              "cost": 13626145.4059908,
+              "separate": false
+            },
+            {
+              "id": "exp004/no_season",
+              "label": "exp004 · 无季节预测基线",
+              "cost": 13611587.8329135,
+              "separate": false
+            },
+            {
+              "id": "exp006/primary",
+              "label": "exp006 · 正式树DP",
+              "cost": 14066257.4772568,
+              "separate": false
+            },
+            {
+              "id": "exp008/final",
+              "label": "exp008 · 最终融合",
+              "cost": 13201981.947942203,
+              "separate": false
+            },
+            {
+              "id": "exp001/original",
+              "label": "原协议单列：exp001 · 原登记",
+              "cost": 16258308.2173546,
+              "separate": true
+            },
+            {
+              "id": "exp005/beta_0.1",
+              "label": "原协议单列：exp005 · β=0.1",
+              "cost": 14717882.165475883,
+              "separate": true
+            }
+          ],
+          "forecasts": [
+            {
+              "id": "exp001",
+              "label": "001 重评",
+              "load": [
+                247.45161352437,
+                3.90433946618678,
+                252.351585808532,
+                3.44334264219711
+              ],
+              "pv": [
+                341.262159873401,
+                7.55001291278804,
+                455.78901713816,
+                7.20222702024081
+              ]
+            },
+            {
+              "id": "exp002",
+              "label": "002 重评",
+              "load": [
+                220.779862383218,
+                3.54468934304015,
+                219.950898830724,
+                3.08509370557757
+              ],
+              "pv": [
+                343.496709148628,
+                7.25215961784986,
+                459.437308296373,
+                7.21707306485631
+              ]
+            },
+            {
+              "id": "exp003",
+              "label": "003",
+              "load": [
+                244.28661485194,
+                3.82941918910358,
+                239.604570800335,
+                3.2856438938968
+              ],
+              "pv": [
+                375.174878037984,
+                7.79142088130106,
+                501.849596855795,
+                7.79132695597745
+              ]
+            },
+            {
+              "id": "exp004",
+              "label": "004 无季节",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp005",
+              "label": "005 复用",
+              "load": [
+                258.3117746935,
+                4.2336372185,
+                null,
+                null
+              ],
+              "pv": [
+                423.9991342452,
+                8.9295024753,
+                567.1409994578,
+                8.9119496272
+              ]
+            },
+            {
+              "id": "exp006",
+              "label": "006",
+              "load": [
+                258.311774693521,
+                4.23363721849061,
+                252.128225661351,
+                3.61076236939042
+              ],
+              "pv": [
+                423.999134245203,
+                8.929502475256,
+                567.140999457829,
+                8.91194962722239
+              ]
+            },
+            {
+              "id": "exp008",
+              "label": "008 融合",
+              "load": [
+                182.98698621729875,
+                2.9668556880686503,
+                181.23777819084373,
+                2.567863712137439
+              ],
+              "pv": [
+                307.0503899088877,
+                6.44257200369873,
+                410.62933761117824,
+                6.398001015169905
+              ]
+            }
+          ],
+          "runtime": [
+            {
+              "id": "exp001",
+              "label": "exp001 原协议 · 求解+执行",
+              "seconds": 1.197190367267,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp002",
+              "label": "exp002 · 求解+执行（334次超时）",
+              "seconds": 907.740153215011,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp003",
+              "label": "exp003 正式 · 求解+执行",
+              "seconds": 12.398277213214897,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp004",
+              "label": "exp004 无季节 · 求解+执行",
+              "seconds": 11.677327542915007,
+              "field": "solve_execute_seconds"
+            },
+            {
+              "id": "exp005",
+              "label": "exp005 β=0.1 · 四类LP求解之和",
+              "seconds": 959.6525492203655,
+              "field": "overlap_summary[*].solver_seconds; beta=0.1"
+            },
+            {
+              "id": "exp006",
+              "label": "exp006 正式 · 运行墙钟",
+              "seconds": 8.954869084060192,
+              "field": "run_wall_seconds"
+            },
+            {
+              "id": "exp008_mip",
+              "label": "exp008 Q2 · 物理MIP求解",
+              "seconds": 699.0726444264874,
+              "field": "Q2.solver_seconds.sum"
+            },
+            {
+              "id": "exp008_refine",
+              "label": "exp008 Q2 · 固定掩码Q精化",
+              "seconds": 304.3245660071261,
+              "field": "Q2.refinement_seconds.sum"
+            },
+            {
+              "id": "exp008_hgb",
+              "label": "exp008 HGB · 拟合+验证预测",
+              "seconds": 44.97184687713161,
+              "field": "HGB.training_seconds.sum"
+            },
+            {
+              "id": "exp008_et",
+              "label": "exp008 ExtraTrees · 拟合+验证预测",
+              "seconds": 63.233388833119534,
+              "field": "ET.training_seconds.sum"
+            },
+            {
+              "id": "exp008_wall",
+              "label": "exp008 Q2 · 运行总墙钟",
+              "seconds": null,
+              "field": "run_wall_seconds"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

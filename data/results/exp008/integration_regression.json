@@ -1,0 +1,108 @@
+{
+  "scope": "3-day actual execution regression; no annual rerun",
+  "all_exact_matches": true,
+  "all_verified": true,
+  "rows": [
+    {
+      "case": "integrated_issued_opportunity_d3",
+      "scenario": "3",
+      "compared_days": 3,
+      "reference": "data/results/exp008/update_value_diagnostic/future1.5_d334_issued/3/dispatch_3.npz",
+      "reference_sha256": "0d1c4d9a034785cd9acc17cd3cc4ca22802c2eb198fab13fa80b949cf65af94d",
+      "maximum_absolute_differences": {
+        "original": 0.0,
+        "final": 0.0,
+        "charge": 0.0,
+        "discharge": 0.0,
+        "emergency": 0.0,
+        "surplus": 0.0,
+        "states": 0.0,
+        "fees": 0.0,
+        "actual": 0.0,
+        "price": 0.0,
+        "days": 0.0
+      },
+      "exact_match": true,
+      "passed": true
+    },
+    {
+      "case": "integrated_issued_opportunity_d3",
+      "scenario": "4-3",
+      "compared_days": 3,
+      "reference": "data/results/exp008/update_value_diagnostic/future1.5_d334_issued/4-3/dispatch_4-3.npz",
+      "reference_sha256": "ee5faaa9dd3d511a096e39ef1687bde2ca5ac75a561cb3f0725391991eb6a337",
+      "maximum_absolute_differences": {
+        "original": 0.0,
+        "final": 0.0,
+        "charge": 0.0,
+        "discharge": 0.0,
+        "emergency": 0.0,
+        "surplus": 0.0,
+        "states": 0.0,
+        "fees": 0.0,
+        "actual": 0.0,
+        "price": 0.0,
+        "days": 0.0
+      },
+      "exact_match": true,
+      "passed": true
+    },
+    {
+      "case": "integrated_legacy_d3",
+      "scenario": "3",
+      "compared_days": 3,
+      "reference": "data/results/exp008/joint_initial/3/dispatch_3.npz",
+      "reference_sha256": "d73056979031c0f50fb908a82ccc80512d73b402ff6b52e9b98011ad89c70da4",
+      "maximum_absolute_differences": {
+        "original": 0.0,
+        "final": 0.0,
+        "charge": 0.0,
+        "discharge": 0.0,
+        "emergency": 0.0,
+        "surplus": 0.0,
+        "states": 0.0,
+        "fees": 0.0,
+        "actual": 0.0,
+        "price": 0.0,
+        "days": 0.0
+      },
+      "exact_match": true,
+      "passed": true
+    },
+    {
+      "case": "integrated_legacy_d3",
+      "scenario": "4-3",
+      "compared_days": 3,
+      "reference": "data/results/exp008/joint_initial/4-3/dispatch_4-3.npz",
+      "reference_sha256": "bab3dc498985b50c7a16eaa176947a74c2adf200d76ac1aee8dd944db880d8e1",
+      "maximum_absolute_differences": {
+        "original": 0.0,
+        "final": 0.0,
+        "charge": 0.0,
+        "discharge": 0.0,
+        "emergency": 0.0,
+        "surplus": 0.0,
+        "states": 0.0,
+        "fees": 0.0,
+        "actual": 0.0,
+        "price": 0.0,
+        "days": 0.0
+      },
+      "exact_match": true,
+      "passed": true
+    }
+  ],
+  "cache_mutation_checks": [
+    {
+      "issued_residuals": false,
+      "future_shortfall_weight": 1.5,
+      "changed_configuration_refused": true
+    },
+    {
+      "issued_residuals": true,
+      "future_shortfall_weight": 2.0,
+      "changed_configuration_refused": true
+    }
+  ],
+  "existing_dispatch_sha256_unchanged": true
+}

@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "days": 3,
+  "verification": {
+    "passed": true,
+    "errors": [],
+    "scenario": "2",
+    "days": 3,
+    "intervals": 432,
+    "start_day": 31,
+    "max_balance_error_kwh": 0.0,
+    "max_soc_error_kwh": 9.094947017729282e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 4.547473508864641e-13,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 127213.05438550978,
+      "up_cost": 0.0,
+      "down_cost": 0.0,
+      "emergency_cost": 5345.84985245668,
+      "total_cost": 132558.90423796637
+    },
+    "recomputed_total_cost": 132558.90423796637,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 62253.60385532516,
+      "discharge_kwh": 54156.22619703731,
+      "throughput_kwh": 116409.83005236246,
+      "equivalent_full_cycles": 4.839359540623844,
+      "direction_reversals": 22,
+      "direction_reversals_including_warmup_boundary": 22,
+      "charging_slots": 223,
+      "discharging_slots": 152,
+      "active_slots": 375,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 22,
+      "discharge_starts": 16,
+      "power_changes_count": 389,
+      "power_ramp_total_kw": 269330.4251357766,
+      "power_ramp_total_kw_including_warmup_boundary": 273888.52622712584,
+      "power_ramp_max_kw_per_10min": 6336.132875581727,
+      "power_ramp_p95_kw_per_10min": 3834.1744298795443,
+      "mean_absolute_power_kw": 1616.8031951717005,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 4936.9881000000005,
+      "initial_soc": 1421.7991105135516,
+      "final_soc": 3395.0785775414024,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 1,
+      "final_mode": 1,
+      "initial_power_kw": 172.75999999999976,
+      "final_power_kw": 232.67630006268996,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": true,
+      "checked_fields": 6,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "goal": {
+      "passed": false,
+      "checks": {
+        "cost_reduced_at_least_8pct": false,
+        "direction_reversals_reduced": false,
+        "no_simultaneous_charge_discharge": true,
+        "physical_checks_passed": true,
+        "full_334_day_evaluation": false
+      },
+      "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+      "stricter_all_operation_metrics_passed": false,
+      "active_slots_also_reduced": false,
+      "baseline": {
+        "run_id": "exp006/primary",
+        "total_cost": 14066257.477256786,
+        "direction_reversals": 2729,
+        "active_slots": 23028,
+        "throughput_kwh": 11480847.039823763
+      },
+      "cost_threshold_yuan": 12940956.8791,
+      "cost_reduction_pct": null,
+      "direction_reversal_reduction_pct": null,
+      "active_slot_reduction_pct": null,
+      "throughput_reduction_pct": null,
+      "throughput_also_reduced": false,
+      "cost_reduced_at_least_10pct": false,
+      "comparison_scope": "partial run: no comparison to full-year totals"
+    },
+    "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/dispatch.npz",
+    "source_sha256": "cdca582e2121fb77406b574152cea0f0661e3975945200b58fd9bffb59757ec3"
+  },
+  "all_source_and_forecast_model_hashes_passed": true,
+  "prediction_cutoffs_checked": 334,
+  "historical_paths_rebuilt_independently": true,
+  "all_scenario_physics_passed": true,
+  "continuous_SOC_and_planned_mode_age_passed": true,
+  "maximum_numerical_error": 3.916511559509672e-11,
+  "execution_future_mutation_count": 9,
+  "forecast_future_checks": [
+    {
+      "day": 31,
+      "signed_raw_models_causality_inherited": true,
+      "issued_and_full28_historical_paths_asymmetric_future_mutation": true
+    },
+    {
+      "day": 32,
+      "signed_raw_models_causality_inherited": true,
+      "issued_and_full28_historical_paths_asymmetric_future_mutation": true
+    }
+  ],
+  "prefix_arrays_equal": null,
+  "planned_changes_off_hour": 19,
+  "switch_budget_certificate": {
+    "passed": true,
+    "daily_planned_switch_counts": [
+      7,
+      7,
+      8
+    ],
+    "planned_changes_including_initial_and_midnight": 22,
+    "actual_reversals_including_initial": 22,
+    "unique_planned_flip_witnesses": [
+      34,
+      56,
+      90,
+      93,
+      99,
+      131,
+      133,
+      144,
+      190,
+      208,
+      226,
+      233,
+      250,
+      268,
+      322,
+      332,
+      334,
+      353,
+      366,
+      377,
+      395,
+      412
+    ],
+    "bound_for_observed_days": 24,
+    "full334_upper_bound": 2672,
+    "below_exp0062729_by_construction": true,
+    "proof": "Nonidle actual signs are an order-preserving subsequence of allowed signs; deleting idle slots cannot increase sign changes."
+  },
+  "planned_changes": 22,
+  "last_planned_state": {
+    "planned_changes_including_boundary": 8,
+    "final_planned_mode": 1,
+    "final_planned_run_slots": 20,
+    "next_day_required_hold_slots": 0,
+    "completed_run_minimum_passed": true
+  },
+  "nonanticipative_recourse_certificate": false
+}

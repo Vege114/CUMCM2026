@@ -1,0 +1,116 @@
+{
+  "complete": true,
+  "days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "fixed_Q": true,
+  "paired_deltas": [
+    {
+      "day": 31,
+      "total_cost": 2.9103830456733704e-11,
+      "planned_cost": 0.0,
+      "emergency_cost": 3.285061822566604e-11,
+      "throughput_kwh": 101.204192852907,
+      "active_slots": -3,
+      "direction_reversals_including_warmup_boundary": 0,
+      "episodes_with_previous_slot": 1,
+      "charge_starts_with_previous_slot": 1,
+      "discharge_starts_with_previous_slot": 0,
+      "final_soc": 96.01072745222973,
+      "power_ramp_total_kw_including_warmup_boundary": 3908.5242636205367
+    },
+    {
+      "day": 90,
+      "total_cost": -2262.1257207590897,
+      "planned_cost": 0.0,
+      "emergency_cost": -2262.125720759097,
+      "throughput_kwh": 252.34016958163556,
+      "active_slots": -4,
+      "direction_reversals_including_warmup_boundary": 0,
+      "episodes_with_previous_slot": 0,
+      "charge_starts_with_previous_slot": 1,
+      "discharge_starts_with_previous_slot": -1,
+      "final_soc": -9.092106403475327,
+      "power_ramp_total_kw_including_warmup_boundary": 11827.745120537584
+    },
+    {
+      "day": 151,
+      "total_cost": -6428.958557086677,
+      "planned_cost": 0.0,
+      "emergency_cost": -6428.958557086677,
+      "throughput_kwh": 0.0,
+      "active_slots": -12,
+      "direction_reversals_including_warmup_boundary": -2,
+      "episodes_with_previous_slot": 1,
+      "charge_starts_with_previous_slot": 0,
+      "discharge_starts_with_previous_slot": 1,
+      "final_soc": 0.0,
+      "power_ramp_total_kw_including_warmup_boundary": 24246.054437799554
+    },
+    {
+      "day": 243,
+      "total_cost": 2.1827872842550278e-11,
+      "planned_cost": 0.0,
+      "emergency_cost": 2.1593436372313592e-11,
+      "throughput_kwh": 1122.210917710614,
+      "active_slots": 12,
+      "direction_reversals_including_warmup_boundary": 1,
+      "episodes_with_previous_slot": 1,
+      "charge_starts_with_previous_slot": 1,
+      "discharge_starts_with_previous_slot": 0,
+      "final_soc": 1064.6227545219963,
+      "power_ramp_total_kw_including_warmup_boundary": 3432.916535227676
+    },
+    {
+      "day": 364,
+      "total_cost": -91.54433506893838,
+      "planned_cost": 0.0,
+      "emergency_cost": -91.54433506893292,
+      "throughput_kwh": 1.4551915228366852e-11,
+      "active_slots": -6,
+      "direction_reversals_including_warmup_boundary": 0,
+      "episodes_with_previous_slot": 0,
+      "charge_starts_with_previous_slot": 0,
+      "discharge_starts_with_previous_slot": 0,
+      "final_soc": 0.0,
+      "power_ramp_total_kw_including_warmup_boundary": -3113.7751510780217
+    }
+  ],
+  "totals_without_terminal_soc": {
+    "fixed_mask": {
+      "total_cost": 300288.5171267705,
+      "planned_cost": 198591.31254328982,
+      "emergency_cost": 101697.20458348072,
+      "throughput_kwh": 162093.22349710547,
+      "active_slots": 514.0,
+      "direction_reversals_including_warmup_boundary": 36.0,
+      "episodes_with_previous_slot": 59.0,
+      "charge_starts_with_previous_slot": 28.0,
+      "discharge_starts_with_previous_slot": 31.0,
+      "power_ramp_total_kw_including_warmup_boundary": 426425.04206950706
+    },
+    "DP": {
+      "total_cost": 291505.88851385587,
+      "planned_cost": 198591.31254328982,
+      "emergency_cost": 92914.57597056606,
+      "throughput_kwh": 163568.97877725062,
+      "active_slots": 501.0,
+      "direction_reversals_including_warmup_boundary": 35.0,
+      "episodes_with_previous_slot": 62.0,
+      "charge_starts_with_previous_slot": 31.0,
+      "discharge_starts_with_previous_slot": 31.0,
+      "power_ramp_total_kw_including_warmup_boundary": 466726.5072756144
+    }
+  },
+  "all_models_and_DP_tables_locked_before_actual": true,
+  "all_input_and_source_files_unchanged": true,
+  "annual_savings_not_evaluated": true,
+  "not_a_continuous5day_evaluation": true,
+  "own_initial_states_not_propagated_between_selected_days": true,
+  "development_not_independent_test": true,
+  "goal_not_evaluated": true
+}

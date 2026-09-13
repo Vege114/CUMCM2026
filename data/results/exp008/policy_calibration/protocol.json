@@ -1,0 +1,36 @@
+{
+  "config": {
+    "blocks": 4,
+    "history_days": 28,
+    "minimum_training_days": 14,
+    "l2_yuan_per_squared_kwh": 0.5,
+    "maxiter": 300,
+    "coefficient_bound_kwh": 150.0,
+    "quantile": 0.8,
+    "seed": 42
+  },
+  "pilot_days": 60,
+  "features": [
+    "intercept",
+    "cnn_mean_net_div5000kw",
+    "cnn_mean_pv_div5000kw",
+    "past7_completed_cnn_net_error_div500kw",
+    "yesterday_mean_load_div5000kw",
+    "weekday_sin",
+    "weekday_cos",
+    "current_soc_center6000_div4800kwh"
+  ],
+  "blocks": [
+    "00:00-06:00",
+    "06:00-12:00",
+    "12:00-18:00",
+    "18:00-24:00"
+  ],
+  "W_units": "kWh per ten-minute slot per dimensionless feature",
+  "policy": "max(0, daily fresh q0.8 LP g0 + repeated block W*x)",
+  "historical_archive_sha256": "7b2fa14bbba172783e982cf719fd692c98781b80ceb82d1812e3feede210456d",
+  "training_labels": "only whole days before monthly training issue",
+  "deployment_controller": "same causal greedy battery for calibrated and zero-W baseline",
+  "evaluation_role": "development pilot, not full-year target test",
+  "source_sha256": "d6a7f9765605986130bdd3f2e0775610b128d3cbc070b5be8233f1f0c177022f"
+}

@@ -1,0 +1,68 @@
+{
+  "candidate": {
+    "model_name": "shared_CNN_cumulative_net_huber",
+    "cumulative_group_weight": 1.0,
+    "variant": "no_season",
+    "seed": 42,
+    "shared_channels": [
+      "load",
+      "pv"
+    ],
+    "filters": 8,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2
+    ],
+    "padding": "causal",
+    "pool_size": 6,
+    "embedding_units": 16,
+    "head_units": 16,
+    "l2": 0.0001,
+    "component_huber_group_weight": 1.0,
+    "net_huber_group_weight": 1.0,
+    "net_normalization": "standard deviation of observed net kW before monthly training cutoff",
+    "loss": "normalized_tariff * (mean(two symmetric channel Hubers) + net Huber + cumulative net Huber)",
+    "cumulative_normalization": "cumsum(physical net error / training net scale) / sqrt(prefix length)",
+    "joint_changes_not_single_factor_attribution": true,
+    "hyperparameter_search": false,
+    "official_pv_or_future_prices_used": false,
+    "yearly_seasonal_features_or_labels_used": false,
+    "evaluation_role": "2025 development, not untouched independent validation"
+  },
+  "inherited_training": {
+    "monthly": "from_scratch",
+    "earliest_training_day": 7,
+    "validation_days": 7,
+    "train_issue_hours": [
+      0
+    ],
+    "validation_issue_hours": [
+      0
+    ],
+    "history_weight_half_life_days": 90,
+    "loss": "tariff_weighted_asymmetric_huber",
+    "under_load_over_pv_weight": 5,
+    "other_error_weight": 1,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "max_epochs": 60,
+    "patience": 6,
+    "device": "cpu",
+    "threads": 2
+  },
+  "inherited_train_validation_split": "monthly; last7 complete days validation; scales stop before validation",
+  "loss_override": "symmetric component, net and normalized cumulative net groups, each fixed weight one",
+  "signature": "9d71d5132480f8d5480c469254e64ba246c93a61074a89fdfe6335979b77a3a9",
+  "source_sha256": {
+    "experiments/exp008/neural_cumulative.py": "511c78ca85125b7c70e7d46da1c2fd37e2475a49c44ed250368d87cd3ee60e2e",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/problem2/exp004/protocol.json": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+    "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce"
+  },
+  "data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

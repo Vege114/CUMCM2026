@@ -1,0 +1,70 @@
+{
+  "scenarios": [
+    "3",
+    "4-3"
+  ],
+  "days": 334,
+  "predeclared_full_year_no_February_performance_gate": true,
+  "initial_gate": "causal issue/history perturbation checks only",
+  "model_id": "direct_hgb_ridge28_memory_half",
+  "settings": {
+    "scenarios": 7,
+    "residual_scale": 1.0,
+    "throughput_penalty": 0.005,
+    "variation_penalty": 0.001,
+    "terminal_value": 1.0,
+    "emergency_weight": 5.0,
+    "future_shortfall_weight": 1.5
+  },
+  "deadband_kwh": 20.0,
+  "same_issue_residuals": true,
+  "updates": [
+    0,
+    36,
+    72,
+    108
+  ],
+  "baseline": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/update_value_diagnostic/future1.5_d334_issued",
+  "source_hashes": {
+    "absolute_hgb_update_dispatch": "61b094c0d6ed38dfc69cbe71073016cdabde99a911d1c96d373c167a5ed10ba9",
+    "absolute_hgb_forecast_adapter": "196f48b19e75c5cd94b905e55026c38d83bef70d0376b580a02d5d4b958aefb6",
+    "forecast_absolute_hgb": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+    "forecast_override_adapter": "3d7fbe4da43199bc72e49238a8a435a079bb8181118e0c01c2fe4580bc0f35fa",
+    "issued_residual_paths": "e18d82efa97713af0fc946fc31e0fcc340488c67fb95ac4fa88894047d9e2b7c",
+    "forecast": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "planner": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "run": "ce05d4c0bce8721a1cc845fd00195558876d708436c39ca6454a231955122011",
+    "verify": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36"
+  },
+  "forecast_identity": {
+    "model_id": "direct_hgb_ridge28_memory_half",
+    "prediction_values_sha256": "7c95d0bbb2129ad2ebee9df66d2014cdb72cb2c0b7f824a679766737c8c0b47a",
+    "prediction_origins_sha256": "29289a670ccea3a9d908e5bba54033aeb5a729f46302ddebbd0513dc1cdb1832",
+    "prediction_values_shape": [
+      334,
+      144,
+      2
+    ],
+    "prediction_values_dtype": "float64",
+    "prediction_origins_dtype": "int64",
+    "implementation_class": "__main__.LinkedHGBForecasts",
+    "implementation_source": "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/absolute_hgb_update_dispatch.py",
+    "implementation_source_sha256": "61b094c0d6ed38dfc69cbe71073016cdabde99a911d1c96d373c167a5ed10ba9",
+    "wrapper_source_sha256": "3d7fbe4da43199bc72e49238a8a435a079bb8181118e0c01c2fe4580bc0f35fa",
+    "source_artifact_sha256": {
+      "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/absolute_hgb_update_dispatch.py": "61b094c0d6ed38dfc69cbe71073016cdabde99a911d1c96d373c167a5ed10ba9",
+      "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+      "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+      "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/training_audit.json": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+      "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/ridge28_audit.json": "ce3eb013af90feaa857246ef99bb4e40be21c99c0fa4ea211e809c36652acd36",
+      "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/memory_half_audit.json": "c41dca12606d490827cf2f3ee49d5f32afe32815c2bcabf1d788850c7baf5f3a"
+    },
+    "seed": 42,
+    "calibration": "direct_hgb_ridge28_memory_half",
+    "history_source": "same wrapped get at each prior completed target day and same legal issue",
+    "January_history": "unchanged explicitly labelled periodic cold start, not joint CNN output"
+  },
+  "development_year_not_independent_test": true,
+  "final_report_generated": false,
+  "Q2_goal_applied": false
+}

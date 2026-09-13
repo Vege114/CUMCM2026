@@ -1,0 +1,21 @@
+{
+  "days": 334,
+  "calibration": "joint_ridge28",
+  "scenarios": 3,
+  "block_slots": 6,
+  "switching": 50.0,
+  "wear": 0.002,
+  "seconds": 5.0,
+  "gap": 0.002,
+  "refinement": true,
+  "maxiter": 120,
+  "deadband": 0.0,
+  "repair": "hard_no_scenario_emergency_charging",
+  "scenario_selection": "deterministic_equally_spaced_complete_historical_origins",
+  "initialization_scenario_count_also_changed": true,
+  "refinement_uses_all_28_historical_paths": true,
+  "checkpoint_days": null,
+  "checkpoint_maximum_gap_threshold": 0.05,
+  "nonanticipative_recourse_certificate": false,
+  "source_sha256": "736458b7c86037343eaf2cdbb8e64d50ac5b30d9cda40256470f9cc80606989a"
+}

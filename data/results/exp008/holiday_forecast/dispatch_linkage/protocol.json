@@ -1,0 +1,14 @@
+{
+  "spec": {
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0
+  },
+  "source_forecast": "holiday_forecast",
+  "baseline": "data/results/exp008/risk_window/tree28_334days",
+  "candidate_count": 1,
+  "risk": "fresh tree28 from holiday prequential residuals, never old base risk cache",
+  "source_sha256": "f4f1f1fd94c1b46518a6195856b21ceb90498dfb4258922aff40bf77e53df344",
+  "forecast_source_sha256": "2a1c2fce98feeef5be2cc43e861a8e50ccb854dcb81ed5a5e2511d17a2b341b4",
+  "calendar_local_applicability": "hypothesis only"
+}

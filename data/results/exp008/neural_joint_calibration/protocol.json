@@ -1,0 +1,18 @@
+{
+  "network_candidate_count": 1,
+  "calibrator": "unmodified_exp008_Ridge28",
+  "calibrator_config": {
+    "name": "ridge_28",
+    "method": "ridge",
+    "window": 28
+  },
+  "data_explicit": true,
+  "use_cache": false,
+  "base_store_injection": true,
+  "no_existing_forecast_or_calibration_cache_overwritten": true,
+  "same_postprocessing_for_both_architectures": true,
+  "hyperparameters_changed": false,
+  "development_on_2025_not_independent_validation": true,
+  "source_sha256": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+  "calibrator_source_sha256": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62"
+}

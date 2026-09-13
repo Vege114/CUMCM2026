@@ -1,0 +1,19 @@
+{
+  "candidate_count": 1,
+  "gain": 0.5,
+  "base": "signed_joint_CNN_then_unchanged_Ridge28",
+  "current_and_historical_pipeline": "apply_same_memory_to_each_historical_issue",
+  "model_fitted": false,
+  "hyperparameter_search": false,
+  "inputs": "previous_completed_actual_load_and_underlying_prior_issued_load_forecast",
+  "pv_unchanged": true,
+  "source_sha256": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+  "base_values_sha256": "389b4e5d127aecfc9e61e9f6e7b374a9fca29b47f518d217cbcec7aaa5e86514",
+  "source_data_sha256": {
+    "\u9644\u4ef61.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "archive_sha256": "4b6eedddf07deaed9ad2cbfd2ce109d5ec28eb7f5ee2b1647129a80e1dd434e2",
+  "development_on_examined_2025_not_independent_test": true
+}

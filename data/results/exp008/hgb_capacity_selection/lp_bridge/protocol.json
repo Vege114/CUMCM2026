@@ -1,0 +1,24 @@
+{
+  "model_id": "past_validation_capacity_HGB_Ridge28_memory_half",
+  "days": 334,
+  "conditioning": "tree",
+  "history_days": 28,
+  "quantile": 0.8,
+  "state_buffer": 500.0,
+  "values_sha256": "aef7f57bc050a0a30328ff54c607d326faf78c20f69fc8055a9f24c70a31f31b",
+  "origins_sha256": "29289a670ccea3a9d908e5bba54033aeb5a729f46302ddebbd0513dc1cdb1832",
+  "model_evidence_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/protocol.json": "7353067c85ced3d46a8065ec1e82013bc266496bb39f3eb2f58bd4839aaa6d62",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/summary.json": "b006bc3b69bc5daef4f5f7175e8dfe4f6d014acc57436615ed9677ddc35f0a1c",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/memory.npz": "4f79bbe19ec8b1ba7b688089ad76cec7d1bfbaf391444a101648e6309bb262d5",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/training_audit.json": "3127e4770f22913b67ce108f7719ca76405a774b7002cc75422b9ee6ffc9fe15",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/selection_audit.json": "3da6afe25d74c0caf50bdccac3facaa218b98c512e30368e2fb613cbdcd0296a",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/independent_audit.json": "579e3ff730c815065324e5eec087e2b3b6a969a94a836a3c127ee30264dfee1b",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/audit_correction.json": "66d4a8319c4fcc8192f5956dc2ec0664bfb4d548d05012756a5dc7397f46e62d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_capacity_selection/independent_audit_v2.py": "047d4918971b95adbfaeb89e453ecf492bf4b4fbbe9efd31d093af285c0479e9"
+  },
+  "source_sha256": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6",
+  "one_fixed_comparison": true,
+  "development_not_independent_test": true,
+  "final_model_selection": false
+}

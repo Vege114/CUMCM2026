@@ -1,0 +1,17 @@
+{
+  "days": 30,
+  "forecast": "joint_network_then_unchanged_Ridge28",
+  "comparison_forecast": "original_network_then_unchanged_Ridge28",
+  "planner": "same_physical_shared_hour_mode_scenario3",
+  "full_28_complete_history_paths_for_greedy_refinement": true,
+  "scenario_error_forecast_source_matches_current_forecast": true,
+  "switching": 50.0,
+  "mip_seconds": 5.0,
+  "refinement_maxiter": 120,
+  "no_deadband": true,
+  "each_policy_continuous_soc": true,
+  "only_forecast_pipeline_changed": true,
+  "annual_claim": false,
+  "source_sha256": "840b72e4ec79e33b74dad9463c9a35729bd3c4d40a3dd6e91630f9cf678ba4ad",
+  "joint_calibrated_archive_sha256": "5d8425ada92068f522010e71dd7c9ef117685bc81fd0243a57d55cef72662006"
+}

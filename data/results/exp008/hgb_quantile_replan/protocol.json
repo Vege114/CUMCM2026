@@ -1,0 +1,26 @@
+{
+  "fixed_parameters": [
+    0.75,
+    0.8,
+    0.85
+  ],
+  "control": 0.8,
+  "days": 334,
+  "reference": "data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days",
+  "risk_reused_because_independent_of_battery_policy": true,
+  "only_quantile_changed": true,
+  "fixed_other_spec": {
+    "calibration": "ridge_28",
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0
+  },
+  "no_new_configuration_added_after_results": true,
+  "evaluation_role": "2025 development; not independent model selection",
+  "source_sha256": "85dd7434668633e1b962d2a7b0cd8126957f8d9460170e00e05dbd7bfc819940",
+  "input_hashes": {
+    "supports.npz": "e051d7f5ebc34586b690b1d4a2cc0fd79c66cdefca4e5713ee095836274faecb",
+    "audit.json": "a227829b96d1209a8489822803c025fc30565e020186580090292843a49b33b7",
+    "dispatch_2.npz": "c900745ca1157faad28a937ea1602fc3009cd8391ae7df5a442ef2f3de93114c"
+  }
+}

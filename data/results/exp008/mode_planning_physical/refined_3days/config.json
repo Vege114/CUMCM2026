@@ -1,0 +1,16 @@
+{
+  "days": 3,
+  "calibration": "ridge_28",
+  "scenarios": 7,
+  "block_slots": 6,
+  "switching": 50.0,
+  "wear": 0.002,
+  "seconds": 5.0,
+  "gap": 0.002,
+  "refinement": true,
+  "maxiter": 120,
+  "deadband": 0.0,
+  "repair_only": "hard_no_scenario_emergency_charging",
+  "nonanticipative_recourse_certificate": false,
+  "source_sha256": "830cde748c3d8159c6c0d190ff837c280781924ffccc14d08781e0a18c96de5d"
+}

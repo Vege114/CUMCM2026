@@ -1,0 +1,34 @@
+{
+  "reason": "Parent requested unambiguous Q2-only role. Rendered QA found nonexistent PingFang font path and unreadable PV WAPE linear scale caused by near-zero denominators.",
+  "changed_csvs": [
+    "history_midnight_comparable.csv",
+    "annual_metrics.csv",
+    "daily_metrics.csv",
+    "monthly_metrics.csv",
+    "lead_metrics.csv",
+    "daily_energy_metrics.csv"
+  ],
+  "all_existing_numeric_csv_strings_preserved": true,
+  "old_report_script_sha256": "5301e7fc4ab22c37d19c40a21ee1f51d2eec0e723b607b6887e2aa6d9fdd089a",
+  "new_report_script_sha256": "17e896cea3d31a67de93bd36c836b28204f59aa8f78dbf7001bb11dfd5335b99",
+  "role": "Q2 accepted final midnight forecast",
+  "font": "Arial Unicode MS; SVG embeds glyph paths",
+  "PV_lead_WAPE": "log scale with visible label; original extreme values and missing values retained",
+  "frozen_forecast_and_optimization_files_unchanged": true,
+  "core_file_before_sha256": {
+    "annual_metrics.csv": "5b6e35030c5d3d83243ed2d7e4aa2e6b22fab9e5554da05025c256da636c296e",
+    "monthly_metrics.csv": "3b76ac8721bda00952076f0f9da132ee7a9ed647e6e7a8f02f2e8663772370d6",
+    "lead_metrics.csv": "7658f615b8417975d09ed16a52841d2f5af4096031c01904c66a5882d42573c3",
+    "provenance.json": "2df6256756948918e5eff969492c6ebffc5b395f06d7fabd68d568a3f2cda36e",
+    "model_configuration.json": "731b760bcab2e09ab8f07f0acb8802860133626621bf2e2592295abafa23f77b",
+    "verification.json": "273cc8cedd7dc9ab3c39e97de64f5268bccc307cae9610610a128957d286c2ad"
+  },
+  "core_file_after_sha256": {
+    "annual_metrics.csv": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+    "monthly_metrics.csv": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+    "lead_metrics.csv": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+    "provenance.json": "240d9f35533b0c97efc4c918d04b10898bbed650b3f0f88800aab5c13e847bdc",
+    "model_configuration.json": "731b760bcab2e09ab8f07f0acb8802860133626621bf2e2592295abafa23f77b",
+    "verification.json": "273cc8cedd7dc9ab3c39e97de64f5268bccc307cae9610610a128957d286c2ad"
+  }
+}

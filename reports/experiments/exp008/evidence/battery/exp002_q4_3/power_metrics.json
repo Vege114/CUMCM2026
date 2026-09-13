@@ -1,0 +1,25 @@
+{
+  "days": 334,
+  "points": 48096,
+  "delta_points": 48095,
+  "mean_absolute_delta_kw": 1012.0262240231731,
+  "rms_delta_kw": 2008.0480032504324,
+  "p95_absolute_delta_kw": 4906.914806425066,
+  "max_absolute_delta_kw": 9581.8468,
+  "total_variation_kw": 48673401.24439451,
+  "direct_reversals": 7964,
+  "power_limit_share": 0.057530771789753826,
+  "jump_threshold_kw": 1000.0,
+  "large_jump_share": 0.21944069030044702,
+  "warmup_boundary_delta_kw": 4827.24,
+  "warmup_boundary_in_formal_delta_statistics": false,
+  "zero_tolerance_kw": 1e-06,
+  "direction_reversals_nonidle": 8979,
+  "fees": {
+    "planned_cost": 12374774.038644532,
+    "up_cost": 582179.8409206003,
+    "down_cost": 905.3522344189322,
+    "emergency_cost": 1777065.8931256281,
+    "total_cost": 14734925.124925215
+  }
+}

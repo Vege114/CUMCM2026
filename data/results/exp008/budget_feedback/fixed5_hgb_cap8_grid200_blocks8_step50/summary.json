@@ -1,0 +1,168 @@
+{
+  "complete": true,
+  "fixed_days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "actual_current_information_not_used_in_choice": true,
+  "maximum_evaluations_per_day": 17,
+  "all_historical_candidate_physics_checked": true,
+  "all_fixed_sources_unchanged": true,
+  "all_real_budgets_at_most8": true,
+  "paired": [
+    {
+      "day": 31,
+      "vs_source_hold1": {
+        "total_cost_delta": -385.44179773950236,
+        "plan_cost_delta": -370.3317328687808,
+        "emergency_cost_delta": -15.110064870725937,
+        "throughput_kwh_delta": 18.57323595705384,
+        "active_slots_delta": -6.0,
+        "final_soc_delta": 9.586650987210305,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": 1.0
+      },
+      "vs_same_Q_adaptive_policy": {
+        "total_cost_delta": -370.3317328687772,
+        "plan_cost_delta": -370.3317328687808,
+        "emergency_cost_delta": 0.0,
+        "throughput_kwh_delta": 0.0,
+        "active_slots_delta": 1.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": 0.0
+      }
+    },
+    {
+      "day": 90,
+      "vs_source_hold1": {
+        "total_cost_delta": -328.062669296829,
+        "plan_cost_delta": -296.64617997282767,
+        "emergency_cost_delta": -31.416489323995847,
+        "throughput_kwh_delta": -143.90154058721237,
+        "active_slots_delta": 3.0,
+        "final_soc_delta": 18.418997516287845,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": -2.0
+      },
+      "vs_same_Q_adaptive_policy": {
+        "total_cost_delta": 1572.416449444354,
+        "plan_cost_delta": -296.64617997282767,
+        "emergency_cost_delta": 1869.0626294171925,
+        "throughput_kwh_delta": -351.4363490979158,
+        "active_slots_delta": 3.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": -2.0
+      }
+    },
+    {
+      "day": 151,
+      "vs_source_hold1": {
+        "total_cost_delta": -3833.694155424455,
+        "plan_cost_delta": -171.35442272634828,
+        "emergency_cost_delta": -3662.339732698092,
+        "throughput_kwh_delta": -285.0,
+        "active_slots_delta": -8.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": -2.0,
+        "episodes_with_previous_slot_delta": 1.0
+      },
+      "vs_same_Q_adaptive_policy": {
+        "total_cost_delta": 1250.5701909054187,
+        "plan_cost_delta": -171.35442272634828,
+        "emergency_cost_delta": 1421.9246136317815,
+        "throughput_kwh_delta": -285.0,
+        "active_slots_delta": 0.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": 0.0
+      }
+    },
+    {
+      "day": 243,
+      "vs_source_hold1": {
+        "total_cost_delta": -513.1131426540087,
+        "plan_cost_delta": -513.1131426540305,
+        "emergency_cost_delta": 1.6757510934439778e-11,
+        "throughput_kwh_delta": 1063.0977734614826,
+        "active_slots_delta": 12.0,
+        "final_soc_delta": 1008.5431018775971,
+        "direction_reversals_including_warmup_boundary_delta": 1.0,
+        "episodes_with_previous_slot_delta": 2.0
+      },
+      "vs_same_Q_adaptive_policy": {
+        "total_cost_delta": -513.1131426540305,
+        "plan_cost_delta": -513.1131426540305,
+        "emergency_cost_delta": 0.0,
+        "throughput_kwh_delta": 0.0,
+        "active_slots_delta": 0.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": 0.0
+      }
+    },
+    {
+      "day": 364,
+      "vs_source_hold1": {
+        "total_cost_delta": -1.3890159199509071,
+        "plan_cost_delta": 0.0,
+        "emergency_cost_delta": -1.3890159199493155,
+        "throughput_kwh_delta": 0.0,
+        "active_slots_delta": -6.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": 0.0
+      },
+      "vs_same_Q_adaptive_policy": {
+        "total_cost_delta": 0.0,
+        "plan_cost_delta": 0.0,
+        "emergency_cost_delta": 0.0,
+        "throughput_kwh_delta": 0.0,
+        "active_slots_delta": 0.0,
+        "final_soc_delta": 0.0,
+        "direction_reversals_including_warmup_boundary_delta": 0.0,
+        "episodes_with_previous_slot_delta": 0.0
+      }
+    }
+  ],
+  "totals": {
+    "source_hold1": {
+      "total_cost": 302676.39502064604,
+      "plan_cost": 199718.96871797414,
+      "emergency_cost": 102957.42630267193,
+      "throughput_kwh": 161576.34508824456,
+      "active_slots": 502.0,
+      "direction_reversals_including_warmup_boundary": 37.0,
+      "episodes_with_previous_slot": 59.0
+    },
+    "initial": {
+      "total_cost": 295675.15247478435,
+      "plan_cost": 199718.96871797414,
+      "emergency_cost": 95956.1837568102,
+      "throughput_kwh": 162865.55090617383,
+      "active_slots": 493.0,
+      "direction_reversals_including_warmup_boundary": 36.0,
+      "episodes_with_previous_slot": 63.0
+    },
+    "selected": {
+      "total_cost": 297614.69423961133,
+      "plan_cost": 198367.52323975213,
+      "emergency_cost": 99247.17099985917,
+      "throughput_kwh": 162229.1145570759,
+      "active_slots": 497.0,
+      "direction_reversals_including_warmup_boundary": 36.0,
+      "episodes_with_previous_slot": 61.0
+    }
+  },
+  "annual_savings_not_evaluated": true,
+  "goal_gate_not_evaluated": true,
+  "limitations": [
+    "Independent original day starting states; changed day-end inventory not propagated.",
+    "Direction budget is hard in execution; model distribution, SOC grid and value interpolation remain approximations.",
+    "Historical policy bill chooses Q; the same history also fits disturbance transitions, so this is development optimization."
+  ]
+}

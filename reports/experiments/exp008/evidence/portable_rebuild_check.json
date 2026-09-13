@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "source_commit": "a571ff91f7c773708d2533567903f206099352c9",
+  "snapshot_method": "git checkout-index --all into an isolated /private/tmp directory, without Git metadata or untracked files",
+  "no_main_or_exp005_git_objects": true,
+  "no_joblib_models": true,
+  "payload_rebind_preserves_five_workbook_data": true,
+  "independent_source_to_payload_audit": true,
+  "independent_forecast_rows": 1872,
+  "battery_series_and_svg_checks": 13,
+  "unit_tests_passed": 62,
+  "report_reconstruction_byte_identical": {
+    "report.md": true,
+    "report.html": true
+  },
+  "new_training_or_optimization": false,
+  "frozen_CSV_and_SVG_bytes_preserved_by_gitattributes": true,
+  "other_question_forecast_hash_checks": 8016,
+  "other_question_forecast_metric_rows": 3104
+}

@@ -1,0 +1,59 @@
+{
+  "metrics": {
+    "hgb": {
+      "net_rmse_kw": 362.89918485267737,
+      "price_weighted_net_rmse_kw": 364.9505724131582,
+      "load_rmse_kw": 192.85525876759698,
+      "pv_rmse_kw": 307.5828489793913,
+      "net_bias_kw": -10.787537094442119,
+      "high_price_threshold": 0.984475,
+      "high_price_net_rmse_kw": 348.1840276970736,
+      "high_price_net_mae_kw": 242.85362743564303,
+      "high_price_net_bias_kw": -17.974075444972588,
+      "daily_net_energy_rmse_kwh": 3610.6328106863552,
+      "daily_net_energy_mae_kwh": 2556.9038598497486,
+      "intraday_cumulative_error_rmse_kwh": 2285.936944822583,
+      "cumulative_net_energy_error_kwh": -86472.89734904803
+    },
+    "joint": {
+      "net_rmse_kw": 375.58536169107964,
+      "price_weighted_net_rmse_kw": 377.2117307494766,
+      "load_rmse_kw": 212.95345938581133,
+      "pv_rmse_kw": 310.68223259419557,
+      "net_bias_kw": -8.932087941722813,
+      "high_price_threshold": 0.984475,
+      "high_price_net_rmse_kw": 358.2303357339363,
+      "high_price_net_mae_kw": 254.97725331251456,
+      "high_price_net_bias_kw": -13.22852010876638,
+      "daily_net_energy_rmse_kwh": 3723.8970369208505,
+      "daily_net_energy_mae_kwh": 2679.6392274938935,
+      "intraday_cumulative_error_rmse_kwh": 2351.5318538279803,
+      "cumulative_net_energy_error_kwh": -71599.61694085007
+    },
+    "half_mix": {
+      "net_rmse_kw": 362.51143572702307,
+      "price_weighted_net_rmse_kw": 364.30482116771145,
+      "load_rmse_kw": 195.4820199877399,
+      "pv_rmse_kw": 305.83888947216366,
+      "net_bias_kw": -9.859812518082466,
+      "high_price_threshold": 0.984475,
+      "high_price_net_rmse_kw": 346.6745244160169,
+      "high_price_net_mae_kw": 243.61807938739935,
+      "high_price_net_bias_kw": -15.60129777686948,
+      "daily_net_energy_rmse_kwh": 3598.74004192731,
+      "daily_net_energy_mae_kwh": 2568.8511158155543,
+      "intraday_cumulative_error_rmse_kwh": 2276.902287461042,
+      "cumulative_net_energy_error_kwh": -79036.25714494905
+    }
+  },
+  "error_correlation": {
+    "load": 0.8560288573174667,
+    "pv": 0.9575828210200368,
+    "net": 0.927693399203894
+  },
+  "five_metric_gate": true,
+  "input_value_hashes": {
+    "hgb": "7c95d0bbb2129ad2ebee9df66d2014cdb72cb2c0b7f824a679766737c8c0b47a",
+    "joint": "16179c8e605dccc22c644c9c7d5058f67477709154f00183e455df5d59172f09"
+  }
+}

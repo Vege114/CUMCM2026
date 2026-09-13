@@ -1,0 +1,39 @@
+{
+  "days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "conditional_fixed_original_year_SOC_mode_age": true,
+  "continuous_year_evaluation": false,
+  "candidate_parameters_changed": false,
+  "full_pipeline": "direct_HGB_Ridge28_memory_half",
+  "MIP_or_forecast_not_repeated": true,
+  "history_paths": 28,
+  "maximum_accepted_moves": 3,
+  "boundary_displacements": [
+    -3,
+    -2,
+    -1,
+    1,
+    2,
+    3
+  ],
+  "boundary_count_never_changes": true,
+  "midnight_boundary_included_and_can_shift_within_day": true,
+  "acceptance": "best feasible strict full28 greedy objective decrease exceeding numeric 1e-6",
+  "mode_hold": 3,
+  "daily_flip_cap": 8,
+  "previous_planned_mode_age_from_original_year": true,
+  "greedy_refinement_maxiter": 120,
+  "wear": 0.002,
+  "variation": 0.0,
+  "deadband": 0.0,
+  "terminal": ".45 except final evaluated day364 zero",
+  "refinement_worse_than_previous_Q_rejected": true,
+  "all_five_selections_locked_before_current_actual_file_loaded": true,
+  "actual_cost_not_a_mode_or_purchase_selection_criterion": true,
+  "development_year_not_independent_test": true
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "previous_payload_sha256": "9f7e89d8a5f887016154651bbcfece95211168037395b6379d89289e65375ca5",
+  "current_payload_sha256": "761d185a082844b6fe95e1efd63adf99642858de9a9834489674fe8697976a53",
+  "metadata_only": true,
+  "workbook_data": {
+    "1": {
+      "exactly_equal_to_previous": true,
+      "workbook_data_sha256": "c3def0b4a7de2fca437063830f4c3e530e30c63ce2978ebc5c0475ea21a09a97",
+      "archive_sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d"
+    },
+    "2": {
+      "exactly_equal_to_previous": true,
+      "workbook_data_sha256": "e42d5efaabbb0276518a74aff666795ce65ea7f83640451316e3aeecda0c46a3",
+      "archive_sha256": "8b97181d2f82659774c609632d39a2bd812e69598fcd37696a2d793debcfe6d7"
+    },
+    "3": {
+      "exactly_equal_to_previous": true,
+      "workbook_data_sha256": "d8f20eea4737ddba1500b5820483d34f8e5ea487e66961f15b2895d164f3bea7",
+      "archive_sha256": "793c9b872814c0b157f34b43fa93cc3aa6649164a4c0d2c6b17684632051ca1e"
+    },
+    "4-2": {
+      "exactly_equal_to_previous": true,
+      "workbook_data_sha256": "420250256ef0d3bd810a32b49f9cd5b55c55df0db89a86b918f0a229329dd687",
+      "archive_sha256": "09f1e6f131df6cc1e34874479cfd8dfd7c576a045c441ea7ec31e3e9a67e9b72"
+    },
+    "4-3": {
+      "exactly_equal_to_previous": true,
+      "workbook_data_sha256": "1577a77d54edc5acd765c83335c67852d04827a6045a39161b8df9764096f519",
+      "archive_sha256": "be922b20ea385882362607373083211d8a854f8f15617060bb7448ffda30a437"
+    }
+  },
+  "no_training_or_optimization": true,
+  "new_workbook_export_required": false
+}

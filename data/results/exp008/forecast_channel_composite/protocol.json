@@ -1,0 +1,20 @@
+{
+  "load_channel": "monthly best-validation-stage absolute HGB",
+  "PV_channel": "past-positive-PV-p95-normalized HGB",
+  "fixed_channel_choices_all334days": true,
+  "postprocessing": "same Ridge28 and .5 nonrecursive load memory refitted on combined raw values",
+  "input_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/raw.npz": "3f01141b2b5272d4d153d5e3e11e8f75ea04778979d8aa0034672d2a941c78e1",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_scaled_pv_hgb/raw.npz": "4fbed7101392695f55bd27b6dcec0f8213962fe252ef68856091ebb3ba28da11",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/training_audit.json": "d46c0b3adc078eace00eccbc8f21e832d6476338e386d2756f5241aaa9433c36",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_scaled_pv_hgb/training_audit.json": "f8dabf26b48faf71e8c4a1b43b0b3d4a22591df1a0e01532fe3d497edbdbd60c",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/independent_retraining_verification.json": "10beb99e38382c4a4a9af8d330af20183221313b2ea71b082398fa9f3e0ed5ff",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_scaled_pv_hgb/lp_bridge/independent_retraining_verification.json": "4935b313ce8ed42219c690922adda9266f0a73d44d2f8d46cce79fe525cadf43"
+  },
+  "source_sha256": "d25408248c483b971929a8a80b5927e8c840af2054dcd2a660443170993dc7f0",
+  "one_fixed_candidate_no_weight_or_channel_search": true,
+  "designed_after_examining_component_development_metrics": true,
+  "continuation_gate": "all four net/high-price/daily-energy/prefix RMSE improve on original HGB complete pipeline before a fixed334 LP bridge",
+  "untouched_test": false,
+  "final_model_selection": false
+}

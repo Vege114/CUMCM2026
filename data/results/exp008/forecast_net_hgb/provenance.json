@@ -1,0 +1,83 @@
+{
+  "complete": true,
+  "period": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "seed": 42,
+  "source_sha256": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+  "base_sha256": "008f6b0d08eb4678edb49f583f09f32a793681fbf23665d1ab0d3ae6df9c6da8",
+  "archive_sha256": "29c4242b1a8b95918e3abdc3869a311646e9ef91ee92bb9c47e03e8bae465104",
+  "source_data_sha256": {
+    "\u9644\u4ef61.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "features": [
+    "base_load",
+    "base_pv",
+    "base_net",
+    "yesterday_load",
+    "yesterday_pv",
+    "yesterday_net",
+    "previous_week_load",
+    "previous_week_pv",
+    "previous_week_net",
+    "mean3_load",
+    "mean3_pv",
+    "mean3_net",
+    "mean7_load",
+    "mean7_pv",
+    "mean7_net",
+    "std7_load",
+    "std7_pv",
+    "std7_net",
+    "slot_sin",
+    "slot_cos",
+    "slot_sin2",
+    "slot_cos2",
+    "weekday_sin",
+    "weekday_cos",
+    "yesterday_mean_load",
+    "yesterday_mean_pv",
+    "yesterday_std_load",
+    "yesterday_std_pv",
+    "yesterday_min_load",
+    "yesterday_min_pv",
+    "yesterday_max_load",
+    "yesterday_max_pv",
+    "yesterday_mean_net",
+    "yesterday_std_net",
+    "base_is_cnn"
+  ],
+  "feature_count": 35,
+  "training_models": 11,
+  "seconds": 24.364480292075314,
+  "metrics": [
+    {
+      "name": "cnn_base",
+      "target": "net_load",
+      "unit": "kW",
+      "n": 48096,
+      "mae": 359.3111727469802,
+      "rmse": 524.8382547955927,
+      "bias_predicted_minus_actual": 236.7588198296257,
+      "absolute_error_sum": 17281430.16443876,
+      "squared_error_sum": 13248292996.045303
+    },
+    {
+      "name": "cnn_net_hgb",
+      "target": "net_load",
+      "unit": "kW",
+      "n": 48096,
+      "mae": 302.48269206256333,
+      "rmse": 441.3952753481438,
+      "bias_predicted_minus_actual": 57.7535272702574,
+      "absolute_error_sum": 14548207.557441045,
+      "squared_error_sum": 9370533536.537426
+    }
+  ],
+  "semantics": "values are nonnegative net-demand adapter channels; do not score load/PV separately as improved component forecasts",
+  "net_rmse_below_ridge388": false,
+  "development_exploration_not_independent_test": true
+}

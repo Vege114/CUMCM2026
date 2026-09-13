@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "selected_daily_checks": [
+    {
+      "day": 31,
+      "origin": 4464,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 9.094947017729282e-13,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 32,
+      "origin": 4608,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 1.8189894035458565e-12,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 59,
+      "origin": 8496,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 1.8189894035458565e-12,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 90,
+      "origin": 12960,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 1.8189894035458565e-12,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 151,
+      "origin": 21744,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 1.8189894035458565e-12,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 243,
+      "origin": 34992,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 1.8189894035458565e-12,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 364,
+      "origin": 52416,
+      "features_exactly_unchanged": true,
+      "raw_prediction_max_change_kw": 9.094947017729282e-13,
+      "daylight_mask_unchanged": true,
+      "ridge_and_memory_exactly_unchanged": true
+    }
+  ],
+  "full_retraining_checks": [
+    {
+      "month": 2,
+      "future_mutation_origin": 4464,
+      "train_and_validation_features_exactly_unchanged": true,
+      "retrained_model_parameters_and_all_tree_structures_exactly_identical": true,
+      "first_day_prediction_max_change_kw": 9.094947017729282e-13,
+      "training_seconds": 0.46916716697160155
+    },
+    {
+      "month": 9,
+      "future_mutation_origin": 34992,
+      "train_and_validation_features_exactly_unchanged": true,
+      "retrained_model_parameters_and_all_tree_structures_exactly_identical": true,
+      "first_day_prediction_max_change_kw": 1.8189894035458565e-12,
+      "training_seconds": 8.24416637502145
+    }
+  ],
+  "all334_postprocessing_labels_past": true,
+  "floating_tolerance_kw": 1e-08,
+  "reference_feature_or_official_PV_used": false
+}

@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "days": 334,
+  "primary": "absolute_extra_trees_ridge28_memory_half",
+  "archives": {
+    "absolute_extra_trees_raw": "8941f57ab464f94c13fa11fa8f6657d35e9b70d641d4dfecd7a4b5e9f6532d49",
+    "absolute_extra_trees_ridge28": "15714ee625e5714bc8047b100b678b451952585628de334ccd8e64d328e7963d",
+    "absolute_extra_trees_ridge28_memory_half": "314acbf562e41c4ac69b242dfdcec309240888489c9ff18b7954661de4da51ea"
+  },
+  "source_sha256": "d546662bc67fb8c5c51a4125c070c3520f5869c832db83ed6268b959e95547b7",
+  "protocol_sha256": "ea3e888d9d7bbaded17e2644b6f4c1eff741da17ee7b65c62a155cb212bded2e",
+  "source_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "feature_tensor_sha256": "b5677b8fa64c1f956dfe414eec9125213ff4ed2bf9d218650393e60374f7f236",
+  "exact_original_HGB_feature_tensor_match": true,
+  "models": 22,
+  "source_and_input_hashes_unchanged": true,
+  "causality_verified": true,
+  "all_monthly_models_reloaded_all_formal_predictions_verified": true,
+  "sklearn_version": "1.9.1",
+  "numpy_version": "2.0.2",
+  "predictive_gate_passed": true,
+  "elapsed_seconds_before_bridge": 83.76314004103187
+}

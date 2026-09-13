@@ -1,0 +1,29 @@
+{
+  "candidate_count": 1,
+  "config": {
+    "window_complete_issued_days": 28,
+    "maximum_adjacent_pairs": 27,
+    "prior_gain": 0.5,
+    "prior_equivalent_pairs": 7.0,
+    "coefficient_min": 0.0,
+    "coefficient_max": 1.0,
+    "historical_x_mean_square_floor_kw2": 1.0,
+    "intercept": false
+  },
+  "residual": "actual load daily mean minus underlying Joint+Ridge28 issued load daily mean, kW",
+  "pairs": "adjacent complete issued days, both inside last28 complete issued days",
+  "scale": "s2=max(mean(x*x),1 kW squared), only observed historical x",
+  "objective": "sum((y-phi*x)^2/s2)+7*(phi-0.5)^2; phi in [0,1]",
+  "solution": "clip((sum(x*y)+7*s2*0.5)/(sum(x*x)+7*s2),0,1)",
+  "current_correction": "phi times yesterday underlying load mean residual",
+  "cold_start": "no pair: phi0.5; no prior issued day: unchanged underlying forecast",
+  "pv_unchanged": true,
+  "recursive_corrected_residual": false,
+  "grid_search": false,
+  "annual_coefficient_fit": false,
+  "coefficient_updates": "daily using only prior completed labels",
+  "gate": "strict improvement vs fixed0.5 in net daily-energy RMSE, intraday-cumulative RMSE and high-price RMSE",
+  "gate_effect": "only then authorize one fixed 334day tree28/q.8/buffer500 LP bridge",
+  "development_on_examined_2025_not_independent_test": true,
+  "source_sha256": "648f238aa434404b6cf64e2f59be4de1407db7e2f78c29c259e7f210cb2da5ed"
+}

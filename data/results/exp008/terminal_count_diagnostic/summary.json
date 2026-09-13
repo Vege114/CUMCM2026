@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "original_sources_unchanged": true,
+  "independent_executor_maximum_rebuild_error_kwh": 0.0,
+  "historical_count_source": {
+    "report": "reports/experiments/exp006/report.md:105",
+    "code": "experiments/problem2/tree_planning/verify.py:21",
+    "primary_historical_metric": "direction changes in chronological non-idle signs; idle does not reset last sign",
+    "episode_metric": "each charge/discharge stretch separated by idle or other direction; evaluation boundary treated idle"
+  },
+  "counts": {
+    "exp006": {
+      "direction_reversals_excluding_warmup": 2729,
+      "charge_episodes_excluding_warmup": 2098,
+      "discharge_episodes_excluding_warmup": 1693,
+      "all_charge_discharge_episodes": 3791,
+      "active_ten_minute_slots": 23028,
+      "throughput_ac_kwh": 11480847.039823763,
+      "equivalent_full_cycles": 477.70549975720536,
+      "simultaneous_slots": 0
+    },
+    "hold1_cap8": {
+      "direction_reversals_excluding_warmup": 2521,
+      "charge_episodes_excluding_warmup": 1677,
+      "discharge_episodes_excluding_warmup": 2211,
+      "all_charge_discharge_episodes": 3888,
+      "active_ten_minute_slots": 37217,
+      "throughput_ac_kwh": 11337080.993655764,
+      "equivalent_full_cycles": 471.72414374046804,
+      "simultaneous_slots": 0
+    }
+  },
+  "unqualified_total_operation_count_reduction_supported": false,
+  "terminal_SOC_scope": {
+    "boundaries": 333,
+    "exclude_final_evaluation_day_terminal_state": true,
+    "actual_boundary_soc_kwh": {
+      "minimum": 1200.0,
+      "mean": 2704.6038101882828,
+      "q25": 1769.78640354074,
+      "median": 2335.968914361077,
+      "q75": 3226.5914182025053,
+      "maximum": 7466.36124785664
+    },
+    "boundary_soc_at_physical_lower_bound": 11,
+    "boundary_soc_within50kwh_lower_bound": 15,
+    "night_emergency_00_06_yuan": 19063.814707519137,
+    "night_emergency_00_06_share_of_full334_emergency_pct": 3.3269773803841316,
+    "night_emergency_00_06_for_soc_within50kwh_low_yuan": 2847.754148792959,
+    "night_emergency_00_09_yuan": 42449.19552992771,
+    "late_emergency_21_24_yuan": 39840.561187143445,
+    "annual_emergency_yuan": 573007.0429669719,
+    "gap_to_8pct_yuan": 278731.1207425874,
+    "00_06_entire_emergency_share_of_gap_pct": 6.839499893922815
+  },
+  "terminal_unit_economics": {
+    "units": "yuan per battery SOC kWh; not AC kWh",
+    "greedy_terminal_value": 0.45,
+    "MIP_terminal_value_min_tariff_over_eta": 0.39138456507350644,
+    "fixed_tariff_minmax_yuan_per_ac_kwh": [
+      0.3713,
+      1.3952
+    ],
+    "overnight_00_06_replenishment_cost_per_soc_kwh": {
+      "minimum": 0.39138456507350644,
+      "mean": 0.47320264346062224,
+      "q25": 0.45315438870212876,
+      "median": 0.457634282054034,
+      "q75": 0.4611654921078887,
+      "maximum": 0.9591188143290695
+    },
+    "emergency_displacement_value_00_06_per_soc_kwh": {
+      "minimum": 1.7612305428307788,
+      "mean": 2.129411895572799,
+      "q25": 2.0391947491595794,
+      "median": 2.059354269243153,
+      "q75": 2.075244714485499,
+      "maximum": 4.316034664480813
+    },
+    "both_terminal_values_zero_on_final_day": true,
+    "reported_actual_fee_contains_no_terminal_credit": true
+  },
+  "conditional_probes": {
+    "100.0": {
+      "mean_conditional_full_day_fee_value_yuan_per_soc_kwh": 0.4389252282512199,
+      "mean_conditional_00_06_fee_value_yuan_per_soc_kwh": 0.003723055414539084,
+      "full_day_value_distribution": {
+        "minimum": 0.0,
+        "mean": 0.4389252282512199,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "maximum": 6.618014687200383
+      },
+      "days_full_day_value_exceeds045": 31,
+      "days_extra_soc_has_zero_full_day_emergency_value": 302,
+      "mean_inventory_fraction_remaining_at06": 0.5815726602908293,
+      "mean_inventory_fraction_remaining_at_dayend": 0.006006006006006046
+    },
+    "1000.0": {
+      "mean_conditional_full_day_fee_value_yuan_per_soc_kwh": 0.22455877919979975,
+      "mean_conditional_00_06_fee_value_yuan_per_soc_kwh": 0.00037230554145390837,
+      "full_day_value_distribution": {
+        "minimum": 0.0,
+        "mean": 0.22455877919979975,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "maximum": 6.527789414554058
+      },
+      "days_full_day_value_exceeds045": 27,
+      "days_extra_soc_has_zero_full_day_emergency_value": 302,
+      "mean_inventory_fraction_remaining_at06": 0.3864716687326742,
+      "mean_inventory_fraction_remaining_at_dayend": 0.0025550021360411707
+    }
+  },
+  "probe_scope": "Free independent extra initial SOC, fixed purchases and mode masks. Uses realized demand only for retrospective evaluation. Not an implementable continuous annual strategy, not additive feasible savings, not optimized next-day purchase value.",
+  "two_day_horizon_assessment": "Night deficit alone is too small to explain the 8% gap. Two-day planning could change both next-day purchases and overflow, which these fixed-Q probes cannot price. A small causally constructed two-day-horizon diagnostic may test model value, but evidence does not justify an immediate full annual run or claim that terminal correction will close the gap."
+}

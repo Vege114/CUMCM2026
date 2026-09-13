@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "sources": {
+    "final_blend": {
+      "source": "data/results/exp008/forecast_hgb_extra_trees_half/hgb_extra_trees_half_ridge28_memory.npz",
+      "sha256": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a"
+    },
+    "single_hgb": {
+      "source": "data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz",
+      "sha256": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095"
+    }
+  },
+  "source_actual_hashes": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  },
+  "files": {
+    "annual": {
+      "rows": 12,
+      "sha256": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64"
+    },
+    "monthly": {
+      "rows": 132,
+      "sha256": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d"
+    },
+    "lead": {
+      "rows": 1728,
+      "sha256": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507"
+    }
+  },
+  "metrics_recomputed_per_row": 8,
+  "total_rows": 1872,
+  "empty_lead_population_rows": 258,
+  "scope": "00:00 forecasts only; all and actualPV>0 for load, PV and net load; no other issue-hour claim",
+  "no_training_or_optimizer_rerun": true,
+  "audit_script_sha256": "da609885002915b6e43282d45b8f01e6ec9ea8a7e23985889d27893fc93dfb50"
+}

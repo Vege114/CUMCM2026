@@ -1,0 +1,16 @@
+{
+  "status": "final_delivery_verified",
+  "payload_sha256": "761d185a082844b6fe95e1efd63adf99642858de9a9834489674fe8697976a53",
+  "report_sha256": "c38b460ffa00a7703d11cb567d275e48f273cc770f5dbd87f199050b2ce59e48",
+  "code_commit": "a571ff91f7c773708d2533567903f206099352c9",
+  "template_main_commit": "7ecd9b988665ad628dbf048ed295457166170ffc",
+  "original_eight_percent_target_met": false,
+  "user_accepted_current_result": true,
+  "sections": 8,
+  "build_seconds": 1.9071663750801235,
+  "new_optimization_executed": false,
+  "figure_pairs": 38,
+  "html_sha256": "15f4cf7d0da4a0794d118e6d949a359b38f5692b7adc4935d2c1ea1816a217d6",
+  "verification": "evidence/delivery_verification.json",
+  "portable_rebuild": "evidence/portable_rebuild_check.json"
+}

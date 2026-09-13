@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "monthly_model_count": 22,
+  "all_models_reload_identical": true,
+  "all_train_validation_formal_boundaries_passed": true,
+  "existing_memory_comparator_values_exact": true,
+  "current_source_matches_fitted_source_hash": true,
+  "midnight_adapter_vs_saved_primary_identical": true,
+  "source_evidence_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/training_audit.json": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/prediction_audit.json": "16c795495dad381b15c56c02e1d058429c1b81d063aeb76e6f9a44086a6077da",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/causality_verification.json": "2304b92248abe318a3e1d22fb967ff582c095e4c3659131323f8f5ff3e6583cc",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days/independent_verification.json": "ff86db31e1677638b1d2825b6db6adbdcc71545191db3206488426281e0d5719"
+  }
+}

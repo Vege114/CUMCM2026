@@ -1,0 +1,46 @@
+{
+  "fixed_days_only": true,
+  "annual_extrapolation": false,
+  "original_total_cost": 302676.39502064604,
+  "new_selected_total_cost": 300151.1662811992,
+  "cost_delta": -2525.228739446844,
+  "conditional_cost_reduction_pct": 0.8342998598468765,
+  "original_historical_objective": 208607.439230606,
+  "new_selected_historical_objective": 207951.80780834274,
+  "historical_objective_reduction_pct": 0.3142895692892722,
+  "direction_reversals_delta": -1,
+  "throughput_delta_kwh": 5695.195006868977,
+  "active_slots_delta": 10,
+  "original3_MIP_seconds": 3.555091708083637,
+  "new28_MIP_seconds": 300.3975199571578,
+  "new28_gap_values": [
+    0.00554937785816817,
+    0.013936367727380812,
+    0.005447706256954163,
+    0.013462225782659086,
+    0.004725439676179525
+  ],
+  "target_gap_met_count": 0,
+  "new28_refinement_success_count": 0,
+  "same_terminal_recourse_optimism": [
+    1656.692470251517,
+    141.4560492843084,
+    386.81168341114244,
+    175.17212250416196,
+    78.22898213709414
+  ],
+  "other_four_cost_delta_excluding_day90": 42.6181043989709,
+  "per_day_actual_end_SOC_delta": {
+    "31": 1418.1718535287764,
+    "90": -643.1907703718098,
+    "151": 0.0,
+    "243": 814.2844853456936,
+    "364": 0.0
+  },
+  "limits": [
+    "Each day has the original annual starting SOC and planned mode/age; ending states are not propagated.",
+    "The 60-second common-mode MIP still uses scenario-specific future recourse and misses its 0.2% target gap.",
+    "Selection sees only historical trajectories, and all current actuals are read after five decisions lock.",
+    "Conditional fee improvements are not an annual benefit forecast."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "metadata_only": true,
+  "why": "Generic inherited load_method string retained CNN despite correct base_forecast and selected_model_id HGB fields. Numerical source/value equality verified independently.",
+  "original_audit_sha256": "7cac300a7db6dd91324d4423938af01a5b6dcc60bcfd2cd9210770d328a8da44",
+  "corrected_audit_sha256": "cf0153f748c3b2e1148000954b358745df636471349e8da45597b8439e3e5648",
+  "changed_field": "load_method",
+  "changed_rows": 334,
+  "original_signed_audit_and_all_predictions_unchanged": true
+}

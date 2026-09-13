@@ -1,0 +1,10 @@
+{
+  "comparison_valid_as_single_factor": false,
+  "discovered_issue": "Runner omitted charge_deadband; imported execute default was 20 kWh while recorded config said 0 kWh",
+  "actual_charge_deadband_kwh": 20,
+  "declared_charge_deadband_kwh": 0,
+  "original_arrays_and_source_snapshots_preserved": true,
+  "actual_billing_and_physics_still_verified": true,
+  "eligible_for_selection": false,
+  "replacement_experiment": "ward3_joint_ridge28_deadband0_30days"
+}

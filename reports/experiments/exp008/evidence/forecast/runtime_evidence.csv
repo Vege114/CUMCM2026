@@ -1,0 +1,19 @@
+family,stage,seconds,measured,source,scope
+HGB,22 primary fit plus validation-predict blocks,44.97184687713161,True,data/results/exp008/forecast_absolute_hgb/training_audit.json,"Original timer starts before model.fit and ends after the following model.predict(X_val), including surrounding call overhead. Excludes feature construction, formal prediction, calibration, audit retraining, dispatch and report; not pure fit time."
+ExtraTrees,22 primary fit plus validation-predict blocks,63.233388833119534,True,data/results/exp008/forecast_absolute_extra_trees/training_audit.json,"Original timer starts before model.fit and ends after the following model.predict(X_val), including surrounding call overhead. Excludes feature construction, formal prediction, calibration, audit retraining, dispatch and report; not pure fit time."
+HGB,original pre-bridge pipeline wall time,52.487478957977146,True,data/results/exp008/forecast_absolute_hgb/provenance.json:total_seconds_before_bridge,"Whole original workflow before LP bridge, including audits; not pure inference time and not directly comparable to fit sums."
+ExtraTrees,original pre-bridge pipeline wall time,83.76314004103187,True,data/results/exp008/forecast_absolute_extra_trees/provenance.json:elapsed_seconds_before_bridge,"Whole original workflow before LP bridge, including audits; not pure inference time and not directly comparable to fit sums."
+HGB,feature construction,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+HGB,prediction only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+HGB,Ridge28 only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+HGB,memory only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+ExtraTrees,feature construction,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+ExtraTrees,prediction only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+ExtraTrees,Ridge28 only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+ExtraTrees,memory only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+fixed_half_blend,feature construction,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+fixed_half_blend,prediction only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+fixed_half_blend,Ridge28 only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+fixed_half_blend,memory only,,False,,No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings.
+HGB,fit only,,False,,Original training_seconds also includes the subsequent validation prediction; a pure fit duration cannot be recovered.
+ExtraTrees,fit only,,False,,Original training_seconds also includes the subsequent validation prediction; a pure fit duration cannot be recovered.

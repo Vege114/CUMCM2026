@@ -1,0 +1,66 @@
+{
+  "passed_for_reviewed_PNG_exports": true,
+  "PNG_files": [
+    {
+      "file": "reports/experiments/exp008/figures/forecast/annual_metrics.png",
+      "sha256": "34edf958fb01c64bbd34bfcbaba9a0758cf3ca7beb68e7887d88cad72ff05262"
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/daily_energy_metrics.png",
+      "sha256": "cf83a6c4d8104d1ae57314700bd684d61bcef80e17094d147a836bf15e903997"
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/history_midnight_comparable.png",
+      "sha256": "916c2da9eeeeebccc37f54e32157715c4be942fbbc8e6328995d2d0c5580ba6a"
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/lead_metrics.png",
+      "sha256": "a7af7e276de546a666dfeb603deb71568d6e66ab355adb455112e6669c91b7ce"
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/monthly_metrics.png",
+      "sha256": "3fc855f0c25d00cda9553ed10a54d7ee589add7b59021eb6b9ec8c6f944fe85d"
+    }
+  ],
+  "PNG_review": "All5 final PNGs visually inspected through view_image. Chinese text readable, labels unclipped, axes/units visible, RMSE/WAPE panels and daily series correspond to named CSVs.",
+  "repair": "Initial nonexistent PingFang path produced missing glyphs; replaced with existing Arial Unicode MS and re-rendered all figures. PV lead WAPE log axis explicitly labelled to retain near-zero-denominator spikes.",
+  "encoding": "Annual bars use hatch; monthly lines use marker/line styles; lead lines use dash; history categories are explicitly labelled. Blue/gold labels distinguish models without color alone.",
+  "scope_limits": "No color-vision simulation or independent SVG rasterization performed. Static figures reviewed at full export layouts, not a responsive dashboard.",
+  "SVG_structure_checks": [
+    {
+      "file": "reports/experiments/exp008/figures/forecast/annual_metrics.svg",
+      "sha256": "8ca22c6eb0888d09fedf436ecb48d6783aa16dd7addbd44335d6ebcaeee08d9b",
+      "XML_parses": true,
+      "embedded_glyph_paths": true,
+      "render_inspection": "Not separately rasterized; matching PNG inspected."
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/daily_energy_metrics.svg",
+      "sha256": "007e35cc49dda06579f0882c205843655b4013cbc2c5101d86d823db7c2d8075",
+      "XML_parses": true,
+      "embedded_glyph_paths": true,
+      "render_inspection": "Not separately rasterized; matching PNG inspected."
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/history_midnight_comparable.svg",
+      "sha256": "0191835d27a7c7fc88d36e382c21a882a9a20c857c3628122a104622d01a49ca",
+      "XML_parses": true,
+      "embedded_glyph_paths": true,
+      "render_inspection": "Not separately rasterized; matching PNG inspected."
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/lead_metrics.svg",
+      "sha256": "a9e089381adebc98a6dc45162baeb1a488876b1274428029b43a6df237e90848",
+      "XML_parses": true,
+      "embedded_glyph_paths": true,
+      "render_inspection": "Not separately rasterized; matching PNG inspected."
+    },
+    {
+      "file": "reports/experiments/exp008/figures/forecast/monthly_metrics.svg",
+      "sha256": "36663b5dc93b4f5df37a068171d0274e0ca5b265a3e97092e0bb89d4ce62bac9",
+      "XML_parses": true,
+      "embedded_glyph_paths": true,
+      "render_inspection": "Not separately rasterized; matching PNG inspected."
+    }
+  ]
+}

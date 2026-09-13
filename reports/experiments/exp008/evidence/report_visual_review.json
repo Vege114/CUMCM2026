@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "browser_runtime_passed": true,
+  "widths": [
+    1440,
+    390
+  ],
+  "reviewed": [
+    "report-top-1440.png",
+    "report-top-390.png",
+    "report-section-4-1440.png",
+    "report-section-7-1440.png",
+    "specified-top-390.png"
+  ],
+  "numeric_cells_preserve_unsplit_values": true,
+  "all_images_loaded": true,
+  "equations_and_new_chart_png_svg_pairs_valid": 38,
+  "screenshots": {
+    "report-section-6-1440.png": "f09574df5b1edf7a3d778edaf4abdc5e3eeaeb9140b1c10c5299c7f7fad43d0d",
+    "report-section-7-1440.png": "925d0d4c8df4e70632c64d0c905297080dd54ce4180fe2fbfb44d8a12fb8f5e2",
+    "report-top-390.png": "efedf80e3135f6b9bbd1c20a476116bef1bd3003cd5e7426b82287e8d2c442cb",
+    "report-top-1440.png": "bbbe2132d350bb693b7358b44606eaaacba70d583ea75289fe5f594b63820906",
+    "report-section-4-390.png": "83dfb51a4a248d14f5fd3734aa18a63cbfa9bc85f7771afcb7af4ed77694b103",
+    "report-section-7-390.png": "a246fac3718c75e5a8e1ccb6f62247fd75b83a6a36dc0ad7b9b965bfede029d7",
+    "report-section-4-1440.png": "e9973a068d588b8158c4f89f05e6e59799a9083846057b16121c91b39c51bd9e",
+    "specified-top-390.png": "0de1286a38f6fed7e24f733b871d044a7bd58bb2c9bf5f4ace587cd6bc8570b1",
+    "report-section-6-390.png": "840bbcb1a719353338248683b4ae2f388510bf275292c4f1da6302e6c91b2d22",
+    "specified-top-1440.png": "85eff8fdc47099b5f364c7330b332fc59cdad7bfe4ea7ac57c2d1ffb6c0a2e67"
+  },
+  "standalone_html_offline": true
+}

@@ -1,0 +1,59 @@
+{
+  "days_preselected": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "candidate_count": 1,
+  "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days",
+  "all_case_SOC_mask_paths_from_same_original_archive": true,
+  "frozen_input_fields": [
+    "initial_soc",
+    "initial_mode",
+    "allowed_charge",
+    "all_net_paths",
+    "price"
+  ],
+  "scenario_count": 28,
+  "mode_variables_removed": true,
+  "fixed_mode_switch_cost_constant": true,
+  "emergency_charging_forbidden_with_scenario_slot_binary": true,
+  "mip_seconds": 30.0,
+  "mip_relative_gap": 0.002,
+  "warm_start": false,
+  "mip_terminal": "0 final day else min(price)/ETA times mean final SOC (unchanged)",
+  "greedy_refinement": {
+    "maxiter": 120,
+    "wear": 0.002,
+    "variation": 0.0,
+    "deadband": 0.0,
+    "terminal": "0 final day else .45 times mean(final_SOC-LOW)"
+  },
+  "original_refinement": "reproduce from archived original 3-scenario MIP purchase, same mask and all28 paths",
+  "selection": "lower independently recomputed same historical greedy objective of original/refined_new; ties original",
+  "selection_commit_before_actual_read": true,
+  "no_incumbent_policy": "record failure and stop remaining cases; never extend30seconds",
+  "not_continuous_strategy": true,
+  "actual_fees_only_diagnostic_not_selection": true,
+  "recourse_nonanticipativity_not_certified": true,
+  "input_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/dispatch.npz": "72fcb1c23a6bfed7b072f87d7a2021b40ac3f1b2e7d81c8d50df6c1235192d57",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/planning_audit.json": "3a801dd792e73704042dbfba58fcaa898b021a44b90f26a53e9b1180380b39e1",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/complete_provenance.json": "db678608a1a191c7ee1befc97ff3abb6777d13951e2d5be81d927ad90a6c554f",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/planning_day31.npz": "55678f3b596b3cd4c92773a6f2abc252c78ae173a958baa4eb2fe2d77d2055fd",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/planning_day90.npz": "193122571f75578da8ec9686ab94a221d7ff722e1f4320272b41b93acd8df853",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/planning_day151.npz": "12cce120b7e66793687c588ae2c4863c7cdcc983d16b04e9728f5a1ef411b964",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/planning_day243.npz": "0cf05341f7c0aa3db869822c78a24ddd9d949f9602cfe6eb55bb58de9c956bdc",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/planning_day364.npz": "afab5c25dc8ba7840f75af9826ef3b61501c3d79e8943fdd71efceff8a75945b"
+  },
+  "source_sha256": {
+    "experiments/exp008/hgb_fixed_mask_mip28_diagnostic.py": "c57a59603a11d35b0740a63e2b78258cca6c0e14e46f3013873b83115731736f",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+    "experiments/exp008/mode_planning_physical.py": "736458b7c86037343eaf2cdbb8e64d50ac5b30d9cda40256470f9cc80606989a",
+    "experiments/exp008/closed_loop.py": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "experiments/exp008/verify.py": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36"
+  }
+}

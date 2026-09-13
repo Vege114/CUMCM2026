@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "fixed5_fee_change": -764.4861956999957,
+  "historical_objective_change": -191.1264905426251,
+  "direction_reversals_change": 0,
+  "episodes_change": 1,
+  "throughput_change_kwh": 240.07665333333352,
+  "all_sources_unchanged": true,
+  "future_prefix_checks": 15,
+  "baseline_signed_flows_exact": true,
+  "scalar_bellman_checks": 1350,
+  "max_scalar_bellman_error": 1.4551915228366852e-11,
+  "annual_result": false,
+  "final_selection": false
+}

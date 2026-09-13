@@ -1,0 +1,15 @@
+{
+  "fixed_source": "data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days/dispatch_2.npz",
+  "source_sha256": "c900745ca1157faad28a937ea1602fc3009cd8391ae7df5a442ef2f3de93114c",
+  "days": 334,
+  "slots": 48096,
+  "purchase_Q_fixed": true,
+  "initial_soc_kwh": 1421.7991105135516,
+  "oracle_future_actual": true,
+  "eligible_as_causal_strategy": false,
+  "oracle_action_traces_exported": false,
+  "included_in_dispatch_index": false,
+  "terminal_credit": false,
+  "target_8pct_yuan": 12940956.879076244,
+  "purpose": "Test whether improving execution of the new HGB fixed purchases alone could even theoretically reach the goal. No future actions saved or used in strategy."
+}

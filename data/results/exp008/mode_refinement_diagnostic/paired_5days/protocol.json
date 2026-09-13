@@ -1,0 +1,23 @@
+{
+  "days": 5,
+  "calibration": "ridge_28",
+  "mip_scenarios": 7,
+  "refinement_history_days": 28,
+  "block_slots": 6,
+  "switching": 50.0,
+  "mip_seconds": 5.0,
+  "mip_gap": 0.002,
+  "wear": 0.002,
+  "variation": 0.0,
+  "terminal": 0.45,
+  "deadband": 0.0,
+  "maxiter_arms": [
+    120,
+    600
+  ],
+  "only_changed_parameter": "L-BFGS-B maximum iterations",
+  "paired_same_purchase_initialization_mode_paths_soc_prices": true,
+  "day_start_soc_follows_120_reference": true,
+  "alternative_600_is_conditional_daily_diagnostic_not_continuous_rollout": true,
+  "development_on_2025_not_independent_validation": true
+}

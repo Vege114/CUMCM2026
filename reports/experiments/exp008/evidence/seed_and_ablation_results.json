@@ -1,0 +1,4538 @@
+{
+  "scope": "selected-family seed audit plus discovered existing summary records and explicit failed audit; no experiment is rerun",
+  "selection_on_examined_development_year": true,
+  "unexamined_test_year": null,
+  "no_invented_seed_statistics": true,
+  "selected_model_families": [
+    {
+      "family": "forecast_absolute_hgb",
+      "protocol": {
+        "path": "data/results/exp008/forecast_absolute_hgb/protocol.json",
+        "sha256": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+        "bytes": 3967
+      },
+      "seeds": [
+        42
+      ],
+      "monthly_model_count": 22,
+      "complete_months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cross_seed_n": 1,
+      "cross_seed_mean": null,
+      "cross_seed_standard_deviation": null,
+      "interpretation": "22 monthly channel fits share one seed; months are not independent seed repetitions"
+    },
+    {
+      "family": "forecast_absolute_extra_trees",
+      "protocol": {
+        "path": "data/results/exp008/forecast_absolute_extra_trees/protocol.json",
+        "sha256": "ea3e888d9d7bbaded17e2644b6f4c1eff741da17ee7b65c62a155cb212bded2e",
+        "bytes": 6856
+      },
+      "seeds": [
+        42
+      ],
+      "monthly_model_count": 22,
+      "complete_months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cross_seed_n": 1,
+      "cross_seed_mean": null,
+      "cross_seed_standard_deviation": null,
+      "interpretation": "22 monthly channel fits share one seed; months are not independent seed repetitions"
+    }
+  ],
+  "blend": {
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "same_all334days": true,
+    "weight_tuning": false,
+    "source": {
+      "path": "data/results/exp008/forecast_hgb_extra_trees_half/protocol.json",
+      "sha256": "22133990f741e67240e9091d546d21b706e721640f5c647e0722e0a2ed801a61",
+      "bytes": 6072
+    }
+  },
+  "diagnostic_random_day_seed": 20260912,
+  "diagnostic_seed_is_not_training_seed": true,
+  "controlled_comparison_sources": [
+    {
+      "path": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/matched_HGB_hold1_effect_summary.json",
+      "sha256": "810c9a4b1d9ede452b87edff94c605a5b7a65d891a05fcb0feb14673c9fa58b8",
+      "bytes": 5880
+    },
+    {
+      "path": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/numerical_invocation_comparison.json",
+      "sha256": "68df28923675e27d8689cb722fdbab86b0362011a149bcf2db0243799b827b3f",
+      "bytes": 2397
+    },
+    {
+      "path": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/paired_findings.json",
+      "sha256": "1077a0537c6b690bd16a0d40406d5a4c07c5aeebfc6ec164951f5d30ae44cdb8",
+      "bytes": 44361
+    },
+    {
+      "path": "data/results/exp008/q4_hgb_linked_price_physical/comparison.json",
+      "sha256": "16ecb6abaacec2a6fecd53686d206416b94cf6e900b37f054fc53b5fed2bcaff",
+      "bytes": 5978
+    },
+    {
+      "path": "data/results/exp008/q4_hgb_linked_price_physical/controlled_input_audit.json",
+      "sha256": "38cc4c7ebdf31ee957c59f92e022180beb7efc63c12e859fd4798e6a2bd9c0d1",
+      "bytes": 958
+    },
+    {
+      "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/3/paired_findings.json",
+      "sha256": "074ba53416322760770b31b285d48b874fa78ff97553066ac30760395ab6ff54",
+      "bytes": 5275
+    },
+    {
+      "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/paired_findings.json",
+      "sha256": "7dd07ba0200ffce89e1346760a6796527c2f0fb2055bd6fe287cf67cbda8c8c6",
+      "bytes": 5318
+    },
+    {
+      "path": "data/results/exp008/forecast_ensemble_diagnostic/summary.json",
+      "sha256": "425c5e003a9aa690e28e1c68e58ad94871d67f62d74de44d470a587d991dbad0",
+      "bytes": 2362
+    },
+    {
+      "path": "data/results/exp008/multistart_refinement/summary.json",
+      "sha256": "0808e74eb87bf5945ef21cbb192990942055e2a6dffe2223977ae4cf3dfc45e4",
+      "bytes": 1267
+    },
+    {
+      "path": "data/results/exp008/mode_refinement_diagnostic/paired_5days/summary.json",
+      "sha256": "47d255c9b9b7abc6ab8d19b25d5bad10574ce9d62eb363d97641c50e0e91ae2b",
+      "bytes": 1344
+    },
+    {
+      "path": "data/results/exp008/cumulative_risk_supplement_v1/supplementary_audit.json",
+      "sha256": "f0900511a7bc827f3f5b439081a3077367e3bdf17ec80805986374d7884d2e0e",
+      "bytes": 16855
+    }
+  ],
+  "summary_inventory_count": 254,
+  "summary_inventory": [
+    {
+      "candidate_path": "absolute_hgb_update_dispatch",
+      "source": {
+        "path": "data/results/exp008/absolute_hgb_update_dispatch/summary.json",
+        "sha256": "18c4539f1f8e83cd125299ca77164e06b2978d4665f332b92c4539a31fe75b96",
+        "bytes": 11790
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "analog_risk/analog90_n21_half42_30days",
+      "source": {
+        "path": "data/results/exp008/analog_risk/analog90_n21_half42_30days/summary.json",
+        "sha256": "e439ae79039cdbfa7c413af2d7325027c1d8191554f056542a92bfaec7a74a78",
+        "bytes": 3698
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1307354.7319352538,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "analog_risk/analog90_n21_half42_warm21_60days",
+      "source": {
+        "path": "data/results/exp008/analog_risk/analog90_n21_half42_warm21_60days/summary.json",
+        "sha256": "4b97839cf3275ac40e7376145e23e633d3f58ea9f784467a69f27d5a8ce583c1",
+        "bytes": 3737
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 2308045.315827538,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "analog_risk/tree28_60days",
+      "source": {
+        "path": "data/results/exp008/analog_risk/tree28_60days/summary.json",
+        "sha256": "e3b4211b83df840c0258d748b3c350d3e7add3cf2fdb25ab986747d6b802c5dd",
+        "bytes": 2974
+      },
+      "completed_days": 60,
+      "explicit_complete": null,
+      "total_cost_yuan": 2307809.1367585324,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_fixed_blocks_blocks24_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_fixed_blocks_blocks24_pilot30/summary.json",
+        "sha256": "70b1eed5c64f5cb7c40e16005aa876a8405beb55aa79b644b9680ad30fea2820",
+        "bytes": 2380
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1290369.5318173007,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_fixed_blocks_blocks4_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_fixed_blocks_blocks4_pilot30/summary.json",
+        "sha256": "f6f5a45d530d4915f15afaf0bf1c39292eae9cebdf1862874204a4e7361b723d",
+        "bytes": 2350
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1300263.5127008564,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_fixed_blocks_blocks8_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_fixed_blocks_blocks8_pilot30/summary.json",
+        "sha256": "0c894541b751bce96cd1c3d7d0484be66461ddb1c7257bc26de6cc20fc281ecd",
+        "bytes": 2367
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1295232.9972779849,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_greedy_blocks24_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_greedy_blocks24_pilot30/summary.json",
+        "sha256": "a2ca840271a1753b34a5dfd882eb960d789c790381e884895819e1915cadf4d5",
+        "bytes": 2335
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1274889.8599292254,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_greedy_blocks4_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_greedy_blocks4_pilot30/summary.json",
+        "sha256": "a337d870950da694cbaba0190fc13b44126d38754147a10424616aad5ac8ec9b",
+        "bytes": 2366
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269767.4026327406,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_greedy_blocks8_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_greedy_blocks8_pilot30/summary.json",
+        "sha256": "f2bfce6d5a3ea6f19fd6292e3418c0125ed6ff9756231601b7e49d5f62cd61f6",
+        "bytes": 2335
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1270095.537518821,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_impulse100_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_impulse100_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "b4fb79949d8f83592a3feae437457b4e84c0e59b2af824927c117de67ae8b858",
+        "bytes": 2701
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1265383.3266702928,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_impulse100_blocks4_rounds2_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_impulse100_blocks4_rounds2_step50_pilot30/summary.json",
+        "sha256": "56838027cd572a944485bffff3f6341b98492a3fe930b57fd437365c9820b52a",
+        "bytes": 2727
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1270727.1255402842,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_impulse300_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_impulse300_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "e3e12a2af78adefd622907874b7a4564239bcb584f726bd37342ba1fc51551bd",
+        "bytes": 2704
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1271935.262866799,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_impulse300_blocks4_rounds2_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_impulse300_blocks4_rounds2_step50_pilot30/summary.json",
+        "sha256": "3883fc7b0557f06fe0b96706193b98602e06c5834d942bc1832f12feeebdd726",
+        "bytes": 2724
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1277787.579278683,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_markov300_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_markov300_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "9a87e27bba19c30a94c0c2d46645797d89829d91096a08477a9ad52f3667c324",
+        "bytes": 2816
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269098.835902076,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/base_markov300_blocks4_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/base_markov300_blocks4_rounds1_step50_pilot30/summary.json",
+        "sha256": "1cb860bfb016bb84aac146216eff4e3c91504ffd2223fce691618bfc233d4e68",
+        "bytes": 2835
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1279094.527639957,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/calendar90_markov300_blocks8_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/calendar90_markov300_blocks8_rounds0_step50_pilot30/summary.json",
+        "sha256": "03ed6e3b319479657a704a9d0af5cbcedc0fdf2869a2004d9dfe6dc452a0f310",
+        "bytes": 2840
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1275801.4538917814,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/calendar90_markov300_blocks8_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/calendar90_markov300_blocks8_rounds1_step50_pilot30/summary.json",
+        "sha256": "4e5e94227aaa0241f3793016431acd086501b5cab91412202d4f5a00edd3a0d1",
+        "bytes": 2855
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1265886.2183452286,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_dp_blocks4_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_dp_blocks4_step50_pilot30/summary.json",
+        "sha256": "583b9eaeb2eeabda9387f7a87e904c523651f374443fe2319e03fbfcef5e528f",
+        "bytes": 2588
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269756.9475915527,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_impulse100_blocks4_step100_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_impulse100_blocks4_step100_pilot30/summary.json",
+        "sha256": "0ba2613261d9e379a5f899f4c898d40e8d366e77722cfe1cc1be33d7fedb9860",
+        "bytes": 2727
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1293446.27479399,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_impulse100_blocks4_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_impulse100_blocks4_step50_pilot30/summary.json",
+        "sha256": "a37faf99b5964d08650d1c79f813008f2fc1ab41951727c9aab7e736c7869859",
+        "bytes": 2724
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1285188.2598431539,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_impulse300_blocks4_step100_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_impulse300_blocks4_step100_pilot30/summary.json",
+        "sha256": "84ad28a2bdd2fb32bd08cac9700721a851b5cd3ba53b8efb2038909d30395db0",
+        "bytes": 2729
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1299582.2625297923,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_impulse300_blocks4_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_impulse300_blocks4_step50_pilot30/summary.json",
+        "sha256": "c0006b3651116051bee3b4d2c48ff682f8cfbed8e3b66193414324ea4589ede3",
+        "bytes": 2722
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1287724.690995861,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov100_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov100_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "a016d852805633e613c5a1b8654d914192f2057f6a3ff231a6ffa954fd4f3b48",
+        "bytes": 2845
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1266797.579069791,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov100_blocks4_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov100_blocks4_rounds1_step50_pilot30/summary.json",
+        "sha256": "f47429a2c0e74282bfa8feb7ff10e8bf6306d8ddfc123531be17f02176c5cac6",
+        "bytes": 2861
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1259217.5705434878,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov200_blocks8_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov200_blocks8_rounds1_step50_pilot30/summary.json",
+        "sha256": "0c12714559612a42206eab863fa02b373618c8b9c863ee472b47172257e56d19",
+        "bytes": 2845
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1258745.6338367504,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov300_blocks24_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov300_blocks24_rounds1_step50_pilot30/summary.json",
+        "sha256": "b258c45f13ef7075bd85438e41f61221684d077361c50d543dbd0a6a9bbb5034",
+        "bytes": 2846
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1267496.2630066364,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov300_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov300_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "349f8ff7e9a6006afd60e364d2f410b08286d84f518721b0e1573e999935a0d7",
+        "bytes": 2832
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1274332.4085735953,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov300_blocks4_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov300_blocks4_rounds1_step50_pilot30/summary.json",
+        "sha256": "035c4f433281c1ad8872d43ee176de18b9c905575e24b770084479197e7ab47e",
+        "bytes": 2841
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269773.224537156,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov300_blocks8_rounds0_step50_full334",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov300_blocks8_rounds0_step50_full334/summary.json",
+        "sha256": "561f3cce13849cf1dc2ef2784661ac43cdc0899e91ae2e8db75b9089995b3338",
+        "bytes": 2829
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13595627.79074394,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov300_blocks8_rounds1_step50_full334",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov300_blocks8_rounds1_step50_full334/summary.json",
+        "sha256": "2d1aeb8cb62d601c25fcc6f37c71445fd32f24363f31cb332f08209a4d767cee",
+        "bytes": 2842
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13589137.18959579,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markov300_blocks8_rounds2_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markov300_blocks8_rounds2_step50_pilot30/summary.json",
+        "sha256": "d6bd33ace057a28a1a720d1cf471481a6bca57e537466be487fc9832d3df6811",
+        "bytes": 2850
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1260350.1253673378,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markovtail3_300_blocks8_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markovtail3_300_blocks8_rounds0_step50_pilot30/summary.json",
+        "sha256": "4de08108ff790f53830b5d32ccba44c6928052fdecd109126a318f2354403a1f",
+        "bytes": 2982
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1274313.1532670371,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge28_markovtail3_300_blocks8_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge28_markovtail3_300_blocks8_rounds1_step50_pilot30/summary.json",
+        "sha256": "b3ad7436709dcd829f81498c3797b4f6a910618a952e14237957104b56ee02ea",
+        "bytes": 2999
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1263493.59483508,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_fixed_blocks_blocks24_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_fixed_blocks_blocks24_pilot30/summary.json",
+        "sha256": "4e4f065ef577adfcd43bde678456ebb11fe3033ba083d3e5947cc4f00c968063",
+        "bytes": 2390
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1350218.657266776,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_fixed_blocks_blocks4_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_fixed_blocks_blocks4_pilot30/summary.json",
+        "sha256": "32875c7129f3c03e52c5c4e6beb24ac327c4a7eaca2993c8570fa7867015c921",
+        "bytes": 2389
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1335812.9726588135,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_fixed_blocks_blocks8_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_fixed_blocks_blocks8_pilot30/summary.json",
+        "sha256": "84553a168b7fee752c59b0baaf991dcf8e1dd9441a48f33d81444cf27d1ccf3d",
+        "bytes": 2388
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1338884.5367283667,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_greedy_blocks24_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_greedy_blocks24_pilot30/summary.json",
+        "sha256": "6ef45073b333708569089302a96306ecde1713915f4f7a3bfcbcc288cceaf94b",
+        "bytes": 2371
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1310486.0031167504,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_greedy_blocks4_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_greedy_blocks4_pilot30/summary.json",
+        "sha256": "a900598c806b05d5e6bd7610a2f5532204ed66dff5a2f6462cda06d1cdad9f80",
+        "bytes": 2376
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1313530.9469187697,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_greedy_blocks8_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_greedy_blocks8_pilot30/summary.json",
+        "sha256": "17aff24fc43ac2d5999b81979fac468fe1d8abf5098a2efcc4342e19942def42",
+        "bytes": 2372
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1307735.4742989512,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_impulse100_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_impulse100_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "4f82e119a280315ee1549c9ffcdee83697dfb90f9893b9e5e50f0860aaaa828b",
+        "bytes": 2722
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1279517.951169396,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_impulse300_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_impulse300_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "b027c98db5d46ae88a71f34b4b602cbfa5a27aa522092def948c4b86f8bc15de",
+        "bytes": 2719
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1283807.7569192008,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_markov200_blocks4_rounds0_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_markov200_blocks4_rounds0_step50_pilot30/summary.json",
+        "sha256": "e043309db1053344e420ef4617897c5cd6d7be2b094fa2e068f74b0e552b6d3c",
+        "bytes": 2832
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1271102.9177801367,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_markov200_blocks4_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_markov200_blocks4_rounds1_step50_pilot30/summary.json",
+        "sha256": "2ef722d1a6373752ceaf82f64c8606b3df9f9c7d288e1461ee8f519666951215",
+        "bytes": 2844
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1265614.881766928,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_markov300_blocks4_rounds2_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_markov300_blocks4_rounds2_step50_pilot30/summary.json",
+        "sha256": "d7e41c4a65154685c7e0cdec17ff98cdef92516111b350dff3d47cddfdb0dca6",
+        "bytes": 2840
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1267917.1331244048,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "block_purchase/ridge_28_markov300_blocks8_rounds1_step50_pilot30",
+      "source": {
+        "path": "data/results/exp008/block_purchase/ridge_28_markov300_blocks8_rounds1_step50_pilot30/summary.json",
+        "sha256": "5072aa3e128de99acfae71437d52035879c11a9d769927ecac8c33b63f2d14ca",
+        "bytes": 2844
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1263447.6683531618,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "budget_feedback/fixed5_blend_hold1_fixedQ_grid200_cap8",
+      "source": {
+        "path": "data/results/exp008/budget_feedback/fixed5_blend_hold1_fixedQ_grid200_cap8/summary.json",
+        "sha256": "5f389e77949cc02c97265d322caddb32a098541085499e50fecf4270733d8a7c",
+        "bytes": 4040
+      },
+      "completed_days": [
+        31,
+        90,
+        151,
+        243,
+        364
+      ],
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50",
+      "source": {
+        "path": "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/summary.json",
+        "sha256": "1e969b1b52ddefd3add0cbcb264d630e54a9097d29a5979f82ff815702d0bf5a",
+        "bytes": 6033
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "budget_feedback/grid100_fixed5_diagnostic",
+      "source": {
+        "path": "data/results/exp008/budget_feedback/grid100_fixed5_diagnostic/summary.json",
+        "sha256": "91e0b4de6d1bde1ef280ddd31c2323bc406ad66b6e5eda4f16324fcc5af6bcec",
+        "bytes": 1851
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "conditional_path_diagnostic",
+      "source": {
+        "path": "data/results/exp008/conditional_path_diagnostic/summary.json",
+        "sha256": "7286e7e1026e2b6105efbe4a843f203625ff2c97c2a9f211bedcdaa22c893c69",
+        "bytes": 778
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.60_solar48",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.60_solar48/summary.json",
+        "sha256": "465f09dd0a36581e7b8770285b05da115886c35f428d1098d990252f7e1ab700",
+        "bytes": 1431
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14931516.053811109,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.60_solar54",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.60_solar54/summary.json",
+        "sha256": "94011b90f950f37ab856bfd8b769726d87efbde0109b42131191cfcecadf1b2b",
+        "bytes": 1437
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14654624.68100691,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.60_solar60",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.60_solar60/summary.json",
+        "sha256": "76bd7674d8e1fd97887668184cb994f0b8f1dc43359facafc85137ede4be162b",
+        "bytes": 1435
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14579307.1506791,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.60_solar64",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.60_solar64/summary.json",
+        "sha256": "39db088bf870495a98904ccfaca7d748987cd123bf33ac2c1651e5005cfe48b8",
+        "bytes": 1438
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14577269.530416287,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.70_solar48",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.70_solar48/summary.json",
+        "sha256": "b28ce7397bed2c627b73b17edfc719b84dc41d4132271136cc89bfa3ecf3ff56",
+        "bytes": 1426
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14403749.330130877,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.70_solar54",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.70_solar54/summary.json",
+        "sha256": "21fe2799438ba60bea2896b32596dd280bea45c5cafa1a92d8a6db0599a581e7",
+        "bytes": 1439
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14125852.98855582,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.70_solar60",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.70_solar60/summary.json",
+        "sha256": "18ec6cd35ac499044edab16cd0f16311f5162fe0f415b65482df9f66e6f72610",
+        "bytes": 1437
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14055131.177508019,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.70_solar64",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.70_solar64/summary.json",
+        "sha256": "41b3ce77c15216fa7911b0383bffdc6bbbafa497b02ff614ee7c6c49de93abad",
+        "bytes": 1438
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14061334.801141694,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.80_solar48",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.80_solar48/summary.json",
+        "sha256": "f2c6e56e612189d0c514c624c69a1055a727e00baa79e2bbf6abe450eed076bb",
+        "bytes": 1439
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14148846.715171153,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.80_solar54",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.80_solar54/summary.json",
+        "sha256": "e4eca09542f1f4228a187da6b70eaf6bcded57839c8d761386d7df4626aa592b",
+        "bytes": 1438
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13852077.803399434,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.80_solar60",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.80_solar60/summary.json",
+        "sha256": "8f2202c683e199e6c77aefa5679c1e1582f7d8a5aa3c9978ded9ea3c89156fd8",
+        "bytes": 1430
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13782217.040528733,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.80_solar64",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.80_solar64/summary.json",
+        "sha256": "5119a9d732507071d1c18a78638797bb0cd09ae906ac9a78a5a5502abe2015ce",
+        "bytes": 1422
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13798632.076460615,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.85_solar48",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.85_solar48/summary.json",
+        "sha256": "eb232631ef89a5e35bff6a1fecdb4ff2363216219171fc29e4c01e4543d86850",
+        "bytes": 1438
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14140881.116711415,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.85_solar54",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.85_solar54/summary.json",
+        "sha256": "ef337f7682b8ae474ee161e3683c055d1a40bc3bf04be35bae57b012bfc46d83",
+        "bytes": 1436
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13836121.09661491,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.85_solar60",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.85_solar60/summary.json",
+        "sha256": "c925636a90312fbcec9e1a1ffcefd5227374962783df709afa5e587cc30b9000",
+        "bytes": 1431
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13767586.277231192,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/blocks_q0.85_solar64",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/blocks_q0.85_solar64/summary.json",
+        "sha256": "04353be99bf425070f15a41eab3c99e4d8938f2be9293e6988d60f7460d0b74c",
+        "bytes": 1427
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13785537.019855576,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge28_blocks_q085_db100_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge28_blocks_q085_db100_d30/summary.json",
+        "sha256": "517d7d80ee6e6a4f39711fe8b82640622a476f317a352abe223324e07c801dcf",
+        "bytes": 1758
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13927411.656996567,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge28_blocks_q090_db150_d50",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge28_blocks_q090_db150_d50/summary.json",
+        "sha256": "27bd90f0fb1113998d29d45c134c5cada467985cd777bc1ec25cbdb603e881cf",
+        "bytes": 1752
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14080639.965862492,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge28_closed_raw_blocks_db100",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge28_closed_raw_blocks_db100/summary.json",
+        "sha256": "de13bd201a2ac4fd5de960a487b9463b749371e0878a994030ad537cf0502c03",
+        "bytes": 1810
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13935616.605123037,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge28_closed_raw_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge28_closed_raw_greedy/summary.json",
+        "sha256": "d2ff234ec3a6b88a35f9bbaab54e23afd0e8291f6efe36247e4cf0b1d01a7920",
+        "bytes": 1718
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13529890.903725555,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge28_q075_buffer500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge28_q075_buffer500/summary.json",
+        "sha256": "0f095aa7e4bc947c95b5d12c59cd950c154317fe52215988e1010978712787bd",
+        "bytes": 1679
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13425681.072671505,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge28_q085_buffer500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge28_q085_buffer500/summary.json",
+        "sha256": "241b6887ff5e6849300814b3520e5788591177d2980d9504a16192b2070b7ab9",
+        "bytes": 1680
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13429388.181536432,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge_28_blocks_q085_s60",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge_28_blocks_q085_s60/summary.json",
+        "sha256": "929fb3620c65b87458e654d8fe8fa9cb20c51260bcdbdc1ab08c8ea7159aa65f",
+        "bytes": 1667
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13748225.060392827,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge_28_greedy_q080",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge_28_greedy_q080/summary.json",
+        "sha256": "723246b58395b3be2fec599b0f4e902d57fa8e78b97c02fb3a6ac9dfc5d119d0",
+        "bytes": 1649
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13454349.52964713,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge_56_blocks_q085_s60",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge_56_blocks_q085_s60/summary.json",
+        "sha256": "05843d651e12ef28fa386b6d920d437fb614270aeafb5bff54ba6e5398abc570",
+        "bytes": 1675
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13755483.131991971,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/cal_ridge_56_greedy_q080",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/cal_ridge_56_greedy_q080/summary.json",
+        "sha256": "4934d8e7e8153d72bcadb7b44b2faece9777cee3df293cbcb73475a65d0a427c",
+        "bytes": 1654
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13475297.912824206,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/closed_pilot_rank_fixed_blocks",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/closed_pilot_rank_fixed_blocks/summary.json",
+        "sha256": "c189805d904ac9a265b5ab8574853cf1bf99e91baf0f6e84988d160fa2a280cb",
+        "bytes": 1642
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1295000.1969773783,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/closed_pilot_rank_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/closed_pilot_rank_greedy/summary.json",
+        "sha256": "70303d38320a4028b5f1664bd0e21e7810fd08d2dce252573d4f55e103e243a3",
+        "bytes": 1624
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1268383.5410063153,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/closed_pilot_raw_fixed_blocks",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/closed_pilot_raw_fixed_blocks/summary.json",
+        "sha256": "7696303d3ee13241798ee7276506d226bf1dd42e398ef1858dad63371d2dc505",
+        "bytes": 1641
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1295352.7019720876,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/closed_pilot_raw_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/closed_pilot_raw_greedy/summary.json",
+        "sha256": "dbc55660fc4ae76fa1157997587adb9f3bc98fe19bba4be09bf707e76a590646",
+        "bytes": 1629
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1265998.3223912965,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/impulse_pilot_q0.7_k100",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/impulse_pilot_q0.7_k100/summary.json",
+        "sha256": "17856a9ddea993e24c548ea0373c0cbb97465ddae6b3da1c434520659dfac14b",
+        "bytes": 1692
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1283306.9239006995,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/impulse_pilot_q0.7_k20",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/impulse_pilot_q0.7_k20/summary.json",
+        "sha256": "0b64b946f9d5a96941ce21c465c16ef1fc415c88eaf5c568431371069a39236f",
+        "bytes": 1689
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1271974.7160250067,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/impulse_pilot_q0.7_k300",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/impulse_pilot_q0.7_k300/summary.json",
+        "sha256": "2e9f8577d0f1ed21b49d5aea37bb6895bc6731c77d69f8c4670a74264e89da13",
+        "bytes": 1691
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1286995.1215516264,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/impulse_pilot_q0.8_k100",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/impulse_pilot_q0.8_k100/summary.json",
+        "sha256": "788a66472f69b8921c5611e512b7f5704d037284cdc9dc69294e8e694a551392",
+        "bytes": 1675
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1268148.4836873338,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/impulse_pilot_q0.8_k20",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/impulse_pilot_q0.8_k20/summary.json",
+        "sha256": "365b0a3fe85a8702ec44954b6973c53f5c0ed9321a602007c5e010ab366becf3",
+        "bytes": 1672
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1261512.7266502874,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/impulse_pilot_q0.8_k300",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/impulse_pilot_q0.8_k300/summary.json",
+        "sha256": "0e7fcee2ef9c574cbd2f45d59e0ecb4867e90eeb26b294827240de209de132f4",
+        "bytes": 1677
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1273676.209886886,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_rank_adaptive_blocks_db0",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_rank_adaptive_blocks_db0/summary.json",
+        "sha256": "e1d733366f6aae31426f09e993c625f629caa460b9e119221f39929117d6b9a0",
+        "bytes": 1557
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14000304.289826054,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_rank_adaptive_blocks_db100",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_rank_adaptive_blocks_db100/summary.json",
+        "sha256": "69a7a4e00fc1bea1855c6620a934f32daafb43135b9eee59c107b8a43b8244da",
+        "bytes": 1564
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14904594.30050087,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_rank_e5",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_rank_e5/summary.json",
+        "sha256": "2e972792946ab571d544e599c32b39bab50bfcb0fe8be54eb3fb565a82054491",
+        "bytes": 1446
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13863895.308963943,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_rank_e7",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_rank_e7/summary.json",
+        "sha256": "686457aa598a773f9bed9c328be590b03c77058005f44dd4fa423496bd274839",
+        "bytes": 1454
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13734323.510421712,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_rank_fixed_blocks_db0",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_rank_fixed_blocks_db0/summary.json",
+        "sha256": "8c26645625b0813bad08cfe0009535667cb742650f51ceadb8e0fc110c2b5b63",
+        "bytes": 1571
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13989468.977775505,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_rank_fixed_blocks_db100",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_rank_fixed_blocks_db100/summary.json",
+        "sha256": "7c71ccb0b53bf686c6fb28cf0c38db18442556519651e05de08c94dc2dcf8386",
+        "bytes": 1556
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14825038.770037277,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_raw_e5",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_raw_e5/summary.json",
+        "sha256": "4a329fa7a3bfe5d71dc0b7808f8dc151c8a2ab0bd6a036e3e890e415977e3e5a",
+        "bytes": 1424
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13848575.798623215,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/joint_raw_e7",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/joint_raw_e7/summary.json",
+        "sha256": "4c59c946b5b363650cd2f46b0e5881e60032e0fe0bda12f72966faf517cef0e5",
+        "bytes": 1450
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13726865.596884932,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.50_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.50_greedy/summary.json",
+        "sha256": "a98cd43150fb8953394121399e68971e470c6c3b8e755ba3e4964875b9c3f6b2",
+        "bytes": 1381
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 15231885.429087164,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.50_macro",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.50_macro/summary.json",
+        "sha256": "56707b70136a3463c2bcf32c4b99f69f57f77f3e4ac854e09427fe94e22e9e75",
+        "bytes": 1377
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 16456529.12194041,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.50_planned_direction",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.50_planned_direction/summary.json",
+        "sha256": "ebd57e5bcfef553be4b776770cb7226a618784b6004a2964262e437d143a35e1",
+        "bytes": 1405
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 16125567.467907948,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.60_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.60_greedy/summary.json",
+        "sha256": "a8840fc88f0c2d131975bda867c002424a0fc25cf791d56cbfec565b719df921",
+        "bytes": 1378
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14340043.11671176,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.60_macro",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.60_macro/summary.json",
+        "sha256": "2c09b6168a297140d6dc7fd35910055bc4b09b1e4a80de339bcaf673a9de456e",
+        "bytes": 1379
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 15514615.878166327,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.60_planned_direction",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.60_planned_direction/summary.json",
+        "sha256": "91a4556041dba8cc7c08d8f5768e83243a597d3cb8420ed43a9dd9d12b098175",
+        "bytes": 1402
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 15078065.085146107,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.70_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.70_greedy/summary.json",
+        "sha256": "f72326b321f4f62a4da23ab3d0df580823ddd4d9232c494831ed30174826116a",
+        "bytes": 1390
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13745346.992592042,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.70_macro",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.70_macro/summary.json",
+        "sha256": "0a9e38dee585def08e1195bd7dcdc98ec42f7682e3cac0fb013dd277ba195ee5",
+        "bytes": 1388
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14786387.461375905,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.70_planned_direction",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.70_planned_direction/summary.json",
+        "sha256": "7fb19d74fd92701d7c16d5bcdef4a4aa0b5442c467acf4cb2bf1845ce78199e6",
+        "bytes": 1416
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14329485.002971418,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.70_reserve1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.70_reserve1000/summary.json",
+        "sha256": "457008311e1ab5fdb1d78c3dcea9579bedf767fb98a7f2d0aa4d84cd90314b7b",
+        "bytes": 1413
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14335539.06121324,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.70_reserve2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.70_reserve2000/summary.json",
+        "sha256": "5031b767c5121f678b7a2b11cea4afa2a24e45ad985b2e72f6e269e8aead48a3",
+        "bytes": 1413
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 16907023.709770113,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.70_reserve500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.70_reserve500/summary.json",
+        "sha256": "c342af819482fb34710de57677f2d53cdd06040c3980d5d706e7b6eef5c8c9d1",
+        "bytes": 1412
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13900693.743009532,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_reserve1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_reserve1000/summary.json",
+        "sha256": "23e67633737fe682d3025e9ff6d6dc801203387893b5c61e01abf8691960ed44",
+        "bytes": 1419
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14111094.034187894,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_reserve2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_reserve2000/summary.json",
+        "sha256": "dd50e304d667ecbd68e70c9b55eb356bc99767fee87f6e2d3f72709629096396",
+        "bytes": 1414
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 16598271.640797673,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_reserve500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_reserve500/summary.json",
+        "sha256": "7559bbf3c8562d9c7434ae86c01d8976176511d5dedd2bc84beae87a3dbcdc8c",
+        "bytes": 1417
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13722562.696799101,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_statebuffer0",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_statebuffer0/summary.json",
+        "sha256": "28000def287d042c6d7771d456abf1d95769ad634fb30283112e3407c9f67171",
+        "bytes": 1418
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13719951.754135111,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_statebuffer1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_statebuffer1000/summary.json",
+        "sha256": "a380565e3175c481564200e855ddd6dfbb1fbf1fc14f8cd10123088152a820d6",
+        "bytes": 1427
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13504153.004207365,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_statebuffer2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_statebuffer2000/summary.json",
+        "sha256": "8cdd4e609b7022f7261566b397c3aa5588ac8b8aadd3c21d419c0cf2b8673ed2",
+        "bytes": 1425
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13537129.137694389,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.75_statebuffer500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.75_statebuffer500/summary.json",
+        "sha256": "ab2bec7d748c27429a6a9b44161bc9ec66ed123306ff6ea738993b85bef1dcf1",
+        "bytes": 1422
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13477475.036738168,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_greedy",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_greedy/summary.json",
+        "sha256": "f1ac4cc6ffb233564676c7111cb5600889bcdbbab19d68b8dd252206266f508c",
+        "bytes": 1390
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13466976.044258932,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_macro",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_macro/summary.json",
+        "sha256": "d344ebac5d99b35f4a9262294c7172a983b8b067968ef49f63b777d8095ec25f",
+        "bytes": 1406
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14299101.71748753,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_planned_direction",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_planned_direction/summary.json",
+        "sha256": "ec9f51a3cf1fbb366542bdfe4076da805fb169324cdbcf2b0b7d592a599eaf0e",
+        "bytes": 1411
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13858076.268082315,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_reserve1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_reserve1000/summary.json",
+        "sha256": "a4c4a7040666196e5aa764ab9585534bc805426f864d63b011ec820701b955c7",
+        "bytes": 1420
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13932019.393779453,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_reserve2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_reserve2000/summary.json",
+        "sha256": "1277eb66374919ebfd2d44be01bdb258854cb9c394f74dc32fbda5322c09d9e7",
+        "bytes": 1417
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 16287817.656593995,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_reserve500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_reserve500/summary.json",
+        "sha256": "499380dfa89342546ef3e0f452641191d1d598dfe7295756a65d63015dead28a",
+        "bytes": 1416
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13601846.669608492,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_statebuffer0",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_statebuffer0/summary.json",
+        "sha256": "3bb22a7cc5fd3263d1a08d7280c661e8edca3f0338e1743cfa4b9466e630c802",
+        "bytes": 1420
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13647449.141325045,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_statebuffer1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_statebuffer1000/summary.json",
+        "sha256": "a214b5bcad81221c6e277cacb7a0de3a4ce585bd094fa5554ba70cd5ff191847",
+        "bytes": 1420
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13427985.660975449,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_statebuffer2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_statebuffer2000/summary.json",
+        "sha256": "70574208bd9a396ae8d76b830b72ff6e3ca8e70326ea69258f64fac40cf52f92",
+        "bytes": 1421
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13443739.885391911,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.80_statebuffer500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.80_statebuffer500/summary.json",
+        "sha256": "d8226ca4eee89b8448de8c7615d06f1527e5bf0436035ac0f8e41ca7f245e967",
+        "bytes": 1421
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13420546.817563,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_reserve1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_reserve1000/summary.json",
+        "sha256": "140bc02fa21b36f582d4fd079d274ee8f88b58a4fad19e6ab7b48de44814e924",
+        "bytes": 1414
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13846887.240064563,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_reserve2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_reserve2000/summary.json",
+        "sha256": "c747600c2c4808669034cb0584ee51b7974e50dc3ddaf3483e7c63f1df6fb5c8",
+        "bytes": 1416
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 16029904.259120218,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_reserve500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_reserve500/summary.json",
+        "sha256": "d922d507b0bb07e61086fc3786d9b75b50cbb8f3c865c24b8156b4b641145dd4",
+        "bytes": 1414
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13581592.335327344,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_statebuffer0",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_statebuffer0/summary.json",
+        "sha256": "2fde1e1c682aaf18559de175bd9b88020a600dbec6ecd5d2dbde4347ddbf2a46",
+        "bytes": 1419
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13647557.805361517,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_statebuffer1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_statebuffer1000/summary.json",
+        "sha256": "e8d3aec263979ce5f000b458f84a619add531c9d7afafc12d4cacec9f1909d93",
+        "bytes": 1425
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13443091.510816175,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_statebuffer2000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_statebuffer2000/summary.json",
+        "sha256": "ac76f46819767364456a5707b09a4345dae060abcaef220f39e7a35a7be2c8c3",
+        "bytes": 1419
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13456951.811521966,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/lp_q0.85_statebuffer500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/lp_q0.85_statebuffer500/summary.json",
+        "sha256": "68b4610d8dc8a456dad7042675c0aabfa2345f421768da93bdbd325c8f756a04",
+        "bytes": 1424
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13447134.394549796,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/mk_impulse_q080_k100_g200_d3",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_impulse_q080_k100_g200_d3/summary.json",
+        "sha256": "c25d23d3d59a7434e716091a77501b638b2b7b07793d8a96fd72539696511d08",
+        "bytes": 1733
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": 147044.16114242497,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_impulse_q080_k100_g200_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_impulse_q080_k100_g200_d30/summary.json",
+        "sha256": "458d132aafc9e552058b72480fac85e331a5726210751995ff0d89ad7b63985c",
+        "bytes": 1717
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1265383.3266702928,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_impulse_q080_k300_g200_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_impulse_q080_k300_g200_d30/summary.json",
+        "sha256": "83821061c7f444e4a6b9ce0303d135790203b4d01eb6a119d9e168c8b4344521",
+        "bytes": 1718
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1271935.262866799,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_independent3_q080_k100_g200_d3",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_independent3_q080_k100_g200_d3/summary.json",
+        "sha256": "3bad14ac27aafaf4cb424f6e1b44e669607a5ef254a16974c4e51b5700745a37",
+        "bytes": 1743
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": 146551.0327367163,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_independent3_q080_k100_g200_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_independent3_q080_k100_g200_d30/summary.json",
+        "sha256": "feca2fedb63eb934a83c9f91ec67c8f886a38ca0312d3cf44124660d58429f42",
+        "bytes": 1728
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1263223.009549036,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_independent3_q080_k300_g200_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_independent3_q080_k300_g200_d30/summary.json",
+        "sha256": "3aaec8c67d9a8bae5dfe2a97582ae51409658dd92a94c84e05626c5985e4c9ff",
+        "bytes": 1733
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1271343.035490232,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_markov_q080_k100_g200_d3",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_markov_q080_k100_g200_d3/summary.json",
+        "sha256": "1766e08fbd16190a068a275e28bdc7fc866ed46db3b6f5b113c42c8c1ef52866",
+        "bytes": 1734
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": 145646.11875253264,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_markov_q080_k100_g200_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_markov_q080_k100_g200_d30/summary.json",
+        "sha256": "5f1080cf3d1406331590baf3b6904c4420c12174002e469e6493c3a73c335555",
+        "bytes": 1717
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1262060.1734107307,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/mk_markov_q080_k300_g200_d30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/mk_markov_q080_k300_g200_d30/summary.json",
+        "sha256": "ffff0c82689de2e64576a853561c52a5e4b413f61db225ea95654a040434bfbe",
+        "bytes": 1718
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269098.835902076,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "controller_candidates/tube_q0.5_r1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/tube_q0.5_r1000/summary.json",
+        "sha256": "a89fdd7864ae49242fdc48682b9e136e05ed6eef2c8d7b9022ffbdffcf1c07cb",
+        "bytes": 1643
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14353872.717548624,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/tube_q0.5_r2500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/tube_q0.5_r2500/summary.json",
+        "sha256": "7cf9f2013d8bf7cc1c0eb0dcf439a7dff16114959e0a30854361a8e9597e0117",
+        "bytes": 1632
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14102390.814305333,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/tube_q0.5_r4000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/tube_q0.5_r4000/summary.json",
+        "sha256": "609ec01e7f0ca90a993a4b6ff4035c2839d73faffb6594b3b72c867362566626",
+        "bytes": 1629
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14593651.555269971,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/tube_q0.65_r1000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/tube_q0.65_r1000/summary.json",
+        "sha256": "9e2b2061ec0d25aaf2f26d500b0dbe20c30dc2aeb59619063061587acd527f27",
+        "bytes": 1645
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13649431.051662976,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/tube_q0.65_r2500",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/tube_q0.65_r2500/summary.json",
+        "sha256": "545fee0642af3aba5cae2418e6ccf329d1a445b48dfc5f7351f0ec5634fc6c27",
+        "bytes": 1646
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13956570.01662925,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/tube_q0.65_r4000",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/tube_q0.65_r4000/summary.json",
+        "sha256": "842d66493bd695cfa97b273347ebe6ba20ae21507afb42e2fd3b63e2337bf7cf",
+        "bytes": 1647
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14705634.329017773,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/vf_q0.70_pilot30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/vf_q0.70_pilot30/summary.json",
+        "sha256": "05c52a8fef58daae7e94526fb02264475e123a40b58347475df8a27b50c15ad0",
+        "bytes": 1693
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1261625.8709998394,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/vf_q0.80_pilot30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/vf_q0.80_pilot30/summary.json",
+        "sha256": "321881e3eecb3570a15601e1f7911ced872410b1c2fd8766f6e4c964c9119f8f",
+        "bytes": 1686
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1250204.897848163,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/vf_ridge28_q0.70_dp_pilot30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/vf_ridge28_q0.70_dp_pilot30/summary.json",
+        "sha256": "c9b6727347d1da5cd91757d687d26e1ff881fb9b125175f09d0340f9dfc251e5",
+        "bytes": 1735
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1261129.7595205253,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/vf_ridge28_q0.70_greedy_pilot30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/vf_ridge28_q0.70_greedy_pilot30/summary.json",
+        "sha256": "0786ae25290b464f11ec35a1a1b9d4ea83410bcb348e9ac9eb1251cbc6550df9",
+        "bytes": 1710
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1264727.5941678754,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/vf_ridge28_q0.80_dp_pilot30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/vf_ridge28_q0.80_dp_pilot30/summary.json",
+        "sha256": "543d32091eeefea54da554fdf66bc45ad4b517affb883db6b1a526ce4d8c237f",
+        "bytes": 1734
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1268455.091462112,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "controller_candidates/vf_ridge28_q0.80_greedy_pilot30",
+      "source": {
+        "path": "data/results/exp008/controller_candidates/vf_ridge28_q0.80_greedy_pilot30/summary.json",
+        "sha256": "0a8273f110b6892aa8204cc82816e202ed2b5f0a5ef13f141c537c1615a66c69",
+        "bytes": 1713
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1260999.3806240894,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "cumulative_risk_planning/point",
+      "source": {
+        "path": "data/results/exp008/cumulative_risk_planning/point/summary.json",
+        "sha256": "5c885cc7a09b9e263c6ee728f28e51b543b51b9de0735cba4a75dbb1be4b9bd8",
+        "bytes": 5073
+      },
+      "completed_days": 334,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13190724.676222105
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 6.224347893889314,
+        "direction_reversal_reduction_pct": -162.84353242946133,
+        "active_slot_reduction_pct": -72.52040993573041,
+        "throughput_reduction_pct": -4.917930224999023,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "cumulative_risk_planning/prefix",
+      "source": {
+        "path": "data/results/exp008/cumulative_risk_planning/prefix/summary.json",
+        "sha256": "9054dbf4ee056fc709187e201919359a139a50a0c870c48ba4436e19b4cfe238",
+        "bytes": 5075
+      },
+      "completed_days": 334,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13706239.587825214
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 2.559443334615985,
+        "direction_reversal_reduction_pct": -214.36423598387688,
+        "active_slot_reduction_pct": -76.93243008511377,
+        "throughput_reduction_pct": -7.234672692515942,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "cumulative_risk_planning",
+      "source": {
+        "path": "data/results/exp008/cumulative_risk_planning/summary.json",
+        "sha256": "b553d565f1053dced73975fd1a703658b50e68d2e65c2f56583c14b847e33f62",
+        "bytes": 11603
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "fixed_purchase_bounds",
+      "source": {
+        "path": "data/results/exp008/fixed_purchase_bounds/summary.json",
+        "sha256": "48c8a25e3a98bf45e5065eda5f6dd383097011d5e6bc650b37b54aec29c61451",
+        "bytes": 14141
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "forecast_absolute_extra_trees/lp_bridge/absolute_extra_trees_ridge28_memory_half_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_extra_trees/lp_bridge/absolute_extra_trees_ridge28_memory_half_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "22a5c4d41ea1b1d23ac9d1e6891ca20dcd8f68c694870df703c08f0ded757207",
+        "bytes": 3044
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13147867.580952927,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "forecast_absolute_extra_trees",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_extra_trees/summary.json",
+        "sha256": "82cdb580d94491df7390d212f895aab3344e18c5080acd3036974ccc597807d2",
+        "bytes": 12083
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "predictive_gate_passed": true,
+      "gate_checks": {
+        "rmse_kw": true,
+        "high_price_rmse_kw": true,
+        "daily_energy_rmse_kwh": true,
+        "cumulative_error_rmse_kwh": true
+      },
+      "final_model_selected": false,
+      "full_physical_performed": false,
+      "bridge_performed": true
+    },
+    {
+      "candidate_path": "forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "de29bb93ea916860763bd9dcd5c01084bed9bbd19b2f6c6552956d675c684ee5",
+        "bytes": 3146
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13173407.796091657,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "forecast_absolute_hgb",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_hgb/summary.json",
+        "sha256": "5e2736213984919dce87dc303bb04ce6aadd306d64b053d25348c702440f5d70",
+        "bytes": 1647
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13173407.796091657,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "predictive_gate_passed": true,
+      "metric_checks": {
+        "rmse_kw": true,
+        "high_price_rmse_kw": true,
+        "price_weighted_rmse_kw": true,
+        "daily_energy_rmse_kwh": true,
+        "cumulative_error_rmse_kwh": true
+      },
+      "final_model_selected": false,
+      "bridge_performed": true
+    },
+    {
+      "candidate_path": "forecast_absolute_net_hgb",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_net_hgb/summary.json",
+        "sha256": "dc97a56fa4250bca2a4616a9c81881e927c5eaaf6fe9b80e0b853024247e1db4",
+        "bytes": 1801
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "predictive_gate_passed": false,
+      "metric_checks": {
+        "rmse_kw": false,
+        "high_price_rmse_kw": false,
+        "daily_energy_rmse_kwh": false,
+        "cumulative_error_rmse_kwh": false
+      },
+      "final_model_selected": false,
+      "bridge_performed": false
+    },
+    {
+      "candidate_path": "forecast_channel_composite/lp_bridge/best_stage_load_scaled_pv_ridge28_memory_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/forecast_channel_composite/lp_bridge/best_stage_load_scaled_pv_ridge28_memory_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "9410b0b8685292f15bfb880dcb73c1eb52c24e9a02faedde1ebe6b733ff217df",
+        "bytes": 3050
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13159634.63454324,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "forecast_channel_composite",
+      "source": {
+        "path": "data/results/exp008/forecast_channel_composite/summary.json",
+        "sha256": "93af38cf3f715e9313b37ef29cb61fc7a4159b92f1d51689577a6de8133e38a6",
+        "bytes": 4920
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "forecast_ensemble_diagnostic",
+      "source": {
+        "path": "data/results/exp008/forecast_ensemble_diagnostic/summary.json",
+        "sha256": "425c5e003a9aa690e28e1c68e58ad94871d67f62d74de44d470a587d991dbad0",
+        "bytes": 2362
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "forecast_half_ensemble/input_evidence/forecast_ensemble_diagnostic",
+      "source": {
+        "path": "data/results/exp008/forecast_half_ensemble/input_evidence/forecast_ensemble_diagnostic/summary.json",
+        "sha256": "425c5e003a9aa690e28e1c68e58ad94871d67f62d74de44d470a587d991dbad0",
+        "bytes": 2362
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "forecast_half_ensemble/lp_bridge/half_ensemble_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/forecast_half_ensemble/lp_bridge/half_ensemble_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "b3a6550653c4728f47c38ddb8fe4080f310e05b8e39ff8a542bf4e6a8ad2b6e4",
+        "bytes": 3178
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13195129.026552001,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "forecast_half_ensemble",
+      "source": {
+        "path": "data/results/exp008/forecast_half_ensemble/summary.json",
+        "sha256": "8df791a1eec0388b9ba5b63dabcf80b15014d43650e617fd95cfc7590958bfdb",
+        "bytes": 5051
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selected": false
+    },
+    {
+      "candidate_path": "forecast_hgb_extra_trees_half/lp_bridge/hgb_extra_trees_half_ridge28_memory_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/forecast_hgb_extra_trees_half/lp_bridge/hgb_extra_trees_half_ridge28_memory_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "72d24a1562d8cb8b9521581516e57073dc9b7548a7ac1a5cd1a9bad776bf90a3",
+        "bytes": 3043
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13142739.171909358,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "forecast_hgb_extra_trees_half",
+      "source": {
+        "path": "data/results/exp008/forecast_hgb_extra_trees_half/summary.json",
+        "sha256": "9b05923073a47ec00dfa36c1225ba9ae7fecec649f504575ef18063cdb97e11b",
+        "bytes": 11990
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "predictive_gate_passed": true,
+      "gate_checks": {
+        "rmse_kw": true,
+        "high_price_rmse_kw": true,
+        "daily_energy_rmse_kwh": true,
+        "cumulative_error_rmse_kwh": true
+      },
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "forecast_midnight_context_hgb",
+      "source": {
+        "path": "data/results/exp008/forecast_midnight_context_hgb/summary.json",
+        "sha256": "c9733166d4bfe05bc87bd89395c0293c7b7506a548fe4fa60ec70a2e853e2cd0",
+        "bytes": 1584
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "forecast_override_pilot",
+      "source": {
+        "path": "data/results/exp008/forecast_override_pilot/summary.json",
+        "sha256": "27239911f64d535b51976e89b3274a64cc7cc21dd797572097101e10dd496102",
+        "bytes": 17470
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selected": false
+    },
+    {
+      "candidate_path": "forecast_override_pilot/v2",
+      "source": {
+        "path": "data/results/exp008/forecast_override_pilot/v2/summary.json",
+        "sha256": "b1e4e4a6ba22f422b8f621319f4ef3fe046edad42606f164dfcfb3961d604d96",
+        "bytes": 19504
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selected": false
+    },
+    {
+      "candidate_path": "forecast_periodic_residual_hgb",
+      "source": {
+        "path": "data/results/exp008/forecast_periodic_residual_hgb/summary.json",
+        "sha256": "0da1c04828b063458c58ef51af5f5b45df28c46f018d6543e737c898d3fc3b37",
+        "bytes": 1648
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "predictive_gate_passed": false,
+      "metric_checks": {
+        "rmse_kw": false,
+        "high_price_rmse_kw": false,
+        "price_weighted_rmse_kw": false,
+        "daily_energy_rmse_kwh": false,
+        "cumulative_error_rmse_kwh": false
+      },
+      "final_model_selected": false,
+      "bridge_performed": false
+    },
+    {
+      "candidate_path": "forecast_scaled_pv_hgb/lp_bridge/scaled_pv_hgb_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/forecast_scaled_pv_hgb/lp_bridge/scaled_pv_hgb_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "d661e8ec594134232f1a47cb54489aa4c1712dc11e02a7d1a6974ff48d45438c",
+        "bytes": 3020
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13164074.946089102,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "forecast_scaled_pv_hgb",
+      "source": {
+        "path": "data/results/exp008/forecast_scaled_pv_hgb/summary.json",
+        "sha256": "635efd65d5b8960065c55a48605000aa63f8f63b7c66c7aa699befac5be60f5b",
+        "bytes": 4802
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "forecast_weekly_hgb",
+      "source": {
+        "path": "data/results/exp008/forecast_weekly_hgb/summary.json",
+        "sha256": "d01d6863d60df5b82ebd9f817198b401e75bb04395275d13fd2618944d1c8709",
+        "bytes": 1577
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "full28_mode_diagnostic/hold1_cap8_fixed5_60seconds",
+      "source": {
+        "path": "data/results/exp008/full28_mode_diagnostic/hold1_cap8_fixed5_60seconds/summary.json",
+        "sha256": "e6c887e48878986a20ab2f843b4e6fb51a6c79458d98023982a6450127dc9b0e",
+        "bytes": 2053
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "greedy_gap_diagnostic/joint_ridge28_refined_s3_30days",
+      "source": {
+        "path": "data/results/exp008/greedy_gap_diagnostic/joint_ridge28_refined_s3_30days/summary.json",
+        "sha256": "9a80d1404575c27083f2eb6f81cc182b2c93091968b3aefe88722e80abfdd4d7",
+        "bytes": 2456
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "sum_reported_subset": {}
+    },
+    {
+      "candidate_path": "hgb_capacity_selection/lp_bridge/past_validation_capacity_HGB_Ridge28_memory_half_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/hgb_capacity_selection/lp_bridge/past_validation_capacity_HGB_Ridge28_memory_half_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "4c9526ec6bd7580462854a546cd42db4b4ca2f2a4d0e54dcf18efdbcbe47262d",
+        "bytes": 3060
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13185761.900104165,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "hgb_capacity_selection/stage15_archive",
+      "source": {
+        "path": "data/results/exp008/hgb_capacity_selection/stage15_archive/summary.json",
+        "sha256": "b3de18e17a4a74b1541a0bf71d271ea1855b521ce6d674db8bff87442efb67a7",
+        "bytes": 4861
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_capacity_selection",
+      "source": {
+        "path": "data/results/exp008/hgb_capacity_selection/summary.json",
+        "sha256": "b006bc3b69bc5daef4f5f7175e8dfe4f6d014acc57436615ed9677ddc35f0a1c",
+        "bytes": 10601
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "gate_checks": {
+        "rmse_kw": true,
+        "high_price_rmse_kw": true,
+        "daily_energy_rmse_kwh": true,
+        "cumulative_error_rmse_kwh": true
+      }
+    },
+    {
+      "candidate_path": "hgb_fixed_mask_mip28_diagnostic/day_151",
+      "source": {
+        "path": "data/results/exp008/hgb_fixed_mask_mip28_diagnostic/day_151/summary.json",
+        "sha256": "517dd487fcf979779024dceeaf098442c81cf0c9fc0da52fdc5f328f2bbd5782",
+        "bytes": 751
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_fixed_mask_mip28_diagnostic/day_243",
+      "source": {
+        "path": "data/results/exp008/hgb_fixed_mask_mip28_diagnostic/day_243/summary.json",
+        "sha256": "e12c4ae2c71cae15218949cd36e693223c94c1dea9242336d285e5612ce6da26",
+        "bytes": 750
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_fixed_mask_mip28_diagnostic/day_31",
+      "source": {
+        "path": "data/results/exp008/hgb_fixed_mask_mip28_diagnostic/day_31/summary.json",
+        "sha256": "fe7f4300caee7495f6321eaf8c154c0db1a4958006b7db638e183f8dfb7ac8cd",
+        "bytes": 751
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_fixed_mask_mip28_diagnostic/day_364",
+      "source": {
+        "path": "data/results/exp008/hgb_fixed_mask_mip28_diagnostic/day_364/summary.json",
+        "sha256": "0e79067dab709d28cccffa69bd31f70df4ae9d393afb5d1aaee85f16e7d3991b",
+        "bytes": 726
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_fixed_mask_mip28_diagnostic/day_90",
+      "source": {
+        "path": "data/results/exp008/hgb_fixed_mask_mip28_diagnostic/day_90/summary.json",
+        "sha256": "8d5da63665f11570b8d6ea04d9de6c0e641e6b30fb660407e0ccc77e2f7d8de3",
+        "bytes": 746
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_fixed_mask_mip28_diagnostic",
+      "source": {
+        "path": "data/results/exp008/hgb_fixed_mask_mip28_diagnostic/summary.json",
+        "sha256": "660838d3a75233853186636e45ce87b0157d5e48cb034b8c185116ccb8deae3d",
+        "bytes": 4762
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_linked_price_forecast",
+      "source": {
+        "path": "data/results/exp008/hgb_linked_price_forecast/summary.json",
+        "sha256": "8297e39c1ad805b351dc4567a54e4b14e2679184e293465d5c962786aa40f7c7",
+        "bytes": 1798
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_quantile_replan/q0.75_334days",
+      "source": {
+        "path": "data/results/exp008/hgb_quantile_replan/q0.75_334days/summary.json",
+        "sha256": "e341f87d301cacecac9ca139be704f7abeee856c2b2ff1bc40db9f457fb62048",
+        "bytes": 5087
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13187339.304011904,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13187339.304011904
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 6.248415221077619,
+        "direction_reversal_reduction_pct": -173.616709417369,
+        "active_slot_reduction_pct": -76.53725898905681,
+        "throughput_reduction_pct": -6.082343555065495,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "hgb_quantile_replan/q0.80_334days",
+      "source": {
+        "path": "data/results/exp008/hgb_quantile_replan/q0.80_334days/summary.json",
+        "sha256": "3f4d85da4dba46e7a50960ddfa2a92e62fec208795a3b8164342e15872779e1f",
+        "bytes": 5084
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13173407.796091657,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13173407.796091657
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 6.347457257971745,
+        "direction_reversal_reduction_pct": -155.88127519237815,
+        "active_slot_reduction_pct": -74.8653812749696,
+        "throughput_reduction_pct": -5.444089990543,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "hgb_quantile_replan/q0.85_334days",
+      "source": {
+        "path": "data/results/exp008/hgb_quantile_replan/q0.85_334days/summary.json",
+        "sha256": "9a4ea89add3e4d0ebab26a7758680a72a46d72f31f9f76b4964cbe4fd0d9c03e",
+        "bytes": 5082
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13222100.92055962,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13222100.92055962
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 6.00128753552287,
+        "direction_reversal_reduction_pct": -136.75338951997068,
+        "active_slot_reduction_pct": -72.80267500434255,
+        "throughput_reduction_pct": -4.673561651893343,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "hgb_residual_state_diagnostic",
+      "source": {
+        "path": "data/results/exp008/hgb_residual_state_diagnostic/summary.json",
+        "sha256": "217eb97eba09aa2827b7dd97f492542097cb4f188e755553f35d2eb6714fbe2c",
+        "bytes": 4275
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "hgb_stage_selection/lp_bridge/best_validation_stage_hgb_ridge28_memory_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/hgb_stage_selection/lp_bridge/best_validation_stage_hgb_ridge28_memory_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "3277c345e44b021271eca875a362ef166d406b12dca3eb68740b1e034a33ef5b",
+        "bytes": 3043
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13171531.151683,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "hgb_stage_selection",
+      "source": {
+        "path": "data/results/exp008/hgb_stage_selection/summary.json",
+        "sha256": "b3de18e17a4a74b1541a0bf71d271ea1855b521ce6d674db8bff87442efb67a7",
+        "bytes": 4861
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "holiday_forecast/dispatch_linkage",
+      "source": {
+        "path": "data/results/exp008/holiday_forecast/dispatch_linkage/summary.json",
+        "sha256": "becf8e49a7a40f9a5c0eee54948348e5320cdecd08940d7f5169a7e6f22b7a6a",
+        "bytes": 1725
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13377421.38306173,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "holiday_forecast",
+      "source": {
+        "path": "data/results/exp008/holiday_forecast/summary.json",
+        "sha256": "88ce65784908d85a08c2522fb01641bd1d9155cfa980ff95278a15a26ed91896",
+        "bytes": 12300
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "gate_checks": {
+        "all_net_rmse_kw": true,
+        "special_net_rmse_kw": true,
+        "special_high_tariff_net_rmse_kw": true
+      }
+    },
+    {
+      "candidate_path": "hourly_purchase_diagnostic",
+      "source": {
+        "path": "data/results/exp008/hourly_purchase_diagnostic/summary.json",
+        "sha256": "a8fed55f10120b5c4c5de620394648cb1db978439842ec5037fa4749d350a21e",
+        "bytes": 502
+      },
+      "completed_days": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "load_energy_memory/lp_bridge/joint_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/load_energy_memory/lp_bridge/joint_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "1d8487001b48146d7c23d5bcff043e770028ea22624313e6cfce949b29baf01d",
+        "bytes": 3162
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13416463.326767987,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "load_energy_memory/lp_bridge/memory_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/load_energy_memory/lp_bridge/memory_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "3ce27d6347745ad8dbcafdd2358dd6bbb323b8826f250ebcc95448a6112b6f10",
+        "bytes": 3187
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13254749.360522216,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "load_mean_state_calibration",
+      "source": {
+        "path": "data/results/exp008/load_mean_state_calibration/summary.json",
+        "sha256": "533bafb779e71f0fbab6620c1d7013511828e0a9258404dfb949a89434012600",
+        "bytes": 4791
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "local_transition_prior/fixed5_control",
+      "source": {
+        "path": "data/results/exp008/local_transition_prior/fixed5_control/summary.json",
+        "sha256": "bc378b301596b8090101724cf20739e01f76cc7bdb8dcead4121029930940121",
+        "bytes": 527
+      },
+      "completed_days": [
+        31,
+        90,
+        151,
+        243,
+        364
+      ],
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "local_transition_prior",
+      "source": {
+        "path": "data/results/exp008/local_transition_prior/summary.json",
+        "sha256": "8e3155fc81568354b11db14e6a63d0cb3a8e62381f77a1337ba96aca781ed29b",
+        "bytes": 456
+      },
+      "completed_days": 334,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "memory_update_dispatch",
+      "source": {
+        "path": "data/results/exp008/memory_update_dispatch/summary.json",
+        "sha256": "c3965e7d700348921a01ec2c08b991291810f68cb8e8b63ba15ea93f796197ce",
+        "bytes": 12941
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selected": false
+    },
+    {
+      "candidate_path": "mode_budget_hold1_physical/direct_hgb_memory_hold1_cap8_kappa0_334days",
+      "source": {
+        "path": "data/results/exp008/mode_budget_hold1_physical/direct_hgb_memory_hold1_cap8_kappa0_334days/summary.json",
+        "sha256": "5bdf71e0bee8ec7d98f091b8be1beb4556cbf763b7eff7a2209c5ad39789a6dc",
+        "bytes": 4953
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13219687.999818834,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13219687.999818834
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 6.018441499501481,
+        "direction_reversal_reduction_pct": 7.621839501648953,
+        "active_slot_reduction_pct": -61.6162932082682,
+        "throughput_reduction_pct": 1.2522250812097457,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days",
+      "source": {
+        "path": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/summary.json",
+        "sha256": "1f441c2467a1a24998f3170a6fcbcc8b32ef13fd84686e2054850965e0f196d9",
+        "bytes": 4951
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13201981.94794217,
+      "formal_selected": true,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13201981.94794217
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 6.144317567853652,
+        "direction_reversal_reduction_pct": 7.1821179919384415,
+        "active_slot_reduction_pct": -61.59023797116554,
+        "throughput_reduction_pct": 1.1064359112192612,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_budget_physical/direct_hgb_memory_hold3_cap8_kappa0_334days",
+      "source": {
+        "path": "data/results/exp008/mode_budget_physical/direct_hgb_memory_hold3_cap8_kappa0_334days/summary.json",
+        "sha256": "ed18ac2563576e420383fca7a641bfcec32670226db24b82fe203dc02c1ebd9b",
+        "bytes": 4946
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13229466.093953246,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13229466.093953246
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 5.948926959829349,
+        "direction_reversal_reduction_pct": 7.621839501648953,
+        "active_slot_reduction_pct": -61.19940941462567,
+        "throughput_reduction_pct": 1.0517107473576925,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_guard_diagnostic",
+      "source": {
+        "path": "data/results/exp008/mode_guard_diagnostic/summary.json",
+        "sha256": "0299d7fcad1dc8cb562a56ef7121f77596a898408022ee5c8c17d2b2fb2b2462",
+        "bytes": 5063
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "mode_minhold_physical/direct_hgb_memory_hold3_physical3_334days",
+      "source": {
+        "path": "data/results/exp008/mode_minhold_physical/direct_hgb_memory_hold3_physical3_334days/summary.json",
+        "sha256": "e42ebd8aa5cc1b9aa608dac8896439d76e520a90a75d54f9831d2909b093b222",
+        "bytes": 4934
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13254118.289880954,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13254118.289880954
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 5.7736692840220645,
+        "direction_reversal_reduction_pct": 34.005130084279955,
+        "active_slot_reduction_pct": -58.051068264721216,
+        "throughput_reduction_pct": 4.199523784677972,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_minhold_physical/hold3_s3_5sec",
+      "source": {
+        "path": "data/results/exp008/mode_minhold_physical/hold3_s3_5sec/summary.json",
+        "sha256": "4eb417d3a31084e1927a6a91cf33565ae596b395a07a2088465845fc70c39409",
+        "bytes": 6488
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1257878.549129255,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "failure": null,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1257878.549129255
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning/halfhour_ridge_s7_switch50_refine_pilot30",
+      "source": {
+        "path": "data/results/exp008/mode_planning/halfhour_ridge_s7_switch50_refine_pilot30/summary.json",
+        "sha256": "259e3015f7463fb147ee315dfe6a11ed08221cb1a77f4aee49e6481cb0112131",
+        "bytes": 5145
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1263380.9337027646,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1263380.9337027646
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning/hourly_ridge_rank_s7_switch50_refine_pilot30",
+      "source": {
+        "path": "data/results/exp008/mode_planning/hourly_ridge_rank_s7_switch50_refine_pilot30/summary.json",
+        "sha256": "325ab5f40201a50070bcaf7f570782bfa3b0aee0b7becf9db31707979df60ecf",
+        "bytes": 5149
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269529.696838526,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1269529.696838526
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning/hourly_ridge_s7_switch50_pilot30",
+      "source": {
+        "path": "data/results/exp008/mode_planning/hourly_ridge_s7_switch50_pilot30/summary.json",
+        "sha256": "111488a64580f86d49bc067e44c05965c5b0eaaec7e52f2584843a51832ae76f",
+        "bytes": 5075
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1298095.6565215078,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1298095.6565215078
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning/hourly_ridge_s7_switch50_refine_full334",
+      "source": {
+        "path": "data/results/exp008/mode_planning/hourly_ridge_s7_switch50_refine_full334/summary.json",
+        "sha256": "0c04d7d3804ac8f20a2c14fcc5fce2ffb940d94f763b83a4eb0b9486b8a48ef2",
+        "bytes": 5117
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13502778.703835627,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13502778.703835627
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 4.005889799274809,
+        "direction_reversal_reduction_pct": 38.18248442652986,
+        "active_slot_reduction_pct": -51.45909327774882,
+        "throughput_reduction_pct": 5.968468565858053,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_planning/hourly_ridge_s7_switch50_refine_pilot30",
+      "source": {
+        "path": "data/results/exp008/mode_planning/hourly_ridge_s7_switch50_refine_pilot30/summary.json",
+        "sha256": "4000f4329ec7d92831c738897f57778cc7d0dfea4437595b6afceb2a39db52a8",
+        "bytes": 5120
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1267973.6387756602,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1267973.6387756602
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning/hourly_ridge_s7_switch50_smoke",
+      "source": {
+        "path": "data/results/exp008/mode_planning/hourly_ridge_s7_switch50_smoke/summary.json",
+        "sha256": "cd6255cac2358c1a8898afb10a5b5f333cf18d31eb565ac9c62ecbcac69da85b",
+        "bytes": 4814
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 161011.9051052353,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 3,
+        "recomputed_total_cost": 161011.9051052353
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": true,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": true,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 98.85533230594157,
+        "direction_reversal_reduction_pct": 99.41370465371932,
+        "active_slot_reduction_pct": 98.57998957790515,
+        "throughput_reduction_pct": 99.06531047563657,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": true
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/direct_hgb_memory_physical3_334days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_334days/summary.json",
+        "sha256": "9738dc21ae3880a1192a376f8f8bf021c70e00bbfbf4c384b14a00c43122c97b",
+        "bytes": 565242
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13308743.534330644,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13308743.534330644
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 5.385326865734818,
+        "direction_reversal_reduction_pct": 39.64822279223159,
+        "active_slot_reduction_pct": -50.638353309015116,
+        "throughput_reduction_pct": 4.984365807354729,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/direct_hgb_memory_physical3_3days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/direct_hgb_memory_physical3_3days/summary.json",
+        "sha256": "4f61a5eace12351a605077f4d38a921e8a685defaff4b90cedd13bdc16d49b29",
+        "bytes": 10530
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 140091.20258664712,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 3,
+        "recomputed_total_cost": 140091.20258664712
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/joint_ridge28_refined_s3_30days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/joint_ridge28_refined_s3_30days/summary.json",
+        "sha256": "5d6ef72aebf3c6cebd0c268637812f23886813a9d74a6d52dab1ada5f63fe557",
+        "bytes": 55866
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1266589.8745983944,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1266589.8745983944
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/joint_ridge28_refined_s3_334days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/joint_ridge28_refined_s3_334days/summary.json",
+        "sha256": "3c7cffdddc6821808e210dbf94887d8d0be01bcd873a80094c2fbbe549fd8ce2",
+        "bytes": 566256
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13585548.681288285,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13585548.681288285
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 3.417460520296467,
+        "direction_reversal_reduction_pct": 38.98864052766581,
+        "active_slot_reduction_pct": -48.69289560535002,
+        "throughput_reduction_pct": 5.860760476297234,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/load_memory_half_physical3_30days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/load_memory_half_physical3_30days/summary.json",
+        "sha256": "4ac62215f31f19d2a883e4514d22b461fca23cfefead69823539bd27903d07f7",
+        "bytes": 55756
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1282260.567331173,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1282260.567331173
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/load_memory_half_physical3_334days/amendment_bridge_evidence/joint_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/load_memory_half_physical3_334days/amendment_bridge_evidence/joint_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "1d8487001b48146d7c23d5bcff043e770028ea22624313e6cfce949b29baf01d",
+        "bytes": 3162
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13416463.326767987,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "mode_planning_physical/load_memory_half_physical3_334days/amendment_bridge_evidence/memory_tree28_q08_buffer500_334days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/load_memory_half_physical3_334days/amendment_bridge_evidence/memory_tree28_q08_buffer500_334days/summary.json",
+        "sha256": "3ce27d6347745ad8dbcafdd2358dd6bbb323b8826f250ebcc95448a6112b6f10",
+        "bytes": 3187
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13254749.360522216,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "mode_planning_physical/load_memory_half_physical3_334days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/load_memory_half_physical3_334days/summary.json",
+        "sha256": "724b2d02d414c768fb065acb0aac55d6e71ae6cac1eb00c00058d64f9d5f9fc2",
+        "bytes": 565595
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 13388187.499588981,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13388187.499588981
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": true,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 4.8205429110347975,
+        "direction_reversal_reduction_pct": 39.64822279223159,
+        "active_slot_reduction_pct": -51.83689421573736,
+        "throughput_reduction_pct": 4.906418743461371,
+        "throughput_also_reduced": true,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/refined_3days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/refined_3days/summary.json",
+        "sha256": "c7ddc95bb3ead5dfd39c8a2737c34dee609cce2c58bccbdbdf3f77a01b7f9c90",
+        "bytes": 10061
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 149761.97280239814,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 3,
+        "recomputed_total_cost": 149761.97280239814
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_planning_physical/refined_s3_30days",
+      "source": {
+        "path": "data/results/exp008/mode_planning_physical/refined_s3_30days/summary.json",
+        "sha256": "e2554f63af7127553f2ba0e7b5d29f5aae8408db7e162b66f08b0b5503ae47e4",
+        "bytes": 55754
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1269729.7756090162,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1269729.7756090162
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "mode_refinement_diagnostic/paired_5days",
+      "source": {
+        "path": "data/results/exp008/mode_refinement_diagnostic/paired_5days/summary.json",
+        "sha256": "47d255c9b9b7abc6ab8d19b25d5bad10574ce9d62eb363d97641c50e0e91ae2b",
+        "bytes": 1344
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "multistart_refinement",
+      "source": {
+        "path": "data/results/exp008/multistart_refinement/summary.json",
+        "sha256": "0808e74eb87bf5945ef21cbb192990942055e2a6dffe2223977ae4cf3dfc45e4",
+        "bytes": 1267
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "goal_eligible": false,
+      "sum_reported_subset": {
+        "cost_change": 1428.1594510002324
+      }
+    },
+    {
+      "candidate_path": "neural_joint_dispatch",
+      "source": {
+        "path": "data/results/exp008/neural_joint_dispatch/summary.json",
+        "sha256": "afef7a8b897abdc500286dee0d04cee76fc294965a711e54cb67eb63875feea7",
+        "bytes": 2724
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "online_purchase/fixed_60days/online",
+      "source": {
+        "path": "data/results/exp008/online_purchase/fixed_60days/online/summary.json",
+        "sha256": "dfabd4f20c303063fb6502e22fccf78c8b009ae57bd156812ba194e298609f9a",
+        "bytes": 2153
+      },
+      "completed_days": 60,
+      "explicit_complete": null,
+      "total_cost_yuan": 2316907.2940212376,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "online_purchase/fixed_60days/zero",
+      "source": {
+        "path": "data/results/exp008/online_purchase/fixed_60days/zero/summary.json",
+        "sha256": "05108277f714c1191af586746a9775f6a1b28e585c748f08bad825e95cdaf00d",
+        "bytes": 1820
+      },
+      "completed_days": 60,
+      "explicit_complete": null,
+      "total_cost_yuan": 2311452.3646089197,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "oracle_diagnostic_absolute_hgb_lp_q08",
+      "source": {
+        "path": "data/results/exp008/oracle_diagnostic_absolute_hgb_lp_q08/summary.json",
+        "sha256": "8f88f91a7d37af8a6c9ed9f9d44054bd96bd92a631365d0bb3a03b7d44b8c8b4",
+        "bytes": 3406
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "oracle_diagnostic_cumulative_risk",
+      "source": {
+        "path": "data/results/exp008/oracle_diagnostic_cumulative_risk/summary.json",
+        "sha256": "aa96bfd970f376b66390ed8fd4be36b497b8732d2d82d5adbe98320e829f4796",
+        "bytes": 2341
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "oracle_diagnostic_memory_lp_q08",
+      "source": {
+        "path": "data/results/exp008/oracle_diagnostic_memory_lp_q08/summary.json",
+        "sha256": "b91105d54cccb1da8fac656f077106f7fd8a6bdc1981419142b45ff0c4bbccff",
+        "bytes": 1039
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "policy_calibration",
+      "source": {
+        "path": "data/results/exp008/policy_calibration/summary.json",
+        "sha256": "b9724c1353ccf05b3685aae8c87e877d711d58f3b238e75cc3528068db884d3e",
+        "bytes": 8205
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "q1",
+      "source": {
+        "path": "data/results/exp008/q1/summary.json",
+        "sha256": "a01f148c89b552d91b7c0796522d92ad139226b751310d88739e9450ad694762",
+        "bytes": 3483
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "q4_absolute_hgb_physical/feasibility3",
+      "source": {
+        "path": "data/results/exp008/q4_absolute_hgb_physical/feasibility3/summary.json",
+        "sha256": "f140f5d1803078fdd66eb20f48768ca6c5bc0b901115b731bb22720fdd7b5357",
+        "bytes": 3579
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": 145329.64978619033,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": 6.884345505521727,
+      "verified": true
+    },
+    {
+      "candidate_path": "q4_absolute_hgb_physical/full334",
+      "source": {
+        "path": "data/results/exp008/q4_absolute_hgb_physical/full334/summary.json",
+        "sha256": "8a6fdf9bca601daf0a171cbc258314938f9b3177a631607fe0f677e946e99f21",
+        "bytes": 3565
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14018022.610012379,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": 1.7839048377237599,
+      "verified": true
+    },
+    {
+      "candidate_path": "q4_hgb_linked_price_physical/feasibility3",
+      "source": {
+        "path": "data/results/exp008/q4_hgb_linked_price_physical/feasibility3/summary.json",
+        "sha256": "26064e526d59f383c179abd25529250d1041d7a9437d38f2053d2f5b859e1e42",
+        "bytes": 3604
+      },
+      "completed_days": 3,
+      "explicit_complete": null,
+      "total_cost_yuan": 144711.25625281502,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": 0.42551092243400257,
+      "verified": true
+    },
+    {
+      "candidate_path": "q4_hgb_linked_price_physical/full334",
+      "source": {
+        "path": "data/results/exp008/q4_hgb_linked_price_physical/full334/summary.json",
+        "sha256": "0fdd9aa9f60094e44f4b146dd56b918ed67be889b0277f629cb020f01820cf84",
+        "bytes": 3569
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13994531.257936869,
+      "formal_selected": true,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": 0.16757964178721885,
+      "verified": true
+    },
+    {
+      "candidate_path": "q4_joint_price/pilot30",
+      "source": {
+        "path": "data/results/exp008/q4_joint_price/pilot30/summary.json",
+        "sha256": "ff85a158350443e209f0bf4dd7c2cbdba614add2b4612f09708247563b2e9ade",
+        "bytes": 4742
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1328070.8532446409,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": -0.07098098940501174,
+      "verified": true
+    },
+    {
+      "candidate_path": "q4_physical/full334",
+      "source": {
+        "path": "data/results/exp008/q4_physical/full334/summary.json",
+        "sha256": "e801fe8f9fca3e397c165fe644acce210646e5a29cb3e5623ea7427b592a2886",
+        "bytes": 3533
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 14272632.796947677,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": 0.7044932366893741,
+      "verified": true
+    },
+    {
+      "candidate_path": "q4_physical/pilot30",
+      "source": {
+        "path": "data/results/exp008/q4_physical/pilot30/summary.json",
+        "sha256": "7d1386e170a5206f3ba68f0910baf8e8b3b4a792a3b69454ffa21acae737577f",
+        "bytes": 3511
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1327128.8440604475,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "cost_reduction_pct": 0.13450217712578372,
+      "verified": true
+    },
+    {
+      "candidate_path": "risk_window/per_slot14_30days",
+      "source": {
+        "path": "data/results/exp008/risk_window/per_slot14_30days/summary.json",
+        "sha256": "284b98fa7a04a6bd900d25ada12d08dcb40792e7caffa77605a80c3273261eab",
+        "bytes": 2959
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1248154.5812725734,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "risk_window/per_slot14_334days",
+      "source": {
+        "path": "data/results/exp008/risk_window/per_slot14_334days/summary.json",
+        "sha256": "557fabba4f7b94c3d3e97cc95540c53ee28cb4167a8748855c218d8ac8e7e447",
+        "bytes": 3006
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13461551.024346743,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "risk_window",
+      "source": {
+        "path": "data/results/exp008/risk_window/summary.json",
+        "sha256": "15fe1fc6c0a372f7e30c7dcd15906ce466b959a91fe7de31849101b917fe13c3",
+        "bytes": 12327
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "risk_window/tree14_30days",
+      "source": {
+        "path": "data/results/exp008/risk_window/tree14_30days/summary.json",
+        "sha256": "87ba09b5c652b0b904b259d8d159c0312c129cbf3f53251d0814ae8ed0fab60b",
+        "bytes": 2963
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1249962.0913400727,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "risk_window/tree28_30days",
+      "source": {
+        "path": "data/results/exp008/risk_window/tree28_30days/summary.json",
+        "sha256": "abbe3aa47efe150bcfb34879410dae853ca45efcf3ea3da237d8f42a532652ae",
+        "bytes": 2960
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1256142.2655908996,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "risk_window/tree28_334days",
+      "source": {
+        "path": "data/results/exp008/risk_window/tree28_334days/summary.json",
+        "sha256": "cbfc2b4d7a21de0a9d25f8901432b5786537d2e47e86bb816c538c42b00cbc31",
+        "bytes": 2984
+      },
+      "completed_days": 334,
+      "explicit_complete": null,
+      "total_cost_yuan": 13393480.145223478,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "risk_window/tree7_30days",
+      "source": {
+        "path": "data/results/exp008/risk_window/tree7_30days/summary.json",
+        "sha256": "865b93c4f48bae9e5001ba63485424baf4b4929399ef094f29eaad97ef6bd344",
+        "bytes": 2973
+      },
+      "completed_days": 30,
+      "explicit_complete": null,
+      "total_cost_yuan": 1253072.598147327,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verified": true
+    },
+    {
+      "candidate_path": "scaled_joint_risk",
+      "source": {
+        "path": "data/results/exp008/scaled_joint_risk/summary.json",
+        "sha256": "6aca75544d637f9ac1b895c9da14903757f35417d7cd346d904c9a999ed2f9ab",
+        "bytes": 723
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "simultaneous_prefix_envelope",
+      "source": {
+        "path": "data/results/exp008/simultaneous_prefix_envelope/summary.json",
+        "sha256": "277f92e713377d0f7aa0e54bcb104457a5052a837c523f6ebf534b7d7e586827",
+        "bytes": 5886
+      },
+      "completed_days": 334,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selected": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 334,
+        "recomputed_total_cost": 13337947.996067079
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": true
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": 5.177706169301144,
+        "direction_reversal_reduction_pct": -183.80359105899595,
+        "active_slot_reduction_pct": -73.87962480458572,
+        "throughput_reduction_pct": -5.8009623791373865,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "full comparable 334 days"
+      }
+    },
+    {
+      "candidate_path": "terminal_count_diagnostic",
+      "source": {
+        "path": "data/results/exp008/terminal_count_diagnostic/summary.json",
+        "sha256": "6844c682f431e3d4849ee006b178957b35da78ff4a4b75eafb2473d98efc9f68",
+        "bytes": 5189
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false
+    },
+    {
+      "candidate_path": "weekly_hgb_aligned_calibration",
+      "source": {
+        "path": "data/results/exp008/weekly_hgb_aligned_calibration/summary.json",
+        "sha256": "a6f19b55a32aa0f7a92bcfb5021b323d14545172138d44f2e48f9f9f38cc1ec8",
+        "bytes": 2250
+      },
+      "completed_days": null,
+      "explicit_complete": true,
+      "total_cost_yuan": null,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "final_model_selection": false
+    },
+    {
+      "candidate_path": "weighted_mode_planning/ward3_joint_ridge28_30days",
+      "source": {
+        "path": "data/results/exp008/weighted_mode_planning/ward3_joint_ridge28_30days/summary.json",
+        "sha256": "60947c128e4e51f1a46747716a79a9169f006e9d9a4791bbe17efb3dd6b8369a",
+        "bytes": 5576
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1266514.4610486731,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1266514.4610486731
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    },
+    {
+      "candidate_path": "weighted_mode_planning/ward3_joint_ridge28_deadband0_30days",
+      "source": {
+        "path": "data/results/exp008/weighted_mode_planning/ward3_joint_ridge28_deadband0_30days/summary.json",
+        "sha256": "e8596a8713d96e9ec7989f9b3ea3642fca07dd37d1822076c98840302bb527b2",
+        "bytes": 5587
+      },
+      "completed_days": null,
+      "explicit_complete": null,
+      "total_cost_yuan": 1267259.9795840716,
+      "formal_selected": false,
+      "automatic_full_year_ranking": false,
+      "verification_reported_subset": {
+        "passed": true,
+        "days": 30,
+        "recomputed_total_cost": 1267259.9795840716
+      },
+      "original_8pct_gate": {
+        "passed": false,
+        "checks": {
+          "cost_reduced_at_least_8pct": false,
+          "direction_reversals_reduced": false,
+          "no_simultaneous_charge_discharge": true,
+          "physical_checks_passed": true,
+          "full_334_day_evaluation": false
+        },
+        "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+        "stricter_all_operation_metrics_passed": false,
+        "active_slots_also_reduced": false,
+        "baseline": {
+          "run_id": "exp006/primary",
+          "total_cost": 14066257.477256786,
+          "direction_reversals": 2729,
+          "active_slots": 23028,
+          "throughput_kwh": 11480847.039823763
+        },
+        "cost_threshold_yuan": 12940956.8791,
+        "cost_reduction_pct": null,
+        "direction_reversal_reduction_pct": null,
+        "active_slot_reduction_pct": null,
+        "throughput_reduction_pct": null,
+        "throughput_also_reduced": false,
+        "cost_reduced_at_least_10pct": false,
+        "comparison_scope": "partial run: no comparison to full-year totals"
+      }
+    }
+  ],
+  "explicit_failures": [
+    {
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_extra_trees_initial_audit_failure/failure_explanation.json",
+        "sha256": "60536d1e971cd98c08820b8fa724797ed3765403da808dc2eff0f0d0a6800815",
+        "bytes": 452
+      },
+      "explanation": {
+        "reason": "Structured sklearn node dtype contains padding bytes; raw bytes differed after serialization while every named node field was exactly equal. Canonical field-by-field hashes correct the audit, not the model.",
+        "failed_before_first_month_archive_validation_and_before_any_formal_score": true,
+        "model_or_training_hyperparameters_changed": false,
+        "prediction_method_changed": false,
+        "retry_same_fixed_seed_and_configuration": true
+      }
+    }
+  ],
+  "scope_limits": [
+    "inventory lists present top-level experimental summary.json files, excludes frozen duplicate source/forecast copies",
+    "A failed8% gate is not solver infeasibility; a partial diagnostic is not a334-day competing policy",
+    "Different architecture, calibration, controller, horizon or tariff variants are not a seed ablation",
+    "After user acceptance, unfinished budget-feedback work was stopped and is not selected; no completion or benefit inferred from absent summary",
+    "Historical final_model_selected:false flags describe original candidate phase; accepted final selection is separate and hash bound"
+  ]
+}

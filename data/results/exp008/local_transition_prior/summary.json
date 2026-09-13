@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "days": 334,
+  "slots": 48096,
+  "baseline_log_loss": 0.8583405024747788,
+  "local_log_loss": 0.8530448856187465,
+  "baseline_brier": 0.5173194253843129,
+  "local_brier": 0.5157026928901526,
+  "both_scores_improve": true,
+  "independent_scalar_prior_rows_checked": 47762,
+  "future_score_prefix_checks": 2004,
+  "all_other_model_arrays_unchanged": true,
+  "source_unchanged": true,
+  "billing_or_battery_improvement_claim": false
+}

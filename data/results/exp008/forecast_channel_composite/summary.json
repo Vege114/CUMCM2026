@@ -1,0 +1,136 @@
+{
+  "complete": true,
+  "metrics": [
+    {
+      "name": "original_HGB",
+      "channel": "load",
+      "rmse_kw": 192.85525876759698,
+      "mae_kw": 144.7735784301409,
+      "bias_kw": -3.22756038304155,
+      "price_weighted_rmse_kw": 195.1269435032755,
+      "high_price_rmse_kw": 200.3207865171937,
+      "high_price_bias_kw": -1.8501146383688853,
+      "daily_energy_rmse_kwh": 2073.3358000951544,
+      "daily_energy_mae_kwh": 1219.1742863115521,
+      "cumulative_error_rmse_kwh": 1195.1683291534823,
+      "daily_level_mse_kw2": 7463.057881868428,
+      "within_day_mse_kw2": 29730.09295244836,
+      "high_price_underprediction_kwh": 151179.3824496338
+    },
+    {
+      "name": "original_HGB",
+      "channel": "pv",
+      "rmse_kw": 307.5828489793913,
+      "mae_kw": 153.66067269402419,
+      "bias_kw": 7.559976711400568,
+      "price_weighted_rmse_kw": 307.99511431446916,
+      "high_price_rmse_kw": 283.49363147764154,
+      "high_price_bias_kw": 16.123960806603705,
+      "daily_energy_rmse_kwh": 2886.879179361182,
+      "daily_energy_mae_kwh": 2056.1482382175486,
+      "cumulative_error_rmse_kwh": 1976.1388473065556,
+      "daily_level_mse_kw2": 14468.873951786616,
+      "within_day_mse_kw2": 80138.33503449244,
+      "high_price_underprediction_kwh": 129755.16479512997
+    },
+    {
+      "name": "original_HGB",
+      "channel": "net",
+      "rmse_kw": 362.89918485267737,
+      "mae_kw": 247.98163997237435,
+      "bias_kw": -10.787537094442119,
+      "price_weighted_rmse_kw": 364.9505724131582,
+      "high_price_rmse_kw": 348.1840276970736,
+      "high_price_bias_kw": -17.974075444972588,
+      "daily_energy_rmse_kwh": 3610.6328106863552,
+      "daily_energy_mae_kwh": 2556.9038598497486,
+      "cumulative_error_rmse_kwh": 2285.936944822583,
+      "daily_level_mse_kw2": 22633.10641250842,
+      "within_day_mse_kw2": 109062.71195422925,
+      "high_price_underprediction_kwh": 261349.35828637684
+    },
+    {
+      "name": "channel_composite",
+      "channel": "load",
+      "rmse_kw": 191.36478823548765,
+      "mae_kw": 143.55633261934355,
+      "bias_kw": -3.1131729927373994,
+      "price_weighted_rmse_kw": 193.73159984104495,
+      "high_price_rmse_kw": 199.10126094462862,
+      "high_price_bias_kw": -1.1413725871979539,
+      "daily_energy_rmse_kwh": 2054.9467207873718,
+      "daily_energy_mae_kwh": 1206.1540227964747,
+      "cumulative_error_rmse_kwh": 1187.2470055777583,
+      "daily_level_mse_kw2": 7331.260460546481,
+      "within_day_mse_kw2": 29289.221715866537,
+      "high_price_underprediction_kwh": 149354.71574775214
+    },
+    {
+      "name": "channel_composite",
+      "channel": "pv",
+      "rmse_kw": 305.9367949891768,
+      "mae_kw": 153.7611361256044,
+      "bias_kw": 9.270302703551627,
+      "price_weighted_rmse_kw": 306.44426625035237,
+      "high_price_rmse_kw": 280.89153406796356,
+      "high_price_bias_kw": 5.001973161735679,
+      "daily_energy_rmse_kwh": 2875.794708159323,
+      "daily_energy_mae_kwh": 2068.488099204047,
+      "cumulative_error_rmse_kwh": 1968.1834064292796,
+      "daily_level_mse_kw2": 14357.977783814524,
+      "within_day_mse_kw2": 79239.34474443506,
+      "high_price_underprediction_kwh": 141519.7858219359
+    },
+    {
+      "name": "channel_composite",
+      "channel": "net",
+      "rmse_kw": 359.41242095610505,
+      "mae_kw": 246.38157575395044,
+      "bias_kw": -12.383475696289025,
+      "price_weighted_rmse_kw": 361.61664323934014,
+      "high_price_rmse_kw": 344.2175894419878,
+      "high_price_bias_kw": -6.1433457489336325,
+      "daily_energy_rmse_kwh": 3510.222091457499,
+      "daily_energy_mae_kwh": 2501.2165593152026,
+      "cumulative_error_rmse_kwh": 2236.669614650253,
+      "daily_level_mse_kw2": 21391.76932527128,
+      "within_day_mse_kw2": 107785.5190122572,
+      "high_price_underprediction_kwh": 247573.44096367247
+    }
+  ],
+  "continuation_gate_passed": true,
+  "postprocessing_causality_checks": [
+    {
+      "day": 31,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    },
+    {
+      "day": 32,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    },
+    {
+      "day": 59,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    },
+    {
+      "day": 90,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    },
+    {
+      "day": 151,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    },
+    {
+      "day": 271,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    },
+    {
+      "day": 364,
+      "future_actual_and_raw_calibrated_forecast_mutations_unchanged": true
+    }
+  ],
+  "raw_channels_match_signed_sources": true,
+  "raw_training_causality_inherited_from_verified_source_models": true,
+  "input_sources_unchanged": true,
+  "values_sha256": "abfeb825ee3f122e01f228f534c009c75f5f03c688328194706e8772def08063"
+}

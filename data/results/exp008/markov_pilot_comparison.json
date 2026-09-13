@@ -1,0 +1,85 @@
+{
+  "period": "2025-02-01 through 2025-03-02; 30 days",
+  "exploratory": true,
+  "formal_target_eligible": false,
+  "exp006_same_dates": {
+    "total_cost": 1317708.1706218794,
+    "direction_reversals": 267,
+    "active_slots": 2178,
+    "throughput_kwh": 1139714.782356976
+  },
+  "rows": [
+    {
+      "id": "mk_impulse_q080_k100_g200_d30",
+      "method": "impulse",
+      "switching": 100.0,
+      "total_cost": 1265383.3266702928,
+      "planned_cost": 1216683.8138695825,
+      "emergency_cost": 48699.5128007102,
+      "direction_reversals": 275,
+      "active_slots": 3077,
+      "throughput_kwh": 1188035.0533939567,
+      "verified": true
+    },
+    {
+      "id": "mk_impulse_q080_k300_g200_d30",
+      "method": "impulse",
+      "switching": 300.0,
+      "total_cost": 1271935.262866799,
+      "planned_cost": 1218639.2228521043,
+      "emergency_cost": 53296.040014694445,
+      "direction_reversals": 247,
+      "active_slots": 2999,
+      "throughput_kwh": 1184409.2688889392,
+      "verified": true
+    },
+    {
+      "id": "mk_independent3_q080_k100_g200_d30",
+      "method": "independent3",
+      "switching": 100.0,
+      "total_cost": 1263223.009549036,
+      "planned_cost": 1216591.921559685,
+      "emergency_cost": 46631.08798935126,
+      "direction_reversals": 289,
+      "active_slots": 3064,
+      "throughput_kwh": 1190201.695454853,
+      "verified": true
+    },
+    {
+      "id": "mk_independent3_q080_k300_g200_d30",
+      "method": "independent3",
+      "switching": 300.0,
+      "total_cost": 1271343.035490232,
+      "planned_cost": 1218715.3784546014,
+      "emergency_cost": 52627.65703563051,
+      "direction_reversals": 245,
+      "active_slots": 2999,
+      "throughput_kwh": 1184209.9171949248,
+      "verified": true
+    },
+    {
+      "id": "mk_markov_q080_k100_g200_d30",
+      "method": "markov",
+      "switching": 100.0,
+      "total_cost": 1262060.1734107307,
+      "planned_cost": 1215695.3905103328,
+      "emergency_cost": 46364.78290039771,
+      "direction_reversals": 293,
+      "active_slots": 3125,
+      "throughput_kwh": 1190178.6724689868,
+      "verified": true
+    },
+    {
+      "id": "mk_markov_q080_k300_g200_d30",
+      "method": "markov",
+      "switching": 300.0,
+      "total_cost": 1269098.835902076,
+      "planned_cost": 1217556.5522996434,
+      "emergency_cost": 51542.28360243284,
+      "direction_reversals": 249,
+      "active_slots": 3046,
+      "throughput_kwh": 1185006.7795993527,
+      "verified": true
+    }
+  ]
+}

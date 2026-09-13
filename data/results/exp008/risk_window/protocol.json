@@ -1,0 +1,43 @@
+{
+  "fixed_spec": {
+    "calibration": "ridge_28",
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0
+  },
+  "control": [
+    "tree28",
+    28,
+    "tree"
+  ],
+  "new_configurations": [
+    [
+      "tree7",
+      7,
+      "tree"
+    ],
+    [
+      "tree14",
+      14,
+      "tree"
+    ],
+    [
+      "per_slot14",
+      14,
+      "per_slot"
+    ]
+  ],
+  "pilot": {
+    "first_day": "2025-02-01",
+    "last_day": "2025-03-02",
+    "days": 30
+  },
+  "annual_gate": "at least 0.5% lower real pilot bill after adding an upper-bound cost for any lower final SOC; physics must pass",
+  "final_soc_charge": "max(0, control_final_soc - candidate_final_soc) * sqrt(.9) * 5 * max(fixed_price)",
+  "no_current_day_truth_window_selection": true,
+  "source_sha256": "4cc8a38daa4fe1c9bd0419fb07da41fd3480be817b6c59b63ed9969116dfead9",
+  "original_risk_sha256": "e6015c369f305e514d4af4f33e7ce17a07b0fa068da34f7df335605abdda2652",
+  "controller_sha256": "aea1b54c736c6efc9b1e1942996119a6c3eba37917f3e047c277d8f2ad004b1d",
+  "forecast_values_sha256": "a7287dc6edff41e94b783525eae0a104d3d3b2c052185cdce607e8a7028a9046",
+  "fixed_controls_note": "ridge28 q=.8 buffer500 control replayed; existing ridge28 q=.8 annual archive has no state buffer"
+}

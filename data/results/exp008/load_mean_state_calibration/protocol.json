@@ -1,0 +1,23 @@
+{
+  "one_fixed_candidate": true,
+  "config": {
+    "window": 56,
+    "half_life": 28,
+    "minimum_history": 14,
+    "ridge": 7.0,
+    "intercept_ridge": 2.0,
+    "minimum_feature_scale_kw": 100.0
+  },
+  "features": [
+    "intercept",
+    "lag1_issued_load_mean_error",
+    "lag7_issued_load_mean_error",
+    "last7_issued_load_mean_error",
+    "current_minus_yesterday_forecast_mean",
+    "weekend_change"
+  ],
+  "prediction": "one load-only constant daily shift; PV unchanged; no recursive correction",
+  "continuation_gate": "improve net RMSE, high-price net RMSE, daily-energy and prefix-energy RMSE versus absolute HGB; otherwise no LP bridge",
+  "development_year_not_independent_test": true,
+  "source_sha256": "e26f8bfff67e114c665b4b9a3f3d258ec770d8c1dc8751ba98fffcd6e426fac0"
+}

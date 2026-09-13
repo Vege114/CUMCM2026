@@ -1,0 +1,581 @@
+{
+  "days": 3,
+  "scenarios": [
+    "3",
+    "4-3"
+  ],
+  "tests_run": 5,
+  "all_tests_passed": true,
+  "paired_results": [
+    {
+      "scenario": "3",
+      "days": 3,
+      "baseline": {
+        "billing": {
+          "planned_cost": 131513.51515431175,
+          "up_cost": 11.985281343663292,
+          "down_cost": 0.0,
+          "emergency_cost": 0.0,
+          "total_cost": 131525.5004356554
+        },
+        "battery": {
+          "charge_kwh": 62399.196922208284,
+          "discharge_kwh": 55218.779280496135,
+          "throughput_kwh": 117617.97620270442,
+          "equivalent_full_cycles": 4.891782499112133,
+          "direction_reversals": 29,
+          "direction_reversals_including_warmup_boundary": 29,
+          "charging_slots": 197,
+          "discharging_slots": 154,
+          "active_slots": 351,
+          "simultaneous_slots": 0,
+          "max_overlap_kwh": 0.0,
+          "charge_starts": 21,
+          "discharge_starts": 16,
+          "power_changes_count": 345,
+          "power_ramp_total_kw": 198774.05575043114,
+          "power_ramp_total_kw_including_warmup_boundary": 203565.8621614935,
+          "power_ramp_max_kw_per_10min": 7055.5496,
+          "power_ramp_p95_kw_per_10min": 3335.796982608197,
+          "mean_absolute_power_kw": 1633.583002815339,
+          "max_charge_kw": 5000.0,
+          "max_discharge_kw": 4936.9881000000005,
+          "initial_soc": 1507.622628752613,
+          "final_soc": 2498.994513789464,
+          "minimum_soc": 1507.622628752613,
+          "maximum_soc": 10800.0,
+          "initial_mode": 1,
+          "final_mode": -1,
+          "initial_power_kw": 172.75999999999976,
+          "final_power_kw": -205.37476021774023,
+          "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+        }
+      },
+      "joint": {
+        "billing": {
+          "planned_cost": 116423.61832416747,
+          "up_cost": 9077.459997389931,
+          "down_cost": 0.0,
+          "emergency_cost": 9349.497937717537,
+          "total_cost": 134850.57625927488
+        },
+        "battery": {
+          "charge_kwh": 63578.96557330516,
+          "discharge_kwh": 57287.646775585745,
+          "throughput_kwh": 120866.61234889092,
+          "equivalent_full_cycles": 5.0292826922530764,
+          "direction_reversals": 43,
+          "direction_reversals_including_warmup_boundary": 43,
+          "charging_slots": 181,
+          "discharging_slots": 194,
+          "active_slots": 375,
+          "simultaneous_slots": 0,
+          "max_overlap_kwh": 0.0,
+          "charge_starts": 24,
+          "discharge_starts": 24,
+          "power_changes_count": 388,
+          "power_ramp_total_kw": 231113.96774670813,
+          "power_ramp_total_kw_including_warmup_boundary": 235874.7542142388,
+          "power_ramp_max_kw_per_10min": 7507.783756211158,
+          "power_ramp_p95_kw_per_10min": 4045.6036087369757,
+          "mean_absolute_power_kw": 1678.7029492901513,
+          "max_charge_kw": 5000.0,
+          "max_discharge_kw": 5000.0,
+          "initial_soc": 1507.622628752613,
+          "final_soc": 1437.4435081252109,
+          "minimum_soc": 1200.0,
+          "maximum_soc": 10800.0,
+          "initial_mode": 1,
+          "final_mode": -1,
+          "initial_power_kw": 172.75999999999976,
+          "final_power_kw": -305.3030141615002,
+          "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+        }
+      },
+      "cost_change_yuan": 3325.075823619467,
+      "relative_cost_change_pct": 2.528084525514629,
+      "both_independently_verified": true
+    },
+    {
+      "scenario": "4-3",
+      "days": 3,
+      "baseline": {
+        "billing": {
+          "planned_cost": 141206.8221407887,
+          "up_cost": 13.900120129394468,
+          "down_cost": 0.0,
+          "emergency_cost": 0.0,
+          "total_cost": 141220.72226091818
+        },
+        "battery": {
+          "charge_kwh": 65660.38590874658,
+          "discharge_kwh": 58004.22285557095,
+          "throughput_kwh": 123664.60876431754,
+          "equivalent_full_cycles": 5.1430304513491345,
+          "direction_reversals": 41,
+          "direction_reversals_including_warmup_boundary": 41,
+          "charging_slots": 162,
+          "discharging_slots": 167,
+          "active_slots": 329,
+          "simultaneous_slots": 0,
+          "max_overlap_kwh": 0.0,
+          "charge_starts": 21,
+          "discharge_starts": 26,
+          "power_changes_count": 317,
+          "power_ramp_total_kw": 271007.6353945574,
+          "power_ramp_total_kw_including_warmup_boundary": 275799.44180561975,
+          "power_ramp_max_kw_per_10min": 8548.26,
+          "power_ramp_p95_kw_per_10min": 4332.081187181542,
+          "mean_absolute_power_kw": 1717.5640106155215,
+          "max_charge_kw": 5000.0,
+          "max_discharge_kw": 4936.9881000000005,
+          "initial_soc": 1522.7387288211346,
+          "final_soc": 2671.830806800273,
+          "minimum_soc": 1522.7387288211346,
+          "maximum_soc": 10800.0,
+          "initial_mode": 1,
+          "final_mode": -1,
+          "initial_power_kw": 172.75999999999976,
+          "final_power_kw": -228.05979375353445,
+          "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+        }
+      },
+      "joint": {
+        "billing": {
+          "planned_cost": 124168.74363606083,
+          "up_cost": 9444.986154582504,
+          "down_cost": 0.0,
+          "emergency_cost": 10292.92948817266,
+          "total_cost": 143906.65927881602
+        },
+        "battery": {
+          "charge_kwh": 68430.57562598825,
+          "discharge_kwh": 61524.00791989173,
+          "throughput_kwh": 129954.58354587998,
+          "equivalent_full_cycles": 5.407122615641235,
+          "direction_reversals": 53,
+          "direction_reversals_including_warmup_boundary": 53,
+          "charging_slots": 152,
+          "discharging_slots": 208,
+          "active_slots": 360,
+          "simultaneous_slots": 0,
+          "max_overlap_kwh": 0.0,
+          "charge_starts": 28,
+          "discharge_starts": 35,
+          "power_changes_count": 379,
+          "power_ramp_total_kw": 304172.3060622532,
+          "power_ramp_total_kw_including_warmup_boundary": 308933.09252978384,
+          "power_ramp_max_kw_per_10min": 8632.117595170643,
+          "power_ramp_p95_kw_per_10min": 4507.039272343265,
+          "mean_absolute_power_kw": 1804.9247714705552,
+          "max_charge_kw": 5000.0,
+          "max_discharge_kw": 5000.0,
+          "initial_soc": 1522.7387288211346,
+          "final_soc": 1589.6842981467448,
+          "minimum_soc": 1200.0,
+          "maximum_soc": 10800.0,
+          "initial_mode": 1,
+          "final_mode": -1,
+          "initial_power_kw": 172.75999999999976,
+          "final_power_kw": -498.0410168845873,
+          "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+        }
+      },
+      "cost_change_yuan": 2685.9370178978425,
+      "relative_cost_change_pct": 1.901942558355807,
+      "both_independently_verified": true
+    }
+  ],
+  "default_old_vs_new_strict_parity": [
+    {
+      "scenario": "3",
+      "days": 3,
+      "strictly_equal_arrays": [
+        "actual",
+        "charge",
+        "days",
+        "discharge",
+        "emergency",
+        "fees",
+        "final",
+        "original",
+        "price",
+        "states",
+        "surplus"
+      ],
+      "max_absolute_difference": 0.0
+    },
+    {
+      "scenario": "4-3",
+      "days": 3,
+      "strictly_equal_arrays": [
+        "actual",
+        "charge",
+        "days",
+        "discharge",
+        "emergency",
+        "fees",
+        "final",
+        "original",
+        "price",
+        "states",
+        "surplus"
+      ],
+      "max_absolute_difference": 0.0
+    }
+  ],
+  "same_issue_model_switch_checks": [
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 0,
+      "load_forecast_max_change_kw": 152.55180328936422,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4464,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 36,
+      "load_forecast_max_change_kw": 141.48546830068744,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4500,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 72,
+      "load_forecast_max_change_kw": 121.87258483700225,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4536,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 108,
+      "load_forecast_max_change_kw": 85.33629861548252,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4572,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 0,
+      "load_forecast_max_change_kw": 851.888915086899,
+      "historical_net_error_max_change_kwh": 25.425300548227366,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4608,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 36,
+      "load_forecast_max_change_kw": 736.2638942675485,
+      "historical_net_error_max_change_kwh": 23.58091138344791,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4644,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 72,
+      "load_forecast_max_change_kw": 575.0102260093445,
+      "historical_net_error_max_change_kwh": 20.312097472833706,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4680,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 108,
+      "load_forecast_max_change_kw": 270.3142775760457,
+      "historical_net_error_max_change_kwh": 14.222716435913757,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4716,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 33,
+      "slot": 0,
+      "load_forecast_max_change_kw": 409.2056194068491,
+      "historical_net_error_max_change_kwh": 141.98148584781651,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4752,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 33,
+      "slot": 36,
+      "load_forecast_max_change_kw": 288.24679365910924,
+      "historical_net_error_max_change_kwh": 122.7106490445914,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4788,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 33,
+      "slot": 72,
+      "load_forecast_max_change_kw": 254.52543662676862,
+      "historical_net_error_max_change_kwh": 95.83503766822409,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4824,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "3",
+      "day": 33,
+      "slot": 108,
+      "load_forecast_max_change_kw": 226.38833520370054,
+      "historical_net_error_max_change_kwh": 45.052379596007626,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4860,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 0,
+      "load_forecast_max_change_kw": 152.55180328936422,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4464,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 36,
+      "load_forecast_max_change_kw": 141.48546830068744,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4500,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 72,
+      "load_forecast_max_change_kw": 121.87258483700225,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4536,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 108,
+      "load_forecast_max_change_kw": 85.33629861548252,
+      "historical_net_error_max_change_kwh": 0.0,
+      "historical_label_stop_max": 4464,
+      "cutoff": 4572,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 0,
+      "load_forecast_max_change_kw": 851.888915086899,
+      "historical_net_error_max_change_kwh": 25.425300548227366,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4608,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 36,
+      "load_forecast_max_change_kw": 736.2638942675485,
+      "historical_net_error_max_change_kwh": 23.58091138344791,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4644,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 72,
+      "load_forecast_max_change_kw": 575.0102260093445,
+      "historical_net_error_max_change_kwh": 20.312097472833706,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4680,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 108,
+      "load_forecast_max_change_kw": 270.3142775760457,
+      "historical_net_error_max_change_kwh": 14.222716435913757,
+      "historical_label_stop_max": 4608,
+      "cutoff": 4716,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 33,
+      "slot": 0,
+      "load_forecast_max_change_kw": 409.2056194068491,
+      "historical_net_error_max_change_kwh": 141.98148584781651,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4752,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 33,
+      "slot": 36,
+      "load_forecast_max_change_kw": 288.24679365910924,
+      "historical_net_error_max_change_kwh": 122.7106490445914,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4788,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 33,
+      "slot": 72,
+      "load_forecast_max_change_kw": 254.52543662676862,
+      "historical_net_error_max_change_kwh": 95.83503766822409,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4824,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 33,
+      "slot": 108,
+      "load_forecast_max_change_kw": 226.38833520370054,
+      "historical_net_error_max_change_kwh": 45.052379596007626,
+      "historical_label_stop_max": 4752,
+      "cutoff": 4860,
+      "official_pv_and_price_unchanged": true,
+      "historical_residuals_reconstructed_from_same_model": true
+    }
+  ],
+  "future_mutation_checks": [
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 0,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 36,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 72,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "3",
+      "day": 33,
+      "slot": 108,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 0,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 36,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 72,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 33,
+      "slot": 108,
+      "future_actual_all_channels_changed": true,
+      "unreleased_official_pv_changed": true,
+      "current_predictions_and_same_issue_history_strictly_unchanged": true
+    }
+  ],
+  "configuration": {
+    "issued_residuals": true,
+    "future_shortfall_weight": 1.5,
+    "settings": {
+      "scenarios": 7,
+      "residual_scale": 1.0,
+      "throughput_penalty": 0.005,
+      "variation_penalty": 0.001,
+      "terminal_value": 1.0,
+      "emergency_weight": 5.0,
+      "future_shortfall_weight": 1.5
+    },
+    "deadband": 20.0,
+    "updates": true,
+    "baseline_calibration": null,
+    "override": "exp008_joint_shared_cnn_seed42_then_fixed_ridge28"
+  },
+  "same_hyperparameters_as_update_value_future1_5_issued": true,
+  "baseline_all_arrays_match_existing_update_value_case_first_three_days": true,
+  "full_year_run_performed": false,
+  "final_model_selected": false,
+  "causality_scope": "adapter future actual/unreleased-PV invariance and same-issue historical labels; monthly network training and Ridge28 causality use their separate source manifests"
+}

@@ -1,0 +1,8 @@
+{
+  "fixed_weight_hgb": 0.5,
+  "fixed_weight_joint": 0.5,
+  "fitting": false,
+  "candidate_count": 1,
+  "pipeline": "convex mean of complete calibrated memory pipelines, no extra postprocessing",
+  "role": "fixed prediction diagnostic on examined development year"
+}

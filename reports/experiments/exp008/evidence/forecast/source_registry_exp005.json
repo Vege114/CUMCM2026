@@ -1,0 +1,302 @@
+{
+  "experiment_id": "exp005",
+  "title": "周转惩罚与充放电重叠检验",
+  "scope": [
+    "2"
+  ],
+  "variant": "soft-penalty",
+  "primary_seed": 42,
+  "primary_beta": 0.1,
+  "sensitivity_beta": 0.01,
+  "protocol": {
+    "config": {
+      "dt": 0.16666666666666666,
+      "eta_rt": 0.9,
+      "soc_min": 1200.0,
+      "soc_max": 10800.0,
+      "power_max": 5000.0,
+      "ramp_kw": 1000.0,
+      "delta": 0.001,
+      "delta_exec": 0.001,
+      "epsilon_cost": 0.0001,
+      "beta": 0.1,
+      "time_limit": 60.0,
+      "tolerance": 1e-06
+    },
+    "mode": "scenario",
+    "forecast": "exp004/no_season/seed42",
+    "archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+    "data_hashes": {
+      "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+      "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+      "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+    },
+    "initial_state": {
+      "soc": 1421.7991105135516,
+      "previous_power_kw": 172.75999999999976
+    },
+    "scenario_window": 56,
+    "scenario_maximum": 16,
+    "seed": 42,
+    "branch_slots": [
+      36,
+      72,
+      108
+    ],
+    "minimum_child": 2,
+    "intraday_weight_update": false,
+    "tree_parameters_user_confirmed": true,
+    "january_residuals": "none archived; Feb1 point-only fallback",
+    "evaluation": "retrospective chronological; 2025-02-01 through 2025-12-31",
+    "D": {
+      "D1": "A",
+      "D2": "B: approved beta",
+      "D3": "A",
+      "D4": "User amendment: report overlap, continue LP simulation",
+      "D5": "A",
+      "D7": "A",
+      "D9": "A"
+    },
+    "model_class": "LP",
+    "strict_mutual_exclusion": false,
+    "overlap_policy": "Measure raw overlap and continue relaxed simulation",
+    "user_amendment": "Remove integer switch; beta=0.1 main, beta=0.01 sensitivity; retain original code and report all overlap",
+    "forecast_archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+    "requested_days": 334,
+    "penalty_scope": "Second layer normalized total charge plus discharge; also penalizes normal throughput",
+    "output_semantics": "Continuous-relaxation policy simulation, not a mathematical guarantee of physical exclusivity"
+  },
+  "code_commit": "b4611ea4f9e0bc250a6d2e8e6c0836c273e7bc4d",
+  "new_code_uncommitted": true,
+  "original_code_hashes": {
+    "experiments/problem2/exp003/dispatch.py": "47764e4633c88a0d27e156892ab23fa85be102e93d8e63899f1420202a73e201",
+    "experiments/problem2/exp004/__init__.py": "577ca82babfd829c53907519bff416eb9ac0c6d22533563db7a2a75f957877f5",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/problem2/exp004/evaluate.py": "41f9d96197448adac9d72405959f33fffd8062309b6a7a91442c8c9da85f65c9",
+    "experiments/problem2/exp004/export.py": "61bf62f2b1ec47a3bb7992ff61214b5647d1829960abd7bf5de92456a82e5943",
+    "experiments/problem2/exp004/predict.py": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+    "experiments/problem2/exp004/train.py": "b552b245c2add1d6bd21d7c6c872eeaf73e3b8f679eef70e6f430f4c96e6f4d6",
+    "experiments/problem2/exp004/verify.py": "b806434ea6c8a5e647eb40b49ad56b9f056ce0b1533d7799a340c9be9fc12ad5",
+    "experiments/problem2/linear_planning/model.py": "419ee17054f1289d7e7f6030f3c6b0928110bd344b040740157c88817540275f",
+    "experiments/problem2/stochastic_lp/__init__.py": "9fadfeca0a07c862407068b64c87e53d3577963e668125b5188078ad7a7ab5ff",
+    "experiments/problem2/stochastic_lp/model.py": "e8624e546c9c9faa1dac5b46a2798d619f1af43911367651c1d41ff6c5ff56f6",
+    "experiments/problem2/stochastic_lp/run.py": "2c8d5b89d64fe4208638a515983ed67dc62d3e98a97f5ca792d4dfb6f2cc8e4f",
+    "experiments/problem2/stochastic_lp/scenarios.py": "2e8bf7ceda5dd2b3fd400acf6cbb675d5340f1a96d3cdd8da9ccb3e2944273e8"
+  },
+  "new_code_hashes": {
+    "reports/experiments/exp005/soft_penalty/build_report.py": "18e13667924ee3c7ff396eb4196b6cc790661ca42ba05fa7d9ab0f4044c751a7",
+    "reports/experiments/exp005/soft_penalty/evidence.py": "71c33c1693987fcda0dfa14de6e8a1256f57cfbcfcfc68b95a6737ca545872a4",
+    "reports/experiments/exp005/soft_penalty/inline_comparison.py": "8048301cfc8035c4a90deda264fa52f3fdf7625fc2d4154aa9934217651a30dc",
+    "reports/experiments/exp005/soft_penalty/package_delivery.py": "d03e93dbeaa7692db4f210dc464b4c3bde29de53fb7559c9c0cec6c258b1e46e",
+    "reports/experiments/exp005/soft_penalty/preflight.py": "71fe5ef6bfb3708b757c44cdbe6c910a58ae052beb72caff49f293f17c52a966",
+    "reports/experiments/exp005/soft_penalty/prepare_workbook.py": "13b7295c43fb39a75e45766d8154a0fd3338370cd8dba33246da3e74d2711053",
+    "reports/experiments/exp005/soft_penalty/report_figures.py": "b4fc30e125746397e4c94e145d0ffd7fcf46c85eeea86c1dd29d69397bf28275",
+    "reports/experiments/exp005/soft_penalty/run.py": "71b80e9016e45b220d8908b35ee676e3eae43b7612d8431e277d22a712acad29",
+    "reports/experiments/exp005/soft_penalty/run_control_after_main.py": "a0968b83f72a6625469e829f6fdac766ae8ab150ed96bd871a40c0d3f46fc5ab",
+    "reports/experiments/exp005/soft_penalty/verify_workbook.py": "928b51c2f0a8ad23fd58bfb3b7a8908b5a6c46e3664838bed7559e52f744cce1"
+  },
+  "metrics": [
+    {
+      "label": "β=0.01敏感性对照",
+      "beta": 0.01,
+      "days": 334,
+      "total_cost": 14740993.873912528,
+      "planned_cost": 12142430.663598318,
+      "emergency_cost": 2598563.210314211,
+      "adjustment_cost": 0.0,
+      "emergency_kwh": 700763.4348475451,
+      "overlap_intervals": 0,
+      "max_overlap_kwh": 1.2867928944615414e-11,
+      "throughput_kwh": 11622043.98963216,
+      "tv_kw": 12681513.558848687,
+      "total_wan": 1474.0993873912528
+    },
+    {
+      "label": "β=0.1 主方案",
+      "beta": 0.1,
+      "days": 334,
+      "total_cost": 14717882.165475883,
+      "planned_cost": 12125606.983119221,
+      "emergency_cost": 2592275.182356661,
+      "adjustment_cost": 0.0,
+      "emergency_kwh": 698388.269991026,
+      "overlap_intervals": 0,
+      "max_overlap_kwh": 7.673861546209079e-12,
+      "throughput_kwh": 11513308.87090243,
+      "tv_kw": 12692001.827970427,
+      "total_wan": 1471.7882165475883
+    }
+  ],
+  "overlap_summary": [
+    {
+      "beta": 0.1,
+      "days": 334,
+      "scope": "midnight",
+      "layer": 1,
+      "calls": 334,
+      "nodes": 124956,
+      "overlap_nodes": 0,
+      "windows_with_overlap": 0,
+      "max_overlap_kwh": 0.0,
+      "expected_overlap_sum_kwh": -6.81e-13,
+      "solver_seconds": 5.090406327391975,
+      "overlap_node_rate_pct": 0.0,
+      "scope_label": "午夜规划·第1层"
+    },
+    {
+      "beta": 0.1,
+      "days": 334,
+      "scope": "midnight",
+      "layer": 2,
+      "calls": 334,
+      "nodes": 124956,
+      "overlap_nodes": 0,
+      "windows_with_overlap": 0,
+      "max_overlap_kwh": 0.0,
+      "expected_overlap_sum_kwh": -2.316e-12,
+      "solver_seconds": 26.68947016587481,
+      "overlap_node_rate_pct": 0.0,
+      "scope_label": "午夜规划·第2层"
+    },
+    {
+      "beta": 0.1,
+      "days": 334,
+      "scope": "execution",
+      "layer": 1,
+      "calls": 48096,
+      "nodes": 8252676,
+      "overlap_nodes": 3,
+      "windows_with_overlap": 3,
+      "max_overlap_kwh": 748.5597965942674,
+      "expected_overlap_sum_kwh": 1590.2345708463788,
+      "solver_seconds": 247.72930615628138,
+      "overlap_node_rate_pct": 3.6351845147e-05,
+      "scope_label": "日内滚动·第1层"
+    },
+    {
+      "beta": 0.1,
+      "days": 334,
+      "scope": "execution",
+      "layer": 2,
+      "calls": 48096,
+      "nodes": 8252676,
+      "overlap_nodes": 0,
+      "windows_with_overlap": 0,
+      "max_overlap_kwh": 7.674e-12,
+      "expected_overlap_sum_kwh": -9.39866e-10,
+      "solver_seconds": 680.1433665708173,
+      "overlap_node_rate_pct": 0.0,
+      "scope_label": "日内滚动·第2层"
+    },
+    {
+      "beta": 0.01,
+      "days": 334,
+      "scope": "midnight",
+      "layer": 1,
+      "calls": 334,
+      "nodes": 124956,
+      "overlap_nodes": 0,
+      "windows_with_overlap": 0,
+      "max_overlap_kwh": 0.0,
+      "expected_overlap_sum_kwh": -6.23e-13,
+      "solver_seconds": 5.209132159943692,
+      "overlap_node_rate_pct": 0.0,
+      "scope_label": "午夜规划·第1层"
+    },
+    {
+      "beta": 0.01,
+      "days": 334,
+      "scope": "midnight",
+      "layer": 2,
+      "calls": 334,
+      "nodes": 124956,
+      "overlap_nodes": 0,
+      "windows_with_overlap": 0,
+      "max_overlap_kwh": 0.0,
+      "expected_overlap_sum_kwh": -8.219e-12,
+      "solver_seconds": 30.936544622061774,
+      "overlap_node_rate_pct": 0.0,
+      "scope_label": "午夜规划·第2层"
+    },
+    {
+      "beta": 0.01,
+      "days": 334,
+      "scope": "execution",
+      "layer": 1,
+      "calls": 48096,
+      "nodes": 8252676,
+      "overlap_nodes": 5,
+      "windows_with_overlap": 5,
+      "max_overlap_kwh": 748.5597965942674,
+      "expected_overlap_sum_kwh": 1801.988909136069,
+      "solver_seconds": 253.92363949026912,
+      "overlap_node_rate_pct": 6.0586408578e-05,
+      "scope_label": "日内滚动·第1层"
+    },
+    {
+      "beta": 0.01,
+      "days": 334,
+      "scope": "execution",
+      "layer": 2,
+      "calls": 48096,
+      "nodes": 8252676,
+      "overlap_nodes": 5,
+      "windows_with_overlap": 5,
+      "max_overlap_kwh": 230.6496295785681,
+      "expected_overlap_sum_kwh": 52.90723769351782,
+      "solver_seconds": 841.8753549172543,
+      "overlap_node_rate_pct": 6.0586408578e-05,
+      "scope_label": "日内滚动·第2层"
+    }
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.0.2",
+    "scipy": "1.18.1",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "forecast_metrics": [
+    {
+      "target": "load",
+      "month": 0,
+      "population": "all",
+      "n": 48096,
+      "mae": 195.4575632617,
+      "rmse": 258.3117746935,
+      "wape_pct": 4.2336372185
+    },
+    {
+      "target": "pv",
+      "month": 0,
+      "population": "all",
+      "n": 48096,
+      "mae": 212.4197859336,
+      "rmse": 423.9991342452,
+      "wape_pct": 8.9295024753
+    },
+    {
+      "target": "pv",
+      "month": 0,
+      "population": "actual_generation",
+      "n": 26880,
+      "mae": 379.3325604377,
+      "rmse": 567.1409994578,
+      "wape_pct": 8.9119496272
+    },
+    {
+      "target": "net_load",
+      "month": 0,
+      "population": "all",
+      "n": 48096,
+      "mae": 359.311172747,
+      "rmse": 524.8382547956,
+      "wape_pct": 11.9733002596
+    }
+  ],
+  "artifacts": {
+    "report": "experiments/exp005/report.md",
+    "html": "experiments/exp005/report.html",
+    "workbook": "experiments/exp005/result2.xlsx"
+  },
+  "comparison_note": "与exp004同预测但控制器与爬坡协议不同，只作描述性费用比较；两β同输入初态连续执行，可作权重敏感性对照。"
+}

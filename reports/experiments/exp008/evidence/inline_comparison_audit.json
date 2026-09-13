@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "fragment": "reports/experiments/exp008/comparison.inline.html",
+  "fragment_sha256": "28d0ea6329a64c1b0c3c6be0200e3c5fb720090969da00f822cf2385b69f10f4",
+  "fragment_bytes": 15407,
+  "sources_sha256": {
+    "reports/experiments/exp008/evidence/same_question_history_cost.csv": "e41396eea10403cbe7ec8f6f50d804f12eb728ddbd32352a4cceda6740be7d41",
+    "data/results/exp008/baselines.json": "2e6c603e63236d5376c9108a21123a901bfef20a655ea9dde3625838b38e51e5",
+    "reports/experiments/exp008/evidence/forecast/history_midnight_comparable.csv": "975630362c78ec48fe55cdfea426f9445cf3c741b846e083a65d9585219f9e64",
+    "reports/registry/exp001.json": "03dcdf0382c96acd2120ab8fbdf2f95c2e33e4353b526a7125345f94017bcd79",
+    "reports/registry/exp002.json": "0e8c2812f8bcde8dbedabab5f1612b7c3fca65f45990ea28a16c4eb3f82a38b5",
+    "reports/registry/exp003.json": "dcbbe16820a2eb76a6ea96881ab98132d637825f236789f10ca77a039b2d6fda",
+    "reports/registry/exp004.json": "e3342b25e50c9b667b95821689bfc8743831f2e0db26bcfa6177857e7f79b008",
+    "reports/registry/exp006.json": "92cd6b7d2adeee0df5ef597260070ee40c1ec0c8f34f8ba97c8a6d091e8cd14e",
+    "reports/experiments/exp008/evidence/forecast/source_registry_exp005.json": "5af3de5bdf08706696eea4ceb4a57d072b9a957bad61eef16d46bb0b6b52c43f",
+    "reports/experiments/exp008/evidence/runtime_by_stage.json": "f0d0dd9a58e342a32cd39a430211cfc1b73a6af03bd613b828bc38ee52aa75e3"
+  },
+  "literal_markup_fragment_contract": true,
+  "self_contained_data_no_network_data_calls": true,
+  "only_external_resource": "version-pinned D3 on approved CDN",
+  "four_annual_cost_panels_verified": true,
+  "Q2_history_rows_verified": 9,
+  "prediction_scalar_fields_verified": 56,
+  "all_requested_dimensions_present": true,
+  "historical_exp005_missing_values_preserved": true,
+  "runtime_rows_verified": 11,
+  "exp001_original_and_exp005_noncomparable_cost_rows_separate": true,
+  "no_exp007_or_new_optimization": true,
+  "producer_sha256": "fed895f82be0d26e07b5d7bede7c63b7f7cfa275fe232911c5f425a95f1b6775",
+  "browser_layout_four_width_theme_combinations_passed": true,
+  "browser_qa_source_sha256": "e28f6e43eb6bc62b0b027e90da345d65f1b1f8b2aa2e0e893a0ca145e277df04"
+}

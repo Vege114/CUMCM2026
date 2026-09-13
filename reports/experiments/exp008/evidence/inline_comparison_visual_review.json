@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "fragment_sha256": "28d0ea6329a64c1b0c3c6be0200e3c5fb720090969da00f822cf2385b69f10f4",
+  "numerical_audit": "inline_comparison_audit.json",
+  "browser_audit": "inline_comparison_browser_qa.json",
+  "verified_combinations": [
+    {
+      "width": 736,
+      "theme": "light",
+      "screenshot_sha256": "59ef44a9530c55260afc56ebac8501f71969d2235ec471ff3cb66492b6615384"
+    },
+    {
+      "width": 360,
+      "theme": "light",
+      "screenshot_sha256": "8f8e458d0a1eb7188c8322f8d5274c3e74632f992a87401687e566edbf3fa13f"
+    },
+    {
+      "width": 736,
+      "theme": "dark",
+      "screenshot_sha256": "cbef88b23d9009bf42feb49a521b04fe6e1b6d498fc9d8fd89c452366bc1f3b5"
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "screenshot_sha256": "2369357f2dd38f490bb3caa2a09119d62f50519e09ebf99c3c3ebd039e496b8d"
+    }
+  ],
+  "final_screenshots_visually_reviewed": [
+    "comparison-360-light.png",
+    "comparison-736-dark.png"
+  ],
+  "visual_checks": [
+    "Both requested widths reflow without internal horizontal scrolling",
+    "All4 annual cost panels use one domain and all4 prediction population/metric panels remain visible",
+    "Load/PV values are directly labelled; exp005 generation-load missing remains visible",
+    "Themes use host variables; all significant values and Chinese labels readable",
+    "All text-bound intersection checks include4px clearance; no conflicts or SVG overflow",
+    "All narrow SVGs have at most4 x ticks"
+  ],
+  "limitations": [
+    "No forecast holdout or speedup significance claim",
+    "Browser visual QA launches isolated headless Chromium; it does not use or change the user browser session"
+  ],
+  "no_core_forecast_evidence_or_builder_changed": true
+}

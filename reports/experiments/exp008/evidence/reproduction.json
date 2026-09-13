@@ -1,0 +1,28 @@
+{
+  "purpose": "Commands and evidence needed to reproduce the accepted final report, without restarting stopped optimization.",
+  "selection": "experiments/exp008/final_selection.json",
+  "source_branch": "codex/exp008-all-questions-optimization",
+  "branch_origin": "090bf46939e0d4e39f629f9bfa530eab092df03d",
+  "template_main_commit": "7ecd9b988665ad628dbf048ed295457166170ffc",
+  "accepted_current_result": true,
+  "original_eight_percent_target_met": false,
+  "user_instruction": "行，我觉得现在这个结果比较满意了，就这样写报告然后提交吧",
+  "verification_commands": [
+    "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest discover -s tests -p 'test_exp008*.py' -v",
+    "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m experiments.exp008.refresh_report_payload"
+  ],
+  "report_reconstruction": "Use frozen selected dispatch/prediction arrays and verified evidence. Rebuilding tables and figures must not train or optimize new candidates.",
+  "fresh_experiment_reproduction": "The selected source snapshots, protocols and training configurations define the algorithms. Use a separate clean checkout/output location because experiment runners intentionally reject overwriting a begun or completed result directory. Fixed MIP time budgets can yield different feasible incumbents across machines; the recorded results are not claimed bitwise reproducible under timing changes.",
+  "raw_source_directory": "data/raw",
+  "q1_source_unit": "trajectory.g is kWh; trajectory.c/d are kW and divide by 6 once",
+  "annual_source_unit": "actual dispatch charge/discharge/original/final are already kWh per slot",
+  "actual_bills_exclude_auxiliary_objective_terms": true,
+  "interrupted_candidates": [
+    "data/results/exp008/budget_feedback/physical334_hgb_cap8_grid200/user_stopped.json",
+    "data/results/exp008/budget_feedback/physical334_blend_cap8_grid200/interruption.json"
+  ],
+  "interrupted_candidates_must_not_be_resumed_for_this_delivery": true,
+  "report_rebuild_command": ".venv/bin/python -m reports.build_report_exp008 --payload reports/experiments/exp008/final_payload.json --code-commit <record.json中的40位source_commit>",
+  "relocating_checkout": "First run refresh_report_payload to rebind absolute archive/evidence paths to the current checkout; it verifies all five workbook_data objects are unchanged before replacing only the derived payload. Then build report and run source audit. exp005 Git and main templates have explicit hash-locked snapshot fallbacks.",
+  "weights": "The report rebuild and independent numerical forecast audit use frozen predictions and do not need joblib. final_forecast_evidence.run additionally verifies all44 original model files; those regenerable weights are excluded from Git. Use committed forecast CSVs + plot_figures for figure reconstruction, or restore/retrain weights in a separate directory before full model-byte audit."
+}

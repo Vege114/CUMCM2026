@@ -1,0 +1,17 @@
+{
+  "days": 30,
+  "scenario_reduction": "fixed Ward3 medoids and population weights",
+  "forecast": "joint_ridge28",
+  "block_slots": 6,
+  "switching": 50.0,
+  "wear": 0.002,
+  "mip_seconds": 5.0,
+  "mip_gap": 0.002,
+  "refinement_all_history_paths": 28,
+  "maxiter": 120,
+  "terminal_refinement": 0.45,
+  "deadband": 0.0,
+  "evaluation_role": "2025 development, not independent validation",
+  "predeclared_extension_gate": "0.3% same-period bill saving, no terminal inventory depletion, reversals below exp006",
+  "source_sha256": "29185a406eca63b75566452d36993627c062d44620d46fe810ac0ab742157658"
+}

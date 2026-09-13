@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "metric_checks_vs_original_HGB": {
+    "rmse_kw": true,
+    "high_price_rmse_kw": true,
+    "daily_energy_rmse_kwh": true,
+    "cumulative_error_rmse_kwh": true
+  },
+  "candidate": {
+    "name": "absolute_extra_trees_ridge28_memory_half",
+    "channel": "net",
+    "rmse_kw": 357.4383426253771,
+    "mae_kw": 241.5676388483594,
+    "bias_kw": -7.537086257404164,
+    "price_weighted_rmse_kw": 359.52895616170076,
+    "high_price_rmse_kw": 343.07788262962004,
+    "high_price_bias_kw": -13.024886052609295,
+    "daily_energy_rmse_kwh": 3587.3750709984797,
+    "daily_energy_mae_kwh": 2498.2249624772285,
+    "cumulative_error_rmse_kwh": 2281.066059388908,
+    "daily_level_mse_kw2": 22342.465104203726,
+    "within_day_mse_kw2": 105419.70367457275,
+    "high_price_underprediction_kwh": 251305.92124209387
+  },
+  "original_HGB": {
+    "name": "original_HGB_full",
+    "channel": "net",
+    "rmse_kw": 362.89918485267737,
+    "mae_kw": 247.98163997237435,
+    "bias_kw": -10.787537094442119,
+    "price_weighted_rmse_kw": 364.9505724131582,
+    "high_price_rmse_kw": 348.1840276970736,
+    "high_price_bias_kw": -17.974075444972588,
+    "daily_energy_rmse_kwh": 3610.6328106863552,
+    "daily_energy_mae_kwh": 2556.9038598497486,
+    "cumulative_error_rmse_kwh": 2285.936944822583,
+    "daily_level_mse_kw2": 22633.10641250842,
+    "within_day_mse_kw2": 109062.71195422925,
+    "high_price_underprediction_kwh": 261349.35828637684
+  },
+  "best_fixed_channel_composite": {
+    "name": "best_fixed_channel_composite_full",
+    "channel": "net",
+    "rmse_kw": 359.41242095610505,
+    "mae_kw": 246.38157575395044,
+    "bias_kw": -12.383475696289025,
+    "price_weighted_rmse_kw": 361.61664323934014,
+    "high_price_rmse_kw": 344.2175894419878,
+    "high_price_bias_kw": -6.1433457489336325,
+    "daily_energy_rmse_kwh": 3510.222091457499,
+    "daily_energy_mae_kwh": 2501.2165593152026,
+    "cumulative_error_rmse_kwh": 2236.669614650253,
+    "daily_level_mse_kw2": 21391.76932527128,
+    "within_day_mse_kw2": 107785.5190122572,
+    "high_price_underprediction_kwh": 247573.44096367247
+  },
+  "metric_checks_vs_fixed_composite": {
+    "rmse_kw": true,
+    "high_price_rmse_kw": true,
+    "daily_energy_rmse_kwh": false,
+    "cumulative_error_rmse_kwh": false
+  },
+  "formal_scores_are_development_results_not_independent_test": true
+}

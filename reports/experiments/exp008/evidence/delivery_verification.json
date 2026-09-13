@@ -1,0 +1,414 @@
+{
+  "passed": true,
+  "errors": [],
+  "checks": {
+    "accepted_gate_preserves_failed_original_target": {
+      "passed": true,
+      "detail": null
+    },
+    "selected_q2_sha": {
+      "passed": true,
+      "detail": null
+    },
+    "selected_q2_cost": {
+      "passed": true,
+      "detail": null
+    },
+    "selected_q2_reversals": {
+      "passed": true,
+      "detail": null
+    },
+    "support_runtime_by_stage": {
+      "passed": true,
+      "detail": null
+    },
+    "support_seed_and_ablation_results": {
+      "passed": true,
+      "detail": null
+    },
+    "support_planning_solver_diagnostics": {
+      "passed": true,
+      "detail": null
+    },
+    "support_data_validation": {
+      "passed": true,
+      "detail": null
+    },
+    "support_reproduction": {
+      "passed": true,
+      "detail": null
+    },
+    "payload_builder_source": {
+      "passed": true,
+      "detail": null
+    },
+    "audit_evidence/final_selection_audit.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "review_scope",
+          "assessment",
+          "reviewer",
+          "evidence_builder",
+          "report_templates_from_main",
+          "problem_sources",
+          "formal_period",
+          "shared_physics",
+          "scenarios",
+          "baseline",
+          "acceptance",
+          "required_disclosures",
+          "exp005_registry",
+          "remaining_delivery_checks",
+          "new_optimization_blockers",
+          "work_remains_is_delivery_not_model_search"
+        ]
+      }
+    },
+    "audit_evidence/battery/independent_audit.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "passed",
+          "series",
+          "SVG_point_audit",
+          "audit_source_sha256",
+          "note"
+        ]
+      }
+    },
+    "audit_evidence/forecast/verification.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "passed",
+          "no_training_or_optimization_performed",
+          "all_annual_metrics_independently_recomputed_with_math_fsum",
+          "monthly_and_144_leads_and_daily_additive_sums_reconcile_to_annual",
+          "published_blend_and_HGB_three_stage_metrics_matched",
+          "raw_half_blend_exact_on_all334_days_both_channels",
+          "archived_errors_verified_equal_truth_minus_prediction",
+          "prediction_metric_sign",
+          "all44_raw_model_hashes_verified",
+          "prior_causality_audits",
+          "selected_dispatch_issued_archive_keys",
+          "selected_dispatch_issued_forecasts_exact_array_match",
+          "metric_rows",
+          "full_period_samples",
+          "actual_PV_positive_samples",
+          "point_prediction_intervals_available",
+          "multi_seed_std_available",
+          "development_not_independent_test",
+          "historical_comparison",
+          "all_sources_unchanged_before_after_extraction"
+        ]
+      }
+    },
+    "audit_evidence/forecast/independent_report_audit.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "passed",
+          "sources",
+          "source_actual_hashes",
+          "files",
+          "metrics_recomputed_per_row",
+          "total_rows",
+          "empty_lead_population_rows",
+          "scope",
+          "no_training_or_optimizer_rerun",
+          "audit_script_sha256"
+        ]
+      }
+    },
+    "audit_evidence/workbooks/saved_workbook_audit.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "passed",
+          "payload_sha256",
+          "files",
+          "total_scalar_comparisons",
+          "visual_QA_status",
+          "no_optimizer_rerun",
+          "visual_QA",
+          "audit_script_sha256",
+          "payload_metadata_refresh"
+        ]
+      }
+    },
+    "audit_evidence/workbooks/source_to_payload_audit.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "passed",
+          "payload_sha256",
+          "source_audits",
+          "Q1_kW_to_kWh_conversion_verified",
+          "audit_script_sha256"
+        ]
+      }
+    },
+    "audit_evidence/report_browser/browser_checks.json": {
+      "passed": true,
+      "detail": {
+        "top_level_keys": [
+          "passed",
+          "results",
+          "visualReview"
+        ]
+      }
+    },
+    "all_main_report_links": {
+      "passed": true,
+      "detail": []
+    },
+    "exactly_eight_template_sections": {
+      "passed": true,
+      "detail": null
+    },
+    "no_unfilled_placeholders": {
+      "passed": true,
+      "detail": null
+    },
+    "all_history_experiments": {
+      "passed": true,
+      "detail": null
+    },
+    "all_four_question_history_facets": {
+      "passed": true,
+      "detail": null
+    },
+    "specified_daily_totals": {
+      "passed": true,
+      "detail": null
+    },
+    "all_figure_png_svg_pairs": {
+      "passed": true,
+      "detail": {
+        "count": 38
+      }
+    },
+    "xlsx_zip_1": {
+      "passed": true,
+      "detail": null
+    },
+    "xlsx_zip_2": {
+      "passed": true,
+      "detail": null
+    },
+    "xlsx_zip_3": {
+      "passed": true,
+      "detail": null
+    },
+    "xlsx_zip_4-2": {
+      "passed": true,
+      "detail": null
+    },
+    "xlsx_zip_4-3": {
+      "passed": true,
+      "detail": null
+    },
+    "report_hash_bound": {
+      "passed": true,
+      "detail": null
+    },
+    "html_hash_bound": {
+      "passed": true,
+      "detail": null
+    },
+    "payload_hash_bound": {
+      "passed": true,
+      "detail": null
+    },
+    "unit_tests_passed": {
+      "passed": true,
+      "detail": null
+    },
+    "registry_and_report_commit": {
+      "passed": true,
+      "detail": null
+    },
+    "committed_source_reports/build_report_exp008.py": {
+      "passed": true,
+      "detail": null
+    },
+    "committed_source_reports/register_exp008.py": {
+      "passed": true,
+      "detail": null
+    },
+    "committed_source_experiments/exp008/report_payload.py": {
+      "passed": true,
+      "detail": null
+    },
+    "committed_source_experiments/exp008/final_selection.json": {
+      "passed": true,
+      "detail": null
+    }
+  },
+  "figures": [
+    {
+      "png": "figures/forecast/daily_energy_metrics.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/forecast/lead_metrics.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/forecast/history_midnight_comparable.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/forecast/monthly_metrics.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/forecast/annual_metrics.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-09.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-08.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-12.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-06.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-07.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-05.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-11.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-10.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-04.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-01.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-03.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/equations/report-02.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/three_layer_control.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/recorded_runtime.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/monthly_cost.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/q2_history_cost.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/all_questions_history_cost.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/method_flow.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/report/historical_runtime_descriptive.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q3_final_all_48096_points.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q2_final_random_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q2_history_battery_intensity.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q1_deterministic_power.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q4_2_final_random_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q2_final_all_48096_points.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q4_2_final_all_48096_points.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q3_final_specified_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q4_2_final_specified_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q3_final_random_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q4_3_final_all_48096_points.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q4_3_final_specified_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q2_final_specified_days.png",
+      "paired_svg_valid": true
+    },
+    {
+      "png": "figures/battery/q4_3_final_random_days.png",
+      "paired_svg_valid": true
+    }
+  ],
+  "report_sha256": "c38b460ffa00a7703d11cb567d275e48f273cc770f5dbd87f199050b2ce59e48",
+  "html_sha256": "15f4cf7d0da4a0794d118e6d949a359b38f5692b7adc4935d2c1ea1816a217d6",
+  "payload_sha256": "761d185a082844b6fe95e1efd63adf99642858de9a9834489674fe8697976a53",
+  "artifacts": {
+    "result1.xlsx": "4be37d5a19e8381e95cbf77f30aea49a7b8fcea64b2cda78c58e356403f483ec",
+    "result2.xlsx": "e529ae928ff8c09455f72f72fbb25253be215df2cbfbd820e6959b2a410b9ea0",
+    "result3.xlsx": "c51c5833bcc398e9dfb612263a7ff074c6936e6c9bce30d074d4e4491de7c285",
+    "result4-2.xlsx": "e9d7f7dfe50ffb0084331cbf141db548f701d62d010e4edaf1db5f0b2793cae8",
+    "result4-3.xlsx": "3f9cb04ad2801f0c183628f4d8ea5832c4367b4023e57a0b3937a246b9638b29"
+  },
+  "new_training_or_optimization_executed": false
+}

@@ -1,0 +1,132 @@
+{
+  "candidate_count": 1,
+  "model_id": "absolute_extra_trees_ridge28_memory_half",
+  "family": "sklearn ExtraTreesRegressor; independently fitted absolute load and PV",
+  "prior_search": {
+    "pattern": "ExtraTreesRegressor|extra[_ -]?trees|extratrees",
+    "command": "rg -n -i PATTERN experiments reports pyproject.toml",
+    "performed_before_creating_this_module": true,
+    "matched_existing_experiments": false
+  },
+  "not_a_single_hyperparameter_or_tuning_isolation_claim": true,
+  "features": [
+    "yesterday_load",
+    "yesterday_pv",
+    "yesterday_net",
+    "previous_week_load",
+    "previous_week_pv",
+    "previous_week_net",
+    "mean3_load",
+    "mean3_pv",
+    "mean3_net",
+    "mean7_load",
+    "mean7_pv",
+    "mean7_net",
+    "std7_load",
+    "std7_pv",
+    "std7_net",
+    "slot_sin",
+    "slot_cos",
+    "slot_sin2",
+    "slot_cos2",
+    "weekday_sin",
+    "weekday_cos",
+    "yesterday_mean_load",
+    "yesterday_mean_pv",
+    "yesterday_std_load",
+    "yesterday_std_pv",
+    "yesterday_min_load",
+    "yesterday_min_pv",
+    "yesterday_max_load",
+    "yesterday_max_pv",
+    "yesterday_mean_net",
+    "yesterday_std_net"
+  ],
+  "feature_count": 31,
+  "feature_reference": "exact original absolute HGB features_for_day tensor and feature order",
+  "target": "absolute actual load and PV kW, same semantics in January and every formal month",
+  "model_configuration": {
+    "n_estimators": 128,
+    "min_samples_leaf": 10,
+    "max_features": 1.0,
+    "bootstrap": false,
+    "random_state": 42,
+    "n_jobs": 2,
+    "criterion": "squared_error"
+  },
+  "monthly_models": 22,
+  "training": "same split_days(month): all complete days from day7 through month_start-8; no current-month fitting",
+  "validation": "same preceding seven complete days, held out; metrics only, no early stopping, model selection or refit",
+  "sample_weights": "same age_weights(training_days, train_cutoff, half_life=90), repeated for all144 daily slots",
+  "sample_weight_supported_by_fit": true,
+  "features_do_not_include": [
+    "CNN or periodic forecast reference",
+    "official PV forecast",
+    "future actual load/PV/price",
+    "future-year shape",
+    "holiday region assumptions"
+  ],
+  "raw_postprocessing": "both channels nonnegative; PV masked by same past28day positive-PV union expanded20minutes each side",
+  "calibration": "same unmodified joint-channel Ridge28 fitted on this raw family, then same nonrecursive .5 underlying-load daily memory",
+  "predictive_gate": {
+    "keys": [
+      "rmse_kw",
+      "high_price_rmse_kw",
+      "daily_energy_rmse_kwh",
+      "cumulative_error_rmse_kwh"
+    ],
+    "primary_comparator": "original absolute HGB complete pipeline",
+    "secondary_comparator": "best fixed raw-channel composite complete pipeline",
+    "rule": "all four complete-pipeline metrics strictly improve on original HGB and all audits pass"
+  },
+  "conditional_bridge": "only after predictive gate: one full334 tree28/q.8/state_buffer500 using own issued residuals, no reused risk cache",
+  "full_physical_planning": "not authorized by this experiment; positive LP only informs parent",
+  "checks": {
+    "selected_daily_future_mutations": [
+      31,
+      32,
+      59,
+      90,
+      151,
+      243,
+      364
+    ],
+    "full_monthly_retraining_future_mutations": [
+      2,
+      9
+    ],
+    "reload_all22_models_all_formal_predictions": true,
+    "floating_tolerance_kw": 1e-08,
+    "tolerance_reason": "n_jobs2 parallel prediction accumulation can change floating summation order; tree structures and parameters must match exactly"
+  },
+  "development_on_examined2025_not_independent_test": true,
+  "model_or_parameters_selected_by_formal_truth": false,
+  "source_sha256": {
+    "experiments/exp008/forecast_absolute_extra_trees.py": "d546662bc67fb8c5c51a4125c070c3520f5869c832db83ed6268b959e95547b7",
+    "experiments/exp008/forecast_absolute_hgb.py": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+    "experiments/exp008/forecast_net_hgb.py": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "experiments/exp008/forecast_shape_diagnostic.py": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+    "experiments/exp008/audited_store_bridge.py": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6",
+    "experiments/exp008/risk_window.py": "4cc8a38daa4fe1c9bd0419fb07da41fd3480be817b6c59b63ed9969116dfead9"
+  },
+  "input_artifact_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/training_audit.json": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/causality_verification.json": "2304b92248abe318a3e1d22fb967ff582c095e4c3659131323f8f5ff3e6583cc",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_raw.npz": "a95bf4e98dc46cf1224301c25ee6c42fd33c31f963197157e105572807aa586b",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/protocol.json": "8363f348dd9776db2f2fc22aa1397b77476f8330a73113985e5a25cb58a17220",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/summary.json": "93af38cf3f715e9313b37ef29cb61fc7a4159b92f1d51689577a6de8133e38a6",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/memory.npz": "0341d6b78dcd115c1a68ca15a24fed590697674b28804981c717eea26e297ded"
+  },
+  "source_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

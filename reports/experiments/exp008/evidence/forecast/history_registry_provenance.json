@@ -1,0 +1,962 @@
+{
+  "exp001": {
+    "source": "reports/registry/exp001.json",
+    "sha256": "03dcdf0382c96acd2120ab8fbdf2f95c2e33e4353b526a7125345f94017bcd79",
+    "forecast_metric_records": 54,
+    "protocol": {
+      "experiment_id": "exp001",
+      "version": "neural-microgrid-v1",
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "full_original_plus_final_adjustment_plus_emergency",
+      "efficiency": {
+        "charge": 0.9,
+        "discharge": 0.9
+      },
+      "initial_soc_kwh": 6000,
+      "soc_bounds_kwh": [
+        1200,
+        10800
+      ],
+      "max_power_kw": 5000,
+      "seed_list": [
+        42,
+        2026,
+        3407
+      ],
+      "variants": [
+        "mlp",
+        "gru",
+        "tcn",
+        "gru_no_calendar",
+        "gru_one_day"
+      ],
+      "selection_candidates": [
+        "mlp",
+        "gru",
+        "tcn"
+      ],
+      "selection": "previous_seven_complete_days_total_dispatch_cost_seed_mean",
+      "selection_initial_state": "common_yesterday_baseline_state_at_validation_start",
+      "monthly_fit": "from_scratch_training_prefix_excludes_validation_week",
+      "max_epochs": 60,
+      "early_stopping_patience": 6,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "warmup": "January causal baseline initialized from attachment 1",
+      "terminal_condition": "physical_bounds_only_no_daily_reset",
+      "pv_interpolation": "linear_hourly_endpoints_with_last_observed_anchor",
+      "forecast_issuance_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "target_order": [
+        "load",
+        "pv",
+        "price",
+        "pv_corrected"
+      ],
+      "architecture": {
+        "independent_target_branches": 4,
+        "mlp": {
+          "hidden_units": [
+            64,
+            32
+          ],
+          "activation": "relu"
+        },
+        "gru": {
+          "units": 32,
+          "reset_after": true
+        },
+        "tcn": {
+          "channels": [
+            32,
+            32,
+            32,
+            32
+          ],
+          "kernel_width": 3,
+          "dilation_rates": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "padding": "causal",
+          "pooling": "global_average"
+        },
+        "per_target_head": {
+          "hidden_units": 32,
+          "activation": "relu",
+          "output_units": 1,
+          "output_activation": "linear",
+          "shared_across_future_intervals": true
+        },
+        "history_hours": 168,
+        "one_day_ablation_hours": 24,
+        "forecast_intervals": 144,
+        "dtype": "float32",
+        "jit_compile": false,
+        "optimizer": {
+          "name": "Adam",
+          "learning_rate": 0.001,
+          "beta_1": 0.9,
+          "beta_2": 0.999,
+          "epsilon": 1e-07
+        }
+      }
+    },
+    "primary_seed": null,
+    "comparison_note": null
+  },
+  "exp002": {
+    "source": "reports/registry/exp002.json",
+    "sha256": "0e8c2812f8bcde8dbedabab5f1612b7c3fca65f45990ea28a16c4eb3f82a38b5",
+    "forecast_metric_records": 30,
+    "protocol": {
+      "experiment_id": "exp002",
+      "version": "microgrid-causal-risk-v2",
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "full_original_plus_final_adjustment_plus_emergency",
+      "efficiency": {
+        "charge": 0.9486832980505138,
+        "discharge": 0.9486832980505138
+      },
+      "initial_soc_kwh": 6000,
+      "soc_bounds_kwh": [
+        1200,
+        10800
+      ],
+      "max_power_kw": 5000,
+      "warmup": "January common causal periodic baseline initialized from attachment 1",
+      "terminal_condition": "physical_bounds_only_no_daily_reset",
+      "pv_interpolation": "correct_hourly_endpoints_then_piecewise_linear_interval_integral",
+      "execution": "exact_greedy_charge_discharge_then_emergency",
+      "seed_list": [
+        42,
+        2026,
+        3407
+      ],
+      "primary_seed": 42,
+      "architecture": {
+        "name": "periodic_residual_mlp",
+        "branches": 4,
+        "units": [
+          32,
+          16
+        ],
+        "features": 16,
+        "output_initialization": "zeros",
+        "l2": 0.0001
+      },
+      "training": {
+        "monthly": "from_scratch",
+        "validation_days": 7,
+        "loss": "standardized_huber_delta_1_hourly_pv_correction",
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "max_epochs": 60,
+        "patience": 6
+      },
+      "risk": {
+        "alpha": 0.9,
+        "lambda_candidates": [
+          0,
+          0.1,
+          0.3
+        ],
+        "selection_days": [
+          24,
+          31
+        ],
+        "selection": "January_validation_total_replayed_cost_then_smaller_lambda",
+        "history_days": 56,
+        "shrinkage_days": 28,
+        "max_paths": 16,
+        "time_limit_seconds": 2,
+        "mip_rel_gap": 0.01,
+        "scenario_seed": 8675309
+      },
+      "forecast_issuance_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "target_order": [
+        "load",
+        "pv",
+        "price",
+        "pv_corrected"
+      ]
+    },
+    "primary_seed": 42,
+    "comparison_note": null
+  },
+  "exp003": {
+    "source": "reports/registry/exp003.json",
+    "sha256": "dcbbe16820a2eb76a6ea96881ab98132d637825f236789f10ca77a039b2d6fda",
+    "forecast_metric_records": 6,
+    "protocol": {
+      "experiment_id": "exp003",
+      "version": "microgrid-causal-risk-v2",
+      "algorithm_version": "q2-cost-calibration-v1",
+      "scope": [
+        "2"
+      ],
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "full_original_plus_final_adjustment_plus_emergency",
+      "q2_billing": "sum(price*(original+5*emergency)); final=original",
+      "efficiency": {
+        "charge": 0.9486832980505138,
+        "discharge": 0.9486832980505138
+      },
+      "initial_soc_kwh": 6000,
+      "soc_bounds_kwh": [
+        1200,
+        10800
+      ],
+      "max_power_kw": 5000,
+      "warmup": "January common causal periodic baseline initialized from attachment 1",
+      "terminal_condition": "physical_bounds_only_no_daily_reset",
+      "execution": "exact_greedy_charge_discharge_then_emergency",
+      "allowed_inputs": [
+        "附件1.csv",
+        "附件2_小区负载.csv",
+        "附件2_光伏发电实际功率.csv"
+      ],
+      "seed_list": [
+        42,
+        2026,
+        3407
+      ],
+      "primary_seed": 42,
+      "forecast_issuance_hours": [
+        0
+      ],
+      "forecast_targets": [
+        "load",
+        "pv"
+      ],
+      "diagnostic_targets": [
+        "load",
+        "pv",
+        "net_load"
+      ],
+      "architecture": {
+        "name": "q2_periodic_residual_mlp",
+        "branches": 2,
+        "features": 16,
+        "units": [
+          32,
+          16
+        ],
+        "output_initialization": "zeros",
+        "l2": 0.0001
+      },
+      "training": {
+        "monthly": "from_scratch",
+        "train_issue_hours": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "validation_issue_hours": [
+          0
+        ],
+        "validation_days": 7,
+        "earliest_training_day": 7,
+        "loss": "standardized_huber_delta_1",
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "max_epochs": 60,
+        "patience": 6,
+        "pv_mask_history_days": 28
+      },
+      "calibration": {
+        "start": "2025-01-25",
+        "end": "2025-01-31",
+        "role": "shared_early_stopping_and_cost_tuning_period",
+        "alpha_load_candidates": [
+          0,
+          0.5,
+          1
+        ],
+        "alpha_pv_candidates": [
+          0,
+          0.5,
+          1
+        ],
+        "seed": 42,
+        "objective": "total_replayed_cost",
+        "tie_tolerance_yuan": 0.01,
+        "tie_break": [
+          "smaller_alpha_sum",
+          "smaller_alpha_load",
+          "smaller_alpha_pv"
+        ],
+        "freeze_time": "2025-02-01 00:00",
+        "reselect_with_formal_year": false
+      },
+      "dispatch": {
+        "method": "deterministic_milp",
+        "time_limit_seconds": 2,
+        "mip_rel_gap": 0.01
+      },
+      "decisions": {
+        "D001": "A",
+        "D002": "A",
+        "D003": "A",
+        "D004": "A",
+        "D005": "A",
+        "D006": "A"
+      },
+      "decision_origin": {
+        "D001-D003": "explicit_user_choice",
+        "D004-D006": "recommended_defaults_after_user_continue"
+      },
+      "evaluation_label": "retrospective_chronological_evaluation_with_frozen_configuration"
+    },
+    "primary_seed": 42,
+    "comparison_note": null
+  },
+  "exp004": {
+    "source": "reports/registry/exp004.json",
+    "sha256": "e3342b25e50c9b667b95821689bfc8743831f2e0db26bcfa6177857e7f79b008",
+    "forecast_metric_records": 54,
+    "protocol": {
+      "experiment_id": "exp004",
+      "version": "microgrid-causal-risk-v2",
+      "algorithm_version": "q2-short-sequence-seasonality-v1",
+      "scope": [
+        "2"
+      ],
+      "change_scope": "forecast_only",
+      "base_branch": "codex/q2-optimization",
+      "base_commit": "c2fb69d",
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "full_original_plus_final_adjustment_plus_emergency",
+      "q2_billing": "sum(price*(original+5*emergency)); final=original",
+      "efficiency": {
+        "charge": 0.9486832980505138,
+        "discharge": 0.9486832980505138
+      },
+      "initial_soc_kwh": 6000,
+      "warmup": "reuse frozen exp003 January causal warmup and February initial SOC",
+      "execution": "unchanged experiments.problem2.exp003.dispatch.day_run",
+      "dispatch": {
+        "method": "unchanged deterministic MILP",
+        "time_limit_seconds": 2,
+        "mip_rel_gap": 0.01
+      },
+      "seed_list": [
+        42,
+        2026,
+        3407
+      ],
+      "primary_seed": 42,
+      "variants": [
+        "no_season",
+        "causal_season",
+        "oracle_season"
+      ],
+      "primary_variant": "causal_season",
+      "oracle_status": "exploratory_with_future_information_not_eligible_for_causal_ranking",
+      "allowed_inputs": [
+        "附件1.csv",
+        "附件2_小区负载.csv",
+        "附件2_光伏发电实际功率.csv"
+      ],
+      "architecture": {
+        "name": "two_branch_short_sequence_cnn",
+        "history_hours": 168,
+        "filters": 8,
+        "kernel_size": 5,
+        "dilations": [
+          1,
+          2
+        ],
+        "pool_size": 6,
+        "embedding_units": 8,
+        "head_units": 16,
+        "context_features": 8,
+        "output_initialization": "zeros",
+        "l2": 0.0001
+      },
+      "training": {
+        "monthly": "from_scratch",
+        "earliest_training_day": 7,
+        "validation_days": 7,
+        "train_issue_hours": [
+          0
+        ],
+        "validation_issue_hours": [
+          0
+        ],
+        "history_weight_half_life_days": 90,
+        "loss": "tariff_weighted_asymmetric_huber",
+        "under_load_over_pv_weight": 5,
+        "other_error_weight": 1,
+        "learning_rate": 0.001,
+        "batch_size": 32,
+        "max_epochs": 60,
+        "patience": 6,
+        "device": "cpu",
+        "threads": 2
+      },
+      "seasonality": {
+        "basis": "intercept plus annual first/second Fourier harmonics plus weekday dummies",
+        "period_days": 365.25,
+        "harmonic_ridge": 10,
+        "weekday_ridge": 5,
+        "minimum_days": 28,
+        "shrink_days": 90,
+        "maximum_shift_scale": 0.35,
+        "causal_fit": "all complete days strictly before each issue, including historical training issues",
+        "oracle_fit": "all 365 days, explicitly future-informed",
+        "application": "add fitted seasonal target-minus-lag curve to weekly-load/yesterday-PV baseline before fitting neural residual"
+      },
+      "selection": {
+        "architecture_and_hyperparameters": "fixed_before_formal_run",
+        "monthly_early_stopping": "latest seven complete historical days",
+        "annual_result_reselection": false,
+        "seed_ensemble": false
+      },
+      "implemented_discussion_choices": {
+        "Q2T001": "A",
+        "Q2T002": "A",
+        "Q2T003": "D",
+        "Q2T004": "C",
+        "Q2T005": "B"
+      },
+      "deferred_to_planning_team": [
+        "Q2T006",
+        "Q2T007",
+        "Q2T008",
+        "Q2T009",
+        "Q2T010"
+      ],
+      "unselected_defaults": {
+        "Q2T011": "freeze architecture/hyperparameters; monthly historical early stopping only",
+        "Q2T012": "compare complete prediction bundle with three seasonal variants"
+      }
+    },
+    "primary_seed": 42,
+    "comparison_note": null
+  },
+  "exp005": {
+    "source": "git show 8108d0475ae4f2ea25565a806dfec5e836f62c0a:reports/registry/exp005.json",
+    "sha256": "5af3de5bdf08706696eea4ceb4a57d072b9a957bad61eef16d46bb0b6b52c43f",
+    "forecast_metric_records": 4,
+    "protocol": {
+      "config": {
+        "dt": 0.16666666666666666,
+        "eta_rt": 0.9,
+        "soc_min": 1200.0,
+        "soc_max": 10800.0,
+        "power_max": 5000.0,
+        "ramp_kw": 1000.0,
+        "delta": 0.001,
+        "delta_exec": 0.001,
+        "epsilon_cost": 0.0001,
+        "beta": 0.1,
+        "time_limit": 60.0,
+        "tolerance": 1e-06
+      },
+      "mode": "scenario",
+      "forecast": "exp004/no_season/seed42",
+      "archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+      "data_hashes": {
+        "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+        "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+        "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+      },
+      "initial_state": {
+        "soc": 1421.7991105135516,
+        "previous_power_kw": 172.75999999999976
+      },
+      "scenario_window": 56,
+      "scenario_maximum": 16,
+      "seed": 42,
+      "branch_slots": [
+        36,
+        72,
+        108
+      ],
+      "minimum_child": 2,
+      "intraday_weight_update": false,
+      "tree_parameters_user_confirmed": true,
+      "january_residuals": "none archived; Feb1 point-only fallback",
+      "evaluation": "retrospective chronological; 2025-02-01 through 2025-12-31",
+      "D": {
+        "D1": "A",
+        "D2": "B: approved beta",
+        "D3": "A",
+        "D4": "User amendment: report overlap, continue LP simulation",
+        "D5": "A",
+        "D7": "A",
+        "D9": "A"
+      },
+      "model_class": "LP",
+      "strict_mutual_exclusion": false,
+      "overlap_policy": "Measure raw overlap and continue relaxed simulation",
+      "user_amendment": "Remove integer switch; beta=0.1 main, beta=0.01 sensitivity; retain original code and report all overlap",
+      "forecast_archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+      "requested_days": 334,
+      "penalty_scope": "Second layer normalized total charge plus discharge; also penalizes normal throughput",
+      "output_semantics": "Continuous-relaxation policy simulation, not a mathematical guarantee of physical exclusivity"
+    },
+    "primary_seed": 42,
+    "comparison_note": "与exp004同预测但控制器与爬坡协议不同，只作描述性费用比较；两β同输入初态连续执行，可作权重敏感性对照。"
+  },
+  "exp006": {
+    "source": "reports/registry/exp006.json",
+    "sha256": "92cd6b7d2adeee0df5ef597260070ee40c1ec0c8f34f8ba97c8a6d091e8cd14e",
+    "forecast_metric_records": 12,
+    "protocol": {
+      "experiment_id": "exp006",
+      "phase": "approved_formal_evaluation",
+      "formal_run_authorized": true,
+      "formal_run_executed": false,
+      "route": "tree_conditioned_marginal_residuals_discrete_soc_dp_with_causal_projection",
+      "primary_forecast": "exp004_no_season_seed_42",
+      "prediction_retraining": false,
+      "evaluation": {
+        "start": "2025-02-01",
+        "end": "2025-12-31",
+        "days": 334,
+        "steps_per_day": 144,
+        "start_soc_source": "data/results/exp003/warmup_2.npz; same frozen warmup used by exp004",
+        "start_soc_kwh": 1421.7991105135516,
+        "cross_day_soc": "each policy carries its own realized terminal state",
+        "purchase_plan": "fixed at midnight; original equals final",
+        "cost_yuan": "sum(price * planned_kwh + 5 * price * emergency_kwh)",
+        "terminal_credit_in_reported_cost": 0,
+        "oracle_allowed": false,
+        "initial_mode": 1,
+        "initial_mode_source": "last non-idle warmup action: slot 4463, charge 28.793333333333294 kWh",
+        "initial_power_kw": 172.75999999999976
+      },
+      "primary_parameters": {
+        "grid_kwh": 50,
+        "throughput_yuan_per_ac_kwh": 0.002,
+        "reversal_yuan": 0.05,
+        "execution_deadband_kwh": 2,
+        "terminal_soc_value_yuan_per_kwh": "minimum fixed tariff / sqrt(0.9); zero on last evaluation day",
+        "eta_charge": "sqrt(0.9)",
+        "eta_discharge": "sqrt(0.9)",
+        "capacity_kwh": 12000,
+        "soc_bounds_kwh": [
+          1200,
+          10800
+        ],
+        "max_power_kw": 5000,
+        "tree_max_depth": 5,
+        "tree_min_samples_leaf": 48,
+        "tree_random_state": 42,
+        "history_days": 28,
+        "equal_probability_support_points": 9
+      },
+      "run_matrix_50kwh": [
+        {
+          "id": "primary",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "none"
+        },
+        {
+          "id": "seed_2026",
+          "forecast": "no_season",
+          "seed": 2026,
+          "change": "none"
+        },
+        {
+          "id": "seed_3407",
+          "forecast": "no_season",
+          "seed": 3407,
+          "change": "none"
+        },
+        {
+          "id": "causal_42",
+          "forecast": "causal_season",
+          "seed": 42,
+          "change": "none"
+        },
+        {
+          "id": "causal_2026",
+          "forecast": "causal_season",
+          "seed": 2026,
+          "change": "none"
+        },
+        {
+          "id": "causal_3407",
+          "forecast": "causal_season",
+          "seed": 3407,
+          "change": "none"
+        },
+        {
+          "id": "cost_only",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "throughput=0, reversal=0, deadband=0"
+        },
+        {
+          "id": "no_tree",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "same-history per-slot residual supports without tree conditioning"
+        },
+        {
+          "id": "more_throughput_penalty",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "throughput=0.01"
+        },
+        {
+          "id": "zero_terminal",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "terminal value=0"
+        },
+        {
+          "id": "greedy_execution",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "old causal greedy executor; planner receives its own carried actual SOC"
+        },
+        {
+          "id": "no_deadband",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "deadband=0"
+        }
+      ],
+      "resolution_checks_25kwh": [
+        "primary",
+        "causal_42"
+      ],
+      "additional_replay": "same archived primary purchases with old greedy executor, for controlled executor-only comparison",
+      "selection_policy": "Primary role fixed before full evaluation; show all results, do not pick primary from test-year costs",
+      "comparison": {
+        "historical": [
+          "exp001_original_not_directly_comparable",
+          "exp001_same_physics_recalculation",
+          "exp002",
+          "exp003",
+          "exp004_no_season",
+          "exp004_causal_season"
+        ],
+        "exp005": "Only add when completed, frozen and compatible; do not modify or interrupt its task",
+        "battery_metrics": [
+          "simultaneous_slots",
+          "charge_kwh",
+          "discharge_kwh",
+          "cell_side_equivalent_full_cycles",
+          "non_idle_direction_reversals",
+          "initial_final_soc",
+          "power_changes"
+        ],
+        "degradation_claim": "operating-intensity proxies only; no chemistry/lifetime data available"
+      },
+      "delivery_after_approval": [
+        "existing eight-section report template in new exp006 directory",
+        "offline interactive HTML and Markdown",
+        "same-source historical cost, prediction-error, timing and battery comparison charts",
+        "in-conversation Visualize comparison",
+        "PNG and SVG publication figures",
+        "result2.xlsx using the existing question template and specified-date tables",
+        "full physical, causal, cost, export and visual QA evidence"
+      ],
+      "time_budget_minutes": {
+        "formal_computation_with_margin": [
+          15,
+          20
+        ],
+        "complete_work_including_report_export_and_qa": [
+          40,
+          60
+        ]
+      },
+      "approval": {
+        "user_message": "开始",
+        "recorded_utc": "2026-09-12T15:32:27.219438+00:00",
+        "scope": "all frozen matrix runs, resolution checks and controlled greedy replay"
+      },
+      "approved_run_matrix": [
+        {
+          "id": "primary",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "none",
+          "role": "primary",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "seed_2026",
+          "forecast": "no_season",
+          "seed": 2026,
+          "change": "none",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "seed_3407",
+          "forecast": "no_season",
+          "seed": 3407,
+          "change": "none",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "causal_42",
+          "forecast": "causal_season",
+          "seed": 42,
+          "change": "none",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "causal_2026",
+          "forecast": "causal_season",
+          "seed": 2026,
+          "change": "none",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "causal_3407",
+          "forecast": "causal_season",
+          "seed": 3407,
+          "change": "none",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "cost_only",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "throughput=0, reversal=0, deadband=0",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.0,
+            "reversal_yuan": 0.0,
+            "deadband_kwh": 0.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "no_tree",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "same-history per-slot residual supports without tree conditioning",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "per_slot",
+          "executor": "projected"
+        },
+        {
+          "id": "more_throughput_penalty",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "throughput=0.01",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.01,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "zero_terminal",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "terminal value=0",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": false
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "greedy_execution",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "old causal greedy executor; planner receives its own carried actual SOC",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "old_greedy"
+        },
+        {
+          "id": "no_deadband",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "deadband=0",
+          "role": "prespecified_comparison",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 0.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "primary_grid25",
+          "forecast": "no_season",
+          "seed": 42,
+          "change": "none",
+          "role": "resolution_check",
+          "config": {
+            "grid_kwh": 25.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "causal_42_grid25",
+          "forecast": "causal_season",
+          "seed": 42,
+          "change": "none",
+          "role": "resolution_check",
+          "config": {
+            "grid_kwh": 25.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "tree",
+          "executor": "projected"
+        },
+        {
+          "id": "fixed_primary_greedy",
+          "forecast": "no_season",
+          "seed": 42,
+          "role": "controlled_executor_replay",
+          "config": {
+            "grid_kwh": 50.0,
+            "throughput_yuan_per_kwh": 0.002,
+            "reversal_yuan": 0.05,
+            "deadband_kwh": 2.0,
+            "terminal_value": true
+          },
+          "conditioning": "not_refit_archived_primary_purchases",
+          "executor": "old_greedy",
+          "purchase_source": "primary/dispatch_2.npz:original",
+          "change": "fixed primary purchases; each day carries own actual SOC"
+        }
+      ],
+      "version": "microgrid-causal-risk-v2",
+      "period": [
+        "2025-02-01",
+        "2025-12-31"
+      ],
+      "time_alignment": "interval_end_natural_day",
+      "billing": "sum(price*(original+5*emergency)); final=original; terminal_credit=0",
+      "efficiency": {
+        "charge": 0.9486832980505138,
+        "discharge": 0.9486832980505138
+      }
+    },
+    "primary_seed": 42,
+    "comparison_note": null
+  }
+}

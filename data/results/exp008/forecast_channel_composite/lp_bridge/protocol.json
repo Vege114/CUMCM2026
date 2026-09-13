@@ -1,0 +1,19 @@
+{
+  "model_id": "best_stage_load_scaled_pv_ridge28_memory",
+  "days": 334,
+  "conditioning": "tree",
+  "history_days": 28,
+  "quantile": 0.8,
+  "state_buffer": 500.0,
+  "values_sha256": "abfeb825ee3f122e01f228f534c009c75f5f03c688328194706e8772def08063",
+  "origins_sha256": "29289a670ccea3a9d908e5bba54033aeb5a729f46302ddebbd0513dc1cdb1832",
+  "model_evidence_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/summary.json": "93af38cf3f715e9313b37ef29cb61fc7a4159b92f1d51689577a6de8133e38a6",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/protocol.json": "8363f348dd9776db2f2fc22aa1397b77476f8330a73113985e5a25cb58a17220",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/memory.npz": "0341d6b78dcd115c1a68ca15a24fed590697674b28804981c717eea26e297ded"
+  },
+  "source_sha256": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6",
+  "one_fixed_comparison": true,
+  "development_not_independent_test": true,
+  "final_model_selection": false
+}

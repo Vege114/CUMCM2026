@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "no_training_or_optimization_performed": true,
+  "all_annual_metrics_independently_recomputed_with_math_fsum": true,
+  "monthly_and_144_leads_and_daily_additive_sums_reconcile_to_annual": true,
+  "published_blend_and_HGB_three_stage_metrics_matched": true,
+  "raw_half_blend_exact_on_all334_days_both_channels": true,
+  "archived_errors_verified_equal_truth_minus_prediction": true,
+  "prediction_metric_sign": "prediction minus truth",
+  "all44_raw_model_hashes_verified": true,
+  "prior_causality_audits": {
+    "data/results/exp008/forecast_absolute_hgb": {
+      "independent_verification": "data/results/exp008/forecast_absolute_hgb/independent_verification.json",
+      "causality_verification": "data/results/exp008/forecast_absolute_hgb/causality_verification.json",
+      "previous_audit_passed": true
+    },
+    "data/results/exp008/forecast_absolute_extra_trees": {
+      "independent_verification": "data/results/exp008/forecast_absolute_extra_trees/independent_verification.json",
+      "causality_verification": "data/results/exp008/forecast_absolute_extra_trees/causality_verification.json",
+      "previous_audit_passed": true
+    },
+    "data/results/exp008/forecast_hgb_extra_trees_half": {
+      "independent_verification": "data/results/exp008/forecast_hgb_extra_trees_half/independent_verification.json",
+      "causality_verification": "data/results/exp008/forecast_hgb_extra_trees_half/causality_verification.json",
+      "previous_audit_passed": true
+    }
+  },
+  "selected_dispatch_issued_archive_keys": [
+    "origins",
+    "values"
+  ],
+  "selected_dispatch_issued_forecasts_exact_array_match": true,
+  "metric_rows": {
+    "annual": 12,
+    "monthly": 132,
+    "lead": 1728,
+    "daily": 4008,
+    "daily_energy": 2004
+  },
+  "full_period_samples": 48096,
+  "actual_PV_positive_samples": 26880,
+  "point_prediction_intervals_available": false,
+  "multi_seed_std_available": false,
+  "development_not_independent_test": true,
+  "historical_comparison": {
+    "selected_midnight_rows_verified_against_upstream": 30,
+    "exp005_original_sha256_verified": true,
+    "exp005_present_metric_rows": 4,
+    "exp005_absent_metric_rows": 2,
+    "exp005_no_new_rescore_or_inferred_metrics": true,
+    "original_registry_metric_rows_preserved": 160,
+    "exp007_excluded": true,
+    "different_training_protocols_and_examined_year_preclude_independent_test_claim": true
+  },
+  "all_sources_unchanged_before_after_extraction": true
+}

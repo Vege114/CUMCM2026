@@ -1,0 +1,47 @@
+{
+  "candidate_count": 1,
+  "formal_days": 334,
+  "quantile": 0.8,
+  "quantile_method": "linear",
+  "history": "same previous28 complete issued HGB errors with explicitly labelled January periodic fallback",
+  "formula": "C_jt=cumsum(error_jt); mu=mean(C); sigma=max(std(C,ddof0),10kWh); z_j=max_t((C_jt-mu_t)/sigma_t); z*=quantile(z,.8); a=mu+z*sigma; r=f+diff([0,a])",
+  "sigma_floor_kwh": 10.0,
+  "std_ddof": 0,
+  "negative_increments_or_risk_clipped": false,
+  "risk_is_not_a_load_PV_point_forecast": true,
+  "not_a_true_joint_chance_constraint": true,
+  "eta_and_saturation_mapping_not_exact": true,
+  "empirical_coverage": "report actual finite-sample simultaneous coverage; do not label interpolation as exactly80pct",
+  "fixed_spec": {
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0,
+    "wear": 0.002
+  },
+  "initial_soc_kwh": 1421.7991105135516,
+  "own_continuous_realized_soc": true,
+  "policy_link": "r changes both purchases and intended SOC; state_buffer500 follows changed intended_SOC[t+1]",
+  "floor_diagnostic": "same-state maximum physical discharge minus floor-limited discharge; not a counterfactual full-policy saving",
+  "all334_predeclared_no_partial_gate": true,
+  "development_not_independent_test": true,
+  "source_sha256": {
+    "experiments/exp008/simultaneous_prefix_envelope.py": "1e192298a65de996262289ae1d265846e9bdd7f9ea60539b18c237d9b9195f62",
+    "experiments/exp008/controller_candidate.py": "aea1b54c736c6efc9b1e1942996119a6c3eba37917f3e047c277d8f2ad004b1d",
+    "experiments/exp008/absolute_hgb_forecast_adapter.py": "196f48b19e75c5cd94b905e55026c38d83bef70d0376b580a02d5d4b958aefb6",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/exp008/verify.py": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36"
+  },
+  "input_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/cumulative_risk_planning/risk_inputs.npz": "86f0876da5469d44bad0fdffb654bb5c2ed4755bc0d903aa7e8843116fa68509",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/cumulative_risk_planning/protocol.json": "f028a102e49c74e3d788ca2e1d48d2cf1bb571a86f794d2204ee1fec8e16c99d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/cumulative_risk_planning/point/dispatch_2.npz": "294e8c3149f56b47dab9d1800a090d681e55d8a767f2125d0b1aebe2124dda3f",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/cumulative_risk_planning/prefix/dispatch_2.npz": "d04079efce1ad650f9797c48fd8c86b3665790d89879254755dc2e1759de07e3",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/lp_bridge/direct_hgb_ridge28_memory_tree28_q08_buffer500_334days/dispatch_2.npz": "c900745ca1157faad28a937ea1602fc3009cd8391ae7df5a442ef2f3de93114c",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095"
+  },
+  "raw_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

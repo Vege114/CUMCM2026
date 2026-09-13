@@ -1,0 +1,41 @@
+{
+  "days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "grid_control_kwh": 200,
+  "grid_candidate_kwh": 100,
+  "purchases_and_initial_states": "fixed already signed five-day initial Q diagnostic",
+  "Q_reoptimization": false,
+  "all_models_and_DP_other_settings_unchanged": true,
+  "policies_locked_before_actual_access": true,
+  "finer_grid_not_assumed_to_improve_actual_cost": true,
+  "annual_extrapolation_or_model_selection": false,
+  "inputs_sha256": {
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/independent_audit.json": "9b8759b0a2d6f446bbf69617edeecb928558be6a45148e462172d7d41b1783c4",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day31_inputs.npz": "f24eeb350fea22535f438355cfb42a70a7662945aae97d7a7a2e5f8b36c7ab90",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day31_model.npz": "2a2194e9cabd598165b200babf31acf8cb496050ac7f9a89bd639828a7d99179",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day31_initial_policy.npz": "359725f9889478ef7237d44f0dca406b12a0ee481887b298f61cfb2a46bf14a4",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day31_initial_actual_replay.npz": "df15cbc060701020ee485a4c9a8ec076d6fcffe1d185957bab3a7d970bb5c4d1",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day90_inputs.npz": "060832696b29eee23fc233269be6bf1c1931643a262d7a632942bb1c8343e80f",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day90_model.npz": "e15a2962f1d92540db8324351c4444fdf16a60f8c95b875c7f1a568203ae19b8",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day90_initial_policy.npz": "fbe23c1a97c86e1488f479a7e8db2b958df41d9411601ac2d5e9987bb003c0cc",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day90_initial_actual_replay.npz": "c8cb437dc7cf535a573aece38d5d5e1b102263799c6e8b06f7e3ba06058ddb83",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day151_inputs.npz": "da292ecdeee1b1f091e7df9372d586f7468a40df180efab57a26896e4ff01107",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day151_model.npz": "5252a497dc0d9e2c66c02ccaee35463ce8378b175cfd982a8b9b161fd7da8990",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day151_initial_policy.npz": "2a5c49b23a162a3646a841d8bf6c53f203c499ff774013b2367d977bea56b161",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day151_initial_actual_replay.npz": "a94feb73ac453d9641e61f574565a2fba4e53d4fd10e65e2a0ff186ae418e17f",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day243_inputs.npz": "d83ea257ee84d31c11a44f49aa8cf42d30d2838287b279579f816709706c60c8",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day243_model.npz": "561b8b6184333af80c237f2742548deda2b8dfbf985b2672d0f62a2b3a1bbb80",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day243_initial_policy.npz": "784d1d446ac77ff36d0fa8b217248e0d7af380983502fadd0d67b8455de35ad4",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day243_initial_actual_replay.npz": "5b79f2531388326c360d8ab2d278c81f95e611aa868f2c271bcd8f4c41afbf6d",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day364_inputs.npz": "fe9d6174db08bef2f8939e22015a5773f2bbe86dbbdd8b497a37fba935914d74",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day364_model.npz": "f7e6da513bd51cf418f44b142b898c13b23667086c4a4629332c35de7b892b73",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day364_initial_policy.npz": "94b9b19272357cdfe4b9bd4aadcc89551db41dd3101fb0fff54b5c79840b7805",
+    "data/results/exp008/budget_feedback/fixed5_hgb_cap8_grid200_blocks8_step50/day364_initial_actual_replay.npz": "8889decfcdf95eb7e79f847bccb1e55c3f238f464227018feb5512c5102200d9"
+  },
+  "source_sha256": "a8c0ae993229d2264688bb280d27b62099e0f850d2b12bc5719b393a1d580e08"
+}

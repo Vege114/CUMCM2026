@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "same_numerical_plan_refine_execute_call_AST": true,
+  "shared_numerical_algorithms": true,
+  "source_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/run_hgb_mode_budget_hold1.py": "cfa014276980ffed382e21c42bfa6fcc0ae584362b29e265083ba1da85f107bb",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/run_blend_mode_budget_hold1.py": "62a401400ccfd99242b50453b539638c9dae00902c07661725ae9030890da44b"
+  },
+  "expressions": {
+    "plan": [
+      "Call(func=Name(id='plan', ctx=Load()), args=[Subscript(value=Name(id='paths', ctx=Load()), slice=Name(id='selected', ctx=Load()), ctx=Load()), Attribute(value=Name(id='data', ctx=Load()), attr='fixed_price', ctx=Load()), Name(id='soc', ctx=Load()), Name(id='mode', ctx=Load()), Name(id='age', ctx=Load())], keywords=[keyword(arg='final', value=Compare(left=Name(id='day', ctx=Load()), ops=[Eq()], comparators=[Constant(value=364)]))])"
+    ],
+    "optimize": [
+      "Call(func=Name(id='optimize', ctx=Load()), args=[Subscript(value=Name(id='initialized', ctx=Load()), slice=Constant(value='purchase'), ctx=Load()), Name(id='paths', ctx=Load()), Attribute(value=Name(id='data', ctx=Load()), attr='fixed_price', ctx=Load()), Name(id='soc', ctx=Load())], keywords=[keyword(arg='charge_mask', value=Subscript(value=Name(id='initialized', ctx=Load()), slice=Constant(value='allowed_charge'), ctx=Load())), keyword(arg='throughput', value=Constant(value=0.002)), keyword(arg='variation', value=Constant(value=0.0)), keyword(arg='terminal', value=IfExp(test=Compare(left=Name(id='day', ctx=Load()), ops=[Eq()], comparators=[Constant(value=364)]), body=Constant(value=0.0), orelse=Constant(value=0.45))), keyword(arg='deadband', value=Constant(value=0.0)), keyword(arg='maxiter', value=Constant(value=120))])"
+    ],
+    "execute": [
+      "Call(func=Name(id='execute', ctx=Load()), args=[Name(id='q', ctx=Load()), Name(id='actual', ctx=Load()), Attribute(value=Name(id='data', ctx=Load()), attr='fixed_price', ctx=Load()), Name(id='soc', ctx=Load())], keywords=[keyword(arg='charge_mask', value=Subscript(value=Name(id='initialized', ctx=Load()), slice=Constant(value='allowed_charge'), ctx=Load())), keyword(arg='charge_deadband', value=Constant(value=0.0))])"
+    ]
+  },
+  "whole_runner_not_claimed_identical": true,
+  "forecast_and_provenance_audit_identity_intentionally_different": true
+}

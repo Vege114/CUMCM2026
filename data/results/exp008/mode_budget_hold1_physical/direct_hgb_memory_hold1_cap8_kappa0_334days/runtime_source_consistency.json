@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "source_files": 29,
+  "all_sources_frozen_before_run": true,
+  "dependencies": [
+    {
+      "module": "experiments.common.neural_v2",
+      "source": "experiments/common/neural_v2/__init__.py",
+      "sha256": "904525c17da3b95c09936652fe632dc4b1178e1ba0fb3e51e5affcc399dab99e",
+      "matches": true
+    },
+    {
+      "module": "experiments.common.neural_v2.data",
+      "source": "experiments/common/neural_v2/data.py",
+      "sha256": "130cefdd670cd7e0798b498a75970f85b050587663e35466b9fbbccba23868fb",
+      "matches": true
+    },
+    {
+      "module": "experiments.common.neural_v2.physics",
+      "source": "experiments/common/neural_v2/physics.py",
+      "sha256": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008",
+      "source": "experiments/exp008/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.absolute_hgb_forecast_adapter",
+      "source": "experiments/exp008/absolute_hgb_forecast_adapter.py",
+      "sha256": "196f48b19e75c5cd94b905e55026c38d83bef70d0376b580a02d5d4b958aefb6",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.closed_loop",
+      "source": "experiments/exp008/closed_loop.py",
+      "sha256": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.controller_candidate",
+      "source": "experiments/exp008/controller_candidate.py",
+      "sha256": "aea1b54c736c6efc9b1e1942996119a6c3eba37917f3e047c277d8f2ad004b1d",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.forecast",
+      "source": "experiments/exp008/forecast.py",
+      "sha256": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.forecast_absolute_hgb",
+      "source": "experiments/exp008/forecast_absolute_hgb.py",
+      "sha256": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.forecast_calibration",
+      "source": "experiments/exp008/forecast_calibration.py",
+      "sha256": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.forecast_net_hgb",
+      "source": "experiments/exp008/forecast_net_hgb.py",
+      "sha256": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.forecast_override_adapter",
+      "source": "experiments/exp008/forecast_override_adapter.py",
+      "sha256": "3d7fbe4da43199bc72e49238a8a435a079bb8181118e0c01c2fe4580bc0f35fa",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.forecast_shape_diagnostic",
+      "source": "experiments/exp008/forecast_shape_diagnostic.py",
+      "sha256": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.hgb_mode_budget_hold1_audit",
+      "source": "experiments/exp008/hgb_mode_budget_hold1_audit.py",
+      "sha256": "61a2b7abccb34074e96dce69349732ef2d71f5aa563426627d94a16a05fafbcc",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.load_energy_memory",
+      "source": "experiments/exp008/load_energy_memory.py",
+      "sha256": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.mode_budget_hold1_physical",
+      "source": "experiments/exp008/mode_budget_hold1_physical.py",
+      "sha256": "fdf742a6685acb6d9fd3336d7df7604fb1fc77c3ddd108a1f81e5c657b0a6bb7",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.neural_joint_calibration",
+      "source": "experiments/exp008/neural_joint_calibration.py",
+      "sha256": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.planner",
+      "source": "experiments/exp008/planner.py",
+      "sha256": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.run_hgb_mode_budget_hold1",
+      "source": "experiments/exp008/run_hgb_mode_budget_hold1.py",
+      "sha256": "cfa014276980ffed382e21c42bfa6fcc0ae584362b29e265083ba1da85f107bb",
+      "matches": true
+    },
+    {
+      "module": "experiments.exp008.verify",
+      "source": "experiments/exp008/verify.py",
+      "sha256": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.exp003",
+      "source": "experiments/problem2/exp003/__init__.py",
+      "sha256": "2788efbc84cb37607019322e7508befd4371a61135873e96449ad5ba16417e7d",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.exp003.data",
+      "source": "experiments/problem2/exp003/data.py",
+      "sha256": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.exp004",
+      "source": "experiments/problem2/exp004/__init__.py",
+      "sha256": "577ca82babfd829c53907519bff416eb9ac0c6d22533563db7a2a75f957877f5",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.exp004.data",
+      "source": "experiments/problem2/exp004/data.py",
+      "sha256": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.exp004.predict",
+      "source": "experiments/problem2/exp004/predict.py",
+      "sha256": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.tree_planning",
+      "source": "experiments/problem2/tree_planning/__init__.py",
+      "sha256": "5264fd748a95e1eeaa5094cdbc04623c576115a8be8f084808d9c4616b2fd10c",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.tree_planning.model",
+      "source": "experiments/problem2/tree_planning/model.py",
+      "sha256": "ad0e25ebbeaed12e8051e3837688f9b2fd38d51e1b317da84380ad21988d1417",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.tree_planning.risk",
+      "source": "experiments/problem2/tree_planning/risk.py",
+      "sha256": "e6015c369f305e514d4af4f33e7ce17a07b0fa068da34f7df335605abdda2652",
+      "matches": true
+    },
+    {
+      "module": "experiments.problem2.tree_planning.verify",
+      "source": "experiments/problem2/tree_planning/verify.py",
+      "sha256": "50cc28e37eb85d026700eb0a31b88934e9974c517208249199b1553593443f8a",
+      "matches": true
+    }
+  ],
+  "timed_MIP_incumbent_replay_limitation": "Frozen purchase/mask/dispatch replay is exact; time-limited optimization reruns may return another feasible incumbent.",
+  "late_run_source_recheck_passed": true
+}

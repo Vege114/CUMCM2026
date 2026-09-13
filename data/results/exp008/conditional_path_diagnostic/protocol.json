@@ -1,0 +1,10 @@
+{
+  "candidate": "tree conditional marginals with raw historical daily rank copula",
+  "reference": "raw 28 complete same-forecast error paths",
+  "forecast": "fixed Joint+Ridge28+0.5memory",
+  "fit_parameters_changed": false,
+  "scoring": "empirical V-statistic CRPS of interval net energy and cumulative prefix energy",
+  "prediction_truth_read_only_after_paths_constructed": true,
+  "gate": "price weighted slot CRPS and cumulative prefix CRPS both improve",
+  "source_sha256": "42124e0d1877d9ebbaf6d6d73d17d6cac40bb571c28bee54d2a1cc2e077df56b"
+}

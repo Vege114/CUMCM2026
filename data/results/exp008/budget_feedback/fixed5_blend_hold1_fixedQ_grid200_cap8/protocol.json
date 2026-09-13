@@ -1,0 +1,33 @@
+{
+  "days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "model_id": "fixed_raw_HGB_ExtraTrees_half_Ridge28_memory",
+  "base": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days",
+  "fixed_Q_from_each_blend_day": true,
+  "Q_search_or_adjustment": false,
+  "source_SOC_and_previous_REAL_nonidle_mode": "each selected day uses its own preceding blend execution prefix",
+  "previous_planned_mode_not_used_as_previous_nonidle_mode": true,
+  "state_grid_kwh": 200.0,
+  "daily_actual_reversal_cap": 8,
+  "wear": 0.002,
+  "terminal": ".45 except day364 zero",
+  "history_days": 28,
+  "observed_error_bins": 3,
+  "conditional_emission_points": 3,
+  "all_five_models_and_DP_tables_locked_before_current_actual_read": true,
+  "actual_suffix_mutation_stops": [
+    1,
+    36,
+    108
+  ],
+  "comparator": "original blend fixed-mask greedy execution and the same fixedQ all28 history",
+  "grid_tuning_or_full_year_run": false,
+  "development_not_independent_test": true,
+  "annual_savings_not_evaluated": true,
+  "final_model_selection": false
+}

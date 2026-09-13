@@ -1,0 +1,269 @@
+{
+  "unit": "seconds",
+  "unknown_value": null,
+  "scope": "existing measured fields only; no durations inferred from timestamps; stages can overlap and must not be added to reported wall time",
+  "components": [
+    {
+      "id": "forecast_absolute_hgb",
+      "stage": "model_fit_and_validation_prediction",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_hgb/training_audit.json",
+        "sha256": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+        "bytes": 158836
+      },
+      "field": "[*].models[*].training_seconds",
+      "model_count": 22,
+      "seed": 42,
+      "fit_plus_validation_prediction_seconds": {
+        "count": 22,
+        "sum": 44.97184687713161,
+        "mean": 2.044174858051437,
+        "median": 1.6106921670143493,
+        "p95": 4.397118058707565,
+        "max": 4.688800833071582
+      },
+      "pure_fit_seconds": null,
+      "validation_prediction_seconds": null,
+      "feature_construction_seconds": null,
+      "prediction_seconds": null,
+      "calibration_seconds": null,
+      "note": "archived training_seconds begins immediately before model.fit and ends after the subsequent validation-set model.predict; pure fit and validation prediction cannot be separated. Formal-horizon inference is outside this field. Same fitted models reused by final selection: count once, not once per question; no end-to-end timing claim"
+    },
+    {
+      "id": "forecast_absolute_extra_trees",
+      "stage": "model_fit_and_validation_prediction",
+      "source": {
+        "path": "data/results/exp008/forecast_absolute_extra_trees/training_audit.json",
+        "sha256": "7fd11ec30cfb2a34367a937ebd1c9abb5d20a0d703a33b5b908f354776ab519e",
+        "bytes": 2856645
+      },
+      "field": "[*].models[*].training_seconds",
+      "model_count": 22,
+      "seed": 42,
+      "fit_plus_validation_prediction_seconds": {
+        "count": 22,
+        "sum": 63.233388833119534,
+        "mean": 2.874244946959979,
+        "median": 2.7978324789437465,
+        "p95": 5.835067000304115,
+        "max": 6.203153165988624
+      },
+      "pure_fit_seconds": null,
+      "validation_prediction_seconds": null,
+      "feature_construction_seconds": null,
+      "prediction_seconds": null,
+      "calibration_seconds": null,
+      "note": "archived training_seconds begins immediately before model.fit and ends after the subsequent validation-set model.predict; pure fit and validation prediction cannot be separated. Formal-horizon inference is outside this field. Same fitted models reused by final selection: count once, not once per question; no end-to-end timing claim"
+    },
+    {
+      "id": "Q1",
+      "stage": "two_stage_optimization",
+      "source": {
+        "path": "data/results/exp008/q1/revised.json",
+        "sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+        "bytes": 37702
+      },
+      "field": "stages[*].seconds",
+      "stages": [
+        {
+          "stage": 1,
+          "cost": 34080.95139956883,
+          "quantity": 57572.39629569833,
+          "smooth": 0.056210610005960504,
+          "gap": 0.0,
+          "seconds": 0.34634308295790106,
+          "nodes": 1
+        },
+        {
+          "stage": 2,
+          "cost": 34115.032450968385,
+          "quantity": 57560.64380388695,
+          "smooth": 0.036950809762227324,
+          "gap": 0.0,
+          "seconds": 7.5819095419719815,
+          "nodes": 1
+        }
+      ],
+      "sum_solver_seconds": 7.928252624929883,
+      "export_seconds": null,
+      "report_seconds": null
+    },
+    {
+      "id": "Q2",
+      "stage": "dispatch_run",
+      "source": {
+        "path": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/planning_audit.json",
+        "sha256": "d88c6e38d7150401d712de9f35e58eacb9b3f361c15104ee56a0d85295193ec0",
+        "bytes": 1069946
+      },
+      "solver_seconds": {
+        "count": 334,
+        "sum": 699.0726444264874,
+        "mean": 2.0930318695403813,
+        "median": 1.2975113959400915,
+        "p95": 5.012383239256451,
+        "max": 5.0674159580376
+      },
+      "planning_envelope_seconds": {
+        "count": 0,
+        "sum": null,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "refinement_seconds": {
+        "count": 334,
+        "sum": 304.3245660071261,
+        "mean": 0.9111513952309165,
+        "median": 0.907423457945697,
+        "p95": 1.3414573984104206,
+        "max": 1.8434350829338655
+      },
+      "run_wall_seconds": null,
+      "wall_source": null,
+      "prediction_seconds": null,
+      "calibration_seconds": null,
+      "actual_execution_seconds": null,
+      "audit_seconds": null,
+      "export_seconds": null,
+      "report_seconds": null,
+      "note": "planning_envelope includes solver where logged; run wall may include forecasts/planning/execution/I/O; unavailable substage timings are null"
+    },
+    {
+      "id": "Q3",
+      "stage": "dispatch_run",
+      "source": {
+        "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/3/audit.json",
+        "sha256": "4c124ba043c35a9c3fda999d2a5f50dcd6ad3387b81bbdbbfa62ccee5d45fabf",
+        "bytes": 13930354
+      },
+      "solver_seconds": {
+        "count": 1336,
+        "sum": 39.686054537422024,
+        "mean": 0.029705130641782953,
+        "median": 0.021977312047965825,
+        "p95": 0.07704317706520669,
+        "max": 0.09917208296246827
+      },
+      "planning_envelope_seconds": {
+        "count": 1336,
+        "sum": 74.20101598347537,
+        "mean": 0.05553968262236181,
+        "median": 0.04786568752024323,
+        "p95": 0.11994724994292483,
+        "max": 0.143604833050631
+      },
+      "refinement_seconds": {
+        "count": 0,
+        "sum": null,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "run_wall_seconds": 76.17542079195846,
+      "wall_source": {
+        "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/3/completion.json",
+        "sha256": "10cba9c2bc706c5047e4618151680f01127d7cf08551fa1774b79442ee1aa4d0",
+        "bytes": 11445
+      },
+      "prediction_seconds": null,
+      "calibration_seconds": null,
+      "actual_execution_seconds": null,
+      "audit_seconds": null,
+      "export_seconds": null,
+      "report_seconds": null,
+      "note": "planning_envelope includes solver where logged; run wall may include forecasts/planning/execution/I/O; unavailable substage timings are null"
+    },
+    {
+      "id": "Q4-2",
+      "stage": "dispatch_run",
+      "source": {
+        "path": "data/results/exp008/q4_hgb_linked_price_physical/full334/audit.json",
+        "sha256": "0d4b158210c5f6b30ec9ebed5b3fefd61c1d68937e833a59b908a6d5e07cb979",
+        "bytes": 1805583
+      },
+      "solver_seconds": {
+        "count": 334,
+        "sum": 933.9924007499358,
+        "mean": 2.796384433383041,
+        "median": 2.6351953540579416,
+        "p95": 5.00931167662493,
+        "max": 5.034915250027552
+      },
+      "planning_envelope_seconds": {
+        "count": 0,
+        "sum": null,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "refinement_seconds": {
+        "count": 334,
+        "sum": 342.2568977995543,
+        "mean": 1.024721250896869,
+        "median": 1.0172136044711806,
+        "p95": 1.3198464272369164,
+        "max": 1.8206426670076326
+      },
+      "run_wall_seconds": null,
+      "wall_source": null,
+      "prediction_seconds": null,
+      "calibration_seconds": null,
+      "actual_execution_seconds": null,
+      "audit_seconds": null,
+      "export_seconds": null,
+      "report_seconds": null,
+      "note": "planning_envelope includes solver where logged; run wall may include forecasts/planning/execution/I/O; unavailable substage timings are null"
+    },
+    {
+      "id": "Q4-3",
+      "stage": "dispatch_run",
+      "source": {
+        "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/audit.json",
+        "sha256": "8a0e12cfa5fbe8a3382ba910722ae65bfb4ce59c8a49a66f7cd5b9d2da4ab3a3",
+        "bytes": 14476421
+      },
+      "solver_seconds": {
+        "count": 1336,
+        "sum": 46.15947908279486,
+        "mean": 0.034550508295505135,
+        "median": 0.024322437937371433,
+        "p95": 0.09235140620148741,
+        "max": 0.13304366695228964
+      },
+      "planning_envelope_seconds": {
+        "count": 1336,
+        "sum": 87.33740540640429,
+        "mean": 0.06537230943593135,
+        "median": 0.05387166701257229,
+        "p95": 0.1455147187516559,
+        "max": 0.1892810829449445
+      },
+      "refinement_seconds": {
+        "count": 0,
+        "sum": null,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "run_wall_seconds": 90.7251179999439,
+      "wall_source": {
+        "path": "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/completion.json",
+        "sha256": "c0f4f9f6151e959e0144e5afe10c186a766e6388afd48164670c96971c6a8f68",
+        "bytes": 11848
+      },
+      "prediction_seconds": null,
+      "calibration_seconds": null,
+      "actual_execution_seconds": null,
+      "audit_seconds": null,
+      "export_seconds": null,
+      "report_seconds": null,
+      "note": "planning_envelope includes solver where logged; run wall may include forecasts/planning/execution/I/O; unavailable substage timings are null"
+    }
+  ],
+  "total_end_to_end_seconds": null
+}

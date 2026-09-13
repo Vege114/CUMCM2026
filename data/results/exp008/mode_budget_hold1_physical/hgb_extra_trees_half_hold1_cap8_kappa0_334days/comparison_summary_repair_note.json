@@ -1,0 +1,6 @@
+{
+  "reason": "Monthly audit table provides total cost but no emergency_cost column; derive that component directly from immutable dispatch fee arrays before computing matched monthly deltas.",
+  "optimization_and_dispatch_unchanged": true,
+  "independent_full334_audit_already_passed": true,
+  "failure_before_summary_output_written": true
+}

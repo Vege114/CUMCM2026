@@ -1,0 +1,19 @@
+{
+  "days": [
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "conditional_not_continuous": true,
+  "original_cost_sum": 262337.0007445813,
+  "hourly_cost_sum": 264142.61947960354,
+  "cost_change_sum": 1805.6187350222608,
+  "lower_SOC_compensation_upper_bound_sum": 0.0,
+  "conservative_savings_sum": -1805.6187350222608,
+  "days_with_conservative_savings": 1,
+  "all_gradient_and_physics_checks_passed": true,
+  "all_original_baseline_arrays_reconstructed": true,
+  "success_not_global_optimum": false
+}

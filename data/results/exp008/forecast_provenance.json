@@ -1,0 +1,97 @@
+{
+  "seed": 42,
+  "period": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "day_indices": "zero_based",
+  "target_dimension": [
+    "load_kw",
+    "pv_kw",
+    "price"
+  ],
+  "archive_shapes": {
+    "scenario_2_slot_0": [
+      334,
+      144,
+      3
+    ],
+    "scenario_3_slot_0": [
+      334,
+      144,
+      3
+    ],
+    "scenario_3_slot_36": [
+      334,
+      108,
+      3
+    ],
+    "scenario_3_slot_72": [
+      334,
+      72,
+      3
+    ],
+    "scenario_3_slot_108": [
+      334,
+      36,
+      3
+    ],
+    "scenario_4-2_slot_0": [
+      334,
+      144,
+      3
+    ],
+    "scenario_4-3_slot_0": [
+      334,
+      144,
+      3
+    ],
+    "scenario_4-3_slot_36": [
+      334,
+      108,
+      3
+    ],
+    "scenario_4-3_slot_72": [
+      334,
+      72,
+      3
+    ],
+    "scenario_4-3_slot_108": [
+      334,
+      36,
+      3
+    ],
+    "days": [
+      334
+    ]
+  },
+  "source_sha256": {
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "data/results/exp004/predictions.npz": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9"
+  },
+  "raw_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "archive_sha256": "242ff7ff4ba6214678bfe1637f4faf3a1518b685b854310caa0ec099c3da6c1a",
+  "cnn_retrained": false,
+  "midnight_q2_exact_frozen_exp004": true,
+  "calibration_hyperparameters": {
+    "pv_history_days": 28,
+    "pv_half_life_days": 14,
+    "pv_second_difference_penalty": 12,
+    "pv_ridge": 2,
+    "pv_shrink_days": 7,
+    "load_observed_window_slots": 18,
+    "load_decay_slots": 36,
+    "price_history_days": 28,
+    "price_half_life_days": 14,
+    "price_ridge": 5
+  },
+  "price_information": "past_actual_prices_only; future realized price is evaluation-only",
+  "selection": "adapter_hyperparameters_fixed_before_dispatch_iteration_not_selected_from_annual_forecast_scores",
+  "generation_seconds": 3.9007455829996616
+}

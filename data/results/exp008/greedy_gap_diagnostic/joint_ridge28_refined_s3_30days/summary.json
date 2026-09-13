@@ -1,0 +1,60 @@
+{
+  "role": "historical-scenario surrogate diagnostic, not actual evaluation",
+  "input_directory": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/mode_planning_physical/joint_ridge28_refined_s3_30days",
+  "days": 30,
+  "sum": {
+    "scenario_recourse_objective": 1202259.0159103905,
+    "selected_greedy_objective": 1202034.3381493909,
+    "recourse_optimism": -224.67776099946786,
+    "initial_all_history_objective": 1317091.6266234824,
+    "refined_all_history_objective": 1228040.7897368963,
+    "historical_refinement_improvement": 89050.83688658613
+  },
+  "largest_optimism_days": [
+    {
+      "day": 41,
+      "scenario_recourse_objective": 48180.72364647353,
+      "selected_greedy_objective": 48180.72364647443,
+      "recourse_optimism": 8.949427865445614e-10,
+      "initial_all_history_objective": 57085.07416400009,
+      "refined_all_history_objective": 51709.6220504494,
+      "historical_refinement_improvement": 5375.452113550695
+    },
+    {
+      "day": 40,
+      "scenario_recourse_objective": 52592.246363279126,
+      "selected_greedy_objective": 52592.246363279315,
+      "recourse_optimism": 1.8917489796876907e-10,
+      "initial_all_history_objective": 53948.75650709248,
+      "refined_all_history_objective": 52957.34926057517,
+      "historical_refinement_improvement": 991.4072465173158
+    },
+    {
+      "day": 32,
+      "scenario_recourse_objective": 78239.12620825438,
+      "selected_greedy_objective": 78239.12620825456,
+      "recourse_optimism": 1.7462298274040222e-10,
+      "initial_all_history_objective": 76827.68757133563,
+      "refined_all_history_objective": 53654.78512948536,
+      "historical_refinement_improvement": 23172.902441850267
+    },
+    {
+      "day": 51,
+      "scenario_recourse_objective": 17093.97876474788,
+      "selected_greedy_objective": 17093.978764748015,
+      "recourse_optimism": 1.3460521586239338e-10,
+      "initial_all_history_objective": 21714.621171741786,
+      "refined_all_history_objective": 18698.57287803825,
+      "historical_refinement_improvement": 3016.0482937035376
+    },
+    {
+      "day": 52,
+      "scenario_recourse_objective": 16533.416675273245,
+      "selected_greedy_objective": 16533.416675273307,
+      "recourse_optimism": 6.184563972055912e-11,
+      "initial_all_history_objective": 22042.411149077863,
+      "refined_all_history_objective": 18381.326867900032,
+      "historical_refinement_improvement": 3661.084281177831
+    }
+  ]
+}

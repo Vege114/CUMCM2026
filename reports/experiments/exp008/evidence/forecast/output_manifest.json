@@ -1,0 +1,34 @@
+{
+  "files_sha256": {
+    "model_configuration.json": "56dc51705dcf6a5462536af5c0da67db8b024f899ae795bbb6a8da3c88473b92",
+    "history_registry_provenance.json": "1f1db97f6864bf168c26c670e424d4e4ec0a79d185a5c54d52b0ec6c167ccd16",
+    "runtime_scope_correction.json": "8a847fb2f60ccbbf35764ccc93ed6c7afbc7238eab15d0d28374e9ef84f98445",
+    "history_original_registry.csv": "f03a162768f07c96650ef07831a46acc778e9fa38227f313333f412077cc2bc1",
+    "history_midnight_comparable.csv": "975630362c78ec48fe55cdfea426f9445cf3c741b846e083a65d9585219f9e64",
+    "source_registry_exp005.json": "5af3de5bdf08706696eea4ceb4a57d072b9a957bad61eef16d46bb0b6b52c43f",
+    "annual_metrics.csv": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+    "provenance.json": "76a1c9ce24030d850825aab58a8165eb3b4b8ce1d74c27131d554185398f73b5",
+    "visual_verification.json": "f18cf212493ed4a66c0b1659a4ab7c42741fe82c0f125664964fc346a5c3e507",
+    "daily_metrics.csv": "d04f592f74b58a31c792d55fd01307d2392c5e5a739ddd1389350ef5b1a1748f",
+    "monthly_metrics.csv": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+    "source_snapshot.py": "f9bc6291623889a7c1f08af0d880c365ee890c75aa642cb697ad9a96f5f1cfe3",
+    "report_notes.md": "0aa0ff8d744a2dd27dd94de21ef74490330907790a6afaf5e1efa3d312357e48",
+    "interpretation.json": "0a21ef2e834d0fe2e755f4b5e6c2c0fcec7bfa6fb30946018e88d2d804814f52",
+    "README.md": "d73b64911d486c4e60ea494f720ced6f4554ff6d3267a71a1d2d749b981a8e4a",
+    "training_models_and_boundaries.csv": "8775e2ef0b9000f3fe9948bc3fc616270328df1a07ebf20ae2f57c534c2ee7d1",
+    "figure_manifest.json": "2d3bd6a9c8c521cfefa94884c547aa538d1229c4ff5cb755d6815c623549130c",
+    "lead_metrics.csv": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+    "independent_report_audit.json": "1b27f9c4d2f288fb037fa9d182aac3eee705a452785325620964a0fafa85d3fd",
+    "stage_metrics.csv": "bacffe870919e01bbbdec68fbf882a9841624d50e1f45fd91bacccbca5c8bd54",
+    "verification.json": "273cc8cedd7dc9ab3c39e97de64f5268bccc307cae9610610a128957d286c2ad",
+    "report_metadata_and_visual_repair.json": "747ef25facddb905db0658d3202d515bb53dae74b10b0610f07bb1e78ad4089a",
+    "runtime_evidence.csv": "278a35a435b7f3dba5092ead91cc0b70c00c6055c942cdbb1a5b5f536b3adbdc",
+    "daily_energy_metrics.csv": "57a9e3d908234933ee67cc971a07eb0bbccc2e181ef06b893fb08afd9dc00cb9"
+  },
+  "figures_manifest": "figure_manifest.json",
+  "all_inputs_unchanged": true,
+  "supplemental_producer_sha256": {
+    "experiments/exp008/final_forecast_interpretation.py": "cf008d18d3ec337234f2f4869a600ae4fc31e762776f398d3865e52149021d79",
+    "experiments/exp008/final_forecast_independent_audit.py": "da609885002915b6e43282d45b8f01e6ec9ea8a7e23985889d27893fc93dfb50"
+  }
+}

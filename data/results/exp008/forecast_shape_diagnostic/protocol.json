@@ -1,0 +1,167 @@
+{
+  "historical_baselines": 7,
+  "windows": [
+    7,
+    14,
+    28
+  ],
+  "single_fixed_followup_candidate": "joint_ridge28_load_energy_memory_half",
+  "robust_mean": "20% winsorized mean of completed daily hourly means",
+  "weekday": "load uses strictly same weekday in last window; PV uses all days",
+  "normalized_pv": "28-day robust mean of unit-energy hourly PV shapes times 7-day robust energy mean",
+  "hour_interpretation": "six ten-minute interval means collapsed to hourly mean, then repeated",
+  "forecast_inputs": "strictly prior complete actual load/PV and known weekday only",
+  "known_fixed_tariff": "evaluation metrics only; threshold upper quartile of attachment1 tariff",
+  "hgb_semantics": "score net only; adapter channels are not component forecasts",
+  "model_fitting_performed": false,
+  "dispatch_performed": false,
+  "development_year_not_independent_validation": true,
+  "source_sha256": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+  "mutation_checks": [
+    {
+      "day": 31,
+      "window": 7,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 31,
+      "window": 7,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 31,
+      "window": 14,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 31,
+      "window": 14,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 31,
+      "window": 28,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 31,
+      "window": 28,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 62,
+      "window": 7,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 62,
+      "window": 7,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 62,
+      "window": 14,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 62,
+      "window": 14,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 62,
+      "window": 28,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 62,
+      "window": 28,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 243,
+      "window": 7,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 243,
+      "window": 7,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 243,
+      "window": 14,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 243,
+      "window": 14,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 243,
+      "window": 28,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 243,
+      "window": 28,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 364,
+      "window": 7,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 364,
+      "window": 7,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 364,
+      "window": 14,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 364,
+      "window": 14,
+      "weekday": true,
+      "max_error": 0.0
+    },
+    {
+      "day": 364,
+      "window": 28,
+      "weekday": false,
+      "max_error": 0.0
+    },
+    {
+      "day": 364,
+      "window": 28,
+      "weekday": true,
+      "max_error": 0.0
+    }
+  ],
+  "normalized_shape_mutation_passed": true
+}

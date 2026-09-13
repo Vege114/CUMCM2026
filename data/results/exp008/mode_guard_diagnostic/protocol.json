@@ -1,0 +1,13 @@
+{
+  "source": "data/results/exp008/mode_planning_physical/joint_ridge28_refined_s3_334days/dispatch.npz",
+  "source_sha256": "6baf5ea18614630ba281a1476350bef183fd9915e0e610ceb616d3a858a2f16b",
+  "threshold_kwh": 250.0,
+  "minimum_potential_override_power_kw": 1500.0,
+  "max_overrides_per_hour": 1,
+  "override_remains_until_hour_boundary": true,
+  "candidate_count": 1,
+  "goal_eligible": false,
+  "purchase_state_lineage": "source virtual SOC, not alternate actual SOC",
+  "role": "continuous physical fixed-purchase execution diagnostic",
+  "source_code_sha256": "ac8cb9787d832bfcd3e1acd8e23922eb2ade1fdf5b77b5c3aac4bf021aa4dcbc"
+}

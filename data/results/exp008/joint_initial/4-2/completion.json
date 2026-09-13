@@ -1,0 +1,36 @@
+{
+  "signature": "7c1259c9b9c33e8ae9d4a30c4638adaa3d3e53cfa34105d72436fc9e1c211442",
+  "config": {
+    "case": "joint_initial",
+    "scenario": "4-2",
+    "method": "joint",
+    "settings": {
+      "scenarios": 7,
+      "residual_scale": 1.0,
+      "throughput_penalty": 0.005,
+      "variation_penalty": 0.001,
+      "terminal_value": 1.0,
+      "emergency_weight": 5.0
+    },
+    "deadband": 20.0,
+    "ramp": null,
+    "seed": 42,
+    "updates": true,
+    "days": 334,
+    "charge_mask": null
+  },
+  "source_hashes": {
+    "planner.py": "2ca618241d66df8e898eee4ce9f942768204bf1f5e750c47a6fce2f31f5456af",
+    "run.py": "675cb8eb18d2169f37e0ca464edc7f3ecafd453f1b0ebeac8080271931d69e10",
+    "q1.py": "7cf7a452f9cd67aeb4634d01d30b8a1e52bb90cec8efbcdc0c4ec89c5267d155",
+    "forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controller_candidate.py": "203f79e7637c4ac9320972bb87c401ab3abed76e5e0ffbef7c278df99112bf9d",
+    "verify.py": "7fa8c0b02b9995beffdab650edd4b7e937e9e28fcabd6aeac9417f1ad6db95fd",
+    "audit_baselines.py": "47f65c4b86069e994cd6459239a1c9492a4aa8fc21787c15334b5620220f8379",
+    "closed_loop.py": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec"
+  },
+  "wall_seconds": 52.461612625047565,
+  "complete": true,
+  "total_cost": 14659315.250047354
+}

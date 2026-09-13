@@ -1,0 +1,25 @@
+{
+  "source": {
+    "HGB": "experiments/exp008/forecast_absolute_hgb.py:78-83",
+    "ExtraTrees": "experiments/exp008/forecast_absolute_extra_trees.py:138-141"
+  },
+  "fact": "training_seconds timer includes fit and subsequent explicit validation prediction; not pure fit time. All numerical values unchanged.",
+  "core_files_before_sha256": {
+    "annual_metrics.csv": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+    "monthly_metrics.csv": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+    "lead_metrics.csv": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+    "provenance.json": "240d9f35533b0c97efc4c918d04b10898bbed650b3f0f88800aab5c13e847bdc",
+    "model_configuration.json": "731b760bcab2e09ab8f07f0acb8802860133626621bf2e2592295abafa23f77b",
+    "verification.json": "273cc8cedd7dc9ab3c39e97de64f5268bccc307cae9610610a128957d286c2ad"
+  },
+  "core_files_after_sha256": {
+    "annual_metrics.csv": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+    "monthly_metrics.csv": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+    "lead_metrics.csv": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+    "provenance.json": "76a1c9ce24030d850825aab58a8165eb3b4b8ce1d74c27131d554185398f73b5",
+    "model_configuration.json": "56dc51705dcf6a5462536af5c0da67db8b024f899ae795bbb6a8da3c88473b92",
+    "verification.json": "273cc8cedd7dc9ab3c39e97de64f5268bccc307cae9610610a128957d286c2ad"
+  },
+  "formal_prediction_duration": null,
+  "pure_fit_duration": null
+}

@@ -1,0 +1,26 @@
+{
+  "days": 334,
+  "methods": [
+    "prefix",
+    "point"
+  ],
+  "true_empirical_quantile": 0.8,
+  "history": "same preceding28 completed-day HGB pipeline net errors with labelled January fallback",
+  "prefix_formula": "r_t=f_t+Delta quantile_j(sum_{u<=t} error_ju,0.8)",
+  "point_control_formula": "r_t=f_t+quantile_j(error_jt,0.8)",
+  "fixed_spec": {
+    "quantile": 0.8,
+    "controller": "greedy",
+    "state_buffer": 500.0,
+    "wear": 0.002
+  },
+  "same_daily_LP_and_actual_executor": true,
+  "own_continuous_SOC": true,
+  "risk_representation_is_not_point_load_PV_forecast": true,
+  "not_a_joint_chance_constraint_certificate": true,
+  "efficiency_and_saturation_risk_mapping_not_exact": true,
+  "tree_baseline_not_single_factor": "raw joint history replaces conditional tree marginals; genuine .8 rather than .8 interpolation of nine atoms",
+  "all334_predeclared_no_partial_performance_gate": true,
+  "development_not_independent_test": true,
+  "source_sha256": "1f6d0f5dfb8c38859fddf197d8098e0cc441e7a0d613f4acd1be785272e47c4f"
+}

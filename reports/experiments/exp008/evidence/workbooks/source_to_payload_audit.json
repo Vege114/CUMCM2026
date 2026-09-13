@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "payload_sha256": "c473ce4ea2878ad71dc069d2c38e6706be534703a7ed18e43cd28a2c1f3d9165",
+  "source_audits": [
+    {
+      "scenario": "2",
+      "source_sha256": "8b97181d2f82659774c609632d39a2bd812e69598fcd37696a2d793debcfe6d7",
+      "days": 334,
+      "plan_slots": 48096,
+      "battery_blocks": 2004,
+      "emergency_event_rows": 802,
+      "cash_yuan": 13201981.947942168,
+      "repeated_fee_column_counted_once": true,
+      "passed": true
+    },
+    {
+      "scenario": "3",
+      "source_sha256": "793c9b872814c0b157f34b43fa93cc3aa6649164a4c0d2c6b17684632051ca1e",
+      "days": 334,
+      "plan_slots": 48096,
+      "battery_blocks": 2004,
+      "emergency_event_rows": 483,
+      "cash_yuan": 12826263.074326914,
+      "repeated_fee_column_counted_once": true,
+      "passed": true
+    },
+    {
+      "scenario": "4-2",
+      "source_sha256": "09f1e6f131df6cc1e34874479cfd8dfd7c576a045c441ea7ec31e3e9a67e9b72",
+      "days": 334,
+      "plan_slots": 48096,
+      "battery_blocks": 2004,
+      "emergency_event_rows": 713,
+      "cash_yuan": 13994531.257936869,
+      "repeated_fee_column_counted_once": true,
+      "passed": true
+    },
+    {
+      "scenario": "4-3",
+      "source_sha256": "be922b20ea385882362607373083211d8a854f8f15617060bb7448ffda30a437",
+      "days": 334,
+      "plan_slots": 48096,
+      "battery_blocks": 2004,
+      "emergency_event_rows": 533,
+      "cash_yuan": 13579870.464961823,
+      "repeated_fee_column_counted_once": true,
+      "passed": true
+    }
+  ],
+  "Q1_kW_to_kWh_conversion_verified": true,
+  "audit_script_sha256": "7fbcc866692bfbb66cc8438493f2ddc1aa261c671afde93840e2490cbcf959dc"
+}

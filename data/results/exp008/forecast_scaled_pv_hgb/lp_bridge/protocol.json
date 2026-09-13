@@ -1,0 +1,17 @@
+{
+  "model_id": "scaled_pv_hgb_ridge28_memory_half",
+  "days": 334,
+  "spec": {
+    "conditioning": "tree",
+    "history_days": 28,
+    "quantile": 0.8,
+    "state_buffer": 500
+  },
+  "one_fixed_candidate_after_predeclared_forecast_gate": true,
+  "values_sha256": "3f8518ff46b6ef81d1d927a16ef1a18efdd4759a7c626800fccd38797b954911",
+  "origins_sha256": "29289a670ccea3a9d908e5bba54033aeb5a729f46302ddebbd0513dc1cdb1832",
+  "forecast_summary_sha256": "635efd65d5b8960065c55a48605000aa63f8f63b7c66c7aa699befac5be60f5b",
+  "source_sha256": "87180263dbe04b4bca6698d45ad4e94c6ff65214a1ec4469bc44853ae68b667b",
+  "final_model_selection": false,
+  "development_not_independent_test": true
+}

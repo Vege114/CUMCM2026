@@ -1,0 +1,71 @@
+{
+  "model_id": "exp008_joint_cnn_seed42_ridge28_load_energy_memory_fixed_gain_half",
+  "forecast_candidate_count": 1,
+  "memory_gain": 0.5,
+  "hyperparameter_search": false,
+  "scenarios": [
+    "3",
+    "4-3"
+  ],
+  "pilot_days": 30,
+  "issued_residuals": true,
+  "settings": {
+    "scenarios": 7,
+    "residual_scale": 1.0,
+    "throughput_penalty": 0.005,
+    "variation_penalty": 0.001,
+    "terminal_value": 1.0,
+    "emergency_weight": 5.0,
+    "future_shortfall_weight": 1.5
+  },
+  "deadband_kwh": 20.0,
+  "ramp_limit": null,
+  "charge_mask": null,
+  "updates": true,
+  "seed": 42,
+  "baseline": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/update_value_diagnostic/future1.5_d334_issued",
+  "baseline_prefix_only_no_reexecution": true,
+  "comparison_dates_pilot": [
+    "2025-02-01",
+    "2025-03-02"
+  ],
+  "extension_gate": "BOTH scenarios must each have cost <= baseline+1e-6 and non-idle reversals <= baseline, with at least one strict improvement and valid physical/causal checks",
+  "Q2_8pct_gate_applied_to_these_scenarios": false,
+  "forecast_scope": "current issue and prior same-issue completed-day residuals use EnergyMemoryForecasts; official PV and causal price mechanisms unchanged",
+  "source_sha256": {
+    "experiments/exp008/memory_update_dispatch.py": "d1b95d3ff602f7012dadb8021e8b16c2c0d3c9d059f88f2646558d2772c19142",
+    "experiments/exp008/run.py": "ce05d4c0bce8721a1cc845fd00195558876d708436c39ca6454a231955122011",
+    "experiments/exp008/forecast_override_adapter.py": "3d7fbe4da43199bc72e49238a8a435a079bb8181118e0c01c2fe4580bc0f35fa",
+    "experiments/exp008/issued_residual_paths.py": "e18d82efa97713af0fc946fc31e0fcc340488c67fb95ac4fa88894047d9e2b7c",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/exp008/unified_forecast.py": "184e91502f70bf83088e3bc752661577f58f38cb34fa30ea9bd41a997480223c",
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "experiments/exp008/neural_joint_calibration.py": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "experiments/exp008/neural_joint.py": "a838d59748af0fb0858045ebde254e0409e076d75f296718aac9c8ca37745ec3",
+    "experiments/exp008/verify.py": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36",
+    "experiments/common/neural_v2/data.py": "130cefdd670cd7e0798b498a75970f85b050587663e35466b9fbbccba23868fb",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587"
+  },
+  "artifact_sha256": {
+    "load_energy_memory/predictions.npz": "4b6eedddf07deaed9ad2cbfd2ce109d5ec28eb7f5ee2b1647129a80e1dd434e2",
+    "load_energy_memory/protocol.json": "589051dd848b672644764ccced0e3e954c63f9ed22f3a041fb5ccbb87081879b",
+    "load_energy_memory/prediction_audit.json": "35900cf9959390880b54805513602bcf644c01dc47762c7c78bb4e9f5dd22815",
+    "load_energy_memory/verification.json": "3e00e769a5b2c03fe4614bb23b53925fc0e40e9c7442df72499fd78d6ff7d39e",
+    "neural_joint_calibration/joint_ridge28.npz": "5d8425ada92068f522010e71dd7c9ef117685bc81fd0243a57d55cef72662006",
+    "neural_joint_calibration/manifest.json": "9222e68d05428a2a3a80f079daa95bc3460e15e428f032132570b924316961c2",
+    "neural_joint_calibration/joint_ridge28_audit.json": "0fd6d0ef7f117ec2bd4de9782437bedaf5cb759e2850c9462daa98ca079c1cec",
+    "neural_joint/manifest.json": "808902c3b6300a6f6baadbdf30565ee084346f179e41fd4ced64e3a1eadaa9ab"
+  },
+  "source_raw_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "final_model_selection": false,
+  "final_report_generation": false,
+  "development_on_examined_2025_not_independent_test": true
+}

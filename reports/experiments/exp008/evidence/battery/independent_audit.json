@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "series": {
+    "q2_final": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "f899ca73c97f4f37f70e0f4d34e9a6a2243c56f94b3541e996e2aed4e525bdf9"
+    },
+    "q3_final": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "afbe2ee39c92e785151e5b373ae98a96f0cb0e403728087531828b9854b41adb"
+    },
+    "q4_2_final": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "8076788c8a6b986abd39dd17c9ec9c37b4cfb96f3ce6b2acf03242e844b9964e"
+    },
+    "q4_3_final": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "a7ce575b817870d7e35d9c9c7a53149c5e08fa0e12cac218d77afb5724f6ef53"
+    },
+    "exp002_q2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "90687d0666317f5ae3ffc2d432feb6912b780b6a52b459bd2b4c90cf834c8ba4"
+    },
+    "exp003_q2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "db7965d805881a0e5f8b4645b12394234e215157072d593b2c9a76fa187ea86e"
+    },
+    "exp004_q2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "57826157abbfa1aaf7f2ce29207023148758b4709019bcf488dfc0f69f5b8e0f"
+    },
+    "exp006_q2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "68682059591445aea317f03d46bb1f6deb20f5683ba64738cde856c988c0b478"
+    },
+    "exp002_q3": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "82ce1cd3648c9c38b540d381c637f5dec1e2618f6a7f324f20549e2f5320eafc"
+    },
+    "exp002_q4_2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "7d62b0bf08a95195306f3a82b2916f9d8c4412a0912abdcc73a7f0fd63cc182f"
+    },
+    "exp002_q4_3": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "1e931c8a0a72f151504ea804d7fa5d227f930ad0ed5c4dfcfa569ecb6e08cd17"
+    },
+    "exp001_original_q2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "f6667a68f32df9bd62bab0277a2e08d4e2e3d8e2b02e9b063c38a3217e2920a6"
+    },
+    "exp005_q2": {
+      "passed": true,
+      "rows": 48096,
+      "independent_metrics": 11,
+      "raw_csv_sha256": "83583949128d40c24e5b6d138fc1a087df72ec56eed402da71670ccac64f89f7"
+    }
+  },
+  "SVG_point_audit": [
+    {
+      "file": "reports/experiments/exp008/figures/battery/q2_final_random_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q2_final_specified_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q2_final_all_48096_points.svg",
+      "curve_paths_with_all_points": 2,
+      "points_per_curve": 48096
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q3_final_random_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q3_final_specified_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q3_final_all_48096_points.svg",
+      "curve_paths_with_all_points": 2,
+      "points_per_curve": 48096
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q4_2_final_random_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q4_2_final_specified_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q4_2_final_all_48096_points.svg",
+      "curve_paths_with_all_points": 2,
+      "points_per_curve": 48096
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q4_3_final_random_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q4_3_final_specified_days.svg",
+      "curve_paths_with_all_points": 8,
+      "points_per_curve": 144
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q4_3_final_all_48096_points.svg",
+      "curve_paths_with_all_points": 2,
+      "points_per_curve": 48096
+    },
+    {
+      "file": "reports/experiments/exp008/figures/battery/q1_deterministic_power.svg",
+      "curve_paths_with_all_points": 1,
+      "points_per_curve": 144
+    }
+  ],
+  "audit_source_sha256": "76721e088e6d85a0d1a9a9ea2359bcdba95f2756239ba4505a650e991cea063e",
+  "note": "Independent CSV formulas and SVG path point counts; optimizer was not rerun."
+}

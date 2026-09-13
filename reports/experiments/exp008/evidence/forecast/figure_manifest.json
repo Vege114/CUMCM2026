@@ -1,0 +1,68 @@
+{
+  "figures": [
+    {
+      "path": "reports/experiments/exp008/figures/forecast/annual_metrics.png",
+      "sha256": "34edf958fb01c64bbd34bfcbaba9a0758cf3ca7beb68e7887d88cad72ff05262",
+      "source_csv": "annual_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/annual_metrics.svg",
+      "sha256": "8ca22c6eb0888d09fedf436ecb48d6783aa16dd7addbd44335d6ebcaeee08d9b",
+      "source_csv": "annual_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/monthly_metrics.png",
+      "sha256": "3fc855f0c25d00cda9553ed10a54d7ee589add7b59021eb6b9ec8c6f944fe85d",
+      "source_csv": "monthly_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/monthly_metrics.svg",
+      "sha256": "36663b5dc93b4f5df37a068171d0274e0ca5b265a3e97092e0bb89d4ce62bac9",
+      "source_csv": "monthly_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/lead_metrics.png",
+      "sha256": "a7af7e276de546a666dfeb603deb71568d6e66ab355adb455112e6669c91b7ce",
+      "source_csv": "lead_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/lead_metrics.svg",
+      "sha256": "a9e089381adebc98a6dc45162baeb1a488876b1274428029b43a6df237e90848",
+      "source_csv": "lead_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/daily_energy_metrics.png",
+      "sha256": "cf83a6c4d8104d1ae57314700bd684d61bcef80e17094d147a836bf15e903997",
+      "source_csv": "daily_energy_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/daily_energy_metrics.svg",
+      "sha256": "007e35cc49dda06579f0882c205843655b4013cbc2c5101d86d823db7c2d8075",
+      "source_csv": "daily_energy_metrics"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/history_midnight_comparable.png",
+      "sha256": "916c2da9eeeeebccc37f54e32157715c4be942fbbc8e6328995d2d0c5580ba6a",
+      "source_csv": "history_midnight_comparable"
+    },
+    {
+      "path": "reports/experiments/exp008/figures/forecast/history_midnight_comparable.svg",
+      "sha256": "0191835d27a7c7fc88d36e382c21a882a9a20c857c3628122a104622d01a49ca",
+      "source_csv": "history_midnight_comparable"
+    }
+  ],
+  "static_export": true,
+  "uncertainty_intervals": null,
+  "font": [
+    "Arial Unicode MS"
+  ],
+  "source_csvs": {
+    "annual_metrics": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+    "monthly_metrics": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+    "lead_metrics": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+    "daily_energy_metrics": "57a9e3d908234933ee67cc971a07eb0bbccc2e181ef06b893fb08afd9dc00cb9",
+    "history_midnight_comparable": "975630362c78ec48fe55cdfea426f9445cf3c741b846e083a65d9585219f9e64"
+  },
+  "visual_inspection": "Completed PNG inspection; see visual_verification.json for exact scope and SVG structural-only limit.",
+  "visual_verification": "visual_verification.json"
+}

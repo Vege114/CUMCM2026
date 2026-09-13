@@ -1,0 +1,26 @@
+{
+  "quantiles": [
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "selection_rule": "preselected named lp_q{q:.2f}_greedy archives; no selection on future oracle outcome",
+  "source_files": [
+    "data/results/exp008/controller_candidates/lp_q0.50_greedy/dispatch_2.npz",
+    "data/results/exp008/controller_candidates/lp_q0.60_greedy/dispatch_2.npz",
+    "data/results/exp008/controller_candidates/lp_q0.70_greedy/dispatch_2.npz",
+    "data/results/exp008/controller_candidates/lp_q0.80_greedy/dispatch_2.npz"
+  ],
+  "source_hashes": [
+    "ba95a8d351f149ab8be1a672f29597b73f8c68fa10f41dff079b1500907673ed",
+    "75b602c2c0953c8849501a41872e6ce80f0d097dadeec51c57ed6a5a452aedba",
+    "8a1ba15b38fcae523aa50cbdd9af2e5e579f86c2112a89c8e73335da12bb230d",
+    "aae9cde82d7c9bb47baa1259e982694cbf5dfe650048dd581e3ae57a209e7bd1"
+  ],
+  "script_sha256": "4996e7ed6f3cb481f5261323465b3800548c6d1b91e73325d6d6149a10523a79",
+  "protected_original_audit": "data/results/exp008/fixed_purchase_oracle.json",
+  "protected_original_audit_sha256": "cab418fbaaddf68cbc0d50f9b7dd089b008463206ae0307257bc75e1737712a6",
+  "oracle_not_a_strategy": true,
+  "maximum_configurations": 4
+}

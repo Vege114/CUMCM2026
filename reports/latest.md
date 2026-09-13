@@ -1,5 +1,7 @@
 # 实验报告索引
 
+- [exp008：费用与换向改善的多问题优化成果](experiments/exp008/report.md) · [离线报告](experiments/exp008/report.html) · [成果工作簿与独立核验](experiments/exp008/README.md)
+
 - [exp006：第二问条件误差树与动态规划替代路径](experiments/exp006/report.md) · [离线交互报告](experiments/exp006/report.html) · [绝对与相对变化](experiments/exp006/evidence/relative_comparison.csv) · [费用优先对照工作簿](experiments/exp006/greedy_execution/result2.xlsx)
 
 - [exp004：第二问预测组合与季节预判消融](experiments/exp004/report.md) · [离线交互报告](experiments/exp004/report.html) · [绝对与相对变化](experiments/exp004/evidence/relative_comparison.csv)

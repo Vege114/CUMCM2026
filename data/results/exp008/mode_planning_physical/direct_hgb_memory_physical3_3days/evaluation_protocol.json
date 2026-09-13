@@ -1,0 +1,16 @@
+{
+  "evaluation_days": 334,
+  "pipeline": "direct_hgb_ridge28_memory_half",
+  "fixed_candidate_count": 1,
+  "comparison": "completed Joint_Ridge28_memory_half physical3 full334day method",
+  "first3days": "computational feasibility, physical constraints, sources and causal history only",
+  "first3day_cost_is_not_a_selection_gate": true,
+  "continue_after_feasibility": "same first3 arrays plus same continuous SOC and mode for next331days",
+  "full_year_selection_rule": "same exp0068pct cost gate + fewer nonidle reversals + hard physics",
+  "stop_from_partial_month_cost": false,
+  "mode_block_slots": 6,
+  "no_new_training_or_hyperparameter_changes": true,
+  "complete_pipeline_comparison_not_raw_HGB_superiority": true,
+  "development_year_not_independent_test": true,
+  "source_sha256": "17578f80e5fa8f8081088b02a051d0515cfaccf3e938a57305b2cab5fa2ab8ba"
+}

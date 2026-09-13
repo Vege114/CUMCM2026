@@ -1,0 +1,50 @@
+{
+  "protocol": {
+    "days": 5,
+    "calibration": "ridge_28",
+    "mip_scenarios": 7,
+    "refinement_history_days": 28,
+    "block_slots": 6,
+    "switching": 50.0,
+    "mip_seconds": 5.0,
+    "mip_gap": 0.002,
+    "wear": 0.002,
+    "variation": 0.0,
+    "terminal": 0.45,
+    "deadband": 0.0,
+    "maxiter_arms": [
+      120,
+      600
+    ],
+    "only_changed_parameter": "L-BFGS-B maximum iterations",
+    "paired_same_purchase_initialization_mode_paths_soc_prices": true,
+    "day_start_soc_follows_120_reference": true,
+    "alternative_600_is_conditional_daily_diagnostic_not_continuous_rollout": true,
+    "development_on_2025_not_independent_validation": true
+  },
+  "continuous_120_cost": 258232.8567642873,
+  "conditional_600_cost_sum_not_a_rollout": 258293.73365242576,
+  "paired_actual_cost_delta": 60.87688813846398,
+  "paired_training_objective_delta": -103.19262666186842,
+  "paired_training_relative_change_pct": -0.04183477900894239,
+  "converged_120_days": 0,
+  "converged_600_days": 5,
+  "iteration_counts_120": [
+    120,
+    120,
+    120,
+    120,
+    120
+  ],
+  "iteration_counts_600": [
+    235,
+    133,
+    266,
+    520,
+    280
+  ],
+  "all_daily_arms_physically_verified": true,
+  "reference_120_continuously_verified": true,
+  "future_actual_not_used_for_purchases": true,
+  "elapsed_seconds": 26.92220895900391
+}

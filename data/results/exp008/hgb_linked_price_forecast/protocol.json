@@ -1,0 +1,40 @@
+{
+  "candidate_count": 1,
+  "diagnostic_only": true,
+  "forecast_target": "Q4-2 midnight 144-slot price, full334 comparable days",
+  "change": "append own-issued HGB load and PV /1000 to the original eight regressors",
+  "historical_feature_policy": "own historical midnight issuance; January periodic cold start; no retroactive current-model features",
+  "lookback_days": 28,
+  "label_weight_half_life_days": 14,
+  "original_penalty_preserved": true,
+  "new_feature_penalties": [
+    5.0,
+    5.0
+  ],
+  "new_feature_prior_coefficients": [
+    0.0,
+    0.0
+  ],
+  "candidate_chosen_after_prior_development_not_untouched_2025_test": true,
+  "high_price_definition": "realized price >= 1 yuan/kWh, evaluation only",
+  "proxy_definition": "sum frozen Q4-2 original-purchase kWh times abs(predicted-realized price); no action reoptimization or actual savings claim",
+  "additional_price_weighted_metric": "sum realized_price * abs(price_error) / sum realized_price",
+  "no_dispatch_or_Q2_goal_test": true,
+  "sources_sha256": {
+    "experiments/exp008/hgb_linked_price_forecast.py": "d5a575cb61158a6908a5b7c6bcd5e43a0bf827be7c1017afb33c69adb64dd394",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/exp008/absolute_hgb_forecast_adapter.py": "196f48b19e75c5cd94b905e55026c38d83bef70d0376b580a02d5d4b958aefb6",
+    "data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+    "data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "data/results/exp008/q4_absolute_hgb_physical/full334/dispatch_4-2.npz": "c716486b35f13b3329b7e70732ec3957b18f4c306b65c06df542a0743606ccd6"
+  },
+  "future_mutation_days": [
+    31,
+    32,
+    60,
+    151,
+    243,
+    364
+  ]
+}

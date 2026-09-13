@@ -1,0 +1,61 @@
+{
+  "complete": true,
+  "net_metrics": {
+    "original_HGB": {
+      "name": "original_HGB",
+      "channel": "net",
+      "rmse_kw": 362.89918485267737,
+      "mae_kw": 247.98163997237435,
+      "bias_kw": -10.787537094442119,
+      "price_weighted_rmse_kw": 364.9505724131582,
+      "high_price_rmse_kw": 348.1840276970736,
+      "high_price_bias_kw": -17.974075444972588,
+      "daily_energy_rmse_kwh": 3610.6328106863552,
+      "daily_energy_mae_kwh": 2556.9038598497486,
+      "cumulative_error_rmse_kwh": 2285.936944822583,
+      "daily_level_mse_kw2": 22633.10641250842,
+      "within_day_mse_kw2": 109062.71195422925,
+      "high_price_underprediction_kwh": 261349.35828637684
+    },
+    "weekly_issued_history": {
+      "name": "weekly_issued_history",
+      "channel": "net",
+      "rmse_kw": 365.6013806291321,
+      "mae_kw": 250.59179885115748,
+      "bias_kw": -5.867452107416183,
+      "price_weighted_rmse_kw": 367.52039812924346,
+      "high_price_rmse_kw": 349.23652159019434,
+      "high_price_bias_kw": -12.851174750635694,
+      "daily_energy_rmse_kwh": 3788.2527564654697,
+      "daily_energy_mae_kwh": 2755.762715621794,
+      "cumulative_error_rmse_kwh": 2381.2580710283332,
+      "daily_level_mse_kw2": 24914.685671646224,
+      "within_day_mse_kw2": 108749.68384628127,
+      "high_price_underprediction_kwh": 257358.42720398595
+    },
+    "weekly_aligned": {
+      "name": "weekly_aligned",
+      "channel": "net",
+      "rmse_kw": 370.7126712057512,
+      "mae_kw": 251.58166735839174,
+      "bias_kw": 0.8352258073702465,
+      "price_weighted_rmse_kw": 373.262354810569,
+      "high_price_rmse_kw": 356.4727324345526,
+      "high_price_bias_kw": -11.113744393585513,
+      "daily_energy_rmse_kwh": 3867.1766537661288,
+      "daily_energy_mae_kwh": 2734.263193792263,
+      "cumulative_error_rmse_kwh": 2434.586941657904,
+      "daily_level_mse_kw2": 25963.637624017003,
+      "within_day_mse_kw2": 111464.2469684864,
+      "high_price_underprediction_kwh": 258245.34680337086
+    }
+  },
+  "gate_components": {
+    "rmse_kw": false,
+    "high_price_rmse_kw": false,
+    "daily_energy_rmse_kwh": false,
+    "cumulative_error_rmse_kwh": false
+  },
+  "LP_continuation_gate_passed": false,
+  "final_model_selection": false
+}

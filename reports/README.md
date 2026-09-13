@@ -1,5 +1,9 @@
 # 实验报告与可复用模板
 
+[exp008 全题优化报告](experiments/exp008/report.md) · [离线报告](experiments/exp008/report.html) · [五份成果与核验](experiments/exp008/README.md)
+
+exp008 从 exp006 出发，按用户接受的当前结果定稿。第二问费用下降6.1443%、非空换向减少7.1821%，同时列出活动槽和充放电段数增加的情况；原8%费用目标仍未达到。报告覆盖第一至第四问，以main最新八节模板生成，历史比较保留exp001–006并忽略exp007。
+
 [exp006 替代规划报告](experiments/exp006/report.md) · [离线交互报告](experiments/exp006/report.html) · [费用优先对照工作簿](experiments/exp006/greedy_execution/result2.xlsx)
 
 exp006 在独立 `codex/q2-tree-planning` 分支完成，复用 exp004 预测。15 项树与动态规划实验实测共 202.34 秒；保留主组费用上升的结果，以及费用更低的预声明贪心执行对照。新记录以正式源码提交和冻结输入哈希绑定，旧实验记录保持不变。

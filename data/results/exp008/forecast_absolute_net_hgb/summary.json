@@ -1,0 +1,49 @@
+{
+  "predictive_gate_passed": false,
+  "candidate_metrics": {
+    "name": "absolute_net_hgb_projected_ridge28_memory_half",
+    "channel": "net",
+    "rmse_kw": 374.3902621991426,
+    "mae_kw": 258.17958596874877,
+    "bias_kw": -8.881370441743394,
+    "price_weighted_rmse_kw": 375.4603892658585,
+    "high_price_rmse_kw": 355.9294039458009,
+    "high_price_bias_kw": -9.45658395550141,
+    "daily_energy_rmse_kwh": 3744.6107050172877,
+    "daily_energy_mae_kwh": 2704.6748355777117,
+    "cumulative_error_rmse_kwh": 2367.2744015506414,
+    "daily_level_mse_kw2": 24343.939812725817,
+    "within_day_mse_kw2": 115824.12861681696,
+    "high_price_underprediction_kwh": 260428.56907986174
+  },
+  "baseline_metrics": {
+    "name": "direct_hgb_ridge28_memory_half",
+    "channel": "net",
+    "rmse_kw": 362.89918485267737,
+    "mae_kw": 247.98163997237435,
+    "bias_kw": -10.787537094442119,
+    "price_weighted_rmse_kw": 364.9505724131582,
+    "high_price_rmse_kw": 348.1840276970736,
+    "high_price_bias_kw": -17.974075444972588,
+    "daily_energy_rmse_kwh": 3610.6328106863552,
+    "daily_energy_mae_kwh": 2556.9038598497486,
+    "cumulative_error_rmse_kwh": 2285.936944822583,
+    "daily_level_mse_kw2": 22633.10641250842,
+    "within_day_mse_kw2": 109062.71195422925,
+    "high_price_underprediction_kwh": 261349.35828637684
+  },
+  "metric_checks": {
+    "rmse_kw": false,
+    "high_price_rmse_kw": false,
+    "daily_energy_rmse_kwh": false,
+    "cumulative_error_rmse_kwh": false
+  },
+  "bridge_performed": false,
+  "bridge_cost_change_yuan": null,
+  "night_negative_net_clipped_slots": 0,
+  "night_negative_net_clipped_kwh": 0.0,
+  "daylight_nonnegative_projection_active_slots": 2874,
+  "elapsed_seconds": 28.53945370891597,
+  "final_model_selected": false,
+  "final_report_generated": false
+}

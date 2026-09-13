@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "fixed_days": [
+    31,
+    90,
+    151,
+    243,
+    364
+  ],
+  "full28_feasible_days": 5,
+  "all_source_Q_and_original_actual_replays_exact": true,
+  "all_current_actual_reads_after_choices_locked": true,
+  "protected_archives_unchanged": true,
+  "continuous_annual_cost_not_evaluated": true,
+  "no_annual_extrapolation": true,
+  "paired": [
+    {
+      "day": 31,
+      "historical_objective_delta": 107.9395142826761,
+      "actual_cost_delta": 543.7857286139115,
+      "actual_end_SOC_delta_kwh": 1418.1718535287764,
+      "actual_direction_reversals_delta": 0,
+      "mask_changed_slots": 35,
+      "MIP_seconds": 60.129944208078086,
+      "MIP_gap": 0.00554937785816817
+    },
+    {
+      "day": 90,
+      "historical_objective_delta": -207.47118628164026,
+      "actual_cost_delta": -2567.846843845866,
+      "actual_end_SOC_delta_kwh": -643.1907703718098,
+      "actual_direction_reversals_delta": 0,
+      "mask_changed_slots": 19,
+      "MIP_seconds": 60.097626916947775,
+      "MIP_gap": 0.013936367727380812
+    },
+    {
+      "day": 151,
+      "historical_objective_delta": -49.72894124394952,
+      "actual_cost_delta": 21.24025926324248,
+      "actual_end_SOC_delta_kwh": 0.0,
+      "actual_direction_reversals_delta": 0,
+      "mask_changed_slots": 8,
+      "MIP_seconds": 60.08039570809342,
+      "MIP_gap": 0.005447706256954163
+    },
+    {
+      "day": 243,
+      "historical_objective_delta": -502.5014768136243,
+      "actual_cost_delta": -305.79997783357976,
+      "actual_end_SOC_delta_kwh": 814.2844853456936,
+      "actual_direction_reversals_delta": -1,
+      "mask_changed_slots": 31,
+      "MIP_seconds": 60.04206604103092,
+      "MIP_gap": 0.013462225782659086
+    },
+    {
+      "day": 364,
+      "historical_objective_delta": -3.869332206733816,
+      "actual_cost_delta": -216.6079056446033,
+      "actual_end_SOC_delta_kwh": 0.0,
+      "actual_direction_reversals_delta": 0,
+      "mask_changed_slots": 4,
+      "MIP_seconds": 60.04748708300758,
+      "MIP_gap": 0.004725439676179525
+    }
+  ]
+}

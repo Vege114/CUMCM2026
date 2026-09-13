@@ -1,0 +1,22 @@
+{
+  "model": {
+    "loss": "squared_error",
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 2.0,
+    "learning_rate": 0.08,
+    "early_stopping": false,
+    "random_state": 42
+  },
+  "cnn_retrained": false,
+  "one_fixed_candidate": true,
+  "no_annual_actual_feature": true,
+  "training": "monthly_refit_all_prior_completed_days; historical features obey historical issue",
+  "history_weight_half_life_days": 90,
+  "january": "causal_weekly_load_yesterday_PV_cold_start_days7_to30",
+  "official_pv_allowed": false,
+  "future_realized_price_allowed": false,
+  "development_year": "2025_already_examined_not_independent_test",
+  "continuation_gate": "only continue mechanism if net RMSE meaningfully improves on ridge about388kW"
+}

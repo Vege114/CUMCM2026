@@ -1,0 +1,46 @@
+--- experiments/exp008/mode_budget_physical.py
++++ experiments/exp008/mode_budget_hold1_physical.py
+@@ -15,7 +15,7 @@
+ from experiments.exp008.planner import ETA, HIGH, LIMIT, LOW
+ 
+ 
+-def mode_state(mask, previous_mode, previous_run_slots, minimum=3):
++def mode_state(mask, previous_mode, previous_run_slots, minimum=1):
+     mask = np.asarray(mask, bool)
+     previous = previous_mode > 0
+     flips = np.r_[mask[0] != previous, mask[1:] != mask[:-1]]
+@@ -36,13 +36,13 @@
+ 
+ 
+ def plan(net_paths, price, soc, previous_mode=1, previous_run_slots=1,
+-         *, hold_slots=3, switching=0., wear=.002, seconds=5., gap=.002, final=False):
++         *, hold_slots=1, switching=0., wear=.002, seconds=5., gap=.002, final=False):
+     paths, price = np.asarray(net_paths, float), np.asarray(price, float)
+     k, n = paths.shape
+     if price.shape != (n,) or not np.all(price > 0) or not np.isfinite(paths).all():
+         raise ValueError('finite scenario net kWh and matching positive price required')
+-    if not LOW <= soc <= HIGH or previous_mode not in (-1, 1) or previous_run_slots < 1 or hold_slots != 3:
+-        raise ValueError('valid SOC, explicit previous mode/run and fixed hold3 required')
++    if not LOW <= soc <= HIGH or previous_mode not in (-1, 1) or previous_run_slots < 1 or hold_slots != 1:
++        raise ValueError('valid SOC, explicit previous mode/run and fixed hold1 required')
+     if switching != 0.:
+         raise ValueError('This candidate fixes the soft switching penalty to zero')
+     m = LinearModel()
+@@ -98,7 +98,7 @@
+                          upper=emergency_upper[j, t])
+     x, metadata = m.solve(seconds=seconds, gap=gap)
+     if x is None:
+-        raise RuntimeError(f'No feasible variable-mode hold3 incumbent: {json.dumps(metadata)}')
++        raise RuntimeError(f'No feasible variable-mode hold1 incumbent: {json.dumps(metadata)}')
+     mask = x[mode] > .5
+     boundary, exact_flips = mode_state(mask, previous_mode, previous_run_slots, hold_slots)
+     if boundary['planned_changes_including_boundary'] > 8:
+@@ -121,7 +121,7 @@
+         check['minimum_variable'] >= -1e-6)
+     if not check['passed']:
+         raise AssertionError(check)
+-    metadata.update(method='variable_hold3_daily_cap8_kappa0_physical_scenario_MIP',
++    metadata.update(method='variable_hold1_daily_cap8_kappa0_physical_scenario_MIP',
+         daily_planned_switch_cap=8, switching_cost=0., exact_binary_XOR=True,
+         scenario_count=k, hold_slots=hold_slots, previous_planned_mode=previous_mode,
+         previous_planned_run_slots=previous_run_slots, inherited_locked_prefix_slots=pending,

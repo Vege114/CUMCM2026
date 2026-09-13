@@ -1,0 +1,22 @@
+{
+  "official_source": "https://big5.www.gov.cn/gate/big5/www.gov.cn/zhengce/zhengceku/202411/content_6986383.htm",
+  "document": "国办发明电〔2024〕12号",
+  "publication_date": "2024-11-12",
+  "source_access": "official gov.cn traditional Chinese mirror verified; simplified endpoint returned 403",
+  "settings": {
+    "minimum_history_days": 14,
+    "half_life_days": 56.0,
+    "ridge_equivalent_days": 4.0,
+    "blocks": 4,
+    "max_abs_correction_kw": 500.0
+  },
+  "candidate_count": 1,
+  "scope_assumption": "2025 mainland-China public calendar is a hypothetical feature; community location and actual observance unknown",
+  "base_forecast": "ridge_28",
+  "pv_unchanged": true,
+  "calendar_used_before_year": true,
+  "future_load_used_for_fit": false,
+  "point_forecast_gate": "strictly lower overall net RMSE, special-day net RMSE, and special-day high-tariff net RMSE than ridge28",
+  "selection_role": "2025 development gate only; no current-day result chooses coefficients or correction sign",
+  "source_sha256": "2a1c2fce98feeef5be2cc43e861a8e50ccb854dcb81ed5a5e2511d17a2b341b4"
+}

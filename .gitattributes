@@ -17,3 +17,7 @@
 *.png binary
 *.jpg binary
 *.jpeg binary
+
+# Frozen exp008 evidence is bound to byte-level SHA256, including CSV line endings.
+data/results/exp008/** -text -whitespace
+reports/experiments/exp008/** -text -whitespace

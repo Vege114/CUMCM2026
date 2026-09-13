@@ -1,0 +1,31 @@
+{
+  "configs": [
+    {
+      "name": "calendar_ridge56",
+      "window": 56,
+      "half_life": 28.0,
+      "annual_harmonics": 1,
+      "daily_harmonics": 3,
+      "seasonal_penalty": 20.0
+    },
+    {
+      "name": "calendar_ridge90",
+      "window": 90,
+      "half_life": 45.0,
+      "annual_harmonics": 1,
+      "daily_harmonics": 3,
+      "seasonal_penalty": 20.0
+    }
+  ],
+  "selected_before_scoring": true,
+  "retained_base": "exp004 no_season CNN seed42",
+  "unchanged_original_ridge_features": true,
+  "basis": "one annual sine/cosine pair times constant and first 3 fixed intraday Fourier harmonics",
+  "prior": "zero annual residual amplitudes, isotropic phase prior, quadratic daily-frequency penalty",
+  "no_annual_actual_shape_or_capacity": true,
+  "training": "last 56 or 90 fully completed CNN issue days",
+  "cold_start": "unmodified CNN when no complete issued training day exists",
+  "development_year_not_independent_test": true,
+  "continuation_gate": "point net and tariff-weighted RMSE improvement over ridge28 before cost linkage",
+  "source_sha256": "1563f528c17fb35525680e24f880f6ab820db5891c7abaff0e408a8ccd1caa1c"
+}

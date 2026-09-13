@@ -1,0 +1,85 @@
+{
+  "complete": true,
+  "all_source_hashes_unchanged": true,
+  "future_mutation_checks": [
+    {
+      "day": 31,
+      "future_net_mutated_from_slot": 1,
+      "prefix_identical": true
+    },
+    {
+      "day": 31,
+      "future_net_mutated_from_slot": 36,
+      "prefix_identical": true
+    },
+    {
+      "day": 31,
+      "future_net_mutated_from_slot": 108,
+      "prefix_identical": true
+    },
+    {
+      "day": 90,
+      "future_net_mutated_from_slot": 1,
+      "prefix_identical": true
+    },
+    {
+      "day": 90,
+      "future_net_mutated_from_slot": 36,
+      "prefix_identical": true
+    },
+    {
+      "day": 90,
+      "future_net_mutated_from_slot": 108,
+      "prefix_identical": true
+    },
+    {
+      "day": 151,
+      "future_net_mutated_from_slot": 1,
+      "prefix_identical": true
+    },
+    {
+      "day": 151,
+      "future_net_mutated_from_slot": 36,
+      "prefix_identical": true
+    },
+    {
+      "day": 151,
+      "future_net_mutated_from_slot": 108,
+      "prefix_identical": true
+    },
+    {
+      "day": 243,
+      "future_net_mutated_from_slot": 1,
+      "prefix_identical": true
+    },
+    {
+      "day": 243,
+      "future_net_mutated_from_slot": 36,
+      "prefix_identical": true
+    },
+    {
+      "day": 243,
+      "future_net_mutated_from_slot": 108,
+      "prefix_identical": true
+    },
+    {
+      "day": 364,
+      "future_net_mutated_from_slot": 1,
+      "prefix_identical": true
+    },
+    {
+      "day": 364,
+      "future_net_mutated_from_slot": 36,
+      "prefix_identical": true
+    },
+    {
+      "day": 364,
+      "future_net_mutated_from_slot": 108,
+      "prefix_identical": true
+    }
+  ],
+  "sum_fixed5_cash_fee_change_yuan": -27.080437008902663,
+  "sum_fixed5_historical_objective_change_yuan": -30.105990141666553,
+  "no_continuous_annual_result": true,
+  "final_model_selection": false
+}

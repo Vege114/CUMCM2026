@@ -1,0 +1,41 @@
+{
+  "days": 334,
+  "baseline": {
+    "rmse_yuan_per_kwh": 0.061947789175901255,
+    "mae_yuan_per_kwh": 0.046318006975575025,
+    "bias_yuan_per_kwh": 2.1122205309000837e-05,
+    "high_realized_price_ge1_rmse": 0.06959232954832019,
+    "high_realized_price_ge1_mae": 0.050580840429751826,
+    "high_realized_price_slots": 12614,
+    "realized_price_weighted_mae": 0.04793118998079205,
+    "fixed_purchase_absolute_price_exposure_proxy_yuan": 811363.5071928239,
+    "fixed_purchase_signed_price_exposure_proxy_yuan": -162210.59356758572
+  },
+  "linked_hgb": {
+    "rmse_yuan_per_kwh": 0.056139984100571985,
+    "mae_yuan_per_kwh": 0.0421571691956021,
+    "bias_yuan_per_kwh": 0.00010933469136352022,
+    "high_realized_price_ge1_rmse": 0.0634096043995295,
+    "high_realized_price_ge1_mae": 0.04634296310287739,
+    "high_realized_price_slots": 12614,
+    "realized_price_weighted_mae": 0.043935697721238426,
+    "fixed_purchase_absolute_price_exposure_proxy_yuan": 752841.0506919976,
+    "fixed_purchase_signed_price_exposure_proxy_yuan": -22599.28163758428
+  },
+  "delta_linked_minus_baseline": {
+    "rmse_yuan_per_kwh": -0.00580780507532927,
+    "mae_yuan_per_kwh": -0.004160837779972927,
+    "bias_yuan_per_kwh": 8.821248605451939e-05,
+    "high_realized_price_ge1_rmse": -0.006182725148790688,
+    "high_realized_price_ge1_mae": -0.004237877326874438,
+    "high_realized_price_slots": 0,
+    "realized_price_weighted_mae": -0.003995492259553625,
+    "fixed_purchase_absolute_price_exposure_proxy_yuan": -58522.45650082629,
+    "fixed_purchase_signed_price_exposure_proxy_yuan": 139611.31193000142
+  },
+  "all_sources_unchanged": true,
+  "causality_checks_passed": true,
+  "planning_and_billing_not_run": true,
+  "this_is_not_a_Q2_goal_test": true,
+  "all_four_forecast_gates_improved": true
+}

@@ -1,0 +1,39 @@
+{
+  "config": {
+    "days": [
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "fixed_starts": [
+      "archived_three_path_MIP",
+      "tree_quantile_0.8_LP"
+    ],
+    "selection": "minimum same all-28-history closed_loop objective, before reading actual",
+    "same_masks_and_starting_soc": true,
+    "maxiter": 120,
+    "variation": 0.0,
+    "wear": 0.002,
+    "terminal": 0.45,
+    "role": "five conditional daily interventions, not continuous annual replay",
+    "source_sha256": "c06a2311f1f7a40a391e79c574e8c30def07ef0cb3fedc7c23403b1ff8fa11dd",
+    "support_sha256": "66f3db08b8f3f9ed36c6955d080d762a82c18f0492999f34f1ef1e76be9047a6",
+    "reference_sha256": "cca08f0f70d6569292320442b89eb18fa5919ebc10938c7401f1c64baf3efda8"
+  },
+  "selected_second_days": 4,
+  "sum": {
+    "reference_q_reproduction_error": 0.0,
+    "original_cost": 262337.0007445813,
+    "selected_cost": 263765.1601955815,
+    "cost_change": 1428.1594510002324,
+    "depletion_upper_bound_cost": 0.0,
+    "conservative_cost_change": 1428.1594510002324,
+    "historical_objective_change": -169.87396949814138,
+    "original_final_soc": 16459.36555597361,
+    "selected_final_soc": 19853.918179760112
+  },
+  "goal_eligible": false,
+  "no_actual_used_for_start_selection": true
+}

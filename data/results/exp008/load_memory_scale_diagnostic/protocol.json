@@ -1,0 +1,30 @@
+{
+  "read_only_diagnostic": true,
+  "solver_calls": 0,
+  "model_fits": 0,
+  "coefficient_search": false,
+  "fixed_gain": 0.5,
+  "only_weekday_definition": "Monday-Friday vs Saturday-Sunday; no regional holiday assumptions",
+  "residual": "actual daily mean load minus same-day issued Joint+Ridge28 daily mean load",
+  "relative_residual": "same daily mean error divided by that issued daily mean load",
+  "additive_formula": "max(0,issued_load[t]+0.5*previous_daily_mean_error)",
+  "proportional_comparator": "issued_load[t]*max(0,1+0.5*previous_relative_daily_mean_error)",
+  "causal_comparator_labels": "only previous completed day; current actual appears only in ex post scoring",
+  "first_formal_day": "unchanged and excluded from lag-pair diagnostics because no previous formal Joint issue",
+  "proportional_archived_as_candidate": false,
+  "additive_exactly_matches_existing_memory_archive": true,
+  "negative_proportional_factor_clips": 0,
+  "forecast_daily_mean_load_min_kw": 2921.435591419037,
+  "sources_sha256": {
+    "data/raw/\u9644\u4ef62_\u5c0f\u533a\u8d1f\u8f7d.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "data/raw/\u9644\u4ef62_\u5149\u4f0f\u53d1\u7535\u5b9e\u9645\u529f\u7387.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "data/results/exp008/neural_joint_calibration/joint_ridge28.npz": "5d8425ada92068f522010e71dd7c9ef117685bc81fd0243a57d55cef72662006",
+    "experiments/exp008/load_memory_scale_diagnostic.py": "d2534bfa1caf677fe74dad0d607fd84a06d3e53f14e8217750e7f28dc88e9528"
+  },
+  "interpretation_limits": [
+    "No causal attribution of MIP/LP fee differences from forecast SSE alone.",
+    "The LP result uses334 days while the physical pilot uses30; same-window scores are separately supplied.",
+    "Transition month cells contain few pairs; correlations and SSE are descriptive, not significance claims.",
+    "Absolute and relative residual variances have different units; compare normalized persistence errors and common-kW correction SSE."
+  ]
+}

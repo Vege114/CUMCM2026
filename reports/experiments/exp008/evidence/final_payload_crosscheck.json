@@ -1,0 +1,53 @@
+{
+  "scope": "selected source hashes and actual total costs against independent final_selection_audit; all specified dates",
+  "payload_sha256": "c473ce4ea2878ad71dc069d2c38e6706be534703a7ed18e43cd28a2c1f3d9165",
+  "passed": true,
+  "rows": [
+    {
+      "scenario": "2",
+      "archive_match": true,
+      "cost_difference": 3.3527612686157227e-08,
+      "specified_dates": [
+        "2025-03-20",
+        "2025-06-21",
+        "2025-09-23",
+        "2025-12-21"
+      ]
+    },
+    {
+      "scenario": "3",
+      "archive_match": true,
+      "cost_difference": -6.146728992462158e-08,
+      "specified_dates": [
+        "2025-03-20",
+        "2025-06-21",
+        "2025-09-23",
+        "2025-12-21"
+      ]
+    },
+    {
+      "scenario": "4-2",
+      "archive_match": true,
+      "cost_difference": -9.12696123123169e-08,
+      "specified_dates": [
+        "2025-03-20",
+        "2025-06-21",
+        "2025-09-23",
+        "2025-12-21"
+      ]
+    },
+    {
+      "scenario": "4-3",
+      "archive_match": true,
+      "cost_difference": 8.195638656616211e-08,
+      "specified_dates": [
+        "2025-03-20",
+        "2025-06-21",
+        "2025-09-23",
+        "2025-12-21"
+      ]
+    }
+  ],
+  "q1_source_matches": true,
+  "report_html_not_yet_available": true
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "best_validation_stage_hgb_ridge28_memory",
+  "days": 334,
+  "conditioning": "tree",
+  "history_days": 28,
+  "quantile": 0.8,
+  "state_buffer": 500.0,
+  "values_sha256": "0a51df9ff640dad51d8c356a9baf885765c612d3dc3e7feba5172adca57fce6c",
+  "origins_sha256": "29289a670ccea3a9d908e5bba54033aeb5a729f46302ddebbd0513dc1cdb1832",
+  "model_evidence_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/summary.json": "b3de18e17a4a74b1541a0bf71d271ea1855b521ce6d674db8bff87442efb67a7",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/protocol.json": "49200c87122dc7bef9e263926fa45c357aafdca1178950e5b45a4c22569d0128",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/memory.npz": "ee609500b0027d2dc8fee644aa82b88d17172fc5c6b8c809da2f37fb5bc9522d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/training_audit.json": "d46c0b3adc078eace00eccbc8f21e832d6476338e386d2756f5241aaa9433c36",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/hgb_stage_selection/independent_retraining_verification.json": "10beb99e38382c4a4a9af8d330af20183221313b2ea71b082398fa9f3e0ed5ff"
+  },
+  "source_sha256": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6",
+  "one_fixed_comparison": true,
+  "development_not_independent_test": true,
+  "final_model_selection": false
+}

@@ -1,0 +1,337 @@
+{
+  "signature": "d9b0227c7f3e182b6bca466286eabd1bd46cbfa2cacd3b79affaed76bcc802ca",
+  "candidate_count": 1,
+  "frequency_grid": false,
+  "refit_every_complete_days": 7,
+  "refit_asof_days": [
+    31,
+    38,
+    45,
+    52,
+    59,
+    66,
+    73,
+    80,
+    87,
+    94,
+    101,
+    108,
+    115,
+    122,
+    129,
+    136,
+    143,
+    150,
+    157,
+    164,
+    171,
+    178,
+    185,
+    192,
+    199,
+    206,
+    213,
+    220,
+    227,
+    234,
+    241,
+    248,
+    255,
+    262,
+    269,
+    276,
+    283,
+    290,
+    297,
+    304,
+    311,
+    318,
+    325,
+    332,
+    339,
+    346,
+    353,
+    360
+  ],
+  "forecast_blocks": [
+    [
+      31,
+      38
+    ],
+    [
+      38,
+      45
+    ],
+    [
+      45,
+      52
+    ],
+    [
+      52,
+      59
+    ],
+    [
+      59,
+      66
+    ],
+    [
+      66,
+      73
+    ],
+    [
+      73,
+      80
+    ],
+    [
+      80,
+      87
+    ],
+    [
+      87,
+      94
+    ],
+    [
+      94,
+      101
+    ],
+    [
+      101,
+      108
+    ],
+    [
+      108,
+      115
+    ],
+    [
+      115,
+      122
+    ],
+    [
+      122,
+      129
+    ],
+    [
+      129,
+      136
+    ],
+    [
+      136,
+      143
+    ],
+    [
+      143,
+      150
+    ],
+    [
+      150,
+      157
+    ],
+    [
+      157,
+      164
+    ],
+    [
+      164,
+      171
+    ],
+    [
+      171,
+      178
+    ],
+    [
+      178,
+      185
+    ],
+    [
+      185,
+      192
+    ],
+    [
+      192,
+      199
+    ],
+    [
+      199,
+      206
+    ],
+    [
+      206,
+      213
+    ],
+    [
+      213,
+      220
+    ],
+    [
+      220,
+      227
+    ],
+    [
+      227,
+      234
+    ],
+    [
+      234,
+      241
+    ],
+    [
+      241,
+      248
+    ],
+    [
+      248,
+      255
+    ],
+    [
+      255,
+      262
+    ],
+    [
+      262,
+      269
+    ],
+    [
+      269,
+      276
+    ],
+    [
+      276,
+      283
+    ],
+    [
+      283,
+      290
+    ],
+    [
+      290,
+      297
+    ],
+    [
+      297,
+      304
+    ],
+    [
+      304,
+      311
+    ],
+    [
+      311,
+      318
+    ],
+    [
+      318,
+      325
+    ],
+    [
+      325,
+      332
+    ],
+    [
+      332,
+      339
+    ],
+    [
+      339,
+      346
+    ],
+    [
+      346,
+      353
+    ],
+    [
+      353,
+      360
+    ],
+    [
+      360,
+      365
+    ]
+  ],
+  "models": 48,
+  "final_block_days": 5,
+  "architecture_and_effective_loss": {
+    "variant": "no_season",
+    "seed": 42,
+    "shared_channels": [
+      "load",
+      "pv"
+    ],
+    "filters": 8,
+    "kernel_size": 5,
+    "dilations": [
+      1,
+      2
+    ],
+    "padding": "causal",
+    "pool_size": 6,
+    "embedding_units": 16,
+    "head_units": 16,
+    "l2": 0.0001,
+    "component_huber_group_weight": 1.0,
+    "net_huber_group_weight": 1.0,
+    "net_normalization": "standard deviation of observed net kW before monthly training cutoff",
+    "loss": "normalized_tariff * (mean(two symmetric channel Hubers) + net Huber)",
+    "joint_changes_not_single_factor_attribution": true,
+    "hyperparameter_search": false,
+    "official_pv_or_future_prices_used": false,
+    "yearly_seasonal_features_or_labels_used": false,
+    "evaluation_role": "2025 development, not untouched independent validation"
+  },
+  "parameters": 4850,
+  "effective_loss_override": "normalized_tariff * (mean(two symmetric channel Hubers) + net Huber)",
+  "inherited_training_hyperparameters": {
+    "monthly": "from_scratch",
+    "earliest_training_day": 7,
+    "validation_days": 7,
+    "train_issue_hours": [
+      0
+    ],
+    "validation_issue_hours": [
+      0
+    ],
+    "history_weight_half_life_days": 90,
+    "loss": "tariff_weighted_asymmetric_huber",
+    "under_load_over_pv_weight": 5,
+    "other_error_weight": 1,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "max_epochs": 60,
+    "patience": 6,
+    "device": "cpu",
+    "threads": 2
+  },
+  "training_hyperparameter_note": "inherited asymmetric loss fields are overridden by symmetric JointTariffHuber unchanged from neural_joint",
+  "split": "train days [7,asof-7), validation [asof-7,asof), forecast [asof,min(asof+7,365))",
+  "scales": "mean/component std/net std from actual[:(asof-7)*144], never validation labels",
+  "training_from_scratch": true,
+  "seed": 42,
+  "no_cumulative_loss": true,
+  "postprocessing": "each archive independently uses unchanged fixed Ridge28 then unchanged fixed0.5 memory",
+  "main_comparison": "weekly->Ridge28->fixed0.5 memory vs monthly Joint->same processing",
+  "LP_gate_all_metrics_strictly_lower": [
+    "net_rmse_kw",
+    "net_mae_kw",
+    "price_weighted_net_rmse_kw",
+    "high_price_net_rmse_kw",
+    "high_price_net_mae_kw",
+    "daily_net_energy_rmse_kwh",
+    "daily_net_energy_mae_kwh",
+    "intraday_cumulative_error_rmse_kwh"
+  ],
+  "official_pv_and_future_price_used": false,
+  "development_on_examined_2025_not_independent_test": true,
+  "source_sha256": {
+    "experiments/exp008/neural_joint_weekly.py": "6909b23d5a6840f71e1dd8ef957f99d29e0a7de8b0fc05db8f862b1e4cc317e7",
+    "experiments/exp008/neural_joint.py": "a838d59748af0fb0858045ebde254e0409e076d75f296718aac9c8ca37745ec3",
+    "experiments/problem2/exp004/data.py": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+    "experiments/problem2/exp004/protocol.json": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+    "experiments/problem2/exp003/data.py": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+    "experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed"
+  },
+  "source_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

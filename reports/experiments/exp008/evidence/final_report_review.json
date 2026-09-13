@@ -1,0 +1,146 @@
+{
+  "scope": "Final generated report textual, numerical, formula, local-link and three key figure review; browser-wide layout and workbook QA are parent tasks",
+  "assessment": "Numerical and mathematical review passed; final rebuild must incorporate acknowledged delivery repairs and newly supplied other-question forecast scores",
+  "report_reviewed": {
+    "path": "reports/experiments/exp008/report.md",
+    "sha256": "7f33a442060e1ff09cfb47b601eb18e2e07b5a5338d8f97603633676addf85e3"
+  },
+  "html_reviewed": {
+    "path": "reports/experiments/exp008/report.html",
+    "sha256": "5854c252729c1b70475fc7bcc54f17c05e2ff033a90590c899d7f91219710d6a"
+  },
+  "payload": {
+    "path": "reports/experiments/exp008/final_payload.json",
+    "sha256": "9f7e89d8a5f887016154651bbcfece95211168037395b6379d89289e65375ca5"
+  },
+  "expected_payload_sha256": "9f7e89d8a5f887016154651bbcfece95211168037395b6379d89289e65375ca5",
+  "cases": [
+    {
+      "scenario": "2",
+      "selected_archive_sha_match": true,
+      "total_cost_delta_from_independent_equations_yuan": 3.3527612686157227e-08,
+      "numeric_fee_passed": true
+    },
+    {
+      "scenario": "3",
+      "selected_archive_sha_match": true,
+      "total_cost_delta_from_independent_equations_yuan": -6.146728992462158e-08,
+      "numeric_fee_passed": true
+    },
+    {
+      "scenario": "4-2",
+      "selected_archive_sha_match": true,
+      "total_cost_delta_from_independent_equations_yuan": -9.12696123123169e-08,
+      "numeric_fee_passed": true
+    },
+    {
+      "scenario": "4-3",
+      "selected_archive_sha_match": true,
+      "total_cost_delta_from_independent_equations_yuan": 8.195638656616211e-08,
+      "numeric_fee_passed": true
+    }
+  ],
+  "payload_support_bindings": [
+    {
+      "key": "runtime_by_stage",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/runtime_by_stage.json",
+      "matches_payload_sha256": true
+    },
+    {
+      "key": "seed_and_ablation_results",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/seed_and_ablation_results.json",
+      "matches_payload_sha256": true
+    },
+    {
+      "key": "planning_solver_diagnostics",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/planning_solver_diagnostics.json",
+      "matches_payload_sha256": true
+    },
+    {
+      "key": "data_validation",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/data_validation.json",
+      "matches_payload_sha256": true
+    },
+    {
+      "key": "reproduction",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/reproduction.json",
+      "matches_payload_sha256": true
+    }
+  ],
+  "broken_existing_markdown_links": [],
+  "template_eight_numbered_sections_present": true,
+  "all_h2_count": 8,
+  "formula_review": {
+    "source": "evidence/methods_review.json",
+    "all12_methods_mathtext_parse_passed": true,
+    "Q1_normalized_full_second_objective_correct": true,
+    "Q2_planned_mode_and_actual_nonidle_mode_distinction_correct": true,
+    "final_net_adjustment_once_billing_correct": true,
+    "price_regression_prior_and_units_correct": true
+  },
+  "visual_spot_checks": [
+    {
+      "figure": {
+        "path": "reports/experiments/exp008/figures/report/method_flow.png",
+        "sha256": "4458a8137a17ccb1d8b163b752c4442a4c7b0e336645622927f4e8513fb53ab6"
+      },
+      "passed": true,
+      "assessment": "HGB branches and final controller differences legible; arrows no longer cross Q4-2 box"
+    },
+    {
+      "figure": {
+        "path": "reports/experiments/exp008/figures/report/all_questions_history_cost.png",
+        "sha256": "bd15d81c9112e44de07dc1734f16afcc81b99d42b9918c3ca9e76dafff9a531a"
+      },
+      "passed": true,
+      "assessment": "common cost-axis scale and labels match checked values; exp005 hatched as incomparable physical variant"
+    },
+    {
+      "figure": {
+        "path": "reports/experiments/exp008/figures/report/recorded_runtime.png",
+        "sha256": "db98ae10a8407b0c8a6ef03218a521b414ef22c8c0583578bb5ba1667fb937af"
+      },
+      "passed": true,
+      "assessment": "fit+validation prediction stage label correct; solver sums shown separately; no visible clipping"
+    }
+  ],
+  "new_forecast_evidence": {
+    "path": "reports/experiments/exp008/evidence/other_question_forecasts.json",
+    "sha256": "101d7770837cc9ceea379db580db8e68c38b4aa0931f470cde7b05a5545af47e"
+  },
+  "frozen_issued_hash_checks_passed": 8016,
+  "disclosures_verified": [
+    "user accepts6.1443% despite8%threshold failure",
+    "Q2episodes and active slots increased while nonidle reversals/throughput decrease",
+    "Q2blend differs from Q3/Q4singleHGB; Q4-3retains old price regression",
+    "LPscenario actions optimistic; actual physical control causal; no global annual certificate",
+    "shared-target historical early stopping limit attached to matched physical cost comparisons",
+    "single seed42 and repeatedly examined development year",
+    "fit_seconds scope corrected to fit+validation inference and unknown stages null"
+  ],
+  "acknowledged_repairs_to_confirm_after_final_rebuild": [
+    {
+      "id": "template_header_sources",
+      "repair": "replace absent template draft references by real record/data hash files and registry links",
+      "builder_patch_present": true
+    },
+    {
+      "id": "eight_primary_headings",
+      "repair": "nest methods title below reportsection4",
+      "generated_h2_count": 8
+    },
+    {
+      "id": "specified_day_purchase_totals",
+      "repair": "show both original and final whole-day purchase kWh in all17 specified blocks",
+      "generated_total_line_count": 17
+    },
+    {
+      "id": "actual_issue_forecast_scope",
+      "repair": "label midpoint table as midnight-only and add actual issued Q3/4-3 plus Q4price metrics",
+      "builder_reads_new_frozen_forecast_scores": true
+    }
+  ],
+  "do_not_treat_temporary_code_commit_as_finding": true,
+  "no_selected_model_or_dispatch_rerun": true,
+  "no_six_core_bound_support_files_modified_by_this_review": true
+}

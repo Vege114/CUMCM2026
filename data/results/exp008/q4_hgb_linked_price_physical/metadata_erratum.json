@@ -1,0 +1,9 @@
+{
+  "metadata_only": true,
+  "original_audit_sha256": "0d4b158210c5f6b30ec9ebed5b3fefd61c1d68937e833a59b908a6d5e07cb979",
+  "corrected_audit_sha256": "2cce84bf2d198dba407f301931af13a110120711dad0725f878f7dd70a82acec",
+  "changed_field": "forecast.load_method",
+  "changed_rows": 334,
+  "original_signed_audit_code_and_numerical_forecasts_unchanged": true,
+  "why": "Generic inherited CNN load_method residue; base_forecast, selected_model_id and numerical source equality already correctly identify HGB."
+}

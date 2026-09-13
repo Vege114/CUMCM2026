@@ -1,0 +1,7 @@
+{
+  "reason": "Structured sklearn node dtype contains padding bytes; raw bytes differed after serialization while every named node field was exactly equal. Canonical field-by-field hashes correct the audit, not the model.",
+  "failed_before_first_month_archive_validation_and_before_any_formal_score": true,
+  "model_or_training_hyperparameters_changed": false,
+  "prediction_method_changed": false,
+  "retry_same_fixed_seed_and_configuration": true
+}
