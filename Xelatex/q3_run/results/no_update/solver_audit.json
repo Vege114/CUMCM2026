@@ -1,0 +1,6900 @@
+[
+  {
+    "day": 0,
+    "slot": 0,
+    "history_days": [],
+    "status": 0,
+    "gap": 0.0020047287453498013,
+    "seconds": 0.02177049999590963,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 1,
+    "slot": 0,
+    "history_days": [],
+    "status": 0,
+    "gap": 0.000768801761564524,
+    "seconds": 0.022567100008018315,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 2,
+    "slot": 0,
+    "history_days": [
+      1
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 0.021359200007282197,
+    "residual": 4.547473508864641e-13,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 3,
+    "slot": 0,
+    "history_days": [
+      1,
+      2
+    ],
+    "status": 0,
+    "gap": 2.5470252393977597e-05,
+    "seconds": 0.8822501000249758,
+    "residual": 1.6370904631912708e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 4,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3
+    ],
+    "status": 0,
+    "gap": 8.575470241744874e-05,
+    "seconds": 0.9875184000120498,
+    "residual": 1.745092959026806e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 5,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "status": 0,
+    "gap": 1.1300029305789244e-05,
+    "seconds": 1.6788990999921225,
+    "residual": 1.8530954548623413e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 6,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "status": 1,
+    "gap": 0.013591325191263007,
+    "seconds": 2.0662018000148237,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 7,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "status": 1,
+    "gap": 0.0003143495961779281,
+    "seconds": 2.025864899973385,
+    "residual": 1.1475265182525618e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 8,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "status": 1,
+    "gap": 0.013880179160742067,
+    "seconds": 2.027461699966807,
+    "residual": 1.4551915228366852e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 9,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "status": 1,
+    "gap": 0.022537627189388582,
+    "seconds": 2.0284987000050023,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 10,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      9
+    ],
+    "status": 1,
+    "gap": 0.00011486785298821008,
+    "seconds": 2.0271742999902926,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 11,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      10
+    ],
+    "status": 1,
+    "gap": 0.014859013473484948,
+    "seconds": 2.045882900012657,
+    "residual": 1.7962520360015333e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 12,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9,
+      11
+    ],
+    "status": 1,
+    "gap": 0.018347986292203286,
+    "seconds": 2.0385606000199914,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 13,
+    "slot": 0,
+    "history_days": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "status": 1,
+    "gap": 0.01421560322585954,
+    "seconds": 2.0565846000099555,
+    "residual": 1.318767317570746e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 14,
+    "slot": 0,
+    "history_days": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13
+    ],
+    "status": 1,
+    "gap": 0.016486114070194933,
+    "seconds": 2.0255624999990687,
+    "residual": 1.1823431123048067e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 15,
+    "slot": 0,
+    "history_days": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      14
+    ],
+    "status": 1,
+    "gap": 0.01717941210477392,
+    "seconds": 2.0738354999921285,
+    "residual": 7.929656931082718e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 16,
+    "slot": 0,
+    "history_days": [
+      1,
+      3,
+      5,
+      8,
+      10,
+      12,
+      15
+    ],
+    "status": 1,
+    "gap": 7.262830361687666e-05,
+    "seconds": 2.064023700018879,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 17,
+    "slot": 0,
+    "history_days": [
+      1,
+      3,
+      6,
+      8,
+      11,
+      13,
+      16
+    ],
+    "status": 1,
+    "gap": 0.0395786321135651,
+    "seconds": 2.0284880999824964,
+    "residual": 1.787014980436652e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 18,
+    "slot": 0,
+    "history_days": [
+      1,
+      3,
+      6,
+      9,
+      11,
+      14,
+      17
+    ],
+    "status": 1,
+    "gap": 4.2142013132840095e-06,
+    "seconds": 2.0276951999985613,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 19,
+    "slot": 0,
+    "history_days": [
+      1,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18
+    ],
+    "status": 0,
+    "gap": 2.176484905453901e-08,
+    "seconds": 1.704528999980539,
+    "residual": 1.2732925824820995e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 20,
+    "slot": 0,
+    "history_days": [
+      1,
+      4,
+      7,
+      10,
+      13,
+      16,
+      19
+    ],
+    "status": 1,
+    "gap": 0.012371325917529834,
+    "seconds": 2.038387500040699,
+    "residual": 1.7621459846850485e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 21,
+    "slot": 0,
+    "history_days": [
+      1,
+      4,
+      7,
+      10,
+      13,
+      16,
+      20
+    ],
+    "status": 1,
+    "gap": 0.009418905773683444,
+    "seconds": 2.0312416999950074,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 22,
+    "slot": 0,
+    "history_days": [
+      1,
+      4,
+      7,
+      11,
+      14,
+      17,
+      21
+    ],
+    "status": 1,
+    "gap": 0.010651789582530598,
+    "seconds": 2.0379278999753296,
+    "residual": 2.134470378223341e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 23,
+    "slot": 0,
+    "history_days": [
+      1,
+      4,
+      8,
+      11,
+      15,
+      18,
+      22
+    ],
+    "status": 1,
+    "gap": 0.04618313676497932,
+    "seconds": 2.0616861999733374,
+    "residual": 1.693933882052079e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 24,
+    "slot": 0,
+    "history_days": [
+      1,
+      4,
+      8,
+      12,
+      15,
+      19,
+      23
+    ],
+    "status": 1,
+    "gap": 0.04848771578903988,
+    "seconds": 2.0244925000006333,
+    "residual": 8.533618256478803e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 25,
+    "slot": 0,
+    "history_days": [
+      1,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "status": 1,
+    "gap": 0.009965219136824069,
+    "seconds": 2.079429399978835,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 26,
+    "slot": 0,
+    "history_days": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21,
+      25
+    ],
+    "status": 1,
+    "gap": 0.02439319683680019,
+    "seconds": 2.036551800032612,
+    "residual": 1.850324338192877e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 27,
+    "slot": 0,
+    "history_days": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21,
+      26
+    ],
+    "status": 1,
+    "gap": 0.014135972346751229,
+    "seconds": 2.073231099988334,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 28,
+    "slot": 0,
+    "history_days": [
+      1,
+      5,
+      9,
+      14,
+      18,
+      22,
+      27
+    ],
+    "status": 1,
+    "gap": 0.017296307940350922,
+    "seconds": 2.069094199978281,
+    "residual": 2.3646862246096134e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 29,
+    "slot": 0,
+    "history_days": [
+      1,
+      5,
+      10,
+      14,
+      19,
+      23,
+      28
+    ],
+    "status": 1,
+    "gap": 0.01848961513708278,
+    "seconds": 2.086039499961771,
+    "residual": 3.865352482534945e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 30,
+    "slot": 0,
+    "history_days": [
+      2,
+      6,
+      11,
+      15,
+      20,
+      24,
+      29
+    ],
+    "status": 1,
+    "gap": 0.17486304516759907,
+    "seconds": 2.0746819999767467,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 31,
+    "slot": 0,
+    "history_days": [
+      3,
+      7,
+      12,
+      16,
+      21,
+      25,
+      30
+    ],
+    "status": 1,
+    "gap": 0.16846698818728095,
+    "seconds": 2.0517608000081964,
+    "residual": 2.589217729109805e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 32,
+    "slot": 0,
+    "history_days": [
+      4,
+      8,
+      13,
+      17,
+      22,
+      26,
+      31
+    ],
+    "status": 1,
+    "gap": 0.008667473093905677,
+    "seconds": 2.024451000033878,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 33,
+    "slot": 0,
+    "history_days": [
+      5,
+      9,
+      14,
+      18,
+      23,
+      27,
+      32
+    ],
+    "status": 1,
+    "gap": 0.017942465113997046,
+    "seconds": 2.102366700011771,
+    "residual": 6.139089236967266e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 34,
+    "slot": 0,
+    "history_days": [
+      6,
+      10,
+      15,
+      19,
+      24,
+      28,
+      33
+    ],
+    "status": 1,
+    "gap": 4.630380645329908e-05,
+    "seconds": 2.0474115000106394,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 35,
+    "slot": 0,
+    "history_days": [
+      7,
+      11,
+      16,
+      20,
+      25,
+      29,
+      34
+    ],
+    "status": 1,
+    "gap": 0.016228885679964725,
+    "seconds": 2.0262292999541387,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 36,
+    "slot": 0,
+    "history_days": [
+      8,
+      12,
+      17,
+      21,
+      26,
+      30,
+      35
+    ],
+    "status": 1,
+    "gap": 0.013511834127129502,
+    "seconds": 2.0420921000186354,
+    "residual": 3.865352482534945e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 37,
+    "slot": 0,
+    "history_days": [
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      36
+    ],
+    "status": 1,
+    "gap": 3.56521058036167e-05,
+    "seconds": 2.029417600017041,
+    "residual": 2.0099832909181714e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 38,
+    "slot": 0,
+    "history_days": [
+      10,
+      14,
+      19,
+      23,
+      28,
+      32,
+      37
+    ],
+    "status": 1,
+    "gap": 0.2111005460825432,
+    "seconds": 2.0333034999785013,
+    "residual": 1.1709744285326451e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 39,
+    "slot": 0,
+    "history_days": [
+      11,
+      15,
+      20,
+      24,
+      29,
+      33,
+      38
+    ],
+    "status": 1,
+    "gap": 0.012152503747564963,
+    "seconds": 2.025742599973455,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 40,
+    "slot": 0,
+    "history_days": [
+      12,
+      16,
+      21,
+      25,
+      30,
+      34,
+      39
+    ],
+    "status": 1,
+    "gap": 0.018172882220229912,
+    "seconds": 2.0472295000217855,
+    "residual": 5.9401372709544376e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 41,
+    "slot": 0,
+    "history_days": [
+      13,
+      17,
+      22,
+      26,
+      31,
+      35,
+      40
+    ],
+    "status": 1,
+    "gap": 0.00015037171961364274,
+    "seconds": 2.1324199000373483,
+    "residual": 7.503331289626658e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 42,
+    "slot": 0,
+    "history_days": [
+      14,
+      18,
+      23,
+      27,
+      32,
+      36,
+      41
+    ],
+    "status": 1,
+    "gap": 0.020285331800702366,
+    "seconds": 2.028663700039033,
+    "residual": 2.609112925711088e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 43,
+    "slot": 0,
+    "history_days": [
+      15,
+      19,
+      24,
+      28,
+      33,
+      37,
+      42
+    ],
+    "status": 1,
+    "gap": 0.014536719535162019,
+    "seconds": 2.0639555999659933,
+    "residual": 1.7138290786533616e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 44,
+    "slot": 0,
+    "history_days": [
+      16,
+      20,
+      25,
+      29,
+      34,
+      38,
+      43
+    ],
+    "status": 1,
+    "gap": 0.19660712038743308,
+    "seconds": 2.0420635000336915,
+    "residual": 3.524291969370097e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 45,
+    "slot": 0,
+    "history_days": [
+      17,
+      21,
+      26,
+      30,
+      35,
+      39,
+      44
+    ],
+    "status": 1,
+    "gap": 0.26029671495012374,
+    "seconds": 2.067154699994717,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 46,
+    "slot": 0,
+    "history_days": [
+      18,
+      22,
+      27,
+      31,
+      36,
+      40,
+      45
+    ],
+    "status": 1,
+    "gap": 0.004158220681187932,
+    "seconds": 2.036353599978611,
+    "residual": 1.6370904631912708e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 47,
+    "slot": 0,
+    "history_days": [
+      19,
+      23,
+      28,
+      32,
+      37,
+      41,
+      46
+    ],
+    "status": 1,
+    "gap": 0.014254149468064688,
+    "seconds": 2.026930300053209,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 48,
+    "slot": 0,
+    "history_days": [
+      20,
+      24,
+      29,
+      33,
+      38,
+      42,
+      47
+    ],
+    "status": 1,
+    "gap": 0.016484637434453504,
+    "seconds": 2.027025700022932,
+    "residual": 1.000444171950221e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 49,
+    "slot": 0,
+    "history_days": [
+      21,
+      25,
+      30,
+      34,
+      39,
+      43,
+      48
+    ],
+    "status": 1,
+    "gap": 0.027799400760422376,
+    "seconds": 2.033849100000225,
+    "residual": 5.1159076974727213e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 50,
+    "slot": 0,
+    "history_days": [
+      22,
+      26,
+      31,
+      35,
+      40,
+      44,
+      49
+    ],
+    "status": 1,
+    "gap": 0.0007484147132334215,
+    "seconds": 2.0755489000002854,
+    "residual": 7.256630851770751e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 51,
+    "slot": 0,
+    "history_days": [
+      23,
+      27,
+      32,
+      36,
+      41,
+      45,
+      50
+    ],
+    "status": 1,
+    "gap": 0.2137972716400813,
+    "seconds": 2.06529049994424,
+    "residual": 8.29913915367797e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 52,
+    "slot": 0,
+    "history_days": [
+      24,
+      28,
+      33,
+      37,
+      42,
+      46,
+      51
+    ],
+    "status": 1,
+    "gap": 0.24923436533334828,
+    "seconds": 2.0817281999625266,
+    "residual": 8.01492205937393e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 53,
+    "slot": 0,
+    "history_days": [
+      25,
+      29,
+      34,
+      38,
+      43,
+      47,
+      52
+    ],
+    "status": 1,
+    "gap": 0.011154930351171419,
+    "seconds": 2.0903039000113495,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 54,
+    "slot": 0,
+    "history_days": [
+      26,
+      30,
+      35,
+      39,
+      44,
+      48,
+      53
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.661211300001014,
+    "residual": 1.2582859199028462e-09,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 55,
+    "slot": 0,
+    "history_days": [
+      27,
+      31,
+      36,
+      40,
+      45,
+      49,
+      54
+    ],
+    "status": 1,
+    "gap": 4.204290242251931e-06,
+    "seconds": 2.0660200999700464,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 56,
+    "slot": 0,
+    "history_days": [
+      28,
+      32,
+      37,
+      41,
+      46,
+      50,
+      55
+    ],
+    "status": 1,
+    "gap": 0.04551040886628142,
+    "seconds": 2.050584999960847,
+    "residual": 3.205968823749572e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 57,
+    "slot": 0,
+    "history_days": [
+      29,
+      33,
+      38,
+      42,
+      47,
+      51,
+      56
+    ],
+    "status": 1,
+    "gap": 0.0019913376419865565,
+    "seconds": 2.0683229000424035,
+    "residual": 4.5702108764089644e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 58,
+    "slot": 0,
+    "history_days": [
+      30,
+      34,
+      39,
+      43,
+      48,
+      52,
+      57
+    ],
+    "status": 1,
+    "gap": 0.002530669129439825,
+    "seconds": 2.0486241000471637,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 59,
+    "slot": 0,
+    "history_days": [
+      31,
+      35,
+      40,
+      44,
+      49,
+      53,
+      58
+    ],
+    "status": 1,
+    "gap": 0.23162424308381943,
+    "seconds": 2.054398400010541,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 60,
+    "slot": 0,
+    "history_days": [
+      32,
+      36,
+      41,
+      45,
+      50,
+      54,
+      59
+    ],
+    "status": 1,
+    "gap": 0.0014051394597137102,
+    "seconds": 2.0670609999797307,
+    "residual": 2.0747847884194925e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 61,
+    "slot": 0,
+    "history_days": [
+      33,
+      37,
+      42,
+      46,
+      51,
+      55,
+      60
+    ],
+    "status": 1,
+    "gap": 0.022733276613710777,
+    "seconds": 2.032111199980136,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 62,
+    "slot": 0,
+    "history_days": [
+      34,
+      38,
+      43,
+      47,
+      52,
+      56,
+      61
+    ],
+    "status": 1,
+    "gap": 0.0008263048927419004,
+    "seconds": 2.0288263999973424,
+    "residual": 4.002131959168764e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 63,
+    "slot": 0,
+    "history_days": [
+      35,
+      39,
+      44,
+      48,
+      53,
+      57,
+      62
+    ],
+    "status": 1,
+    "gap": 5.643542161363224e-05,
+    "seconds": 2.03908150002826,
+    "residual": 6.539835339935962e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 64,
+    "slot": 0,
+    "history_days": [
+      36,
+      40,
+      45,
+      49,
+      54,
+      58,
+      63
+    ],
+    "status": 1,
+    "gap": 0.03562275102775218,
+    "seconds": 2.0355091999517754,
+    "residual": 1.9326762412674725e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 3.410605131648481e-13
+  },
+  {
+    "day": 65,
+    "slot": 0,
+    "history_days": [
+      37,
+      41,
+      46,
+      50,
+      55,
+      59,
+      64
+    ],
+    "status": 1,
+    "gap": 0.2643267720969698,
+    "seconds": 2.042204800003674,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 66,
+    "slot": 0,
+    "history_days": [
+      38,
+      42,
+      47,
+      51,
+      56,
+      60,
+      65
+    ],
+    "status": 1,
+    "gap": 0.003039316049617465,
+    "seconds": 2.0315158999874257,
+    "residual": 7.503331289626658e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 67,
+    "slot": 0,
+    "history_days": [
+      39,
+      43,
+      48,
+      52,
+      57,
+      61,
+      66
+    ],
+    "status": 1,
+    "gap": 0.0004154003678994297,
+    "seconds": 2.0437767999828793,
+    "residual": 3.603872755775228e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 68,
+    "slot": 0,
+    "history_days": [
+      40,
+      44,
+      49,
+      53,
+      58,
+      62,
+      67
+    ],
+    "status": 1,
+    "gap": 3.547088978478678e-05,
+    "seconds": 2.02996479999274,
+    "residual": 1.7280399333685637e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 69,
+    "slot": 0,
+    "history_days": [
+      41,
+      45,
+      50,
+      54,
+      59,
+      63,
+      68
+    ],
+    "status": 1,
+    "gap": 0.10013265622822218,
+    "seconds": 2.058685299998615,
+    "residual": 1.1141310096718371e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 70,
+    "slot": 0,
+    "history_days": [
+      42,
+      46,
+      51,
+      55,
+      60,
+      64,
+      69
+    ],
+    "status": 1,
+    "gap": 0.01262096631062131,
+    "seconds": 2.0516180000267923,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 71,
+    "slot": 0,
+    "history_days": [
+      43,
+      47,
+      52,
+      56,
+      61,
+      65,
+      70
+    ],
+    "status": 1,
+    "gap": 5.347820322048734e-05,
+    "seconds": 2.0772523999912664,
+    "residual": 2.070521532004932e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 72,
+    "slot": 0,
+    "history_days": [
+      44,
+      48,
+      53,
+      57,
+      62,
+      66,
+      71
+    ],
+    "status": 1,
+    "gap": 0.2632863024518547,
+    "seconds": 2.090208999987226,
+    "residual": 7.673861546209082e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 73,
+    "slot": 0,
+    "history_days": [
+      45,
+      49,
+      54,
+      58,
+      63,
+      67,
+      72
+    ],
+    "status": 1,
+    "gap": 0.3343574077296321,
+    "seconds": 2.097526800003834,
+    "residual": 1.9895196601282805e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 74,
+    "slot": 0,
+    "history_days": [
+      46,
+      50,
+      55,
+      59,
+      64,
+      68,
+      73
+    ],
+    "status": 1,
+    "gap": 1.5636395040847061e-06,
+    "seconds": 2.138667399995029,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 75,
+    "slot": 0,
+    "history_days": [
+      47,
+      51,
+      56,
+      60,
+      65,
+      69,
+      74
+    ],
+    "status": 1,
+    "gap": 0.0006597483414524815,
+    "seconds": 2.186345999944024,
+    "residual": 1.4011902749189176e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 76,
+    "slot": 0,
+    "history_days": [
+      48,
+      52,
+      57,
+      61,
+      66,
+      70,
+      75
+    ],
+    "status": 1,
+    "gap": 0.0009655115708540696,
+    "seconds": 2.0547974000219256,
+    "residual": 1.4210854715202004e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 77,
+    "slot": 0,
+    "history_days": [
+      49,
+      53,
+      58,
+      62,
+      67,
+      71,
+      76
+    ],
+    "status": 1,
+    "gap": 0.00013383288631085662,
+    "seconds": 2.029974900011439,
+    "residual": 5.6161297834478144e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 78,
+    "slot": 0,
+    "history_days": [
+      50,
+      54,
+      59,
+      63,
+      68,
+      72,
+      77
+    ],
+    "status": 1,
+    "gap": 6.879784219123789e-05,
+    "seconds": 2.081905899976846,
+    "residual": 9.453771099288133e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 79,
+    "slot": 0,
+    "history_days": [
+      51,
+      55,
+      60,
+      64,
+      69,
+      73,
+      78
+    ],
+    "status": 1,
+    "gap": 0.0019734751304269073,
+    "seconds": 2.030360099975951,
+    "residual": 1.0970779840135947e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 80,
+    "slot": 0,
+    "history_days": [
+      52,
+      56,
+      61,
+      65,
+      70,
+      74,
+      79
+    ],
+    "status": 1,
+    "gap": 0.2599468375927455,
+    "seconds": 2.0918163000023924,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 81,
+    "slot": 0,
+    "history_days": [
+      53,
+      57,
+      62,
+      66,
+      71,
+      75,
+      80
+    ],
+    "status": 1,
+    "gap": 9.390019102489406e-05,
+    "seconds": 2.03245420003077,
+    "residual": 5.093170329928398e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 82,
+    "slot": 0,
+    "history_days": [
+      54,
+      58,
+      63,
+      67,
+      72,
+      76,
+      81
+    ],
+    "status": 1,
+    "gap": 0.04431662502159784,
+    "seconds": 2.0570128000108525,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 83,
+    "slot": 0,
+    "history_days": [
+      55,
+      59,
+      64,
+      68,
+      73,
+      77,
+      82
+    ],
+    "status": 1,
+    "gap": 0.0011742938240544825,
+    "seconds": 2.084197200019844,
+    "residual": 2.6183499812759692e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 84,
+    "slot": 0,
+    "history_days": [
+      56,
+      60,
+      65,
+      69,
+      74,
+      78,
+      83
+    ],
+    "status": 1,
+    "gap": 3.817911712259909e-05,
+    "seconds": 2.029927299998235,
+    "residual": 1.8189894035458565e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 85,
+    "slot": 0,
+    "history_days": [
+      57,
+      61,
+      66,
+      70,
+      75,
+      79,
+      84
+    ],
+    "status": 1,
+    "gap": 0.0010387566986686694,
+    "seconds": 2.035522799997125,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 86,
+    "slot": 0,
+    "history_days": [
+      58,
+      62,
+      67,
+      71,
+      76,
+      80,
+      85
+    ],
+    "status": 1,
+    "gap": 0.25599350973990326,
+    "seconds": 2.0329578000237234,
+    "residual": 5.144329406903125e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 87,
+    "slot": 0,
+    "history_days": [
+      59,
+      63,
+      68,
+      72,
+      77,
+      81,
+      86
+    ],
+    "status": 1,
+    "gap": 0.07966767579545181,
+    "seconds": 2.036020200001076,
+    "residual": 4.376943252282217e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 88,
+    "slot": 0,
+    "history_days": [
+      60,
+      64,
+      69,
+      73,
+      78,
+      82,
+      87
+    ],
+    "status": 1,
+    "gap": 4.3300198640579546e-05,
+    "seconds": 2.1574536999687552,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 89,
+    "slot": 0,
+    "history_days": [
+      61,
+      65,
+      70,
+      74,
+      79,
+      83,
+      88
+    ],
+    "status": 1,
+    "gap": 0.12251319080350655,
+    "seconds": 2.044885899988003,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 90,
+    "slot": 0,
+    "history_days": [
+      62,
+      66,
+      71,
+      75,
+      80,
+      84,
+      89
+    ],
+    "status": 1,
+    "gap": 0.023833459952700135,
+    "seconds": 2.0416107999626547,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 91,
+    "slot": 0,
+    "history_days": [
+      63,
+      67,
+      72,
+      76,
+      81,
+      85,
+      90
+    ],
+    "status": 1,
+    "gap": 2.6981097573272807e-05,
+    "seconds": 2.2098991999519058,
+    "residual": 4.774847184307873e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 92,
+    "slot": 0,
+    "history_days": [
+      64,
+      68,
+      73,
+      77,
+      82,
+      86,
+      91
+    ],
+    "status": 1,
+    "gap": 0.03678872133031208,
+    "seconds": 2.054171999974642,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 93,
+    "slot": 0,
+    "history_days": [
+      65,
+      69,
+      74,
+      78,
+      83,
+      87,
+      92
+    ],
+    "status": 1,
+    "gap": 0.0032820655174746302,
+    "seconds": 2.0979312999988906,
+    "residual": 3.694822225952521e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 94,
+    "slot": 0,
+    "history_days": [
+      66,
+      70,
+      75,
+      79,
+      84,
+      88,
+      93
+    ],
+    "status": 1,
+    "gap": 0.3174070277370089,
+    "seconds": 2.1180749000050128,
+    "residual": 9.094947017729282e-13,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 95,
+    "slot": 0,
+    "history_days": [
+      67,
+      71,
+      76,
+      80,
+      85,
+      89,
+      94
+    ],
+    "status": 1,
+    "gap": 0.0005026180058287523,
+    "seconds": 2.0411203000112437,
+    "residual": 7.048583938740194e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 96,
+    "slot": 0,
+    "history_days": [
+      68,
+      72,
+      77,
+      81,
+      86,
+      90,
+      95
+    ],
+    "status": 1,
+    "gap": 0.0001328110561284379,
+    "seconds": 2.0275813000043854,
+    "residual": 4.956746124662459e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 97,
+    "slot": 0,
+    "history_days": [
+      69,
+      73,
+      78,
+      82,
+      87,
+      91,
+      96
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.9608578000334091,
+    "residual": 2.3879898453541778e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 98,
+    "slot": 0,
+    "history_days": [
+      70,
+      74,
+      79,
+      83,
+      88,
+      92,
+      97
+    ],
+    "status": 1,
+    "gap": 0.0003014432570008963,
+    "seconds": 2.0951519000227563,
+    "residual": 2.4833427183624646e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 99,
+    "slot": 0,
+    "history_days": [
+      71,
+      75,
+      80,
+      84,
+      89,
+      93,
+      98
+    ],
+    "status": 1,
+    "gap": 3.022562780722242e-06,
+    "seconds": 2.095757599978242,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 100,
+    "slot": 0,
+    "history_days": [
+      72,
+      76,
+      81,
+      85,
+      90,
+      94,
+      99
+    ],
+    "status": 1,
+    "gap": 0.034133989203365314,
+    "seconds": 2.0278827999718487,
+    "residual": 6.30961949354969e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 101,
+    "slot": 0,
+    "history_days": [
+      73,
+      77,
+      82,
+      86,
+      91,
+      95,
+      100
+    ],
+    "status": 1,
+    "gap": 0.0013527844039161142,
+    "seconds": 2.056442299974151,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 102,
+    "slot": 0,
+    "history_days": [
+      74,
+      78,
+      83,
+      87,
+      92,
+      96,
+      101
+    ],
+    "status": 1,
+    "gap": 6.65344947372392e-05,
+    "seconds": 2.0390750999795273,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 103,
+    "slot": 0,
+    "history_days": [
+      75,
+      79,
+      84,
+      88,
+      93,
+      97,
+      102
+    ],
+    "status": 1,
+    "gap": 0.11548976849691064,
+    "seconds": 2.0254775999928825,
+    "residual": 7.16227077646181e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 104,
+    "slot": 0,
+    "history_days": [
+      76,
+      80,
+      85,
+      89,
+      94,
+      98,
+      103
+    ],
+    "status": 1,
+    "gap": 0.12917596389313385,
+    "seconds": 2.0771625000052154,
+    "residual": 6.821210263296962e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 105,
+    "slot": 0,
+    "history_days": [
+      77,
+      81,
+      86,
+      90,
+      95,
+      99,
+      104
+    ],
+    "status": 1,
+    "gap": 0.0005929114576319925,
+    "seconds": 2.084514099988155,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 106,
+    "slot": 0,
+    "history_days": [
+      78,
+      82,
+      87,
+      91,
+      96,
+      100,
+      105
+    ],
+    "status": 1,
+    "gap": 0.12434056293485966,
+    "seconds": 2.051779900037218,
+    "residual": 4.320099833421409e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 107,
+    "slot": 0,
+    "history_days": [
+      79,
+      83,
+      88,
+      92,
+      97,
+      101,
+      106
+    ],
+    "status": 1,
+    "gap": 0.35456941143635323,
+    "seconds": 2.048653200035915,
+    "residual": 1.1937117960769683e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 108,
+    "slot": 0,
+    "history_days": [
+      80,
+      84,
+      89,
+      93,
+      98,
+      102,
+      107
+    ],
+    "status": 1,
+    "gap": 0.0016304940107064762,
+    "seconds": 2.028390899999067,
+    "residual": 1.8530954548623413e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 109,
+    "slot": 0,
+    "history_days": [
+      81,
+      85,
+      90,
+      94,
+      99,
+      103,
+      108
+    ],
+    "status": 1,
+    "gap": 0.12906622707573503,
+    "seconds": 2.084043600014411,
+    "residual": 3.069544618483633e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 110,
+    "slot": 0,
+    "history_days": [
+      82,
+      86,
+      91,
+      95,
+      100,
+      104,
+      109
+    ],
+    "status": 1,
+    "gap": 0.06400798608744636,
+    "seconds": 2.027580299996771,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 111,
+    "slot": 0,
+    "history_days": [
+      83,
+      87,
+      92,
+      96,
+      101,
+      105,
+      110
+    ],
+    "status": 1,
+    "gap": 0.13044643001425543,
+    "seconds": 2.0665857000276446,
+    "residual": 1.000444171950221e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 112,
+    "slot": 0,
+    "history_days": [
+      84,
+      88,
+      93,
+      97,
+      102,
+      106,
+      111
+    ],
+    "status": 1,
+    "gap": 0.14224471654346593,
+    "seconds": 2.0360228999634273,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 113,
+    "slot": 0,
+    "history_days": [
+      85,
+      89,
+      94,
+      98,
+      103,
+      107,
+      112
+    ],
+    "status": 1,
+    "gap": 0.12419282488629173,
+    "seconds": 2.049859300022945,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 114,
+    "slot": 0,
+    "history_days": [
+      86,
+      90,
+      95,
+      99,
+      104,
+      108,
+      113
+    ],
+    "status": 1,
+    "gap": 0.0004207277718288032,
+    "seconds": 2.031661199987866,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 115,
+    "slot": 0,
+    "history_days": [
+      87,
+      91,
+      96,
+      100,
+      105,
+      109,
+      114
+    ],
+    "status": 1,
+    "gap": 0.0006455344866568678,
+    "seconds": 2.0346853000228293,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 116,
+    "slot": 0,
+    "history_days": [
+      88,
+      92,
+      97,
+      101,
+      106,
+      110,
+      115
+    ],
+    "status": 1,
+    "gap": 0.1522969374356292,
+    "seconds": 2.0748400000156835,
+    "residual": 5.5706550483591855e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 117,
+    "slot": 0,
+    "history_days": [
+      89,
+      93,
+      98,
+      102,
+      107,
+      111,
+      116
+    ],
+    "status": 1,
+    "gap": 2.391555320455374e-05,
+    "seconds": 2.048766399966553,
+    "residual": 8.29913915367797e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 118,
+    "slot": 0,
+    "history_days": [
+      90,
+      94,
+      99,
+      103,
+      108,
+      112,
+      117
+    ],
+    "status": 1,
+    "gap": 0.11664167953110449,
+    "seconds": 2.0698063999880105,
+    "residual": 5.9117155615240335e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 119,
+    "slot": 0,
+    "history_days": [
+      91,
+      95,
+      100,
+      104,
+      109,
+      113,
+      118
+    ],
+    "status": 1,
+    "gap": 0.1649942017126425,
+    "seconds": 2.061377400008496,
+    "residual": 5.343281372915953e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 120,
+    "slot": 0,
+    "history_days": [
+      92,
+      96,
+      101,
+      105,
+      110,
+      114,
+      119
+    ],
+    "status": 1,
+    "gap": 0.0008531588006272235,
+    "seconds": 2.0303111000102945,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 121,
+    "slot": 0,
+    "history_days": [
+      93,
+      97,
+      102,
+      106,
+      111,
+      115,
+      120
+    ],
+    "status": 1,
+    "gap": 0.0012876104829166964,
+    "seconds": 2.0394127999898046,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 122,
+    "slot": 0,
+    "history_days": [
+      94,
+      98,
+      103,
+      107,
+      112,
+      116,
+      121
+    ],
+    "status": 1,
+    "gap": 0.31179870167956897,
+    "seconds": 2.0291608000406995,
+    "residual": 3.0269120543380268e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 123,
+    "slot": 0,
+    "history_days": [
+      95,
+      99,
+      104,
+      108,
+      113,
+      117,
+      122
+    ],
+    "status": 1,
+    "gap": 0.13177458209949214,
+    "seconds": 2.0298101999796927,
+    "residual": 8.753886504564434e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 124,
+    "slot": 0,
+    "history_days": [
+      96,
+      100,
+      105,
+      109,
+      114,
+      118,
+      123
+    ],
+    "status": 1,
+    "gap": 0.0003869965685557676,
+    "seconds": 2.0284499999834225,
+    "residual": 8.185452315956354e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 125,
+    "slot": 0,
+    "history_days": [
+      97,
+      101,
+      106,
+      110,
+      115,
+      119,
+      124
+    ],
+    "status": 1,
+    "gap": 0.0015381675900528148,
+    "seconds": 2.028037200041581,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 126,
+    "slot": 0,
+    "history_days": [
+      98,
+      102,
+      107,
+      111,
+      116,
+      120,
+      125
+    ],
+    "status": 1,
+    "gap": 0.10309458766117681,
+    "seconds": 2.0719617000431754,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 127,
+    "slot": 0,
+    "history_days": [
+      99,
+      103,
+      108,
+      112,
+      117,
+      121,
+      126
+    ],
+    "status": 1,
+    "gap": 0.03532902644358662,
+    "seconds": 2.0311874999897555,
+    "residual": 2.3646862246096134e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 128,
+    "slot": 0,
+    "history_days": [
+      100,
+      104,
+      109,
+      113,
+      118,
+      122,
+      127
+    ],
+    "status": 1,
+    "gap": 0.0007910920684468061,
+    "seconds": 2.0622543999925256,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 129,
+    "slot": 0,
+    "history_days": [
+      101,
+      105,
+      110,
+      114,
+      119,
+      123,
+      128
+    ],
+    "status": 1,
+    "gap": 0.0020645284956874893,
+    "seconds": 2.0666505999979563,
+    "residual": 5.515544128826827e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 130,
+    "slot": 0,
+    "history_days": [
+      102,
+      106,
+      111,
+      115,
+      120,
+      124,
+      129
+    ],
+    "status": 1,
+    "gap": 0.046755944107209846,
+    "seconds": 2.0640637000324205,
+    "residual": 1.8600232465360023e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 131,
+    "slot": 0,
+    "history_days": [
+      103,
+      107,
+      112,
+      116,
+      121,
+      125,
+      130
+    ],
+    "status": 1,
+    "gap": 0.0032882716765481844,
+    "seconds": 2.068327800021507,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 132,
+    "slot": 0,
+    "history_days": [
+      104,
+      108,
+      113,
+      117,
+      122,
+      126,
+      131
+    ],
+    "status": 1,
+    "gap": 0.055210697770908854,
+    "seconds": 2.0286405999795534,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 133,
+    "slot": 0,
+    "history_days": [
+      105,
+      109,
+      114,
+      118,
+      123,
+      127,
+      132
+    ],
+    "status": 1,
+    "gap": 0.11903945791073847,
+    "seconds": 2.0687425999785773,
+    "residual": 1.885780420707306e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 134,
+    "slot": 0,
+    "history_days": [
+      106,
+      110,
+      115,
+      119,
+      124,
+      128,
+      133
+    ],
+    "status": 1,
+    "gap": 0.11216374329848453,
+    "seconds": 2.0476557000074536,
+    "residual": 6.366462912410498e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 135,
+    "slot": 0,
+    "history_days": [
+      107,
+      111,
+      116,
+      120,
+      125,
+      129,
+      134
+    ],
+    "status": 1,
+    "gap": 0.0014242733472024584,
+    "seconds": 2.0295153000042774,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 136,
+    "slot": 0,
+    "history_days": [
+      108,
+      112,
+      117,
+      121,
+      126,
+      130,
+      135
+    ],
+    "status": 1,
+    "gap": 0.001518720712449332,
+    "seconds": 2.030629399989266,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 137,
+    "slot": 0,
+    "history_days": [
+      109,
+      113,
+      118,
+      122,
+      127,
+      131,
+      136
+    ],
+    "status": 1,
+    "gap": 0.038599146336542045,
+    "seconds": 2.0580060000065714,
+    "residual": 2.546585164964199e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 138,
+    "slot": 0,
+    "history_days": [
+      110,
+      114,
+      119,
+      123,
+      128,
+      132,
+      137
+    ],
+    "status": 1,
+    "gap": 0.11020095398279897,
+    "seconds": 2.0432151000131853,
+    "residual": 4.206412995699793e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 139,
+    "slot": 0,
+    "history_days": [
+      111,
+      115,
+      120,
+      124,
+      129,
+      133,
+      138
+    ],
+    "status": 1,
+    "gap": 0.10503040597188916,
+    "seconds": 2.068877700017765,
+    "residual": 2.5011104298755527e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 140,
+    "slot": 0,
+    "history_days": [
+      112,
+      116,
+      121,
+      125,
+      130,
+      134,
+      139
+    ],
+    "status": 1,
+    "gap": 0.0007539796880522645,
+    "seconds": 2.1683677999535576,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 141,
+    "slot": 0,
+    "history_days": [
+      113,
+      117,
+      122,
+      126,
+      131,
+      135,
+      140
+    ],
+    "status": 1,
+    "gap": 0.1308510503317476,
+    "seconds": 2.029023999988567,
+    "residual": 1.77351466845721e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 142,
+    "slot": 0,
+    "history_days": [
+      114,
+      118,
+      123,
+      127,
+      132,
+      136,
+      141
+    ],
+    "status": 1,
+    "gap": 0.0016169584539903836,
+    "seconds": 2.0292895000311546,
+    "residual": 9.163159120362252e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 143,
+    "slot": 0,
+    "history_days": [
+      115,
+      119,
+      124,
+      128,
+      133,
+      137,
+      142
+    ],
+    "status": 1,
+    "gap": 0.333626196497905,
+    "seconds": 2.0689382000127807,
+    "residual": 2.5295321393059567e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 144,
+    "slot": 0,
+    "history_days": [
+      116,
+      120,
+      125,
+      129,
+      134,
+      138,
+      143
+    ],
+    "status": 1,
+    "gap": 0.0987031671698095,
+    "seconds": 2.031692899996415,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 145,
+    "slot": 0,
+    "history_days": [
+      117,
+      121,
+      126,
+      130,
+      135,
+      139,
+      144
+    ],
+    "status": 1,
+    "gap": 0.0004157339552322056,
+    "seconds": 2.0269182000192814,
+    "residual": 9.038103598868474e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 146,
+    "slot": 0,
+    "history_days": [
+      118,
+      122,
+      127,
+      131,
+      136,
+      140,
+      145
+    ],
+    "status": 1,
+    "gap": 0.13766754937659764,
+    "seconds": 2.0722996999975294,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 147,
+    "slot": 0,
+    "history_days": [
+      119,
+      123,
+      128,
+      132,
+      137,
+      141,
+      146
+    ],
+    "status": 1,
+    "gap": 1.5080448151978766e-05,
+    "seconds": 2.0482407999807037,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 148,
+    "slot": 0,
+    "history_days": [
+      120,
+      124,
+      129,
+      133,
+      138,
+      142,
+      147
+    ],
+    "status": 1,
+    "gap": 0.00695015688073328,
+    "seconds": 2.0289925999823026,
+    "residual": 1.3528733688872308e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 149,
+    "slot": 0,
+    "history_days": [
+      121,
+      125,
+      130,
+      134,
+      139,
+      143,
+      148
+    ],
+    "status": 1,
+    "gap": 0.0012971588147814692,
+    "seconds": 2.048858299967833,
+    "residual": 1.589484099895344e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 150,
+    "slot": 0,
+    "history_days": [
+      122,
+      126,
+      131,
+      135,
+      140,
+      144,
+      149
+    ],
+    "status": 1,
+    "gap": 0.00043822758016960086,
+    "seconds": 2.073200499988161,
+    "residual": 5.6843418860808015e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 151,
+    "slot": 0,
+    "history_days": [
+      123,
+      127,
+      132,
+      136,
+      141,
+      145,
+      150
+    ],
+    "status": 1,
+    "gap": 0.021450041206565712,
+    "seconds": 2.066947999992408,
+    "residual": 3.183231456205249e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 152,
+    "slot": 0,
+    "history_days": [
+      124,
+      128,
+      133,
+      137,
+      142,
+      146,
+      151
+    ],
+    "status": 0,
+    "gap": 1.438286703659639e-16,
+    "seconds": 1.835585799999535,
+    "residual": 1.77351466845721e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 153,
+    "slot": 0,
+    "history_days": [
+      125,
+      129,
+      134,
+      138,
+      143,
+      147,
+      152
+    ],
+    "status": 1,
+    "gap": 0.023990238605949756,
+    "seconds": 2.0814414999913424,
+    "residual": 2.9558577807620168e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 154,
+    "slot": 0,
+    "history_days": [
+      126,
+      130,
+      135,
+      139,
+      144,
+      148,
+      153
+    ],
+    "status": 1,
+    "gap": 4.163191267076972e-05,
+    "seconds": 2.19819920003647,
+    "residual": 2.3021584638627246e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 155,
+    "slot": 0,
+    "history_days": [
+      127,
+      131,
+      136,
+      140,
+      145,
+      149,
+      154
+    ],
+    "status": 1,
+    "gap": 0.00017468635113759617,
+    "seconds": 2.2069373999838717,
+    "residual": 4.348521542851813e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 156,
+    "slot": 0,
+    "history_days": [
+      128,
+      132,
+      137,
+      141,
+      146,
+      150,
+      155
+    ],
+    "status": 1,
+    "gap": 0.28398730158120244,
+    "seconds": 2.0739442000049166,
+    "residual": 5.8548721426632255e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 157,
+    "slot": 0,
+    "history_days": [
+      129,
+      133,
+      138,
+      142,
+      147,
+      151,
+      156
+    ],
+    "status": 0,
+    "gap": 1.137714098888685e-16,
+    "seconds": 1.7868648000294343,
+    "residual": 5.229594535194337e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 158,
+    "slot": 0,
+    "history_days": [
+      130,
+      134,
+      139,
+      143,
+      148,
+      152,
+      157
+    ],
+    "status": 1,
+    "gap": 0.00015802739491701793,
+    "seconds": 2.144526100018993,
+    "residual": 9.458744898438454e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 159,
+    "slot": 0,
+    "history_days": [
+      131,
+      135,
+      140,
+      144,
+      149,
+      153,
+      158
+    ],
+    "status": 1,
+    "gap": 0.0004317659054348784,
+    "seconds": 2.168222499953117,
+    "residual": 1.1823431123048067e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 160,
+    "slot": 0,
+    "history_days": [
+      132,
+      136,
+      141,
+      145,
+      150,
+      154,
+      159
+    ],
+    "status": 1,
+    "gap": 0.019234557634700812,
+    "seconds": 2.0581446000142023,
+    "residual": 7.929656931082718e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 161,
+    "slot": 0,
+    "history_days": [
+      133,
+      137,
+      142,
+      146,
+      151,
+      155,
+      160
+    ],
+    "status": 0,
+    "gap": 1.4440852544610077e-10,
+    "seconds": 1.3459740999969654,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 162,
+    "slot": 0,
+    "history_days": [
+      134,
+      138,
+      143,
+      147,
+      152,
+      156,
+      161
+    ],
+    "status": 1,
+    "gap": 0.032869728043085064,
+    "seconds": 2.033702499989886,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 163,
+    "slot": 0,
+    "history_days": [
+      135,
+      139,
+      144,
+      148,
+      153,
+      157,
+      162
+    ],
+    "status": 1,
+    "gap": 0.0004612941171563265,
+    "seconds": 2.195933800016064,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 164,
+    "slot": 0,
+    "history_days": [
+      136,
+      140,
+      145,
+      149,
+      154,
+      158,
+      163
+    ],
+    "status": 1,
+    "gap": 0.0005720314947876067,
+    "seconds": 2.029831900028512,
+    "residual": 4.376943252282217e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 165,
+    "slot": 0,
+    "history_days": [
+      137,
+      141,
+      146,
+      150,
+      155,
+      159,
+      164
+    ],
+    "status": 1,
+    "gap": 0.0630354060336849,
+    "seconds": 2.051097600022331,
+    "residual": 5.4001247917767614e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 166,
+    "slot": 0,
+    "history_days": [
+      138,
+      142,
+      147,
+      151,
+      156,
+      160,
+      165
+    ],
+    "status": 1,
+    "gap": 3.33213754949593e-05,
+    "seconds": 2.1223944000084884,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 167,
+    "slot": 0,
+    "history_days": [
+      139,
+      143,
+      148,
+      152,
+      157,
+      161,
+      166
+    ],
+    "status": 1,
+    "gap": 0.0006345263121415452,
+    "seconds": 2.037947400007397,
+    "residual": 4.234834705130197e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 168,
+    "slot": 0,
+    "history_days": [
+      140,
+      144,
+      149,
+      153,
+      158,
+      162,
+      167
+    ],
+    "status": 1,
+    "gap": 9.743874194761468e-06,
+    "seconds": 2.0315124999615364,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 169,
+    "slot": 0,
+    "history_days": [
+      141,
+      145,
+      150,
+      154,
+      159,
+      163,
+      168
+    ],
+    "status": 1,
+    "gap": 0.0008069963074568401,
+    "seconds": 2.035610099963378,
+    "residual": 6.366462912410498e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 170,
+    "slot": 0,
+    "history_days": [
+      142,
+      146,
+      151,
+      155,
+      160,
+      164,
+      169
+    ],
+    "status": 1,
+    "gap": 0.0026017390736904557,
+    "seconds": 2.0299253999837674,
+    "residual": 1.0516032489249483e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 171,
+    "slot": 0,
+    "history_days": [
+      143,
+      147,
+      152,
+      156,
+      161,
+      165,
+      170
+    ],
+    "status": 1,
+    "gap": 0.0005046841809908767,
+    "seconds": 2.057478100003209,
+    "residual": 1.0913936421275139e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 172,
+    "slot": 0,
+    "history_days": [
+      144,
+      148,
+      153,
+      157,
+      162,
+      166,
+      171
+    ],
+    "status": 1,
+    "gap": 2.4951255127702175e-06,
+    "seconds": 2.0560103000025265,
+    "residual": 8.640199666842818e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 173,
+    "slot": 0,
+    "history_days": [
+      145,
+      149,
+      154,
+      158,
+      163,
+      167,
+      172
+    ],
+    "status": 1,
+    "gap": 3.655923765949095e-05,
+    "seconds": 2.029112600022927,
+    "residual": 2.999911430379143e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 174,
+    "slot": 0,
+    "history_days": [
+      146,
+      150,
+      155,
+      159,
+      164,
+      168,
+      173
+    ],
+    "status": 0,
+    "gap": 6.278328571762432e-06,
+    "seconds": 1.9014616000349633,
+    "residual": 5.1969488611109325e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 175,
+    "slot": 0,
+    "history_days": [
+      147,
+      151,
+      156,
+      160,
+      165,
+      169,
+      174
+    ],
+    "status": 1,
+    "gap": 0.04996038737588763,
+    "seconds": 2.0686775000067428,
+    "residual": 1.1993961379630491e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 176,
+    "slot": 0,
+    "history_days": [
+      148,
+      152,
+      157,
+      161,
+      166,
+      170,
+      175
+    ],
+    "status": 1,
+    "gap": 0.0005782582617596526,
+    "seconds": 2.0418126999866217,
+    "residual": 2.1898927116126288e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 177,
+    "slot": 0,
+    "history_days": [
+      149,
+      153,
+      158,
+      162,
+      167,
+      171,
+      176
+    ],
+    "status": 1,
+    "gap": 0.2303218044743394,
+    "seconds": 2.039358500041999,
+    "residual": 2.3021584638627246e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 178,
+    "slot": 0,
+    "history_days": [
+      150,
+      154,
+      159,
+      163,
+      168,
+      172,
+      177
+    ],
+    "status": 1,
+    "gap": 0.00047127243678047535,
+    "seconds": 2.0512494000140578,
+    "residual": 4.695266397902742e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 179,
+    "slot": 0,
+    "history_days": [
+      151,
+      155,
+      160,
+      164,
+      169,
+      173,
+      178
+    ],
+    "status": 1,
+    "gap": 0.00011781498147108799,
+    "seconds": 2.0769815999665298,
+    "residual": 5.5138116294983774e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 180,
+    "slot": 0,
+    "history_days": [
+      152,
+      156,
+      161,
+      165,
+      170,
+      174,
+      179
+    ],
+    "status": 1,
+    "gap": 3.356297120393198e-05,
+    "seconds": 2.0742109999991953,
+    "residual": 1.4551915228366852e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 181,
+    "slot": 0,
+    "history_days": [
+      153,
+      157,
+      162,
+      166,
+      171,
+      175,
+      180
+    ],
+    "status": 1,
+    "gap": 1.938673244365136e-06,
+    "seconds": 2.073563300014939,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 182,
+    "slot": 0,
+    "history_days": [
+      154,
+      158,
+      163,
+      167,
+      172,
+      176,
+      181
+    ],
+    "status": 1,
+    "gap": 0.02893178489125841,
+    "seconds": 2.026070899970364,
+    "residual": 1.6370904631912708e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 183,
+    "slot": 0,
+    "history_days": [
+      155,
+      159,
+      164,
+      168,
+      173,
+      177,
+      182
+    ],
+    "status": 1,
+    "gap": 0.04152913142287117,
+    "seconds": 2.035970799974166,
+    "residual": 2.7614532882580534e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 184,
+    "slot": 0,
+    "history_days": [
+      156,
+      160,
+      165,
+      169,
+      174,
+      178,
+      183
+    ],
+    "status": 1,
+    "gap": 0.011684516438024392,
+    "seconds": 2.030196000006981,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 185,
+    "slot": 0,
+    "history_days": [
+      157,
+      161,
+      166,
+      170,
+      175,
+      179,
+      184
+    ],
+    "status": 1,
+    "gap": 0.02681409009975494,
+    "seconds": 2.0284613000112586,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 186,
+    "slot": 0,
+    "history_days": [
+      158,
+      162,
+      167,
+      171,
+      176,
+      180,
+      185
+    ],
+    "status": 1,
+    "gap": 0.030406376124943263,
+    "seconds": 2.075183500011917,
+    "residual": 2.5011104298755527e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 187,
+    "slot": 0,
+    "history_days": [
+      159,
+      163,
+      168,
+      172,
+      177,
+      181,
+      186
+    ],
+    "status": 1,
+    "gap": 0.022151697790022486,
+    "seconds": 2.042834900028538,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 188,
+    "slot": 0,
+    "history_days": [
+      160,
+      164,
+      169,
+      173,
+      178,
+      182,
+      187
+    ],
+    "status": 1,
+    "gap": 0.002363049119033422,
+    "seconds": 2.033590600010939,
+    "residual": 6.366462912410498e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 189,
+    "slot": 0,
+    "history_days": [
+      161,
+      165,
+      170,
+      174,
+      179,
+      183,
+      188
+    ],
+    "status": 1,
+    "gap": 0.0,
+    "seconds": 2.0322217000066303,
+    "residual": 3.8198777474462986e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 190,
+    "slot": 0,
+    "history_days": [
+      162,
+      166,
+      171,
+      175,
+      180,
+      184,
+      189
+    ],
+    "status": 1,
+    "gap": 0.053171350849741665,
+    "seconds": 2.0391728000249714,
+    "residual": 1.5063505998114124e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 191,
+    "slot": 0,
+    "history_days": [
+      163,
+      167,
+      172,
+      176,
+      181,
+      185,
+      190
+    ],
+    "status": 1,
+    "gap": 0.1524664093598878,
+    "seconds": 2.0808347000274807,
+    "residual": 5.6843418860808015e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 192,
+    "slot": 0,
+    "history_days": [
+      164,
+      168,
+      173,
+      177,
+      182,
+      186,
+      191
+    ],
+    "status": 1,
+    "gap": 0.00043413895988407775,
+    "seconds": 2.0347927000257187,
+    "residual": 1.9610979506978765e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 193,
+    "slot": 0,
+    "history_days": [
+      165,
+      169,
+      174,
+      178,
+      183,
+      187,
+      192
+    ],
+    "status": 1,
+    "gap": 0.03933455924577527,
+    "seconds": 2.0607113000005484,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 194,
+    "slot": 0,
+    "history_days": [
+      166,
+      170,
+      175,
+      179,
+      184,
+      188,
+      193
+    ],
+    "status": 1,
+    "gap": 5.781122266462182e-05,
+    "seconds": 2.029343299975153,
+    "residual": 1.1709744285326451e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 195,
+    "slot": 0,
+    "history_days": [
+      167,
+      171,
+      176,
+      180,
+      185,
+      189,
+      194
+    ],
+    "status": 1,
+    "gap": 0.015933499911594238,
+    "seconds": 2.0466370999929495,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 2.8421709430404007e-12
+  },
+  {
+    "day": 196,
+    "slot": 0,
+    "history_days": [
+      168,
+      172,
+      177,
+      181,
+      186,
+      190,
+      195
+    ],
+    "status": 1,
+    "gap": 0.03437114565751506,
+    "seconds": 2.078513299988117,
+    "residual": 5.808242775628969e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 197,
+    "slot": 0,
+    "history_days": [
+      169,
+      173,
+      178,
+      182,
+      187,
+      191,
+      196
+    ],
+    "status": 1,
+    "gap": 0.058668412816115935,
+    "seconds": 2.0294931000098586,
+    "residual": 1.963940121640917e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 198,
+    "slot": 0,
+    "history_days": [
+      170,
+      174,
+      179,
+      183,
+      188,
+      192,
+      197
+    ],
+    "status": 1,
+    "gap": 0.17929888855739173,
+    "seconds": 2.0957031000289135,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 199,
+    "slot": 0,
+    "history_days": [
+      171,
+      175,
+      180,
+      184,
+      189,
+      193,
+      198
+    ],
+    "status": 1,
+    "gap": 0.0004226773085537459,
+    "seconds": 2.0619032999966294,
+    "residual": 6.480149750132114e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 200,
+    "slot": 0,
+    "history_days": [
+      172,
+      176,
+      181,
+      185,
+      190,
+      194,
+      199
+    ],
+    "status": 1,
+    "gap": 0.020431691197273585,
+    "seconds": 2.064106800011359,
+    "residual": 8.668621376273222e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 201,
+    "slot": 0,
+    "history_days": [
+      173,
+      177,
+      182,
+      186,
+      191,
+      195,
+      200
+    ],
+    "status": 1,
+    "gap": 0.01709611477732878,
+    "seconds": 2.0906084000016563,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 202,
+    "slot": 0,
+    "history_days": [
+      174,
+      178,
+      183,
+      187,
+      192,
+      196,
+      201
+    ],
+    "status": 1,
+    "gap": 0.02513182974110161,
+    "seconds": 2.0753419999964535,
+    "residual": 7.560174708487466e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 203,
+    "slot": 0,
+    "history_days": [
+      175,
+      179,
+      184,
+      188,
+      193,
+      197,
+      202
+    ],
+    "status": 0,
+    "gap": 2.326425080228304e-06,
+    "seconds": 1.8664516000426374,
+    "residual": 1.559783413540572e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 204,
+    "slot": 0,
+    "history_days": [
+      176,
+      180,
+      185,
+      189,
+      194,
+      198,
+      203
+    ],
+    "status": 1,
+    "gap": 0.015767141014319527,
+    "seconds": 2.0278053999645635,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 205,
+    "slot": 0,
+    "history_days": [
+      177,
+      181,
+      186,
+      190,
+      195,
+      199,
+      204
+    ],
+    "status": 1,
+    "gap": 0.14778481575875596,
+    "seconds": 2.051186900003813,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 206,
+    "slot": 0,
+    "history_days": [
+      178,
+      182,
+      187,
+      191,
+      196,
+      200,
+      205
+    ],
+    "status": 1,
+    "gap": 0.15813309545543555,
+    "seconds": 2.084732699964661,
+    "residual": 4.888534022029489e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 207,
+    "slot": 0,
+    "history_days": [
+      179,
+      183,
+      188,
+      192,
+      197,
+      201,
+      206
+    ],
+    "status": 1,
+    "gap": 0.04178866969241015,
+    "seconds": 2.030149900005199,
+    "residual": 4.206412995699793e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 208,
+    "slot": 0,
+    "history_days": [
+      180,
+      184,
+      189,
+      193,
+      198,
+      202,
+      207
+    ],
+    "status": 0,
+    "gap": 6.886815045709552e-07,
+    "seconds": 1.9917619000189006,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 209,
+    "slot": 0,
+    "history_days": [
+      181,
+      185,
+      190,
+      194,
+      199,
+      203,
+      208
+    ],
+    "status": 1,
+    "gap": 0.031342261017665816,
+    "seconds": 2.044700299971737,
+    "residual": 4.547473508864641e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 210,
+    "slot": 0,
+    "history_days": [
+      182,
+      186,
+      191,
+      195,
+      200,
+      204,
+      209
+    ],
+    "status": 1,
+    "gap": 0.07900264540966856,
+    "seconds": 2.0839394999784417,
+    "residual": 1.2732925824820995e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 211,
+    "slot": 0,
+    "history_days": [
+      183,
+      187,
+      192,
+      196,
+      201,
+      205,
+      210
+    ],
+    "status": 1,
+    "gap": 0.019482802914446345,
+    "seconds": 2.044515399960801,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 212,
+    "slot": 0,
+    "history_days": [
+      184,
+      188,
+      193,
+      197,
+      202,
+      206,
+      211
+    ],
+    "status": 1,
+    "gap": 0.23600579494001672,
+    "seconds": 2.07997369999066,
+    "residual": 6.679101716144942e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 213,
+    "slot": 0,
+    "history_days": [
+      185,
+      189,
+      194,
+      198,
+      203,
+      207,
+      212
+    ],
+    "status": 1,
+    "gap": 0.0002636359667397517,
+    "seconds": 2.0284825999988243,
+    "residual": 1.1327756510581821e-09,
+    "scenario_cd_overlap": 8.65983463483394e-12,
+    "scenario_ce_overlap": 7.909205638009592e-12
+  },
+  {
+    "day": 214,
+    "slot": 0,
+    "history_days": [
+      186,
+      190,
+      195,
+      199,
+      204,
+      208,
+      213
+    ],
+    "status": 1,
+    "gap": 0.10398610512676679,
+    "seconds": 2.029281700029969,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 215,
+    "slot": 0,
+    "history_days": [
+      187,
+      191,
+      196,
+      200,
+      205,
+      209,
+      214
+    ],
+    "status": 1,
+    "gap": 3.290785624485457e-05,
+    "seconds": 2.1622506999992765,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 216,
+    "slot": 0,
+    "history_days": [
+      188,
+      192,
+      197,
+      201,
+      206,
+      210,
+      215
+    ],
+    "status": 1,
+    "gap": 0.08928181939710975,
+    "seconds": 2.066161700000521,
+    "residual": 2.1600499167107046e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 217,
+    "slot": 0,
+    "history_days": [
+      189,
+      193,
+      198,
+      202,
+      207,
+      211,
+      216
+    ],
+    "status": 1,
+    "gap": 0.08628046012451297,
+    "seconds": 2.044185100006871,
+    "residual": 1.3869794202037156e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 218,
+    "slot": 0,
+    "history_days": [
+      190,
+      194,
+      199,
+      203,
+      208,
+      212,
+      217
+    ],
+    "status": 1,
+    "gap": 0.00014684941853491563,
+    "seconds": 2.0461477000499144,
+    "residual": 2.3646862246096134e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 219,
+    "slot": 0,
+    "history_days": [
+      191,
+      195,
+      200,
+      204,
+      209,
+      213,
+      218
+    ],
+    "status": 1,
+    "gap": 0.2185140604755231,
+    "seconds": 2.028746400028467,
+    "residual": 2.0463630789890885e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 220,
+    "slot": 0,
+    "history_days": [
+      192,
+      196,
+      201,
+      205,
+      210,
+      214,
+      219
+    ],
+    "status": 1,
+    "gap": 0.000771283662995092,
+    "seconds": 2.0397042999975383,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 221,
+    "slot": 0,
+    "history_days": [
+      193,
+      197,
+      202,
+      206,
+      211,
+      215,
+      220
+    ],
+    "status": 1,
+    "gap": 0.08963058046245503,
+    "seconds": 2.0376805999549106,
+    "residual": 1.2363443602225743e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 222,
+    "slot": 0,
+    "history_days": [
+      194,
+      198,
+      203,
+      207,
+      212,
+      216,
+      221
+    ],
+    "status": 1,
+    "gap": 6.588837386198882e-05,
+    "seconds": 2.026543700019829,
+    "residual": 7.66953273988809e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 223,
+    "slot": 0,
+    "history_days": [
+      195,
+      199,
+      204,
+      208,
+      213,
+      217,
+      222
+    ],
+    "status": 1,
+    "gap": 9.772819862680773e-05,
+    "seconds": 2.0679774999734946,
+    "residual": 3.9108272176235914e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 224,
+    "slot": 0,
+    "history_days": [
+      196,
+      200,
+      205,
+      209,
+      214,
+      218,
+      223
+    ],
+    "status": 1,
+    "gap": 0.0001793289436595192,
+    "seconds": 2.188886000018101,
+    "residual": 1.1993961379630491e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 225,
+    "slot": 0,
+    "history_days": [
+      197,
+      201,
+      206,
+      210,
+      215,
+      219,
+      224
+    ],
+    "status": 1,
+    "gap": 0.06770434942485924,
+    "seconds": 2.0283760000020266,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 226,
+    "slot": 0,
+    "history_days": [
+      198,
+      202,
+      207,
+      211,
+      216,
+      220,
+      225
+    ],
+    "status": 1,
+    "gap": 0.21541945438704563,
+    "seconds": 2.0990850999951363,
+    "residual": 6.366462912410498e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 227,
+    "slot": 0,
+    "history_days": [
+      199,
+      203,
+      208,
+      212,
+      217,
+      221,
+      226
+    ],
+    "status": 1,
+    "gap": 0.17051343360734122,
+    "seconds": 2.071956300002057,
+    "residual": 2.9558577807620168e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 228,
+    "slot": 0,
+    "history_days": [
+      200,
+      204,
+      209,
+      213,
+      218,
+      222,
+      227
+    ],
+    "status": 1,
+    "gap": 0.08866750542332022,
+    "seconds": 2.032850600022357,
+    "residual": 2.4442670110147446e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 229,
+    "slot": 0,
+    "history_days": [
+      201,
+      205,
+      210,
+      214,
+      219,
+      223,
+      228
+    ],
+    "status": 1,
+    "gap": 0.05535983273904906,
+    "seconds": 2.047866699984297,
+    "residual": 3.451816610322567e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 230,
+    "slot": 0,
+    "history_days": [
+      202,
+      206,
+      211,
+      215,
+      220,
+      224,
+      229
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.9154685999965295,
+    "residual": 6.923528417246416e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 231,
+    "slot": 0,
+    "history_days": [
+      203,
+      207,
+      212,
+      216,
+      221,
+      225,
+      230
+    ],
+    "status": 0,
+    "gap": 1.4997343273481884e-16,
+    "seconds": 1.9866501999786124,
+    "residual": 5.161382432561368e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 232,
+    "slot": 0,
+    "history_days": [
+      204,
+      208,
+      213,
+      217,
+      222,
+      226,
+      231
+    ],
+    "status": 1,
+    "gap": 8.815784670769101e-05,
+    "seconds": 2.033683400019072,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 233,
+    "slot": 0,
+    "history_days": [
+      205,
+      209,
+      214,
+      218,
+      223,
+      227,
+      232
+    ],
+    "status": 1,
+    "gap": 0.0035532515724654664,
+    "seconds": 2.0335129000013694,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 234,
+    "slot": 0,
+    "history_days": [
+      206,
+      210,
+      215,
+      219,
+      224,
+      228,
+      233
+    ],
+    "status": 1,
+    "gap": 0.0006613740651609717,
+    "seconds": 2.0346116999862716,
+    "residual": 1.0876278565672485e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 235,
+    "slot": 0,
+    "history_days": [
+      207,
+      211,
+      216,
+      220,
+      225,
+      229,
+      234
+    ],
+    "status": 1,
+    "gap": 0.09452737700056386,
+    "seconds": 2.0804786999942735,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 236,
+    "slot": 0,
+    "history_days": [
+      208,
+      212,
+      217,
+      221,
+      226,
+      230,
+      235
+    ],
+    "status": 1,
+    "gap": 5.4247140606201235e-06,
+    "seconds": 2.0878055000212044,
+    "residual": 1.0913936421275139e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 237,
+    "slot": 0,
+    "history_days": [
+      209,
+      213,
+      218,
+      222,
+      227,
+      231,
+      236
+    ],
+    "status": 1,
+    "gap": 0.09716485455902783,
+    "seconds": 2.0341018000035547,
+    "residual": 6.59383658785373e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 238,
+    "slot": 0,
+    "history_days": [
+      210,
+      214,
+      219,
+      223,
+      228,
+      232,
+      237
+    ],
+    "status": 1,
+    "gap": 4.459291165839628e-05,
+    "seconds": 2.066099799994845,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 239,
+    "slot": 0,
+    "history_days": [
+      211,
+      215,
+      220,
+      224,
+      229,
+      233,
+      238
+    ],
+    "status": 1,
+    "gap": 0.08001784495940473,
+    "seconds": 2.0571499000070617,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 240,
+    "slot": 0,
+    "history_days": [
+      212,
+      216,
+      221,
+      225,
+      230,
+      234,
+      239
+    ],
+    "status": 1,
+    "gap": 0.24189877928438405,
+    "seconds": 2.1034201000002213,
+    "residual": 6.821210263296962e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 241,
+    "slot": 0,
+    "history_days": [
+      213,
+      217,
+      222,
+      226,
+      231,
+      235,
+      240
+    ],
+    "status": 1,
+    "gap": 0.00042622461870177135,
+    "seconds": 2.0734048999729566,
+    "residual": 6.994014256633818e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 242,
+    "slot": 0,
+    "history_days": [
+      214,
+      218,
+      223,
+      227,
+      232,
+      236,
+      241
+    ],
+    "status": 1,
+    "gap": 0.11597739062022949,
+    "seconds": 2.0468687000102364,
+    "residual": 2.9558577807620168e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 243,
+    "slot": 0,
+    "history_days": [
+      215,
+      219,
+      224,
+      228,
+      233,
+      237,
+      242
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.9376626000157557,
+    "residual": 7.776179700158536e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 244,
+    "slot": 0,
+    "history_days": [
+      216,
+      220,
+      225,
+      229,
+      234,
+      238,
+      243
+    ],
+    "status": 1,
+    "gap": 0.0005365773660333647,
+    "seconds": 2.03011609998066,
+    "residual": 3.865352482534945e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 245,
+    "slot": 0,
+    "history_days": [
+      217,
+      221,
+      226,
+      230,
+      235,
+      239,
+      244
+    ],
+    "status": 1,
+    "gap": 0.07307863722724922,
+    "seconds": 2.0281622000038624,
+    "residual": 3.8198777474462986e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 246,
+    "slot": 0,
+    "history_days": [
+      218,
+      222,
+      227,
+      231,
+      236,
+      240,
+      245
+    ],
+    "status": 1,
+    "gap": 0.11979824528737334,
+    "seconds": 2.052298999973573,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 247,
+    "slot": 0,
+    "history_days": [
+      219,
+      223,
+      228,
+      232,
+      237,
+      241,
+      246
+    ],
+    "status": 1,
+    "gap": 0.0020472112788557134,
+    "seconds": 2.1853352999896742,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 248,
+    "slot": 0,
+    "history_days": [
+      220,
+      224,
+      229,
+      233,
+      238,
+      242,
+      247
+    ],
+    "status": 1,
+    "gap": 0.0018606003541609037,
+    "seconds": 2.039831099973526,
+    "residual": 8.669271127906972e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 249,
+    "slot": 0,
+    "history_days": [
+      221,
+      225,
+      230,
+      234,
+      239,
+      243,
+      248
+    ],
+    "status": 1,
+    "gap": 0.1380603840419937,
+    "seconds": 2.0718070999719203,
+    "residual": 1.1833849344749201e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 250,
+    "slot": 0,
+    "history_days": [
+      222,
+      226,
+      231,
+      235,
+      240,
+      244,
+      249
+    ],
+    "status": 1,
+    "gap": 0.07699302846622014,
+    "seconds": 2.041056199988816,
+    "residual": 3.058175934711471e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 251,
+    "slot": 0,
+    "history_days": [
+      223,
+      227,
+      232,
+      236,
+      241,
+      245,
+      250
+    ],
+    "status": 1,
+    "gap": 0.10934376315327886,
+    "seconds": 2.109532299975399,
+    "residual": 7.73070496506989e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 252,
+    "slot": 0,
+    "history_days": [
+      224,
+      228,
+      233,
+      237,
+      242,
+      246,
+      251
+    ],
+    "status": 1,
+    "gap": 4.293583499032457e-07,
+    "seconds": 2.0478303999989294,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 253,
+    "slot": 0,
+    "history_days": [
+      225,
+      229,
+      234,
+      238,
+      243,
+      247,
+      252
+    ],
+    "status": 1,
+    "gap": 0.08686721039127598,
+    "seconds": 2.071661900030449,
+    "residual": 2.000888343900442e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 254,
+    "slot": 0,
+    "history_days": [
+      226,
+      230,
+      235,
+      239,
+      244,
+      248,
+      253
+    ],
+    "status": 1,
+    "gap": 0.27830941686833566,
+    "seconds": 2.0503604999976233,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 255,
+    "slot": 0,
+    "history_days": [
+      227,
+      231,
+      236,
+      240,
+      245,
+      249,
+      254
+    ],
+    "status": 1,
+    "gap": 0.2701720483545336,
+    "seconds": 2.070327499997802,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 256,
+    "slot": 0,
+    "history_days": [
+      228,
+      232,
+      237,
+      241,
+      246,
+      250,
+      255
+    ],
+    "status": 1,
+    "gap": 0.04769808659776447,
+    "seconds": 2.122791600006167,
+    "residual": 1.0913936421275139e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 257,
+    "slot": 0,
+    "history_days": [
+      229,
+      233,
+      238,
+      242,
+      247,
+      251,
+      256
+    ],
+    "status": 1,
+    "gap": 0.12353322007604668,
+    "seconds": 2.067561800009571,
+    "residual": 7.844391802791506e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 258,
+    "slot": 0,
+    "history_days": [
+      230,
+      234,
+      239,
+      243,
+      248,
+      252,
+      257
+    ],
+    "status": 1,
+    "gap": 0.04326436934638318,
+    "seconds": 2.0761002999497578,
+    "residual": 1.000444171950221e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 259,
+    "slot": 0,
+    "history_days": [
+      231,
+      235,
+      240,
+      244,
+      249,
+      253,
+      258
+    ],
+    "status": 1,
+    "gap": 0.04491790396003345,
+    "seconds": 2.0367037000251003,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 260,
+    "slot": 0,
+    "history_days": [
+      232,
+      236,
+      241,
+      245,
+      250,
+      254,
+      259
+    ],
+    "status": 1,
+    "gap": 0.0005488177023537158,
+    "seconds": 2.0353860000032,
+    "residual": 5.7411853049416095e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 261,
+    "slot": 0,
+    "history_days": [
+      233,
+      237,
+      242,
+      246,
+      251,
+      255,
+      260
+    ],
+    "status": 1,
+    "gap": 0.008229101977463522,
+    "seconds": 2.04369790002238,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 262,
+    "slot": 0,
+    "history_days": [
+      234,
+      238,
+      243,
+      247,
+      252,
+      256,
+      261
+    ],
+    "status": 1,
+    "gap": 0.29616855708059525,
+    "seconds": 2.0485912000294775,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 263,
+    "slot": 0,
+    "history_days": [
+      235,
+      239,
+      244,
+      248,
+      253,
+      257,
+      262
+    ],
+    "status": 1,
+    "gap": 0.07570970709514627,
+    "seconds": 2.076169600011781,
+    "residual": 5.0698845182059954e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 264,
+    "slot": 0,
+    "history_days": [
+      236,
+      240,
+      245,
+      249,
+      254,
+      258,
+      263
+    ],
+    "status": 1,
+    "gap": 0.0006491375771085504,
+    "seconds": 2.042817300010938,
+    "residual": 8.185452315956354e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 265,
+    "slot": 0,
+    "history_days": [
+      237,
+      241,
+      246,
+      250,
+      255,
+      259,
+      264
+    ],
+    "status": 1,
+    "gap": 0.0004767953445228142,
+    "seconds": 2.0373860000399873,
+    "residual": 2.717115421546623e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 266,
+    "slot": 0,
+    "history_days": [
+      238,
+      242,
+      247,
+      251,
+      256,
+      260,
+      265
+    ],
+    "status": 1,
+    "gap": 8.307769376581988e-05,
+    "seconds": 2.0305206999764778,
+    "residual": 1.6370904631912708e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 267,
+    "slot": 0,
+    "history_days": [
+      239,
+      243,
+      248,
+      252,
+      257,
+      261,
+      266
+    ],
+    "status": 1,
+    "gap": 0.07343052305906798,
+    "seconds": 2.07399850001093,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 268,
+    "slot": 0,
+    "history_days": [
+      240,
+      244,
+      249,
+      253,
+      258,
+      262,
+      267
+    ],
+    "status": 1,
+    "gap": 0.015149658178706605,
+    "seconds": 2.0394463000120595,
+    "residual": 1.8673063095775433e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 269,
+    "slot": 0,
+    "history_days": [
+      241,
+      245,
+      250,
+      254,
+      259,
+      263,
+      268
+    ],
+    "status": 1,
+    "gap": 0.0012276048338389501,
+    "seconds": 2.06933080003364,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 270,
+    "slot": 0,
+    "history_days": [
+      242,
+      246,
+      251,
+      255,
+      260,
+      264,
+      269
+    ],
+    "status": 1,
+    "gap": 0.00048290275297358605,
+    "seconds": 2.03482579998672,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 271,
+    "slot": 0,
+    "history_days": [
+      243,
+      247,
+      252,
+      256,
+      261,
+      265,
+      270
+    ],
+    "status": 1,
+    "gap": 8.724731173047133e-06,
+    "seconds": 2.0568749000085518,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 272,
+    "slot": 0,
+    "history_days": [
+      244,
+      248,
+      253,
+      257,
+      262,
+      266,
+      271
+    ],
+    "status": 1,
+    "gap": 0.037552285755408,
+    "seconds": 2.026208899973426,
+    "residual": 1.3869794202037156e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 273,
+    "slot": 0,
+    "history_days": [
+      245,
+      249,
+      254,
+      258,
+      263,
+      267,
+      272
+    ],
+    "status": 1,
+    "gap": 0.05967817235833525,
+    "seconds": 2.027369200019166,
+    "residual": 8.128608897095546e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 274,
+    "slot": 0,
+    "history_days": [
+      246,
+      250,
+      255,
+      259,
+      264,
+      268,
+      273
+    ],
+    "status": 1,
+    "gap": 0.0005660057998009778,
+    "seconds": 2.037873999972362,
+    "residual": 1.1482370609883219e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 275,
+    "slot": 0,
+    "history_days": [
+      247,
+      251,
+      256,
+      260,
+      265,
+      269,
+      274
+    ],
+    "status": 1,
+    "gap": 0.2721284572731163,
+    "seconds": 2.071224000013899,
+    "residual": 3.979039320256561e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 276,
+    "slot": 0,
+    "history_days": [
+      248,
+      252,
+      257,
+      261,
+      266,
+      270,
+      275
+    ],
+    "status": 1,
+    "gap": 0.2695443925956605,
+    "seconds": 2.046046599978581,
+    "residual": 3.0127011996228248e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 277,
+    "slot": 0,
+    "history_days": [
+      249,
+      253,
+      258,
+      262,
+      267,
+      271,
+      276
+    ],
+    "status": 1,
+    "gap": 0.06155351660541748,
+    "seconds": 2.02629089995753,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 278,
+    "slot": 0,
+    "history_days": [
+      250,
+      254,
+      259,
+      263,
+      268,
+      272,
+      277
+    ],
+    "status": 1,
+    "gap": 0.00017963406441497286,
+    "seconds": 2.0504805000382476,
+    "residual": 4.078515303262975e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 279,
+    "slot": 0,
+    "history_days": [
+      251,
+      255,
+      260,
+      264,
+      269,
+      273,
+      278
+    ],
+    "status": 1,
+    "gap": 0.010323105068456555,
+    "seconds": 2.041487700014841,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 280,
+    "slot": 0,
+    "history_days": [
+      252,
+      256,
+      261,
+      265,
+      270,
+      274,
+      279
+    ],
+    "status": 1,
+    "gap": 0.0003631769609966549,
+    "seconds": 2.0512157999910414,
+    "residual": 6.116351869422942e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 281,
+    "slot": 0,
+    "history_days": [
+      253,
+      257,
+      262,
+      266,
+      271,
+      275,
+      280
+    ],
+    "status": 1,
+    "gap": 0.023044822844416845,
+    "seconds": 2.073659799993038,
+    "residual": 2.3078428057488054e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 282,
+    "slot": 0,
+    "history_days": [
+      254,
+      258,
+      263,
+      267,
+      272,
+      276,
+      281
+    ],
+    "status": 1,
+    "gap": 0.28241474281911305,
+    "seconds": 2.0702682999544777,
+    "residual": 4.320099833421409e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 283,
+    "slot": 0,
+    "history_days": [
+      255,
+      259,
+      264,
+      268,
+      273,
+      277,
+      282
+    ],
+    "status": 1,
+    "gap": 0.0009903995466847572,
+    "seconds": 2.0337536000297405,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 284,
+    "slot": 0,
+    "history_days": [
+      256,
+      260,
+      265,
+      269,
+      274,
+      278,
+      283
+    ],
+    "status": 1,
+    "gap": 0.05038413019447044,
+    "seconds": 2.029133300005924,
+    "residual": 6.0948776889644145e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 285,
+    "slot": 0,
+    "history_days": [
+      257,
+      261,
+      266,
+      270,
+      275,
+      279,
+      284
+    ],
+    "status": 1,
+    "gap": 0.028293636254769803,
+    "seconds": 2.0276872999966145,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 286,
+    "slot": 0,
+    "history_days": [
+      258,
+      262,
+      267,
+      271,
+      276,
+      280,
+      285
+    ],
+    "status": 1,
+    "gap": 0.0006790232076809872,
+    "seconds": 2.0544622000306845,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 287,
+    "slot": 0,
+    "history_days": [
+      259,
+      263,
+      268,
+      272,
+      277,
+      281,
+      286
+    ],
+    "status": 1,
+    "gap": 1.019301996985704e-05,
+    "seconds": 2.046823500015307,
+    "residual": 1.616307088170288e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 288,
+    "slot": 0,
+    "history_days": [
+      260,
+      264,
+      269,
+      273,
+      278,
+      282,
+      287
+    ],
+    "status": 1,
+    "gap": 0.04087822121150253,
+    "seconds": 2.051307799993083,
+    "residual": 1.8417267710901797e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 289,
+    "slot": 0,
+    "history_days": [
+      261,
+      265,
+      270,
+      274,
+      279,
+      283,
+      288
+    ],
+    "status": 1,
+    "gap": 0.04683365657996312,
+    "seconds": 2.029301900009159,
+    "residual": 5.616129783447832e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 290,
+    "slot": 0,
+    "history_days": [
+      262,
+      266,
+      271,
+      275,
+      280,
+      284,
+      289
+    ],
+    "status": 1,
+    "gap": 0.0010497980675619985,
+    "seconds": 2.121123599994462,
+    "residual": 9.322320693172514e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 291,
+    "slot": 0,
+    "history_days": [
+      263,
+      267,
+      272,
+      276,
+      281,
+      285,
+      290
+    ],
+    "status": 1,
+    "gap": 0.06278939581315754,
+    "seconds": 2.0437003999832086,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 292,
+    "slot": 0,
+    "history_days": [
+      264,
+      268,
+      273,
+      277,
+      282,
+      286,
+      291
+    ],
+    "status": 1,
+    "gap": 0.003164203483150423,
+    "seconds": 2.0611846999963745,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 293,
+    "slot": 0,
+    "history_days": [
+      265,
+      269,
+      274,
+      278,
+      283,
+      287,
+      292
+    ],
+    "status": 1,
+    "gap": 0.00047914607474192647,
+    "seconds": 2.0442549000144936,
+    "residual": 2.9558577807620168e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 294,
+    "slot": 0,
+    "history_days": [
+      266,
+      270,
+      275,
+      279,
+      284,
+      288,
+      293
+    ],
+    "status": 1,
+    "gap": 1.6241976233137002e-05,
+    "seconds": 2.0359276000526734,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 295,
+    "slot": 0,
+    "history_days": [
+      267,
+      271,
+      276,
+      280,
+      285,
+      289,
+      294
+    ],
+    "status": 1,
+    "gap": 0.012032919881027174,
+    "seconds": 2.030665800033603,
+    "residual": 9.322320693172514e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 296,
+    "slot": 0,
+    "history_days": [
+      268,
+      272,
+      277,
+      281,
+      286,
+      290,
+      295
+    ],
+    "status": 1,
+    "gap": 0.0036284516017879094,
+    "seconds": 2.0580480999778956,
+    "residual": 6.974687494221143e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 297,
+    "slot": 0,
+    "history_days": [
+      269,
+      273,
+      278,
+      282,
+      287,
+      291,
+      296
+    ],
+    "status": 1,
+    "gap": 0.22370896992019512,
+    "seconds": 2.0685164000024088,
+    "residual": 1.1368683772161603e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 298,
+    "slot": 0,
+    "history_days": [
+      270,
+      274,
+      279,
+      283,
+      288,
+      292,
+      297
+    ],
+    "status": 1,
+    "gap": 0.04524629485307097,
+    "seconds": 2.0320674999966286,
+    "residual": 4.217781679471955e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 299,
+    "slot": 0,
+    "history_days": [
+      271,
+      275,
+      280,
+      284,
+      289,
+      293,
+      298
+    ],
+    "status": 1,
+    "gap": 0.030537124261970645,
+    "seconds": 2.0259722000337206,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 300,
+    "slot": 0,
+    "history_days": [
+      272,
+      276,
+      281,
+      285,
+      290,
+      294,
+      299
+    ],
+    "status": 1,
+    "gap": 0.0007744221265815037,
+    "seconds": 2.0713554000249133,
+    "residual": 3.399236447876319e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 301,
+    "slot": 0,
+    "history_days": [
+      273,
+      277,
+      282,
+      286,
+      291,
+      295,
+      300
+    ],
+    "status": 1,
+    "gap": 0.023997700006778807,
+    "seconds": 2.0548712000017986,
+    "residual": 1.8189894035458565e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 302,
+    "slot": 0,
+    "history_days": [
+      274,
+      278,
+      283,
+      287,
+      292,
+      296,
+      301
+    ],
+    "status": 1,
+    "gap": 0.0557579277867811,
+    "seconds": 2.038589800009504,
+    "residual": 3.126388037344441e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 303,
+    "slot": 0,
+    "history_days": [
+      275,
+      279,
+      284,
+      288,
+      293,
+      297,
+      302
+    ],
+    "status": 1,
+    "gap": 0.21361404542534032,
+    "seconds": 2.033825499995146,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 304,
+    "slot": 0,
+    "history_days": [
+      276,
+      280,
+      285,
+      289,
+      294,
+      298,
+      303
+    ],
+    "status": 1,
+    "gap": 0.26496933483475743,
+    "seconds": 2.0305353000294417,
+    "residual": 1.375610736431554e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 305,
+    "slot": 0,
+    "history_days": [
+      277,
+      281,
+      286,
+      290,
+      295,
+      299,
+      304
+    ],
+    "status": 1,
+    "gap": 2.777323547790784e-07,
+    "seconds": 2.0294922000030056,
+    "residual": 4.903866745784259e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 306,
+    "slot": 0,
+    "history_days": [
+      278,
+      282,
+      287,
+      291,
+      296,
+      300,
+      305
+    ],
+    "status": 1,
+    "gap": 4.962117179947848e-05,
+    "seconds": 2.2481301999650896,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 307,
+    "slot": 0,
+    "history_days": [
+      279,
+      283,
+      288,
+      292,
+      297,
+      301,
+      306
+    ],
+    "status": 1,
+    "gap": 0.0004879722768597688,
+    "seconds": 2.0328827999765053,
+    "residual": 1.4097167877480388e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 308,
+    "slot": 0,
+    "history_days": [
+      280,
+      284,
+      289,
+      293,
+      298,
+      302,
+      307
+    ],
+    "status": 1,
+    "gap": 7.69721117136066e-05,
+    "seconds": 2.0420646000420675,
+    "residual": 1.4779288903810084e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 309,
+    "slot": 0,
+    "history_days": [
+      281,
+      285,
+      290,
+      294,
+      299,
+      303,
+      308
+    ],
+    "status": 1,
+    "gap": 0.017005771044964375,
+    "seconds": 2.0777095000375994,
+    "residual": 2.9558577807620168e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 310,
+    "slot": 0,
+    "history_days": [
+      282,
+      286,
+      291,
+      295,
+      300,
+      304,
+      309
+    ],
+    "status": 1,
+    "gap": 0.0073018679677995645,
+    "seconds": 2.0402861000038683,
+    "residual": 5.101696842757519e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 311,
+    "slot": 0,
+    "history_days": [
+      283,
+      287,
+      292,
+      296,
+      301,
+      305,
+      310
+    ],
+    "status": 1,
+    "gap": 0.20794968376508055,
+    "seconds": 2.0457625999697484,
+    "residual": 1.3089973549540446e-11,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 312,
+    "slot": 0,
+    "history_days": [
+      284,
+      288,
+      293,
+      297,
+      302,
+      306,
+      311
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.8295411000144668,
+    "residual": 5.070432962384075e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 313,
+    "slot": 0,
+    "history_days": [
+      285,
+      289,
+      294,
+      298,
+      303,
+      307,
+      312
+    ],
+    "status": 1,
+    "gap": 0.017832938481278617,
+    "seconds": 2.037777899997309,
+    "residual": 3.934985670639435e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 314,
+    "slot": 0,
+    "history_days": [
+      286,
+      290,
+      295,
+      299,
+      304,
+      308,
+      313
+    ],
+    "status": 1,
+    "gap": 1.6229441393302601e-06,
+    "seconds": 2.169830299972091,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 315,
+    "slot": 0,
+    "history_days": [
+      287,
+      291,
+      296,
+      300,
+      305,
+      309,
+      314
+    ],
+    "status": 1,
+    "gap": 0.023191397202860075,
+    "seconds": 2.0274706999771297,
+    "residual": 7.887024366937112e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 1.9184653865522705e-12
+  },
+  {
+    "day": 316,
+    "slot": 0,
+    "history_days": [
+      288,
+      292,
+      297,
+      301,
+      306,
+      310,
+      315
+    ],
+    "status": 1,
+    "gap": 0.00047521243609242826,
+    "seconds": 2.0287202000035904,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 317,
+    "slot": 0,
+    "history_days": [
+      289,
+      293,
+      298,
+      302,
+      307,
+      311,
+      316
+    ],
+    "status": 1,
+    "gap": 0.22889738622113023,
+    "seconds": 2.0564616000046954,
+    "residual": 3.439026841078885e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 318,
+    "slot": 0,
+    "history_days": [
+      290,
+      294,
+      299,
+      303,
+      308,
+      312,
+      317
+    ],
+    "status": 1,
+    "gap": 0.22360889807010423,
+    "seconds": 2.0748824999900535,
+    "residual": 1.5006662579253316e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 319,
+    "slot": 0,
+    "history_days": [
+      291,
+      295,
+      300,
+      304,
+      309,
+      313,
+      318
+    ],
+    "status": 1,
+    "gap": 0.022691294426162353,
+    "seconds": 2.0657601999701,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 320,
+    "slot": 0,
+    "history_days": [
+      292,
+      296,
+      301,
+      305,
+      310,
+      314,
+      319
+    ],
+    "status": 1,
+    "gap": 0.0006936091088899541,
+    "seconds": 2.0587008000002243,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 321,
+    "slot": 0,
+    "history_days": [
+      293,
+      297,
+      302,
+      306,
+      311,
+      315,
+      320
+    ],
+    "status": 1,
+    "gap": 4.231062889540449e-05,
+    "seconds": 2.1405032000038773,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 322,
+    "slot": 0,
+    "history_days": [
+      294,
+      298,
+      303,
+      307,
+      312,
+      316,
+      321
+    ],
+    "status": 1,
+    "gap": 3.0867193976341765e-05,
+    "seconds": 2.172860400052741,
+    "residual": 3.9264591578103136e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 323,
+    "slot": 0,
+    "history_days": [
+      295,
+      299,
+      304,
+      308,
+      313,
+      317,
+      322
+    ],
+    "status": 1,
+    "gap": 0.00029275398633706853,
+    "seconds": 2.1143395000253804,
+    "residual": 3.058175934711471e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 2.2737367544323206e-12
+  },
+  {
+    "day": 324,
+    "slot": 0,
+    "history_days": [
+      296,
+      300,
+      305,
+      309,
+      314,
+      318,
+      323
+    ],
+    "status": 1,
+    "gap": 0.027262961406915715,
+    "seconds": 2.0411890000104904,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 325,
+    "slot": 0,
+    "history_days": [
+      297,
+      301,
+      306,
+      310,
+      315,
+      319,
+      324
+    ],
+    "status": 1,
+    "gap": 1.0577263969426844e-06,
+    "seconds": 2.029298099980224,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 326,
+    "slot": 0,
+    "history_days": [
+      298,
+      302,
+      307,
+      311,
+      316,
+      320,
+      325
+    ],
+    "status": 1,
+    "gap": 0.0001796693412374406,
+    "seconds": 2.163760299968999,
+    "residual": 1.000444171950221e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 327,
+    "slot": 0,
+    "history_days": [
+      299,
+      303,
+      308,
+      312,
+      317,
+      321,
+      326
+    ],
+    "status": 1,
+    "gap": 0.028312867423564456,
+    "seconds": 2.0469583000522107,
+    "residual": 4.206412995699793e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 2.1600499167107046e-12
+  },
+  {
+    "day": 328,
+    "slot": 0,
+    "history_days": [
+      300,
+      304,
+      309,
+      313,
+      318,
+      322,
+      327
+    ],
+    "status": 1,
+    "gap": 0.00017266523471795158,
+    "seconds": 2.031486899999436,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 329,
+    "slot": 0,
+    "history_days": [
+      301,
+      305,
+      310,
+      314,
+      319,
+      323,
+      328
+    ],
+    "status": 1,
+    "gap": 1.8957043518492824e-05,
+    "seconds": 2.164641599985771,
+    "residual": 5.6843418860808015e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 330,
+    "slot": 0,
+    "history_days": [
+      302,
+      306,
+      311,
+      315,
+      320,
+      324,
+      329
+    ],
+    "status": 1,
+    "gap": 0.00021663046270626834,
+    "seconds": 2.0670368000282906,
+    "residual": 5.4569682106375694e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 331,
+    "slot": 0,
+    "history_days": [
+      303,
+      307,
+      312,
+      316,
+      321,
+      325,
+      330
+    ],
+    "status": 1,
+    "gap": 0.22768555113041447,
+    "seconds": 2.0901788999908604,
+    "residual": 1.0913936421275139e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 332,
+    "slot": 0,
+    "history_days": [
+      304,
+      308,
+      313,
+      317,
+      322,
+      326,
+      331
+    ],
+    "status": 1,
+    "gap": 5.3289938681541764e-06,
+    "seconds": 2.028278000012506,
+    "residual": 2.390265763096977e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 333,
+    "slot": 0,
+    "history_days": [
+      305,
+      309,
+      314,
+      318,
+      323,
+      327,
+      332
+    ],
+    "status": 1,
+    "gap": 1.0999251830388122e-05,
+    "seconds": 2.0568380000186153,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 334,
+    "slot": 0,
+    "history_days": [
+      306,
+      310,
+      315,
+      319,
+      324,
+      328,
+      333
+    ],
+    "status": 1,
+    "gap": 6.877875192136255e-07,
+    "seconds": 2.0291570999543183,
+    "residual": 6.731562482644289e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 335,
+    "slot": 0,
+    "history_days": [
+      307,
+      311,
+      316,
+      320,
+      325,
+      329,
+      334
+    ],
+    "status": 1,
+    "gap": 0.013581054837397064,
+    "seconds": 2.035265700018499,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 336,
+    "slot": 0,
+    "history_days": [
+      308,
+      312,
+      317,
+      321,
+      326,
+      330,
+      335
+    ],
+    "status": 0,
+    "gap": 3.054945286178008e-07,
+    "seconds": 1.7450854000053369,
+    "residual": 5.4797055781818926e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 337,
+    "slot": 0,
+    "history_days": [
+      309,
+      313,
+      318,
+      322,
+      327,
+      331,
+      336
+    ],
+    "status": 1,
+    "gap": 0.0023066356645222506,
+    "seconds": 2.0346373000065796,
+    "residual": 6.252776074688882e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 338,
+    "slot": 0,
+    "history_days": [
+      310,
+      314,
+      319,
+      323,
+      328,
+      332,
+      337
+    ],
+    "status": 1,
+    "gap": 6.468733257809011e-05,
+    "seconds": 2.157634799950756,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 339,
+    "slot": 0,
+    "history_days": [
+      311,
+      315,
+      320,
+      324,
+      329,
+      333,
+      338
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.7413521999842487,
+    "residual": 1.1482370609883219e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 340,
+    "slot": 0,
+    "history_days": [
+      312,
+      316,
+      321,
+      325,
+      330,
+      334,
+      339
+    ],
+    "status": 1,
+    "gap": 0.014641942855167825,
+    "seconds": 2.0683767999871634,
+    "residual": 7.503331289626658e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 341,
+    "slot": 0,
+    "history_days": [
+      313,
+      317,
+      322,
+      326,
+      331,
+      335,
+      340
+    ],
+    "status": 1,
+    "gap": 0.007433164256449847,
+    "seconds": 2.0455011000158265,
+    "residual": 5.6843418860808015e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 342,
+    "slot": 0,
+    "history_days": [
+      314,
+      318,
+      323,
+      327,
+      332,
+      336,
+      341
+    ],
+    "status": 1,
+    "gap": 0.00023098298032733018,
+    "seconds": 2.07172259996878,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 343,
+    "slot": 0,
+    "history_days": [
+      315,
+      319,
+      324,
+      328,
+      333,
+      337,
+      342
+    ],
+    "status": 1,
+    "gap": 0.01383491548432366,
+    "seconds": 2.044969599985052,
+    "residual": 9.094947017729282e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 344,
+    "slot": 0,
+    "history_days": [
+      316,
+      320,
+      325,
+      329,
+      334,
+      338,
+      343
+    ],
+    "status": 1,
+    "gap": 0.013540364281422702,
+    "seconds": 2.0684507000260055,
+    "residual": 8.29913915367797e-12,
+    "scenario_cd_overlap": -0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 345,
+    "slot": 0,
+    "history_days": [
+      317,
+      321,
+      326,
+      330,
+      335,
+      339,
+      344
+    ],
+    "status": 0,
+    "gap": 1.4705194041264665e-16,
+    "seconds": 1.5880016000010073,
+    "residual": 1.7928414308698848e-10,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 346,
+    "slot": 0,
+    "history_days": [
+      318,
+      322,
+      327,
+      331,
+      336,
+      340,
+      345
+    ],
+    "status": 1,
+    "gap": 0.0007667742039878856,
+    "seconds": 2.0355472000082955,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 347,
+    "slot": 0,
+    "history_days": [
+      319,
+      323,
+      328,
+      332,
+      337,
+      341,
+      346
+    ],
+    "status": 1,
+    "gap": 0.017657427105699272,
+    "seconds": 2.0286269999924116,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 348,
+    "slot": 0,
+    "history_days": [
+      320,
+      324,
+      329,
+      333,
+      338,
+      342,
+      347
+    ],
+    "status": 1,
+    "gap": 0.00010474835439333637,
+    "seconds": 2.0341898999758996,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 349,
+    "slot": 0,
+    "history_days": [
+      321,
+      325,
+      330,
+      334,
+      339,
+      343,
+      348
+    ],
+    "status": 1,
+    "gap": 0.012744221807465251,
+    "seconds": 2.063951599993743,
+    "residual": 8.549250196665525e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 350,
+    "slot": 0,
+    "history_days": [
+      322,
+      326,
+      331,
+      335,
+      340,
+      344,
+      349
+    ],
+    "status": 1,
+    "gap": 0.0013745925703618866,
+    "seconds": 2.0598883000202477,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 351,
+    "slot": 0,
+    "history_days": [
+      323,
+      327,
+      332,
+      336,
+      341,
+      345,
+      350
+    ],
+    "status": 1,
+    "gap": 0.009558281913346695,
+    "seconds": 2.0881384999956936,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 352,
+    "slot": 0,
+    "history_days": [
+      324,
+      328,
+      333,
+      337,
+      342,
+      346,
+      351
+    ],
+    "status": 0,
+    "gap": 0.0,
+    "seconds": 1.977282700012438,
+    "residual": 3.637978807091713e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 353,
+    "slot": 0,
+    "history_days": [
+      325,
+      329,
+      334,
+      338,
+      343,
+      347,
+      352
+    ],
+    "status": 1,
+    "gap": 0.07159720007824952,
+    "seconds": 2.031063499976881,
+    "residual": 6.139089236967266e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 354,
+    "slot": 0,
+    "history_days": [
+      326,
+      330,
+      335,
+      339,
+      344,
+      348,
+      353
+    ],
+    "status": 1,
+    "gap": 3.4891442483903435e-05,
+    "seconds": 2.071020799980033,
+    "residual": 5.4569682106375694e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 5.684341886080801e-13
+  },
+  {
+    "day": 355,
+    "slot": 0,
+    "history_days": [
+      327,
+      331,
+      336,
+      340,
+      345,
+      349,
+      354
+    ],
+    "status": 1,
+    "gap": 0.0006937725061721743,
+    "seconds": 2.0498213000246324,
+    "residual": 2.432898327242583e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 356,
+    "slot": 0,
+    "history_days": [
+      328,
+      332,
+      337,
+      341,
+      346,
+      350,
+      355
+    ],
+    "status": 1,
+    "gap": 0.012831824962909126,
+    "seconds": 2.0346056999987923,
+    "residual": 1.0459189070388675e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 357,
+    "slot": 0,
+    "history_days": [
+      329,
+      333,
+      338,
+      342,
+      347,
+      351,
+      356
+    ],
+    "status": 1,
+    "gap": 0.0005577821308182885,
+    "seconds": 2.0617231999640353,
+    "residual": 2.603428583825007e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 358,
+    "slot": 0,
+    "history_days": [
+      330,
+      334,
+      339,
+      343,
+      348,
+      352,
+      357
+    ],
+    "status": 1,
+    "gap": 0.013899427131191086,
+    "seconds": 2.0688396000186913,
+    "residual": 4.092726157978177e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 359,
+    "slot": 0,
+    "history_days": [
+      331,
+      335,
+      340,
+      344,
+      349,
+      353,
+      358
+    ],
+    "status": 1,
+    "gap": 0.10470838555111624,
+    "seconds": 2.0651568999746814,
+    "residual": 2.7284841053187847e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 360,
+    "slot": 0,
+    "history_days": [
+      332,
+      336,
+      341,
+      345,
+      350,
+      354,
+      359
+    ],
+    "status": 1,
+    "gap": 0.035917090951379946,
+    "seconds": 2.0622963000205345,
+    "residual": 4.348521542851813e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 361,
+    "slot": 0,
+    "history_days": [
+      333,
+      337,
+      342,
+      346,
+      351,
+      355,
+      360
+    ],
+    "status": 1,
+    "gap": 0.01054008747650856,
+    "seconds": 2.045336099981796,
+    "residual": 1.8189894035458565e-11,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 362,
+    "slot": 0,
+    "history_days": [
+      334,
+      338,
+      343,
+      347,
+      352,
+      356,
+      361
+    ],
+    "status": 1,
+    "gap": 0.012077106258048727,
+    "seconds": 2.086185199965257,
+    "residual": 7.048583938740194e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 363,
+    "slot": 0,
+    "history_days": [
+      335,
+      339,
+      344,
+      348,
+      353,
+      357,
+      362
+    ],
+    "status": 1,
+    "gap": 1.1301612615693467e-07,
+    "seconds": 2.0307433999842033,
+    "residual": 4.320099833421409e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  },
+  {
+    "day": 364,
+    "slot": 0,
+    "history_days": [
+      336,
+      340,
+      345,
+      349,
+      354,
+      358,
+      363
+    ],
+    "status": 1,
+    "gap": 0.0007585763212197332,
+    "seconds": 2.034801099973265,
+    "residual": 7.275957614183426e-12,
+    "scenario_cd_overlap": 0.0,
+    "scenario_ce_overlap": 0.0
+  }
+]

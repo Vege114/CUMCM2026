@@ -1,25 +1,242 @@
 % !TeX root = ../数模通用模板.tex
-\section{问题三的模型的建立和求解}
-\subsection{具体分析}
+\section{问题三的模型建立与求解}
+\label{sec:q3}
 
-\subsection{模型准备}
+问题三允许在日内获得新预报并调整购电。本文采用发布时间与提前量匹配的误差校准，将近期误差整日路径输入严格物理约束下的情景混合整数规划；按上调加价、下调退回一半费用制定剩余计划，再随实际储电量滚动执行，以平衡提前采购、后续调整和紧急补购的代价。
 
-\subsection{模型建立}
+\subsection{问题三模型的建立}
+\subsubsection{输入数据与预测更新}
 
-\subsection{模型求解}
+\textbf{输入与输出。}
+输入附件1分时电价、附件2已观察负载与光伏，以及附件3当时发布的未来24小时整点光伏预报。午夜负载采用单HGB及近期误差校准结果作为本问基础输入。输出每日144槽原计划、日内调整后的最终购电量、充放电与储电轨迹，并按指定日期汇总购电费及紧急购电区间。
 
+\textbf{信息集合与剩余时域。}
+沿用公共符号，$d$为日期，$t=1,\ldots,144$为十分钟区间，$\Delta t=1/6$\,h。令$\tau\in\{0,6,12,18\}$为发布小时，$r_\tau=6\tau$为此前已执行槽数，则
+\begin{equation}\label{eq:q3-information}
+ \mathcal T_\tau=\{r_\tau+1,\ldots,144\},\qquad
+ \mathcal I_{d,\tau}=\sigma\!\left(\{L,V\}_{\text{发布前已实现}},
+ \{\widetilde V\}_{\text{已发布}},\{p_t\}_{t=1}^{144}\right).
+\end{equation}
+所有预测及购电决策均关于$\mathcal I_{d,\tau}$可测；目标区间实际值只在执行时使用。$\widetilde V_{d,\tau,h}$表示本次发布的第$h$小时整点光伏预报，$h=1,\ldots,24$。
 
+\textbf{光伏节点校准。}
+按相同发布小时选取近28日且完整24小时标签已到达的历史发布集合$\mathcal H_{d,\tau}$。以$\mathcal A_o(\cdot)$表示从历史发布$o$的已观察锚点出发、经分段线性积分得到的144槽平均功率，历史残差取
+\begin{equation}\label{eq:q3-pv-residual}
+ \boldsymbol\epsilon_o=\boldsymbol V_o^{\mathrm{obs}}
+ -\mathcal A_o(\widetilde{\boldsymbol V}_o),\qquad
+ o+144\le144d+r_\tau,\quad o\in\mathcal H_{d,\tau}.
+\end{equation}
+式中日期在全局槽索引中从0计，$o$为历史发布的全局槽号。完整标签条件排除了尚未结束的预报窗口。按14日半衰期形成加权平均误差
+\begin{equation}\label{eq:q3-weighted-error}
+ \omega_o=2^{-(144d+r_\tau-o)/(14\times144)},\qquad
+ \overline{\boldsymbol\epsilon}_{d,\tau}
+ =\frac{\sum_{o\in\mathcal H_{d,\tau}}\omega_o\boldsymbol\epsilon_o}
+ {\sum_{o\in\mathcal H_{d,\tau}}\omega_o}.
+\end{equation}
+令$A\in\mathbb R^{144\times24}$为节点修正到区间平均功率的线性映射，$D_2$为二阶差分矩阵。依据偏差平滑与小样本收缩，求解
+\begin{equation}\label{eq:q3-knot-objective}
+ \boldsymbol b^{\star}=\arg\min_{\boldsymbol b\in\mathbb R^{24}}
+ \left\{\|A\boldsymbol b-\overline{\boldsymbol\epsilon}_{d,\tau}\|_2^2
+ +12\|D_2\boldsymbol b\|_2^2+2\|\boldsymbol b\|_2^2\right\}.
+\end{equation}
+对式\eqref{eq:q3-knot-objective}求导并令梯度为零，得到最终收缩修正量
+\begin{equation}\label{eq:q3-knot-solution}
+ \widehat{\boldsymbol b}_{d,\tau}
+ =\frac{N_{d,\tau}}{N_{d,\tau}+7}
+ (A^{\mathsf T}A+12D_2^{\mathsf T}D_2+2I)^{-1}
+ A^{\mathsf T}\overline{\boldsymbol\epsilon}_{d,\tau},
+ \quad N_{d,\tau}=|\mathcal H_{d,\tau}|.
+\end{equation}
+无可用历史时修正置零。保持官方零发电节点，校准后的节点为
+\begin{equation}\label{eq:q3-knots}
+ \widehat V^{\mathrm{node}}_{d,\tau,h}
+ =\mathbb I(\widetilde V_{d,\tau,h}>0)
+ [\widetilde V_{d,\tau,h}+\widehat b_{d,\tau,h}]_+.
+\end{equation}
+以发布前最后实测功率为第0节点，对各节点作线性插值$\ell_{d,\tau}(u)$。由功率与电量的积分关系，未来第$i$个十分钟区间预测为
+\begin{equation}\label{eq:q3-integration}
+ \widehat V_{d,r_\tau+i\mid\tau}
+ =\frac1{\Delta t}\int_{(i-1)\Delta t}^{i\Delta t}\ell_{d,\tau}(u)\,\mathrm du
+ =\frac{\ell_{d,\tau}((i-1)\Delta t)+\ell_{d,\tau}(i\Delta t)}2.
+\end{equation}
+每段均位于同一小时线性区间，故梯形积分为精确值；发布时刻的锚点不使用未来实况补齐。
 
+\textbf{负载前缀修正。}
+记$\widehat L^0_{d,t}$为当日冻结的HGB午夜负载预测，日内取最近至多18个已观察槽的误差。设该集合为$\mathcal W_{d,\tau}$，其大小为$K_{d,\tau}$，按6槽半衰期估计偏差
+\begin{equation}\label{eq:q3-load-bias}
+ \mu_{d,\tau}=\frac{K_{d,\tau}}{K_{d,\tau}+12}
+ \frac{\sum_{j\in\mathcal W_{d,\tau}}2^{-(r_\tau-j)/6}
+ (L_{d,j}-\widehat L^0_{d,j})}
+ {\sum_{j\in\mathcal W_{d,\tau}}2^{-(r_\tau-j)/6}}.
+\end{equation}
+午夜取$\mu_{d,0}=0$。为减弱短时状态对远期的影响，采用指数衰减更新，并形成净需求电量预测：
+\begin{equation}\label{eq:q3-load-net}
+ \widehat L_{d,r_\tau+i\mid\tau}
+ =[\widehat L^0_{d,r_\tau+i}+\mu_{d,\tau}e^{-(i-1)/36}]_+,
+ \qquad
+ \widehat n_{d,t\mid\tau}
+ =(\widehat L_{d,t\mid\tau}-\widehat V_{d,t\mid\tau})\Delta t.
+\end{equation}
 
+\textbf{同发布时间的相关误差场景。}
+对已结束历史日$j$，用其自身在$\tau$时发布的预测构造剩余误差路径
+\begin{equation}\label{eq:q3-path-error}
+ \xi_{j,t\mid\tau}
+ =\bigl[(L_{j,t}-\widehat L_{j,t\mid\tau})
+ -(V_{j,t}-\widehat V_{j,t\mid\tau})\bigr]\Delta t,
+ \qquad j<d,\ t\in\mathcal T_\tau.
+\end{equation}
+从最近至多28日中按日期等距选取至多7条完整路径，记对应日期为$j_s$，概率$\pi_s=1/S$，则
+\begin{equation}\label{eq:q3-scenarios}
+ n_{s,t\mid\tau}=\widehat n_{d,t\mid\tau}+\kappa\xi_{j_s,t\mid\tau},
+ \qquad \sum_{s=1}^{S}\pi_s=1,\quad \kappa=1.
+\end{equation}
+该构造保留同一天各槽及负载、光伏误差的共同变化。一月不足历史时使用周期冷启动预测，首日无残差路径时采用零偏差情景。
 
+\subsubsection{退款计费与严格物理情景规划}
 
+\textbf{调整费用。}
+记$g_{d,t}$为午夜锁定原计划，$q_{d,t\mid\tau}$为本次更新后的总购电量。按相对原计划的最终净偏差定义
+\begin{equation}\label{eq:q3-adjustment}
+ a^+_{d,t}=[q_{d,t}-g_{d,t}]_+,\qquad
+ a^-_{d,t}=[g_{d,t}-q_{d,t}]_+.
+\end{equation}
+下调取消部分退回原费用的50\%，上调部分另收1.5倍电价，紧急购电按5倍结算。因此实际账单为
+\begin{equation}\label{eq:q3-bill}
+ C_{\mathrm{tot}}=\sum_{d,t}p_t
+ \left(g_{d,t}+1.5a^+_{d,t}-0.5a^-_{d,t}+5e_{d,t}\right).
+\end{equation}
+退款项为负，原计划100\,kWh下调至80\,kWh、$p_t=1$元/kWh时，仅该槽常规购电费为90元。中间被覆盖的未来计划不重复计费，已执行区间冻结；后次调整不受前次计划单调增加的限制。
 
+对固定$g_t$，常规购电费用关于$q_t$连续且分段线性：
+\begin{equation}\label{eq:q3-piecewise}
+ \phi_t(q_t;g_t)=
+ \begin{cases}
+ 0.5p_tg_t+0.5p_tq_t,&0\le q_t\le g_t,\\
+ 1.5p_tq_t-0.5p_tg_t,&q_t\ge g_t.
+ \end{cases}
+\end{equation}
+左右边际成本分别为$0.5p_t$和$1.5p_t$，故不能继续把下调视为被弃余支配的动作。等价线性化为
+\begin{equation}\label{eq:q3-adjust-linear}
+ q_t=g_t+a_t^+-a_t^-,\qquad
+ a_t^+\ge0,\quad0\le a_t^-\le g_t,\quad q_t\ge0.
+\end{equation}
+同时增加$a_t^+,a_t^-$会增加$p_t$倍的代价，在正电价下最优解不会利用双向虚假调整获益。
 
+\textbf{逐场景供需与储能约束。}
+以下省略$d,\tau$，$c_{s,t},d_{s,t}$表示交流侧电量，$E_{s,t}$为槽初储电量。各场景共享$q_t$，但有各自的储能响应：
+\begin{equation}\label{eq:q3-energy}
+ q_t+d_{s,t}+e_{s,t}-c_{s,t}-w_{s,t}=n_{s,t},\qquad
+ q_t,c_{s,t},d_{s,t},e_{s,t},w_{s,t}\ge0.
+\end{equation}
+由效率关系及跨发布时刻状态继承，有
+\begin{equation}\label{eq:q3-soc}
+ E_{s,t+1}=E_{s,t}+\eta_c c_{s,t}-d_{s,t}/\eta_d,\quad
+ E_{\min}\le E_{s,t}\le E_{\max},\quad
+ E_{s,r_\tau+1}=E^{\mathrm{obs}}_{d,r_\tau+1}.
+\end{equation}
+定义局部二元变量$z_{s,t}\in\{0,1\}$，令$B=P_{\max}\Delta t$，强制
+\begin{equation}\label{eq:q3-mutex}
+ 0\le c_{s,t}\le Bz_{s,t},\qquad
+ 0\le d_{s,t}\le B(1-z_{s,t}).
+\end{equation}
+进一步施加
+\begin{equation}\label{eq:q3-no-emergency-charge}
+ 0\le e_{s,t}\le[n_{s,t}]_+(1-z_{s,t}).
+\end{equation}
+式\eqref{eq:q3-mutex}禁止同时充放电，式\eqref{eq:q3-no-emergency-charge}使充电模式下紧急购电为零。净需求正部是补足全部净缺口所需的充分上界，不以任意大常数放松模型。这两类限制施加于每条场景和每个槽，不能用实际回放可行替代规划可行。
 
+\textbf{未来调整机会与目标。}
+本次发布后立即执行的六小时只能依靠5倍紧急补购弥补短缺；其后仍有合法更新机会。采用
+\begin{equation}\label{eq:q3-opportunity}
+ \gamma_{\tau,t}=\begin{cases}
+ 5,&r_\tau<t\le\min(r_\tau+36,144),\\
+ 1.5,&r_\tau+36<t\le144
+ \end{cases}
+\end{equation}
+近似未来上调机会；18点后全部为5。该系数只用于规划，真实紧急费始终按式\eqref{eq:q3-bill}计算。它未完整表达未来退款和所有后续决策的价值，不作严格多阶段最优性解释。
 
+令$P^{\mathrm{bat}}_{s,t}=(c_{s,t}-d_{s,t})/\Delta t$，通过辅助变量$v_{s,t}\ge0$线性化相邻功率总变差：
+\begin{equation}\label{eq:q3-tv}
+ v_{s,t}\ge P^{\mathrm{bat}}_{s,t}-P^{\mathrm{bat}}_{s,t-1},\qquad
+ v_{s,t}\ge-P^{\mathrm{bat}}_{s,t}+P^{\mathrm{bat}}_{s,t-1},\quad t>r_\tau+1.
+\end{equation}
+午夜购电项取$\Phi_0=\sum_t p_tq_t$并锁定$g_t=q_t$；日内取$\Phi_\tau=\sum_t p_t(1.5a_t^+-0.5a_t^-)$，省略已付且不影响优化的原计划常数。最终规划为
+\begin{equation}\label{eq:q3-objective}
+ \begin{aligned}
+ \min\quad &\Phi_\tau+\sum_{s=1}^{S}\pi_s\left[
+ \sum_{t\in\mathcal T_\tau}\bigl(\gamma_{\tau,t}p_te_{s,t}
+ +\lambda_H(c_{s,t}+d_{s,t})\bigr)\right.\\
+ &\left.\hspace{2.5em}+\lambda_{\mathrm{TV}}\sum_{t=r_\tau+2}^{144}v_{s,t}
+ -\nu_d(E_{s,145}-E_{\min})\right],\\
+ \text{s.t.}\quad&\eqref{eq:q3-adjust-linear},\ \eqref{eq:q3-energy}\text{--}\eqref{eq:q3-no-emergency-charge},\ \eqref{eq:q3-tv}.
+ \end{aligned}
+\end{equation}
+午夜不施加式\eqref{eq:q3-adjust-linear}。取$\lambda_H=0.005$元/kWh、$\lambda_{\mathrm{TV}}=0.001$元/kW；普通日$\nu_d=\min_{t\in\mathcal T_\tau}p_t/\eta_c$，评价末日为零。辅助惩罚与终值均不从实际账单抵扣。
 
+式\eqref{eq:q3-objective}为情景混合整数线性规划。未来场景动作可利用该条路径全貌，仍属于开环补救近似；不同场景共享购电并不等于已建立严格非预见性场景树。实际策略的因果性由下述逐槽执行与合法更新时刻保证。
 
+\subsubsection{实际执行与连续滚动}
 
+当槽实况到达后，计算$\mathcal B_{d,t}=q_{d,t}+(V_{d,t}-L_{d,t})\Delta t$。记$\mathcal D_{20}(x)=x\mathbb I(x\ge20)$，单位为kWh，实际控制为
+\begin{equation}\label{eq:q3-feedback-charge}
+ \begin{aligned}
+ \mathcal B_{d,t}\ge0:\quad
+ c_{d,t}&=\mathcal D_{20}\!\left(\min\left\{\mathcal B_{d,t},B,
+ \frac{E_{\max}-E_{d,t}}{\eta_c}\right\}\right),\\
+ d_{d,t}&=e_{d,t}=0,\qquad w_{d,t}=\mathcal B_{d,t}-c_{d,t}.
+ \end{aligned}
+\end{equation}
+\begin{equation}\label{eq:q3-feedback-discharge}
+ \begin{aligned}
+ \mathcal B_{d,t}<0:\quad
+ d_{d,t}&=\min\{-\mathcal B_{d,t},B,\eta_d(E_{d,t}-E_{\min})\},\\
+ c_{d,t}&=w_{d,t}=0,\qquad e_{d,t}=-\mathcal B_{d,t}-d_{d,t}.
+ \end{aligned}
+\end{equation}
+随后按式\eqref{eq:q3-soc}更新真实SOC，只执行到下一次允许更新时间。场景动作不直接平均后下发；日末以
+\begin{equation}\label{eq:q3-continuity}
+ E_{d+1,1}=E_{d,145},\qquad
+ q_{d,t\mid\tau'}=q_{d,t}^{\mathrm{executed}}\quad(t\le r_{\tau'},\ \tau'>\tau)
+\end{equation}
+连续传递状态并冻结前缀，不重置电池电量。
 
+\subsection{问题三模型的求解与结果}
 
+采用HiGHS求解式\eqref{eq:q3-objective}，每次发布的时间预算为2\,s、相对间隙目标为0.5\%；若限时结束，仅接受通过变量界、整数性和线性约束核验的可行解，并保留实际间隙。2025年1月1日由6000\,kWh开始按本模型预热，正式统计2月1日至12月31日334日。完整求解与检验代码分别为\texttt{q3\_run/q3\_reproduce.py}和\texttt{q3\_run/q3\_analysis.py}，输入随包存放，不依赖个人绝对路径。
 
+\input{q3_run/paper/q3_results.tex}
+
+\subsection{模型检验与更新价值分析}
+
+\textbf{预测有效性。}
+按每次发布后的六小时不重叠计分，共48096槽；保持午夜预报为预测对照。对实测$y_i$和预测$\widehat y_i$统一计算
+\begin{equation}\label{eq:q3-errors}
+ \mathrm{MAE}=\frac1N\sum_i|y_i-\widehat y_i|,\quad
+ \mathrm{MSE}=\frac1N\sum_i(y_i-\widehat y_i)^2,\quad
+ R^2=1-\frac{\sum_i(y_i-\widehat y_i)^2}{\sum_i(y_i-\bar y)^2}.
+\end{equation}
+净需求预测误差以功率差$L-V$评价，MAE和RMSE单位为kW，MSE为$\mathrm{kW}^2$；不将功率误差与区间电量误差混合。
+
+\textbf{物理与计费一致性。}
+独立从完整轨迹重算以下最大残差，并分别统计充放重叠和紧急电充电槽数：
+\begin{equation}\label{eq:q3-audit}
+ \begin{aligned}
+ \epsilon_{\mathrm{bal}}&=\max_{d,t}|q_{d,t}+d_{d,t}+e_{d,t}-c_{d,t}-w_{d,t}-n_{d,t}|,\\
+ \epsilon_E&=\max_{d,t}|E_{d,t+1}-E_{d,t}-\eta_cc_{d,t}+d_{d,t}/\eta_d|,\\
+ \epsilon_C&=\max_{d,t}\left|C_{d,t}^{\mathrm{saved}}
+ -p_t(g_{d,t}+1.5a^+_{d,t}-0.5a^-_{d,t}+5e_{d,t})\right|.
+ \end{aligned}
+\end{equation}
+同时检查跨日SOC、额定功率和已执行前缀。对四个不同发布时间污染当前及未来实况和未发布预报，检验当前预测与历史误差路径不变；另以100\,kWh原计划的上下调算例核对退款符号。该扰动检验针对更新层，不替代既有HGB训练过程的因果审计。
+
+\textbf{参数敏感性与经济对照。}
+以误差路径尺度$\kappa$为核心风险参数，在四个指定日分别采用主方案同一真实日初SOC，将$\kappa$调整至0.9和1.1。按
+\begin{equation}\label{eq:q3-sensitivity}
+ \Delta_C(\kappa)=100\left(\frac{\sum_{d\in\mathcal D_*}C_d(\kappa)}
+ {\sum_{d\in\mathcal D_*}C_d(1)}-1\right)\%,\qquad
+ \mathcal D_*=\{3\text{月}20\text{日},6\text{月}21\text{日},9\text{月}23\text{日},12\text{月}21\text{日}\}
+\end{equation}
+评价局部敏感性；这是四季指定日压力测试，不冒称全年参数稳健性或跨年泛化。经济对照保持同一输入预测器与物理约束，仅午夜制定计划的方案不采用未来更新机会折扣，随后全年因果执行；其结果与日内更新方案分别按真实账单比较。
+
+\input{q3_run/paper/q3_validation.tex}

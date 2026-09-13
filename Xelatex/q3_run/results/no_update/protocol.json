@@ -1,0 +1,19 @@
+{
+  "case": "no_update",
+  "days": 365,
+  "scale": 1.0,
+  "seconds": 2.0,
+  "updates": false,
+  "refund": 0.5,
+  "scenarios": 7,
+  "gap_target": 0.005,
+  "evaluation": "February--December; chronological development evaluation",
+  "source_sha256": "4386b950964e71e520faaf0f8bff378c06bbe7c00796ca8a22f6aa3311eca6ca",
+  "input_sha256": {
+    "direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+    "附件1.csv": "99bae60824c8e80b5b74b180b3f0b76f2649059c437f2a2878d0a7f93e8c598d",
+    "附件2_光伏发电实际功率.csv": "8889416ff7231b832487a0d1c8629f10cf321a1d7cc5453043b003f864397fce",
+    "附件2_小区负载.csv": "a2e0e3e0e35a3551f67a747aeccd308fa745c8a8b6d20bba5d57f05dd9817c97",
+    "附件3.csv": "23e39b67d2ef894b3a00573c06a35b3bfbd114daf49e12e9e3eb73479fda5562"
+  }
+}

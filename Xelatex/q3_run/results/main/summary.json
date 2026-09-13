@@ -1,0 +1,38 @@
+{
+  "case": "main",
+  "evaluation_days": 334,
+  "complete": true,
+  "total_cost": 12972155.139284365,
+  "components": [
+    12163951.796589348,
+    845883.891525407,
+    -225481.4074954532,
+    187800.8586649914
+  ],
+  "emergency_kwh": 38802.756198503615,
+  "downward_kwh": 649618.0367651249,
+  "reversals": 6029,
+  "throughput_kwh": 11410564.228683572,
+  "initial_soc": 1779.8333709198434,
+  "final_soc": 1200.0,
+  "wall_seconds": 1606.6047646999941,
+  "verification": {
+    "balance_kwh": 1.4210854715202004e-13,
+    "state_kwh": 9.094947017729282e-13,
+    "billing_yuan": 9.094947017729282e-13,
+    "cross_day_kwh": 0.0,
+    "simultaneous_slots": 0,
+    "emergency_charging_slots": 0,
+    "min_soc": 1200.0,
+    "max_soc": 10800.0,
+    "max_charge_kw": 5000.000000000001,
+    "max_discharge_kw": 5000.000000000001,
+    "passed": true
+  },
+  "max_gap": 5.6509190552780835,
+  "mean_gap": 0.03227547387775984,
+  "time_limit_solves": 499,
+  "solves": 1460,
+  "max_scenario_cd_overlap": 2.5775189287193616e-08,
+  "max_scenario_ce_overlap": 2.1335654309969054e-07
+}
