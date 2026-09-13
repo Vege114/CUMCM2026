@@ -1,0 +1,1465 @@
+%! Mode:: "TeX:UTF-8"
+%! TEX program = xelatex
+\PassOptionsToPackage{quiet}{xeCJK}
+\documentclass[withoutpreface,bwprint]{cumcmthesis}
+\usepackage{etoolbox}
+\usepackage{ctex}
+\BeforeBeginEnvironment{tabular}{\zihao{-5}}
+\usepackage[numbers,sort&compress]{natbib}  % 文献管理宏包
+\usepackage[framemethod=TikZ]{mdframed}  % 框架宏包
+\usepackage{url}  % 网页链接宏包
+\usepackage{subcaption}  % 子图宏包
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}\renewcommand{\textbf}[1]{{\song\bfseries #1}}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!20]
+\tikzstyle{process} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=green!20]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\title{考虑预测更新与运行平稳性的微网购电调控策略}  % 论文标题
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文
+\begin{document}
+	
+% 封面和目录页不显示页码
+\pagenumbering{gobble}
+\maketitle
+\begin{abstract}
+
+
+\textbf{对于问题一,}
+
+\textbf{对于问题二,}
+
+\textbf{对于问题三,}
+
+\textbf{对于问题四,}
+
+最后，
+
+
+
+\keywords{关键词；关键词；关键词；关键词；关键词}
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%\vspace{-1.4cm} 
+%\tableofcontents  % 目录
+%\newpage
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\pagenumbering{arabic}
+% 以下四节直接写入本文件，无需引用其他正文文件。
+\begingroup
+\renewcommand{\baselinestretch}{1.12}\selectfont
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+\titlespacing*{\subsection}{0pt}{8pt}{5pt}
+
+\section{问题背景与问题重述}
+\subsection{问题背景}
+分布式光伏为社区提供了就地获取电能的途径，但其电力供给的时间分布与居民用电需求并不天然一致：发电充裕时可能出现剩余电量，而负载集中或光伏回落时又需要依赖外部电网。配置储能电池可以将不同时段的电能供需连接起来，却也引入了充放电损耗、功率上限和安全储电范围等限制。因此，微网运营的关键并非单纯提高某一时段的自给率，而是在持续满足负载的前提下，协调购电时机、储能状态与预测风险，控制整个运行周期的购电支出。现实调度还存在“计划先制定、信息后到达”的矛盾。购电计划偏乐观可能引发高价紧急购电，过度保守则可能为未被利用的电量支付费用；中途调整购电安排有助于修正计划，但调整本身也有代价。因此，设计一个“预测—计划—修正—执行—结算”一体化的调度分析模型，对建设兼具经济性与可靠性的微网发电系统具有重要意义。
+
+
+\subsection{问题重述}
+本文以光伏电源、社区负载、储能电池及外网组成的系统为对象，将原题四问归纳为以下递进任务。
+
+\textbf{问题一}要求利用典型日电价、负载及给定光伏预测，确定各时段的购电与充放电安排。设计一个混合整数线性优化模型，在日初日末储电量一致的条件下优先减少购电费，并结合现实应用场景，在尽可能保证经济性的方案中进一步改善电池充放电平稳性、减少购电量。
+
+\textbf{问题二}要求先依据历史负载和光伏数据构建一个预测模型，根据预测得到的每日负载和发电数据制定每日0时计划。新的购电计划需要考虑如果计划供电低于实际负载，需要按当时电价5倍计收的紧急购电费用。
+
+\textbf{问题三}引入每日0、6、12、18时发布的未来24小时整点光伏预报，研究是否以及如何修正未执行计划。重点衡量提前量误差、未来更新机会与上调1.5倍、下调50\%相关计费之间的关系，并评价额外预报的实际决策价值。
+
+\textbf{问题四}将固定日内价格扩展为随日期和时段变化的电价，在明确价格可见性的前提下分别重新研究无额外光伏预报和有日内预报的两类策略，比较价格预测误差与供需误差共同作用下的购电安排。
+
+
+\clearpage
+\section{问题分析}
+四问共享能量守恒、储能状态递推与充放电硬互斥约束，差别在于决策时可用的信息及购电结算机制。本文按照“物理约束统一、历史信息预测、风险驱动决策、因果执行检验”的思路，逐层增加供需误差、日内预报和电价波动。数据对齐、参数拟合和误差校准均限定于当时已知信息，以保证各策略在同一可行域和可比的信息条件下评价。
+
+\subsection*{问题1分析}
+本问的电价、负载和光伏预测已知，关键在于利用储能连接不同时段的供需，同时协调最低购电费与充放电平稳性。首先按十分钟区间建立能量平衡和储电递推关系，以二元变量约束充、放电互斥，并通过日初日末电量相等排除透支储能的方案。随后以最低电费为基准，结合功率变化和最短运行时间限制，构建带费用让步预算的三层混合整数规划，依次优化购电费、运行平稳性及购电量。最后按指定时段汇总调度结果，通过经济基准对比、逐段约束复核、参数扰动与输入噪声测试，分析平滑收益的经济代价及计划对预测偏差的适用范围。
+
+\subsection*{问题2分析}
+关键矛盾是日前计划必须先于实际供需制定，而预测缺口与剩余购电的经济后果不对称。先用日、周及低自由度年周期动态回归刻画负载，以“季节日内背景乘短期发电状态”预测光伏；再利用历史相关误差估计连续净负荷缺口，将其转化为可选的自适应储能备用。备用参数通过过去的因果执行费用校准，而非只按预测精度选择。随后逐日完成预测、计划、实时执行和状态更新，保持跨日储电量连续，并比较无备用、固定备用与自适应备用策略。
+
+\subsection*{问题3分析}
+关键矛盾是新预报能降低部分不确定性，但调整有成本，远期风险还可能被后续更新修正。首先按发布时刻与提前量匹配预报和实际值，分离偏差与方差，并控制昼夜差异；再生成保留时间相关性的误差路径，将整点功率校准后插值积分至10分钟。进而建立提前量感知的多阶段风险调度，使0时计划预先考虑未来更新机会，同一已知历史对应相同动作。预报到达后重新优化未执行区间，统一结算并通过不同更新时刻组合评价信息价值。
+
+\subsection*{问题4分析}
+关键矛盾由供需预测误差扩展为供需与价格的联合不确定性，预知真实全日电价会夸大策略能力。首先以周期、近期及前周同刻价格建立滚动动态回归，随后分别接入问题2和问题3，保持两类策略的光伏预报权限不变。若联合场景导致计算负担过大，再按决策成本压缩场景并回填遗漏的极端路径。最后在相同滚动时序下比较预测、费用与计算开销，区分价格环境变化、信息增加及算法增强各自的影响，全程不提前使用未来实测值。
+
+\clearpage
+\section{模型假设}
+为使模型复杂度与题目数据所支持的分辨率相匹配，作如下五项假设。容量、功率、安全储电范围和供电要求属于题面约束，不作为可以放宽的假设重复列出。
+
+\begin{enumerate}[label=\textbf{假设\arabic*：},leftmargin=4.8em,itemsep=9pt,topsep=5pt]
+\item \textbf{采用集中式单母线、区间平均功率表征。}
+将微网视为统一调度的聚合系统，不另行刻画内部线路潮流、电压与频率动态；10分钟控制区间内用平均功率描述能量交换。
+\textbf{合理性依据：}附件提供的是聚合功率与电价，没有内部拓扑、线路阻抗及秒级控制数据，不足以识别网络与暂态模型。
+\textbf{模型影响：}可用区间能量平衡连接负载、光伏、储能和购电；结论限定于能量管理层，不声称验证配电网电气安全。整点预报通过插值后积分转换，不直接视为小时平均值。
+
+\item \textbf{总程效率为90\%，且充、放电方向对称。}
+取$\eta_c=\eta_d=\sqrt{0.9}$，主模型中不另计自放电、辅助设备耗电与容量随时间衰减。
+\textbf{合理性依据：}题面只给出一个效率数值，没有分方向效率曲线及老化、辅助用电参数；对称分解是保持总程效率并减少不可识别参数的一种约定，而非由题面唯一推出的物理事实。
+\textbf{模型影响：}得到统一、可核验的储电量递推关系；通过效率及附加损耗情景检验结论敏感性，不将平稳性直接折算为延寿收益。
+
+\item \textbf{负载不可主动削减，外网正常可用且不设置额外购电上限。}
+所有负载均需得到满足；不设置售电收益，剩余电量允许不被利用，已申报购电仍按适用规则结算。
+\textbf{合理性依据：}题目要求保障供电，给出了紧急购电机制，却未给出可转移负荷、外网容量上限、停电过程及售电价格。
+\textbf{模型影响：}紧急购电承担最后的供需平衡补救，比较聚焦于费用而非失负荷；总剩余应区分光伏弃电与已付费未使用购电。本结论不适用于限电或孤岛场景。
+
+\item \textbf{信息按时可用，决策与执行遵守因果顺序。}
+已发布预报和已实现观测可在下一次允许决策时使用，不考虑超过10分钟的通信或执行延迟；问题4主情景暂按真实价格随时间揭示处理。
+\textbf{合理性依据：}题面明确了预报发布时间，但未提供通信故障和价格提前公告机制；逐步揭示价格是避免引入额外先知信息的工作解释。
+\textbf{模型影响：}只用过去信息拟合预测与风险参数，冻结已执行动作并传递实际储电量；价格全日已知仅作辅助情景，延迟影响可通过滞后一期的信息检验评估。
+
+\item \textbf{经周期与近期状态调整后，历史误差在短期内具有局部可迁移性。}
+不要求全年同分布、误差独立、无偏或服从正态分布，只认为相近时段及条件下的近期误差能提供下一阶段风险参考。
+\textbf{合理性依据：}日历周期可作为建模结构，但其强度与误差分布需随历史更新；在缺乏未来气象等信息时，局部历史是可获取的校准依据。
+\textbf{模型影响：}支持滚动回归、备用分位与相关场景生成；采用近期加权、分组收缩、分块重采样和滚动外推检验，发现漂移时更新窗口，避免将该假设当成已验证事实。
+\end{enumerate}
+
+\clearpage
+\section{符号说明}
+下表列出贯穿各问的公共符号，局部回归系数和辅助线性化变量在相应模型中定义。上标“$\widehat{\phantom{x}}$”表示预测量；日下标$d$在不致混淆时省略。$E$表示储电量，$e$表示紧急购电量，两者严格区分。
+
+\begin{table}[H]
+\centering
+\caption{主要符号及单位}
+\label{tab:global-symbols}
+\renewcommand{\arraystretch}{1.12}
+\small
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{3.2cm}X>{\centering\arraybackslash}p{2.1cm}}
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+$d,t$ & 日期索引、日内调度区间索引，$t=1,\ldots,144$ & --\\
+$\Delta t$ & 单个调度区间长度，取$1/6$ & h\\
+$\tau,h$ & 预报发布时刻、距离发布时刻的预测提前量 & h\\
+$L_{d,t},V_{d,t}$ & 负载、可用光伏的区间平均功率 & kW\\
+$\widehat L_{d,t},\widehat V_{d,t}$ & 决策时可获取的负载、光伏预测功率 & kW\\
+$p_{d,t},\widehat p_{d,t}$ & 基础电价及其预测值，交易倍数另计 & 元/kWh\\
+$g_{d,t}$ & 每日0时申报的计划购电量 & kWh\\
+$q_{d,t}$ & 当前决策版本中调整后的总购电量 & kWh\\
+$e_{d,t}$ & 实际执行时为补足缺口购买的紧急电量 & kWh\\
+$a^+_{d,t},a^-_{d,t}$ & 相对原计划的净上调量、净下调量 & kWh\\
+$P^c_{d,t},P^d_{d,t}$ & 交流侧充电功率、放电功率 & kW\\
+$z^c_{d,t},z^d_{d,t}$ & 充电、放电模式指示变量，二者不可同时为1 & --\\
+$E_{d,t}$ & 区间$t$开始时的储电量，$E_{d,145}$为日末值 & kWh\\
+$E_{\min},E_{\max}$ & 安全储电量下限1200、上限10800 & kWh\\
+$P_{\max}$ & 最大充电或放电功率，取5000 & kW\\
+$\eta_c,\eta_d$ & 充电、放电效率，均取$\sqrt{0.9}$ & --\\
+$w_{d,t}$ & 供需平衡中的总未利用电量，并非全部弃光 & kWh\\
+$R_{d,t}$ & 为应对未来缺口预留的电池内部能量 & kWh\\
+$\varepsilon_{\tau,h}$ & 对应发布时刻与提前量的光伏功率预报误差 & kW\\
+$b_{\tau,h},\sigma_{\tau,h}$ & 该组误差的偏差、去偏后的标准差 & kW\\
+$\mathcal I_\tau$ & 决策时刻$\tau$已可获取的信息集合 & --\\
+$s,\pi_s$ & 随机场景索引及相应概率 & --\\
+$C_{\mathrm{tot}}$ & 计划、调整及紧急购电构成的总费用 & 元\\
+$\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+其中，$a^+_{d,t}=(q_{d,t}-g_{d,t})^+$，$a^-_{d,t}=(g_{d,t}-q_{d,t})^+$仅表示相对原计划的净偏差，不预先确定多次调整的计费基准。预报误差取“实际值减预测值”，其MSE单位为$\mathrm{kW}^2$；$\sigma^2=\mathrm{MSE}-b^2$须在同一分组与一致矩估计口径下使用。模型中的功率需乘以$\Delta t$才成为区间电量。
+\clearpage
+\endgroup
+
+\section{问题一的模型建立与求解}
+\label{sec:q1}
+\subsection{数据准备与建模约定}
+问题一研究给定负载、电价和光伏预测条件下的典型日调度。储能能够将低价时段及光伏富余时段的电量转移至用电高峰，但充放电损耗削弱了时移收益，容量和功率限制又使各时段决策相互关联。因此，需在全天供需平衡的基础上同时确定购电量与储能轨迹。
+
+将一天划分为$T=144$个区间，区间长度$\Delta t=1/6$\,h。附件中的时间按区间右端解释，$0{:}10$对应$[0{:}00,0{:}10)$，$0{:}00+1$对应$[23{:}50,24{:}00)$。保持原始行序，对电价、负载与光伏三列检查数值类型、有限性及非负性，再将功率换算为区间电量：
+\begin{equation}
+ \ell_t=L_t\Delta t,\qquad v_t^{\mathrm{pv}}=V_t\Delta t,\qquad
+ Q_L=\sum_{t=1}^{T}\ell_t,\quad Q_V=\sum_{t=1}^{T}v_t^{\mathrm{pv}}.
+ \label{eq:q1-data}
+\end{equation}
+附件一的全天负载电量为111024.808100\,kWh，光伏预测电量为55482.835667\,kWh，电价范围为0.3713--1.3952元/kWh。虽然光伏约占全天负载电量的一半，其发电集中时段与负载、电价峰值并不重合，仅按全天净电量购电不能保证逐段供电。
+
+\subsubsection{本问的核心假设}
+本节沿用全局符号，并将直接影响问题一求解的约定归纳如下。
+
+\begin{enumerate}[label=\textbf{假设\arabic*：},leftmargin=4.8em,itemsep=5pt]
+ \item \textbf{假设内容：}微网按单母线聚合系统处理，十分钟内采用区间平均功率，负载不可主动削减，剩余电量允许不被利用。
+ \textbf{设立依据：}附件提供聚合功率，未提供线路阻抗、可转移负荷及售电价格。
+ \textbf{对模型的影响：}以区间能量守恒描述供需关系，不计售电收入；模型用于能量调度，不替代电压、频率及线路安全校核。
+
+ \item \textbf{假设内容：}主方案将90\%解释为往返效率，充、放电效率对称分解为$\eta_c=\eta_d=\sqrt{0.9}$，日内不另计自放电及容量衰减。
+ \textbf{设立依据：}题面仅给出一个效率数值，没有分方向效率曲线和老化参数，对称分解可避免引入额外不可识别参数。
+ \textbf{对模型的影响：}充入与输出电量分别按效率换算；效率解释作为建模约定保留，并通过81\%与99\%往返效率情景检验影响。
+
+ \item \textbf{假设内容：}给定光伏预测作为本问的确定性供给输入，外网可按计划提供所需电量，不额外设置购电容量上限。
+ \textbf{设立依据：}本问要求利用已给定预测制定计划，未给出预测误差分布或外网接入功率限制。
+ \textbf{对模型的影响：}约束保证给定预测下逐段供电；预测偏离时的适用边界另作压力测试，不据此假定实际发电无误差。
+
+ \item \textbf{假设内容：}将给定曲线视为可重复的典型日，以6000\,kWh为日初、日末储电量，并循环连接午夜两侧的运行模式。
+ \textbf{设立依据：}问题一给出相同的日负载、电价，要求日初日末储电量相等，附录给出初始电量6000\,kWh。
+ \textbf{对模型的影响：}排除透支初始储能获得虚假节费的方案；循环运行条件避免把功率跳变和短动作转移到日界处。
+\end{enumerate}
+其中，典型日循环是本问的运行约定，后续随机变化条件下仍需按真实储电量跨日传递。爬坡限值及最短运行时间作为平稳运行方案的可调设置，在模型中单独列出，不视为题面已给定的硬件参数。
+
+\subsubsection{变量与参数定义}
+决策量统一在交流侧定义；$g_t,w_t$为电量，$P_t^c,P_t^d$为功率。表\ref{tab:q1-vars}区分直接调度变量、辅助量和目标量，表\ref{tab:q1-params}列出已知条件及需要根据运行偏好选定的参数。
+
+\begin{table}[htbp]
+ \centering\small
+ \caption{问题一的变量定义}\label{tab:q1-vars}
+ \renewcommand{\arraystretch}{1.12}
+ \begin{tabularx}{\textwidth}{p{2.3cm}p{2.35cm}p{1.05cm}p{2.0cm}X}
+ \toprule
+ 符号&类别及类型&单位&取值范围&场景含义\\
+ \midrule
+ $g_t$&决策／连续&kWh&$[0,+\infty)$&时段$t$向外网申报的购电量\\
+ $P_t^c,P_t^d$&决策／连续&kW&$[0,P_{\max}]$&交流侧充、放电功率\\
+ $z_t^c,z_t^d$&决策／二元&--&$\{0,1\}$&充、放电模式是否开启\\
+ $E_t$&中间／连续&kWh&$[1200,10800]$&区间起点储电量，含日末边界\\
+ $w_t$&中间／连续&kWh&$[0,+\infty)$&供给中未被负载或储能利用的电量\\
+ $P_t^{\mathrm{bat}}$&中间／连续&kW&$[-5000,5000]$&净充电功率，正为充电、负为放电\\
+ $s_t^m,o_t^m$&中间／指示&--&$\{0,1\}$&模式$m$的启动、关闭事件\\
+ $\xi_t$&中间／连续&kW&$[0,+\infty)$&净功率相邻差的绝对值上界\\
+ $b_{t,k}^m$&中间／指示&--&$\{0,1\}$&启动后前$k$段内是否中断\\
+ $\mathcal V,N_s,B$&中间／汇总&见注&非负&总变差、启动次数、短段缺额\\
+ $F_1$&目标／连续&元&$[0,+\infty)$&全天购电费用\\
+ $F_2$&目标／连续&--&$[0,+\infty)$&归一化运行不平稳程度\\
+ $F_3$&目标／连续&kWh&$[0,+\infty)$&全天购电量\\
+ \bottomrule
+ \end{tabularx}
+
+ \smallskip\parbox{\textwidth}{\footnotesize 注：$m\in\{c,d\}$；$\mathcal V$单位为kW，$N_s$单位为次，$B$单位为十分钟段。$s,o,b$由二元模式唯一确定，实现时可使用$[0,1]$连续辅助变量。}
+\end{table}
+
+\begin{table}[htbp]
+ \centering\small
+ \caption{问题一的已知参数与运行偏好参数}\label{tab:q1-params}
+ \renewcommand{\arraystretch}{1.12}
+ \begin{tabularx}{\textwidth}{p{2.4cm}p{2.2cm}p{1.2cm}p{2.7cm}X}
+ \toprule
+ 符号&类别及类型&单位&取值或范围&现实含义及来源\\
+ \midrule
+ $T,\Delta t$&已知／整数、实数&段、h&$144,1/6$&一天及十分钟离散精度\\
+ $L_t,V_t$&已知／实数&kW&非负，附件一&负载与光伏预测输入\\
+ $p_t$&已知／实数&元/kWh&$[0.3713,1.3952]$&附件一的分时购电价格\\
+ $P_{\max}$&已知／实数&kW&5000&设备最大充、放电功率\\
+ $E_{\min},E_{\max}$&已知／实数&kWh&1200，10800&安全储电边界\\
+ $E_1,E_{T+1}$&边界／实数&kWh&6000，6000&重复日运行的储能起止状态\\
+ $\eta_{\rm rt}$&解释性参数／实数&--&主值0.9；$(0,1]$&往返效率，$\eta_c\eta_d=\eta_{\rm rt}$\\
+ $P_{\min}$&判据／实数&kW&1；$(0,P_{\max})$&区分有效运行与零功率模式\\
+ $R_{\rm ramp}$&待选定／实数&kW&主值1000；$(0,10000]$&相邻十分钟净功率变化上限\\
+ $U,D$&待选定／整数&段&主值3，2；$[1,T]$&同模式最短运行、关闭时长\\
+ $\delta$&待校准／实数&--&主值0.001；$\delta\geq0$&相对第一层最低费用的让步比例\\
+ $K$&诊断／整数&段&3&短动作参考长度，对应30分钟\\
+ $\epsilon_C,\epsilon_S$&数值容差／实数&元、--&$10^{-4},10^{-7}$&费用、平稳性层次约束的容差\\
+ \bottomrule
+ \end{tabularx}
+\end{table}
+待选定参数表示运行偏好，并非从附件辨识出的设备额定值。本文先考察候选组合，再用单因素重求解分析参数变化；模式最小有效功率只用于明确启动计数，不承担寿命估计功能。
+
+\subsection{考虑运行平稳性的分层优化模型}
+\subsubsection{供需平衡与储能耦合}
+\textbf{（1）由逐段保供要求建立能量平衡。}
+区间内，外购电、光伏与电池放电共同供给负载和充电，多余部分由$w_t$表示。因此
+\begin{equation}
+ g_t+V_t\Delta t+P_t^d\Delta t
+ =L_t\Delta t+P_t^c\Delta t+w_t,\qquad g_t,w_t\geq0 .
+ \label{eq:q1-balance}
+\end{equation}
+令$w_t\geq0$等价于允许供给高于需求，同时排除负荷缺供。它表示总剩余电量，既可能来自光伏，也可能来自已经付费的购电。
+
+\textbf{（2）由转换效率推导储电递推。}
+充电时输入$P_t^c\Delta t$，其中$\eta_cP_t^c\Delta t$进入电池；放电时向交流侧供出$P_t^d\Delta t$，电池内部相应减少$P_t^d\Delta t/\eta_d$，故
+\begin{equation}
+ E_{t+1}-E_t=\eta_cP_t^c\Delta t-\frac{P_t^d\Delta t}{\eta_d},
+ \qquad \eta_c=\eta_d=\sqrt{\eta_{\rm rt}}.
+ \label{eq:q1-state}
+\end{equation}
+安全储电范围和周期边界分别给出
+\begin{equation}
+ E_{\min}\leq E_t\leq E_{\max}\quad(t=1,\ldots,T+1),
+ \qquad E_1=E_{T+1}=6000 .
+ \label{eq:q1-boundary}
+\end{equation}
+将式\eqref{eq:q1-state}对一天求和，利用两端储电量相等，可得全天交流侧充放电关系：
+\begin{equation}
+ Q_c=\Delta t\sum_tP_t^c,\quad Q_d=\Delta t\sum_tP_t^d,\qquad
+ Q_d=\eta_{\rm rt}Q_c,\quad Q_{\rm loss}=(1-\eta_{\rm rt})Q_c.
+ \label{eq:q1-loss}
+\end{equation}
+式\eqref{eq:q1-loss}表明储能仅转移电能而不产生电能。低价购入后再放出的等效单价为$p_{\rm low}/\eta_{\rm rt}$，因而具备套利空间的必要价格条件为
+\begin{equation}
+ p_{\rm high}>\frac{p_{\rm low}}{\eta_{\rm rt}}.
+ \label{eq:q1-arbitrage}
+\end{equation}
+该条件仅用于解释时移机理；能否充入、能否留到高价时段，还受全日状态和功率约束共同限制。
+
+\textbf{（3）由设备运行模式建立互斥约束。}
+同一电池在一个区间内只能充电、放电或停机，引入二元变量后有
+\begin{equation}
+ z_t^c,z_t^d\in\{0,1\},\qquad z_t^c+z_t^d\leq1 .
+ \label{eq:q1-mode}
+\end{equation}
+模式变量与连续功率通过
+\begin{equation}
+ P_{\min}z_t^m\leq P_t^m\leq P_{\max}z_t^m,\qquad m\in\{c,d\}
+ \label{eq:q1-power}
+\end{equation}
+连接。模式关闭时功率必须为零；开启时至少达到计数判据$P_{\min}$，避免零功率时任意延长运行段。
+
+\subsubsection{功率变化与运行段约束}
+仅最小化电费时，邻近低价区间的细小价差也可能使充电集中在少数区间，形成短时高功率动作。为限制这一现象，定义净充电功率，并连接循环日的午夜边界：
+\begin{equation}
+ P_t^{\mathrm{bat}}=P_t^c-P_t^d,\qquad
+ P_0^{\mathrm{bat}}=P_T^{\mathrm{bat}},\qquad z_0^m=z_T^m .
+ \label{eq:q1-net}
+\end{equation}
+相邻控制指令的变化不超过候选限值：
+\begin{equation}
+ -R_{\rm ramp}\leq P_t^{\mathrm{bat}}-P_{t-1}^{\mathrm{bat}}\leq R_{\rm ramp}.
+ \label{eq:q1-ramp}
+\end{equation}
+这里$R_{\rm ramp}=1000$\,kW表示每十分钟两个平均功率指令之差，而非电池最大功率，也不是秒级连续爬坡速度。
+
+为了限制短时启停，令$s_t^m$表示模式$m$由关闭转为开启，$o_t^m$表示相反转换。由0--1状态的逻辑关系得到
+\begin{equation}
+ \begin{aligned}
+ s_t^m&\geq z_t^m-z_{t-1}^m,&s_t^m&\leq z_t^m,&s_t^m&\leq1-z_{t-1}^m,\\
+ o_t^m&\geq z_{t-1}^m-z_t^m,&o_t^m&\leq z_{t-1}^m,&o_t^m&\leq1-z_t^m,
+ \end{aligned}
+ \qquad 0\leq s_t^m,o_t^m\leq1 .
+ \label{eq:q1-switch}
+\end{equation}
+例如$z_{t-1}^m=0,z_t^m=1$时，上述约束共同给出$s_t^m=1,o_t^m=0$，其余状态可同理验证。启动后至少连续运行$U$段，关闭后至少连续关闭$D$段：
+\begin{equation}
+ \sum_{j=0}^{U-1}z_{t+j}^m\geq Us_t^m,\qquad
+ \sum_{j=0}^{D-1}(1-z_{t+j}^m)\geq Do_t^m .
+ \label{eq:q1-duration}
+\end{equation}
+下标均循环取模。关闭时间限制针对同一模式，不能解释为整台电池必须停机$D$段。
+
+\subsubsection{费用优先的三层目标}
+\textbf{第一层：确定运行条件下的最低购电费。}
+上述供需、储电和运行约束共同构成可行域$\mathcal X$。在该可行域内，最低购电费用为
+\begin{equation}
+ F_1(x)=\sum_{t=1}^{T}p_tg_t,\qquad C^\star=\min_{x\in\mathcal X}F_1(x).
+ \label{eq:q1-first}
+\end{equation}
+$C^\star$提供后续费用让步的基准，不与无新增运行限制时的最低电费混用。
+
+\textbf{第二层：在费用预算内减少功率波动与短动作。}
+用循环总变差$\mathcal V$、启动次数$N_s$和短段缺额$B$衡量运行平稳性：
+\begin{equation}
+ \mathcal V=\sum_t|P_t^{\rm bat}-P_{t-1}^{\rm bat}|,\qquad
+ N_s=\sum_t(s_t^c+s_t^d),\qquad B=\sum_j(K-\ell_j^{\rm run})^+ ,
+ \label{eq:q1-diagnostics}
+\end{equation}
+其中$\ell_j^{\rm run}$为第$j$个循环运行段的长度。$\mathcal V$减少表示控制指令整体变化较小；$N_s$和$B$分别反映动作分散程度和短动作程度，三者均不是已经标定的电池寿命损失。
+
+为保持线性结构，以辅助变量$\xi_t$替代绝对值：
+\begin{equation}
+ \xi_t\geq P_t^{\rm bat}-P_{t-1}^{\rm bat},\qquad
+ \xi_t\geq P_{t-1}^{\rm bat}-P_t^{\rm bat},\qquad \xi_t\geq0 .
+ \label{eq:q1-tv-linear}
+\end{equation}
+在第二层的正权重最小化下，$\sum_t\xi_t=\mathcal V$。短段项则由启动后是否发生中断表达。对$k=1,\ldots,K-1$，有
+\begin{equation}
+ \begin{gathered}
+ 0\leq b_{t,k}^m\leq s_t^m,\qquad
+ b_{t,k}^m\geq s_t^m-z_{t+j}^m\quad(j=1,\ldots,k),\\
+ b_{t,k}^m\leq k-\sum_{j=1}^{k}z_{t+j}^m,\qquad
+ B=\sum_{m,t,k}b_{t,k}^m .
+ \end{gathered}
+ \label{eq:q1-short}
+\end{equation}
+启动后前$k$段内发生关闭时$b=1$，否则$b=0$。本轮$U=K=3$，故改进方案的$B$恒为零；该项保留用于与未限制最短运行时间的经济基准采用相同评价口径。
+
+将不同量纲的指标按上界归一化，得到
+\begin{equation}
+ F_2(x)=\frac{\sum_t\xi_t}{2P_{\max}T}
+       +\frac{N_s}{2T}+\frac{B}{2T(K-1)} .
+ \label{eq:q1-second}
+\end{equation}
+归一化只统一数值尺度；等权系数反映本次运行偏好，不将三项解释为相同的货币损失。若只允许电费偏离$C^\star$一个极小数值容差，第二层可调整空间有限。故引入相对费用让步$\delta$，求解
+\begin{equation}
+ S^\star=\min_{x\in\mathcal X}F_2(x),\qquad
+ F_1(x)\leq(1+\delta)C^\star+\epsilon_C .
+ \label{eq:q1-budget}
+\end{equation}
+其中$\delta=0.001$为主动接受的经济预算，$\epsilon_C=10^{-4}$元为数值容差。两者分别控制运行取舍与浮点误差。
+
+\textbf{第三层：在既定运行质量下减少购电量。}
+保持前两层优先级，进一步求解
+\begin{equation}
+ \begin{aligned}
+ \min_{x\in\mathcal X}\quad &F_3(x)=\sum_tg_t,\\
+ \mathrm{s.t.}\quad&
+ F_1(x)\leq(1+\delta)C^\star+\epsilon_C,\\
+ &F_2(x)\leq S^\star+\epsilon_S,\qquad\epsilon_S=10^{-7}.
+ \end{aligned}
+ \label{eq:q1-third}
+\end{equation}
+购电费与购电量并不等价：低价多买电有时比高价少买电更经济。因此将购电量置于第三层，避免其削弱费用目标和已取得的运行平稳性。模型的改进集中于费用预算约束下的分层求解，不需要将多个目标换算成缺乏依据的统一货币权重。
+
+\subsection{模型求解与调度结果}
+\subsubsection{求解实现}
+采用Python 3.12.14、NumPy 2.5.3及SciPy 1.18.1构造混合整数线性规划，通过\texttt{scipy.optimize.milp}调用HiGHS。$z_t^c,z_t^d$为整数变量，其余连续变量与辅助量使用稀疏矩阵组织；绘图采用Matplotlib 3.11.1。具体步骤如下：
+\begin{enumerate}[label=\textbf{步骤\arabic*：},leftmargin=4.8em,itemsep=4pt]
+ \item \textbf{检查输入并确定区间。}校验144行时间连续性、数据完整性及单位，计算全天负载与光伏电量。
+ \item \textbf{构造可行域。}依次写入供需平衡、储电递推、充放电互斥、循环功率变化及最短运行、关闭约束。
+ \item \textbf{执行分层优化。}第一层求$C^\star$；加入费用上界求$S^\star$；再加入平稳性上界最小化购电量。第二目标及其约束同时乘以$10^6$进行数值缩放，最优解不变，输出时恢复原量尺。
+ \item \textbf{判断求解状态。}每层相对MIP间隙阈值设为$10^{-9}$、时限180秒。未取得成功状态时停止，不将超时可行解作为已证最优解。
+ \item \textbf{独立复算与输出。}从最终144段决策重算能量、费用、模式段长及层次目标，输出完整计划、指定时段汇总与对比图。
+\end{enumerate}
+本次实际运行的三层结果见表\ref{tab:q1-stages}。三层的MIP间隙均为0，求解时间分别为0.308、4.125、8.440秒，耗时仅对应本次运行环境。
+\begin{table}[htbp]
+ \centering\small
+ \caption{三层混合整数规划的实际求解结果}\label{tab:q1-stages}
+ \begin{tabular}{lrrrr}
+ \toprule
+ 层次&购电费/元&购电量/kWh&$F_2$&MIP间隙\\
+ \midrule
+ 第一层&34080.951400&57572.396296&0.056210610&0\\
+ 第二层&34115.032451&57560.643804&0.036950810&0\\
+ 第三层&34115.032451&57560.616077&0.036950910&0\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+第三层购电量仅比第二层减少0.027727\,kWh，作用主要是从前两层的近优方案中进一步选择，而非带来显著节能。非零$\delta$允许主动费用让步，因此这里得到的是层次优先的经济--运行折中方案。
+
+\subsubsection{指定时段购电与储能安排}
+将最终方案按题目表1、表2的口径汇总，分别得到表\ref{tab:q1-purchase}和表\ref{tab:q1-storage}。所有电量均在交流侧统计，日初日末储电量为电池内部能量。
+\begin{table}[htbp]
+ \centering\small
+ \caption{指定时段购电量及全天购电结果}\label{tab:q1-purchase}
+ \begin{tabular}{lrlrlr}
+ \toprule
+ 时间段&购电量/kWh&时间段&购电量/kWh&时间段&购电量/kWh\\
+ \midrule
+ 10:00--10:10&0.000000&12:00--12:10&480.412450&14:00--14:10&0.000000\\
+ 16:00--16:10&445.431650&18:00--18:10&621.850212&20:00--20:10&2.246095\\
+ \midrule
+ \multicolumn{3}{l}{全天购电量：57560.616077\,kWh}&
+ \multicolumn{3}{l}{全天购电费：34115.032451元}\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+\begin{table}[htbp]
+ \centering\small
+ \caption{储能分时充放电量与起止储电量}\label{tab:q1-storage}
+ \begin{tabular}{lrrlrr}
+ \toprule
+ 时间段&充电量/kWh&放电量/kWh&时间段&充电量/kWh&放电量/kWh\\
+ \midrule
+ 0:00--4:00&5059.644256&0.000000&4:00--8:00&0.000000&7357.436146\\
+ 8:00--12:00&5071.280472&1702.996983&12:00--16:00&4995.867450&0.000000\\
+ 16:00--20:00&0.000000&6729.235006&20:00--24:00&5059.644256&2378.124655\\
+ \midrule
+ \multicolumn{3}{l}{0:00储电量：6000.000000\,kWh}&
+ \multicolumn{3}{l}{24:00储电量：6000.000000\,kWh}\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+10:00--10:10和14:00--14:10无需购电，表明光伏与储能已覆盖当段负载。部分四小时区间同时出现充、放电汇总，是不同十分钟动作相加的结果，并非同一时刻同时充放电。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{q1_run/q1_dispatch.png}
+ \caption{典型日电池净充电功率与储电轨迹}\label{fig:q1-power}
+ \parbox{0.94\textwidth}{\footnotesize 图注：平稳运行方案连接分散的充放电动作，降低相邻功率跳变；储电量始终处于安全区间，并在日末恢复初值。}
+\end{figure}
+图\ref{fig:q1-power}采用阶梯线表示十分钟平均功率指令，避免将相邻数据点连线误解为区间内已经实现连续爬坡。储电量则在区间边界给出，两幅图共同反映功率安排与能量累积的关系。
+
+\subsection{模型检验与敏感性分析}
+\subsubsection{约束可行性与能量账目检验}
+本问是确定性优化问题，没有回归拟合过程，故不使用$R^2$或残差正态性评价模型。检验分为三步：从最终决策逐段复算供需与储电残差；核查容量、功率、模式及循环段长；将全天电量与费用重新求和，并与求解目标对应。定义
+\begin{equation}
+ \begin{aligned}
+ r_t^{\rm bal}&=g_t+(V_t+P_t^d-L_t-P_t^c)\Delta t-w_t,\\
+ r_t^E&=E_{t+1}-E_t-\eta_cP_t^c\Delta t+P_t^d\Delta t/\eta_d,\\
+ r_C&=\left|\sum_tp_tg_t-F_1(x)\right| .
+ \end{aligned}
+ \label{eq:q1-audit-residual}
+\end{equation}
+物理残差在各自单位下采用$2\times10^{-5}$的审计容差，整数模式偏差阈值为$10^{-6}$，费用预算另用$10^{-5}$元复核容差。上述数值只用于识别浮点误差，不放宽设备真实边界。
+
+\begin{table}[htbp]
+ \centering\small
+ \caption{主方案的独立约束检验}\label{tab:q1-audit}
+ \begin{tabular}{lrl}
+ \toprule
+ 检验项目&实际数值&判定\\
+ \midrule
+ $\max_t|r_t^{\rm bal}|$/kWh&$1.59\times10^{-12}$&通过\\
+ $\max_t|r_t^E|$/kWh&$6.25\times10^{-13}$&通过\\
+ 起止储电量偏离6000/kWh&0&通过\\
+ 储电量最小、最大/kWh&1200，10800&通过\\
+ 最大充、放电功率/kW&5000，4268.747931&通过\\
+ $\max_t\min(P_t^c,P_t^d)$/kW&$2.43\times10^{-9}$&浮点容差内互斥\\
+ 最大相邻净功率变化/kW&1000.000000&通过，含午夜\\
+ 最短运行、同模式关闭/min&170，430&分别不低于30、20\\
+ 物理、模式及层次约束违反项&0&通过\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+进一步将式\eqref{eq:q1-balance}全天求和，并代入式\eqref{eq:q1-loss}：
+\begin{equation}
+ Q_g=Q_L-Q_V+Q_{\rm loss}+Q_w,\qquad Q_w=\sum_tw_t.
+ \label{eq:q1-daily}
+\end{equation}
+实际解满足$Q_c=20186.436434$、$Q_d=18167.792791$\,kWh，转换损耗为2018.643643\,kWh，剩余电量为零。因此
+\begin{equation}
+ 57560.616077
+ \simeq111024.808100-55482.835667+2018.643643
+ \quad(\mathrm{kWh}).
+ \label{eq:q1-numeric-energy}
+\end{equation}
+式中显示值已舍入；程序使用完整精度核查。由全天守恒、逐段残差与求解器间隙可知，该方案在所设条件下满足保供及周期运行要求。
+
+\subsubsection{经济基准与平稳运行方案对比}
+为区分储能收益和运行偏好的代价，设置三个对照：无储能直接购电；不增加爬坡及持续时间要求的严格经济基准；采用$R_{\rm ramp}=1000$、$U=3,D=2,\delta=0.001$的平稳方案。严格经济基准仍进行三层求解，但后层只有数值费用容差。无储能方案为
+\begin{equation}
+ g_t^{(0)}=(L_t-V_t)^+\Delta t,\qquad
+ C^{(0)}=\sum_tp_tg_t^{(0)}=48052.046591\ \text{元}.
+ \label{eq:q1-no-storage}
+\end{equation}
+\begin{table}[htbp]
+ \centering\small
+ \caption{储能调度方案的经济性与运行指标对比}\label{tab:q1-compare}
+ \begin{tabular}{lrr}
+ \toprule
+ 指标&严格经济基准&平稳运行方案\\
+ \midrule
+ 购电费/元&33801.495642&34115.032451\\
+ 购电量/kWh&57526.243481&57560.616077\\
+ 循环功率总变差/kW&102684.580769&33209.310058\\
+ 最大相邻净功率变化/kW&8546.841200&1000.000000\\
+ 运行段启动次数/次&12&4\\
+ 短于30分钟的运行段数/段&6&0\\
+ 转换损耗/kWh&1984.271048&2018.643643\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+平稳方案总变差下降67.6589\%，启动次数减少66.6667\%，代价是购电费增加313.536809元，即0.9276\%。该代价包含两部分：
+\begin{equation}
+ \underbrace{C_{\rm stable}-C_{\rm econ}^{\star}}_{\text{总经济代价}}
+ =
+ \underbrace{C^\star-C_{\rm econ}^{\star}}_{\text{新增运行限制}}
+ +\underbrace{C_{\rm stable}-C^\star}_{\text{第二层费用让步}}.
+ \label{eq:q1-cost-decomp}
+\end{equation}
+两项分别约为279.455857元和34.081051元，其中$C_{\rm econ}^{\star}$为严格经济基准第一层最优值。由此可见，0.1\%指新运行条件下的额外费用预算，而非相对原方案的全部费用增幅。
+
+\subsubsection{费用让步比例的选取}
+固定其他设置，在$\delta=0,0.0005,0.001,0.002,0.005$上重新执行三层优化，结果见表\ref{tab:q1-delta}。将有效运行且净功率绝对值小于50\,kW的区间称为低功率段，仅用于诊断短小动作，不另作硬约束。
+\begin{table}[htbp]
+ \centering\small
+ \caption{电费让步比例的单因素重求解结果}\label{tab:q1-delta}
+ \begin{tabular}{rrrrrr}
+ \toprule
+ $\delta$/\%&购电费/元&购电量/kWh&总变差/kW&启动数&低功率段数\\
+ \midrule
+ 0&34080.951500&57572.396243&50937.422410&6&4\\
+ 0.05&34097.991975&57570.793390&34345.144627&6&1\\
+ 0.10&34115.032451&57560.616077&33209.310058&4&0\\
+ 0.20&34149.113402&57552.981594&31090.138980&4&0\\
+ 0.50&34251.356257&57516.782839&28513.498282&4&0\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+由0提高至0.05\%已大幅降低总变差，但启动仍为6次；提高至0.10\%后，启动降至4次且无低功率段。继续增加预算仍可降低总变差，却未继续减少启动。因此选取0.10\%作为本组候选中的折中值，而不将其解释为连续参数空间中的唯一最优点。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{q1_run/q1_tradeoff.png}
+ \caption{费用让步比例与运行平稳性的关系}\label{fig:q1-tradeoff}
+ \parbox{0.94\textwidth}{\footnotesize 图注：小幅费用让步可明显降低功率总变差；预算继续增加时启动次数不再下降，需结合额外支出选择运行方案。}
+\end{figure}
+
+\subsubsection{核心参数的局部扰动检验}
+对$\delta,R_{\rm ramp},\eta_{\rm rt}$分别作$\pm10\%$相对扰动，其余参数不变，每种情景均重新求解三个层次。定义指标$J$的相对变化及局部灵敏度为
+\begin{equation}
+ D_J(\theta')=\frac{J(\theta')-J(\theta)}{J(\theta)}\times100\%,\qquad
+ S_J(\theta')=\frac{[J(\theta')-J(\theta)]/J(\theta)}
+ {(\theta'-\theta)/\theta}.
+ \label{eq:q1-sensitivity}
+\end{equation}
+整数模式可能跳变，故$S_J$用于有限扰动比较，不等同于处处存在的导数。参数表中$\delta$的$\pm10\%$是0.09\%与0.11\%，效率的对应值是81\%与99\%，后者为机制压力情景，不表示实测效率误差范围。
+
+\begin{table}[htbp]
+ \centering\small
+ \caption{核心参数相对变化10\%时的局部敏感性}\label{tab:q1-robust}
+ \begin{tabular}{lrrrr}
+ \toprule
+ 参数情景&购电费/元&费用变化/\%&总变差/kW&启动数\\
+ \midrule
+$\delta=0.09\%$&34111.6244&-0.0100&34436.1963&4\\
+$\delta=0.11\%$&34118.4405&0.0100&32900.5165&4\\
+$R_{\rm ramp}=900$\,kW&34153.5161&0.1128&33045.9374&4\\
+$R_{\rm ramp}=1100$\,kW&34085.2443&-0.0873&33952.8546&4\\
+$\eta_{\rm rt}=81\%$&35470.6053&3.9735&32667.2116&4\\
+$\eta_{\rm rt}=99\%$&32897.4785&-3.5690&33591.6607&6\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+费用让步比例的局部变化仅使电费变动约$\pm0.0100\%$，启动数均为4；但总变差与低功率段仍会变化，说明局部轨迹并非完全不敏感。爬坡限值由1000降低至900\,kW，费用增加约0.1128\%；放宽至1100\,kW，费用下降约0.0873\%，体现了连续运行与经济支出的权衡。
+
+相比之下，往返效率降至81\%时费用增加约3.9735\%，升至99\%时费用下降约3.56897\%，且后者启动次数增至6。效率影响单位放电的购入成本，还会改变有利套利时段和模式选择。因此只能认为本轮方案对费用预算及爬坡参数的局部扰动较稳定，不能据此声称对全部参数均不敏感。各情景的独立约束违反项均为0。
+
+\subsubsection{输入噪声与固定计划压力测试}
+在缺乏实测误差分布的条件下，设置小幅、可重复的数值扰动，检验模型对输入变化的反应：
+\begin{equation}
+ \widetilde L_t=L_t(1+\zeta_t^L),\quad
+ \widetilde V_t=V_t(1+\zeta_t^V),\qquad
+ \zeta_t^j=\operatorname{clip}(Z_t^j,-0.03,0.03),\
+ Z_t^j\sim N(0,0.01^2).
+ \label{eq:q1-noise}
+\end{equation}
+使用种子2026、2027、2028，保持电价不变、夜间零光伏不变，各情景独立重求解。同时冻结原购电和充放电指令，计算其不能覆盖的正向净负荷扰动：
+\begin{equation}
+ H_{\rm fixed}
+ =\sum_t\left[
+  (\widetilde L_t-\widetilde V_t-L_t+V_t)\Delta t-w_t
+ \right]^+ .
+ \label{eq:q1-fixed-test}
+\end{equation}
+$H_{\rm fixed}$是不允许重新调度或补购时的计划缺口，不是采用实时补救后必然发生的停电量。两项检验分别回答“重新优化是否稳定”与“固定计划能否直接应对扰动”。
+
+\begin{table}[htbp]
+ \centering\small
+ \caption{1\%尺度输入扰动下的重求解与固定计划检验}\label{tab:q1-noise}
+ \begin{tabular}{rrrrr}
+ \toprule
+ 随机种子&重求解费用/元&费用变化/\%&固定计划缺口/kWh&重求解违反项\\
+ \midrule
+2026&34143.6909&0.0840&609.1943&0\\
+2027&34304.0402&0.5540&723.4288&0\\
+2028&34058.5619&-0.1655&470.7939&0\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+三次重求解的费用变化处于$-0.1655\%$至$0.5540\%$，全部通过约束复核，说明本组小幅扰动下重新规划仍能得到接近原费用的可行解。然而，冻结原计划后累计出现470.7939--723.4288\,kWh的区间缺口，表明确定性计划不具备自动抵御供需误差的保供保证。该结果也说明，后续引入实时补购与滚动调整具有必要性。三次独立高斯扰动仅检验局部数值稳定性，不代表真实误差具有独立正态分布，也不提供极端天气或相关预测偏差下的概率保证。
+
+\subsection{结果分析与调度启示}
+\subsubsection{基础数值分析}
+最终方案以34115.032451元购入57560.616077\,kWh，在全部144个区间满足给定负载，并将日末储电量恢复至6000\,kWh。相较无储能直接购电，费用减少13937.014140元，降幅29.0040\%，体现了光伏消纳与低价充电、高价放电的联合收益。
+
+若只追求最低电费，严格经济基准更便宜；若同时重视控制指令连续性，则以约0.93\%的额外费用换取67.66\%的总变差下降和8次启动减少，形成另一种运行选择。第三层购电量的改善很小，不能将主要效益归因于该层。
+
+\subsubsection{深层机理分析}
+从储能轨迹看，低价及光伏富余时段补充电量，随后用于覆盖早晚净负荷；安全上下界限制了可转移的能量，功率上限限制了单段释放能力，周期条件又要求在日末补回储能。三者共同决定了购电时序，故并非所有高价区间都能完全依靠电池供电。
+
+平稳方案的充电量为20186.436434\,kWh，对应转换损耗2018.643643\,kWh。其总购电量比严格经济基准略高，与损耗增加相符。爬坡和运行段要求改变了原可行域，费用让步则为平滑轨迹留出调整空间；二者作用不同，应分别衡量。敏感性结果进一步表明，模式计数可在局部范围内保持稳定，但效率变化仍会显著影响经济结果。
+
+\subsubsection{应用延伸分析}
+在典型日条件下，可将144段购电量作为日前申报计划，将充放电功率作为能量管理层参考指令。运行方可先确定可接受的额外费用，再从费用--总变差关系中选择方案，减少凭经验同时调节多个目标权重的困难。
+
+实际应用时，应以设备允许的功率变化和最短持续时间替换本文候选设置，并校准充、放电效率；若负载或光伏偏离预测，则需引入后续问题的实时补购或滚动调整。较平稳的指令可能降低控制频繁切换，但本题缺少退化试验及寿命成本数据，因而不将总变差降幅直接折算为延寿比例。本文据此给出满足题目输出要求的典型日计划，并保留经济最优与运行平稳之间的明确取舍。
+
+完整求解、约束检验、参数扰动及绘图程序见附录\ref{app:q1-code}。程序内嵌附件一原始数据，可脱离个人文件路径运行；所有图表和数值均由同一组求解结果生成。
+\clearpage
+
+\section{问题二的模型的建立和求解}
+\subsection{具体分析}
+
+\subsection{模型准备}
+
+\subsection{模型建立}
+
+\subsection{模型求解}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{问题三的模型的建立和求解}
+\subsection{具体分析}
+
+\subsection{模型准备}
+
+\subsection{模型建立}
+
+\subsection{模型求解}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{问题四的模型的建立和求解}
+\subsection{具体分析}
+
+\subsection{模型准备}
+
+\subsection{模型建立}
+
+\subsection{模型求解}
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{模型的分析与检验}
+
+\subsection{灵敏度分析}
+
+\subsection{误差分析}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{模型的评价、改进与推广}
+
+\subsection{模型的优点}
+\begin{itemize}[itemindent=2em]
+\item 优点1
+\item 优点2
+\item 优点3
+\end{itemize}
+
+\subsection{模型的缺点}
+\begin{itemize}[itemindent=2em]
+\item 缺点1
+\item 缺点2
+\end{itemize}
+
+
+
+
+\subsection{模型的改进}
+
+
+
+
+
+
+\subsection{模型的推广}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 参考文献
+% 本文已引用文献直接列在本文件内；原ref.bib保留未修改。
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{babic2023}
+BABIĆ L, LAURICELLA M, CEUSTERS G, et al.
+Data-driven non-parametric chance-constrained model predictive control for microgrids energy management using small data batches[J].
+Frontiers in Control Engineering, 2023, 4: 1237759.
+DOI: \url{https://doi.org/10.3389/fcteg.2023.1237759}.
+\bibitem{geslin2025}
+GESLIN A, XU L, GANAPATHI D, et al.
+Dynamic cycling enhances battery lifetime[J].
+Nature Energy, 2025, 10: 172--180.
+DOI: \url{https://doi.org/10.1038/s41560-024-01675-8}.
+\bibitem{scipymilp}
+SciPy contributors. scipy.optimize.milp: Mixed-integer linear programming[EB/OL].
+SciPy 1.15.3 documentation.
+\url{https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.optimize.milp.html}.
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 附录
+\begin{appendices}
+	
+	
+	
+	
+\section{文件列表}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{LL}
+\toprule
+文件名   & 功能描述 \\
+\midrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+数据预处理.py & 预处理程序代码 \\
+q2.py & 问题二程序代码 \\
+q3.c & 问题三程序代码 \\
+q4.cpp & 问题四程序代码 \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bottomrule
+\end{tabularx}
+\label{tab:文件列表}
+\end{table}
+
+
+
+
+
+
+
+
+%\section{代码}
+%\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%数据预处理.py
+%\lstinputlisting[language=python]{code/1.数据预处理.py}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%q2.py
+%\lstinputlisting[language=python]{code/q2.py}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%q3.c
+%\lstinputlisting[language=c]{code/q3.c}
+%
+%
+%q4.cpp
+%\lstinputlisting[language=c++]{code/q4.cpp}
+
+\clearpage
+\section{问题一完整求解与检验程序}\label{app:q1-code}
+本程序同时包含原始输入、三层求解、独立约束检验、参数敏感性、噪声压力测试及绘图。数据取自附件一的144段记录，程序不依赖个人绝对路径。将以下代码保存为\texttt{q1\_reproduce.py}，安装依赖后直接执行：
+\begin{lstlisting}[language=bash,basicstyle=\ttfamily\small,frame=single,numbers=none]
+python -m pip install numpy scipy matplotlib
+python q1_reproduce.py
+\end{lstlisting}
+若希望读取外部Excel，另安装\texttt{openpyxl}，并使用\texttt{--input}传入文件名。外部文件损坏或缺失时默认停止，只有显式加入\texttt{--fallback}才回退到内嵌数据，避免悄悄替换输入。\texttt{--quick}只运行主方案与严格经济基准；默认运行12组参数方案和3组噪声方案。
+
+输出目录默认为\texttt{q1\_output}，其中\texttt{revised.csv}包含144段完整购电、充放电及储电量；各情景的JSON文件保存三层求解状态与完整轨迹，\texttt{summary.json}包含指定时段、四小时汇总及检验结果。CSV可直接用表格软件打开，输入附件和已有结果工作簿均不修改。两幅PNG图由同一批计算结果绘制，正文采用本次完整运行的输出。
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\fontsize{8}{10}\selectfont,
+ numberstyle=\tiny\color{gray},frame=single,breaklines=true,
+ columns=fullflexible,keepspaces=true,showstringspaces=false,
+ keywordstyle=\color{blue!65!black},commentstyle=\color{green!35!black},
+ stringstyle=\color{red!45!black},xleftmargin=1.5em]
+"""问题一完整复现：Python >=3.10；pip install numpy scipy matplotlib。
+直接运行 python q1_reproduce.py；输入内嵌为附件1原始144行。
+可选 --input 附件1.csv / 附件1.xlsx；损坏文件默认报错，--fallback才使用内嵌数据。
+全部输出放入 --out 指定的新目录；不覆盖原始附件或队友工作簿。
+"""
+import argparse  # 解析命令行参数。
+import csv  # 读写不依赖Excel软件的表格。
+import io  # 将内嵌文本作为文件读取。
+import json  # 保存完整数值和求解状态。
+import os  # 将绘图缓存限制在本次输出目录。
+import sys  # 向终端返回失败状态。
+import time  # 记录真实求解耗时。
+from pathlib import Path  # 使用跨平台路径，不写入个人绝对路径。
+try:
+    import numpy as np  # 数值计算。
+    import scipy  # 记录实际使用的库版本。
+    from scipy.optimize import milp, Bounds, LinearConstraint  # 混合整数规划。
+    from scipy.sparse import coo_matrix  # 稀疏约束矩阵。
+except ImportError as exc:
+    raise SystemExit("请先安装：pip install numpy scipy matplotlib") from exc
+
+# 以下是附件1逐行数据，顺序为区间右端、电价、负载、光伏功率。
+EMBEDDED_CSV = """时间,电价,小区负载,光伏发电预测功率
+00:10:00,0.4248,3439.8466,0
+00:20:00,0.4245,3437.9792,0
+00:30:00,0.4269,3444.3031,0
+00:40:00,0.4272,3454.4437,0
+00:50:00,0.4271,3458.8273,0
+01:00:00,0.4285,3459.8401,0
+01:10:00,0.4311,3467.1582,0
+01:20:00,0.4302,3467.9632,0
+01:30:00,0.4279,3466.9683,0
+01:40:00,0.4312,3482.4927,0
+01:50:00,0.4333,3495.0841,0
+02:00:00,0.4311,3498.4443,0
+02:10:00,0.4293,3505.2295,0
+02:20:00,0.4324,3512.6387,0
+02:30:00,0.4367,3516.8685,0
+02:40:00,0.4348,3517.9246,0
+02:50:00,0.4335,3518.5518,0
+03:00:00,0.4357,3521.0976,0
+03:10:00,0.4374,3526.9261,0
+03:20:00,0.4371,3537.2854,0
+03:30:00,0.4356,3544.8808,0
+03:40:00,0.4353,3541.2787,0
+03:50:00,0.436,3546.3976,0
+04:00:00,0.4378,3560.207,0
+04:10:00,0.4401,3561.9581,0
+04:20:00,0.4389,3556.7183,0
+04:30:00,0.4364,3560.0272,0
+04:40:00,0.4393,3580.654,0.5994
+04:50:00,0.4422,3586.916,0.2345
+05:00:00,0.4395,3571.2635,0.2885
+05:10:00,0.4333,3562.3171,18.6781
+05:20:00,0.4439,3591.3809,54.4698
+05:30:00,0.4301,3579.7045,108.9718
+05:40:00,0.3713,3486.119,184.1603
+05:50:00,0.5708,3823.8994,277.0582
+06:00:00,0.9099,4398.0727,388.5494
+06:10:00,0.9368,4454.0123,521.2803
+06:20:00,0.8758,4371.7919,672.7677
+06:30:00,0.8759,4392.953,844.2261
+06:40:00,0.8601,4384.5956,1039.6744
+06:50:00,0.8442,4434.7757,1259.3375
+07:00:00,0.8334,4523.4561,1508.6318
+07:10:00,0.8092,4524.0721,1791.4107
+07:20:00,0.7972,4545.8867,2085.4865
+07:30:00,0.7644,4523.2418,2381.2611
+07:40:00,0.6899,4383.3566,2683.1752
+07:50:00,0.86,4910.4599,2986.3552
+08:00:00,1.1617,5799.7327,3289.204
+08:10:00,1.1683,5884.826,3593.3613
+08:20:00,1.0956,5748.0713,3890.7332
+08:30:00,1.0849,5769.0581,4181.3417
+08:40:00,1.061,5754.2105,4471.7657
+08:50:00,1.043,5824.1807,4752.8272
+09:00:00,1.036,5954.2601,5021.9074
+09:10:00,1.0147,5958.9696,5285.4126
+09:20:00,0.9922,5929.5554,5543.1742
+09:30:00,0.97,5923.7828,5788.4093
+09:40:00,0.9422,5907.586,6012.1304
+09:50:00,0.9569,5899.1262,6216.1528
+10:00:00,0.9977,5902.2196,6409.5941
+10:10,0.9919,5897.4793,6599.3808
+10:20,0.9588,5886.7568,6766.7204
+10:30,0.9549,5873.4708,6914.5923
+10:40,0.9839,5858.0308,7064.2053
+10:50,0.799,5844.9948,7197.4315
+11:00,0.5025,5839.0587,7303.1142
+11:10,0.4662,5838.7103,7387.6848
+11:20,0.5007,5823.4378,7459.227
+11:30,0.4827,5814.7932,7520.7191
+11:40,0.4785,5832.3951,7568.2039
+11:50,0.4662,5712.901,7592.1539
+12:00,0.4432,5519.4607,7601.0433
+12:10,0.4411,5494.7907,7612.316
+12:20,0.4551,5514.4524,7602.6524
+12:30,0.4463,5485.829,7554.1872
+12:40,0.4113,5462.3628,7472.7384
+12:50,0.5682,5566.1066,7393.4172
+13:00,0.8279,5725.7548,7312.7979
+13:10,0.8636,5739.4957,7194.541
+13:20,0.8416,5714.6836,7053.1371
+13:30,0.8618,5717.8505,6910.4064
+13:40,0.8623,5708.2486,6772.4075
+13:50,0.9026,5696.9182,6607.36
+14:00,0.9754,5692.2983,6412.5085
+14:10,1.0002,5687.1291,6214.0158
+14:20,0.9978,5678.962,6000.7112
+14:30,1.0271,5669.4508,5766.9816
+14:40,1.0906,5664.1948,5521.5066
+14:50,0.9376,5672.7011,5268.781
+15:00,0.6694,5682.2544,5009.7152
+15:10,0.66,5669.0195,4743.4484
+15:20,0.7217,5656.3651,4471.224
+15:30,0.7308,5657.0867,4188.2025
+15:40,0.7534,5662.6008,3889.3931
+15:50,0.7823,5669.2596,3594.5946
+16:00,0.8055,5673.4767,3303.8878
+16:10,0.8271,5671.0146,2998.4247
+16:20,0.8519,5661.5926,2687.4131
+16:30,0.8791,5665.8922,2383.1779
+16:40,0.9024,5689.0372,2089.1246
+16:50,0.9163,5603.6614,1791.0829
+17:00,0.9264,5466.7124,1501.7283
+17:10,0.9462,5467.3939,1255.1723
+17:20,0.9742,5464.727,1036.3323
+17:30,0.9862,5492.4458,836.7775
+17:40,0.976,5621.7308,665.2313
+17:50,1.0742,5091.2126,516.6758
+18:00,1.2313,4208.5688,386.6731
+18:10,1.2561,4122.7611,275.7933
+18:20,1.2447,4255.9358,182.9526
+18:30,1.2545,4225.9524,108.3414
+18:40,1.2522,4233.3384,54.3121
+18:50,1.2881,4246.4625,18.6569
+19:00,1.3466,4239.1795,0.2753
+19:10,1.3523,4244.6684,0.2296
+19:20,1.3445,4251.9187,0.6007
+19:30,1.3483,4256.6813,0
+19:40,1.349,4267.3947,0
+19:50,1.3473,4269.975,0
+20:00,1.3482,4268.6702,0
+20:10,1.3513,4282.2245,0
+20:20,1.34,4291.7049,0
+20:30,1.3489,4291.3611,0
+20:40,1.3952,4293.9182,0
+20:50,1.2226,4295.2135,0
+21:00,0.9332,4302.0307,0
+21:10,0.9068,4320.9618,0
+21:20,0.9371,4302.3292,0
+21:30,0.9371,4322.6758,0
+21:40,0.9871,4428.8083,0
+21:50,0.7764,4030.1614,0
+22:00,0.4209,3362.7419,0
+22:10,0.3859,3309.3934,0
+22:20,0.4368,3412.9563,0
+22:30,0.4198,3381.9313,0
+22:40,0.4186,3386.5592,0
+22:50,0.4241,3400.4846,0
+23:00,0.4237,3399.2426,0
+23:10,0.4248,3406.9809,0
+23:20,0.424,3416.1518,0
+23:30,0.422,3421.9811,0
+23:40,0.424,3429.6923,0
+23:50,0.4271,3439.061,0
+0:00+1,0.4276,3444.7259,0"""
+T, DT = 144, 1 / 6  # 一天144个10分钟区间，功率转电量乘DT。
+PMAX, PMIN, EMIN, EMAX, EINIT = 5000., 1., 1200., 10800., 6000.
+EPS_C, EPS_S = 1e-4, 1e-7  # 费用和无量纲第二目标的绝对容差。
+
+
+def read_data(path=None, fallback=False):
+    """只读输入；任何缺失、负数、时间错位都显式报错。"""
+    try:
+        if path is None:
+            rows = list(csv.reader(io.StringIO(EMBEDDED_CSV.strip())))[1:]
+        elif Path(path).suffix.lower() == ".xlsx":
+            from openpyxl import load_workbook  # 仅外部XLSX输入需要该可选库。
+            book = load_workbook(path, data_only=True, read_only=True)
+            rows = list(book.active.values)[1:]  # 跳过标题；不会保存或修改源文件。
+            book.close()
+        else:
+            rows = None
+            for encoding in ("utf-8-sig", "gb18030"):  # 兼容常用中文CSV编码。
+                try:
+                    with open(path, encoding=encoding, newline="") as handle:
+                        rows = list(csv.reader(handle))[1:]
+                    break
+                except UnicodeDecodeError:
+                    continue
+            if rows is None:
+                raise ValueError("CSV编码无法识别")
+        if len(rows) != T:
+            raise ValueError(f"应有144行数据，实际{len(rows)}行")
+        for i, row in enumerate(rows):  # 检查右端时刻，避免错位十分钟。
+            label = str(row[0]).strip()
+            if i == T - 1 and label in ("0:00+1", "00:00+1", "24:00", "24:00:00", "00:00:00"):
+                continue
+            pieces = label.split(":")
+            if len(pieces) < 2 or int(pieces[0]) * 60 + int(pieces[1]) != (i + 1) * 10:
+                raise ValueError(f"第{i+1}行时间不连续：{label}")
+        data = np.asarray([[float(x) for x in row[1:4]] for row in rows])
+        if data.shape != (T, 3) or not np.isfinite(data).all():
+            raise ValueError("存在空值、非数值或非有限数")
+        if (data < 0).any() or (data[:, 0] <= 0).any():
+            raise ValueError("本模型要求正电价以及非负负载、光伏")
+        return data
+    except (OSError, ValueError, TypeError, ImportError) as exc:
+        if path is not None and fallback:
+            print(f"警告：读取失败({exc})，明确回退到内嵌附件1", file=sys.stderr)
+            return read_data()
+        raise ValueError(f"输入读取失败：{exc}；可用--fallback允许内嵌回退") from exc
+
+
+def solve(data, delta=.001, ramp=1000., up=3, down=2, eta_rt=.9):
+    """同一可行域内依次求费用、平稳性、购电量；全部层均保留整数互斥。"""
+    if not (0 < eta_rt <= 1 and delta >= 0 and 1 <= up <= T and 1 <= down <= T):
+        raise ValueError("效率、让步比例或持续时间不合法")
+    eta = np.sqrt(eta_rt)  # 本问保持往返效率口径。
+    names = ("g", "c", "d", "w", "E", "zc", "zd", "sc", "sd", "oc", "od", "v",
+             "bc1", "bc2", "bd1", "bd2")  # b为旧基准短段缺额线性化变量。
+    ids, offset = {}, 0
+    for name in names:
+        size = T + 1 if name == "E" else T  # 储电量包含145个边界。
+        ids[name] = np.arange(offset, offset + size)
+        offset += size
+    lo, hi, integer = np.zeros(offset), np.full(offset, np.inf), np.zeros(offset)
+    for name in ("c", "d"):
+        hi[ids[name]] = PMAX
+    lo[ids["E"]], hi[ids["E"]] = EMIN, EMAX
+    lo[ids["E"][[0, -1]]] = EINIT
+    hi[ids["E"][[0, -1]]] = EINIT  # 日初日末均6000kWh。
+    for name in ("zc", "zd", "sc", "sd", "oc", "od", "bc1", "bc2", "bd1", "bd2"):
+        hi[ids[name]] = 1
+    integer[ids["zc"]], integer[ids["zd"]] = 1, 1  # 仅模式变量必须声明整数。
+    ri, ci, av, lower, upper = [], [], [], [], []
+    def add(items, lb=-np.inf, ub=np.inf):
+        """将一行稀疏线性约束加入模型。"""
+        row = len(lower)
+        for col, val in items:
+            ri.append(row); ci.append(int(col)); av.append(float(val))
+        lower.append(float(lb)); upper.append(float(ub))
+    for t in range(T):
+        prev = (t - 1) % T  # 循环日跨午夜连接。
+        ix = lambda key, j=t: int(ids[key][j])
+        net = [(ix("c"), 1), (ix("d"), -1), (ix("c", prev), -1), (ix("d", prev), 1)]
+        rhs = (data[t, 1] - data[t, 2]) * DT
+        add([(ix("g"), 1), (ix("d"), DT), (ix("c"), -DT), (ix("w"), -1)], rhs, rhs)
+        add([(ix("E", t+1), 1), (ix("E"), -1), (ix("c"), -eta*DT), (ix("d"), DT/eta)], 0, 0)
+        add([(ix("zc"), 1), (ix("zd"), 1)], ub=1)  # 禁止同时充放电。
+        add(net, -ramp, ramp)  # 运行功率变化上限，基准可设为10000。
+        add([(ix("v"), 1)] + [(k, -v) for k, v in net], lb=0)
+        add([(ix("v"), 1)] + net, lb=0)  # v不小于净功率差的绝对值。
+        for mode in ("c", "d"):
+            z, oldz, start, stop = ix("z"+mode), ix("z"+mode, prev), ix("s"+mode), ix("o"+mode)
+            add([(ix(mode), 1), (z, -PMAX)], ub=0)
+            add([(ix(mode), 1), (z, -PMIN)], lb=0)
+            add([(start, 1), (z, -1), (oldz, 1)], lb=0)
+            add([(start, 1), (z, -1)], ub=0)
+            add([(start, 1), (oldz, 1)], ub=1)
+            add([(stop, 1), (oldz, -1), (z, 1)], lb=0)
+            add([(stop, 1), (oldz, -1)], ub=0)
+            add([(stop, 1), (z, 1)], ub=1)  # s、o精确表示0-1转换。
+            add([(ix("z"+mode, (t+j)%T), 1) for j in range(up)] + [(start, -up)], lb=0)
+            add([(ix("z"+mode, (t+j)%T), 1) for j in range(down)] + [(stop, down)], ub=down)
+            for k in (1, 2):  # 30分钟参考长度的两级短段缺额。
+                b = ix("b"+mode+str(k))
+                add([(b, 1), (start, -1)], ub=0)
+                for j in range(1, k+1):
+                    add([(b, 1), (start, -1), (ix("z"+mode, (t+j)%T), 1)], lb=0)
+                add([(b, 1)] + [(ix("z"+mode, (t+j)%T), 1) for j in range(1, k+1)], ub=k)
+    cost, smooth, quantity = np.zeros(offset), np.zeros(offset), np.zeros(offset)
+    cost[ids["g"]], quantity[ids["g"]] = data[:, 0], 1
+    smooth[ids["v"]] = 1 / (2 * PMAX * T)
+    for name in ("sc", "sd"):
+        smooth[ids[name]] = 1 / (2 * T)
+    for name in ("bc1", "bc2", "bd1", "bd2"):
+        smooth[ids[name]] = 1 / (4 * T)
+    records, solutions = [], []
+    for stage, objective in enumerate((cost, smooth * 1e6, quantity), 1):
+        matrix = coo_matrix((av, (ri, ci)), shape=(len(lower), offset)).tocsc()
+        began = time.perf_counter()
+        result = milp(objective, integrality=integer, bounds=Bounds(lo, hi),
+                      constraints=LinearConstraint(matrix, lower, upper),
+                      options={"mip_rel_gap": 1e-9, "time_limit": 180.})
+        if not result.success or result.x is None:
+            raise RuntimeError(f"第{stage}层未证最优：{result.message}")
+        x = result.x  # 不对连续解取整，不静默接受超时解。
+        rec = dict(stage=stage, cost=float(cost@x), quantity=float(quantity@x),
+                   smooth=float(smooth@x), gap=float(result.mip_gap),
+                   seconds=time.perf_counter()-began, nodes=int(result.mip_node_count))
+        records.append(rec); solutions.append({k: x[v] for k, v in ids.items()})
+        if stage == 1:
+            budget = (1 + delta) * rec["cost"] + EPS_C
+            add(list(zip(ids["g"], data[:, 0])), ub=budget)
+        elif stage == 2:
+            add([(i, v*1e6) for i, v in enumerate(smooth) if v], ub=(rec["smooth"]+EPS_S)*1e6)
+    config = dict(delta=delta, ramp=ramp, up=up, down=down, eta_rt=eta_rt)
+    result = dict(config=config, stages=records, trajectory=solutions[-1], budget=budget)
+    result["metrics"] = audit(data, result)  # 从物理量独立复算，不只看求解器成功标志。
+    return result
+
+
+def lengths(z, value=1):
+    """读取循环0-1序列的段长，合并跨午夜的同模式段。"""
+    starts = [i for i in range(T) if z[i] == value and z[(i-1)%T] != value]
+    if not starts:
+        return [T] if np.all(z == value) else []
+    return [next(k for k in range(1, T+1) if z[(i+k)%T] != value) for i in starts]
+
+
+def audit(data, result):
+    """独立核验供需、SOC、功率、互斥、段长、费用预算及层次目标。"""
+    q, cfg = result["trajectory"], result["config"]
+    g, c, d, w, E = (q[k] for k in ("g", "c", "d", "w", "E"))
+    eta = np.sqrt(cfg["eta_rt"])
+    net = c-d
+    on, off = [], []
+    for key in ("zc", "zd"):
+        z = np.rint(q[key]).astype(int)  # 仅用于诊断整数变量，不更改求解值。
+        on.extend(lengths(z)); off.extend(lengths(z, 0))
+    balance = g + data[:, 2]*DT + d*DT - data[:, 1]*DT - c*DT - w
+    transition = np.diff(E)-eta*c*DT+d*DT/eta
+    tv = float(np.abs(net-np.roll(net, 1)).sum())
+    short = sum(max(0, 3-k) for k in on)
+    smooth = tv/(2*PMAX*T)+len(on)/(2*T)+short/(4*T)
+    metrics = dict(cost=float(data[:, 0]@g), quantity=float(g.sum()), tv=tv, starts=len(on),
+                   short_deficit=short, short_runs=sum(k<3 for k in on),
+                   min_on=min(on, default=T)*10, min_off=min(off, default=T)*10,
+                   max_step=float(np.abs(net-np.roll(net, 1)).max()),
+                   charge=float(c.sum()*DT), discharge=float(d.sum()*DT),
+                   surplus=float(w.sum()), emin=float(E.min()), emax=float(E.max()),
+                   balance=float(np.abs(balance).max()), state=float(np.abs(transition).max()),
+                   endpoint=float(max(abs(E[0]-EINIT), abs(E[-1]-EINIT))),
+                   simultaneous=float(np.minimum(c, d).max()), smooth=smooth,
+                   max_c=float(c.max()), max_d=float(d.max()),
+                   low=int(np.sum((np.abs(net)>1e-5)&(np.abs(net)<50))))
+    metrics["daily_balance"] = float(abs(g.sum() - (data[:, 1]-data[:, 2]).sum()*DT
+                                        - (c.sum()-d.sum())*DT - w.sum()))
+    metrics["cost_recompute"] = abs(metrics["cost"]-result["stages"][-1]["cost"])
+    tolerance = 2e-5  # kW/kWh诊断容差，目标函数另用各自量尺核查。
+    violations = [
+        metrics["balance"]>tolerance, metrics["state"]>tolerance,
+        metrics["endpoint"]>tolerance, metrics["simultaneous"]>tolerance,
+        E.min()<EMIN-tolerance, E.max()>EMAX+tolerance,
+        c.max()>PMAX+tolerance, d.max()>PMAX+tolerance,
+        min(g.min(), c.min(), d.min(), w.min()) < -tolerance,
+        metrics["max_step"]>cfg["ramp"]+tolerance,
+        metrics["min_on"]<cfg["up"]*10, metrics["min_off"]<cfg["down"]*10,
+        metrics["cost"]>result["budget"]+1e-5,
+        smooth>result["stages"][1]["smooth"]+EPS_S+1e-9,
+        np.max(np.abs(q["zc"]-np.rint(q["zc"])))>1e-6,
+        np.max(np.abs(q["zd"]-np.rint(q["zd"])))>1e-6,
+        np.max(q["zc"]+q["zd"])>1+1e-6,
+        np.max(PMIN*q["zc"]-c)>tolerance, np.max(c-PMAX*q["zc"])>tolerance,
+        np.max(PMIN*q["zd"]-d)>tolerance, np.max(d-PMAX*q["zd"])>tolerance,
+        metrics["daily_balance"]>tolerance, metrics["cost_recompute"]>1e-5,
+    ]
+    metrics["violations"] = sum(bool(v) for v in violations)
+    if metrics["violations"]:
+        raise RuntimeError(f"独立约束检验失败：{metrics}")
+    return metrics
+
+
+def save_case(out, name, data, result):
+    """导出144段完整计划及每层状态，不覆盖用户原始表。"""
+    def serial(value):
+        if isinstance(value, np.ndarray):
+            return value.tolist()
+        if isinstance(value, np.generic):
+            return value.item()
+        raise TypeError(f"无法序列化：{type(value)}")
+    (out/(name+".json")).write_text(json.dumps(result, ensure_ascii=False, indent=2,
+                                               default=serial), encoding="utf-8")
+    q = result["trajectory"]
+    with (out/(name+".csv")).open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["起点/h", "终点/h", "电价/元每kWh", "负载/kW", "光伏/kW",
+                         "购电量/kWh", "充电功率/kW", "放电功率/kW", "剩余/kWh",
+                         "期初储电/kWh", "期末储电/kWh", "区间电费/元"])
+        for t in range(T):
+            writer.writerow([t*DT, (t+1)*DT, *data[t], q["g"][t], q["c"][t], q["d"][t],
+                             q["w"][t], q["E"][t], q["E"][t+1], data[t, 0]*q["g"][t]])
+
+
+def draw(out, data, cases, sweep):
+    """依据真实解绘制阶梯功率、储电轨迹和费用-总变差图。"""
+    os.environ.setdefault("MPLCONFIGDIR", str((out/".mpl-cache").resolve()))
+    import matplotlib
+    matplotlib.use("Agg")  # 无图形界面的机器也能输出。
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({"font.sans-serif": ["Microsoft YaHei", "SimHei", "DejaVu Sans"],
+                         "axes.unicode_minus": False, "font.size": 10,
+                         "axes.spines.top": False, "axes.spines.right": False})
+    edges = np.arange(T+1)*DT
+    fig, axes = plt.subplots(2, 1, figsize=(10, 6.4), sharex=True, layout="constrained")
+    for key, label, color in [("baseline", "严格经济基准", "#8061A8"), ("revised", "平稳运行方案", "#138B99")]:
+        q = cases[key]["trajectory"]
+        axes[0].stairs(q["c"]-q["d"], edges, label=label, color=color, linewidth=1.6)
+        axes[1].plot(edges, q["E"], label=label, color=color, linewidth=1.6)
+    axes[0].axhline(0, color="#777777", linewidth=.6)
+    axes[0].set(title="典型日电池净功率与储电量", ylabel="净充电功率 / kW")
+    axes[1].axhline(EMIN, color="#B27838", linestyle="--", label="安全储电边界")
+    axes[1].axhline(EMAX, color="#B27838", linestyle="--")
+    axes[1].set(xlabel="时刻 / h", ylabel="储电量 / kWh", xlim=(0,24), xticks=np.arange(0,25,2))
+    for ax in axes:
+        ax.legend(ncol=3, fontsize=9); ax.grid(alpha=.16)
+    fig.savefig(out/"q1_dispatch.png", dpi=320); plt.close(fig)
+    rows = sorted(sweep, key=lambda row: row["delta"])
+    fig, axes = plt.subplots(1, 2, figsize=(10, 3.5), layout="constrained")
+    x = [row["delta"]*100 for row in rows]
+    for ax, key, ylabel, color in [(axes[0], "cost", "购电费 / 元", "#B27838"),
+                                   (axes[1], "tv", "循环功率总变差 / kW", "#138B99")]:
+        ax.plot(x, [row[key] for row in rows], "o-", color=color, label="单因素重求解")
+        ax.axvline(.1, color="#8061A8", linestyle="--", label="选定让步比例")
+        ax.set(xlabel="电费让步比例 / %", ylabel=ylabel); ax.grid(alpha=.16); ax.legend(fontsize=8)
+    fig.suptitle("经济让步比例对电费与运行平稳性的影响")
+    fig.savefig(out/"q1_tradeoff.png", dpi=320); plt.close(fig)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--input", help="可选CSV或XLSX；省略则读取内嵌附件1")
+    parser.add_argument("--fallback", action="store_true", help="外部输入失败时显式回退")
+    parser.add_argument("--out", default="q1_output", help="生成结果目录")
+    parser.add_argument("--quick", action="store_true", help="只做主方案和严格经济基准")
+    args = parser.parse_args()
+    data = read_data(args.input, args.fallback)
+    out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
+    cases, sweep, sensitivity = {}, [], []
+    tasks = [("revised", {}), ("baseline", dict(delta=0, ramp=10000, up=1, down=1))]
+    if not args.quick:
+        tasks += [(f"delta_{v}", dict(delta=v)) for v in (0, .0005, .002, .005)]
+        tasks += [(f"{key}_{factor}", {key: value*factor}) for key, value in
+                  [("delta", .001), ("ramp", 1000.), ("eta_rt", .9)] for factor in (.9, 1.1)]
+    for name, settings in tasks:
+        print(f"求解 {name}", flush=True)
+        result = solve(data, **settings)
+        cases[name] = result; save_case(out, name, data, result)
+        row = dict(name=name, **result["config"], **result["metrics"])
+        sensitivity.append(row)
+        if name == "revised" or name.startswith("delta_") and name not in ("delta_0.9", "delta_1.1"):
+            sweep.append(row)
+        print(json.dumps(row, ensure_ascii=False), flush=True)
+    noise = []
+    if not args.quick:
+        for seed in range(2026, 2029):  # 三次局部压力测试，不宣称统计置信保证。
+            rng = np.random.default_rng(seed)
+            perturbed = data.copy()
+            factors = 1 + np.clip(rng.normal(0, .01, (T,2)), -.03, .03)
+            perturbed[:, 1:] *= factors  # 夜间零光伏保留为零。
+            result = solve(perturbed)
+            save_case(out, f"noise_{seed}", perturbed, result)
+            fixed = cases["revised"]["trajectory"]
+            gap = ((perturbed[:, 1]-perturbed[:, 2])-(data[:, 1]-data[:, 2]))*DT-fixed["w"]
+            row = dict(seed=seed, cost=result["metrics"]["cost"],
+                       change_pct=(result["metrics"]["cost"]/cases["revised"]["metrics"]["cost"]-1)*100,
+                       fixed_plan_deficit_kwh=float(np.maximum(gap,0).sum()),
+                       violations=result["metrics"]["violations"])
+            noise.append(row); print("噪声检验", row, flush=True)
+    final = cases["revised"]["trajectory"]  # 为题目指定时段另外输出便于核对的汇总。
+    specified = [{"start_hour": t/6, "purchase_kwh": float(final["g"][t])}
+                 for t in (60, 72, 84, 96, 108, 120)]
+    blocks = [{"start_hour": 4*j, "end_hour": 4*(j+1),
+               "charge_kwh": float(final["c"][24*j:24*(j+1)].sum()*DT),
+               "discharge_kwh": float(final["d"][24*j:24*(j+1)].sum()*DT)} for j in range(6)]
+    summary = dict(environment=dict(python=sys.version, numpy=np.__version__, scipy=scipy.__version__),
+                   no_storage_cost=float(data[:,0]@np.maximum(data[:,1]-data[:,2],0)*DT),
+                   load_kwh=float(data[:,1].sum()*DT), pv_kwh=float(data[:,2].sum()*DT),
+                   cases=sensitivity, noise=noise, specified=specified, storage_blocks=blocks,
+                   initial_kwh=float(final["E"][0]), final_kwh=float(final["E"][-1]))
+    (out/"summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    if len(sweep)>1:
+        draw(out, data, cases, sweep)
+    print("完成；144段计划、各层求解状态及检验结果位于", out.resolve(), flush=True)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (ValueError, RuntimeError, OSError, ImportError) as exc:
+        print(f"运行终止：{exc}", file=sys.stderr)
+        sys.exit(1)  # 不输出虚构的成功结论。
+\end{lstlisting}
+
+\end{appendices}
+\end{document}
