@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "reports\\experiments\\exp008\\robustness\\evidence\\q1\\sensitivity.csv": "40ac730c03badfedc5dbf2fb450eb7e2214cee54a7786e93c6c7387978ba8041",
+    "reports\\experiments\\exp008\\robustness\\evidence\\execution\\noise_summary.csv": "da69be5278fd79692e8401dd55f88a361f5c2c82958cedb62ec26ac2e592ecdb",
+    "reports\\experiments\\exp008\\robustness\\evidence\\execution\\protocol.json": "48f92fc5cea9876e42cdc4c6166a6bb38af441b4a57ccc35ed6f861a47fd457b"
+  },
+  "q1": {
+    "rows": 15,
+    "comparison": "each scenario reoptimized; percentage change relative to center",
+    "chart": "two aligned horizontal diverging bar panels; all 14 nonbaseline scenarios"
+  },
+  "q2": {
+    "rows": 4,
+    "replicates_each": 30,
+    "chart": "mean with empirical p05-p95 interval",
+    "scope": "archived exp008 fixed-plan execution replay, not exp009 retraining"
+  },
+  "surface": "standalone PNG previews and vector PDF for LaTeX",
+  "palette": {
+    "policy": "single-root preferred",
+    "blue": "#356A9A",
+    "negative": "open fill with hatch"
+  },
+  "checks": "15 valid q1 rows, 4 noise levels with 30 repeats each; no model recomputation"
+}

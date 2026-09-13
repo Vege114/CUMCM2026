@@ -1,0 +1,234 @@
+{
+  "status": "PASS",
+  "baseline_commit": "88d6b1602e79111e7802e79abdcd3d453b82ee83",
+  "independent_review": true,
+  "files": {
+    "Xelatex/final_results/section9_visuals/build_figures.py": "2311db77d0b9ea281ea9c01056514948641074e500fea564e23e253a92ed42d9",
+    "Xelatex/final_results/section9_visuals/sources.json": "7d69be1e02af515ae1f60aeb62cc0e98477e543b2c14bb27b99e852c82280e2a",
+    "Xelatex/final_results/section9_visuals/q1_sensitivity.pdf": "259ae2611e43c409ef73b3fbe8192fefc7ebe34f1d807ce45fd984c2933ebbd7",
+    "Xelatex/final_results/section9_visuals/q1_sensitivity.png": "f521eab674f91e98b527bcc5ea7c86628dcbebeb36bae63ac955cb707e9cec03",
+    "Xelatex/final_results/section9_visuals/q2_execution_stress.pdf": "111e7fddc6c67387d70081b9f37222cfb67bf75fed447f4d6eabb7a1f4b8e405",
+    "Xelatex/final_results/section9_visuals/q2_execution_stress.png": "92c0fb6a59589cff8ae70e2012c9daeaee1de281a5c913782eb42acec043d26d"
+  },
+  "source_hashes": [
+    {
+      "path": "reports/experiments/exp008/robustness/evidence/q1/sensitivity.csv",
+      "sha256": "40ac730c03badfedc5dbf2fb450eb7e2214cee54a7786e93c6c7387978ba8041",
+      "matches_remote_manifest": true
+    },
+    {
+      "path": "reports/experiments/exp008/robustness/evidence/execution/noise_summary.csv",
+      "sha256": "da69be5278fd79692e8401dd55f88a361f5c2c82958cedb62ec26ac2e592ecdb",
+      "matches_remote_manifest": true
+    },
+    {
+      "path": "reports/experiments/exp008/robustness/evidence/execution/protocol.json",
+      "sha256": "48f92fc5cea9876e42cdc4c6166a6bb38af441b4a57ccc35ed6f861a47fd457b",
+      "matches_remote_manifest": true
+    }
+  ],
+  "q1_mapping": [
+    {
+      "name": "delta_0p0005",
+      "label": "费用让步 0.05%",
+      "cost_change_raw_pct": -0.04995004980360429,
+      "tv_change_raw_pct": 3.42024417877278,
+      "pdf_cost": "-0.050%",
+      "pdf_tv": "+3.420%",
+      "pass": true
+    },
+    {
+      "name": "delta_0p0009",
+      "label": "费用让步 0.09%",
+      "cost_change_raw_pct": -0.009990009960669788,
+      "tv_change_raw_pct": 3.6944205448700362,
+      "pdf_cost": "-0.010%",
+      "pdf_tv": "+3.694%",
+      "pass": true
+    },
+    {
+      "name": "delta_0p0011",
+      "label": "费用让步 0.11%",
+      "cost_change_raw_pct": 0.00999000996078081,
+      "tv_change_raw_pct": -0.9298444007231343,
+      "pdf_cost": "+0.010%",
+      "pdf_tv": "-0.930%",
+      "pass": true
+    },
+    {
+      "name": "delta_0p0020",
+      "label": "费用让步 0.20%",
+      "cost_change_raw_pct": 0.0999000996072974,
+      "tv_change_raw_pct": -6.381283630026868,
+      "pdf_cost": "+0.100%",
+      "pdf_tv": "-6.381%",
+      "pass": true
+    },
+    {
+      "name": "ramp_900",
+      "label": "爬坡上限 900 kW",
+      "cost_change_raw_pct": 0.11280544821676841,
+      "tv_change_raw_pct": -0.491950490359816,
+      "pdf_cost": "+0.113%",
+      "pdf_tv": "-0.492%",
+      "pass": true
+    },
+    {
+      "name": "ramp_1100",
+      "label": "爬坡上限 1100 kW",
+      "cost_change_raw_pct": -0.08731688444079122,
+      "tv_change_raw_pct": 2.238973751285722,
+      "pdf_cost": "-0.087%",
+      "pdf_tv": "+2.239%",
+      "pass": true
+    },
+    {
+      "name": "up_2",
+      "label": "最短开启 2槽",
+      "cost_change_raw_pct": -9.146523443082089e-05,
+      "tv_change_raw_pct": 0.008958791497959417,
+      "pdf_cost": "0.000%",
+      "pdf_tv": "+0.009%",
+      "pass": true
+    },
+    {
+      "name": "up_4",
+      "label": "最短开启 4槽",
+      "cost_change_raw_pct": 0.018413208584178165,
+      "tv_change_raw_pct": -1.677508278114348,
+      "pdf_cost": "+0.018%",
+      "pdf_tv": "-1.678%",
+      "pass": true
+    },
+    {
+      "name": "down_1",
+      "label": "最短关闭 1槽",
+      "cost_change_raw_pct": 4.440892098500626e-14,
+      "tv_change_raw_pct": -6.461498003318411e-12,
+      "pdf_cost": "0.000%",
+      "pdf_tv": "0.000%",
+      "pass": true
+    },
+    {
+      "name": "down_3",
+      "label": "最短关闭 3槽",
+      "cost_change_raw_pct": 6.661338147750939e-14,
+      "tv_change_raw_pct": 4.192202140984591e-11,
+      "pdf_cost": "0.000%",
+      "pdf_tv": "0.000%",
+      "pass": true
+    },
+    {
+      "name": "eta_rt_0p855",
+      "label": "往返效率 85.5%",
+      "cost_change_raw_pct": 1.9493842017209495,
+      "tv_change_raw_pct": -1.0275486866741734,
+      "pdf_cost": "+1.949%",
+      "pdf_tv": "-1.028%",
+      "pass": true
+    },
+    {
+      "name": "eta_rt_0p945",
+      "label": "往返效率 94.5%",
+      "cost_change_raw_pct": -1.837823266341776,
+      "tv_change_raw_pct": 16.53276231517551,
+      "pdf_cost": "-1.838%",
+      "pdf_tv": "+16.533%",
+      "pass": true
+    },
+    {
+      "name": "capacity_0p9",
+      "label": "容量 90%",
+      "cost_change_raw_pct": 2.281668470538323,
+      "tv_change_raw_pct": -2.8596316180970027,
+      "pdf_cost": "+2.282%",
+      "pdf_tv": "-2.860%",
+      "pass": true
+    },
+    {
+      "name": "capacity_1p1",
+      "label": "容量 110%",
+      "cost_change_raw_pct": -2.0771998206648323,
+      "tv_change_raw_pct": 1.7943322683437124,
+      "pdf_cost": "-2.077%",
+      "pdf_tv": "+1.794%",
+      "pass": true
+    }
+  ],
+  "q1_denominator": {
+    "cost": 34115.032450968385,
+    "tv": 33209.16605760791,
+    "formula": "100*(scenario/center-1)",
+    "near_zero_annotation_rule": "absolute change below 0.0005% displayed as 0.000%"
+  },
+  "q2_mapping": [
+    {
+      "noise_std": "0.01",
+      "replicates": 30,
+      "pdf_mean": "0.368",
+      "pdf_p05": "0.094",
+      "pdf_p95": "0.697",
+      "pass": true
+    },
+    {
+      "noise_std": "0.02",
+      "replicates": 30,
+      "pdf_mean": "1.608",
+      "pdf_p05": "0.980",
+      "pdf_p95": "2.237",
+      "pass": true
+    },
+    {
+      "noise_std": "0.05",
+      "replicates": 30,
+      "pdf_mean": "10.099",
+      "pdf_p05": "8.589",
+      "pdf_p95": "12.046",
+      "pass": true
+    },
+    {
+      "noise_std": "0.1",
+      "replicates": 30,
+      "pdf_mean": "31.676",
+      "pdf_p05": "28.312",
+      "pdf_p95": "36.693",
+      "pass": true
+    }
+  ],
+  "pdf_metadata": {
+    "q1_sensitivity": {
+      "pdf_sha256": "259ae2611e43c409ef73b3fbe8192fefc7ebe34f1d807ce45fd984c2933ebbd7",
+      "width_pt": 650.304,
+      "height_pt": 480.079375,
+      "pages": 1,
+      "raster_images": 0,
+      "outside_characters": [],
+      "text": "问题一单参数重求解的敏感性\n15组（含基准）｜基准费用 34115.03 元；循环总变差 33209.17 kW\n(a) 购电费用变化 (b) 循环功率总变差变化\n费用让步 0.05% -0.050% +3.420%\n费用让步 0.09% -0.010% +3.694%\n费用让步 0.11% +0.010% -0.930%\n费用让步 0.20% +0.100% -6.381%\n爬坡上限 900 kW +0.113% -0.492%\n爬坡上限 1100 kW -0.087% +2.239%\n最短开启 2槽 0.000% +0.009%\n最短开启 4槽 +0.018% -1.678%\n最短关闭 1槽 0.000% 0.000%\n最短关闭 3槽 0.000% 0.000%\n往返效率 85.5% +1.949% -1.028%\n往返效率 94.5% -1.838% +16.533%\n容量 90% +2.282% -2.860%\n容量 110% -2.077% +1.794%\n-2 0 2 -10 0 10 20\n相对基准的变化 / % 相对基准的变化 / %\n来源：exp008 / q1 / sensitivity.csv。各组重新优化；非固定计划扰动检验。\n实心表示增加，斜线表示减少；两个面板的横轴尺度不同。"
+    },
+    "q2_execution_stress": {
+      "pdf_sha256": "111e7fddc6c67387d70081b9f37222cfb67bf75fed447f4d6eabb7a1f4b8e405",
+      "width_pt": 586.574625,
+      "height_pt": 282.98025,
+      "pages": 1,
+      "raster_images": 0,
+      "outside_characters": [],
+      "text": "σ = 0.01\nσ = 0.02\nσ = 0.05\nσ = 0.10\n0 10 20 30 40 50 60\n相对未扰动历史计划的购电费用变化 / %\n差准标声噪数对\n第二问固定计划的相关噪声执行回放\n2025年2—12月，334日｜每档30次｜圆点为均值，横线为5%—95%经验分位\n0.368% [0.094, 0.697]\n1.608% [0.980, 2.237]\n10.099% [8.589, 12.046]\n31.676% [28.312, 36.693]\n来源：exp008 / execution / noise_summary.csv。\n固定购电与模式，仅扰动执行供需；经验分位不是未来费用的置信区间。"
+    }
+  },
+  "fonts": [
+    {
+      "figure": "q1_sensitivity",
+      "font": "/DNCXHW+SourceHanSerifCN-Regular",
+      "embedded": true,
+      "to_unicode": true
+    },
+    {
+      "figure": "q2_execution_stress",
+      "font": "/DNCXHW+SourceHanSerifCN-Regular",
+      "embedded": true,
+      "to_unicode": true
+    }
+  ],
+  "method_review": "Generator read only: independent categorical cost/TV bar panels, raw signs retained and negative bars hatched; Q2 point is 30-run mean and segment is empirical p05-p95 relative to archived unperturbed plan. No new solver/training run. Remote09 limits conclusions to single-day one-factor reoptimization or fixed-plan execution replay.",
+  "issues": []
+}

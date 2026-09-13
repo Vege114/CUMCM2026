@@ -1,0 +1,40 @@
+{
+  "engine": "xelatex",
+  "bibliography_backend": "none",
+  "tools": {
+    "latexmk": {
+      "path": "/Library/TeX/texbin/latexmk",
+      "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    },
+    "xelatex": {
+      "path": "/Library/TeX/texbin/xelatex",
+      "version": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+    },
+    "bibtex": {
+      "path": "/Library/TeX/texbin/bibtex",
+      "version": "BibTeX 0.99e (TeX Live 2026)"
+    },
+    "biber": {
+      "path": "/Library/TeX/texbin/biber",
+      "version": "biber version: 2.21"
+    },
+    "pandoc": {
+      "path": "/opt/homebrew/bin/pandoc",
+      "version": "pandoc 3.9.0.2"
+    },
+    "pdfimages": {
+      "path": "/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdfimages",
+      "version": "pdfimages version 26.05.0"
+    },
+    "pdftoppm": {
+      "path": "/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdftoppm",
+      "version": "pdftoppm version 26.05.0"
+    },
+    "pypdf": {
+      "available": true,
+      "version": "6.10.0"
+    }
+  },
+  "issues": [],
+  "passed": true
+}
