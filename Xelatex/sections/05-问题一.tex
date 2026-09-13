@@ -1,17 +1,19 @@
 % !TeX root = ../数模通用模板.tex
 \section{问题一的模型建立与求解}
 \label{sec:q1}
-\subsection{费用优先的两层调度模型}
-问题一给定典型日的负载、光伏与电价，要求当天供电充足且日初、日末储电量相同。本文先求满足运行约束的最低购电费，再在小幅费用让步范围内减少功率波动和碎片化动作，以两层混合整数规划形成全天计划。
-
-采用平稳性设置的目的，是减少没有必要的短时操作。电池退化与电流、温度及循环条件有关\cite{huang2022plating,xu2017aging}，但不同动态工况的影响并不相同\cite{geslin2025}。因此，下文将功率总变差、启动次数和短运行段作为工程评价量，不据其变化直接推算电池寿命，也不将规划目标中的权重解释为已标定折旧费。
-
-\subsubsection{供需平衡与储电量约束}
-将全天分为$T=144$个十分钟区间，$\Delta t=1/6$\,h。附件以区间右端点记录功率，将其作为该区间平均功率；10:00--10:10对应右端点10:10的记录。记$L_t,V_t$为负载与光伏功率，净需求电量为$n_t=(L_t-V_t)\Delta t$。典型日输入见图\ref{fig:q1day}。
+问题一给定典型日负载、光伏出力和分时电价，要求在满足供电需求及储能运行限制的条件下，确定全天购电与充放电计划，并保持日初、日末储电量一致。储能可通过转移购电时段降低电费，但仅以购电费最小为目标，可能产生频繁启停和较大的相邻时段功率变化，因此还需考虑调度方案的运行特征。
 \begin{figure}[H]
  \centering\includegraphics[width=\textwidth]{q1_run/q1_day.png}
  \caption{典型日负载、光伏与电价}\label{fig:q1day}
 \end{figure}
+电池老化是储能运行的实际成本来源。已有研究表明，电池退化与循环深度、荷电状态及温度等因素有关\cite{xu2017aging}，不利充电条件下的析锂还会造成活性锂损失\cite{huang2022plating}。Xu等将循环老化成本纳入电力市场调度，指出忽略该成本会影响储能收益评价\footnote{Xu B, Zhao J, Zheng T, et al. Factoring the Cycle Aging Cost of Batteries Participating in Electricity Markets. arXiv:1707.04567, 2017. DOI: 10.48550/arXiv.1707.04567.}。因此，购电费最低并不等同于全寿命成本最低。不过，动态功率对寿命的影响取决于具体工况，部分动态放电实验反而观察到寿命延长\cite{geslin2025}，不能将功率跳变直接等同于寿命损失。本文据此将限制功率变化和减少启停作为抑制不必要调节的工程措施，以小幅电费增量换取更平稳的运行；由于缺少电芯老化及更换成本数据，不将平稳性指标折算为折旧费。
+
+\subsection{混合整数线性规划模型}
+本文采用混合整数线性规划（mixed-integer linear programming，MILP），以连续变量表示电量，以二元变量表示充放电状态。建模过程包括输入时序数据、建立供需与运行约束、设置优化目标和求解调度计划。为兼顾电费与运行平稳性，采用$\varepsilon$约束法\footnote{Mavrotas G. Effective implementation of the $\varepsilon$-constraint method in Multi-Objective Mathematical Programming problems. Applied Mathematics and Computation, 2009, 213(2): 455--465. DOI: 10.1016/j.amc.2009.03.037.}：先求最低购电费，再将允许的费用增幅转化为约束，优化功率变化与启停次数。
+
+
+将全天分为$T=144$个十分钟区间，$\Delta t=1/6$\,h。附件以区间右端点记录功率，将其作为该区间平均功率；10:00--10:10对应右端点10:10的记录。记$L_t,V_t$为负载与光伏功率，净需求电量为$n_t=(L_t-V_t)\Delta t$。典型日输入见图\ref{fig:q1day}。
+
 记$g_t,c_t,d_t,w_t$分别为购电、交流侧充电、放电及未利用剩余电量，$E_t$为区间初内部储电量，单位均为kWh。根据题目设定取往返效率90\%，对称分解为$\eta_c=\eta_d=\sqrt{0.9}$，得到
 \begin{equation}\label{eq:q1-balance}
  \begin{aligned}
@@ -25,35 +27,15 @@
  0\leq c_t\leq P_{\max}\Delta t z_t^c,\qquad
  0\leq d_t\leq P_{\max}\Delta t z_t^d,\qquad z_t^c+z_t^d\leq1.
 \end{equation}
-该模型没有售电收入，多余电量用$w_t$记录。
+多余电量用$w_t$记录。
 
-\subsubsection{问题一的附加运行设置}
-为限制短时功率骤变，令$P_t=(c_t-d_t)/\Delta t$，约束
-\begin{equation}\label{eq:q1-ramp}
- |P_t-P_{t-1}|\leq1000\ {
-m kW},\qquad P_0=P_T.
-\end{equation}
-对充电与放电两种模式分别设置最短连续开启3槽、最短连续关闭2槽，开启时功率至少1\,kW。令$s_t^a=(z_t^a-z_{t-1}^a)^+$、$o_t^a=(z_{t-1}^a-z_t^a)^+$，$a\in\{c,d\}$，将正部关系用标准线性不等式表示后，有
-\begin{equation}\label{eq:q1-hold}
- \sum_{j=0}^{2}z_{t+j}^a\geq3s_t^a,\qquad
- \sum_{j=0}^{1}z_{t+j}^a\leq2(1-o_t^a).
-\end{equation}
-所有下标按典型日循环取值，使运行段不能通过跨午夜规避约束。同一方向关闭20分钟，表示该方向的模式至少关闭两槽，并不要求电池整体空闲20分钟。这些设置仅用于问题一；它们与题面给定的容量、效率、功率限制分开列于表\ref{tab:q1-constraints}。
-\begin{table}[H]\centering\small
-\caption{题面物理条件与问题一附加设置}\label{tab:q1-constraints}
-\begin{tabularx}{\textwidth}{p{3.5cm}X}\toprule
-类别&具体条件\\\midrule
-题面物理条件&容量12000\,kWh，安全储电量1200--10800\,kWh，充放电功率各不超过5000\,kW，往返效率90\%，日初与日末储电量相等。\\
-问题一附加设置&循环相邻净功率变化不超过1000\,kW；充、放模式各自最短开3槽、关2槽；开启功率至少1\,kW。\\
-费用让步设置&相对同一附加约束下第一层最低费用让步0.1\%，另加$10^{-4}$元数值容差。\\
-\bottomrule\end{tabularx}\end{table}
 
-\subsubsection{两层目标及其线性化}
+
 第一层只最小化实际购电费用：
 \begin{equation}\label{eq:q1-first}
  C_1^\star=\min\sum_{t=1}^{T}p_tg_t.
 \end{equation}
-第二层沿用全部物理与运行约束，增加费用预算
+第二层沿用第一层的全部约束，并增加费用预算
 \begin{equation}\label{eq:q1-budget}
  \sum_tp_tg_t\leq(1+0.001)C_1^\star+10^{-4},
 \end{equation}
@@ -64,16 +46,14 @@ m kW},\qquad P_0=P_T.
  +\frac{\sum_{t,a}\sum_{k=1}^{2}b_{t,k}^a}{4T},\qquad
  v_t\geq\pm(P_t-P_{t-1}).
 \end{equation}
-其中$b_{t,k}^a$表示在$t$槽启动后未能持续到第$k+1$槽的缺额标记。当前最短开启3槽的设置使其取零，保留该项便于与放宽最短持续时间的经济基准比较。三个分母用于归一化功率变化、启动次数与短段缺额，均不改变真实购电账单的定义。两层模型使用同一组连续电量及二元模式变量，不离散储电量网格。
+其中$b_{t,k}^a$表示在$t$槽启动后未能持续到第$k+1$槽的缺额标记。当前最短开启3槽的设置使其取零，保留该项便于与放宽最短持续时间的经济基准比较。三个分母用于归一化功率变化、启动次数与短段缺额，均不改变真实购电账单的定义。
 
 \subsection{求解结果与典型日策略}
-采用HiGHS混合整数规划求解器完成两层优化\cite{scipymilp}。第一层最低购电费为34080.95元，第二层费用为34115.03元，两层归档MIP相对间隙均为0。第一层与第二层求解时间分别为0.35\,s和7.58\,s，仅表示对应环境中的单次求解耗时。表\ref{tab:q1-stages}给出分层结果，表\ref{tab:q1-purchase}和表\ref{tab:q1-storage}均由第二层同一条144槽轨迹汇总。
+采用HiGHS混合整数规划求解器完成两层优化\cite{scipymilp}。第一层最低购电费为34080.95元，第二层费用为34115.03元，两层归档MIP相对间隙均为0。第一层与第二层求解时间分别为0.35\,s和7.58\,s，仅表示对应环境中的单次求解耗时。表\ref{q1-compare}给出分层结果，表\ref{tab:q1-purchase}和表\ref{tab:q1-storage}均由第二层得到。
 \input{q1_run/tables.tex}
-10:00--10:10和14:00--14:10无需购电，表明这些区间的光伏与储能供给足以覆盖负载。四小时汇总中同时出现充电量和放电量，是不同时槽动作的累加，并不表示同槽同时充放电。全天购电量为57560.6438\,kWh，日初、日末储电量均为6000.0000\,kWh。
-
-图\ref{fig:q1-power}比较两层方案与经济基准的净功率和储电量，表\ref{tab:q1-compare}列出对应指标。经济基准放宽爬坡及模式最短持续时间，保留题面物理条件。两层方案相对该基准增加购电费313.54元，约0.93\%；其中，增加运行约束带来的第一层费用差为279.46元，第二层在同约束下的让步为34.08元。因此，0.1\%仅指第二部分，不能解释为相对经济基准的全部代价。
 \begin{figure}[H]
  \centering\includegraphics[width=\textwidth]{q1_run/q1_dispatch.pdf}
  \caption{典型日电池净充电功率与储电轨迹}\label{fig:q1-power}
 \end{figure}
-两层方案的循环净功率总变差为33209.1661\,kW，相对经济基准减少67.66\%，运行段启动次数由12次降为4次，短于30分钟的运行段由6段降为0段。这表明附加设置确实抑制了短时碎片化动作；其费用代价和运行变化已分别给出，不据此进一步量化设备寿命。
+从图\ref{fig:q1-power}和表\ref{q1-compare}可以发现，双层优化相对基准的单层优化增加了购电费313.54元，约0.93\%，但电池充放电循环净功率总变差为33209.1661\,kW，相对经济基准减少67.66\%，运行段启动次数由12次降为4次，短于30分钟的运行段由6段降为0段。这表明附加设置确实抑制了短时碎片化动作，恰恰证明了我们模型的现实价值和必要性。
+

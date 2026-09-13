@@ -1,8 +1,13 @@
 \begin{table}[H]\centering\small
-\caption{两层混合整数规划求解结果}\label{tab:q1-stages}
-\begin{tabular}{lrrrr}\toprule 层次&购电费/元&购电量/kWh&$F_2$&MIP间隙\\\midrule
-第1层&34080.95&57572.3963&0.056210610&0\\
-第2层&34115.03&57560.6438&0.036950810&0\\
+\caption{两层混合整数规划求解结果}\label{tab:q1-compare}
+\begin{tabular}{lrr}\toprule 指标&经济基准&两层规划方案\\\midrule
+购电费/元&33801.50&34115.03\\
+购电量/kWh&57526.2435&57560.6438\\
+循环功率总变差/kW&102684.4368&33209.1661\\
+最大相邻净功率变化/kW&8546.8412&1000.0000\\
+运行段启动次数/次&12&4\\
+短于30分钟的运行段数/段&6&0\\
+转换损耗/kWh&1984.2710&2018.6714\\
 \bottomrule\end{tabular}\end{table}
 \begin{table}[H]\centering\small
 \caption{指定时段购电量及全天购电结果}\label{tab:q1-purchase}
@@ -20,14 +25,4 @@
 16:00--20:00&0.0000&6729.2480&20:00--24:00&5059.6443&2378.1117\\
 \midrule\multicolumn{3}{l}{0:00储电量：6000.0000\,kWh}&\multicolumn{3}{l}{24:00储电量：6000.0000\,kWh}\\
 \bottomrule\end{tabular}\end{table}
-\begin{table}[H]\centering\small
-\caption{储能调度方案的经济性与运行指标}\label{tab:q1-compare}
-\begin{tabular}{lrr}\toprule 指标&经济基准&两层规划方案\\\midrule
-购电费/元&33801.50&34115.03\\
-购电量/kWh&57526.2435&57560.6438\\
-循环功率总变差/kW&102684.4368&33209.1661\\
-最大相邻净功率变化/kW&8546.8412&1000.0000\\
-运行段启动次数/次&12&4\\
-短于30分钟的运行段数/段&6&0\\
-转换损耗/kWh&1984.2710&2018.6714\\
-\bottomrule\end{tabular}\end{table}
+
