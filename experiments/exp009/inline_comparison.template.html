@@ -1,0 +1,199 @@
+<div id="exp009-control-inline">
+  <h2>exp008 → exp009：费用目标对照</h2>
+  <div class="exp009-legend" aria-label="实验版本">
+    <button type="button" aria-pressed="true" data-version="exp008"><span class="exp009-swatch" style="background:var(--viz-series-1)"></span>exp008 · 原方案</button>
+    <button type="button" aria-pressed="true" data-version="exp009"><span class="exp009-swatch" style="background:var(--viz-series-2)"></span>exp009 · 费用目标</button>
+  </div>
+  <div class="exp009-grid">
+    <section><h3>第一问 · 给定单日</h3><div data-plot="cost-one"></div></section>
+    <section><h3>第二至四问 · 334日</h3><div data-plot="cost-annual"></div></section>
+  </div>
+  <h3>午夜预测：exp008 = exp009</h3>
+  <div class="text-small">全时段 · Q2融合模型 / Q3、Q4单HGB午夜基准</div>
+  <div class="exp009-grid">
+    <section><div data-plot="forecast-rmse"></div></section>
+    <section><div data-plot="forecast-wape"></div></section>
+  </div>
+  <h3>第二问 · 共同随机四日实际功率</h3>
+  <div class="text-small">种子20260912 · 每日144个原始十分钟时点 · 正为充电，负为放电</div>
+  <div class="exp009-grid" data-power-grid></div>
+  <h3>第二问历史费用</h3>
+  <div data-plot="history-cost"></div>
+  <div class="text-small">001为同物理重算；005带额外爬坡约束、允许应急充电，单列不排名。007省略。</div>
+  <div class="exp009-tooltip tooltip" role="tooltip" hidden></div>
+  <div class="sr-only" aria-live="polite" data-selection></div>
+</div>
+<style>
+  #exp009-control-inline {position:relative;width:100%;color:var(--foreground)}
+  #exp009-control-inline .exp009-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+  #exp009-control-inline section {min-width:0}
+  #exp009-control-inline .exp009-legend {display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:8px 0 12px}
+  #exp009-control-inline .exp009-legend button {display:inline-flex;align-items:center;gap:7px;background:transparent;border:0;padding:4px 0;color:var(--foreground);font:inherit;cursor:pointer}
+  #exp009-control-inline .exp009-legend button[aria-pressed="false"] .exp009-swatch {opacity:.2}
+  #exp009-control-inline .exp009-swatch {width:18px;height:3px;display:inline-block}
+  #exp009-control-inline .exp009-plot {display:block;width:100%;overflow:visible}
+  #exp009-control-inline .exp009-plot text {fill:var(--foreground);font-size:12px;font-weight:400}
+  #exp009-control-inline .exp009-plot .grid-line {stroke:var(--border);stroke-width:1}
+  #exp009-control-inline .exp009-plot .power-line {fill:none;stroke-width:1.4}
+  #exp009-control-inline .exp009-plot rect[data-chart-frame] {fill:none;stroke:var(--border);stroke-width:1}
+  #exp009-control-inline .exp009-tooltip {position:absolute;pointer-events:none;max-width:260px;background:var(--popover);color:var(--popover-foreground);z-index:2}
+  #exp009-control-inline .exp009-tooltip table {border-collapse:collapse}
+  #exp009-control-inline .exp009-tooltip td {padding:2px 5px;color:var(--popover-foreground)}
+  @media (max-width:620px) {#exp009-control-inline .exp009-grid {grid-template-columns:minmax(0,1fr)}}
+  @media (pointer:coarse) {#exp009-control-inline .exp009-legend button {min-height:44px}}
+</style>
+<script id="exp009-control-data" type="application/json"><!-- EXP009_DATA --></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root=document.getElementById('exp009-control-inline');
+  const data=JSON.parse(document.getElementById('exp009-control-data').textContent);
+  const colors={exp008:'var(--viz-series-1)',exp009:'var(--viz-series-2)'};
+  const visible={exp008:true,exp009:true};
+  const tooltip=root.querySelector('[role="tooltip"]');
+  const selected=root.querySelector('[data-selection]');
+  const names={'1':'第一问','2':'第二问','3':'第三问','4-2':'第四问2','4-3':'第四问3'};
+  const number=d3.format(',.2f');
+  const powerGrid=root.querySelector('[data-power-grid]');
+  data.power_days.forEach((day,i)=>{
+    const section=document.createElement('section');
+    const title=document.createElement('h3');title.textContent=day.date;
+    const plot=document.createElement('div');plot.dataset.plot='power-'+i;
+    section.append(title,plot);powerGrid.append(section);
+  });
+  function label(svg,x,y,text,anchor='middle',cls='') {
+    return svg.append('text').attr('x',x).attr('y',y).attr('text-anchor',anchor).attr('class',cls).text(text);
+  }
+  function init(container,height,title,left,rightMargin=12) {
+    const width=Math.floor(container.getBoundingClientRect().width);
+    const svg=d3.select(container).selectAll('svg').data([0]).join('svg')
+      .attr('class','exp009-plot').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label',title);
+    svg.selectAll('*').remove();svg.append('title').text(title);
+    const frame={left,top:18,right:width-rightMargin,bottom:height-55,width,height};
+    svg.append('rect').attr('data-chart-frame','').attr('x',frame.left).attr('y',frame.top)
+      .attr('width',frame.right-frame.left).attr('height',frame.bottom-frame.top);
+    return {svg,frame};
+  }
+  function axis(svg,f,x,xTitle,yTitle,formatter=d3.format('~g')) {
+    const ticks=x.ticks(f.width<=400?3:4);
+    ticks.forEach(t=>{
+      svg.append('line').attr('class','grid-line').attr('x1',x(t)).attr('x2',x(t)).attr('y1',f.top).attr('y2',f.bottom);
+      label(svg,x(t),f.bottom+19,formatter(t),'middle','tick-label');
+    });
+    label(svg,(f.left+f.right)/2,f.height-8,xTitle,'middle','axis-title').attr('data-axis','x');
+    label(svg,12,(f.top+f.bottom)/2,yTitle,'middle','axis-title').attr('data-axis','y')
+      .attr('transform',`rotate(-90 12 ${(f.top+f.bottom)/2})`);
+  }
+  function verifyLabels(svg) {
+    const nodes=svg.selectAll('text').nodes();
+    const boxes=nodes.map(n=>({n,b:n.getBoundingClientRect()}));
+    const sb=svg.node().getBoundingClientRect();const outside=[];const conflicts=[];
+    boxes.forEach(({n,b})=>{if(b.left<sb.left-1||b.right>sb.right+1||b.top<sb.top-1||b.bottom>sb.bottom+1)outside.push(n.textContent);});
+    for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++){
+      const a=boxes[i].b,b=boxes[j].b;
+      if(a.left<b.right+4&&a.right+4>b.left&&a.top<b.bottom+4&&a.bottom+4>b.top)conflicts.push([boxes[i].n.textContent,boxes[j].n.textContent]);
+    }
+    svg.attr('data-label-conflicts',JSON.stringify(conflicts)).attr('data-labels-outside',JSON.stringify(outside));
+  }
+  function bars(container,rows,{title,unit,multiplier=1,height=270}) {
+    const {svg,frame:f}=init(container,height,title,88,85);
+    const extent=d3.extent(rows.map(r=>r.value/multiplier).concat([0]));
+    const x=d3.scaleLinear().domain([extent[0],extent[1]*1.04]).range([f.left+2,f.right-2]);
+    axis(svg,f,x,unit,'方案',d3.format(',.0f'));
+    const y=d3.scaleBand().domain(rows.map(r=>r.id)).range([f.top+8,f.bottom-8]).padding(.3);
+    rows.forEach(r=>{
+      const yy=y(r.id),h=y.bandwidth();
+      label(svg,f.left-8,yy+h/2+4,r.label,'end','tick-label');
+      if(r.version&&!visible[r.version])return;
+      const fill=r.version?colors[r.version]:'var(--foreground)';
+      const g=svg.append('g').attr('data-series',r.version||'history');
+      g.append('rect').attr('x',x(0)).attr('y',yy).attr('width',Math.max(0,x(r.value/multiplier)-x(0))).attr('height',h)
+        .attr('fill',fill).attr('opacity',r.comparable===false?.25:r.version?.72:.4);
+      label(g,x(r.value/multiplier)+6,yy+h/2+4,number(r.value/multiplier),'start','value-label');
+      g.append('title').text(`${r.label}：${number(r.value)}元${r.comparable===false?'；不同物理口径，不排名':''}`);
+    });
+    verifyLabels(svg);
+  }
+  function score(container,key,unit) {
+    const {svg,frame:f}=init(container,286,`午夜预测${unit}；exp008等于exp009`,108,70);
+    const values=data.forecast_scores;const extent=d3.extent(values.map(r=>r[key]).concat([0]));
+    const x=d3.scaleLinear().domain([extent[0],extent[1]*1.04]).range([f.left+3,f.right-3]);
+    axis(svg,f,x,unit,'模型 / 目标',d3.format(',.0f'));
+    const y=d3.scaleBand().domain(d3.range(values.length)).range([f.top+8,f.bottom-8]).padding(.4);
+    values.forEach((r,i)=>{
+      const yy=y(i)+y.bandwidth()/2;const family=r.model==='final_blend'?'融合':'单HGB';
+      label(svg,f.left-8,yy+4,`${family}·${r.label}`,'end','tick-label');
+      ['exp008','exp009'].filter(version=>visible[version]).forEach(version=>svg.append('circle')
+        .attr('data-series',version).attr('cx',x(r[key])).attr('cy',yy)
+        .attr('r',version==='exp008'?4.5:2.5).attr('fill',colors[version]));
+      label(svg,x(r[key])+8,yy+4,number(r[key]),'start','value-label');
+    });verifyLabels(svg);
+  }
+  function hoverValue(values,x) {
+    const nearest=d3.bisector(d=>d.x).center(values,x);
+    let a=nearest,b=nearest;
+    if(values[nearest].x<x)b=Math.min(nearest+1,values.length-1);else a=Math.max(nearest-1,0);
+    const first=values[a],last=values[b];
+    return first.x===last.x?first.y:first.y+(last.y-first.y)*(x-first.x)/(last.x-first.x);
+  }
+  function power(container,day) {
+    const {svg,frame:f}=init(container,242,`${day.date}第二问原始144点实际电池功率`,64,12);
+    const series=Object.entries(day.series).map(([id,values])=>({id,values:values.map((v,i)=>({x:(i+1)/6,y:v}))}));
+    const all=series.flatMap(s=>s.values);const xd=d3.extent(all,d=>d.x),yd=d3.extent(all.map(d=>d.y).concat([-5000,5000]));
+    const x=d3.scaleLinear().domain(xd).range([f.left+3,f.right-3]);
+    const pad=(yd[1]-yd[0])*.06;const y=d3.scaleLinear().domain([yd[0]-pad,yd[1]+pad]).range([f.bottom-3,f.top+3]);
+    axis(svg,f,x,'时点（小时，右端）','净功率（kW）',d3.format('~g'));
+    [-5000,0,5000].forEach(v=>{
+      svg.append('line').attr('class','grid-line').attr('x1',f.left).attr('x2',f.right).attr('y1',y(v)).attr('y2',y(v));
+      label(svg,f.left-8,y(v)+4,d3.format(',')(v),'end','tick-label');
+    });
+    const line=d3.line().x(d=>x(d.x)).y(d=>y(d.y));
+    series.filter(s=>visible[s.id]).forEach(s=>svg.append('path').datum(s.values).attr('class','power-line')
+      .attr('data-series',s.id).attr('data-point-count',s.values.length).attr('stroke',colors[s.id])
+      .attr('stroke-dasharray',s.id==='exp009'?'4 2':null).attr('d',line));
+    const hover=svg.append('g').attr('pointer-events','none').attr('visibility','hidden');
+    const guide=hover.append('line').attr('data-chart-hover-guide','').attr('stroke','var(--foreground)').attr('stroke-width',1).attr('y1',f.top).attr('y2',f.bottom);
+    const dots={};series.forEach(s=>{dots[s.id]=hover.append('circle').attr('data-chart-hover-marker',s.id).attr('r',3.5).attr('fill',colors[s.id]);});
+    let pinned=false;
+    const overlay=svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series')
+      .attr('x',f.left).attr('y',f.top).attr('width',f.right-f.left).attr('height',f.bottom-f.top).attr('fill','transparent');
+    function show(event) {
+      const px=Math.max(x.range()[0],Math.min(x.range()[1],d3.pointer(event,svg.node())[0]));
+      const hour=x.invert(px),rr=series.filter(s=>visible[s.id]).map(s=>({id:s.id,value:hoverValue(s.values,hour)}));
+      hover.attr('visibility',rr.length?'visible':'hidden');guide.attr('x1',px).attr('x2',px);
+      series.forEach(s=>dots[s.id].attr('visibility',visible[s.id]?'visible':'hidden').attr('cx',px).attr('cy',y(hoverValue(s.values,hour))));
+      const mins=Math.round(hour*60),clock=String(Math.floor(mins/60)).padStart(2,'0')+':'+String(mins%60).padStart(2,'0');
+      tooltip.replaceChildren();const head=document.createElement('div');head.textContent=`${day.date} ${clock} · 线性位置读数`;tooltip.append(head);
+      const table=document.createElement('table');rr.forEach(r=>{const tr=document.createElement('tr');tr.dataset.tooltipSeries=r.id;
+        const name=document.createElement('td');name.textContent=r.id;const value=document.createElement('td');value.textContent=number(r.value)+' kW';tr.append(name,value);table.append(tr);});tooltip.append(table);
+      tooltip.hidden=!rr.length;const box=root.getBoundingClientRect(),anchor=svg.node().getBoundingClientRect();
+      const tx=Math.min(root.clientWidth-tooltip.offsetWidth-5,Math.max(5,anchor.left-box.left+px+12));
+      tooltip.style.left=tx+'px';tooltip.style.top=(anchor.top-box.top+f.top+10)+'px';
+    }
+    overlay.on('pointermove',e=>{if(!pinned)show(e);}).on('pointerleave',()=>{if(!pinned){hover.attr('visibility','hidden');tooltip.hidden=true;}})
+      .on('click',e=>{pinned=!pinned;show(e);selected.textContent=pinned?day.date+'功率读数已固定':'功率读数跟随指针';});
+    verifyLabels(svg);
+  }
+  function draw() {
+    if(root.clientWidth<200)return;
+    const plot=name=>root.querySelector(`[data-plot="${name}"]`);
+    const one=data.costs.find(r=>r.scenario==='1');
+    bars(plot('cost-one'),['exp008','exp009'].map((version,i)=>({id:version,label:version,version,value:one[i?'current':'previous']})),
+      {title:'第一问给定单日实际费用',unit:'单日费用（元）',height:270});
+    const annual=data.costs.filter(r=>r.scenario!=='1').flatMap(r=>['exp008','exp009'].map((version,i)=>({id:r.scenario+version,
+      label:r.scenario+'·'+version.slice(3),version,value:r[i?'current':'previous']})));
+    bars(plot('cost-annual'),annual,{title:'第二至四问334日实际费用',unit:'334日费用（万元）',multiplier:1e4,height:270});
+    score(plot('forecast-rmse'),'rmse_kw','RMSE（kW）');score(plot('forecast-wape'),'wape_pct','WAPE（%）');
+    data.power_days.forEach((day,i)=>power(plot('power-'+i),day));
+    bars(plot('history-cost'),data.history_cost.map(r=>({id:r.experiment,label:r.experiment+(r.comparable?'':'†'),
+      version:['exp008','exp009'].includes(r.experiment)?r.experiment:null,value:r.cost,comparable:r.comparable})),
+      {title:'第二问历史费用，005不同物理不排名',unit:'334日费用（万元）',multiplier:1e4,height:270});
+    root.dataset.rendered='true';
+  }
+  root.querySelectorAll('[data-version]').forEach(button=>button.addEventListener('click',()=>{
+    const version=button.dataset.version;visible[version]=!visible[version];button.setAttribute('aria-pressed',String(visible[version]));
+    tooltip.hidden=true;selected.textContent=version+(visible[version]?'已显示':'已隐藏');draw();
+  }));
+  new ResizeObserver(draw).observe(root);draw();
+})();
+</script>

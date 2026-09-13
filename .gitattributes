@@ -21,3 +21,7 @@
 # Frozen exp008 evidence is bound to byte-level SHA256, including CSV line endings.
 data/results/exp008/** -text -whitespace
 reports/experiments/exp008/** -text -whitespace
+
+# Frozen exp009 control evidence preserves the exact audited bytes.
+data/results/exp009/** -text -whitespace
+reports/experiments/exp009/** -text -whitespace

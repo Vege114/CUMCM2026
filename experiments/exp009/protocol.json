@@ -1,0 +1,36 @@
+{
+  "experiment_id": "exp009",
+  "title": "exp008固定预测与物理口径下的费用唯一目标对照",
+  "base_commit": "b2ce6b6e4eef46512eb1092c408cef155a37f187",
+  "source_branch": "codex/exp009-cost-only-control",
+  "template_main_commit": "58fd537055dfa5ddb7460cee0413011bdb6d8526",
+  "user_request": "其他都保持不变，就是不用去管优化充放电次数，而是全部服务于最小化总费用这个目标函数，模型构建等等的方法基本不变，与这个exp008形成一个对照实验；做完报告后推送远程",
+  "formal_run_authorized": true,
+  "candidate_count_per_question": 1,
+  "selection_policy": "predeclared single controlled treatment; report every question including regressions; no tuning or selection by realized evaluation fees",
+  "evaluation": {"start_day":31,"stop_day_exclusive":365,"days":334,"slots_per_day":144,"q1":"attachment1 given single day"},
+  "fixed": {
+    "forecast": "exact accepted exp008 question-specific issued predictions, no retraining or changed calibration",
+    "random_seed":42,
+    "raw_data":"same five input CSV byte hashes as exp008",
+    "storage":{"capacity_kwh":12000,"soc_min_kwh":1200,"soc_max_kwh":10800,"eta_charge":"sqrt(0.9)","eta_discharge":"sqrt(0.9)","max_power_kw":5000,"actual_simultaneous_charge_discharge":false,"actual_emergency_charging":false},
+    "initial_soc_kwh":{"1":6000,"2":1421.7991105135516,"3":1507.622628752613,"4-2":1390.382746315672,"4-3":1522.7387288211346},
+    "annual_initial_mode":1,"annual_initial_power_kw":172.75999999999976,
+    "soc_state":"each treatment carries its own realized state; never copy exp008 later-day states",
+    "terminal_value":"unchanged economic continuation proxy for future purchases; zero on final evaluation day; excluded from actual bills",
+    "billing":"same actual original purchases, one final adjustment charge, fivefold emergency cost; true tariff only for settlement",
+    "model_classes":"same deterministic MILP, physical common-mode MIP plus fixed-mode L-BFGS refinement, or same rolling seven-scenario LP as the corresponding exp008 question",
+    "unknown_future":"same legal issue times and historical labels; no current-day future observations used for planning"
+  },
+  "treatment": {
+    "1":{"secondary_smooth_start_short_run_objective":"removed; execute cost-optimal stage1 directly","ramp_kw_per_10min":1000,"min_on_slots":3,"min_off_slots":2,"min_active_power_kw":1,"physical_feasible_set":"unchanged, including ramp/minimum-duration safeguards","solver_seconds":180,"mip_rel_gap":1e-9},
+    "2":{"daily_planned_switch_cap":"removed","switching_penalty":0,"wear_penalty":0,"refinement_throughput_penalty":0,"variation_penalty":0,"deadband_kwh":0,"mode_resolution_slots":1,"min_mode_hold_slots":1,"physical_scenarios":3,"refinement_history_days":28,"mip_seconds":5,"mip_rel_gap":0.002,"refinement_maxiter":120},
+    "3":{"throughput_penalty":0,"variation_penalty":0,"charge_deadband_kwh":0,"representative_paths":7,"future_shortfall_weight":1.5,"updates":[0,36,72,108]},
+    "4-2":{"switching_penalty":0,"wear_penalty":0,"refinement_throughput_penalty":0,"variation_penalty":0,"deadband_kwh":0,"mode_resolution_slots":6,"physical_scenarios":3,"refinement_history_days":28,"mip_seconds":5,"mip_rel_gap":0.002,"refinement_maxiter":120},
+    "4-3":{"throughput_penalty":0,"variation_penalty":0,"charge_deadband_kwh":0,"representative_paths":7,"future_shortfall_weight":1.5,"updates":[0,36,72,108]}
+  },
+  "interpretation": "Remove intensity-related optimization and Q2 explicit switching budget. Do not enlarge battery hardware/ramp constraints or change the hourly discretization of the Q4-2 model. This is a controlled bundle of stated objective-related changes, not a one-coefficient causal experiment.",
+  "failure_policy":"retain feasible time-limited MIP incumbents with actual gaps; if no feasible incumbent or physical verification failure, stop and record the failure without silently increasing budgets or retuning; a numerical defect repair must be documented separately",
+  "reporting":{"primary":"actual total cost","diagnostic_only":["reversals","episodes","active slots","throughput","EFC","power total variation"],"year_status":"same repeatedly used2025 development evaluation; not an untouched holdout","comparators":"exp008 exactly plus prior historical experiments, exclude exp007","visual_seed":20260912},
+  "remote":{"name":"origin","url":"https://github.com/Vege114/CUMCM2026.git","push":"new branch only; no force push or main merge"}
+}

@@ -67,3 +67,6 @@ paper/build/
 *.nav
 *.snm
 *.vrb
+
+# Duplicate user-facing workbook delivery copies; canonical copies are in reports.
+/outputs/exp009-cost-only-control/
