@@ -273,10 +273,12 @@ $\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
 \end{equation}
 其中，$\lambda_H$、$\lambda_R$为操作偏好权重，不计入实际购电费用。相应Bellman递推为
 \begin{equation}
+ \begin{aligned}
  J_t(E,m)=\min_{E'\in\mathcal A(E)}
- \left\{\ell_t(E,E',m)+J_{t+1}(E',m')\right\},\qquad
+ \left\{\ell_t(E,E',m)+J_{t+1}(E',m')\right\}, \notag \\
  J_{T+1}(E,m)=\begin{cases}0,&E=6000,\\+\infty,&E\ne6000.\end{cases}
  \label{eq:q1-dp}
+ \end{aligned}
 \end{equation}
 其中，$\mathcal A(E)$为可行后继状态集合。典型日循环反转通过枚举起始非空方向并匹配终端方向处理，避免将切换转移到午夜边界。
 
@@ -896,6 +898,16 @@ $H_{\rm fixed}$是不允许重新调度或补购时的计划缺口，不是采�
 % 本文已引用文献直接列在本文件内；原ref.bib保留未修改。
 \begin{thebibliography}{99}
 \raggedright
+\bibitem{huang2022plating}
+HUANG W, YE Y, CHEN H, et al.
+Onboard early detection and mitigation of lithium plating in fast-charging batteries[J].
+Nature Communications, 2022, 13: 7091.
+DOI: \url{https://doi.org/10.1038/s41467-022-33486-4}.
+\bibitem{xu2017aging}
+XU B, ZHAO J, ZHENG T, et al.
+Factoring the Cycle Aging Cost of Batteries Participating in Electricity Markets[EB/OL].
+arXiv:1707.04567, 2017.
+\url{https://arxiv.org/abs/1707.04567}.
 \bibitem{babic2023}
 BABIĆ L, LAURICELLA M, CEUSTERS G, et al.
 Data-driven non-parametric chance-constrained model predictive control for microgrids energy management using small data batches[J].
