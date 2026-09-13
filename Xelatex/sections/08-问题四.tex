@@ -2,14 +2,12 @@
 \section{问题四的模型建立与求解}
 \label{sec:q4}
 
-问题四将电价纳入滚动预测。本文采用加权岭回归刻画价格的周期性，并在无日内预报情形中引入供需预测特征；结合小时模式情景规划与日内滚动线性规划，分别制定两类购电策略。决策仅利用当时可得信息，按实际电价结算，并从费用与储能运行强度两方面评价结果。
+针对波动电价，分别构建无日内预报的方案4-2和有日内预报的方案4-3。两者先预测尚未揭示的价格，再按各自信息条件制定购电策略；设备边界与储电递推沿用公共模型。
 
-\subsection{问题四模型的建立}
+\subsection{价格预测与两类调度策略}
 
-\textbf{信息边界与电价预测。}
-将无日内预报、有日内预报的方案分别记为4-2、4-3。方案4-2以单HGB、近28日岭校准及前一日负载偏差半量修正作为午夜供需预测。方案4-3的负载基线相同，光伏从0时起采用当时的官方预报，并在6、12、18时用新发布光伏及已观察负载更新剩余时段。电池参数、十分钟离散和能量平衡沿用前文。附件4的未来电价视为尚未揭示，仅历史实况进入拟合；当期实际电价用于最终结算。
-
-对发布时刻$o$之后的目标槽$i$，价格特征由截距、附件1基准价格、前一日与前一周同槽价格及日内一、二阶谐波组成。方案4-2另加入当时发布的负载、光伏预测值，均换算为MW；历史训练行保留其自身午夜发布的预测，不以事后实测值替代。采用近28日、14日半衰期的加权先验岭回归：
+\textbf{因果电价预测。}
+共同的八维特征包括截距、附件1基准价格、前日与前周同槽价格及日内一、二阶谐波。方案4-2另加入以MW计的已发布负载、光伏预测，形成十维模型；历史训练行使用其当时发布的预测。采用近28日、14日半衰期的加权先验岭回归：
 \begin{equation}\label{eq:q4-price}
  \begin{aligned}
  \widehat{\boldsymbol\beta}_o
@@ -18,49 +16,20 @@
  (p_j-\boldsymbol x_j^{\mathsf T}\boldsymbol\beta)^2
  +(\boldsymbol\beta-\boldsymbol\beta_0)^{\mathsf T}
  \Lambda(\boldsymbol\beta-\boldsymbol\beta_0)\right\},\\
- \widehat p_{i\mid o}&=\max\{10^{-4},\boldsymbol x_{i\mid o}^{\mathsf T}\widehat{\boldsymbol\beta}_o\},
- \qquad \omega_j=2^{-(o-1-j)/(14\times144)}.
+ \widehat p_{i\mid o}&=\max\{10^{-4},\boldsymbol x_{i\mid o}^{\mathsf T}\widehat{\boldsymbol\beta}_o\}.
  \end{aligned}
 \end{equation}
-式中，$o$为发布时刻的全局十分钟槽索引，$i$为待预测槽，$j$为历史槽；$\mathcal H_o$为发布前近28日已实现价格标签的索引集合，$p_j$为历史实际电价，$\omega_j$为相应时间衰减权重。$\boldsymbol x_j$与$\boldsymbol x_{i\mid o}$分别表示历史样本和本次目标槽的价格特征向量，竖线后的$o$标明预测使用的信息时点；$\boldsymbol\beta$为待估回归系数，$\widehat{\boldsymbol\beta}_o$为本次估计值，$\widehat p_{i\mid o}$为预测电价，单位为元/kWh，上标$\mathsf T$表示转置。
+式中，$o$为发布时刻的全局槽号，$i$为目标槽，$j\in\mathcal H_o$为发布前近28日的历史槽；$p_j$为实际价格，$\boldsymbol x_j$和$\boldsymbol x_{i\mid o}$分别为历史及目标特征。$\omega_j$为时间衰减权重，$\boldsymbol\beta$与$\widehat{\boldsymbol\beta}_o$为待估及估计系数，$\widehat p_{i\mid o}$为预测价格，单位为元/kWh。$\boldsymbol\beta_0$为系数先验，日、周滞后项各取0.5，其余为零；$\Lambda=\operatorname{diag}(10^{-6},5,\ldots,5)$为惩罚矩阵。
 
-$\boldsymbol\beta_0$为系数先验，日、周滞后项各取0.5，其余取零；$\Lambda$为各系数的正则惩罚矩阵，取对角矩阵$\operatorname{diag}(10^{-6},5,\ldots,5)$。方案4-3在各发布时刻重估八维价格模型，不加入额外供需特征。两种调度均使用价格点预测，不另构造随机价格场景。
+\textbf{方案4-2：小时模式规划。}
+供需预测采用单HGB及问题二的校准、前日偏差修正。由近28日完整净需求误差中选取至多三条情景，以预测购电费、五倍短缺代价、方向切换罚和吞吐罚之和减去日末库存价值为目标，求解共享购电量的混合整数规划。每小时六槽共享充放电方向，并满足供需、SOC和功率边界，禁止同槽充电与紧急补购。切换罚为50元/次，吞吐罚为0.002元/kWh；普通日末库存按最低预测价除以单向效率计值。随后固定小时模式，在全部历史路径上按实际反馈回放，用L-BFGS-B修正购电量，库存估值改为0.45元/kWh。评价末日库存价值均为零；计划于午夜锁定，执行充电死区为零。
 
-\textbf{无日内预报：小时模式情景规划。}
-方案4-2在午夜确定全天购电量。由近期完整净需求误差路径构造情景，等距选取三条用于混合整数规划；每小时六槽共享一个充放电方向$z_h$。记$B=5000/6$\,kWh，除供需平衡、SOC递推及安全边界外，对每条情景$s$施加
-\begin{equation}\label{eq:q4-modes}
- \begin{aligned}
- 0\le c_{s,t}&\le Bz_{h(t)},&
- 0\le d_{s,t}&\le B(1-z_{h(t)}),\\
- c_{s,t}&\le Bu_{s,t},&
- e_{s,t}&\le[n_{s,t}]_+(1-u_{s,t}),\qquad z_h,u_{s,t}\in\{0,1\}.
- \end{aligned}
-\end{equation}
-式中，$s$为情景索引，$t=1,\ldots,144$为日内槽，$h=1,\ldots,24$为小时编号，$h(t)=\lceil t/6\rceil$将十分钟槽映射到所属小时。$z_h=1$表示该小时允许充电，$z_h=0$表示允许放电；$c_{s,t}$、$d_{s,t}$、$e_{s,t}$分别为情景中的充电、放电和紧急购电量，$n_{s,t}$为净需求电量，均以kWh计。$B$为单槽充放电量上限；$u_{s,t}$为充电与紧急补购的互斥辅助变量，取1时禁止紧急补购，取0时禁止充电。对任意实数$x$，$[x]_+=\max\{x,0\}$表示取正部。
+\textbf{方案4-3：随预报滚动调整。}
+负载基线为单HGB，光伏从0时起采用官方预报。在0、6、12、18时更新供需和八维价格预测，将问题三式\eqref{eq:q3-objective}中的分时价格换为当前预测价格，沿用同发布时间的至多七条误差路径、短缺权重、吞吐与总变差惩罚以及20\,kWh充电死区，按实际储电量重求未执行计划。
 
-以预测购电费、5倍短缺代价、方向切换和吞吐惩罚之和为目标，切换权重取50元/次，吞吐权重取0.002元/kWh；普通日末库存按最低预测电价除以单向效率计值。获得小时模式后，固定该模式，利用最近至多28条完整误差路径，以实际反馈规则回放情景并采用L-BFGS-B修正购电量。该步普通日末库存价值取0.45元/kWh，评价末日均置零。购电量一经确定，当天不再调整。
-
-\textbf{有日内预报：双向调整的滚动规划。}
-方案4-3沿用问题三的情景线性规划，在0、6、12、18时利用相同发布时间的近期净需求误差路径，等距选取至多七条求解剩余时段。将问题三的固定分时价替换为当前发布时刻的因果价格预测，其他参数与退款结算保持一致。记午夜原计划为$g^0_{d,t}$，每次调整后购电量非负，满足
-\begin{equation}\label{eq:q4-adjustment}
- q_{d,t\mid\tau}=g^0_{d,t}+a^+_{d,t\mid\tau}-a^-_{d,t\mid\tau},\qquad
- q_{d,t\mid\tau},a^+_{d,t\mid\tau},a^-_{d,t\mid\tau}\ge0.
-\end{equation}
-式中，下标$d$表示日期，$\tau\in\{0,6,12,18\}$为发布小时；$g^0_{d,t}$为该日该槽的午夜原计划，$q_{d,t\mid\tau}$为本次发布后确定的常规购电总量，$a^+_{d,t\mid\tau}$、$a^-_{d,t\mid\tau}$为相对午夜原计划的上调、下调量，均以kWh计。后一次发布覆盖尚未执行的计划，最终差额以午夜原计划为基准只结算一次；已执行槽不再改变。
-
-规划目标采用预测价格下的原计划费，日内采用1.5倍上调费减0.5倍下调退款，并加入情景短缺、吞吐、功率总变差与日末库存价值。下一次发布前的短缺权重为5，其后取1.5，表示尚有调整机会；吞吐和功率总变差权重分别为0.005元/kWh、0.001元/kW。各情景采用能量平衡、SOC及功率界构成的线性规划近似。实际执行时按当槽净盈余充电、净缺口放电，剩余缺口才紧急购电，充电死区为20\,kWh；真实SOC连续传递至下一发布时刻及次日。
-
-\textbf{费用结算。}
-两方案统一按已实现电价$p_{d,t}$结算。令$q^{\mathrm{final}}_{d,t}$为该槽执行的最终常规购电量，则
-\begin{equation}\label{eq:q4-cost}
- C=\sum_{d,t}p_{d,t}\left(g^0_{d,t}+1.5[q^{\mathrm{final}}_{d,t}-g^0_{d,t}]_+
- -0.5[g^0_{d,t}-q^{\mathrm{final}}_{d,t}]_++5e_{d,t}\right).
-\end{equation}
-式中，$C$为统计期实际总购电费，单位为元；$p_{d,t}$为该日该槽已实现的基础电价，$q^{\mathrm{final}}_{d,t}$为实际执行的最后有效常规购电量，$e_{d,t}$为实际紧急购电量。求和遍历所报365日或334日统计区间内的全部日期及日内槽，两项正部对应相对原计划的最终净上调与净下调，所有电量均以kWh计。方案4-2中$q^{\mathrm{final}}=g^0$，调整费为零。吞吐、切换、功率变化惩罚和日末库存价值只参与规划，不计入实际账单；所有紧急购电按5倍实际价格结算。
-
-\textbf{方案比较的范围。}
-问题四分别解决固定午夜计划和允许日内调整两类任务，采用各自的预测与控制方法。表\ref{tab:q4-methods}列出与前两问的差异。方案4-2与问题二同时存在基础预测器、模式粒度和切换设置的差异；两种问题四方案之间也有信息权限及控制方式差异。因此下文费用差衡量完整方案的结果，不作为电价或某一次预报的单因素因果效应。
+两方案的实际账单均按式\eqref{eq:common-bill}以已实现价格结算；方案4-2无日内调整，方案4-3按相对午夜原计划的最终净差额结算。方法差异汇总于表\ref{tab:q4-methods}，因此方案间费用差反映预测与控制的共同作用。
 \begin{table}[H]\centering\small
+\renewcommand{\arraystretch}{1.05}
 \caption{问题二、三与波动电价方案的方法对应关系}\label{tab:q4-methods}
 \begin{tabular}{lcccc}\toprule
 设置 & 问题二 & 方案4-2 & 问题三 & 方案4-3\\\midrule
@@ -80,9 +49,12 @@ $\boldsymbol\beta_0$为系数先验，日、周滞后项各取0.5，其余取零
  \caption{两种午夜价格模型在相同48096槽上的预测误差。右图箱体为四分位区间，横线为中位数，须为5\%与95\%分位数，不表示置信区间。}
  \label{fig:q4-price}
 \end{figure}
+\begingroup
+\renewcommand{\arraystretch}{1.05}
 \input{final_results/q4_annual.tex}
+\endgroup
 
-图\ref{fig:q4-monthly}给出各月总费用与紧急费占比，月总额保留各月天数差异；图\ref{fig:q4-daily-difference}进一步展示逐日费用差异，以正值表示方案4-3费用较低。不同季节的供需与价格共同影响结果，不能以月总费用直接替代日均效率指标。
+图\ref{fig:q4-monthly}比较月度费用及紧急费占比，图\ref{fig:q4-daily-difference}展示每日费用差异，正值表示方案4-3费用较低；月总额同时受天数与季节需求影响。
 \begin{figure}[H]
  \centering\includegraphics[width=\textwidth]{final_results/q4_monthly.pdf}
  \caption{两类完整方案的月度费用与紧急费占比。}
@@ -96,10 +68,13 @@ $\boldsymbol\beta_0$为系数先验，日、周滞后项各取0.5，其余取零
 
 \textbf{指定日期调度。}
 方案4-2的指定槽与全天购电量见表\ref{tab:q4_4-2-final}，方案4-3的午夜计划与最终量见表\ref{tab:q4_4-3-original}、\ref{tab:q4_4-3-final}。两方案四个指定日的储能结果分别见表\ref{tab:q4_4-2-storage-47}、\ref{tab:q4_4-2-storage-140}、\ref{tab:q4_4-2-storage-234}、\ref{tab:q4_4-2-storage-323}和表\ref{tab:q4_4-3-storage-47}、\ref{tab:q4_4-3-storage-140}、\ref{tab:q4_4-3-storage-234}、\ref{tab:q4_4-3-storage-323}。紧急购电完整区间见表\ref{tab:q4_4-2-emergency}和表\ref{tab:q4_4-3-emergency}。
+\begingroup
+\renewcommand{\arraystretch}{1.05}
 \input{final_results/q4_4-2_specified.tex}
 \input{final_results/q4_4-3_specified.tex}
+\endgroup
 
-图\ref{fig:q4-dispatch}以9月23日展示电价、购电与储能轨迹。方案4-2受小时模式约束，方案4-3随日内预报修订剩余购电，两者产生不同的库存和功率变化。图中的电价预测均取午夜版本；方案4-3在后续发布时还会重新估计价格，并未始终保持午夜价格预测。
+图\ref{fig:q4-dispatch}展示9月23日的电价、购电及储能轨迹，反映小时模式与日内更新下的运行差异。图中价格预测均为午夜版本，方案4-3的实际规划仍在后续发布时重新估价。
 \begin{figure}[H]
  \centering\includegraphics[width=\textwidth]{final_results/q4_dispatch.pdf}
  \caption{9月23日的电价、购电与储能运行轨迹。功率正值表示充电，负值表示放电；竖线为6、12、18时发布时刻，储电量水平虚线为安全边界。}
@@ -107,4 +82,4 @@ $\boldsymbol\beta_0$为系数先验，日、周滞后项各取0.5，其余取零
 \end{figure}
 
 \textbf{结果检验。}
-逐槽能量平衡、SOC递推和跨日衔接通过核对，两方案实际同时充放电及紧急购电用于充电的槽数均为零，储电量与充放电功率满足题设边界。费用按式\eqref{eq:q4-cost}独立复算，完整购电策略分别保存于\texttt{result4-2.xlsx}、\texttt{result4-3.xlsx}。本节为按时间推进的开发年度回测，月度结果不构成独立跨年泛化检验。
+两方案均通过逐槽物理约束与实际账单核验，同时充放电及紧急购电用于充电的槽数均为零；统一核验方法见第九节。完整策略分别保存于\texttt{result4-2.xlsx}、\texttt{result4-3.xlsx}。

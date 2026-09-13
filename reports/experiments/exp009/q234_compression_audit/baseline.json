@@ -1,0 +1,29 @@
+{
+  "baseline_commit": "b24d106715a550c16f541f1bc7b34e275d1955db",
+  "baseline_pdf": "tmp/conflict-resolution/q234-compression/main-baseline-latest/完整论文.pdf",
+  "pdf_sha256": "91b1b8f144d1518f7c87cda10c75d7cdbc316947bec5d57d14974e4afc4872ef",
+  "total_pages": 150,
+  "body_pages": 44,
+  "appendix_start_page": 46,
+  "correction": {
+    "user_approval": "允许，仅修正这两处引用（推荐）",
+    "file": "Xelatex/sections/05-问题一.tex",
+    "old": "\\ref{q1-compare}",
+    "new": "\\ref{tab:q1-compare}",
+    "replacement_count": 2,
+    "reason": "Apply the same explicitly authorized reference repair to both baseline and final PDF; do not credit incoming front-chapter changes to Q234 compression.",
+    "before_sha256": "c2df1945efb11d5451cc875f4b5a7439b843bf5643fac4bab693161ece409f13",
+    "after_sha256": "64af0f379d5bd0c80760349e5a7152bf0add4ec5b3efa2512a5446657863032b",
+    "exact_replacement_only": true
+  },
+  "previous_baselines": [
+    "52be6e025a82b67991b0379fdbfa45623fe50cc1",
+    "cfea86a8342d0feaa6d22e22d0bd78b2a5574a2e"
+  ],
+  "source_archive_verification": {
+    "status": "PASS",
+    "tracked_xelatex_files": 246,
+    "unexpected_differences": [],
+    "allowed_exception": "05 exact two reference replacements only"
+  }
+}

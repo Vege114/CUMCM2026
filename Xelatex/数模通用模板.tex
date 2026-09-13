@@ -73,11 +73,12 @@
 \begingroup
 % 问题二至四的公式与紧随其后的变量说明首行保持同页。
 \postdisplaypenalty=10000
+% 仅在问题二至四采用紧凑表格行距，覆盖类文件在每张表内强制的1.38倍设置。
+\patchcmd{\tabular}{\renewcommand{\arraystretch}{1.38}}{}{}{\PackageError{paper}{Local table spacing patch failed}{Check the tabular definition in cumcmthesis.cls.}}
+\renewcommand{\arraystretch}{1.05}
 \input{sections/06-问题二}
-\clearpage
 
 \input{sections/07-问题三}
-\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \input{sections/08-问题四}
 \endgroup

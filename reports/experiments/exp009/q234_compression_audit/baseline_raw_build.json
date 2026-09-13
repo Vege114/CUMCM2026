@@ -1,0 +1,23 @@
+{
+  "main_tex": "/Users/vegetarianwolf/Projects/CUMCM2026/tmp/conflict-resolution/q234-compression/main-baseline-latest/Xelatex/数模通用模板.tex",
+  "project_root": "/Users/vegetarianwolf/Projects/CUMCM2026/tmp/conflict-resolution/q234-compression/main-baseline-latest/Xelatex",
+  "pdf_path": "/Users/vegetarianwolf/Projects/CUMCM2026/tmp/conflict-resolution/q234-compression/main-baseline-latest/Xelatex/build/数模通用模板.pdf",
+  "build_manifest": "/Users/vegetarianwolf/Projects/CUMCM2026/tmp/conflict-resolution/q234-compression/main-baseline-latest/Xelatex/build/数模通用模板.build.json",
+  "published_pdf": null,
+  "published_manifest": null,
+  "log_path": "/Users/vegetarianwolf/Projects/CUMCM2026/tmp/conflict-resolution/q234-compression/main-baseline-latest/Xelatex/build/数模通用模板.log",
+  "engine": "xelatex",
+  "warnings": [
+    "LaTeX Warning: Reference `q1-compare' on page 8 undefined on input line 52.",
+    "LaTeX Warning: Reference `q1-compare' on page 10 undefined on input line 58.",
+    "LaTeX Warning: There were undefined references."
+  ],
+  "allowed_warnings": [],
+  "issues": [
+    "编译日志仍有未解析的引用或文献",
+    "编译预警：LaTeX Warning: Reference `q1-compare' on page 8 undefined on input line 52.",
+    "编译预警：LaTeX Warning: Reference `q1-compare' on page 10 undefined on input line 58.",
+    "编译预警：LaTeX Warning: There were undefined references."
+  ],
+  "passed": false
+}

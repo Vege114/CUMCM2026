@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "independent_reviewer": "/root/audit; did not author the reviewed manuscript, model, result tables, trajectories, or workbooks",
+  "scope": "Q2–Q4 compression and pagination, plus only the two explicitly user-authorized Q1 reference corrections",
+  "baseline_commit": "b24d106715a550c16f541f1bc7b34e275d1955db",
+  "baseline_pdf_sha256": "91b1b8f144d1518f7c87cda10c75d7cdbc316947bec5d57d14974e4afc4872ef",
+  "baseline_corrected_refs": {
+    "user_approval": "允许，仅修正这两处引用（推荐）",
+    "file": "Xelatex/sections/05-问题一.tex",
+    "old": "\\ref{q1-compare}",
+    "new": "\\ref{tab:q1-compare}",
+    "replacement_count": 2,
+    "reason": "Apply the same explicitly authorized reference repair to both baseline and final PDF; do not credit incoming front-chapter changes to Q234 compression.",
+    "before_sha256": "c2df1945efb11d5451cc875f4b5a7439b843bf5643fac4bab693161ece409f13",
+    "after_sha256": "64af0f379d5bd0c80760349e5a7152bf0add4ec5b3efa2512a5446657863032b",
+    "exact_replacement_only": true
+  },
+  "pdf": "Xelatex/build/数模通用模板.pdf",
+  "pdf_sha256": "e4702c7d4db2c32401c46d23c791c4865f985e0051c25a3a9db0a2ffb8ae88e8",
+  "stages": {
+    "W1": "PASS",
+    "source_and_result_preservation": "PASS",
+    "W2": "PASS"
+  },
+  "source_checks": 25,
+  "protected_files": 443,
+  "raw_byte_identical_protected_files": 440,
+  "protected_chapters": {
+    "raw_byte_identical": 11,
+    "q1_exact_two_reference_replacements": true
+  },
+  "specified_result_values": {
+    "q2": 94,
+    "q3": 127,
+    "q4_4-2": 95,
+    "q4_4-3": 125
+  },
+  "retained_q234_display_equations": 6,
+  "retained_equation_explanations_same_page": true,
+  "pagination": {
+    "baseline_total": 150,
+    "final_total": 138,
+    "baseline_body": 44,
+    "final_body": 32,
+    "baseline_appendix_start": 46,
+    "final_appendix_start": 34,
+    "net_reduction": 12
+  },
+  "protected_rendered_prefix": {
+    "pass": true,
+    "baseline_q2_heading": {
+      "page": 10,
+      "heading_top": 535.9
+    },
+    "current_q2_heading": {
+      "page": 10,
+      "heading_top": 535.9
+    },
+    "pages_or_partial_pages_compared": 10,
+    "comparison": "Every preceding character and its rounded 0.01pt geometry; final shared page clipped above Q2 heading."
+  },
+  "actually_viewed_pages": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    33,
+    34
+  ],
+  "page_scan_count": 138,
+  "build_passed": true,
+  "build_warnings": [],
+  "validation_passed": true,
+  "validation_pdf_audit": {
+    "pages": 138,
+    "blank_pages": [],
+    "page_sizes_pt": [
+      [
+        595.3,
+        841.9
+      ]
+    ],
+    "unembedded_fonts": [],
+    "raster_images": 5,
+    "min_image_dpi": 289,
+    "issues": []
+  },
+  "validation_metrics": {
+    "content_units": 18731,
+    "equations": 13,
+    "figures": 11,
+    "tables": 30,
+    "citations": 4,
+    "source_files": 27,
+    "question_figure_coverage": {
+      "q1": true,
+      "q2": true,
+      "q3": true,
+      "q4": true
+    }
+  },
+  "all_three_pdfs_independently_hash_matched": true,
+  "commands": [
+    {
+      "command": ".venv/bin/python reports/experiments/exp009/q234_compression_audit/verify_source.py",
+      "exit_code": 0
+    },
+    {
+      "command": "/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 reports/experiments/exp009/q234_compression_audit/verify_pdf.py",
+      "exit_code": 0
+    }
+  ],
+  "not_run": "No training, optimization, full-year numeric rerun, or result-generation command; this task audits paper edits only.",
+  "evidence_sha256": {
+    "W1_review.md": "e8778d86a5c5d9c69781a7f66db502261056b2f5d9ab50ac5eb3f84c21c333ec",
+    "source_verification.json": "798407dbf835b00cf55761e3350d94826f359065e5d4d9aeeeda517d8a349e26",
+    "pdf_verification.json": "cb4a1f8c0a9a707b44f0dc9f148545bea648f85ce2165f973c9bb01631c38818",
+    "visual_review.md": "769f34234b5797569aa96695bfde45b0f89cf51ef50623fc41fe38ab7bcd6fac",
+    "visual_binding.json": "dbcc727ef9bf0f255b697f2da3a3807a66e82c72607748923c4d365a6d1f7438",
+    "baseline.json": "3ae222e4a9c77952666c37a04e045edcb967730485af23f05a97cf20bf814877",
+    "baseline_build.json": "fac29a4f2cd55cc059688eef7743ff1c3af8258b3ef724ebf2b8b9f0216ecf58",
+    "baseline_raw_build.json": "f5cb8d7a781aa49214dc5465ffebdd687f333c470e6ca5c3af5f2b0d67f9064a",
+    "build.json": "354e3f74d6d4df5e8ae34a55fc9f8caf88aa1b04a5830c755d6c3a20c7f9dc3b",
+    "validation.json": "22c19860d34fc8cdfbe33e5c023307c5e326c5f9c28c8a0f649878dce23ddb1c",
+    "artifact_sync.json": "d2236263638916b98baa67494e627973e79eff17f6bb360264e7fddd9ab73a0c"
+  },
+  "issues": []
+}
