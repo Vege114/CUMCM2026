@@ -35,18 +35,22 @@
 \begin{equation}\label{eq:q1-first}
  C_1^\star=\min\sum_{t=1}^{T}p_tg_t.
 \end{equation}
-第二层沿用第一层的全部约束，并增加费用预算
+
+第二层在购电费增加不超过0.1\%的条件下，减少电池功率变化和充放电启动次数。保留第一层约束，并要求
 \begin{equation}\label{eq:q1-budget}
- \sum_tp_tg_t\leq(1+0.001)C_1^\star+10^{-4},
+ \sum_{t=1}^{T}p_tg_t\leq1.001C_1^\star+10^{-4},
 \end{equation}
-再最小化归一化运行指标
+其中$p_t$为第$t$时段的购电单价，$10^{-4}$元为数值容差。
+
+令$P_t=(c_t-d_t)/\Delta t$表示净充电功率，正值为充电，负值为放电。第二层目标为
 \begin{equation}\label{eq:q1-second}
- F_2=\frac{\sum_t v_t}{2P_{\max}T}
- +\frac{\sum_{t,a}s_t^a}{2T}
- +\frac{\sum_{t,a}\sum_{k=1}^{2}b_{t,k}^a}{4T},\qquad
- v_t\geq\pm(P_t-P_{t-1}).
+ \min\quad
+ \frac{\sum_{t=1}^{T}|P_t-P_{t-1}|}{2P_{\max}T}
+ +\frac{\sum_{t=1}^{T}\sum_{a\in\{c,d\}}
+ \max\{z_t^a-z_{t-1}^a,0\}}{2T}.
 \end{equation}
-其中$b_{t,k}^a$表示在$t$槽启动后未能持续到第$k+1$槽的缺额标记。当前最短开启3槽的设置使其取零，保留该项便于与放宽最短持续时间的经济基准比较。三个分母用于归一化功率变化、启动次数与短段缺额，均不改变真实购电账单的定义。
+第一项衡量相邻时段的功率变化，第二项统计充、放电的启动次数：当某一模式由关闭变为开启时，计为一次启动。两项归一化后等权相加，兼顾减小功率波动与减少启停。取$P_0=P_T$、$z_0^a=z_T^a$，将跨午夜的变化计入。求解时对绝对值和最大值表达式作标准线性化，仍按混合整数线性规划求解。
+
 
 \subsection{求解结果与典型日策略}
 采用HiGHS混合整数规划求解器完成两层优化\cite{scipymilp}。第一层最低购电费为34080.95元，第二层费用为34115.03元，两层归档MIP相对间隙均为0。第一层与第二层求解时间分别为0.35\,s和7.58\,s，仅表示对应环境中的单次求解耗时。表\ref{tab:q1-compare}给出分层结果，表\ref{tab:q1-purchase}和表\ref{tab:q1-storage}均由第二层得到。
