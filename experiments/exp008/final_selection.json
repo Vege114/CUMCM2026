@@ -1,0 +1,69 @@
+{
+  "selection_note": "User accepted the current complete verified results and requested reporting and commit. No further optimization or selection from interrupted runs.",
+  "finalization_acceptance": {
+    "basis": "user_accepts_current_verified_result",
+    "user_message": "行，我觉得现在这个结果比较满意了，就这样写报告然后提交吧",
+    "date": "2026-09-13",
+    "accepted_q2_archive_sha256": "8b97181d2f82659774c609632d39a2bd812e69598fcd37696a2d793debcfe6d7",
+    "original_eight_percent_target_met": false,
+    "original_target_not_redefined": true
+  },
+  "q1": {"archive": "data/results/exp008/q1/revised.json", "role": "accepted_final_stage2_latest_main_settings"},
+  "scenarios": {
+    "2": {
+      "archive": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/dispatch.npz",
+      "role": "accepted_final_strategy", "start_day": 31,
+      "initial_soc_kwh": 1421.7991105135516, "initial_mode": 1, "initial_power_kw": 172.75999999999976,
+      "audit": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/planning_audit.json",
+      "causality_verification": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/independent_audit.json",
+      "eligible_as_causal_strategy": true,
+      "forecast_sources": {"base": "absolute HGB and ExtraTrees raw equal-weight blend", "correction": "one common Ridge28 then nonrecursive half previous-day load memory", "seed": 42, "cutoff": "each midnight before current-day observations", "provenance": "data/results/exp008/mode_budget_hold1_physical/hgb_extra_trees_half_hold1_cap8_kappa0_334days/complete_provenance.json"},
+      "power_manifest": "reports/experiments/exp008/evidence/battery/q2_final/manifest.json"
+    },
+    "3": {
+      "archive": "data/results/exp008/absolute_hgb_update_dispatch/full334/3/dispatch_3.npz",
+      "role": "accepted_final_strategy", "start_day": 31,
+      "initial_soc_kwh": 1507.622628752613, "initial_mode": 1, "initial_power_kw": 172.75999999999976,
+      "audit": "data/results/exp008/absolute_hgb_update_dispatch/full334/3/audit.json",
+      "causality_verification": "data/results/exp008/absolute_hgb_update_dispatch/causality_verification.json",
+      "eligible_as_causal_strategy": true,
+      "forecast_sources": {"base": "single absolute HGB", "correction": "Ridge28 then half previous-day load memory and permitted observed-prefix correction", "seed": 42, "cutoff": "0/6/12/18 hour releases; same-issued historical residuals", "PV": "current official issue with historical knot calibration and interval integration", "provenance": "data/results/exp008/absolute_hgb_update_dispatch/protocol.json"},
+      "power_manifest": "reports/experiments/exp008/evidence/battery/q3_final/manifest.json"
+    },
+    "4-2": {
+      "archive": "data/results/exp008/q4_hgb_linked_price_physical/full334/dispatch_4-2.npz",
+      "role": "accepted_final_strategy", "start_day": 31,
+      "initial_soc_kwh": 1390.382746315672, "initial_mode": 1, "initial_power_kw": 172.75999999999976,
+      "audit": "data/results/exp008/q4_hgb_linked_price_physical/full334/source_corrected_audit.json",
+      "causality_verification": "data/results/exp008/q4_hgb_linked_price_physical/full334/independent_audit.json",
+      "eligible_as_causal_strategy": true,
+      "forecast_sources": {"base": "single absolute HGB", "correction": "Ridge28 then half previous-day load memory", "price": "Ridge28 with own issued HGB load/PV features", "seed": 42, "cutoff": "midnight; actual future prices used only for realized settlement", "metadata_erratum": "data/results/exp008/q4_hgb_linked_price_physical/metadata_erratum.json"},
+      "power_manifest": "reports/experiments/exp008/evidence/battery/q4_2_final/manifest.json"
+    },
+    "4-3": {
+      "archive": "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/dispatch_4-3.npz",
+      "role": "accepted_final_strategy", "start_day": 31,
+      "initial_soc_kwh": 1522.7387288211346, "initial_mode": 1, "initial_power_kw": 172.75999999999976,
+      "audit": "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/audit.json",
+      "causality_verification": "data/results/exp008/absolute_hgb_update_dispatch/causality_verification.json",
+      "eligible_as_causal_strategy": true,
+      "forecast_sources": {"base": "single absolute HGB", "correction": "Ridge28 then half previous-day load memory and permitted observed-prefix correction", "price": "original causal Ridge28 daily/weekly harmonic model", "seed": 42, "cutoff": "0/6/12/18 hour releases; no future actual price", "PV": "current official issue with historical knot calibration and interval integration", "provenance": "data/results/exp008/absolute_hgb_update_dispatch/protocol.json"},
+      "power_manifest": "reports/experiments/exp008/evidence/battery/q4_3_final/manifest.json"
+    }
+  },
+  "prediction_evidence": {
+    "annual_metrics": "reports/experiments/exp008/evidence/forecast/annual_metrics.csv",
+    "monthly_metrics": "reports/experiments/exp008/evidence/forecast/monthly_metrics.csv",
+    "lead_metrics": "reports/experiments/exp008/evidence/forecast/lead_metrics.csv",
+    "provenance": "reports/experiments/exp008/evidence/forecast/provenance.json",
+    "model_configuration": "reports/experiments/exp008/evidence/forecast/model_configuration.json",
+    "verification": "reports/experiments/exp008/evidence/forecast/verification.json"
+  },
+  "supporting_evidence": {
+    "runtime_by_stage": "reports/experiments/exp008/evidence/runtime_by_stage.json",
+    "seed_and_ablation_results": "reports/experiments/exp008/evidence/seed_and_ablation_results.json",
+    "planning_solver_diagnostics": "reports/experiments/exp008/evidence/planning_solver_diagnostics.json",
+    "data_validation": "reports/experiments/exp008/evidence/data_validation.json",
+    "reproduction": "reports/experiments/exp008/evidence/reproduction.json"
+  }
+}

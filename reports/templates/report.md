@@ -64,6 +64,16 @@
 
 {{cost_and_constraint_results}}
 
+### 电池充放电功率与波动核验（含储能的实验必填）
+
+按[电池功率绘图与核验要求](battery-power.md)展示实际执行的净充放电功率：随机抽取至少四个完整评价日，并绘制全年所有原始时点。充电为正、放电为负，标明 kW、时间区间、随机种子、预热期及评价期；不能用平滑或降采样后的线替代原始曲线。报告相邻时点功率变化及同口径基线比较，据实判断波动是否下降。
+
+{{battery_power_random_days}}
+
+{{battery_power_full_year}}
+
+{{battery_power_variation_metrics}}
+
 {{measured_failure_case}}
 
 [指定日期的完整表格](specified_dates.md)

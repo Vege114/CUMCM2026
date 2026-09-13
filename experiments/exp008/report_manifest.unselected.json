@@ -1,0 +1,12 @@
+{
+  "selection_note": "Unselected schema example; this is not a final model choice.",
+  "q1": {"archive": null, "role": null},
+  "scenarios": {
+    "2": {"archive": null, "role": null, "start_day": 31, "initial_soc_kwh": 1421.7991105135516, "initial_mode": 1, "initial_power_kw": 172.75999999999976, "audit": null, "causality_verification": null, "eligible_as_causal_strategy": null, "forecast_sources": null, "power_manifest": null},
+    "3": {"archive": null, "role": null, "start_day": 31, "initial_soc_kwh": null, "audit": null, "causality_verification": null, "eligible_as_causal_strategy": null, "forecast_sources": null, "power_manifest": null},
+    "4-2": {"archive": null, "role": null, "start_day": 31, "initial_soc_kwh": 1390.382746315672, "audit": null, "causality_verification": null, "eligible_as_causal_strategy": null, "forecast_sources": null, "power_manifest": null},
+    "4-3": {"archive": null, "role": null, "start_day": 31, "initial_soc_kwh": null, "audit": null, "causality_verification": null, "eligible_as_causal_strategy": null, "forecast_sources": null, "power_manifest": null}
+  },
+  "prediction_evidence": {"annual_metrics": null, "monthly_metrics": null, "lead_metrics": null, "provenance": null, "model_configuration": null, "verification": null},
+  "supporting_evidence": {"runtime_by_stage": null, "seed_and_ablation_results": null, "planning_solver_diagnostics": null, "data_validation": null, "reproduction": null}
+}
