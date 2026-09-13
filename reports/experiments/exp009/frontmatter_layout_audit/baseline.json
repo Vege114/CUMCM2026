@@ -1,0 +1,73 @@
+{
+  "baseline_commit": "88d6b1602e79111e7802e79abdcd3d453b82ee83",
+  "selection": "用户明确最新远程冲突优先；88d6补齐第九节两幅图及来源，完整保留最新01、09和远程主文件内容，仅作既定4文件修订。",
+  "current_baseline_pdf_status": "NO_MATCHING_BASELINE_PDF_REQUESTED",
+  "required_figures": [
+    "Xelatex/final_results/section9_visuals/q1_sensitivity.pdf",
+    "Xelatex/final_results/section9_visuals/q2_execution_stress.pdf"
+  ],
+  "early_reference": {
+    "baseline_commit": "98da6656af1146590de424ee6ca4c9f06e974698",
+    "baseline_pdf": "tmp/conflict-resolution/frontmatter-layout/baseline/完整论文.pdf",
+    "pdf_sha256": "551d38db886dbe03872dc74ef60f16467040203a4ab4d3147f9fafe4d92c67e2",
+    "total_pages": 137,
+    "body_pages": 31,
+    "appendix_start_page": 33,
+    "source_archive_verification": {
+      "status": "PASS",
+      "tracked_xelatex_files": 246,
+      "unexpected_differences": []
+    },
+    "heading_pages": [
+      {
+        "page": 2,
+        "heading": "问题背景与问题重述"
+      },
+      {
+        "page": 4,
+        "heading": "问题分析"
+      },
+      {
+        "page": 5,
+        "heading": "模型假设"
+      },
+      {
+        "page": 6,
+        "heading": "符号说明"
+      },
+      {
+        "page": 7,
+        "heading": "问题一的模型建立与求解"
+      },
+      {
+        "page": 10,
+        "heading": "问题二的模型建立与求解"
+      },
+      {
+        "page": 14,
+        "heading": "问题三的模型建立与求解"
+      },
+      {
+        "page": 19,
+        "heading": "问题四的模型建立与求解"
+      },
+      {
+        "page": 27,
+        "heading": "模型分析与检验"
+      },
+      {
+        "page": 30,
+        "heading": "模型的评价、改进与推广"
+      },
+      {
+        "page": 32,
+        "heading": "AI工具使用声明"
+      },
+      {
+        "page": 33,
+        "heading": "附录A文件列表"
+      }
+    ]
+  },
+  "page_comparison_policy": "98da PDF仅为早期参考，不据此报告当前远程基线的精确净省页数。"
+}

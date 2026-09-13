@@ -1,0 +1,1213 @@
+{
+  "status": "PASS",
+  "pdf": "Xelatex/数模通用模板.pdf",
+  "pdf_sha256": "45c5be4400860e5c163de5588fa45c24c2f1c0573f5c39b2ed7e72deefea83b3",
+  "pdf_bytes": 3245730,
+  "baseline_commit": "88d6b1602e79111e7802e79abdcd3d453b82ee83",
+  "comparison_reference_pdf_sha256": "551d38db886dbe03872dc74ef60f16467040203a4ab4d3147f9fafe4d92c67e2",
+  "exact_latest_baseline_page_comparison": false,
+  "early_reference_total_pages": 137,
+  "early_reference_body_pages": 31,
+  "total_pages": 133,
+  "body_pages": 27,
+  "appendix_start_page": 29,
+  "net_page_reduction": null,
+  "abstract_characters_and_geometry_unchanged": true,
+  "evaluation_full_text_present": true,
+  "retained_equations": [
+    {
+      "number": 8,
+      "label": "eq:q2-mode-budget",
+      "page": 10,
+      "explanation_same_page": true
+    },
+    {
+      "number": 9,
+      "label": "eq:q2-plan-objective",
+      "page": 10,
+      "explanation_same_page": true
+    },
+    {
+      "number": 10,
+      "label": "eq:q3-adjustment",
+      "page": 14,
+      "explanation_same_page": true
+    },
+    {
+      "number": 11,
+      "label": "eq:q3-bill",
+      "page": 14,
+      "explanation_same_page": true
+    },
+    {
+      "number": 12,
+      "label": "eq:q3-objective",
+      "page": 14,
+      "explanation_same_page": true
+    },
+    {
+      "number": 13,
+      "label": "eq:q4-price",
+      "page": 19,
+      "explanation_same_page": true
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "characters": 927,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "考虑预测更新与运行平稳性的微网购电调控策略\n摘要\n负载、光伏与电价的变化使微网购电同时面临费用控制、供电保障和储能运行强度\n的权衡。本文以十分钟为调度间隔，统一交流侧电量、储电递推与实际结算口径，根据\n各问可获得的信息建立日前计划和日内滚动策略。年度方案均从 1 月 1 日 6000kWh 初\n始储电量开始连续运行，题"
+    },
+    {
+      "page": 2,
+      "characters": 1048,
+      "outside_characters": [],
+      "headings": [
+        "问题背景与问题重述",
+        "问题分析"
+      ],
+      "captions": [],
+      "start": "一、 问题背景与问题重述\n1.1问题背景\n分布式光伏为社区提供了就地获取电能的途径，但其电力供给的时间分布与居民用\n电需求并不天然一致：发电充裕时可能出现剩余电量，而负载集中或光伏回落时又需要\n依赖外部电网。配置储能电池可以将不同时段的电能供需连接起来，却也引入了充放电\n损耗、功率上限和安全储电范围等限制。因此，微网运"
+    },
+    {
+      "page": 3,
+      "characters": 741,
+      "outside_characters": [],
+      "headings": [
+        "模型假设"
+      ],
+      "captions": [
+        "图1 我们的工作"
+      ],
+      "start": "建立了双层混合整数线性规划，在尽可能减少购电成本的同时，限制储能设施的功率波\n动与启动次数，使得模型更加符合现实应用场景。\n问题2分析。在实际负载和光伏逐步揭晓的条件下，需要提前锁定全天购电计划。少购\n会引发高价补购，多购则增加闲置电量费用，连续预测偏差还可能耗尽可用储能。因此，\n融合梯度提升树与极端随机树预测供需并校"
+    },
+    {
+      "page": 4,
+      "characters": 873,
+      "outside_characters": [],
+      "headings": [
+        "符号说明"
+      ],
+      "captions": [],
+      "start": "假设 3： 日初、日末储电量相等的条件仅适用于问题一。问题一按典型日循环运行，\n取 0:00 与 24:00 的储电量均为 6000kWh。问题二至问题四按连续日期运行，\n各方案从 2025 年 1 月 1 日 0:00 的 6000kWh 出发，使用各自的预测、规划\n和反馈规则完成一月份预热。每槽依据实际供需执行充放"
+    },
+    {
+      "page": 5,
+      "characters": 701,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表1 主要符号及单位"
+      ],
+      "start": "表1 主要符号及单位\n符号 含义 单位\nd,t 日期与日内槽索引，t = 1,...,144 –\n∆t 槽长，取 1/6 h\nτ 预报发布小时，取 0、6、12、18 h\nL ,V 区间平均负载、光伏功率 kW\nd,t d,t\np ,pb 实际基础电价与预测电价 元/kWh\nd,t d,t\ng 午夜原计划购电量 kWh"
+    },
+    {
+      "page": 6,
+      "characters": 679,
+      "outside_characters": [],
+      "headings": [
+        "问题一的模型建立与求解"
+      ],
+      "captions": [
+        "图2 典型日负载、光伏与电价"
+      ],
+      "start": "五、 问题一的模型建立与求解\n问题一给定典型日负载、光伏出力和分时电价，要求在满足供电需求及储能运行限\n制的条件下，确定全天购电与充放电计划，并保持日初、日末储电量一致。储能可通过\n转移购电时段降低电费，但仅以购电费最小为目标，可能产生频繁启停和较大的相邻时\n段功率变化，因此还需考虑调度方案的运行特征。\n图2 典型日负"
+    },
+    {
+      "page": 7,
+      "characters": 1020,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "行约束、设置优化目标和求解调度计划。为兼顾电费与运行平稳性，采用ε约束法2：先\n求最低购电费，再将允许的费用增幅转化为约束，优化功率变化与启停次数。\n将全天分为 T = 144 个十分钟区间，∆t = 1/6h。附件以区间右端点记录功率，将\n其作为该区间平均功率；10:00–10:10对应右端点10:10的记录。记L "
+    },
+    {
+      "page": 8,
+      "characters": 778,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表4均由第二层得到。",
+        "表2 两层混合整数规划求解结果",
+        "表3 指定时段购电量及全天购电结果",
+        "表4 储能分时充放电量与起止储电量"
+      ],
+      "start": "5.2求解结果与典型日策略\n采用HiGHS混合整数规划求解器完成两层优化[4]。第一层最低购电费为34080.95\n元，第二层费用为34115.03元，两层归档MIP相对间隙均为0。第一层与第二层求解时\n间分别为0.35s和7.58s，仅表示对应环境中的单次求解耗时。表2给出分层结果，表3和\n表4均由第二层得到。\n表2"
+    },
+    {
+      "page": 9,
+      "characters": 593,
+      "outside_characters": [],
+      "headings": [
+        "问题二的模型建立与求解"
+      ],
+      "captions": [
+        "图3 典型日电池净充电功率与储电轨迹"
+      ],
+      "start": "4000\n2000\n0\n-2000\n-4000\nWk\n/\n率功电充净\n经济基准 两层规划方案\n10000\n8000\n6000\n4000\n2000\n0 2 4 6 8 10 12 14 16 18 20 22 24\n时刻 / h\nhWk\n/\n量电储\n图3 典型日电池净充电功率与储电轨迹\n从图3和表2可以发现，双层优化相对"
+    },
+    {
+      "page": 10,
+      "characters": 992,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "量修正前的岭回归输出计算，不递归累加；功率预测截为非负，光伏限制在由历史数据\n确定的发电时段内。\n预测从 1 月 1 日开始：首日使用附件 1 先验；一月负载取上周同槽，未满一周时\n取昨日同槽，光伏取昨日同槽；二月起接入上述树模型。每日将最近至多 28 个已完成\n日当时发布的净需求预测误差整条加到当天预测上，保留连续偏"
+    },
+    {
+      "page": 11,
+      "characters": 1296,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表5列出四日计划购电量与全天费用，表6汇总四日充放电及起止储电量，表7给出",
+        "表5 2025 年四个指定日期的计划购电量及全天费用",
+        "表6 2025年四个指定日期的充放电量及起止储电量（kWh）"
+      ],
+      "start": "真实费用只计锁定计划购电费与5倍电价的紧急购电费，吞吐权重和期末库存估值\n不进入账单，也不形成退款或残值收入。运行从 1 月 1 日 6000kWh 开始，每日传递实\n际末储电量、计划末模式及已保持槽数，普通日不要求恢复到6000kWh。全年连续运行\n365 日，附件 5 工作簿汇总 2–12 月 334 日结果。\n6"
+    },
+    {
+      "page": 12,
+      "characters": 998,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表7 四个指定日期的连续紧急购电区间及电量",
+        "表8同时给出全年账单与附件 5 要求区间的账单，二者不混用。",
+        "表8 问题二不同统计区间的购电量与实际费用",
+        "表9 午夜最终供需预测的误差（2–12月，不重叠日窗口）"
+      ],
+      "start": "表7 四个指定日期的连续紧急购电区间及电量\n3月20日 6月21日 9月23日 12月21日\n时间段 电量 时间段 电量 时间段 电量 时间段 电量\n01:00–01:20 14.9026 06:40–07:20 247.6871 14:50–15:10 20.5010 03:30–03:50 73.6481\n– – "
+    },
+    {
+      "page": 13,
+      "characters": 679,
+      "outside_characters": [],
+      "headings": [
+        "问题三的模型建立与求解"
+      ],
+      "captions": [
+        "图4 问题二全年各月计划购电费与紧急购电费"
+      ],
+      "start": "200\n175\n150\n125\n100\n75\n50\n25\n0\n1 2 3 4 5 6 7 8 9 10 11 12\n月份\n元万\n/\n费电购月\n计划购电费 紧急购电费\n图4 问题二全年各月计划购电费与紧急购电费\n七、 问题三的模型建立与求解\n问题三在0、6、12、18时获得新预报，并允许调整尚未执行的购电计划。本文校准\n"
+    },
+    {
+      "page": 14,
+      "characters": 1092,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "7.2退款计费与滚动规划\n最终调整以午夜原计划为基准，仅按该槽最后生效的版本结算：\na+ = [q −g0 ] , a − = [g0 −q ] . (10)\nd,t d,t d,t + d,t d,t d,t +\n式中d为日期，t = 1,...,144为日内十分钟槽；g0 为午夜原计划，q 为最终常规购电\nd,t "
+    },
+    {
+      "page": 15,
+      "characters": 1203,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表10给出评价期账单，总费用为12788960.26元。下调量244156.6289kWh表明，新",
+        "表10 问题三评价期购电费用与运行结果",
+        "表12汇总四个指定日期的四小时充放电量及起止储电量；表13给出四日完整紧急购电区",
+        "表11 指定日期的原计划与最终常规购电量（kWh）"
+      ],
+      "start": "7.3求解结果与更新价值\n从1月1日6000kWh起连续运行本策略；一月负载采用问题二的周期冷启动安排，\n二月起接入单HGB预测。2月1日实际储电量为1779.6212kWh，评价区间为2月1日\n至12月31日334日、48096槽，末日实际储电量为1200.0000kWh。采用HiGHS求解，\n每次预算20s；全年1"
+    },
+    {
+      "page": 16,
+      "characters": 987,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表12 问题三四个指定日期的充放电量及起止储电量（kWh）",
+        "表13 四个指定日的紧急购电区间及电量（kWh）",
+        "图5与图6按相同日期顺序展示购电调整及储电轨迹。四小时内充放电累计量可同时"
+      ],
+      "start": "表12 问题三四个指定日期的充放电量及起止储电量（kWh）\n时间段或指标 3月20日 6月21日 9月23日 12月21日\n充电量（kWh）\n00:00–04:00 7662.8115 157.7376 7701.4622 8621.9853\n04:00–08:00 1835.3594 1094.2404 1687.1"
+    },
+    {
+      "page": 17,
+      "characters": 364,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "图5 四个指定日的原计划与最终常规购电量。竖线为预报发布时间。",
+        "图6 对应日期的储电量轨迹。水平虚线为1200与10800kWh 安全边界。",
+        "图7展示评价期的最终调整量：正值为上调，负值为下调；0至6时已经按午夜计划"
+      ],
+      "start": "1000\n500\n0\nhWk/量电购\n3月20日 6月21日\n1000\n750\n500\n250\n0\n1500\n1000\n500\n0\n0 6 12 18 24\n时刻/h\nhWk/量电购\n午夜原计划 最终常规量\n9月23日 12月21日\n1500\n1000\n500\n0\n0 6 12 18 24\n时刻/h\n图5 四个指定日的"
+    },
+    {
+      "page": 18,
+      "characters": 598,
+      "outside_characters": [],
+      "headings": [
+        "问题四的模型建立与求解"
+      ],
+      "captions": [
+        "图7 2月至12月最终常规量减午夜原计划。色轴在绝对调整量99.5%分位处截断，原",
+        "表14 同一48096槽上午夜保持与日内更新的预测误差（单位：kW）"
+      ],
+      "start": "12\n10\n8\n6\n4\n2\n0 6 12 18 24\n时刻/h\n份月\n600\n400\n200\n0\n-200\n-400\n-600\nhWk/划计原减量终最\n图7 2月至12月最终常规量减午夜原计划。色轴在绝对调整量99.5%分位处截断，原\n始值均保留参与费用计算。\n是否需要其他时刻的预报。表14比较同一48096槽的午夜保"
+    },
+    {
+      "page": 19,
+      "characters": 1095,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表15 问题二、三与波动电价方案的方法对应关系"
+      ],
+      "start": "8.1价格预测与两类调度策略\n因果电价预测。共同的八维特征包括截距、附件1基准价格、前日与前周同槽价格\n及日内一、二阶谐波。方案4-2另加入以MW计的已发布负载、光伏预测，形成十维模\n型；历史训练行使用其当时发布的预测。采用近28日、14日半衰期的加权先验岭回归：\n8 9\n<X =\nb\nβ = argmin ω (p "
+    },
+    {
+      "page": 20,
+      "characters": 818,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "图8按相同 48096 个午夜预测槽比较价格模型，八维与十维模型的 RMSE 分别为",
+        "图8 两种午夜价格模型在相同 48096 槽上的预测误差。右图箱体为四分位区间，横线",
+        "表16 波动电价下两类完整方案的评价期结果"
+      ],
+      "start": "8.2问题四模型的求解与结果\n两方案均从1月1日6000kWh按各自策略连续运行，评价区间为2月1日至12月\n31日334日、48096槽。2月1日期初储电量分别为6699.9484和1790.8119kWh，均由\n一月实际轨迹承接；年末储电量均为1200.0000kWh。方案4-2的MIP单次限时5s、目\n标间隙0."
+    },
+    {
+      "page": 21,
+      "characters": 348,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "图9比较月度费用及紧急费占比，图10展示每日费用差异，正值表示方案 4-3 费用",
+        "图9 两类完整方案的月度费用与紧急费占比。",
+        "图10 评价期每日总费用差（方案4-2减方案4-3）。该差额反映两套完整策略的共同差"
+      ],
+      "start": "图9比较月度费用及紧急费占比，图10展示每日费用差异，正值表示方案 4-3 费用\n较低；月总额同时受天数与季节需求影响。\n175\n150\n125\n100\n75\n50\n25\n0\n2 4 6 8 10 12\n月份\n元万/用费总月\n方案4-2 10\n方案4-3\n8\n6\n4\n2\n0\n2 4 6 8 10 12\n月份\n%/用费总"
+    },
+    {
+      "page": 22,
+      "characters": 1209,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表17 问题4-2指定日期的最终常规购电量（单位：kWh）",
+        "表18 方案4-2四个指定日期的充放电量及起止储电量（kWh）",
+        "表19 方案4-2四个指定日期的紧急购电区间（kWh）"
+      ],
+      "start": "表17 问题4-2指定日期的最终常规购电量（单位：kWh）\n时间段 3月20日 6月21日 9月23日 12月21日\n10:00–10:10 56.8021 0.0000 14.2668 0.0000\n12:00–12:10 564.5003 0.0000 504.4275 999.2309\n14:00–14:10 0"
+    },
+    {
+      "page": 23,
+      "characters": 1394,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表20 问题4-3指定日期的原计划购电量（单位：kWh）",
+        "表21 问题4-3指定日期的最终常规购电量（单位：kWh）",
+        "表22 方案4-3四个指定日期的充放电量及起止储电量（kWh）"
+      ],
+      "start": "表20 问题4-3指定日期的原计划购电量（单位：kWh）\n时间段 3月20日 6月21日 9月23日 12月21日\n10:00–10:10 0.0000 0.0000 0.0000 0.0000\n12:00–12:10 447.5773 0.0000 294.9785 977.8658\n14:00–14:10 0.00"
+    },
+    {
+      "page": 24,
+      "characters": 536,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "表23 方案4-3四个指定日期的紧急购电区间（kWh）",
+        "图11展示 9 月 23 日的电价、购电及储能轨迹，反映小时模式与日内更新下的运行",
+        "图11 9月23日的电价、购电与储能运行轨迹。功率正值表示充电，负值表示放电；竖"
+      ],
+      "start": "表23 方案4-3四个指定日期的紧急购电区间（kWh）\n3月20日 6月21日 9月23日 12月21日\n时间段 电量 时间段 电量 时间段 电量 时间段 电量\n09:30–10:00 100.0577 06:50–07:20 176.8897 20:10–20:20 10.2344 07:50–08:00 4.402"
+    },
+    {
+      "page": 25,
+      "characters": 618,
+      "outside_characters": [],
+      "headings": [
+        "模型分析与检验"
+      ],
+      "captions": [],
+      "start": "九、 模型分析与检验\n9.1物理、账单与信息边界核验\n核验从逐槽实际执行轨迹出发，而非只检查优化目标值。对各问重新计算式(1)的能\n量平衡和储电递推，逐槽检查安全储电范围、单向功率上限以及实际充放电不同时发生；\n对年度方案另外检查相邻自然日的储电量完全衔接。问题一核对循环边界和两层费用预\n算，问题二核对每日计划模式变化"
+    },
+    {
+      "page": 26,
+      "characters": 996,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "图12 问题一灵敏度分析"
+      ],
+      "start": "问题一单参数重求解的敏感性\n15组（含基准）｜基准费用 34115.03 元；循环总变差 33209.17 kW\n(a) 购电费用变化 (b) 循环功率总变差变化\n费用让步 0.05% -0.050% +3.420%\n费用让步 0.09% -0.010% +3.694%\n费用让步 0.11% +0.010% -0.93"
+    },
+    {
+      "page": 27,
+      "characters": 966,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [
+        "图13 问题二灵敏度分析"
+      ],
+      "start": "乘性噪声取 exp(σz −σ2/2)，其中 z 为相关系数 0.95 的平稳 AR(1) 过程，负载与\nt t\n光伏两通道相关系数为 −0.3，光伏零值保持为零。每个噪声幅度重复 30 次，使用相同\n随机数以比较不同强度，结果见图13。\nσ = 0.01\nσ = 0.02\nσ = 0.05\nσ = 0.10\n0 10"
+    },
+    {
+      "page": 28,
+      "characters": 1067,
+      "outside_characters": [],
+      "headings": [
+        "模型的评价、改进与推广",
+        "AI工具使用声明"
+      ],
+      "captions": [],
+      "start": "全年滚动执行不作全局最优性声明。年度数据参与过模型开发，本文保留合法信息截点\n和实际运行检验，不以单个随机种子或月度结果代替独立年份验证。\n十、 模型的评价、改进与推广\n模型将预测、购电与储能调度衔接起来，按信息发布时间决策，保持储电量跨日连\n续，并用统一账单核验费用；情景规划与滚动调整兼顾供需误差和运行平稳性。其局限"
+    },
+    {
+      "page": 29,
+      "characters": 712,
+      "outside_characters": [],
+      "headings": [
+        "附录A文件列表"
+      ],
+      "captions": [
+        "表24列出正文结果与支撑文件的对应关系。",
+        "表24 论文结果及可运行支撑文件"
+      ],
+      "start": "附录 A 文件列表\n表24列出正文结果与支撑文件的对应关系。\n正式结果目录为data/results/exp009/。五份工作簿集中保存在此处，年度完整\n轨迹同时保留一月连续运行及题目要求的 2–12 月评价部分。旧示例程序和历史第三问\n结果不列入正式交付。\n表24 论文结果及可运行支撑文件\n文件或目录 功能\nresu"
+    },
+    {
+      "page": 30,
+      "characters": 1819,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "附录 B 完整求解程序\n下列程序按支撑材料中的相对目录组织。问题一可直接运行；年度策略读取附件\nCSV与已发布预测文件，从1月1日开始执行完整调度。复现时保留目录结构，在支撑\n包根目录安装所列依赖后运行：\npython scripts/prepare_exp009_support.py\npython Xelatex/c"
+    },
+    {
+      "page": 31,
+      "characters": 2380,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "38 02:30:00,0.4367,3516.8685,0\n39 02:40:00,0.4348,3517.9246,0\n40 02:50:00,0.4335,3518.5518,0\n41 03:00:00,0.4357,3521.0976,0\n42 03:10:00,0.4374,3526.9261,0\n43 03"
+    },
+    {
+      "page": 32,
+      "characters": 2148,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "108 14:10,1.0002,5687.1291,6214.0158\n109 14:20,0.9978,5678.962,6000.7112\n110 14:30,1.0271,5669.4508,5766.9816\n111 14:40,1.0906,5664.1948,5521.5066\n112 14:50,0.9"
+    },
+    {
+      "page": 33,
+      "characters": 2503,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "178 elif Path(path).suffix.lower() == \".xlsx\":\n179 from openpyxl import load_workbook # 仅外部XLSX输入需要该可选库。\n180 book = load_workbook(path, data_only=True, read_onl"
+    },
+    {
+      "page": 34,
+      "characters": 3084,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "248 net = [(ix(\"c\"), 1), (ix(\"d\"), -1), (ix(\"c\", prev), -1), (ix(\"d\", prev), 1)]\n249 rhs = (data[t, 1] - data[t, 2]) * DT\n250 add([(ix(\"g\"), 1), (ix(\"d\"), DT), "
+    },
+    {
+      "page": 35,
+      "characters": 3079,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "318 def audit(data, result):\n319 \"\"\"独立核验供需、SOC、功率、互斥、段长、费用预算及层次目标。\"\"\"\n320 q, cfg = result[\"trajectory\"], result[\"config\"]\n321 g, c, d, w, E = (q[k] for k in (\"g"
+    },
+    {
+      "page": 36,
+      "characters": 3286,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "388 writer.writerow([t*DT, (t+1)*DT, *data[t], q[\"g\"][t], q[\"c\"][t], q[\"d\"][t],\n389 q[\"w\"][t], q[\"E\"][t], q[\"E\"][t+1], data[t, 0]*q[\"g\"][t]])\n390\n391\n392 def dr"
+    },
+    {
+      "page": 37,
+      "characters": 2427,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "457 discharge_kwh=float(final[\"d\"][24*j:24*(j+1)].sum()*DT)) for j in range(6)],\n458 initial_kwh=float(final[\"E\"][0]), final_kwh=float(final[\"E\"][-1]))\n459 (out"
+    },
+    {
+      "page": 38,
+      "characters": 3324,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "49 'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()\n50 for p in (Path(__file__).resolve(), ROOT/'experiments/exp009/q12_fo"
+    },
+    {
+      "page": 39,
+      "characters": 2898,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "111 'emergency_cost': float(detail['fees'][:,3].sum()), 'emergency_kwh': float(detail['\nemergency'].sum()),\n112 'initial_soc': float(detail['states'][0]), 'fina"
+    },
+    {
+      "page": 40,
+      "characters": 2819,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "20 self.path = Path(path)\n21 self.sha256 = hashlib.sha256(self.path.read_bytes()).hexdigest()\n22 with np.load(self.path, allow_pickle=False) as z:\n23 self.origi"
+    },
+    {
+      "page": 41,
+      "characters": 2443,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "89 'training_origins': (history*144).tolist(),\n90 'fallback_days': history[history<31].tolist(),\n91 'source': 'own_issued_pipeline_complete_daily_errors',\n92 'n"
+    },
+    {
+      "page": 42,
+      "characters": 3453,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "59 'soc_bounds': bool(s.min()>=LOW-1e-6 and s.max()<=HIGH+1e-6),\n60 'power_bounds': bool(max(c.max(), d.max())<=LIMIT+1e-6),\n61 'no_simultaneous_actions': not b"
+    },
+    {
+      "page": 43,
+      "characters": 3853,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "122 billing_rule='p*(g0+1.5*(q-g0)+-0.5*(g0-q)++5*e)',\n123 solver='7 representative historical paths shared-purchase LP, released every 6 hours',\n124 final_day_"
+    },
+    {
+      "page": 44,
+      "characters": 3036,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "result['metadata']})\n183 actual=forecasts.data.actual[day*144:(day+1)*144].copy()\n184 price=actual[:,2].copy() if scenario=='4-3' else forecasts.data.fixed_pric"
+    },
+    {
+      "page": 45,
+      "characters": 3156,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "19 class Settings:\n20 scenarios: int = 7\n21 residual_scale: float = 1.\n22 throughput_penalty: float = .005\n23 variation_penalty: float = .001\n24 terminal_value:"
+    },
+    {
+      "page": 46,
+      "characters": 2432,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "89 m.objective[int(index)] = -terminal/k\n90 for j in range(k):\n91 for t in range(n):\n92 m.constraint([(g[t], 1), (d[j,t], 1), (e[j,t], 1),\n93 (c[j,t], -1), (w[j"
+    },
+    {
+      "page": 47,
+      "characters": 2359,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "33\n34 class SelectedForecasts(Forecasts):\n35 def __init__(self, data=None):\n36 self.data = Data() if data is None else data\n37 self.seed = 42\n38 self.store = St"
+    },
+    {
+      "page": 48,
+      "characters": 2330,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "12 STEPS = 144\n13 TARGETS = (\"load\", \"pv\", \"price\", \"pv_corrected\")\n14 CHANNELS = np.array([0, 1, 2, 1])\n15 SEEDS = (42, 2026, 3407)\n16\n17\n18 def protocol():\n19"
+    },
+    {
+      "page": 49,
+      "characters": 2388,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "82 if days > 1:\n83 recent = target - 144\n84 fallback = ~known & (recent >= 0) & (recent < origin)\n85 reference[fallback] = self.actual[recent[fallback]]\n86 retu"
+    },
+    {
+      "page": 50,
+      "characters": 3052,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "1 \"\"\"One physical model, exact causal execution, and independent settlement.\"\"\"\n2 import time\n3 import warnings\n4\n5 import numpy as np\n6 from scipy.optimize imp"
+    },
+    {
+      "page": 51,
+      "characters": 2845,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "68\n69 def deterministic(load,pv,price,soc,original=None):\n70 n=len(load); net=(np.asarray(load)-pv)/6; price=np.maximum(price,1e-6)\n71 m=LinearModel()\n72 g=m.va"
+    },
+    {
+      "page": 52,
+      "characters": 2469,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "7\n8\n9 class AbsoluteHGBForecasts(Forecasts):\n10 def __init__(self, data=None):\n11 super().__init__(data=data, seed=42)\n12 self.store = AbsoluteHGBStore()\n13 sel"
+    },
+    {
+      "page": 53,
+      "characters": 2996,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "28 'model_evidence_sha256':hashes,'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).\nhexdigest(),\n29 'one_fixed_comparison':True,'development_not_inde"
+    },
+    {
+      "page": 54,
+      "characters": 2679,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "26 for demand in support[t]:\n27 b=purchase[t]-demand\n28 positive=b>=0\n29 permitted=charge_mask is None or bool(charge_mask[t])==positive\n30 if not permitted:\n31"
+    },
+    {
+      "page": 55,
+      "characters": 2695,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "95 states[t+1]=following\n96 fees=np.stack([purchase*price,np.zeros(n),np.zeros(n),5*e*price],axis=-1)\n97 return dict(original=purchase.copy(),final=purchase.cop"
+    },
+    {
+      "page": 56,
+      "characters": 2586,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "60 adj=np.full(k,-terminal)\n61 grad=np.asarray(prices).copy()\n62 for t in range(n-1,-1,-1):\n63 grad[t]+=np.mean(local_b[:,t]+adj*sb[:,t])\n64 adj=local_s[:,t]+ad"
+    },
+    {
+      "page": 57,
+      "characters": 2899,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "33 t = np.arange(len(price))\n34 start, stop = spec.get('solar_start', 54), spec.get('solar_stop', 96)\n35 return (t < 34) | ((t >= start) & (t < stop)) | (t >= 1"
+    },
+    {
+      "page": 58,
+      "characters": 2395,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "98 bounds[(2 if allowed_charge[t] else 1)*n+t] = (0, 0)\n99 for t in range(n):\n100 eq[t, t] = 1\n101 eq[t, n+t] = -1\n102 eq[t, 2*n+t] = 1\n103 eq[t, 3*n+t] = -1\n10"
+    },
+    {
+      "page": 59,
+      "characters": 2991,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "166 return z['supports'].copy(), json.loads((OUT/'risk_audit.json').read_text())\n167 risk = TreeResidualScenarios(store.origins, store.values, data.actual, data"
+    },
+    {
+      "page": 60,
+      "characters": 3190,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "235 net = (forecast[:,0]-forecast[:,1])/6\n236 errors = supports[i].T-net[None,:]\n237 plan = plan_inventory(supports[i], data.fixed_price, soc, spec, final=day ="
+    },
+    {
+      "page": 61,
+      "characters": 3226,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "290 'execution_initial_soc':soc,'execution_initial_mode':old_mode,\n291 'execution_final_soc':row['final_soc'],'execution_final_mode':mode,\n292 'purchase_locked_"
+    },
+    {
+      "page": 62,
+      "characters": 2791,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "353 if args.batch == 'verify':\n354 verify_completed()\n355 return\n356 supports,audits = risk_cache(data,ForecastStore('no_season',seed=42))\n357 if args.batch == "
+    },
+    {
+      "page": 63,
+      "characters": 2079,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "16 import numpy as np\n17 import pandas as pd\n18\n19 from experiments.common.neural_v2.data import Data, ROOT\n20 from experiments.problem2.exp004.predict import F"
+    },
+    {
+      "page": 64,
+      "characters": 3018,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "86 raise ValueError(\"unreleased official forecast\")\n87 anchor = self._observed(origin - 1, origin, cutoff)[0, 1] if origin else 0.\n88 right = np.interp(np.arang"
+    },
+    {
+      "page": 65,
+      "characters": 3208,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "155 # nonfinite values still fail get() instead of being silently ignored.\n156 coefficient = np.linalg.solve(np.einsum(\"ni,nj,n->ij\", x, x, weights,\n157 optimiz"
+    },
+    {
+      "page": 66,
+      "characters": 3252,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "224 kw.append(actual[:, :2] - np.column_stack((prediction[\"load_kw\"], prediction[\"pv_kw\"])))\n225 prices.append(actual[:, 2] - prediction[\"price\"])\n226 kw = np.a"
+    },
+    {
+      "page": 67,
+      "characters": 2715,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "predictions.npz\").read_bytes()).hexdigest()},\n288 \"raw_data_sha256\": forecasts.data.hashes,\n289 \"archive_sha256\": hashlib.sha256((out / \"forecasts.npz\").read_by"
+    },
+    {
+      "page": 68,
+      "characters": 3789,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "40 MODEL_CONFIG = dict(n_estimators=128, min_samples_leaf=10, max_features=1.,\n41 bootstrap=False, random_state=42, n_jobs=2,\n42 criterion='squared_error')\n43\n4"
+    },
+    {
+      "page": 69,
+      "characters": 2987,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "97\n98\n99 def tree_hashes(model):\n100 # Contents, not joblib byte layout or parallel prediction addition order.\n101 # Structured dtype padding bytes are not mode"
+    },
+    {
+      "page": 70,
+      "characters": 2908,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "164 ridge.name, memory.name = RIDGE, PRIMARY\n165 for audit in ridge.audit:\n166 audit['actual_base_model_id'] = RAW\n167 for audit in memory.audit:\n168 audit['und"
+    },
+    {
+      "page": 71,
+      "characters": 3145,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "233 a = predict_day(data, int(formal[0]), saved)\n234 b = predict_day(changed, int(formal[0]), fresh)\n235 np.testing.assert_allclose(a, b, rtol=0, atol=NUMERIC_A"
+    },
+    {
+      "page": 72,
+      "characters": 3822,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "299 audit['exact_historical_features_labels_and_splits_match_original_HGB'] = True\n300 xformal = features[np.asarray(audit['formal_days']) - 7].reshape(-1, 31)\n"
+    },
+    {
+      "page": 73,
+      "characters": 2634,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "364 'exact_original_HGB_feature_tensor_match': True, 'models': 22,\n365 'source_and_input_hashes_unchanged': True, 'causality_verified': causal['passed'],\n366 'a"
+    },
+    {
+      "page": 74,
+      "characters": 2974,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "41 def array_hash(array):\n42 return hashlib.sha256(np.ascontiguousarray(array).tobytes()).hexdigest()\n43\n44\n45 def save(path, value):\n46 Path(path).parent.mkdir"
+    },
+    {
+      "page": 75,
+      "characters": 3025,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "109 def __init__(self, values, origins, name):\n110 self.values, self.origins = np.asarray(values).copy(), np.asarray(origins).copy()\n111 self.name = name\n112 se"
+    },
+    {
+      "page": 76,
+      "characters": 3046,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "176 for selected in (train, validation):\n177 np.testing.assert_array_equal(features[selected - 7], x[selected - 7])\n178 fresh, audit = fit_month(changed, month,"
+    },
+    {
+      "page": 77,
+      "characters": 3235,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "240 save(case_dir / 'independent_verification.json', check)\n241 return result\n242\n243\n244 def run():\n245 protocol = json.loads((OUT / 'protocol.json').read_text"
+    },
+    {
+      "page": 78,
+      "characters": 2866,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "303 checks = {key: candidate[key] < prior[key] for key in gate_metrics}\n304 gate = all(checks.values()) and verified['passed']\n305 save(OUT / 'dispatch_gate.jso"
+    },
+    {
+      "page": 79,
+      "characters": 2755,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "34 raise ValueError(\"calibration cannot access an unobserved actual\")\n35 return np.asarray(actual[start:stop, :2], dtype=float)\n36\n37\n38 def _daylight(actual, d"
+    },
+    {
+      "page": 80,
+      "characters": 3052,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "103 for h in history])\n104 target = residual[:, :, channel].ravel() / 1000\n105 w = np.repeat(weights, 144)\n106 if channel == 1:\n107 active = ((base[history, :, "
+    },
+    {
+      "page": 81,
+      "characters": 2505,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "172 truth = actual[self.origins[:, None] + np.arange(144)][..., :2]\n173 self.errors_kw = truth - self.values\n174\n175 def get(self, origin):\n176 if origin not in"
+    },
+    {
+      "page": 82,
+      "characters": 3263,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "239 data, base_store = Data(), ForecastStore(\"no_season\", seed=seed)\n240 # This list is written before evaluating any candidate.\n241 (out / \"candidate_protocol."
+    },
+    {
+      "page": 83,
+      "characters": 2891,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "7 from __future__ import annotations\n8\n9 import copy\n10 import json\n11 from pathlib import Path\n12 import shutil\n13\n14 import numpy as np\n15 import pandas as pd"
+    },
+    {
+      "page": 84,
+      "characters": 2947,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "76 'development_not_independent_test': True,\n77 'raw_model_causality': 'references signed independent audits for 22 original HGB and 22\nExtraTrees monthly model"
+    },
+    {
+      "page": 85,
+      "characters": 3048,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "144 np.testing.assert_array_equal(a, b)\n145 future_ridge = ridge.values.copy()\n146 future_ridge[i+1:] += [40000.,90000.]\n147 a,_ = correct_day(data.actual, raw."
+    },
+    {
+      "page": 86,
+      "characters": 2768,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "14 from pathlib import Path\n15\n16 import joblib\n17 import numpy as np\n18 import pandas as pd\n19 from sklearn.ensemble import HistGradientBoostingRegressor\n20 fr"
+    },
+    {
+      "page": 87,
+      "characters": 3057,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "84\n85\n86 def fit_month(data, month, days, bases, features, seed=42):\n87 asof = int((pd.Timestamp(2025, month, 1) - EPOCH).days)\n88 ids = np.flatnonzero(days < a"
+    },
+    {
+      "page": 88,
+      "characters": 3491,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "150 audits.append({\"day\": int(day), \"origin\": int(day * 144), \"month_model\": month,\n151 \"model_information_cutoff_exclusive\": begin * 144,\n152 \"model_training_l"
+    },
+    {
+      "page": 89,
+      "characters": 2652,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "217 self.get(origin)\n218 ids = np.flatnonzero(self.origins + 144 <= origin)[-limit:]\n219 return {\"origins\": self.origins[ids].copy(), \"errors_kw\": self.errors_k"
+    },
+    {
+      "page": 90,
+      "characters": 2424,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "51 'seed': int(self.seed), 'calibration': getattr(self.forecasts, 'calibration', None),\n52 'history_source': 'same wrapped get at each prior completed target da"
+    },
+    {
+      "page": 91,
+      "characters": 3000,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "46 energy = pv.sum(axis=1) # kWh: one-hour interval mean kW.\n47 valid = energy > 1e-9\n48 shape = robust_mean(pv[valid] / energy[valid, None]) if valid.any() els"
+    },
+    {
+      "page": 92,
+      "characters": 2848,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "115 errors[name, channel] = error\n116 errors['net_hgb', 'net'] = hgb_net-net_truth\n117 for (name, channel), error in errors.items():\n118 annual.append({'name': "
+    },
+    {
+      "page": 93,
+      "characters": 2966,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "13 from experiments.exp008.absolute_hgb_forecast_adapter import AbsoluteHGBForecasts\n14 from experiments.exp008.forecast_absolute_hgb import OUT as HGB_OUT, PRI"
+    },
+    {
+      "page": 94,
+      "characters": 3470,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "81 'fixed_purchase_signed_price_exposure_proxy_yuan':float(np.sum(q*err))}\n82\n83\n84 def main():\n85 if OUT.exists():\n86 raise FileExistsError('No candidate overw"
+    },
+    {
+      "page": 95,
+      "characters": 2611,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "145 actual = baseline.data.actual[31*144:,2].reshape(334,144)\n146 previous,updated=scores(pred_old,actual,q),scores(pred_new,actual,q)\n147 daily=[]\n148 for i,da"
+    },
+    {
+      "page": 96,
+      "characters": 2763,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "34 costs=nextv[None,:]+wear*delta/ETA\n35 end_value=np.interp(endpoint,grid,nextv)+wear*available\n36 else:\n37 available=np.minimum(np.minimum(-b,LIMIT),(grid-LOW"
+    },
+    {
+      "page": 97,
+      "characters": 2533,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "8 from __future__ import annotations\n9\n10 import hashlib\n11 import json\n12 from pathlib import Path\n13\n14 import numpy as np\n15\n16 from experiments.exp008.forec"
+    },
+    {
+      "page": 98,
+      "characters": 2366,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "78 super().__init__(data=data)\n79 self.store = EnergyMemoryStore(data=self.data)\n80 self.calibration = self.store.name\n81\n82 def get(self, day, slot=0, scenario"
+    },
+    {
+      "page": 99,
+      "characters": 2989,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "22 history = np.r_[np.repeat(previous, min(previous_run_slots, minimum)), mask]\n23 changes = np.flatnonzero(history[1:] != history[:-1])+1\n24 lengths = np.diff("
+    },
+    {
+      "page": 100,
+      "characters": 3082,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "91 terms.append((s[j, t-1], -1.))\n92 rhs = soc if t == 0 else 0.\n93 m.constraint(terms, rhs, rhs)\n94 m.constraint([(c[j, t], 1), (mode[t], -LIMIT)], upper=0.)\n9"
+    },
+    {
+      "page": 101,
+      "characters": 3008,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "20\n21 from experiments.common.neural_v2.physics import LinearModel\n22 from experiments.exp008.closed_loop import optimize\n23 from experiments.exp008.controller_"
+    },
+    {
+      "page": 102,
+      "characters": 3654,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "90 'simultaneous_charge_discharge_slots':int(np.sum((x[c]>1e-6)&(x[d]>1e-6))),\n91 'minimum_soc_kwh':float(states.min()),'maximum_soc_kwh':float(states.max()),\n9"
+    },
+    {
+      "page": 103,
+      "characters": 3669,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "155 rows,details,audits=[],[],[]\n156 prefix_count=0\n157 if prefix_directory is not None:\n158 prefix=Path(prefix_directory)\n159 old_cfg=json.loads((prefix/'confi"
+    },
+    {
+      "page": 104,
+      "characters": 3536,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "allowed_charge'])\n222 detail.update(original=q,final=q.copy(),actual=actual.copy(),price=data.fixed_price.copy(),\n223 allowed_charge=result['allowed_charge'].co"
+    },
+    {
+      "page": 105,
+      "characters": 2574,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "288 report=counterexample()\n289 (OUT/'counterexample_fixed.json').write_text(json.dumps(report,indent=2))\n290 print(json.dumps(report,indent=2))\n291 else:\n292 r"
+    },
+    {
+      "page": 106,
+      "characters": 3860,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "60 cfg={'network_candidate_count':1,'calibrator':'unmodified_exp008_Ridge28',\n61 'calibrator_config':CONFIG['ridge_28'],'data_explicit':True,'use_cache':False,\n"
+    },
+    {
+      "page": 107,
+      "characters": 2382,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "121\n122 if __name__=='__main__':\n123 run()\nexperiments/exp008/planner.py\n1 \"\"\"Joint historical-path purchase planning; realized dispatch is verified separately."
+    },
+    {
+      "page": 108,
+      "characters": 3196,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "62 # within-day correlations. No sorting by future or realized cost.\n63 paths = paths[np.linspace(0, len(paths)-1, settings.scenarios).astype(int)]\n64 demands ="
+    },
+    {
+      "page": 109,
+      "characters": 2260,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "131 balance = purchase[t] + (actual_kw[t,1] - actual_kw[t,0])/6\n132 if balance >= 0:\n133 action = min(balance, LIMIT, max(0, (HIGH-states[t])/ETA))\n134 if actio"
+    },
+    {
+      "page": 110,
+      "characters": 2758,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "32 OUT = ROOT / \"data/results/exp008/risk_window\"\n33 CONFIGURATIONS = ((\"tree7\", 7, \"tree\"), (\"tree14\", 14, \"tree\"),\n34 (\"per_slot14\", 14, \"per_slot\"))\n35 SPEC "
+    },
+    {
+      "page": 111,
+      "characters": 3393,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "102 int(leaf): np.quantile(y_train[train_leaves == leaf], QUANTILE_LEVELS,\n103 method=\"linear\") for leaf in np.unique(train_leaves)\n104 }\n105 errors = np.vstack"
+    },
+    {
+      "page": 112,
+      "characters": 3475,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "171 \"central_support_range_coverage\": float(((truth >= supports[..., 0])\n172 & (truth <= supports[..., -1])).mean()),\n173 \"central_support_range_nominal\": float"
+    },
+    {
+      "page": 113,
+      "characters": 3199,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "238 def run(out=OUT, extend=False):\n239 out = Path(out)\n240 out.mkdir(parents=True, exist_ok=True)\n241 data, store = Data(), CalibratedStore(\"ridge_28\")\n242 pro"
+    },
+    {
+      "page": 114,
+      "characters": 2322,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "3 from .forecast_calibration import CalibratedStore\n4\n5\n6 class UnifiedForecasts(Forecasts):\n7 def __init__(self, data=None, seed=42, calibration=None):\n8 super"
+    },
+    {
+      "page": 115,
+      "characters": 3409,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "47 \"charge_starts\": int(np.sum((modes == 1) & (np.r_[0, modes[:-1]] != 1))),\n48 \"discharge_starts\": int(np.sum((modes == -1) & (np.r_[0, modes[:-1]] != -1))),\n4"
+    },
+    {
+      "page": 116,
+      "characters": 3095,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "103 \"\"\"\n104 scenario = str(scenario)\n105 if scenario not in (\"1\", \"2\", \"3\", \"4-2\", \"4-3\"):\n106 raise ValueError(\"scenario must be 1, 2, 3, 4-2 or 4-3\")\n107 erro"
+    },
+    {
+      "page": 117,
+      "characters": 3075,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "169 outer_origins = []\n170 for row in audit_records:\n171 outer = row.get(\"information_cutoff\", row.get(\"origin\"))\n172 if outer is not None:\n173 outer_origins.ap"
+    },
+    {
+      "page": 118,
+      "characters": 2479,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "232 }\n233 if scenario == \"2\":\n234 result[\"goal\"] = goal_check(billing[\"total_cost\"], battery, not errors,\n235 expected_days == 334 and start_day == 31)\n236 retu"
+    },
+    {
+      "page": 119,
+      "characters": 2254,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "1 \"\"\"Question 2 data and causal features; no training-window policy is imposed.\n2\n3 Index ``o`` denotes an issue at the start of ten-minute interval ``o``.\n4 Ob"
+    },
+    {
+      "page": 120,
+      "characters": 2360,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "71\n72 class Data:\n73 \"\"\"Read and hash exactly the three files permitted for Question 2.\n74\n75 ``actual`` contains load/PV in kW, ``reference`` retains attachmen"
+    },
+    {
+      "page": 121,
+      "characters": 2824,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "139 def features(self, origins, cutoff):\n140 \"\"\"Return features, bases, training means and scales for any issue slots.\n141\n142 Shapes are ``(n,144,2,16)``, ``(n"
+    },
+    {
+      "page": 122,
+      "characters": 2130,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "208 first = pd.Timestamp(\"2025-02-01\" if start is None else start)\n209 last = pd.Timestamp(\"2025-12-31\" if end is None else end)\n210 if any(value.tzinfo is not "
+    },
+    {
+      "page": 123,
+      "characters": 2870,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "57 def __init__(self, data=None):\n58 self.data = Data() if data is None else data\n59 self.cfg = protocol()\n60\n61 @lru_cache(maxsize=366)\n62 def seasonal_fit(sel"
+    },
+    {
+      "page": 124,
+      "characters": 2420,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "127 (base[:, k] - mean[k]) / scale[k],\n128 (yesterday[:, k] - mean[k]) / scale[k],\n129 (weekly[:, k] - mean[k]) / scale[k],\n130 np.full(STEPS, (history[:, k].me"
+    },
+    {
+      "page": 125,
+      "characters": 2262,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "28 def get(self, origin):\n29 \"\"\"Return an independent float64 (144,2) load/PV array, in kW.\"\"\"\n30 if not isinstance(origin, (int, np.integer)) or isinstance(ori"
+    },
+    {
+      "page": 126,
+      "characters": 3131,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "41 shortage = np.maximum(\n42 support[:, None, :] + shifts[None, :, None] - purchase[:, :, None], 0\n43 ).mean(axis=-1)\n44 return purchase, np.asarray(price)[:, N"
+    },
+    {
+      "page": 127,
+      "characters": 3059,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "111 if action:\n112 mode = int(action)\n113 state = int(next_index[state, column])\n114 states[slot + 1] = grid[state]\n115 return {\n116 \"purchase\": plan, \"charge\":"
+    },
+    {
+      "page": 128,
+      "characters": 2641,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "181 \"initial_soc\": float(states[0]), \"final_soc\": float(states[-1]),\n182 \"final_mode\": previous_mode,\n183 \"max_balance_error\": float(np.abs(balance_error).max()"
+    },
+    {
+      "page": 129,
+      "characters": 3079,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "60\n61\n62 class TreeResidualScenarios:\n63 \"\"\"Fit a small residual tree independently at each requested midnight.\n64\n65 Parameters are frozen forecast ``origins``"
+    },
+    {
+      "page": 130,
+      "characters": 2832,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "130 if cutoff not in self._lookup:\n131 raise ValueError(\"requested day has no frozen forecast\")\n132 historical_ids = np.flatnonzero(self.origins + STEPS <= cuto"
+    },
+    {
+      "page": 131,
+      "characters": 2668,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "199 \"conditioning\": self.conditioning,\n200 \"fallback\": bool(fallback),\n201 \"residual_source\": \"periodic_baseline\" if fallback else \"frozen_exp004_forecast\",\n202"
+    },
+    {
+      "page": 132,
+      "characters": 3394,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "46 \"final_mode\": int(nonidle[-1]) if len(nonidle) else int(initial_mode),\n47 \"initial_power_kw\": float(initial_power_kw), \"final_power_kw\": float(power[-1]),\n48"
+    },
+    {
+      "page": 133,
+      "characters": 2926,
+      "outside_characters": [],
+      "headings": [],
+      "captions": [],
+      "start": "115 day = start_day + index\n116 check(int(info[\"information_cutoff\"]) == day * 144, f\"midnight_cutoff:{day}\")\n117 check(int(info[\"max_observed_index\"]) < day * "
+    }
+  ],
+  "issues": []
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "baseline_commit": "88d6b1602e79111e7802e79abdcd3d453b82ee83",
+  "W1": "PASS",
+  "W2": "PASS",
+  "source_checks": 16,
+  "protected_files": 483,
+  "evaluation_hanzi": 163,
+  "pdf": "Xelatex/数模通用模板.pdf",
+  "pdf_sha256": "45c5be4400860e5c163de5588fa45c24c2f1c0573f5c39b2ed7e72deefea83b3",
+  "total_pages": 133,
+  "body_pages": 27,
+  "appendix_start_page": 29,
+  "exact_net_page_reduction": null,
+  "page_comparison_note": "98da is early reference only; no matching latest-remote baseline page comparison claimed.",
+  "remote_figure_checks": {
+    "q1_percent_annotations": 28,
+    "q2_mean_quantile_values": 12,
+    "source_hashes_match": true
+  },
+  "build_artifacts_untracked_retained_and_ignored": 5,
+  "build_passed": true,
+  "validation_passed": true,
+  "warnings": [],
+  "issues": [],
+  "evidence_sha256": {
+    "W1_review.md": "dc34c9204683cdafd163e4aef4de2fdfa23d70afadf1bd3e017893aff1e6a6ba",
+    "source_verification.json": "53b5c37b8727464ce618f41b48be9fd07af692466ef40764aa7110e6cec83e84",
+    "pdf_verification.json": "088503497d04cb6fe056b071ea942642d6936f10d7ea9a7ca8f1dead020f4160",
+    "remote_visuals_verification.json": "4c7391167ff374ac53ad9f16948d42862c909f3a41be57b4aa431fca1f65f0f2",
+    "visual_review.md": "7b267546329d8e9fce16cc8765bd85743b64a182352ae604bda017c170517a18",
+    "preview_binding.json": "0fa6fecb6c7ddf1a7757926f26eceb2ec8512394d07870274644a3894ca4faf9",
+    "build_artifact_verification.json": "2bb1fd337d37b16ad2c0959af90a371f1d8349d9b4bdf5fd7eb446f0392d7cbc",
+    "build.json": "354e3f74d6d4df5e8ae34a55fc9f8caf88aa1b04a5830c755d6c3a20c7f9dc3b",
+    "validation.json": "0b6218868f14c36f805a8a6e8fc339f2ec47b094296e93a0fd40603fc85279ba",
+    "artifact_sync.json": "d42e0ebb35ced646f3654fe994f8dfe22f30a75468888804872ccd59954c9e0b"
+  }
+}

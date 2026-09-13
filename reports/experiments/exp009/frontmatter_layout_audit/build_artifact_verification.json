@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "path": "Xelatex/assumptions-check.pdf",
+      "exists_locally": true,
+      "tracked": false,
+      "ignored": true
+    },
+    {
+      "path": "Xelatex/q3-table-merge-check.pdf",
+      "exists_locally": true,
+      "tracked": false,
+      "ignored": true
+    },
+    {
+      "path": "Xelatex/q4-table-merge-check.pdf",
+      "exists_locally": true,
+      "tracked": false,
+      "ignored": true
+    },
+    {
+      "path": "Xelatex/section9-check.pdf",
+      "exists_locally": true,
+      "tracked": false,
+      "ignored": true
+    },
+    {
+      "path": "Xelatex/table-merge-check.pdf",
+      "exists_locally": true,
+      "tracked": false,
+      "ignored": true
+    }
+  ],
+  "gitignore_sha256": "14fa485646e10a29192fb059c60e2e610e37f36e8e1f0c015ea4893df7adf2cb",
+  "scope": "Only five newly inherited check PDFs are removed from Git tracking, retained locally, and matched by /Xelatex/*-check.pdf."
+}
