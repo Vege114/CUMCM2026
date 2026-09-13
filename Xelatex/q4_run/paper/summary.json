@@ -1,0 +1,52 @@
+{
+  "4-2": {
+    "total_cost": 13994531.257936869,
+    "planned_cost": 13400456.682552628,
+    "up_cost": 0.0,
+    "emergency_cost": 594074.5753842426,
+    "purchase_kwh": 20509183.047131084,
+    "emergency_kwh": 109880.04245429306,
+    "reversals": 1763,
+    "efc": 465.1715438463272,
+    "initial_soc": 1390.382746315672,
+    "final_soc": 1200.0,
+    "checks": {
+      "balance_kwh": 2.2737367544323206e-13,
+      "soc_kwh": 9.094947017729282e-13,
+      "cross_day_soc_kwh": 0.0,
+      "billing_yuan": 0.0,
+      "simultaneous_slots": 0,
+      "emergency_charging_slots": 0,
+      "down_adjustment_kwh": 0.0
+    }
+  },
+  "4-3": {
+    "total_cost": 13579870.464961825,
+    "planned_cost": 12265276.060812172,
+    "up_cost": 1089701.922707709,
+    "emergency_cost": 224892.48144194594,
+    "purchase_kwh": 20084167.63599953,
+    "emergency_kwh": 46317.71605354584,
+    "reversals": 6625,
+    "efc": 524.0016369111237,
+    "initial_soc": 1522.7387288211346,
+    "final_soc": 1200.0,
+    "checks": {
+      "balance_kwh": 1.1368683772161603e-13,
+      "soc_kwh": 9.094947017729282e-13,
+      "cross_day_soc_kwh": 0.0,
+      "billing_yuan": 4.547473508864641e-13,
+      "simultaneous_slots": 0,
+      "emergency_charging_slots": 0,
+      "down_adjustment_kwh": 0.0
+    }
+  },
+  "baseline": {
+    "rmse": 0.061947789175901255,
+    "mae": 0.046318006975575025
+  },
+  "linked_hgb": {
+    "rmse": 0.056139984100571985,
+    "mae": 0.0421571691956021
+  }
+}

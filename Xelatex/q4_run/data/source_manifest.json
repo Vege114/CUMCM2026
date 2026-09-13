@@ -1,0 +1,39 @@
+{
+  "dispatch_4-2.npz": {
+    "source": ".work/q4-paper/evidence/data/results/exp008/q4_hgb_linked_price_physical/full334/dispatch_4-2.npz",
+    "sha256": "09f1e6f131df6cc1e34874479cfd8dfd7c576a045c441ea7ec31e3e9a67e9b72"
+  },
+  "dispatch_4-3.npz": {
+    "source": ".work/q4-paper/evidence/data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/dispatch_4-3.npz",
+    "sha256": "be922b20ea385882362607373083211d8a854f8f15617060bb7448ffda30a437"
+  },
+  "price_predictions.npz": {
+    "source": "data/results/exp008/q4_hgb_linked_price_physical/forecast_evidence/hgb_linked_price_forecast__price_predictions.npz",
+    "sha256": "acb2cc5aca100f5ffe4049ce65bdbb32a28fa9bf471b23459cc9055bb07abba0"
+  },
+  "price_comparison.csv": {
+    "source": ".work/q4-paper/evidence/data/results/exp008/q4_hgb_linked_price_physical/three_layer_comparison.csv",
+    "sha256": "28517fdfc7f2c106f286d5333ff9c8c0f5a79f3821ba9374d257f7a8d9b7de61"
+  },
+  "skill_runtime": {
+    "revision": "e0f3e83dc241fe4d7d43be32d800a61db13b1439",
+    "source": "https://github.com/XiaoMaColtAI/math-modeling-skill",
+    "use": "original setup_style/export_figure/visual_qa functions"
+  },
+  "warmup_4-2.npz": {
+    "source": "459cdb2:data/results/exp002/warmup_4-2.npz",
+    "sha256": "14040fca3b2158c75e7553615798548e9b0e28ceb751d2e58d3040eb9ba28a6a"
+  },
+  "warmup_4-3.npz": {
+    "source": "459cdb2:data/results/exp002/warmup_4-3.npz",
+    "sha256": "05a729acfeb858142e28fdbce24dd2e09b52b33439d512bf0bdd75a5c5ff057f"
+  },
+  "../result4-2.xlsx": {
+    "source": "459cdb2:reports/experiments/exp008/result4-2.xlsx",
+    "sha256": "e9d7f7dfe50ffb0084331cbf141db548f701d62d010e4edaf1db5f0b2793cae8"
+  },
+  "../result4-3.xlsx": {
+    "source": "459cdb2:reports/experiments/exp008/result4-3.xlsx",
+    "sha256": "3f9cb04ad2801f0c183628f4d8ea5832c4367b4023e57a0b3937a246b9638b29"
+  }
+}

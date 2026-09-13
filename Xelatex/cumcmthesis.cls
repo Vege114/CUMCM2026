@@ -176,7 +176,9 @@ ItalicFont = Fira Code Retina Nerd Font Complete.otf     % to avoid font warning
 % 设置字体（替换宋体为思源宋体）
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
-\setCJKfamilyfont{kai}[AutoFakeBold]{simkai.ttf}
+\IfFontExistsTF{simkai.ttf}
+  {\setCJKfamilyfont{kai}[AutoFakeBold]{simkai.ttf}}
+  {\setCJKfamilyfont{kai}[Path=./fonts/,BoldFont=SourceHanSerifCN-Bold.otf]{SourceHanSerifCN-Regular.otf}}
 \newcommand*{\kai}{\CJKfamily{kai}}
 
 

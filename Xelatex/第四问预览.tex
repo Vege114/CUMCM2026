@@ -15,7 +15,7 @@
 \usepackage[numbers,sort&compress]{natbib}  % 文献管理宏包
 \usepackage[framemethod=TikZ]{mdframed}  % 框架宏包
 \usepackage{url}  % 网页链接宏包
-% 子图宏包已由 cumcmthesis 类加载。
+% 本节采用整幅配图，无需加载子图宏包。
 % 2026年格式规范：电子版从摘要开始，承诺书及编号专用页另行处理。
 % 附件5明确要求PDF；format2026.doc允许PDF或Word，本模板统一输出PDF。
 % 规范未统一规定字体、字号和行距，保留本文现有设置。
@@ -36,72 +36,18 @@
 \tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=green!20]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{考虑预测更新与运行平稳性的微网购电调控策略}  % 论文标题
+\title{波动电价下的微网购电调控策略}  % 论文标题
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 正文
 \begin{document}
-	
-% 摘要专用页为电子版第一页，页码从1开始；全文连续编号。
 \pagenumbering{arabic}
 \maketitle
 \thispagestyle{plain}
-
-\input{sections/00-摘要}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% 2026年规范要求不要目录；摘要结束后直接进入正文。
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% 正文接续摘要页页码，不重新从1编号。
-% 正文按一级标题拆分至 sections；统一编译本文件。
-\begingroup
-\renewcommand{\baselinestretch}{1.12}\selectfont
-\titlespacing*{\section}{0pt}{10pt}{10pt}
-\titlespacing*{\subsection}{0pt}{8pt}{5pt}
-
-\input{sections/01-问题背景与问题重述}
-\clearpage
-\input{sections/02-问题分析}
-\clearpage
-\input{sections/03-模型假设}
-\clearpage
-\input{sections/04-符号说明}
-\clearpage
-\endgroup
-
-\input{sections/05-问题一}
-\input{sections/06-问题二}
-\clearpage
-
-\input{sections/07-问题三}
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{abstract}
+问题四将电价纳入滚动预测。本文采用加权岭回归刻画价格的周期性，并在无日内预报情形中引入供需预测特征；结合小时模式情景规划与日内滚动线性规划，分别制定两类购电策略。决策仅利用当时可得信息，按实际电价结算，并从费用与储能运行强度两方面评价结果。
+\keywords{波动电价\quad 岭回归\quad 情景规划\quad 储能调度}
+\end{abstract}
+\setcounter{section}{7}
 \input{sections/08-问题四}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{sections/09-模型分析与检验}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{sections/10-模型评价改进与推广}
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 参考文献
-% 附件6第3条：AI工具使用声明放在参考文献之前。
-\input{sections/11-AI工具使用声明}
-\input{sections/12-参考文献}
-
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 附录
-\begin{appendices}
-	
-	
-	
-	
-\input{sections/13-附录文件列表}
-\clearpage
-\input{sections/14-附录问题一程序}
-\end{appendices}
 \end{document}
