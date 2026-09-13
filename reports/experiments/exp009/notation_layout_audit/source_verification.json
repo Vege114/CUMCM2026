@@ -1,0 +1,954 @@
+{
+  "baseline_commit": "c90ccb1ad8384e22c792b0a9241c1d9e8901738f",
+  "scope": "Read-only equations, printed table semantics, frozen-trajectory aggregation, and active TeX references; no optimization or retraining.",
+  "status": "PASS",
+  "sources": {
+    "Xelatex/sections/06-问题二.tex": {
+      "before_sha256": "75ab0ae3e1f1678af540e8165caf83af79c2e4992007fc250e51567d0f06b937",
+      "after_sha256": "10cf1aeaa07c31cfc786a2e386e1143f8a60288e2140be5aacad9adc430fafe0"
+    },
+    "Xelatex/sections/07-问题三.tex": {
+      "before_sha256": "a2f609a78ffb949a8e27d5b57dbb3a564105088889101f2116c71a7a68e3c9ad",
+      "after_sha256": "c7efcd21e7a99654db9d5e8d5c02e8bc3ae522cfcf02a1393b7843d83cefee72"
+    },
+    "Xelatex/sections/08-问题四.tex": {
+      "before_sha256": "e44b0d670973e64fb3173f45bcdd916bcd8d4eff670934c8c53ed7a97ee37c8b",
+      "after_sha256": "8f3646b51d324321580265e565a1841961fa4a9d2229ac50144ebf22190ca363"
+    },
+    "Xelatex/final_results/q2/tables.tex": {
+      "before_sha256": "129bddd955f0a7186d35f1e9a41f44302f0c23872cb7e18636cb0a90a3660057",
+      "after_sha256": "2063e66fa8a91243bef20b8727a10cb27a2f2d3cf224353784ebc5c547f2cf6d"
+    },
+    "Xelatex/final_results/q3_specified.tex": {
+      "before_sha256": "d47683c3dce8bb9e2ba7a893dcaaf82c6a0604af905421ae48bb6aee1b4f82f1",
+      "after_sha256": "3a15453adbb78061fb2e3a311c881b582210135c8c24bfa6968fa6d916265a5d"
+    },
+    "Xelatex/final_results/q4_4-2_specified.tex": {
+      "before_sha256": "ec8aabbb1e79b51047c0f72ade00df267a221eead00c677f0846930d5c21034a",
+      "after_sha256": "e6190f20990def32158d1b734ae8d146edbcad70a23f387c956216936feb5742"
+    },
+    "Xelatex/final_results/q4_4-3_specified.tex": {
+      "before_sha256": "531c2dd7541972d5c23f0e5232f72597aa969ea90589f0a9866d9b5619182449",
+      "after_sha256": "77ee6fc010a3c51c55f2f945aa88f8081a484b3ab377615f90eb6d4fb4c528e5"
+    }
+  },
+  "checks": [
+    {
+      "name": "Xelatex/sections/06-问题二.tex:equations_byte_identical",
+      "pass": true,
+      "detail": {
+        "before_count": 11,
+        "after_count": 11
+      }
+    },
+    {
+      "name": "Xelatex/sections/06-问题二.tex:first_use_equations_have_immediate_explanation",
+      "pass": true,
+      "detail": [
+        {
+          "label": "eq:q2-forecast",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-ridge",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-memory",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-error",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-paths",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-mode-budget",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-plan-objective",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-execute-charge",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-execute-discharge",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-balance",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q2-real-cost",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        }
+      ]
+    },
+    {
+      "name": "Xelatex/sections/07-问题三.tex:equations_byte_identical",
+      "pass": true,
+      "detail": {
+        "before_count": 24,
+        "after_count": 24
+      }
+    },
+    {
+      "name": "Xelatex/sections/07-问题三.tex:first_use_equations_have_immediate_explanation",
+      "pass": true,
+      "detail": [
+        {
+          "label": "eq:q3-information",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-pv-residual",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-weighted-error",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-knot-objective",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-knot-solution",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-knots",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-integration",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-load-bias",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-load-net",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-path-error",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-scenarios",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-adjustment",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-bill",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-piecewise",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-adjust-linear",
+          "immediate_explanation": false,
+          "no_new_symbols": "q, g0 and a+/a- were defined below eq:q3-adjustment; omitted day/release indices are stated before eq:q3-piecewise."
+        },
+        {
+          "label": "eq:q3-energy",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-soc",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-power-bound",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-opportunity",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-tv",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-objective",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-feedback-charge",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q3-feedback-discharge",
+          "immediate_explanation": false,
+          "no_new_symbols": "All symbols and actual/scenario distinctions were defined immediately below eq:q3-feedback-charge."
+        },
+        {
+          "label": "eq:q3-continuity",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        }
+      ]
+    },
+    {
+      "name": "Xelatex/sections/08-问题四.tex:equations_byte_identical",
+      "pass": true,
+      "detail": {
+        "before_count": 4,
+        "after_count": 4
+      }
+    },
+    {
+      "name": "Xelatex/sections/08-问题四.tex:first_use_equations_have_immediate_explanation",
+      "pass": true,
+      "detail": [
+        {
+          "label": "eq:q4-price",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q4-modes",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q4-adjustment",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        },
+        {
+          "label": "eq:q4-cost",
+          "immediate_explanation": true,
+          "no_new_symbols": null
+        }
+      ]
+    },
+    {
+      "name": "Xelatex/final_results/q2/tables.tex:semantic_value_mapping",
+      "pass": true,
+      "detail": {
+        "printed_values": 94,
+        "missing": [],
+        "extra": [],
+        "changed": []
+      }
+    },
+    {
+      "name": "tab:q2-annual:unchanged_rows",
+      "pass": true
+    },
+    {
+      "name": "tab:q2-prediction:unchanged_rows",
+      "pass": true
+    },
+    {
+      "name": "q2:storage_caption_dates_and_units",
+      "pass": true,
+      "detail": [
+        {
+          "label": "tab:q2-battery-20250320",
+          "caption": "2025年03月20日储能结果（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q2-battery-20250621",
+          "caption": "2025年06月21日储能结果（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q2-battery-20250923",
+          "caption": "2025年09月23日储能结果（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q2-battery-20251221",
+          "caption": "2025年12月21日储能结果（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        }
+      ]
+    },
+    {
+      "name": "Xelatex/final_results/q3_specified.tex:semantic_value_mapping",
+      "pass": true,
+      "detail": {
+        "printed_values": 127,
+        "missing": [],
+        "extra": [],
+        "changed": []
+      }
+    },
+    {
+      "name": "q3:storage_caption_dates_and_units",
+      "pass": true,
+      "detail": [
+        {
+          "label": "tab:q3-storage-47",
+          "caption": "问题3：3月20日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q3-storage-140",
+          "caption": "问题3：6月21日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q3-storage-234",
+          "caption": "问题3：9月23日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q3-storage-323",
+          "caption": "问题3：12月21日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        }
+      ]
+    },
+    {
+      "name": "Xelatex/final_results/q4_4-2_specified.tex:semantic_value_mapping",
+      "pass": true,
+      "detail": {
+        "printed_values": 95,
+        "missing": [],
+        "extra": [],
+        "changed": []
+      }
+    },
+    {
+      "name": "q4_4-2:storage_caption_dates_and_units",
+      "pass": true,
+      "detail": [
+        {
+          "label": "tab:q4_4-2-storage-47",
+          "caption": "方案4-2：3月20日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q4_4-2-storage-140",
+          "caption": "方案4-2：6月21日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q4_4-2-storage-234",
+          "caption": "方案4-2：9月23日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q4_4-2-storage-323",
+          "caption": "方案4-2：12月21日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        }
+      ]
+    },
+    {
+      "name": "Xelatex/final_results/q4_4-3_specified.tex:semantic_value_mapping",
+      "pass": true,
+      "detail": {
+        "printed_values": 125,
+        "missing": [],
+        "extra": [],
+        "changed": []
+      }
+    },
+    {
+      "name": "q4_4-3:storage_caption_dates_and_units",
+      "pass": true,
+      "detail": [
+        {
+          "label": "tab:q4_4-3-storage-47",
+          "caption": "方案4-3：3月20日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q4_4-3-storage-140",
+          "caption": "方案4-3：6月21日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q4_4-3-storage-234",
+          "caption": "方案4-3：9月23日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        },
+        {
+          "label": "tab:q4_4-3-storage-323",
+          "caption": "方案4-3：12月21日储能（kWh）",
+          "pass": true,
+          "unit_kWh": true
+        }
+      ]
+    },
+    {
+      "name": "q2:frozen_trajectory_aggregates",
+      "pass": true,
+      "detail": {
+        "checked_values": 94,
+        "mismatches": [],
+        "archive_sha256": "78fa3c1be76be6dee5f91343ddfd68cb3072a5c6f59853cd63729ffe199fb985"
+      }
+    },
+    {
+      "name": "q3:frozen_trajectory_aggregates",
+      "pass": true,
+      "detail": {
+        "checked_values": 127,
+        "mismatches": [],
+        "archive_sha256": "76fbf0baa0c185641482016648582ad1fb6c83c377587c68acdd74f99df31e00"
+      }
+    },
+    {
+      "name": "q4_4-2:frozen_trajectory_aggregates",
+      "pass": true,
+      "detail": {
+        "checked_values": 95,
+        "mismatches": [],
+        "archive_sha256": "c865f01b68d58f62237b0fd3f1e7133de1b4029ce535acde3e6f094d52adb2db"
+      }
+    },
+    {
+      "name": "q4_4-3:frozen_trajectory_aggregates",
+      "pass": true,
+      "detail": {
+        "checked_values": 125,
+        "mismatches": [],
+        "archive_sha256": "faf781a52327f2eb7c1a5afc69df4bba9c0ebbf471704cd3c0f8a27848082afe"
+      }
+    },
+    {
+      "name": "active_manuscript:references_resolve",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "labels": 108,
+        "references": 72
+      }
+    },
+    {
+      "name": "active_manuscript:no_duplicate_labels",
+      "pass": true,
+      "detail": {
+        "duplicates": []
+      }
+    },
+    {
+      "name": "active_manuscript:citations_resolve",
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "bibliography_items": 4
+      }
+    }
+  ],
+  "issues": [],
+  "canonical_table_values": {
+    "q2": {
+      "20250320|purchase|10:00--10:10": "48.2652",
+      "20250621|purchase|10:00--10:10": "0.0000",
+      "20250923|purchase|10:00--10:10": "0.0000",
+      "20251221|purchase|10:00--10:10": "45.6628",
+      "20250320|purchase|12:00--12:10": "606.0250",
+      "20250621|purchase|12:00--12:10": "0.0000",
+      "20250923|purchase|12:00--12:10": "491.0172",
+      "20251221|purchase|12:00--12:10": "948.0275",
+      "20250320|purchase|14:00--14:10": "0.0000",
+      "20250621|purchase|14:00--14:10": "0.0000",
+      "20250923|purchase|14:00--14:10": "0.0000",
+      "20251221|purchase|14:00--14:10": "0.0000",
+      "20250320|purchase|16:00--16:10": "439.5483",
+      "20250621|purchase|16:00--16:10": "220.1115",
+      "20250923|purchase|16:00--16:10": "503.9053",
+      "20251221|purchase|16:00--16:10": "868.6242",
+      "20250320|purchase|18:00--18:10": "673.0022",
+      "20250621|purchase|18:00--18:10": "132.0644",
+      "20250923|purchase|18:00--18:10": "746.5827",
+      "20251221|purchase|18:00--18:10": "684.9746",
+      "20250320|purchase|20:00--20:10": "25.2301",
+      "20250621|purchase|20:00--20:10": "0.0000",
+      "20250923|purchase|20:00--20:10": "127.3036",
+      "20251221|purchase|20:00--20:10": "33.5085",
+      "20250320|purchase|total": "65277.1470",
+      "20250621|purchase|total": "30903.9138",
+      "20250923|purchase|total": "67847.2652",
+      "20251221|purchase|total": "93111.4419",
+      "20250320|purchase|cost": "40076.53",
+      "20250621|purchase|cost": "19195.23",
+      "20250923|purchase|cost": "43261.35",
+      "20251221|purchase|cost": "60110.89",
+      "20250320|battery|00:00--04:00|charge": "6395.6805",
+      "20250320|battery|00:00--04:00|discharge": "0.0000",
+      "20250320|battery|04:00--08:00|charge": "2500.0565",
+      "20250320|battery|04:00--08:00|discharge": "6254.0246",
+      "20250320|battery|08:00--12:00|charge": "5809.0850",
+      "20250320|battery|08:00--12:00|discharge": "2732.1701",
+      "20250320|battery|12:00--16:00|charge": "3657.8022",
+      "20250320|battery|12:00--16:00|discharge": "671.0733",
+      "20250320|battery|16:00--20:00|charge": "400.6455",
+      "20250320|battery|16:00--20:00|discharge": "5806.4536",
+      "20250320|battery|20:00--24:00|charge": "1150.3048",
+      "20250320|battery|20:00--24:00|discharge": "2818.9397",
+      "20250320|battery|0:00储电量": "2851.9662",
+      "20250320|battery|24:00储电量": "2472.0243",
+      "20250621|battery|00:00--04:00|charge": "0.0000",
+      "20250621|battery|00:00--04:00|discharge": "1438.8347",
+      "20250621|battery|04:00--08:00|charge": "787.9293",
+      "20250621|battery|04:00--08:00|discharge": "3286.6826",
+      "20250621|battery|08:00--12:00|charge": "10119.2885",
+      "20250621|battery|08:00--12:00|discharge": "0.0000",
+      "20250621|battery|12:00--16:00|charge": "0.0000",
+      "20250621|battery|12:00--16:00|discharge": "0.0000",
+      "20250621|battery|16:00--20:00|charge": "0.0000",
+      "20250621|battery|16:00--20:00|discharge": "5634.7636",
+      "20250621|battery|20:00--24:00|charge": "2055.9982",
+      "20250621|battery|20:00--24:00|discharge": "3340.3250",
+      "20250621|battery|0:00储电量": "5433.6372",
+      "20250621|battery|24:00储电量": "3289.9172",
+      "20250923|battery|00:00--04:00|charge": "7093.1118",
+      "20250923|battery|00:00--04:00|discharge": "0.0000",
+      "20250923|battery|04:00--08:00|charge": "716.6349",
+      "20250923|battery|04:00--08:00|discharge": "4990.4167",
+      "20250923|battery|08:00--12:00|charge": "5277.7118",
+      "20250923|battery|08:00--12:00|discharge": "1896.6157",
+      "20250923|battery|12:00--16:00|charge": "2459.3218",
+      "20250923|battery|12:00--16:00|discharge": "407.6353",
+      "20250923|battery|16:00--20:00|charge": "0.0000",
+      "20250923|battery|16:00--20:00|discharge": "6126.8605",
+      "20250923|battery|20:00--24:00|charge": "1918.6147",
+      "20250923|battery|20:00--24:00|discharge": "2778.3055",
+      "20250923|battery|0:00储电量": "3391.0237",
+      "20250923|battery|24:00储电量": "2884.0282",
+      "20251221|battery|00:00--04:00|charge": "7517.4410",
+      "20251221|battery|00:00--04:00|discharge": "0.0000",
+      "20251221|battery|04:00--08:00|charge": "3426.9275",
+      "20251221|battery|04:00--08:00|discharge": "2445.3267",
+      "20251221|battery|08:00--12:00|charge": "5176.1069",
+      "20251221|battery|08:00--12:00|discharge": "6897.5587",
+      "20251221|battery|12:00--16:00|charge": "6372.7058",
+      "20251221|battery|12:00--16:00|discharge": "2685.3895",
+      "20251221|battery|16:00--20:00|charge": "0.0000",
+      "20251221|battery|16:00--20:00|discharge": "5941.8612",
+      "20251221|battery|20:00--24:00|charge": "0.0000",
+      "20251221|battery|20:00--24:00|discharge": "2895.6742",
+      "20251221|battery|0:00储电量": "2140.0098",
+      "20251221|battery|24:00储电量": "1484.4197",
+      "20250320|emergency|01:00--01:20": "14.9026",
+      "20250621|emergency|06:40--07:20": "247.6871",
+      "20250923|emergency|14:50--15:10": "20.5010",
+      "20251221|emergency|03:30--03:50": "73.6481",
+      "20250923|emergency|20:50--21:00": "26.1799",
+      "20251221|emergency|10:40--10:50": "36.2066"
+    },
+    "q3": {
+      "20250320|original|10:00--10:10": "0.0000",
+      "20250621|original|10:00--10:10": "0.0000",
+      "20250923|original|10:00--10:10": "0.0000",
+      "20251221|original|10:00--10:10": "0.0000",
+      "20250320|original|12:00--12:10": "447.5773",
+      "20250621|original|12:00--12:10": "0.0000",
+      "20250923|original|12:00--12:10": "294.9785",
+      "20251221|original|12:00--12:10": "977.8658",
+      "20250320|original|14:00--14:10": "0.0000",
+      "20250621|original|14:00--14:10": "0.0000",
+      "20250923|original|14:00--14:10": "0.0000",
+      "20251221|original|14:00--14:10": "0.0000",
+      "20250320|original|16:00--16:10": "611.9552",
+      "20250621|original|16:00--16:10": "96.9398",
+      "20250923|original|16:00--16:10": "528.3145",
+      "20251221|original|16:00--16:10": "839.5792",
+      "20250320|original|18:00--18:10": "673.7367",
+      "20250621|original|18:00--18:10": "114.9568",
+      "20250923|original|18:00--18:10": "742.1825",
+      "20251221|original|18:00--18:10": "675.9807",
+      "20250320|original|20:00--20:10": "0.0000",
+      "20250621|original|20:00--20:10": "0.0000",
+      "20250923|original|20:00--20:10": "0.3603",
+      "20251221|original|20:00--20:10": "0.0000",
+      "20250320|original|total": "61349.0929",
+      "20250621|original|total": "29446.2346",
+      "20250923|original|total": "64336.0938",
+      "20251221|original|total": "90241.3602",
+      "20250320|final|10:00--10:10": "0.0000",
+      "20250621|final|10:00--10:10": "0.0000",
+      "20250923|final|10:00--10:10": "0.0000",
+      "20251221|final|10:00--10:10": "0.0000",
+      "20250320|final|12:00--12:10": "500.6572",
+      "20250621|final|12:00--12:10": "0.0000",
+      "20250923|final|12:00--12:10": "168.0894",
+      "20251221|final|12:00--12:10": "942.1100",
+      "20250320|final|14:00--14:10": "0.0000",
+      "20250621|final|14:00--14:10": "0.0000",
+      "20250923|final|14:00--14:10": "0.0000",
+      "20251221|final|14:00--14:10": "0.0000",
+      "20250320|final|16:00--16:10": "611.9552",
+      "20250621|final|16:00--16:10": "96.9398",
+      "20250923|final|16:00--16:10": "528.3145",
+      "20251221|final|16:00--16:10": "868.0448",
+      "20250320|final|18:00--18:10": "706.8097",
+      "20250621|final|18:00--18:10": "136.8373",
+      "20250923|final|18:00--18:10": "782.7903",
+      "20251221|final|18:00--18:10": "675.9807",
+      "20250320|final|20:00--20:10": "0.0000",
+      "20250621|final|20:00--20:10": "0.0000",
+      "20250923|final|20:00--20:10": "26.3649",
+      "20251221|final|20:00--20:10": "0.0000",
+      "20250320|final|total": "63872.1053",
+      "20250621|final|total": "30369.8186",
+      "20250923|final|total": "65296.2037",
+      "20251221|final|total": "92689.3004",
+      "20250320|final|cost": "41499.47",
+      "20250621|final|cost": "18009.86",
+      "20250923|final|cost": "42067.72",
+      "20251221|final|cost": "61935.90",
+      "20250320|battery|00:00--04:00|charge": "7662.8115",
+      "20250320|battery|00:00--04:00|discharge": "78.3045",
+      "20250320|battery|04:00--08:00|charge": "1835.3594",
+      "20250320|battery|04:00--08:00|discharge": "6431.5328",
+      "20250320|battery|08:00--12:00|charge": "2492.6697",
+      "20250320|battery|08:00--12:00|discharge": "2677.3195",
+      "20250320|battery|12:00--16:00|charge": "6300.9854",
+      "20250320|battery|12:00--16:00|discharge": "254.7228",
+      "20250320|battery|16:00--20:00|charge": "555.0210",
+      "20250320|battery|16:00--20:00|discharge": "5144.0722",
+      "20250320|battery|20:00--24:00|charge": "327.9287",
+      "20250320|battery|20:00--24:00|discharge": "3105.5341",
+      "20250320|battery|0:00储电量": "1873.3574",
+      "20250320|battery|24:00储电量": "1415.6833",
+      "20250621|battery|00:00--04:00|charge": "157.7376",
+      "20250621|battery|00:00--04:00|discharge": "878.2834",
+      "20250621|battery|04:00--08:00|charge": "1094.2404",
+      "20250621|battery|04:00--08:00|discharge": "2058.6613",
+      "20250621|battery|08:00--12:00|charge": "9783.1738",
+      "20250621|battery|08:00--12:00|discharge": "0.0000",
+      "20250621|battery|12:00--16:00|charge": "0.0000",
+      "20250621|battery|12:00--16:00|discharge": "0.0000",
+      "20250621|battery|16:00--20:00|charge": "0.0000",
+      "20250621|battery|16:00--20:00|discharge": "6403.8908",
+      "20250621|battery|20:00--24:00|charge": "1029.2523",
+      "20250621|battery|20:00--24:00|discharge": "2748.0573",
+      "20250621|battery|0:00储电量": "3426.9473",
+      "20250621|battery|24:00储电量": "2129.4342",
+      "20250923|battery|00:00--04:00|charge": "7701.4622",
+      "20250923|battery|00:00--04:00|discharge": "0.0000",
+      "20250923|battery|04:00--08:00|charge": "1687.1562",
+      "20250923|battery|04:00--08:00|discharge": "6537.9082",
+      "20250923|battery|08:00--12:00|charge": "4906.2508",
+      "20250923|battery|08:00--12:00|discharge": "1896.6157",
+      "20250923|battery|12:00--16:00|charge": "4745.8939",
+      "20250923|battery|12:00--16:00|discharge": "444.6634",
+      "20250923|battery|16:00--20:00|charge": "0.0000",
+      "20250923|battery|16:00--20:00|discharge": "5741.0755",
+      "20250923|battery|20:00--24:00|charge": "1366.7910",
+      "20250923|battery|20:00--24:00|discharge": "3355.9961",
+      "20250923|battery|0:00储电量": "1913.5068",
+      "20250923|battery|24:00储电量": "2325.1720",
+      "20251221|battery|00:00--04:00|charge": "8621.9853",
+      "20251221|battery|00:00--04:00|discharge": "124.9033",
+      "20251221|battery|04:00--08:00|charge": "3299.7274",
+      "20251221|battery|04:00--08:00|discharge": "2580.0109",
+      "20251221|battery|08:00--12:00|charge": "5042.3042",
+      "20251221|battery|08:00--12:00|discharge": "8024.6273",
+      "20251221|battery|12:00--16:00|charge": "8006.9484",
+      "20251221|battery|12:00--16:00|discharge": "2636.9678",
+      "20251221|battery|16:00--20:00|charge": "0.0000",
+      "20251221|battery|16:00--20:00|discharge": "6478.2932",
+      "20251221|battery|20:00--24:00|charge": "346.2147",
+      "20251221|battery|20:00--24:00|discharge": "2758.4698",
+      "20251221|battery|0:00储电量": "1200.0000",
+      "20251221|battery|24:00储电量": "1392.0451",
+      "20250320|emergency|09:30--10:00": "100.0577",
+      "20250621|emergency|06:30--07:20": "176.8897",
+      "20250320|emergency|合计": "100.0577",
+      "20250621|emergency|合计": "176.8897",
+      "20250923|emergency|20:30--20:40": "28.2227",
+      "20251221|emergency|07:50--08:00": "4.4020",
+      "20250923|emergency|20:50--21:00": "7.7398",
+      "20251221|emergency|10:40--10:50": "6.8387",
+      "20251221|emergency|20:30--20:50": "215.7174",
+      "20250923|emergency|合计": "35.9624",
+      "20251221|emergency|合计": "226.9581"
+    },
+    "q4_4-2": {
+      "20250320|final|10:00--10:10": "56.8021",
+      "20250621|final|10:00--10:10": "0.0000",
+      "20250923|final|10:00--10:10": "14.2668",
+      "20251221|final|10:00--10:10": "0.0000",
+      "20250320|final|12:00--12:10": "564.5003",
+      "20250621|final|12:00--12:10": "0.0000",
+      "20250923|final|12:00--12:10": "504.4275",
+      "20251221|final|12:00--12:10": "999.2309",
+      "20250320|final|14:00--14:10": "0.0000",
+      "20250621|final|14:00--14:10": "0.0000",
+      "20250923|final|14:00--14:10": "0.0000",
+      "20251221|final|14:00--14:10": "0.0000",
+      "20250320|final|16:00--16:10": "431.9505",
+      "20250621|final|16:00--16:10": "252.1208",
+      "20250923|final|16:00--16:10": "499.5770",
+      "20251221|final|16:00--16:10": "1165.4219",
+      "20250320|final|18:00--18:10": "675.7274",
+      "20250621|final|18:00--18:10": "382.0389",
+      "20250923|final|18:00--18:10": "718.5905",
+      "20251221|final|18:00--18:10": "691.9762",
+      "20250320|final|20:00--20:10": "121.2289",
+      "20250621|final|20:00--20:10": "0.0000",
+      "20250923|final|20:00--20:10": "97.0970",
+      "20251221|final|20:00--20:10": "0.0000",
+      "20250320|final|total": "66523.2925",
+      "20250621|final|total": "31152.4188",
+      "20250923|final|total": "68627.2874",
+      "20251221|final|total": "88185.5065",
+      "20250320|final|cost": "42360.91",
+      "20250621|final|cost": "16636.03",
+      "20250923|final|cost": "45477.18",
+      "20251221|final|cost": "68042.02",
+      "20250320|battery|00:00--04:00|charge": "7396.6319",
+      "20250320|battery|00:00--04:00|discharge": "87.3354",
+      "20250320|battery|04:00--08:00|charge": "1757.3799",
+      "20250320|battery|04:00--08:00|discharge": "5318.2836",
+      "20250320|battery|08:00--12:00|charge": "5819.2437",
+      "20250320|battery|08:00--12:00|discharge": "2777.3772",
+      "20250320|battery|12:00--16:00|charge": "3399.7565",
+      "20250320|battery|12:00--16:00|discharge": "519.5389",
+      "20250320|battery|16:00--20:00|charge": "0.0000",
+      "20250320|battery|16:00--20:00|discharge": "6015.2029",
+      "20250320|battery|20:00--24:00|charge": "1515.8655",
+      "20250320|battery|20:00--24:00|discharge": "2572.6178",
+      "20250320|battery|0:00储电量": "1995.4658",
+      "20250320|battery|24:00储电量": "2638.0763",
+      "20250621|battery|00:00--04:00|charge": "0.0000",
+      "20250621|battery|00:00--04:00|discharge": "2467.5629",
+      "20250621|battery|04:00--08:00|charge": "0.0000",
+      "20250621|battery|04:00--08:00|discharge": "1870.8452",
+      "20250621|battery|08:00--12:00|charge": "9757.9626",
+      "20250621|battery|08:00--12:00|discharge": "0.0000",
+      "20250621|battery|12:00--16:00|charge": "0.0000",
+      "20250621|battery|12:00--16:00|discharge": "0.0000",
+      "20250621|battery|16:00--20:00|charge": "0.0000",
+      "20250621|battery|16:00--20:00|discharge": "4428.1966",
+      "20250621|battery|20:00--24:00|charge": "0.0000",
+      "20250621|battery|20:00--24:00|discharge": "3174.2822",
+      "20250621|battery|0:00储电量": "6115.8675",
+      "20250621|battery|24:00储电量": "2786.2837",
+      "20250923|battery|00:00--04:00|charge": "8044.4697",
+      "20250923|battery|00:00--04:00|discharge": "0.0000",
+      "20250923|battery|04:00--08:00|charge": "0.0000",
+      "20250923|battery|04:00--08:00|discharge": "4995.7313",
+      "20250923|battery|08:00--12:00|charge": "5059.8420",
+      "20250923|battery|08:00--12:00|discharge": "1893.2268",
+      "20250923|battery|12:00--16:00|charge": "2952.2254",
+      "20250923|battery|12:00--16:00|discharge": "592.1208",
+      "20250923|battery|16:00--20:00|charge": "0.0000",
+      "20250923|battery|16:00--20:00|discharge": "6067.2634",
+      "20250923|battery|20:00--24:00|charge": "1810.3827",
+      "20250923|battery|20:00--24:00|discharge": "2574.9749",
+      "20250923|battery|0:00储电量": "3168.3459",
+      "20250923|battery|24:00储电量": "3122.9258",
+      "20251221|battery|00:00--04:00|charge": "4706.9660",
+      "20251221|battery|00:00--04:00|discharge": "193.1802",
+      "20251221|battery|04:00--08:00|charge": "0.0000",
+      "20251221|battery|04:00--08:00|discharge": "988.5520",
+      "20251221|battery|08:00--12:00|charge": "4424.1685",
+      "20251221|battery|08:00--12:00|discharge": "7041.4419",
+      "20251221|battery|12:00--16:00|charge": "7692.5936",
+      "20251221|battery|12:00--16:00|discharge": "3036.8150",
+      "20251221|battery|16:00--20:00|charge": "394.3369",
+      "20251221|battery|16:00--20:00|discharge": "5638.3036",
+      "20251221|battery|20:00--24:00|charge": "0.0000",
+      "20251221|battery|20:00--24:00|discharge": "3093.9648",
+      "20251221|battery|0:00储电量": "6334.5799",
+      "20251221|battery|24:00储电量": "1595.3809",
+      "20250320|emergency|21:20--22:00": "116.1019",
+      "20250923|emergency|15:00--15:10": "7.7027",
+      "20251221|emergency|17:20--17:30": "4.1823",
+      "20250320|emergency|合计": "116.1019",
+      "20250621|emergency|合计": "0.0000",
+      "20250923|emergency|合计": "7.7027",
+      "20251221|emergency|合计": "4.1823"
+    },
+    "q4_4-3": {
+      "20250320|original|10:00--10:10": "0.0000",
+      "20250621|original|10:00--10:10": "0.0000",
+      "20250923|original|10:00--10:10": "0.0000",
+      "20251221|original|10:00--10:10": "0.0000",
+      "20250320|original|12:00--12:10": "447.5773",
+      "20250621|original|12:00--12:10": "0.0000",
+      "20250923|original|12:00--12:10": "294.9785",
+      "20251221|original|12:00--12:10": "977.8658",
+      "20250320|original|14:00--14:10": "0.0000",
+      "20250621|original|14:00--14:10": "0.0000",
+      "20250923|original|14:00--14:10": "0.0000",
+      "20251221|original|14:00--14:10": "0.0000",
+      "20250320|original|16:00--16:10": "642.1417",
+      "20250621|original|16:00--16:10": "96.9398",
+      "20250923|original|16:00--16:10": "524.6990",
+      "20251221|original|16:00--16:10": "865.8055",
+      "20250320|original|18:00--18:10": "632.4041",
+      "20250621|original|18:00--18:10": "0.0000",
+      "20250923|original|18:00--18:10": "723.2164",
+      "20251221|original|18:00--18:10": "680.6723",
+      "20250320|original|20:00--20:10": "114.6849",
+      "20250621|original|20:00--20:10": "0.0000",
+      "20250923|original|20:00--20:10": "0.3603",
+      "20251221|original|20:00--20:10": "0.0000",
+      "20250320|original|total": "61441.5401",
+      "20250621|original|total": "29640.7183",
+      "20250923|original|total": "64616.1447",
+      "20251221|original|total": "90372.9344",
+      "20250320|final|10:00--10:10": "0.0000",
+      "20250621|final|10:00--10:10": "0.0000",
+      "20250923|final|10:00--10:10": "0.0000",
+      "20251221|final|10:00--10:10": "0.0000",
+      "20250320|final|12:00--12:10": "500.6572",
+      "20250621|final|12:00--12:10": "0.0000",
+      "20250923|final|12:00--12:10": "294.9785",
+      "20251221|final|12:00--12:10": "942.1100",
+      "20250320|final|14:00--14:10": "0.0000",
+      "20250621|final|14:00--14:10": "0.0000",
+      "20250923|final|14:00--14:10": "0.0000",
+      "20251221|final|14:00--14:10": "0.0000",
+      "20250320|final|16:00--16:10": "642.1417",
+      "20250621|final|16:00--16:10": "96.9398",
+      "20250923|final|16:00--16:10": "524.6990",
+      "20251221|final|16:00--16:10": "1412.1259",
+      "20250320|final|18:00--18:10": "678.6308",
+      "20250621|final|18:00--18:10": "0.0000",
+      "20250923|final|18:00--18:10": "725.6931",
+      "20251221|final|18:00--18:10": "705.7614",
+      "20250320|final|20:00--20:10": "719.6935",
+      "20250621|final|20:00--20:10": "0.0000",
+      "20250923|final|20:00--20:10": "2.0019",
+      "20251221|final|20:00--20:10": "0.0000",
+      "20250320|final|total": "63775.7995",
+      "20250621|final|total": "30514.7960",
+      "20250923|final|total": "65529.3019",
+      "20251221|final|total": "92829.0596",
+      "20250320|final|cost": "42751.71",
+      "20250621|final|cost": "15553.81",
+      "20250923|final|cost": "43840.15",
+      "20251221|final|cost": "72598.29",
+      "20250320|battery|00:00--04:00|charge": "7383.9974",
+      "20250320|battery|00:00--04:00|discharge": "310.9833",
+      "20250320|battery|04:00--08:00|charge": "2543.5155",
+      "20250320|battery|04:00--08:00|discharge": "6656.0298",
+      "20250320|battery|08:00--12:00|charge": "2464.9699",
+      "20250320|battery|08:00--12:00|discharge": "2677.3195",
+      "20250320|battery|12:00--16:00|charge": "6123.8121",
+      "20250320|battery|12:00--16:00|discharge": "254.7228",
+      "20250320|battery|16:00--20:00|charge": "549.2050",
+      "20250320|battery|16:00--20:00|discharge": "6628.0990",
+      "20250320|battery|20:00--24:00|charge": "313.2254",
+      "20250320|battery|20:00--24:00|discharge": "1410.7146",
+      "20250320|battery|0:00储电量": "1947.9534",
+      "20250320|battery|24:00储电量": "1424.0526",
+      "20250621|battery|00:00--04:00|charge": "901.4645",
+      "20250621|battery|00:00--04:00|discharge": "2485.0043",
+      "20250621|battery|04:00--08:00|charge": "1613.5323",
+      "20250621|battery|04:00--08:00|discharge": "1485.0959",
+      "20250621|battery|08:00--12:00|charge": "9783.1738",
+      "20250621|battery|08:00--12:00|discharge": "0.0000",
+      "20250621|battery|12:00--16:00|charge": "0.0000",
+      "20250621|battery|12:00--16:00|discharge": "0.0000",
+      "20250621|battery|16:00--20:00|charge": "25.8726",
+      "20250621|battery|16:00--20:00|discharge": "6420.2901",
+      "20250621|battery|20:00--24:00|charge": "2751.3906",
+      "20250621|battery|20:00--24:00|discharge": "4539.5586",
+      "20250621|battery|0:00储电量": "3317.7840",
+      "20250621|battery|24:00储电量": "1882.0483",
+      "20250923|battery|00:00--04:00|charge": "9446.8317",
+      "20250923|battery|00:00--04:00|discharge": "6.2947",
+      "20250923|battery|04:00--08:00|charge": "793.1483",
+      "20250923|battery|04:00--08:00|discharge": "7126.9436",
+      "20250923|battery|08:00--12:00|charge": "4906.2508",
+      "20250923|battery|08:00--12:00|discharge": "1896.6157",
+      "20250923|battery|12:00--16:00|charge": "4744.6378",
+      "20250923|battery|12:00--16:00|discharge": "443.0756",
+      "20250923|battery|16:00--20:00|charge": "0.0000",
+      "20250923|battery|16:00--20:00|discharge": "6359.8540",
+      "20250923|battery|20:00--24:00|charge": "1186.5006",
+      "20250923|battery|20:00--24:00|discharge": "2706.0787",
+      "20250923|battery|0:00储电量": "1731.7495",
+      "20250923|battery|24:00储电量": "2185.8209",
+      "20251221|battery|00:00--04:00|charge": "10107.0507",
+      "20251221|battery|00:00--04:00|discharge": "150.7402",
+      "20251221|battery|04:00--08:00|charge": "1792.0683",
+      "20251221|battery|04:00--08:00|discharge": "2520.6360",
+      "20251221|battery|08:00--12:00|charge": "4308.2839",
+      "20251221|battery|08:00--12:00|discharge": "7911.5199",
+      "20251221|battery|12:00--16:00|charge": "9238.4489",
+      "20251221|battery|12:00--16:00|discharge": "3404.2588",
+      "20251221|battery|16:00--20:00|charge": "228.1659",
+      "20251221|battery|16:00--20:00|discharge": "6181.9629",
+      "20251221|battery|20:00--24:00|charge": "1139.8274",
+      "20251221|battery|20:00--24:00|discharge": "3708.6294",
+      "20251221|battery|0:00储电量": "1210.4470",
+      "20251221|battery|24:00储电量": "1478.9384",
+      "20250320|emergency|09:30--10:00": "100.0577",
+      "20250621|emergency|06:50--07:20": "176.8897",
+      "20250923|emergency|20:10--20:20": "10.2344",
+      "20251221|emergency|07:50--08:00": "4.4020",
+      "20251221|emergency|20:40--20:50": "215.7174",
+      "20250320|emergency|合计": "100.0577",
+      "20250621|emergency|合计": "176.8897",
+      "20250923|emergency|合计": "10.2344",
+      "20251221|emergency|合计": "220.1194"
+    }
+  }
+}

@@ -34,8 +34,12 @@
 \end{tabular}
 \end{table}
 \begin{table}[H]
+\centering
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}
 \centering\small
-\caption{问题4-3在3月20日的储能结果（单位：kWh）}\label{tab:q4_4-3-storage-47}
+\caption{方案4-3：3月20日储能（kWh）}\label{tab:q4_4-3-storage-47}
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrr}
 \toprule
 时间段 & 充电量 & 放电量\\
@@ -50,10 +54,12 @@
 24:00储电量 & \multicolumn{2}{c}{1424.0526}\\
 \bottomrule
 \end{tabular}
-\end{table}
-\begin{table}[H]
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}
 \centering\small
-\caption{问题4-3在6月21日的储能结果（单位：kWh）}\label{tab:q4_4-3-storage-140}
+\caption{方案4-3：6月21日储能（kWh）}\label{tab:q4_4-3-storage-140}
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrr}
 \toprule
 时间段 & 充电量 & 放电量\\
@@ -68,10 +74,15 @@
 24:00储电量 & \multicolumn{2}{c}{1882.0483}\\
 \bottomrule
 \end{tabular}
+\end{minipage}
 \end{table}
 \begin{table}[H]
+\centering
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}
 \centering\small
-\caption{问题4-3在9月23日的储能结果（单位：kWh）}\label{tab:q4_4-3-storage-234}
+\caption{方案4-3：9月23日储能（kWh）}\label{tab:q4_4-3-storage-234}
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrr}
 \toprule
 时间段 & 充电量 & 放电量\\
@@ -86,10 +97,12 @@
 24:00储电量 & \multicolumn{2}{c}{2185.8209}\\
 \bottomrule
 \end{tabular}
-\end{table}
-\begin{table}[H]
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+\vspace{0pt}
 \centering\small
-\caption{问题4-3在12月21日的储能结果（单位：kWh）}\label{tab:q4_4-3-storage-323}
+\caption{方案4-3：12月21日储能（kWh）}\label{tab:q4_4-3-storage-323}
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrr}
 \toprule
 时间段 & 充电量 & 放电量\\
@@ -104,31 +117,20 @@
 24:00储电量 & \multicolumn{2}{c}{1478.9384}\\
 \bottomrule
 \end{tabular}
+\end{minipage}
 \end{table}
 \begin{table}[H]
 \centering\small
-\caption{问题4-3指定日期紧急购电区间（单位：kWh）}\label{tab:q4_4-3-emergency-0}
-\begin{tabular}{lrlr}
+\caption{方案4-3四个指定日期的紧急购电区间（kWh）}\label{tab:q4_4-3-emergency}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrlrlrlr}
 \toprule
-\multicolumn{2}{c}{3月20日} & \multicolumn{2}{c}{6月21日}\\
-时间段 & 电量 & 时间段 & 电量\\
+\multicolumn{2}{c}{3月20日} & \multicolumn{2}{c}{6月21日} & \multicolumn{2}{c}{9月23日} & \multicolumn{2}{c}{12月21日}\\
+时间段 & 电量 & 时间段 & 电量 & 时间段 & 电量 & 时间段 & 电量\\
 \midrule
-09:30--10:00 & 100.0577 & 06:50--07:20 & 176.8897\\
-合计 & 100.0577 & 合计 & 176.8897\\
-\bottomrule
-\end{tabular}
-\end{table}
-\begin{table}[H]
-\centering\small
-\caption{问题4-3指定日期紧急购电区间（单位：kWh）}\label{tab:q4_4-3-emergency-2}
-\begin{tabular}{lrlr}
-\toprule
-\multicolumn{2}{c}{9月23日} & \multicolumn{2}{c}{12月21日}\\
-时间段 & 电量 & 时间段 & 电量\\
-\midrule
-20:10--20:20 & 10.2344 & 07:50--08:00 & 4.4020\\
--- & -- & 20:40--20:50 & 215.7174\\
-合计 & 10.2344 & 合计 & 220.1194\\
+09:30--10:00 & 100.0577 & 06:50--07:20 & 176.8897 & 20:10--20:20 & 10.2344 & 07:50--08:00 & 4.4020\\
+-- & -- & -- & -- & -- & -- & 20:40--20:50 & 215.7174\\
+合计 & 100.0577 & 合计 & 176.8897 & 合计 & 10.2344 & 合计 & 220.1194\\
 \bottomrule
 \end{tabular}
 \end{table}
