@@ -1,0 +1,151 @@
+% !TeX root = ../数模通用模板.tex
+\section{问题一的模型建立与求解}
+\label{sec:q1}
+\subsection{问题一模型的建立}
+\textbf{本文将充放电功率的平稳协调作为问题一的核心改进，在满足供电需求的同时，关注短时功率剧烈变化与碎片化充放电，避免仅以单日购电费评价调度优劣。} 为此，将功率总变差、充放电吞吐及方向反转纳入方案评价与选择，在可接受的费用条件下改善电池运行轨迹。
+
+这一设计具有电池老化与经济运行依据。以锂离子电池为例，实验研究表明，高倍率或低温等不利充电条件会增强极化并诱发析锂，造成活性锂损失、容量衰减及寿命缩短\cite{huang2022plating}。因此，当剧烈功率变化伴随不利电流、温度及循环条件时，其老化风险不能忽略。循环退化也是储能运行成本的重要组成部分，可能抵消短期电价套利收益，调度需兼顾电费与设备寿命代价\cite{xu2017aging}。
+
+不过，碎片化动作的影响还取决于循环深度、荷电状态和休息时段；已有实验发现，部分动态工况反而可延长寿命\cite{geslin2025}。故本文将平稳性视为约束不必要操作的工程指标，不将所有功率波动等同于严重老化，也不在缺少电芯与温度数据时虚构折旧费用。模型以储电量和最近非空充放电方向为状态，采用动态规划协调购电与储能，并保持日初日末储电量一致。
+
+\textbf{输入与物理约束。}
+输入附件1的负载$L_t$、光伏预测$V_t$及电价$p_t$，按10分钟划分为$T=144$段，$\Delta t=1/6$\,h。采用区间终点时标，净需求为$n_t=(L_t-V_t)\Delta t$。记$c_t,d_t$为交流侧充、放电量，则
+\begin{equation}
+ \begin{aligned}
+ g_t+d_t&=n_t+c_t+w_t,\qquad g_t,w_t\geq0,\\
+ E_{t+1}&=E_t+\eta_c c_t-d_t/\eta_d,\qquad \eta_c=\eta_d=\sqrt{0.9},\\
+ 1200&\leq E_t\leq10800,\qquad E_1=E_{T+1}=6000.
+ \end{aligned}
+ \label{eq:q1-balance}
+\end{equation}
+其中，$g_t,w_t$分别为购电量和未利用剩余电量，$E_t$为段初储电量，单位均为kWh。充、放电量不超过$5000\Delta t$，且同段互斥。
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=\textwidth]{q1_run/q1_day.png}
+ \caption{典型日负载、发电与电价}\label{fig:q1day}
+\end{figure}
+
+\textbf{状态转移与购电决策。}
+将储电量按步长$\Delta E$离散为网格，保留上下界和精确初值。对可行转移$E\to E'$，充放电动作及最小购电量为
+\begin{equation}
+ \begin{aligned}
+ c(E,E')&=\frac{(E'-E)^+}{\eta_c},\qquad
+ d(E,E')=\eta_d(E-E')^+,\\
+ g_t(E,E')&=\bigl[n_t+c(E,E')-d(E,E')\bigr]^+.
+ \end{aligned}
+ \label{eq:q1-action}
+\end{equation}
+其中，$(x)^+=\max(x,0)$；仅保留满足功率限额的转移，充放电互斥由转移方向保证。令$a=\operatorname{sgn}(E'-E)$，最近非空方向$m\in\{-1,0,1\}$在空闲时不变，其余时更新为$a$。
+
+\textbf{目标函数与动态递推。}
+以吞吐和方向反转刻画操作强度，阶段目标取
+\begin{equation}
+ \ell_t(E,E',m)=p_tg_t(E,E')+\lambda_H(c+d)
+ +\lambda_R\mathbb I(ma=-1).
+ \label{eq:q1-first}
+\end{equation}
+其中，$\lambda_H$、$\lambda_R$为操作偏好权重，不计入实际购电费用。相应Bellman递推为
+\begin{equation}
+ \begin{aligned}
+ J_t(E,m)=\min_{E'\in\mathcal A(E)}
+ \left\{\ell_t(E,E',m)+J_{t+1}(E',m')\right\}, \notag \\
+ J_{T+1}(E,m)=\begin{cases}0,&E=6000,\\+\infty,&E\ne6000.\end{cases}
+ \label{eq:q1-dp}
+ \end{aligned}
+\end{equation}
+其中，$\mathcal A(E)$为可行后继状态集合。典型日循环反转通过枚举起始非空方向并匹配终端方向处理，避免将切换转移到午夜边界。
+
+先令操作权重为零，得到同网格纯费用基准$C^\star$；再比较不同权重下的费用与操作指标，仅接受满足下式的方案：
+\begin{equation}
+ C=\sum_tp_tg_t\leq(1+\delta)C^\star+\epsilon_C.
+ \label{eq:q1-budget}
+\end{equation}
+其中，$\delta$为费用容忍参数，$\epsilon_C$为数值容差；具体费用范围另行确定。运行效果同时报告循环净功率总变差
+\begin{equation}
+ \mathcal V=\sum_{t=1}^{T}|P_t^{\rm bat}-P_{t-1}^{\rm bat}|,\qquad
+ P_t^{\rm bat}=(c_t-d_t)/\Delta t,\qquad P_0^{\rm bat}=P_T^{\rm bat}.
+ \label{eq:q1-diagnostics}
+\end{equation}
+吞吐与反转惩罚不等同于功率爬坡约束。若将总变差直接纳入优化，需扩展上一槽功率状态；本文不据操作次数推算电池寿命。
+
+
+\subsection{问题一模型的求解}
+采用逆向递推与前向回溯求得144槽购电和充放电轨迹。主网格取50\,kWh，并以25\,kWh检查离散敏感性；细化网格可扩大动作选择，但增加计算量，所得最优值仅针对离散模型。操作权重增大通常强化少周转、少反转的偏好，其费用代价及实际功率变化须单独核验。最终按题目指定时段汇总购电和储能结果。
+
+\qonepending{以下表格和调度图为历史线性规划结果，仅保留作对照，尚未按本节动态规划重算；历史目标$F_2$与MIP间隙不属于本节DP指标。旧表中购电汇总也存在不同层次结果混用，更新时须由同一DP轨迹统一导出。}
+
+\begin{table}[H]
+ \centering\small
+ \caption{历史线性规划求解结果（待DP重算）}\label{tab:q1-stages}
+ \begin{tabular}{lrrrr}
+ \toprule
+ 层次&购电费/元&购电量/kWh&$F_2$&MIP间隙\\
+ \midrule
+ 第一层&34080.951400&57572.396296&0.056210610&0\\
+ 第二层&34115.032451&57560.643804&0.036950810&0\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+\begin{table}[H]
+ \centering\small
+ \caption{指定时段购电量及全天购电结果（待更新）}\label{tab:q1-purchase}
+ \begin{tabular}{lrlrlr}
+ \toprule
+ 时间段&购电量/kWh&时间段&购电量/kWh&时间段&购电量/kWh\\
+ \midrule
+ 10:00--10:10&0.000000&12:00--12:10&480.412450&14:00--14:10&0.000000\\
+ 16:00--16:10&445.431650&18:00--18:10&621.850212&20:00--20:10&2.246095\\
+ \midrule
+ \multicolumn{3}{l}{全天购电量：57560.616077\,kWh}&
+ \multicolumn{3}{l}{全天购电费：34115.032451元}\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+\begin{table}[H]
+ \centering\small
+ \caption{储能分时充放电量与起止储电量（待更新）}\label{tab:q1-storage}
+ \begin{tabular}{lrrlrr}
+ \toprule
+ 时间段&充电量/kWh&放电量/kWh&时间段&充电量/kWh&放电量/kWh\\
+ \midrule
+ 0:00--4:00&5059.644256&0.000000&4:00--8:00&0.000000&7357.436146\\
+ 8:00--12:00&5071.280472&1702.996983&12:00--16:00&4995.867450&0.000000\\
+ 16:00--20:00&0.000000&6729.235006&20:00--24:00&5059.644256&2378.124655\\
+ \midrule
+ \multicolumn{3}{l}{0:00储电量：6000.000000\,kWh}&
+ \multicolumn{3}{l}{24:00储电量：6000.000000\,kWh}\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+原结果中，10:00--10:10和14:00--14:10无需购电，说明该方案下光伏与储能已覆盖当段负载；具体时段安排待动态规划重算后核对。四小时内既有充电量又有放电量，是不同十分钟动作相加的结果，并不表示同一时刻同时充放电。
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=\textwidth]{q1_run/q1_dispatch.png}
+ \caption{典型日电池净充电功率与储电轨迹（待更新）}\label{fig:q1-power}
+ \parbox{0.94\textwidth}{\footnotesize 图注：历史线性规划轨迹，仅作方案对照；新版动态规划曲线待统一重算。}
+\end{figure}
+
+\begin{table}[H]
+ \centering\small
+ \caption{储能调度方案的经济性与运行指标对比（待更新）}\label{tab:q1-compare}
+ \begin{tabular}{lrr}
+ \toprule
+ 指标&严格经济基准&平稳运行方案\\
+ \midrule
+ 购电费/元&33801.495642&34115.032451\\
+ 购电量/kWh&57526.243481&57560.616077\\
+ 循环功率总变差/kW&102684.580769&33209.310058\\
+ 最大相邻净功率变化/kW&8546.841200&1000.000000\\
+ 运行段启动次数/次&12&4\\
+ 短于30分钟的运行段数/段&6&0\\
+ 转换损耗/kWh&1984.271048&2018.643643\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+原结果中，平稳方案相较严格经济基准，总变差降低67.66\%，启动次数减少8次，购电费增加313.54元，增幅约0.93\%。这些数值仅对应历史线性规划，不能作为新动态规划的计算结果。比较的重点是减少功率波动需要付出多少费用，而不是直接据此判断电池能够延长多少寿命；短动作减少也同时受到最短运行时间约束的影响。
+
+

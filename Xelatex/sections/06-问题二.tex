@@ -1,0 +1,256 @@
+% !TeX root = ../数模通用模板.tex
+\section{问题二的模型建立与求解}
+\label{sec:q2-prediction}
+
+问题二中，负载与光伏出力均随时间变化，而计划购电量必须在每日0时确定。供电不足将产生5倍电价的紧急购电费用，未使用的计划电量仍需支付费用，因此，预测偏差的方向及储能的跨时段调节能力共同影响购电成本。针对上述特点，建立基于条件误差决策树与离散储能动态规划的购电调度模型：首先预测当日负载和光伏功率，再利用历史预测误差估计条件净需求分布，进而优化日前购电与储能意图；实际运行时锁定购电计划，根据当槽供需与真实储电量调整充放电动作。
+
+\subsection{负载与光伏功率预测}
+\subsubsection{输入特征与周期基线}
+
+沿用公共符号，$d$表示日期，$t=1,\ldots,T$表示日内区间，$T=144$，$\Delta t=1/6$\,h。以$a\in\{\mathrm L,\mathrm V\}$区分负载与光伏，记$Y^{\mathrm L}_{d,t}=L_{d,t}$、$Y^{\mathrm V}_{d,t}=V_{d,t}$。预测仅使用目标日0时以前的实际记录，不引入未来气象或全年季节信息。
+
+居民用电具有日内与周内规律，光伏出力则具有连续日期间的日照周期特征。为保留这些先验信息，分别以负载上周同期值和光伏昨日同期值构造基础曲线：
+\begin{equation}\label{eq:q2-base}
+ B^{\mathrm L}_{d,t}=L_{d-7,t},\qquad B^{\mathrm V}_{d,t}=V_{d-1,t}.
+\end{equation}
+模型在基础曲线上学习残差修正，不另叠加年度趋势模块。历史输入取最近7个完整日，将每6个十分钟功率值取均值，得到168点小时序列。小时聚合仅用于提取历史特征，预测输出仍保持十分钟分辨率。输入信息及其作用见表\ref{tab:q2-input}。
+
+\begin{table}[htbp]
+\centering\small
+\caption{负载与光伏预测的输入信息}\label{tab:q2-input}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{p{2.5cm}p{5.0cm}X}
+\toprule
+信息类别 & 构造方式 & 作用\\
+\midrule
+历史序列 & 过去7日的168点小时平均功率 & 提取近期水平及局部变化特征\\
+同期信息 & 基础曲线、昨日值、上周值、过去7日平均功率 & 表征历史参照与日际偏移\\
+日历信息 & 日内时刻与星期的正弦、余弦编码 & 保留周期相位，避免数值编码断点\\
+固定电价 & 仅用于预测损失加权及后续调度 & 区分不同时段供电不足的经济后果\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{卷积残差网络与预测输出}
+
+负载与光伏采用结构相同、参数独立的一维卷积分支。历史序列经两层因果膨胀卷积、平均池化及全连接映射形成8维历史摘要，再与目标时刻的8维上下文拼接，输出标准化残差。两层卷积均取8个通道、核长5，膨胀率分别为1和2；池化长度与步长均为6，预测头隐藏层宽度为16，采用ReLU激活。
+
+设第$k$月训练历史的均值与尺度为$\mu_k^a$、$S_k^a$，其中$S_k^a$取历史标准差与1\,kW的较大值。标准化历史序列记为$\mathbf X_d^a$，上下文记为$\mathbf c_{d,t}^a$，则网络映射与最终预测为
+\begin{equation}\label{eq:q2-network}
+ \begin{aligned}
+ \widehat r^a_{d,t}&=f_{\Theta_k^a}(\mathbf X_d^a,\mathbf c_{d,t}^a),\\
+ \widehat L_{d,t}&=\max\{0,B^{\mathrm L}_{d,t}+S_k^{\mathrm L}\widehat r^{\mathrm L}_{d,t}\},\\
+ \widehat V_{d,t}&=\mathsf M_{d,t}\max\{0,B^{\mathrm V}_{d,t}+S_k^{\mathrm V}\widehat r^{\mathrm V}_{d,t}\}.
+ \end{aligned}
+\end{equation}
+式中：$\Theta_k^a$为网络参数；$\mathbf c_{d,t}^a$由表\ref{tab:q2-input}中4项同期信息标准化后与4项日历编码组成；$\mathsf M_{d,t}$为光伏可发电时段掩码。该掩码取过去28个完整日正发电时段的并集，并向两侧各扩展20\,min，集合内取1，其余取0。两个分支合计4930个参数，输出层零初始化，使训练从基础曲线开始。每日0时输出$144\times2$功率矩阵，供后续规划换算为区间电量。
+
+\subsubsection{非对称损失与时间顺序训练}
+
+负载低估或光伏高估均可能造成供电准备不足，故训练采用价格加权的非对称Huber损失。定义真实标准化残差$r^a_{d,t}=(Y^a_{d,t}-B^a_{d,t})/S_k^a$及误差$u^a_{d,t}=r^a_{d,t}-\widehat r^a_{d,t}$，方向权重为
+\begin{equation}\label{eq:q2-asymmetry}
+ \kappa^{\mathrm L}(u)=1+4\mathbb I(u>0),\qquad
+ \kappa^{\mathrm V}(u)=1+4\mathbb I(u<0).
+\end{equation}
+式中，$\mathbb I(\cdot)$为指示函数。两类供电不足方向的权重为5，反方向为1。令$\mathcal T_k$为训练日期集合，$D_k$为训练段的排他截止日，采用90日半衰期的历史权重：
+\begin{equation}\label{eq:q2-time-weight}
+ \omega_{k,d}=\frac{2^{-(D_k-1-d)/90}}
+ {|\mathcal T_k|^{-1}\sum_{j\in\mathcal T_k}2^{-(D_k-1-j)/90}},
+ \qquad \bar p=\frac1T\sum_{t=1}^{T}p_t.
+\end{equation}
+两个分支的联合训练目标写为
+\begin{equation}\label{eq:q2-train-objective}
+ \mathcal L(\Theta)=
+ \frac{1}{2T|\mathcal T_k|}\sum_{d\in\mathcal T_k}\omega_{k,d}
+ \sum_{t=1}^{T}\sum_{a\in\{\mathrm L,\mathrm V\}}
+ \frac{p_t}{\bar p}\kappa^a(u^a_{d,t})\mathcal H(u^a_{d,t})
+ +10^{-4}\sum_{W\in\mathcal W}\|W\|_F^2.
+\end{equation}
+式中：$\mathcal H(u)$在$|u|\le1$时为$u^2/2$，否则为$|u|-1/2$；$\mathcal W$为两分支卷积核集合。该目标是供电风险的训练代理，尚未计入储能状态与跨时段调度影响，因而不等同于真实购电费用。
+
+网络按月从头训练，月初以前最近7个完整日用于早停，其余历史日用于训练；标准化统计量仅由训练段计算，训练样本的目标窗口不得跨入验证段。采用Adam算法，学习率0.001、批大小32、最多60轮，验证损失连续6轮不改善时停止，并恢复最佳参数。当月参数冻结，每日只更新历史输入和光伏掩码。正式比较固定种子42，其他种子用于稳定性检验，不按评价期成绩选取最优种子。
+
+\subsection{基于决策树的条件净需求分布}
+\subsubsection{历史误差样本与条件划分}
+
+点预测不能充分反映供需偏差对紧急购电的影响。为使日前计划考虑误差幅度，先将功率转换为区间净需求电量：
+\begin{equation}\label{eq:q2-net-demand}
+ n_{d,t}=(L_{d,t}-V_{d,t})\Delta t,\qquad
+ \widehat n_{d,t}=(\widehat L_{d,t}-\widehat V_{d,t})\Delta t,
+ \qquad \epsilon_{d,t}=n_{d,t}-\widehat n_{d,t}.
+\end{equation}
+净需求允许为负；$\epsilon_{d,t}>0$表示预测低估净需求。每天0时，从最近至多28个已完整揭晓的历史日收集$(\mathbf z_{j,t},\epsilon_{j,t})$，其中
+\begin{equation}\label{eq:q2-tree-feature}
+ \mathbf z_{d,t}=\left(
+ \sin\frac{2\pi(t-1)}T,\ 
+ \cos\frac{2\pi(t-1)}T,\ 
+ \widehat n_{d,t},\ 
+ \widehat V_{d,t}\Delta t,\ p_t
+ \right)^{\mathsf T}.
+\end{equation}
+特征分别表征日内相位、净需求水平、光伏规模及用电时段。以误差为回归目标，按平方误差下降准则递归划分样本，树深上限为5，每个叶节点至少包含48个槽位样本，随机状态固定为42。树的作用是形成条件相近的误差样本集合，后续使用叶内分位数，而非仅以叶内均值替代全部不确定性。
+
+当有效预测发布日不足两个时，采用历史周期预测误差回退：负载取昨日与上周同槽均值，光伏取昨日同槽值；不足一周时负载采用昨日值。此时明确区分周期基线误差与网络预测误差。只有某日实际值完整揭晓后，才将该日残差加入后续样本，避免使用未来观测。
+
+\subsubsection{九点边际支持}
+
+设目标槽所属叶节点的历史误差经验分位函数为$Q_{\mathcal A_{d,t}}$，构造
+\begin{equation}\label{eq:q2-support}
+ q_j=\frac{j-\tfrac12}{9},\qquad
+ x_{d,t,j}=\widehat n_{d,t}+Q_{\mathcal A_{d,t}}(q_j),\qquad
+ \pi_j=\frac19,\quad j=1,\ldots,9.
+\end{equation}
+式中，叶内分位数采用线性插值，$x_{d,t,j}$为净需求支持点，单位为kWh。由此以有限支持近似每槽的条件净需求分布，为规划阶段提供误差幅度信息。九列支持分别对应各槽边际分位点，不表示九条相关的整日天气路径；连续缺口的完整时间相关性未在该近似中显式保留。
+
+\subsection{日前购电与储能动态规划}
+\subsubsection{储能状态与可行转移}
+
+规划阶段省略日下标$d$。沿用$E_t$表示区间$t$开始时的内部储电量，$E_{T+1}$表示日末值；以$c_t^0,d_t^0$表示计划交流侧充、放电量，上标0用于与实际动作区分。令$c_t,d_t$为对应实际电量，两类动作均受公共设备参数约束。对于网格转移$E\to E'$，定义
+\begin{equation}\label{eq:q2-grid-action}
+ c^0(E,E')=\frac{(E'-E)_+}{\eta_c},\qquad
+ d^0(E,E')=\eta_d(E-E')_+.
+\end{equation}
+式中，$(x)_+=\max(x,0)$，$\eta_c=\eta_d=\sqrt{0.9}$。单一转移仅可能充电、放电或空闲，因而自然满足互斥。可行后继状态集合为
+\begin{equation}\label{eq:q2-feasible-transition}
+ \mathcal S(E)=\left\{E'\in\mathcal G:
+ 0\le c^0(E,E'),d^0(E,E')\le P_{\max}\Delta t\right\}.
+\end{equation}
+其中，$\mathcal G\subset[1200,10800]$为储电量网格，基础间距取50\,kWh，并插入精确日初储电量及上下界，不对实际初态作四舍五入；另以25\,kWh网格检验离散敏感性。
+
+为统计充放方向反转，在状态中增加最近一次非空动作方向$m\in\{-1,0,1\}$，分别表示放电、尚无非空动作和充电。若$a=\operatorname{sign}(E'-E)$，方向转移为
+\begin{equation}\label{eq:q2-mode}
+ m'=\begin{cases}m,&a=0,\\a,&a\ne0.\end{cases}
+\end{equation}
+空闲时保留原方向，使停机后恢复同方向不被计为反转。
+
+\subsubsection{非对称购电费用与分位数决策}
+
+给定计划动作$c^0,d^0$，以有限支持近似紧急购电的期望代价，得到阶段代理费用
+\begin{equation}\label{eq:q2-stage-cost}
+ F_t(g;c^0,d^0)=p_t\left[g+5\sum_{j=1}^{9}\pi_j
+ (x_{t,j}+c^0-d^0-g)_+\right],\qquad g\ge0.
+\end{equation}
+令$Z_t=X_t+c^0-d^0$，$G_{Z_t}$为其离散分布函数。当$g>0$时，凸函数最优性条件为$G_{Z_t}(g^-)\le4/5\le G_{Z_t}(g)$，从而可取
+\begin{equation}\label{eq:q2-quantile-purchase}
+ g_t^*(c^0,d^0)=\max\{0,Q_{0.8}(X_t)+c^0-d^0\}.
+\end{equation}
+该分位水平由计划电价与5倍紧急电价的边际权衡导出。离散分位数定义为$Q_\alpha(X)=\inf\{x:G_X(x)\ge\alpha\}$；九个等权支持下取第八小值，对应式\eqref{eq:q2-support}中叶内$5/6$分位点，因此压缩后并非原始叶分布精确的0.8分位。
+
+式\eqref{eq:q2-quantile-purchase}仅对固定计划动作的代理目标成立。实际运行允许电池随观测改变动作，故该式不构成真实反馈费用的精确最优解；其作用是消去规划中的连续购电变量，降低动态规划的计算规模。
+
+\subsubsection{操作偏好与Bellman递推}
+
+为兼顾电池操作强度，引入交流侧吞吐与方向反转的阶段代价
+\begin{equation}\label{eq:q2-operation-cost}
+ \ell_{\mathrm{op}}(E,E',m)=\lambda_H[c^0(E,E')+d^0(E,E')]
+ +\lambda_R\mathbb I\{m\operatorname{sign}(E'-E)=-1\}.
+\end{equation}
+参考设置为$\lambda_H=0.002$元/kWh、$\lambda_R=0.05$元/次。这两项是规划偏好，不计入题目购电费用，也不解释为实测电池折旧单价。
+
+记$J_t(E,m)$为从区间$t$至日末的最小代理代价，将式\eqref{eq:q2-quantile-purchase}代回$F_t$，得到$F_t^*(E,E')$，递推为
+\begin{equation}\label{eq:q2-bellman}
+ J_t(E,m)=\min_{E'\in\mathcal S(E)}
+ \left\{F_t^*(E,E')+\ell_{\mathrm{op}}(E,E',m)+J_{t+1}(E',m')\right\}.
+\end{equation}
+普通日以剩余储电量的近似价值连接次日，终端条件取
+\begin{equation}\label{eq:q2-terminal}
+ J_{T+1}(E,m)=-\frac{\min_t p_t}{\eta_c}(E-1200).
+\end{equation}
+评价期最后一天取$J_{T+1}=0$。终端价值仅用于规划，不从真实账单中抵扣；第二问不施加日初日末储电量相同的约束。由$t=T$向前递推并保存最优后继状态，再从真实日初状态正向回溯，得到全天购电量与储能意图。
+
+上述递推对给定网格及阶段代理求优，不提供原连续随机运行问题的全局最优证书。状态$(E,m)$只能精确统计吞吐与方向反转；若将相邻功率变化纳入优化，还需增加上一槽功率状态，不能仅凭方向变量声称已直接优化功率总变差。
+
+\subsection{基于实际供需的储能执行与费用核算}
+\subsubsection{允许方向改变的实时执行}
+
+日前购电量$g_t$确定后全天保持不变。第$t$槽实际负载和光伏揭晓后，计算购电与发电相对负载的净剩余
+\begin{equation}\label{eq:q2-surplus}
+ B_t=g_t+(V_t-L_t)\Delta t=g_t-n_t.
+\end{equation}
+若$B_t\ge0$，将可用剩余电量用于充电；若$B_t<0$，优先使用电池补足缺口。实际动作分别为
+\begin{equation}\label{eq:q2-charge-execute}
+ \begin{aligned}
+ c_t&=\min\left\{B_t,P_{\max}\Delta t,
+ \frac{E_{\max}-E_t}{\eta_c}\right\},\qquad d_t=e_t=0,\\
+ w_t&=B_t-c_t,\qquad B_t\ge0;
+ \end{aligned}
+\end{equation}
+\begin{equation}\label{eq:q2-discharge-execute}
+ \begin{aligned}
+ d_t&=\min\left\{-B_t,P_{\max}\Delta t,
+ (E_t-E_{\min})\eta_d\right\},\qquad c_t=w_t=0,\\
+ e_t&=-B_t-d_t,\qquad B_t<0.
+ \end{aligned}
+\end{equation}
+实际储电量递推与能量平衡为
+\begin{equation}\label{eq:q2-actual-balance}
+ E_{t+1}=E_t+\eta_c c_t-\frac{d_t}{\eta_d},\qquad
+ g_t+e_t+d_t=n_t+c_t+w_t.
+\end{equation}
+因此，实际充放电方向不受日前意图方向限制，但始终服从储电量、功率和互斥条件。紧急购电仅补充供电缺口，不主动用于充电；$w_t$为总未利用电量，可能包含已付费剩余购电。本执行基线不设置2\,kWh死区，以免主动放弃小额充电或缺口补偿。
+
+由于实际动作可能偏离规划，次日必须以本执行器的真实日末储电量和最近非空方向重新规划，不能用计划末状态替代。此时操作偏好对实际反转与吞吐的影响须通过回放检验，不能由规划目标直接推定。
+
+\subsubsection{真实费用与操作指标}
+
+在评价日期集合$\mathcal D$上，真实购电总费为
+\begin{equation}\label{eq:q2-actual-cost}
+ C_{\mathrm{actual}}=\sum_{d\in\mathcal D}\sum_{t=1}^{T}
+ \left(p_tg_{d,t}+5p_te_{d,t}\right).
+\end{equation}
+计划电量无论是否使用均全额计费，不包含日内调整费、辅助罚项或终端残值。为避免仅用费用评价电池运行，另计算交流侧吞吐$H$、净功率总变差$TV$及电芯侧等效满循环数$N_{\mathrm{EFC}}$：
+\begin{equation}\label{eq:q2-battery-metrics}
+ \begin{aligned}
+ H&=\sum_{d,t}(c_{d,t}+d_{d,t}),\qquad
+ P_{d,t}^{\mathrm{bat}}=\frac{c_{d,t}-d_{d,t}}{\Delta t},\\
+ TV&=\sum_{i=2}^{N}|P_i^{\mathrm{bat}}-P_{i-1}^{\mathrm{bat}}|,\qquad
+ N_{\mathrm{EFC}}=\frac{\eta_c\sum_{d,t}c_{d,t}+\sum_{d,t}d_{d,t}/\eta_d}{2E_{\mathrm{cap}}}.
+ \end{aligned}
+\end{equation}
+式中：$d_{d,t}$为日期$d$、区间$t$的实际放电量；$E_{\mathrm{cap}}=12000$\,kWh；$i$将评价期$N=48096$个槽位按时间连续编号。方向反转次数另在剔除空闲槽后统计相邻非空动作符号改变，包含评价期内部跨日连接，不含一月预热边界。上述指标分别反映能量周转、功率变化和方向切换，不能直接换算为电池寿命增益。
+
+若需控制操作偏好的经济代价，可在相同信息、执行规则和评价区间下，以纯费用对照为参照设置
+\begin{equation}\label{eq:q2-cost-budget}
+ C_{\mathrm{actual}}\le(1+\varepsilon_C)C_{\mathrm{ref}}.
+\end{equation}
+其中$\varepsilon_C$为方案筛选条件，而非数值求解容差；其取值及是否允许正增幅应在新实验前确定。操作权重的软惩罚不能保证该费用界，须用真实执行费用另行核验，历史验证通过也不提供未来费用保证。本文不将尚未确定的费用比例写成既定参数。
+
+\subsection{求解流程与已有算例分析}
+\subsubsection{逐日求解流程}
+
+采用冻结预测、逐日更新误差分布和逐槽执行的时间顺序回放。1月1日从6000\,kWh预热；为与已有实验保持相同初态，2月1日储电量约为1421.799111\,kWh，计算时保留预热档案的原始精度，此后各策略连续传递自己的真实状态。该初态来自已有预热，不视为本节新模型的独立运行结果。具体步骤如下。
+
+\begin{enumerate}[label=\arabic*）,leftmargin=2.6em,itemsep=2pt]
+\item 在0时读取实际日初状态及已冻结网络，生成当日144点负载和光伏预测。
+\item 仅用此前完整历史日更新条件误差树，构造每槽九点净需求支持。
+\item 建立SOC网格及可行转移，依据式\eqref{eq:q2-bellman}逆向求解，正向回溯并锁定全天购电量。
+\item 逐槽读取实际供需，按式\eqref{eq:q2-charge-execute}、式\eqref{eq:q2-discharge-execute}确定动作，记录紧急购电、剩余电量和实际SOC。
+\item 当日结束后核算费用与运行指标，将真实末状态及已完整揭晓的误差传递至下一日。
+\end{enumerate}
+
+对全部评价槽检查能量平衡、SOC递推、边界、充放电互斥和购电锁定；动态规划以小规模穷举与25/50\,kWh网格对照检验递推及离散影响。最终按题目要求汇总四个指定日的购电、充放电与紧急购电记录，并保存完整\texttt{result2.xlsx}。
+
+\subsubsection{已有方案对照与适用范围}
+
+为说明规划与执行方式的影响，表\ref{tab:q2-existing-results}列出统一建模方案所汇总的已有334日对照。三组使用相同的无年度趋势修正预测输入与物理结算口径；其中，意图裁剪组限制实际动作不超过日前意图，实时响应组则采用式\eqref{eq:q2-charge-execute}、式\eqref{eq:q2-discharge-execute}，并按各自实际末状态逐日重规划。
+
+\begin{table}[htbp]
+\centering\small
+\caption{相同预测输入下的已有购电与运行指标对照}\label{tab:q2-existing-results}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{Xrrr}
+\toprule
+方案 & 总费用/万元 & 非空反转/次 & 总变差/万kW\\
+\midrule
+基础调度 & 1361.1588 & 7715 & 3343.0433\\
+树DP＋意图裁剪 & 1406.6257 & 2729 & 3045.1039\\
+树DP＋实时响应及重规划 & 1353.4197 & 6755 & 3266.6146\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+已有结果表明，实时响应及重规划组相对基础调度节省77391.11元，降幅约0.57\%，非空反转减少12.44\%，总变差下降约2.29\%。意图裁剪组虽使反转减少64.63\%，却增加3.34\%的购电费用。两类结果说明，对充放电意图施加较强限制可能改善部分操作指标，但未必取得更低的真实购电成本，故本节采用允许实际方向改变的执行基线。
+
+表中数值为已有实验记录，并非本次费用容忍条件和操作权重重新筛选后的结果；实时响应组目前属于单种子对照。其费用与运行改善尚需在固定参数后补充稳定性验证，不能把意图裁剪组的反转降幅移用于新执行方式。模型的主要局限在于逐槽边际支持未充分刻画连续误差相关性，且计划动作与实际反馈存在差异；因此，最终方案应依据真实费用和实际运行指标共同判断，而不以代理目标或单项平稳性指标替代综合评价。
+

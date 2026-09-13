@@ -1,0 +1,43 @@
+% !TeX root = ../数模通用模板.tex
+\section{符号说明}
+下表列出贯穿各问的公共符号，局部回归系数和辅助线性化变量在相应模型中定义。上标“$\widehat{\phantom{x}}$”表示预测量；日下标$d$在不致混淆时省略。$E$表示储电量，$e$表示紧急购电量，两者严格区分。
+
+\begin{table}[H]
+\centering
+\caption{主要符号及单位}
+\label{tab:global-symbols}
+\renewcommand{\arraystretch}{1.12}
+\small
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{3.2cm}X>{\centering\arraybackslash}p{2.1cm}}
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+$d,t$ & 日期索引、日内调度区间索引，$t=1,\ldots,144$ & --\\
+$\Delta t$ & 单个调度区间长度，取$1/6$ & h\\
+$\tau,h$ & 预报发布时刻、距离发布时刻的预测提前量 & h\\
+$L_{d,t},V_{d,t}$ & 负载、可用光伏的区间平均功率 & kW\\
+$\widehat L_{d,t},\widehat V_{d,t}$ & 决策时可获取的负载、光伏预测功率 & kW\\
+$p_{d,t},\widehat p_{d,t}$ & 基础电价及其预测值，交易倍数另计 & 元/kWh\\
+$g_{d,t}$ & 每日0时申报的计划购电量 & kWh\\
+$q_{d,t}$ & 当前决策版本中调整后的总购电量 & kWh\\
+$e_{d,t}$ & 实际执行时为补足缺口购买的紧急电量 & kWh\\
+$a^+_{d,t},a^-_{d,t}$ & 相对原计划的净上调量、净下调量 & kWh\\
+$P^c_{d,t},P^d_{d,t}$ & 交流侧充电功率、放电功率 & kW\\
+$z^c_{d,t},z^d_{d,t}$ & 充电、放电模式指示变量，二者不可同时为1 & --\\
+$E_{d,t}$ & 区间$t$开始时的储电量，$E_{d,145}$为日末值 & kWh\\
+$E_{\min},E_{\max}$ & 安全储电量下限1200、上限10800 & kWh\\
+$P_{\max}$ & 最大充电或放电功率，取5000 & kW\\
+$\eta_c,\eta_d$ & 充电、放电效率，均取$\sqrt{0.9}$ & --\\
+$w_{d,t}$ & 供需平衡中的总未利用电量，并非全部弃光 & kWh\\
+$R_{d,t}$ & 为应对未来缺口预留的电池内部能量 & kWh\\
+$\varepsilon_{\tau,h}$ & 对应发布时刻与提前量的光伏功率预报误差 & kW\\
+$b_{\tau,h},\sigma_{\tau,h}$ & 该组误差的偏差、去偏后的标准差 & kW\\
+$\mathcal I_\tau$ & 决策时刻$\tau$已可获取的信息集合 & --\\
+$s,\pi_s$ & 随机场景索引及相应概率 & --\\
+$C_{\mathrm{tot}}$ & 计划、调整及紧急购电构成的总费用 & 元\\
+$\alpha,\lambda$ & 尾部风险置信水平、风险厌恶权重 & --\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+其中，$a^+_{d,t}=(q_{d,t}-g_{d,t})^+$，$a^-_{d,t}=(g_{d,t}-q_{d,t})^+$仅表示相对原计划的净偏差，不预先确定多次调整的计费基准。预报误差取“实际值减预测值”，其MSE单位为$\mathrm{kW}^2$；$\sigma^2=\mathrm{MSE}-b^2$须在同一分组与一致矩估计口径下使用。模型中的功率需乘以$\Delta t$才成为区间电量。
