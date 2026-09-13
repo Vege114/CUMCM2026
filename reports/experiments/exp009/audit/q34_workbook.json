@@ -1,0 +1,18 @@
+[
+  {
+    "scenario": "3",
+    "passed": true,
+    "numeric_cells_independently_checked": 102690,
+    "emergency_rows": 486,
+    "max_error_kwh": 1.8189894035458565e-12,
+    "workbook_sha256": "37ba78be72496b5eb6053463d4ddf7b28181f268a5d965c7a33102e38aced3ac"
+  },
+  {
+    "scenario": "4-3",
+    "passed": true,
+    "numeric_cells_independently_checked": 102737,
+    "emergency_rows": 533,
+    "max_error_kwh": 5.4569682106375694e-12,
+    "workbook_sha256": "d3a2a636d62391e370b5b110c5ee68fd4c442dbf34b320544da570b706f192f1"
+  }
+]

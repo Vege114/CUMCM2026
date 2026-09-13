@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "future_actual_and_future_prediction_checks": [
+    {
+      "day": 31,
+      "origin": 4464,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    },
+    {
+      "day": 32,
+      "origin": 4608,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    },
+    {
+      "day": 59,
+      "origin": 8496,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    },
+    {
+      "day": 90,
+      "origin": 12960,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    },
+    {
+      "day": 151,
+      "origin": 21744,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    },
+    {
+      "day": 243,
+      "origin": 34992,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    },
+    {
+      "day": 364,
+      "origin": 52416,
+      "features_identical": true,
+      "raw_model_output_with_daylight_mask_identical": true,
+      "ridge28_identical": true,
+      "fixed_memory_identical": true,
+      "changed_current_and_future_actual_and_future_forecasts": true
+    }
+  ],
+  "monthly_full_retraining_checks": [
+    {
+      "month": 2,
+      "future_actual_mutation_from": 4464,
+      "full_train_and_validation_features_unchanged": true,
+      "retrained_model_first_day_predictions_identical": true,
+      "iterations": [
+        99,
+        91
+      ]
+    },
+    {
+      "month": 9,
+      "future_actual_mutation_from": 34992,
+      "full_train_and_validation_features_unchanged": true,
+      "retrained_model_first_day_predictions_identical": true,
+      "iterations": [
+        100,
+        79
+      ]
+    }
+  ],
+  "official_PV_not_loaded_by_model": true,
+  "CNN_or_periodic_feature_not_used": true,
+  "all_postprocessing_labels_past": true
+}

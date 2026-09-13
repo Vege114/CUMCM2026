@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "n_scenarios": 157,
+  "baseline_cost_yuan": 13201981.947942166,
+  "baseline_max_abs_array_differences": {
+    "charge": 0.0,
+    "discharge": 0.0,
+    "emergency": 0.0,
+    "surplus": 0.0
+  },
+  "all_physics_passed": true,
+  "future_actual_prefix_mutation_passed": true,
+  "source_hashes_unchanged": true,
+  "noise": [
+    {
+      "log_noise_std": 0.01,
+      "replicates": 30,
+      "mean_cost_change_pct": 0.3675010112024631,
+      "min_cost_change_pct": -0.038591574397695005,
+      "p05_cost_change_pct": 0.09416820111353474,
+      "p50_cost_change_pct": 0.37116383069550896,
+      "p95_cost_change_pct": 0.6974187422060515,
+      "max_cost_change_pct": 0.7851129856081718
+    },
+    {
+      "log_noise_std": 0.02,
+      "replicates": 30,
+      "mean_cost_change_pct": 1.6077709103377658,
+      "min_cost_change_pct": 0.7729500948319368,
+      "p05_cost_change_pct": 0.9795628716336158,
+      "p50_cost_change_pct": 1.6449504901355216,
+      "p95_cost_change_pct": 2.2368220750473005,
+      "max_cost_change_pct": 2.397159807099092
+    },
+    {
+      "log_noise_std": 0.05,
+      "replicates": 30,
+      "mean_cost_change_pct": 10.099063706211826,
+      "min_cost_change_pct": 7.83218438726494,
+      "p05_cost_change_pct": 8.589220833575409,
+      "p50_cost_change_pct": 9.978516825428496,
+      "p95_cost_change_pct": 12.046343445211697,
+      "max_cost_change_pct": 12.212481061142523
+    },
+    {
+      "log_noise_std": 0.1,
+      "replicates": 30,
+      "mean_cost_change_pct": 31.67568559385454,
+      "min_cost_change_pct": 26.904578143320144,
+      "p05_cost_change_pct": 28.31168280788108,
+      "p50_cost_change_pct": 31.344159276530526,
+      "p95_cost_change_pct": 36.692988531034274,
+      "max_cost_change_pct": 37.025778682233515
+    }
+  ],
+  "largest_cost_change": {
+    "family": "combined_bias",
+    "level": 0.1,
+    "replicate_id": -1,
+    "n_days": 334,
+    "total_cost_yuan": 34520417.7420902,
+    "cost_change_pct": 161.47905578276456,
+    "emergency_cost_yuan": 21885483.536186274,
+    "emergency_kwh": 3987408.4257333977,
+    "peak_emergency_kw": 5981.738841471442,
+    "throughput_kwh": 9178786.452166958,
+    "reversals": 2429,
+    "final_soc_kwh": 1200.0,
+    "balance_error_kwh": 0.0,
+    "soc_error_kwh": 9.094947017729282e-13,
+    "simultaneous_slots": 0,
+    "emergency_charge_slots": 0,
+    "min_soc_kwh": 1200.0,
+    "max_soc_kwh": 10800.0,
+    "max_power_kw": 5000.0,
+    "physics_passed": true
+  },
+  "interpretation": [
+    "Future daily schedules remain archived even though earlier perturbed history differs. This isolates execution robustness and is not end-to-end policy performance.",
+    "Unlimited emergency purchase guarantees load service in this model; physical feasibility alone does not imply economic robustness.",
+    "Costs under perturbed inputs are compared to unperturbed exp008 only, not to unperturbed exp006.",
+    "2025 data were repeatedly used for model development; this is not an untouched external test."
+  ]
+}

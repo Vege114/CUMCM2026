@@ -1,0 +1,57 @@
+{
+  "overall_status": "PASS_WITH_USER_APPROVED_PAGE_SCOPE",
+  "independence": "Auditor did not author the model, trajectories, manuscript, or production exporters. The standalone delivery QA script is separately implemented arithmetic and integrity validation.",
+  "P1": {
+    "status": "PASS",
+    "scope": "Four independent three-day runs; 28 future-input mutation cases; four exact refund LP examples; day0/day1 cold start checked",
+    "evidence": [
+      "P1.json",
+      "p1_q12_details.json",
+      "p1_q34_details.json"
+    ]
+  },
+  "P2": {
+    "status": "PASS",
+    "scope": "Q1 independent two-layer solve exact. Four annual strategies: all 365-day slots, 334-day evaluation scope, actual billing and physical continuity, source/input/cache hashes. Five workbooks all numeric cells and interval/date mappings checked.",
+    "reproduction": "Q3/Q4-3 independently re-solved for all 365 days with byte-identical NPZ. Q2/Q4-2 used full archive validation plus selected-day fresh solving, not another whole-year optimization.",
+    "time_limited_mip_qualification": "Q4-2 day31 repeats with same forecasts and modes but a different feasible purchase under its 5-second limit: daily cost differs by -4.1513 yuan (0.0216%). Other seven selected-day runs agree exactly in trajectories.",
+    "evidence": [
+      "q1_reproduction.json",
+      "q2_numeric.json",
+      "q42_numeric_workbook.json",
+      "q34_numeric.json",
+      "q34_full_reproduction.json",
+      "q12_representative_1_31_180.json",
+      "q2_last_day.json",
+      "q12_representative_364.json",
+      "q12_workbooks.json",
+      "q34_workbook.json"
+    ]
+  },
+  "W1": {
+    "status": "PASS",
+    "scope": "Manuscript mathematical definitions and evidence routes reviewed against frozen choices and new outputs; all nine new figures actually viewed; scope of old sensitivity/stress evidence stated.",
+    "evidence": [
+      "W1_Q1.json",
+      "W1_Q12.json",
+      "W1_Q34.json",
+      "W1_final.json"
+    ]
+  },
+  "W2": {
+    "status": "PASS",
+    "scope": "153-page full PDF scanned on every page, 12 representative pages rendered and actually viewed; 18,983,068-byte support ZIP restored, verified, and smoke-run from isolated extraction.",
+    "evidence": [
+      "W2_final.json",
+      "pdf_scan.json",
+      "package_smoke.json"
+    ]
+  },
+  "user_scope_overrides": [
+    "Keep the present TeX structure and full source appendix; page-count compression is deferred by the user.",
+    "Do not expand this task into Word production or new research; final strategies reuse accepted issued prediction caches."
+  ],
+  "pending": [],
+  "final_pdf_sha256": "0a89e9e24dcd8e0be7ee4c03d903fcb166ba70efb10429fb0c80a25a7f71ea57",
+  "final_package_sha256": "aec168e3383941c27f495baba4f68765cc411053f99118793d00dc0099ab8694"
+}

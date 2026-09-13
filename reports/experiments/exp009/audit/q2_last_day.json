@@ -1,0 +1,14 @@
+{
+  "scenario": "2",
+  "day": 364,
+  "passed": true,
+  "forecast_and_all_error_paths_exact": true,
+  "fresh_mip_feasible": true,
+  "mip_gap": 0.00015790458759259673,
+  "mode_difference_slots": 0,
+  "max_purchase_difference_kwh": 0.0,
+  "fresh_cost": 61674.57389584974,
+  "archived_cost": 61674.573895849746,
+  "max_soc_difference_kwh": 0.0,
+  "scope": "Fresh last-day MIP and fixed-mode refinement from archived legitimate day-start boundary"
+}

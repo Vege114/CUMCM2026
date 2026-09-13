@@ -1,0 +1,28 @@
+{
+  "范围": "W1 Q3与Q4-3原稿修订的主张—证据路线；Q4-2费用比较等其本次运行结果后另验",
+  "输入快照": {
+    "experiments/exp009/q34_planner.py": "2847c1b77ddee45d2d5dc7d2e14c9aeccbeb99344bcb7d120ec7da7635be3276",
+    "experiments/exp009/q34_forecast.py": "cd573acb30a30d0da32bfcc5104e1820302fa4c3968a5e7fb517dc4bde8e63df",
+    "experiments/exp009/q34_run.py": "c1887b99acfda62d4dcc3bfe8d269150a43be02224ac0897d62f5105af6ba87b",
+    "data/results/exp009/q3/summary.json": "cf7a62293bc24a2b211343d19f20a2439d5d5be4c5de2c9bdb4a42974da02b05",
+    "data/results/exp009/q4_3/summary.json": "a07eea9975edb8fad42f7082916e3864fbe70fe74dcecd0839182a88721d8ca3",
+    "data/results/exp009/q3/specified_daily.csv": "8a887f67ee7701b8094cda98e56a8fb6bbf599064528c0b4b7e43211cee013cd",
+    "data/results/exp009/q3/specified_slots.csv": "c57b33192cebd49cfa7e49cc0b81d11d1bd580a4f4c34e7db6d8e616c9d33c4d",
+    "data/results/exp009/q4_3/specified_daily.csv": "b862b7b2462eaae744b5ef58c9c939f31b7a68a22fb2747652b640377d668b32",
+    "data/results/exp009/q4_3/specified_slots.csv": "592d6c4201ff9abbaa190318aa0e350f5cc4f409d512f471f93ce448de587625",
+    "data/results/exp009/q34_forecast_metrics.csv": "6b31eddb36269e68e0e9095f01b7f8dd44b8593df7efdb1e26d8edbe3c0d54dc",
+    "data/results/exp009/result3.xlsx": "37ba78be72496b5eb6053463d4ddf7b28181f268a5d965c7a33102e38aced3ac",
+    "data/results/exp009/result4-3.xlsx": "d3a2a636d62391e370b5b110c5ee68fd4c442dbf34b320544da570b706f192f1"
+  },
+  "状态": "PASS",
+  "证据": {
+    "模型": "exp008同发布时间误差路径、7情景LP及原执行器；仅退款目标与全年冷启动必要接入",
+    "结果": "独立验收每组52560槽物理/费用/数据/版本与334日导出；工作簿独立联查205427数值格、1019紧急区间",
+    "Q3_334日元": 12788960.259468516,
+    "Q43_334日元": 13539823.623476997,
+    "图": "按这些已核验冻结轨迹生成指定日、月度与调整图；P2/W2核对最终渲染文件"
+  },
+  "发现": [],
+  "返工": "无；完整方案差额需待Q4-2新结果；不能将旧MIP无更新对照当作本LP更新消融。",
+  "q3_figures": "PASS: purchase, storage (all four dates now visible), signed adjustment heatmap reviewed; figure clipping explicitly disclosed"
+}

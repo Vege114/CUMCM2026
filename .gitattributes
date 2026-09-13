@@ -17,3 +17,7 @@
 *.png binary
 *.jpg binary
 *.jpeg binary
+
+# Preserve the exact bytes used by the archived input SHA-256 records.
+data/raw/*.csv -text
+reports/experiments/exp008/robustness/evidence/q1/sensitivity.csv -text

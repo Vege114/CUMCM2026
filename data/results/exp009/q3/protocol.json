@@ -1,0 +1,42 @@
+{
+  "scenario": "3",
+  "days": 365,
+  "initial_soc": 6000.0,
+  "seed": 42,
+  "settings": {
+    "scenarios": 7,
+    "residual_scale": 1.0,
+    "throughput_penalty": 0.005,
+    "variation_penalty": 0.001,
+    "terminal_value": 1.0,
+    "emergency_weight": 5.0,
+    "future_shortfall_weight": 1.5
+  },
+  "charge_deadband_kwh": 20.0,
+  "sources": {
+    "experiments/exp009/q34_export.py": "718ff340c75a28b43ff975011b973e43e7ed51341b030c5f1be513e08199d393",
+    "experiments/exp009/q34_forecast.py": "cd573acb30a30d0da32bfcc5104e1820302fa4c3968a5e7fb517dc4bde8e63df",
+    "experiments/exp009/q34_run.py": "c1887b99acfda62d4dcc3bfe8d269150a43be02224ac0897d62f5105af6ba87b",
+    "experiments/exp009/q34_planner.py": "2847c1b77ddee45d2d5dc7d2e14c9aeccbeb99344bcb7d120ec7da7635be3276",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587"
+  },
+  "raw_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "forecast_archive_sha256": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+  "original_commit": "459cdb2",
+  "changes": [
+    "downward half refund and q>=0",
+    "own selected algorithm January startup"
+  ],
+  "command": ".venv/bin/python -m experiments.exp009.q34_run --scenario 3 --days 365",
+  "python": "3.12.13",
+  "numpy": "2.0.2",
+  "scipy": "1.18.1"
+}

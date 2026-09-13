@@ -1,0 +1,153 @@
+{
+  "passed": true,
+  "scope": "Independent artifact integrity, all-slot physics and actual billing, all five value workbooks; no training or optimization.",
+  "generated_at": "2026-09-13T08:13:48.018888+00:00",
+  "checks": {
+    "manifest": {
+      "source_bindings": 48,
+      "inputs": 48,
+      "trajectories": 15,
+      "workbooks": 5
+    },
+    "q1": {
+      "cost_yuan": 34115.032450968385,
+      "slots": 144,
+      "numeric_workbook_cells": 158,
+      "workbook_sha256": "7f31dfa652045dea90d2f385ea07fb05b2d7244a18cf03696bce27b5b8dce3c9",
+      "accepted_layers": 2
+    },
+    "2": {
+      "days": 365,
+      "slots": 52560,
+      "evaluation_days": 334,
+      "errors": {
+        "balance_kwh": 0.0,
+        "state_kwh": 9.094947017729282e-13,
+        "cross_midnight_kwh": 0.0,
+        "slot_fee_yuan": 9.094947017729282e-13
+      },
+      "full_year_cost_yuan": 15330904.43676193,
+      "feb_dec_cost_yuan": 13195653.644681968,
+      "feb_initial_soc_kwh": 3743.6007769762073,
+      "planning_records": 365,
+      "protocol": {
+        "source_hashes": 6,
+        "raw_hashes": 5,
+        "forecast_hash": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a",
+        "documented_nonexecutable_changes": [
+          {
+            "source": "experiments/exp009/q12_run.py",
+            "run_sha256": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+            "current_sha256": "fbe484e3e7ef9ce5a2aeb7809a4a9284174d13159a2b8d8c267ca899ff620f75",
+            "executable_ast_identical": true,
+            "reason": "Replace the module docstring with public execution instructions; executable statements and AST excluding the module docstring are unchanged."
+          }
+        ]
+      }
+    },
+    "workbook_2": {
+      "numeric_cells_checked": 54235,
+      "max_numeric_error": 2.9103830456733704e-11,
+      "days": 334,
+      "emergency_rows": 795,
+      "sha256": "b24d4a067864c242910d9527fb5ee7603ced325d03634e350ceb27f10b1f42dd",
+      "formulas": 0
+    },
+    "3": {
+      "days": 365,
+      "slots": 52560,
+      "evaluation_days": 334,
+      "errors": {
+        "balance_kwh": 0.0,
+        "state_kwh": 9.094947017729282e-13,
+        "cross_midnight_kwh": 0.0,
+        "slot_fee_yuan": 0.0
+      },
+      "full_year_cost_yuan": 14493358.605130468,
+      "feb_dec_cost_yuan": 12788960.259468516,
+      "feb_initial_soc_kwh": 1779.6211847614163,
+      "planning_records": 1460,
+      "protocol": {
+        "source_hashes": 7,
+        "raw_hashes": 5,
+        "forecast_hash": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+        "documented_nonexecutable_changes": []
+      }
+    },
+    "workbook_3": {
+      "numeric_cells_checked": 102690,
+      "max_numeric_error": 7.275957614183426e-12,
+      "days": 334,
+      "emergency_rows": 486,
+      "sha256": "37ba78be72496b5eb6053463d4ddf7b28181f268a5d965c7a33102e38aced3ac",
+      "formulas": 0
+    },
+    "4-2": {
+      "days": 365,
+      "slots": 52560,
+      "evaluation_days": 334,
+      "errors": {
+        "balance_kwh": 0.0,
+        "state_kwh": 9.094947017729282e-13,
+        "cross_midnight_kwh": 0.0,
+        "slot_fee_yuan": 9.094947017729282e-13
+      },
+      "full_year_cost_yuan": 16457961.940510428,
+      "feb_dec_cost_yuan": 14008609.535938155,
+      "feb_initial_soc_kwh": 6699.948448341258,
+      "planning_records": 365,
+      "protocol": {
+        "source_hashes": 6,
+        "raw_hashes": 5,
+        "forecast_hash": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+        "documented_nonexecutable_changes": [
+          {
+            "source": "experiments/exp009/q12_run.py",
+            "run_sha256": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+            "current_sha256": "fbe484e3e7ef9ce5a2aeb7809a4a9284174d13159a2b8d8c267ca899ff620f75",
+            "executable_ast_identical": true,
+            "reason": "Replace the module docstring with public execution instructions; executable statements and AST excluding the module docstring are unchanged."
+          }
+        ]
+      }
+    },
+    "workbook_4-2": {
+      "numeric_cells_checked": 54161,
+      "max_numeric_error": 1.4551915228366852e-11,
+      "days": 334,
+      "emergency_rows": 721,
+      "sha256": "8789f13ebe93a1accc038bc134d824c0de72e928eadfb3b5b1bee9b2d627454b",
+      "formulas": 0
+    },
+    "4-3": {
+      "days": 365,
+      "slots": 52560,
+      "evaluation_days": 334,
+      "errors": {
+        "balance_kwh": 0.0,
+        "state_kwh": 9.094947017729282e-13,
+        "cross_midnight_kwh": 0.0,
+        "slot_fee_yuan": 0.0
+      },
+      "full_year_cost_yuan": 15481497.139990328,
+      "feb_dec_cost_yuan": 13539823.623476999,
+      "feb_initial_soc_kwh": 1790.8118674455059,
+      "planning_records": 1460,
+      "protocol": {
+        "source_hashes": 7,
+        "raw_hashes": 5,
+        "forecast_hash": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+        "documented_nonexecutable_changes": []
+      }
+    },
+    "workbook_4-3": {
+      "numeric_cells_checked": 102737,
+      "max_numeric_error": 7.275957614183426e-12,
+      "days": 334,
+      "emergency_rows": 533,
+      "sha256": "d3a2a636d62391e370b5b110c5ee68fd4c442dbf34b320544da570b706f192f1",
+      "formulas": 0
+    }
+  },
+  "errors": []
+}

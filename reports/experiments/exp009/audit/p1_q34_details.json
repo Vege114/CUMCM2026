@@ -1,0 +1,50 @@
+{
+  "gate": "P1",
+  "status": "PASS",
+  "scope": "Q3/Q4-3 3-day cold-start vertical slice and four exact one-slot refund cases; 16 causal perturbation cases",
+  "source_sha256": {
+    "experiments/exp009/q34_run.py": "c1887b99acfda62d4dcc3bfe8d269150a43be02224ac0897d62f5105af6ba87b",
+    "experiments/exp009/q34_forecast.py": "cd573acb30a30d0da32bfcc5104e1820302fa4c3968a5e7fb517dc4bde8e63df",
+    "experiments/exp009/q34_planner.py": "2847c1b77ddee45d2d5dc7d2e14c9aeccbeb99344bcb7d120ec7da7635be3276"
+  },
+  "exit_code": 0,
+  "trials": [
+    {
+      "demand_kwh": 0.0,
+      "optimized_q_kwh": 0.0,
+      "bill_yuan": 50.0
+    },
+    {
+      "demand_kwh": 50.0,
+      "optimized_q_kwh": 50.0,
+      "bill_yuan": 75.0
+    },
+    {
+      "demand_kwh": 100.0,
+      "optimized_q_kwh": 100.0,
+      "bill_yuan": 100.0
+    },
+    {
+      "demand_kwh": 150.0,
+      "optimized_q_kwh": 150.0,
+      "bill_yuan": 175.0
+    }
+  ],
+  "runs": [
+    {
+      "scenario": "3",
+      "days": 3,
+      "direct_cost_yuan": 213010.92641566118,
+      "actual_matches_input": true,
+      "max_bill_error": 2.2737367544323206e-13
+    },
+    {
+      "scenario": "4-3",
+      "days": 3,
+      "direct_cost_yuan": 242413.98351404935,
+      "actual_matches_input": true,
+      "max_bill_error": 4.547473508864641e-13
+    }
+  ],
+  "limitations": "not annual P2, figures, workbook or final manuscript acceptance"
+}

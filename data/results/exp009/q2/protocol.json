@@ -1,0 +1,40 @@
+{
+  "scenario": "2",
+  "start_day": 0,
+  "initial_soc_kwh": 6000.0,
+  "initial_mode": 1,
+  "initial_mode_age": 1,
+  "mode_boundary": "planned mode and age",
+  "seed": 42,
+  "mip_seconds": 5.0,
+  "target_mip_gap": 0.002,
+  "scenario_count_up_to": 3,
+  "refinement_history_days": 28,
+  "refinement_maxiter": 120,
+  "throughput": 0.002,
+  "deadband": 0.0,
+  "terminal_value_refinement": 0.45,
+  "year_end_terminal_value": 0.0,
+  "forecast_path": "data/results/exp008/forecast_hgb_extra_trees_half/hgb_extra_trees_half_ridge28_memory.npz",
+  "forecast_sha256": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a",
+  "cold_start": "day0 attachment1; January load lag7/fallback lag1 and PV lag1; own completed daily errors including day0; no dispatch warmup",
+  "source_sha256": {
+    "experiments/exp009/q12_run.py": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+    "experiments/exp009/q12_forecast.py": "cb6717730a2d37468765246956d730b26efbcd44aaa7e38086e017e3cea0eca8",
+    "experiments/exp008/closed_loop.py": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+    "experiments/exp008/mode_budget_hold1_physical.py": "fdf742a6685acb6d9fd3336d7df7604fb1fc77c3ddd108a1f81e5c657b0a6bb7",
+    "experiments/exp008/mode_planning_physical.py": "736458b7c86037343eaf2cdbb8e64d50ac5b30d9cda40256470f9cc80606989a",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557"
+  },
+  "raw_input_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "python": "3.12.13",
+  "numpy": "2.0.2",
+  "scipy": "1.18.1",
+  "threads": 1
+}

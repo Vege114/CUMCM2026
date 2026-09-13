@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "Evidence route and manuscript source review; final compiled PDF independently pending",
+  "source_sha256": {
+    "00-摘要.tex": "5e4001bfea325de23daa8b750f6d131bffb22e706d11b61fa06c18de2ff074fc",
+    "01-问题背景与问题重述.tex": "509e2eb892fd32a2deb928fc646aa83a70c48077bb94012bb1789d5663647597",
+    "02-问题分析.tex": "323db41ad948d80e5f06d98d2fdf7787d0d0d693f4e84ebc3735fde5728a084e",
+    "03-模型假设.tex": "13573d983e4381ba2ab7c53535194349e9df5bf3007f8a7f298c57107aa7020f",
+    "04-符号说明.tex": "f36003897bdbb6641c7b5a78ea386787755e0acbccdb4d3036667b3800d78706",
+    "05-问题一.tex": "035ff6a40d9f4d43f0b36fd0f3de061fc485e7b0217be4b5e04c98a4f4cdd01c",
+    "06-问题二.tex": "4671d277e295021b6a0bc4622b33cc84fb7ea42d21c40dd9e697cc7936fed6ee",
+    "07-问题三.tex": "3892fd0b3339b6d8c322b8721a39d81daec35c69528c053da2af968f0e75f17b",
+    "08-问题四.tex": "e44b0d670973e64fb3173f45bcdd916bcd8d4eff670934c8c53ed7a97ee37c8b",
+    "09-模型分析与检验.tex": "b18fd30c3dc571b43941257a1ece151add63254b1cadcd79819fe35723e4ad45",
+    "10-模型评价改进与推广.tex": "84a1386436c33ae5ce9f6f0cf168094cb8daec802d670f3f9f0af007fdc269f4"
+  },
+  "model_and_result_checks": [
+    "Q1 accepted two-layer trajectory, independent complete re-solve exact",
+    "Q2 complete 365-day physics, billing, masks, hashes; four selected-day fresh re-solves exact",
+    "Q3/Q4-3 independent complete 365-day re-solves byte-identical",
+    "Q4-2 complete 365-day physics, billing, hourly masks, hashes; selected-day repeatability qualification documented",
+    "Five workbooks checked cell-by-cell against raw-derived trajectories",
+    "All 9 new figures actually viewed; Q3 layout defects repaired and rechecked",
+    "Old Q1 sensitivity and old Q2 fixed-policy perturbation scope explicitly preserved",
+    "C versus planning J, signed 50% refund, 365/334 scope, future information boundaries, developer-year generalization limits clear"
+  ],
+  "pending": [
+    "Final combined PDF W2 rendering",
+    "Final manifest/source-copy hash check and isolated package smoke"
+  ]
+}

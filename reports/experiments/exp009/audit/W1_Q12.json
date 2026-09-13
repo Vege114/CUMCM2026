@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "Evidence route and manuscript source review; final compiled PDF independently pending",
+  "source_sha256": {
+    "05-问题一.tex": "035ff6a40d9f4d43f0b36fd0f3de061fc485e7b0217be4b5e04c98a4f4cdd01c",
+    "06-问题二.tex": "4671d277e295021b6a0bc4622b33cc84fb7ea42d21c40dd9e697cc7936fed6ee"
+  },
+  "model_and_result_checks": [
+    "Q1 accepted two-layer trajectory, independent complete re-solve exact",
+    "Q2 complete 365-day physics, billing, masks, hashes; four selected-day fresh re-solves exact",
+    "Q3/Q4-3 independent complete 365-day re-solves byte-identical",
+    "Q4-2 complete 365-day physics, billing, hourly masks, hashes; selected-day repeatability qualification documented",
+    "Five workbooks checked cell-by-cell against raw-derived trajectories",
+    "All 9 new figures actually viewed; Q3 layout defects repaired and rechecked",
+    "Old Q1 sensitivity and old Q2 fixed-policy perturbation scope explicitly preserved",
+    "C versus planning J, signed 50% refund, 365/334 scope, future information boundaries, developer-year generalization limits clear"
+  ],
+  "pending": [
+    "Final combined PDF W2 rendering",
+    "Final manifest/source-copy hash check and isolated package smoke"
+  ]
+}

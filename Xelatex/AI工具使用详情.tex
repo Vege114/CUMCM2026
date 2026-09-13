@@ -1,0 +1,25 @@
+\documentclass[UTF8,fontset=none,a4paper,11pt]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec,booktabs,tabularx,url,hyperref}
+\setCJKmainfont[Path=fonts/,BoldFont=SourceHanSerifCN-Bold.otf]{SourceHanSerifCN-Regular.otf}
+\setmainfont{Times New Roman}
+\setCJKmonofont[Path=fonts/]{SourceHanSerifCN-Regular.otf}
+\hypersetup{pdfauthor={},colorlinks=false}
+\title{AI工具使用详情}
+\author{}\date{2026年9月13日}
+\begin{document}\maketitle
+\section*{工具与可追溯范围}
+本轮使用OpenAI Codex（GPT-6系列）辅助处理微网购电调控论文与计算程序。工具通过本地命令调用Python、NumPy、SciPy、pandas、openpyxl、Matplotlib和XeLaTeX；这些软件承担数值求解、数据整理及排版。本说明以当前仓库与本轮可追溯对话为依据，不推定此前未记录工具的型号、提示内容或人工操作。
+\section*{主要任务和提示}
+团队在全文冲突清单中逐项作出人工决定，要求执行既定修改、汇总、补算和结果核对，编译全文并同步源代码。核心决定包括：问题一使用费用优先的两层混合整数规划；问题二采用原始HGB与ExtraTrees等权融合、共同岭校准和前日负载偏差半记忆；问题三及4-3改为下调退回相应原款一半并放开下调重新计算；四类年度策略从1月1日6000 kWh接入各自正式策略及因果冷启动规则。
+
+AI辅助工作包括阅读题目与已定清单、恢复可追溯的计算模块、实现退款与冷启动处理、运行调度、统计结果和制作表图、替换过期正文、汇总验证记录、整理程序附录、设置编译忽略规则以及编译检查。并行执行按互不覆盖的文件范围分工，独立检查任务不参与被审程序及正文的编写。
+\section*{人工决定与实际采用}
+方案选择依据团队填写的35项决定。对下调退款和全年冷启动两项，重新运行受影响的年度调度；预测缓存沿用已验收的合法发布值，本轮未声称重新训练所有预测器。旧第三问严格混合整数模型不作为本轮采用的控制器。论文的数学模型、图表和数值由实际运行文件生成或核对，未经记录的消融收益与多随机种子统计不写成当前方案结论。
+
+人工明确要求先完成内容与计算，暂不按30页上限压缩，并接受现有约289 dpi图像；本轮保留这些安排，另记录编译页数及需要后续优化的范围。AI辅助产生的文字、代码与计算文件须由团队理解、核对和修改后使用。
+\section*{核验与材料对应}
+对每类年度策略先执行真实输入的小规模运行，再独立检查首日和次日的历史信息边界、能量守恒、储电递推、功率界及费用符号。全年结果核验区分365日连续运行与结果模板要求的334日评价，检查最终有效版本、日末到次日的储电衔接及工作簿单元格。问题一结果来源为两层模型的第二层轨迹，参数敏感性依据与该模型一致的已有15组实算。
+
+正文入口为\texttt{Xelatex/}下的《数模通用模板》源文件，正式结果及复现说明见\path{data/results/exp009/README.md}。计算、数据、正文与编译检查的具体状态以同目录复现清单和全文决定执行记录为准；未完成项目不作已经通过的陈述。本文档不包含账户、密钥或参赛身份信息。
+\end{document}

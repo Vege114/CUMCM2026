@@ -1,48 +1,24 @@
 % !TeX root = ../数模通用模板.tex
 \section{文件列表}
-\begin{table}[H]
-\centering
-\begin{tabularx}{\textwidth}{LL}
-\toprule
-文件名   & 功能描述 \\
-\midrule
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-q1\_reproduce.py & 问题一原求解、检验与绘图程序（待同步为两层） \\
-数据预处理.py & 预处理程序代码 \\
-q2.py & 问题二程序代码 \\
-q3.c & 问题三程序代码 \\
-q4.cpp & 问题四程序代码 \\
-AI 工具使用详情.pdf & AI工具、使用过程及人工修改与核验情况说明（提交前补齐） \\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bottomrule
-\end{tabularx}
-\label{tab:文件列表}
-\end{table}
+表\ref{tab:文件列表}列出正文结果与支撑文件的对应关系。
 
-
-
-
-
-
-
-
-%\section{代码}
-%\noindent 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%数据预处理.py
-%\lstinputlisting[language=python]{code/1.数据预处理.py}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%q2.py
-%\lstinputlisting[language=python]{code/q2.py}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%
-%q3.c
-%\lstinputlisting[language=c]{code/q3.c}
-%
-%
-%q4.cpp
-%\lstinputlisting[language=c++]{code/q4.cpp}
-
+正式结果目录为\path{data/results/exp009/}。五份工作簿集中保存在此处，年度完整轨迹同时保留一月连续运行及题目要求的2--12月评价部分。旧示例程序和历史第三问结果不列入正式交付。
+\begin{table}[H]\centering\small
+\caption{论文结果及可运行支撑文件}\label{tab:文件列表}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.5cm}X}\toprule
+文件或目录 & 功能\\\midrule
+\texttt{result1.xlsx} & 问题一第二层计划、充放电与起止储电量。\\
+\texttt{result2.xlsx} & 问题二的计划、实际储能与紧急购电结果。\\
+\texttt{result3.xlsx} & 问题三原计划、最终调整后总量、实际储能与紧急购电。\\
+\texttt{result4-2.xlsx} & 波动电价下无日内预报的购电结果。\\
+\texttt{result4-3.xlsx} & 波动电价下含日内预报的购电结果。\\
+\texttt{q1/}、\texttt{q2/}、\texttt{q3/}、\texttt{q4\_2/}、\texttt{q4\_3/} & 各问轨迹、实际费用、指定日期及运行检查；年度NPZ中各槽电量与储电量以kWh记录。\\
+\nolinkurl{experiments/exp008/} & 基础预测、问题一两层求解、共同模式与反馈优化模块。\\
+\nolinkurl{experiments/exp009/} & 全年冷启动与退款调度入口、结果导出和绘图程序。\\
+\nolinkurl{experiments/common/} & 原始数据读取、稀疏线性约束构建等公共模块。\\
+\nolinkurl{data/raw/}、预测文件 & 题目输入及按当时信息形成的负载、光伏预测。\\
+\texttt{requirements.txt} & 本次实际运行所用的数值与导出依赖版本。\\
+\nolinkurl{verify_exp009_delivery.py} & 逐槽物理、费用、工作簿及文件一致性检查。\\
+AI工具使用详情.pdf & 工具用途、主要提示、人工决定与实际核验范围。\\\bottomrule
+\end{tabularx}\end{table}
+完整程序见附录\ref{app:complete-code}。读取已发布预测并重新求解调度，与从原始数据重新训练预测器是两种不同运行方式；具体命令、预测来源及文件字典见支撑材料说明。

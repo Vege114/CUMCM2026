@@ -1,0 +1,460 @@
+{
+  "summary": {
+    "scenario": "2",
+    "days": 365,
+    "complete": true,
+    "full_year_cost": 15330904.43676193,
+    "january_cost": 2135250.7920799647,
+    "feb_dec_cost": 13195653.644681968,
+    "feb_initial_soc": 3743.6007769762073,
+    "last_soc": 1200.0,
+    "battery": {
+      "charge_kwh": 6544427.561143898,
+      "discharge_kwh": 5894538.484860151,
+      "throughput_kwh": 12438966.046004051,
+      "equivalent_full_cycles": 517.5824268798895,
+      "direction_reversals": 2771,
+      "direction_reversals_including_warmup_boundary": 2771,
+      "charging_slots": 20767,
+      "discharging_slots": 19495,
+      "active_slots": 40262,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 1836,
+      "discharge_starts": 2375,
+      "power_changes_count": 41836,
+      "power_ramp_total_kw": 30784603.34673712,
+      "power_ramp_total_kw_including_warmup_boundary": 30789513.46373712,
+      "power_ramp_max_kw_per_10min": 9113.655906508757,
+      "power_ramp_p95_kw_per_10min": 4039.7646381183613,
+      "mean_absolute_power_kw": 1419.973292922837,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 5000.0,
+      "initial_soc": 6000.0,
+      "final_soc": 1200.0,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 0,
+      "final_mode": -1,
+      "initial_power_kw": 0.0,
+      "final_power_kw": 0.0,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "mip_seconds_sum": 1043.5038618746912,
+    "refinement_seconds_sum": 640.5355600783369,
+    "mip_gap_max": 0.07532684253182914,
+    "mip_gap_mean": 0.0023068582346892795,
+    "verified": true,
+    "forecast_retrained": false,
+    "feb_dec_battery": {
+      "charge_kwh": 5967445.650118027,
+      "discharge_kwh": 5373114.15668025,
+      "throughput_kwh": 11340559.806798277,
+      "equivalent_full_cycles": 471.8739850566375,
+      "direction_reversals": 2535,
+      "direction_reversals_including_warmup_boundary": 2535,
+      "charging_slots": 19063,
+      "discharging_slots": 18196,
+      "active_slots": 37259,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 1668,
+      "discharge_starts": 2217,
+      "power_changes_count": 38894,
+      "power_ramp_total_kw": 28108986.16708479,
+      "power_ramp_total_kw_including_warmup_boundary": 28113457.86195734,
+      "power_ramp_max_kw_per_10min": 9113.655906508757,
+      "power_ramp_p95_kw_per_10min": 4041.180393851502,
+      "mean_absolute_power_kw": 1414.7404948600645,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 5000.0,
+      "initial_soc": 3743.6007769762073,
+      "final_soc": 1200.0,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 0,
+      "final_mode": -1,
+      "initial_power_kw": 0.0,
+      "final_power_kw": 0.0,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    }
+  },
+  "periods": [
+    {
+      "period": "1—12月",
+      "days": 365,
+      "planned_kwh": 23465106.417412177,
+      "emergency_kwh": 154624.44479183067,
+      "total_grid_kwh": 23619730.862204008,
+      "planned_cost": 14518936.608043222,
+      "emergency_cost": 811967.8287186564,
+      "total_cost": 15330904.436761878
+    },
+    {
+      "period": "2—12月",
+      "days": 334,
+      "planned_kwh": 20519293.094357643,
+      "emergency_kwh": 104033.42815490373,
+      "total_grid_kwh": 20623326.522512548,
+      "planned_cost": 12636712.817871133,
+      "emergency_cost": 558940.8268108033,
+      "total_cost": 13195653.644681936
+    }
+  ],
+  "specified": [
+    {
+      "date": "2025-03-20",
+      "day": 78,
+      "specified_purchase_kwh": [
+        48.26521412831611,
+        606.0249969813575,
+        0.0,
+        439.5482933324221,
+        673.0021785909021,
+        25.2300647164218
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "stop": 24,
+          "charge_kwh": 6395.680484493314,
+          "discharge_kwh": 0.0
+        },
+        {
+          "start": 24,
+          "stop": 48,
+          "charge_kwh": 2500.056450050897,
+          "discharge_kwh": 6254.024625715629
+        },
+        {
+          "start": 48,
+          "stop": 72,
+          "charge_kwh": 5809.084967376597,
+          "discharge_kwh": 2732.170133333333
+        },
+        {
+          "start": 72,
+          "stop": 96,
+          "charge_kwh": 3657.8022238430713,
+          "discharge_kwh": 671.0733239089607
+        },
+        {
+          "start": 96,
+          "stop": 120,
+          "charge_kwh": 400.6454684556669,
+          "discharge_kwh": 5806.45362987103
+        },
+        {
+          "start": 120,
+          "stop": 144,
+          "charge_kwh": 1150.3048243902083,
+          "discharge_kwh": 2818.9397348795715
+        }
+      ],
+      "planned_kwh": 65277.14696672479,
+      "emergency_kwh": 14.90262062710292,
+      "total_cost": 40076.53166367688,
+      "initial_soc": 2851.9661623292927,
+      "final_soc": 2472.0243295802215,
+      "emergency_intervals": [
+        {
+          "start_slot": 6,
+          "stop_slot": 8,
+          "interval": "01:00--01:20",
+          "kwh": 14.90262062710292
+        }
+      ]
+    },
+    {
+      "date": "2025-06-21",
+      "day": 171,
+      "specified_purchase_kwh": [
+        0.0,
+        0.0,
+        0.0,
+        220.1115368393425,
+        132.0643514761939,
+        0.0
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "stop": 24,
+          "charge_kwh": 0.0,
+          "discharge_kwh": 1438.8346547526608
+        },
+        {
+          "start": 24,
+          "stop": 48,
+          "charge_kwh": 787.9292958684985,
+          "discharge_kwh": 3286.6826297177504
+        },
+        {
+          "start": 48,
+          "stop": 72,
+          "charge_kwh": 10119.288512538815,
+          "discharge_kwh": 0.0
+        },
+        {
+          "start": 72,
+          "stop": 96,
+          "charge_kwh": 0.0,
+          "discharge_kwh": 0.0
+        },
+        {
+          "start": 96,
+          "stop": 120,
+          "charge_kwh": 0.0,
+          "discharge_kwh": 5634.763565901963
+        },
+        {
+          "start": 120,
+          "stop": 144,
+          "charge_kwh": 2055.998248552988,
+          "discharge_kwh": 3340.3250105732113
+        }
+      ],
+      "planned_kwh": 30903.91378796534,
+      "emergency_kwh": 247.68710087762605,
+      "total_cost": 19195.22992477612,
+      "initial_soc": 5433.637217438297,
+      "final_soc": 3289.917164750043,
+      "emergency_intervals": [
+        {
+          "start_slot": 40,
+          "stop_slot": 44,
+          "interval": "06:40--07:20",
+          "kwh": 247.68710087762605
+        }
+      ]
+    },
+    {
+      "date": "2025-09-23",
+      "day": 265,
+      "specified_purchase_kwh": [
+        0.0,
+        491.01717628098146,
+        0.0,
+        503.90534783145876,
+        746.5826672769814,
+        127.30360507707205
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "stop": 24,
+          "charge_kwh": 7093.111834271471,
+          "discharge_kwh": 0.0
+        },
+        {
+          "start": 24,
+          "stop": 48,
+          "charge_kwh": 716.6349365469205,
+          "discharge_kwh": 4990.416749782358
+        },
+        {
+          "start": 48,
+          "stop": 72,
+          "charge_kwh": 5277.71181935047,
+          "discharge_kwh": 1896.6157166666667
+        },
+        {
+          "start": 72,
+          "stop": 96,
+          "charge_kwh": 2459.3217916170483,
+          "discharge_kwh": 407.6353368055685
+        },
+        {
+          "start": 96,
+          "stop": 120,
+          "charge_kwh": 0.0,
+          "discharge_kwh": 6126.860453156502
+        },
+        {
+          "start": 120,
+          "stop": 144,
+          "charge_kwh": 1918.6147403939513,
+          "discharge_kwh": 2778.30547578963
+        }
+      ],
+      "planned_kwh": 67847.26516905107,
+      "emergency_kwh": 46.680863919956295,
+      "total_cost": 43261.35338070007,
+      "initial_soc": 3391.0236765206632,
+      "final_soc": 2884.028219525441,
+      "emergency_intervals": [
+        {
+          "start_slot": 89,
+          "stop_slot": 91,
+          "interval": "14:50--15:10",
+          "kwh": 20.500975611807092
+        },
+        {
+          "start_slot": 125,
+          "stop_slot": 126,
+          "interval": "20:50--21:00",
+          "kwh": 26.179888308149202
+        }
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "day": 354,
+      "specified_purchase_kwh": [
+        45.662766669231694,
+        948.0275478404947,
+        0.0,
+        868.6242032856705,
+        684.974597571954,
+        33.50845070652373
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "stop": 24,
+          "charge_kwh": 7517.44101481579,
+          "discharge_kwh": 0.0
+        },
+        {
+          "start": 24,
+          "stop": 48,
+          "charge_kwh": 3426.927515448814,
+          "discharge_kwh": 2445.326723415516
+        },
+        {
+          "start": 48,
+          "stop": 72,
+          "charge_kwh": 5176.1068644346,
+          "discharge_kwh": 6897.558740360146
+        },
+        {
+          "start": 72,
+          "stop": 96,
+          "charge_kwh": 6372.705775524467,
+          "discharge_kwh": 2685.389544850439
+        },
+        {
+          "start": 96,
+          "stop": 120,
+          "charge_kwh": 0.0,
+          "discharge_kwh": 5941.861229607863
+        },
+        {
+          "start": 120,
+          "stop": 144,
+          "charge_kwh": 0.0,
+          "discharge_kwh": 2895.6742404215615
+        }
+      ],
+      "planned_kwh": 93111.44186443508,
+      "emergency_kwh": 109.85473913494928,
+      "total_cost": 60110.89038954618,
+      "initial_soc": 2140.0098204977976,
+      "final_soc": 1484.4196707267697,
+      "emergency_intervals": [
+        {
+          "start_slot": 21,
+          "stop_slot": 23,
+          "interval": "03:30--03:50",
+          "kwh": 73.64814574639229
+        },
+        {
+          "start_slot": 64,
+          "stop_slot": 65,
+          "interval": "10:40--10:50",
+          "kwh": 36.206593388556996
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "errors": [],
+    "scenario": "2",
+    "days": 365,
+    "intervals": 52560,
+    "start_day": 0,
+    "max_balance_error_kwh": 0.0,
+    "max_soc_error_kwh": 9.094947017729282e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 9.094947017729282e-13,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 14518936.608043222,
+      "up_cost": 0.0,
+      "down_cost": 0.0,
+      "emergency_cost": 811967.8287186564,
+      "total_cost": 15330904.43676193
+    },
+    "recomputed_total_cost": 15330904.43676193,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 6544427.561143898,
+      "discharge_kwh": 5894538.484860151,
+      "throughput_kwh": 12438966.046004051,
+      "equivalent_full_cycles": 517.5824268798895,
+      "direction_reversals": 2771,
+      "direction_reversals_including_warmup_boundary": 2771,
+      "charging_slots": 20767,
+      "discharging_slots": 19495,
+      "active_slots": 40262,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 1836,
+      "discharge_starts": 2375,
+      "power_changes_count": 41836,
+      "power_ramp_total_kw": 30784603.34673712,
+      "power_ramp_total_kw_including_warmup_boundary": 30789513.46373712,
+      "power_ramp_max_kw_per_10min": 9113.655906508757,
+      "power_ramp_p95_kw_per_10min": 4039.7646381183613,
+      "mean_absolute_power_kw": 1419.973292922837,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 5000.0,
+      "initial_soc": 6000.0,
+      "final_soc": 1200.0,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 0,
+      "final_mode": -1,
+      "initial_power_kw": 0.0,
+      "final_power_kw": 0.0,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": true,
+      "checked_fields": 1094,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "goal": {
+      "passed": false,
+      "checks": {
+        "cost_reduced_at_least_8pct": false,
+        "direction_reversals_reduced": false,
+        "no_simultaneous_charge_discharge": true,
+        "physical_checks_passed": true,
+        "full_334_day_evaluation": false
+      },
+      "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+      "stricter_all_operation_metrics_passed": false,
+      "active_slots_also_reduced": false,
+      "baseline": {
+        "run_id": "exp006/primary",
+        "total_cost": 14066257.477256786,
+        "direction_reversals": 2729,
+        "active_slots": 23028,
+        "throughput_kwh": 11480847.039823763
+      },
+      "cost_threshold_yuan": 12940956.8791,
+      "cost_reduction_pct": null,
+      "direction_reversal_reduction_pct": null,
+      "active_slot_reduction_pct": null,
+      "throughput_reduction_pct": null,
+      "throughput_also_reduced": false,
+      "cost_reduced_at_least_10pct": false,
+      "comparison_scope": "partial run: no comparison to full-year totals"
+    }
+  },
+  "archive_sha256": "78fa3c1be76be6dee5f91343ddfd68cb3072a5c6f59853cd63729ffe199fb985",
+  "mip_limit_days": 113,
+  "refinement_success_days": 60
+}

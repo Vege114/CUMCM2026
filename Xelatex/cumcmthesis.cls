@@ -105,6 +105,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newfontfamily\yaheiconsola{YaHei.Consolas.1.11b.ttf}
 \setmonofont[
 Contextuals={Alternate},
+BoldFont = YaHei.Consolas.1.11b.ttf,
+BoldFeatures = {FakeBold=1.5},
 ItalicFont = Fira Code Retina Nerd Font Complete.otf     % to avoid font warning
 ]{YaHei.Consolas.1.11b.ttf}
 

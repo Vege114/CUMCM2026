@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scope": "Final full TeX PDF and reproducible support package within the user-approved scope; page compression is deferred.",
+  "pdf": {
+    "pdf_sha256": "0a89e9e24dcd8e0be7ee4c03d903fcb166ba70efb10429fb0c80a25a7f71ea57",
+    "bytes": 1959531,
+    "pages": 153,
+    "all_A4": true,
+    "outside_page_characters": [],
+    "empty_text_pages": [],
+    "replacement_characters": 0,
+    "double_question_marks_pages": []
+  },
+  "published_pdf_matches_compiled_pdf": true,
+  "rendered_and_actually_viewed_pages": [
+    1,
+    6,
+    9,
+    15,
+    18,
+    22,
+    28,
+    34,
+    41,
+    49,
+    50,
+    153
+  ],
+  "visual_result": "No clipping, overlapping labels, broken tables, missing mathematical glyphs, unreadable headings, or unresolved citations observed in the rendered sample. All nine new figures separately viewed in full.",
+  "ai_details_pdf": "Both pages independently rendered and viewed; PASS.",
+  "package": {
+    "passed": true,
+    "zip_bytes": 18983068,
+    "zip_sha256": "aec168e3383941c27f495baba4f68765cc411053f99118793d00dc0099ab8694",
+    "source_bindings": 48,
+    "omitted_slices_restored_byte_identically": 4,
+    "quick_verification_passed": true,
+    "q1_and_four_three_day_entry_smokes_exit_zero": true
+  },
+  "remaining_user_deferred_item": "153 total pages with complete code appendix; user explicitly deferred 30-page compression. This audit does not claim that the page limit is met."
+}

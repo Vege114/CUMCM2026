@@ -1,0 +1,215 @@
+{
+  "source": "Xelatex/第四问冲突清单.md",
+  "decisions": [
+    {
+      "id": "F01",
+      "decision": "A",
+      "action": "问题一正文与附录统一两层MIP，删除DP解释",
+      "evidence": "Xelatex/sections/05-问题一.tex"
+    },
+    {
+      "id": "F02",
+      "decision": "A",
+      "action": "指定槽、储能汇总及图使用同一第二层；三层诊断移历史归档",
+      "evidence": "Xelatex/q1_run/revised.json"
+    },
+    {
+      "id": "F03",
+      "decision": "A",
+      "action": "Q2先原始树模型等权融合，再共同Ridge28及非递归半记忆",
+      "evidence": "Xelatex/sections/06-问题二.tex"
+    },
+    {
+      "id": "F04",
+      "decision": "B+备注",
+      "action": "简述模式规划/固定模式修正/执行；边界集中表列",
+      "evidence": "Xelatex/sections/06-问题二.tex"
+    },
+    {
+      "id": "F05",
+      "decision": "A",
+      "action": "使用新全年连续策略评价切片替换Q2全部结果",
+      "evidence": "data/results/exp009/q2/"
+    },
+    {
+      "id": "F06",
+      "decision": "A，受F10覆盖",
+      "action": "保留exp008情景LP控制体系并按F10修改退款，移出旧严格MIP",
+      "evidence": "experiments/exp009/q34_planner.py"
+    },
+    {
+      "id": "F07",
+      "decision": "A+备注",
+      "action": "往返90%，两方向sqrt(0.9)，不讨论另一解释",
+      "evidence": "Xelatex/sections/03-模型假设.tex"
+    },
+    {
+      "id": "F08",
+      "decision": "A",
+      "action": "题面物理参数与各问工程设置分表；Q1预算基数与费用分解",
+      "evidence": "Xelatex/sections/03-模型假设.tex"
+    },
+    {
+      "id": "F09",
+      "decision": "人工备注",
+      "action": "不专设争议讨论；删除错误的全场景严格保证，实际模型写LP",
+      "evidence": "Xelatex/sections/07-问题三.tex"
+    },
+    {
+      "id": "F10",
+      "decision": "C",
+      "action": "新派生分支放开下调并负号退款，真实重跑Q3/Q4-3全年",
+      "evidence": "experiments/exp009/q34_run.py"
+    },
+    {
+      "id": "F11",
+      "decision": "B+备注",
+      "action": "正文按相对午夜最终净差额一次结算，工作簿填总常规量",
+      "evidence": "Xelatex/sections/04-符号说明.tex"
+    },
+    {
+      "id": "F12",
+      "decision": "人工备注",
+      "action": "四策略各自从一月6000接入正式调度和因果冷启动；不使用旧预热",
+      "evidence": "experiments/exp009/q12_forecast.py"
+    },
+    {
+      "id": "F13",
+      "decision": "A",
+      "action": "逐问列当日剩余时域、库存估值、跨日连续和末日估值零",
+      "evidence": "Xelatex/sections/06-问题二.tex"
+    },
+    {
+      "id": "F14",
+      "decision": "A",
+      "action": "发布前信息与区间内测量反馈分别定义",
+      "evidence": "Xelatex/sections/03-模型假设.tex"
+    },
+    {
+      "id": "F15",
+      "decision": "B",
+      "action": "正文时标/单位约定；支撑字段字典及自动槽值核验",
+      "evidence": "data/results/exp009/README.md"
+    },
+    {
+      "id": "F16",
+      "decision": "A",
+      "action": "Q3/Q4-3从0时起使用官方PV，负载使用HGB",
+      "evidence": "Xelatex/sections/07-问题三.tex"
+    },
+    {
+      "id": "F17",
+      "decision": "A",
+      "action": "先b*再样本量收缩，修正推导",
+      "evidence": "Xelatex/sections/07-问题三.tex"
+    },
+    {
+      "id": "F18",
+      "decision": "A",
+      "action": "未来价格逐步揭示，4-2十维/4-3八维点预测，删除联合场景宣称",
+      "evidence": "Xelatex/sections/08-问题四.tex"
+    },
+    {
+      "id": "F19",
+      "decision": "A+备注",
+      "action": "用短段说明共享购电和未来短缺权重近似，不自创体系名称",
+      "evidence": "Xelatex/sections/07-问题三.tex"
+    },
+    {
+      "id": "F20",
+      "decision": "A",
+      "action": "实际C与代理J分开，退款/紧急费用按真实价",
+      "evidence": "Xelatex/sections/04-符号说明.tex"
+    },
+    {
+      "id": "F21",
+      "decision": "A",
+      "action": "Q4按各自完整方案比较，披露多项同时不同",
+      "evidence": "Xelatex/sections/08-问题四.tex"
+    },
+    {
+      "id": "F22",
+      "decision": "不新增改进",
+      "action": "未新增逐时刻经济消融；删除不属于当前策略的旧经济收益数字",
+      "evidence": "Xelatex/sections/07-问题三.tex"
+    },
+    {
+      "id": "F23",
+      "decision": "A",
+      "action": "用正确两层15组敏感性和明确范围的旧Q2固定回放，全文核验",
+      "evidence": "Xelatex/sections/09-模型分析与检验.tex"
+    },
+    {
+      "id": "F24",
+      "decision": "B+备注",
+      "action": "保留各问定义与边界，运行强度定性解释，不宣称全面平稳",
+      "evidence": "Xelatex/sections/09-模型分析与检验.tex"
+    },
+    {
+      "id": "F25",
+      "decision": "B",
+      "action": "预测正文展示不重叠实际执行窗口，同口径比较",
+      "evidence": "Xelatex/final_results/q3_forecast.tex"
+    },
+    {
+      "id": "F26",
+      "decision": "A",
+      "action": "称开发年度因果回测，删除旧CNN种子统计/独立泛化保证",
+      "evidence": "Xelatex/sections/03-模型假设.tex"
+    },
+    {
+      "id": "F27",
+      "decision": "A",
+      "action": "新归档实际耗时、实际gap和可行率，限制最优性范围",
+      "evidence": "data/results/exp009/q2/planning_audit.json"
+    },
+    {
+      "id": "F28",
+      "decision": "A",
+      "action": "费用2位、电量4位；334/365分开；原精度算差额",
+      "evidence": "data/results/exp009/README.md"
+    },
+    {
+      "id": "F29",
+      "decision": "A",
+      "action": "公共符号仅保留实际共用量，删除未用CVaR/备用符号",
+      "evidence": "Xelatex/sections/04-符号说明.tex"
+    },
+    {
+      "id": "F30",
+      "decision": "A",
+      "action": "填摘要、评价改进推广，保留标题且限定平稳性",
+      "evidence": "Xelatex/sections/00-摘要.tex"
+    },
+    {
+      "id": "F31",
+      "decision": "A",
+      "action": "五簿集中正式目录，实际源码/依赖/导入闭包/哈希/复核入口",
+      "evidence": "scripts/finalize_exp009.py"
+    },
+    {
+      "id": "F32",
+      "decision": "A",
+      "action": "保留必要图表并补正文引导，文件表补题注，删除未引用文献",
+      "evidence": "Xelatex/sections/12-参考文献.tex"
+    },
+    {
+      "id": "F33",
+      "decision": "人工备注",
+      "action": "本轮不压正文页数；既有约289dpi接受；最终重新编译统计",
+      "evidence": "Xelatex/数模通用模板.tex"
+    },
+    {
+      "id": "F34",
+      "decision": "B",
+      "action": "可追溯过程说明形成2页AI详情PDF及源码，清理占位",
+      "evidence": "Xelatex/AI工具使用详情.tex"
+    },
+    {
+      "id": "F35",
+      "decision": "A",
+      "action": "更新入口说明与历史目录标记，旧隐藏快照隔离",
+      "evidence": "Xelatex/分章节使用说明.md"
+    }
+  ]
+}

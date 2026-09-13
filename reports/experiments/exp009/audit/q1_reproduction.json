@@ -1,0 +1,41 @@
+{
+  "scope": "Q1 complete two-layer independent resolve from attachment-equivalent 144 rows",
+  "status": "PASS",
+  "exit_code": 0,
+  "metrics": {
+    "cost": 34115.032450968385,
+    "quantity": 57560.64380388695,
+    "tv": 33209.16605760791,
+    "starts": 4,
+    "short_deficit": 0,
+    "short_runs": 0,
+    "min_on": 170,
+    "min_off": 430,
+    "max_step": 1000.0000000000073,
+    "charge": 20186.713705536185,
+    "discharge": 18168.042334982565,
+    "surplus": 0.0,
+    "emin": 1199.999999999999,
+    "emax": 10800.000000000004,
+    "balance": 1.2789769243681803e-12,
+    "state": 4.547473508864674e-13,
+    "endpoint": 0.0,
+    "simultaneous": 2.8614977054530755e-10,
+    "smooth": 0.03695080976222771,
+    "max_c": 4999.631414496048,
+    "max_d": 4268.670200000007,
+    "low": 0,
+    "daily_balance": 5.002220859751105e-12,
+    "cost_recompute": 0.0,
+    "violations": 0
+  },
+  "stage_count": 2,
+  "max_trajectory_difference": 0.0,
+  "source_sha256": "7cf7a452f9cd67aeb4634d01d30b8a1e52bb90cec8efbcdc0c4ec89c5267d155",
+  "appendix_default_entry": {
+    "core_solve_to_save_case_identical": true,
+    "core_sha256": "7a4cf6b94e6b46b669c822cb1e210ea1500330fa5f596bd9ce793efbdfc6cdfd",
+    "default_revised_trajectory_identical": true,
+    "default_cost_yuan": 34115.032450968385
+  }
+}

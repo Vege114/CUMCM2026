@@ -1,14 +1,18 @@
 # CUMCM 2026 · C 题
 
-**微网与外部电网电力调控策略**。当前已完成题目转换、原始附件整理及两阶段方案统一，尚未实现调度求解或验证数值收益。
+**微网与外部电网电力调控策略**。当前主稿为 [Xelatex/数模通用模板.tex](Xelatex/数模通用模板.tex)。已按全文人工决定完成 exp008 派生的退款与全年冷启动修订；正式计算、五份工作簿和核验入口见 [exp009结果说明](data/results/exp009/README.md)。
 
 ## 当前统一方案
 
-以队友最新交接的第四轮决策为准，先读[团队统一建模口径](paper/团队统一建模口径.md)，再读[第一阶段分析](paper/第一阶段_赛题深度结构化分析.md)和[第二阶段模型](paper/第二阶段_各小问模型构建与创新设计.md)。旧稿在paper/archive，仅作追溯。四问主线为：三层词典序调度→滚动周期预测与备用→提前量感知多阶段风险调度→滚动电价预测。
+以[全文人工决定](Xelatex/第四问冲突清单.md)及[执行记录](Xelatex/全文决定执行记录.md)为准。当前方法为：问题一两层MIP；问题二HGB/ExtraTrees原始预测融合、共同校准与模式预算调度；问题三退款情景LP与日内预报更新；问题四采用因果价格回归重算两类策略。年度策略从一月开始连续运行，官方工作簿汇总二月至十二月。
+
+最初的[结构化分析](paper/第一阶段_赛题深度结构化分析.md)、[建模方案](paper/第二阶段_各小问模型构建与创新设计.md)及历史实验保留为过程资料，不能替代当前正文方法与结果。
 
 ## Python 环境
 
-主环境为 **Python 3.12 + TensorFlow 2.18.1 / `tf.keras`**。另有独立的 **Gymnasium + Stable-Baselines3 2.9.0 + PyTorch 2.8.0** 强化学习环境，可直接使用 PPO、DQN、SAC 等算法；Gymnasium 提供环境接口，Stable-Baselines3 提供基于 PyTorch 的训练算法。安装强化学习库不改变当前建模方案。
+当前正式调度使用 **Python 3.12、NumPy、SciPy、pandas 和 scikit-learn**，导出使用openpyxl，实际版本见[正式结果依赖](data/results/exp009/requirements.txt)。快速核验和独立目录复算命令见[结果说明](data/results/exp009/README.md)。
+
+以下保留团队历史开发环境说明：**TensorFlow 2.18.1 / `tf.keras`**，以及独立的 **Gymnasium + Stable-Baselines3 2.9.0 + PyTorch 2.8.0** 强化学习环境。它们不代表当前正文采用神经网络或强化学习控制器。
 
 **本机 Windows + RTX 4070 Laptop 使用现有 Ubuntu WSL2 运行 GPU 任务。** TensorFlow 环境在 `.venv-wsl/`，强化学习环境在 `.venv-rl-wsl/`，两者分别锁定 CUDA/cuDNN 依赖。详细配置、Notebook、GPU 故障排查见 [机器学习与 CUDA 环境](docs/ml-environment.md)。在本仓库根目录的 PowerShell 中执行：
 
@@ -94,11 +98,11 @@ uv.lock                    可复现的依赖锁文件
 1. 阅读 [题目 Markdown](C题/C题.md)，必要时对照 [原始 PDF](C题/C题.pdf) 与 [校对记录](C题/conversion.md)。
 2. 按 [答题交付清单](C题/requirements.md) 确认四问的输入、时间范围和结果文件。
 3. 按上文安装并验证 Python 环境，依据 [数据区说明](data/README.md) 读取附件，在 [实验区](experiments/README.md) 开展建模与验证。
-4. 将核验后的结果整理到 `data/results/`；论文模板后续由小组加入 `paper/`。
+4. 当前正式结果位于 `data/results/exp009/`，全文由 `Xelatex/数模通用模板.tex` 编译；`paper/` 保留分析过程与归档。
 
 ## 协作约定
 
-本轮问题 2—4 的 GPU 神经网络预测与基础调度见 [实验报告索引](reports/latest.md)，可复用的八部分报告模板和历史对比工具见 [报告目录说明](reports/README.md)。`main` 同步保存完整报告包；训练代码、GPU 依赖和四个结果工作簿保存在 [codex/neural-forecasting-v1 实验分支](https://github.com/Vege114/CUMCM2026/tree/codex/neural-forecasting-v1)。
+早期问题 2—4 的 GPU 神经网络预测与基础调度见 [实验报告索引](reports/latest.md)，可复用的八部分报告模板和历史对比工具见 [报告目录说明](reports/README.md)。`main` 同步保存完整报告包；训练代码、GPU 依赖和四个结果工作簿保存在 [codex/neural-forecasting-v1 实验分支](https://github.com/Vege114/CUMCM2026/tree/codex/neural-forecasting-v1)。
 
 - 原始 PDF、`data/raw/` 和 `data/templates/` 保持原始字节；清洗数据与填好的结果另存。
 - 实验记录写明输入、假设、参数、随机种子（如使用）、依赖版本、运行命令和 Git 提交，论文引用可复现的结果。

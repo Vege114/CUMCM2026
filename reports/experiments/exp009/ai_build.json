@@ -1,0 +1,96 @@
+{
+  "attempts": [
+    {
+      "command": [
+        "/Library/TeX/texbin/latexmk",
+        "-norc",
+        "-xelatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-synctex=1",
+        "-outdir=/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/build/ai",
+        "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex"
+      ],
+      "compiler": "texlive",
+      "exitCode": 0,
+      "log": "Rc files read (in order):\n  NONE\nLatexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.\nLatexmk: applying rule 'xelatex'...\nRule 'xelatex':  Reasons for rerun\nChanged files or newly in use/created:\n  /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\n  AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\nCategory 'changed_user':\n  /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\n  AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\n\n------------\nRun number 1 of rule 'xelatex'\n------------\n------------\nRunning 'xelatex -no-pdf -interaction=nonstopmode -halt-on-error -synctex=1 -recorder -output-directory=\"build/ai\"  \"/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\"'\n------------\nThis is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex)\n restricted \\write18 enabled.\nentering extended mode\n(/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2026-01-19>\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexart.cls\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))\nDocument Class: ctexart 2022/07/14 v2.5.10 Chinese adapter for class article (C\nTEX)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexhook.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexpatch.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fix-cm.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ts1enc.def))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexopts.cfg)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls\nDocument Class: article 2025/01/22 v1.4n Standard LaTeX document class\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/size11.clo))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def\n(/usr/local/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st\ny) (/usr/local/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.cfg)))\n(/usr/local/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-a\nrticle.def\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg)))\n (/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex.cfg)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/tabularx.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s\nty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hxetex.def\n(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty\n\n(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty\n))) (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: xetex\n(build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.out) (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.out) [1] [2] (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.aux)\n )\nOutput written on build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv (2 pages, 20480 bytes).\nSyncTeX written on build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.synctex.gz.\nTranscript written on build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.log.\nLatexmk: Getting log file 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.log'\nLatexmk: Examining 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.fls'\nLatexmk: Examining 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.log'\nLatexmk: Log file says output to 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv'\nLatexmk: applying rule 'xdvipdfmx'...\nRule 'xdvipdfmx':  Reasons for rerun\nChanged files or newly in use/created:\n  build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv\nCategory 'changed_source_rules':\n  xelatex\n\n------------\nRun number 1 of rule 'xdvipdfmx'\n------------\n------------\nRunning 'xdvipdfmx -E -o \"build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf\"  \"build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv\"'\n------------\nbuild/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv -> build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf\n[1][2]\n127197 bytes written\nLatexmk: All targets (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf) are up-to-date\n\n",
+      "pdfExists": true,
+      "pdfPath": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf"
+    }
+  ],
+  "command": [
+    "/Library/TeX/texbin/latexmk",
+    "-norc",
+    "-xelatex",
+    "-interaction=nonstopmode",
+    "-halt-on-error",
+    "-synctex=1",
+    "-outdir=/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/build/ai",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex"
+  ],
+  "compiler": "texlive",
+  "exitCode": 0,
+  "log": "Rc files read (in order):\n  NONE\nLatexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.\nLatexmk: applying rule 'xelatex'...\nRule 'xelatex':  Reasons for rerun\nChanged files or newly in use/created:\n  /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\n  AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\nCategory 'changed_user':\n  /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\n  AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\n\n------------\nRun number 1 of rule 'xelatex'\n------------\n------------\nRunning 'xelatex -no-pdf -interaction=nonstopmode -halt-on-error -synctex=1 -recorder -output-directory=\"build/ai\"  \"/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\"'\n------------\nThis is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex)\n restricted \\write18 enabled.\nentering extended mode\n(/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex\nLaTeX2e <2025-11-01>\nL3 programming layer <2026-01-19>\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexart.cls\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))\nDocument Class: ctexart 2022/07/14 v2.5.10 Chinese adapter for class article (C\nTEX)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexhook.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexpatch.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fix-cm.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ts1enc.def))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexopts.cfg)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls\nDocument Class: article 2025/01/22 v1.4n Standard LaTeX document class\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/size11.clo))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def\n(/usr/local/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st\ny) (/usr/local/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.cfg)))\n(/usr/local/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-a\nrticle.def\n(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg)))\n (/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex.cfg)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/tabularx.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty\n(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s\nty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)\n(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty\n(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))\n(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hxetex.def\n(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty\n\n(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty\n))) (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.aux)\n*geometry* driver: auto-detecting\n*geometry* detected driver: xetex\n(build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.out) (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.out) [1] [2] (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.aux)\n )\nOutput written on build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv (2 pages, 20480 bytes).\nSyncTeX written on build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.synctex.gz.\nTranscript written on build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.log.\nLatexmk: Getting log file 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.log'\nLatexmk: Examining 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.fls'\nLatexmk: Examining 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.log'\nLatexmk: Log file says output to 'build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv'\nLatexmk: applying rule 'xdvipdfmx'...\nRule 'xdvipdfmx':  Reasons for rerun\nChanged files or newly in use/created:\n  build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv\nCategory 'changed_source_rules':\n  xelatex\n\n------------\nRun number 1 of rule 'xdvipdfmx'\n------------\n------------\nRunning 'xdvipdfmx -E -o \"build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf\"  \"build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv\"'\n------------\nbuild/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv -> build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf\n[1][2]\n127197 bytes written\nLatexmk: All targets (build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.xdv build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf) are up-to-date\n\n",
+  "pdfExists": true,
+  "pdfPath": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/build/ai/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.pdf",
+  "rootFile": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex",
+  "tectonic": {
+    "checked": [
+      {
+        "path": "/Users/vegetarianwolf/.codex/plugins/cache/openai-bundled/latex/0.2.6/bin/tectonic",
+        "source": "bundled"
+      }
+    ],
+    "path": "/Users/vegetarianwolf/.codex/plugins/cache/openai-bundled/latex/0.2.6/bin/tectonic",
+    "reason": "Tectonic executable is available.",
+    "source": "bundled",
+    "status": "available",
+    "version": "Tectonic 0.17.0"
+  },
+  "tectonicSuitability": {
+    "reasons": [],
+    "scannedFiles": [
+      "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/AI\u5de5\u5177\u4f7f\u7528\u8be6\u60c5.tex"
+    ],
+    "suitable": true
+  },
+  "texliveDetection": {
+    "activeBinDir": "/Library/TeX/texbin",
+    "commands": {
+      "biber": {
+        "path": "/Library/TeX/texbin/biber",
+        "version": "present"
+      },
+      "kpsewhich": {
+        "path": "/Library/TeX/texbin/kpsewhich",
+        "version": "kpathsea version 6.4.2"
+      },
+      "latexmk": {
+        "path": "/Library/TeX/texbin/latexmk",
+        "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+      },
+      "lualatex": {
+        "path": "/Library/TeX/texbin/lualatex",
+        "version": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)"
+      },
+      "pdflatex": {
+        "path": "/Library/TeX/texbin/pdflatex",
+        "version": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)"
+      },
+      "xelatex": {
+        "path": "/Library/TeX/texbin/xelatex",
+        "version": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+      }
+    },
+    "knownTexBinDirs": [
+      "/Library/TeX/texbin",
+      "/usr/local/texlive/2026/bin/universal-darwin"
+    ],
+    "missingRecommended": [],
+    "missingRequired": [],
+    "reason": "Required TeX tools are available.",
+    "searchPath": "/Library/TeX/texbin:/usr/local/texlive/2026/bin/universal-darwin:/Users/vegetarianwolf/.local/bin:/Users/vegetarianwolf/.nvm/versions/node/v24.15.0/bin:/Library/Frameworks/Python.framework/Versions/3.14/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/usr/local/corplink/mdm/opt/corplink-mdm/bin:/Users/vegetarianwolf/.codex/tmp/arg0/codex-arg0j3xoN2:/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/vegetarianwolf/miniconda3/bin:/Users/vegetarianwolf/miniconda3/condabin:/Users/vegetarianwolf/Library/Application Support/PayGuard/bin:/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources",
+    "status": "existing-usable",
+    "texmfroot": "/usr/local/texlive/2026"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "candidate_count": 1,
+  "model_id": "hgb_extra_trees_half_ridge28_memory",
+  "raw_weight_HGB": 0.5,
+  "raw_weight_ExtraTrees": 0.5,
+  "both_channels_same_weight_all334days": true,
+  "raw_blend": ".5 * signed original absolute HGB raw + .5 * signed ExtraTrees raw",
+  "postprocessing": "same joint-channel Ridge28 fitted on this blended raw archive, then same nonrecursive .5 load memory",
+  "no_postprocessed_output_blending": true,
+  "no_weight_tuning_or_model_refitting_or_daywise_selection": true,
+  "origin_range": "2025-02-01 through 2025-12-31, 334 complete days",
+  "design_context": "fixed blend proposed after observing development component metrics",
+  "development_not_independent_test": true,
+  "raw_model_causality": "references signed independent audits for 22 original HGB and 22 ExtraTrees monthly models; no retraining here",
+  "postprocessing_mutation_days": [
+    31,
+    32,
+    59,
+    90,
+    151,
+    243,
+    364
+  ],
+  "continuation_gate": {
+    "keys": [
+      "rmse_kw",
+      "high_price_rmse_kw",
+      "daily_energy_rmse_kwh",
+      "cumulative_error_rmse_kwh"
+    ],
+    "comparator": "original absolute HGB full pipeline",
+    "rule": "all four metrics strictly improve and verification passes"
+  },
+  "conditional_bridge": "one full334 unchanged tree28/q.8/state_buffer500 using own issued errors",
+  "full_physical_planning": false,
+  "final_model_selection": false,
+  "input_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/training_audit.json": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/causality_verification.json": "2304b92248abe318a3e1d22fb967ff582c095e4c3659131323f8f5ff3e6583cc",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/independent_verification.json": "99a7aad6829f08cb3eadd9d3962a64e112f40c4fa63fe0145ead689c3a580145",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/protocol.json": "ea3e888d9d7bbaded17e2644b6f4c1eff741da17ee7b65c62a155cb212bded2e",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/provenance.json": "0b56f9cd29f653d41cef37b5b22804f30f0a8dddc562ac8f7ed693c138009b6f",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/training_audit.json": "7fd11ec30cfb2a34367a937ebd1c9abb5d20a0d703a33b5b908f354776ab519e",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/causality_verification.json": "db4e2a31082ad91762b01a009e3f1f73725bfd08b855fcb1cc87a638b82ab86f",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/independent_verification.json": "c84fccc1223d24f21700f0b2a50ea8f4c4c44b41bdf17268ed836e0bd6ca8681",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_raw.npz": "a95bf4e98dc46cf1224301c25ee6c42fd33c31f963197157e105572807aa586b",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/absolute_extra_trees_raw.npz": "8941f57ab464f94c13fa11fa8f6657d35e9b70d641d4dfecd7a4b5e9f6532d49",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/absolute_extra_trees_ridge28_memory_half.npz": "314acbf562e41c4ac69b242dfdcec309240888489c9ff18b7954661de4da51ea",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_extra_trees/resume_verification.json": "df251487aa00c24f0295eb130ed68e014e4579e2590d938c313b5e8be429e870",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/memory.npz": "0341d6b78dcd115c1a68ca15a24fed590697674b28804981c717eea26e297ded",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_channel_composite/summary.json": "93af38cf3f715e9313b37ef29cb61fc7a4159b92f1d51689577a6de8133e38a6"
+  },
+  "source_sha256": {
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/forecast_hgb_extra_trees_half.py": "ed16c2f490e6b331cf193253caa201d4b492c62cdc7d7d3e001587fca781d2cc",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/forecast_absolute_hgb.py": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/forecast_absolute_extra_trees.py": "d546662bc67fb8c5c51a4125c070c3520f5869c832db83ed6268b959e95547b7",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/forecast_calibration.py": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/load_energy_memory.py": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/forecast_shape_diagnostic.py": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+    "/Users/vegetarianwolf/Projects/CUMCM2026/experiments/exp008/audited_store_bridge.py": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6"
+  },
+  "source_data_sha256": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2"
+  }
+}

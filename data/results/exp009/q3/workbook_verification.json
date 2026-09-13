@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "file": "data/results/exp009/result3.xlsx",
+  "file_sha256": "37ba78be72496b5eb6053463d4ddf7b28181f268a5d965c7a33102e38aced3ac",
+  "archive_sha256": "e8a03b01c3154409a260d64e79dbe1a209994069835337acd1e125415d7c32b4",
+  "template_sha256": "c59da470cabd0be23f602c95c8aa9d11ec224a0cdac216b3e1f218e65d006bdc",
+  "dates": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "days": 334,
+  "purchase_numeric_cells_checked": 96192,
+  "max_purchase_error_kwh": 4.547473508864641e-13,
+  "max_battery_block_error_kwh": 1.8189894035458565e-12,
+  "emergency_rows_checked": 486,
+  "formulas": 0,
+  "plan_fee_field": "original planned bill only",
+  "adjusted_fee_field": "total actual bill including refund and emergency",
+  "all_saved_numeric_cells_and_dates_checked": true,
+  "total_cost": 12788960.259468516
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "file": "data/results/exp009/result1.xlsx",
+  "file_sha256": "7f31dfa652045dea90d2f385ea07fb05b2d7244a18cf03696bce27b5b8dce3c9",
+  "archive_sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+  "template_sha256": "28360e0974e7d6065394a8aba4e14a86773ae0036cc7d3ea1b211b515b03d688",
+  "days": 1,
+  "all_written_cells_checked": 318,
+  "numeric_cells_checked": 158,
+  "max_numeric_error": 9.094947017729282e-13,
+  "emergency_rows_checked": 0,
+  "formulas": 0,
+  "emergency_interval_threshold_kwh": 1e-06,
+  "total_cost": 34115.032450968385,
+  "time_labels": "corrected template one-slot shift to half-open midnight-to-midnight intervals",
+  "fee_field": "actual total bill including emergency; Q1 has no fee column in template"
+}

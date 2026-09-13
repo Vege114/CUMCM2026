@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "numeric": {
+    "days": 365,
+    "slots": 52560,
+    "evaluation_days": 334,
+    "errors": {
+      "balance_kwh": 0.0,
+      "state_kwh": 9.094947017729282e-13,
+      "cross_midnight_kwh": 0.0,
+      "slot_fee_yuan": 9.094947017729282e-13
+    },
+    "full_year_cost_yuan": 16457961.940510428,
+    "feb_dec_cost_yuan": 14008609.535938155,
+    "feb_initial_soc_kwh": 6699.948448341258,
+    "planning_records": 365,
+    "protocol": {
+      "source_hashes": 6,
+      "raw_hashes": 5,
+      "forecast_hash": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+      "documented_nonexecutable_changes": []
+    }
+  },
+  "workbook": {
+    "numeric_cells_checked": 54161,
+    "max_numeric_error": 1.4551915228366852e-11,
+    "days": 334,
+    "emergency_rows": 721,
+    "sha256": "8789f13ebe93a1accc038bc134d824c0de72e928eadfb3b5b1bee9b2d627454b",
+    "formulas": 0
+  }
+}

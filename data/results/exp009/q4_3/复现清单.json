@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-13T07:50:46.704144+00:00",
+  "random_seed": 42,
+  "input_files": [
+    {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/raw/附件1.csv",
+      "sha256": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+      "bytes": 4614
+    },
+    {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/raw/附件2_小区负载.csv",
+      "sha256": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+      "bytes": 490298
+    },
+    {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/raw/附件2_光伏发电实际功率.csv",
+      "sha256": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+      "bytes": 321147
+    },
+    {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/raw/附件3.csv",
+      "sha256": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+      "bytes": 218723
+    },
+    {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/raw/附件4.csv",
+      "sha256": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3",
+      "bytes": 367989
+    },
+    {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz",
+      "sha256": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+      "bytes": 1184141
+    }
+  ],
+  "runtime": {
+    "name": "python",
+    "version": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "dependencies": {
+      "numpy": "2.0.2",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "openpyxl": "3.1.5"
+    }
+  },
+  "key_parameters": {
+    "scenarios": 7,
+    "future_shortfall_weight": 1.5,
+    "charge_deadband_kwh": 20,
+    "initial_soc_kwh": 6000,
+    "days": 365,
+    "refund": true
+  },
+  "reproduce_command": ".venv/bin/python -m experiments.exp009.q34_run --scenario 4-3 --label replay"
+}

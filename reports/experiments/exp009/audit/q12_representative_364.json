@@ -1,0 +1,18 @@
+{
+  "scope": "Fresh selected-day MIP and refinement from archived legitimate starting boundary; not second full-year optimization",
+  "results": [
+    {
+      "scenario": "4-2",
+      "day": 364,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.00020044360012980934,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 0.0,
+      "fresh_cost": 71685.3289156866,
+      "archived_cost": 71685.32891568658,
+      "cost_difference_yuan": 1.4551915228366852e-11,
+      "max_soc_difference_kwh": 0.0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "q1": {
+    "cost_yuan": 34115.032450968385,
+    "slots": 144,
+    "numeric_workbook_cells": 158,
+    "workbook_sha256": "7f31dfa652045dea90d2f385ea07fb05b2d7244a18cf03696bce27b5b8dce3c9",
+    "accepted_layers": 2
+  },
+  "q2": {
+    "numeric_cells_checked": 54235,
+    "max_numeric_error": 2.9103830456733704e-11,
+    "days": 334,
+    "emergency_rows": 795,
+    "sha256": "b24d4a067864c242910d9527fb5ee7603ced325d03634e350ceb27f10b1f42dd",
+    "formulas": 0
+  }
+}

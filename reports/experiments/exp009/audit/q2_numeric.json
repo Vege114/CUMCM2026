@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "result": {
+    "days": 365,
+    "slots": 52560,
+    "evaluation_days": 334,
+    "errors": {
+      "balance_kwh": 0.0,
+      "state_kwh": 9.094947017729282e-13,
+      "cross_midnight_kwh": 0.0,
+      "slot_fee_yuan": 9.094947017729282e-13
+    },
+    "full_year_cost_yuan": 15330904.43676193,
+    "feb_dec_cost_yuan": 13195653.644681968,
+    "feb_initial_soc_kwh": 3743.6007769762073,
+    "planning_records": 365,
+    "protocol": {
+      "source_hashes": 6,
+      "raw_hashes": 5,
+      "forecast_hash": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a",
+      "documented_nonexecutable_changes": []
+    }
+  }
+}

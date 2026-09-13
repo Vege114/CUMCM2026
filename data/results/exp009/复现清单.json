@@ -1,0 +1,426 @@
+{
+  "base_experiment_commit": "459cdb28",
+  "experiment": "exp009_refund_coldstart",
+  "seed": 42,
+  "run_days": 365,
+  "evaluation_days": 334,
+  "evaluation_dates": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "cold_start": "Each accepted controller starts 2025-01-01 at 6000 kWh using its causal insufficient-history rules; no exp002 dispatch warmup.",
+  "settlement": "p*(g + 1.5*max(q-g,0) - 0.5*max(g-q,0) + 5*e), final effective volume relative to midnight plan",
+  "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+  "dependencies": {
+    "numpy": "2.0.2",
+    "scipy": "1.18.1",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.11.1",
+    "seaborn": "0.13.2",
+    "Pillow": "12.3.0",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "source_bindings": [
+    {
+      "source": "Xelatex/code/q1_reproduce.py",
+      "paper_copy": "Xelatex/code/final/Xelatex/code/q1_reproduce.py",
+      "sha256": "a940d66632cc11d57ac955e96a67344f8ccc1a0c03fc19cad0adb4c8d9acaa3a",
+      "bytes": 23105
+    },
+    {
+      "source": "Xelatex/q4_run/vendor/export_figure.py",
+      "paper_copy": "Xelatex/code/final/Xelatex/q4_run/vendor/export_figure.py",
+      "sha256": "40ce3bcd31dfc4b33e38a1cb180c75dc730ee6fa046f04934c79f285c6f890c1",
+      "bytes": 6450
+    },
+    {
+      "source": "Xelatex/q4_run/vendor/setup_style.py",
+      "paper_copy": "Xelatex/code/final/Xelatex/q4_run/vendor/setup_style.py",
+      "sha256": "d58ef81684577bb605a92733dd2ca48ade03b4f819b3d255fd62f319be7fea82",
+      "bytes": 11794
+    },
+    {
+      "source": "Xelatex/q4_run/vendor/visual_qa.py",
+      "paper_copy": "Xelatex/code/final/Xelatex/q4_run/vendor/visual_qa.py",
+      "sha256": "67675709e523c76e2748d50749de7bc6332f07df865379b26d024321fb40120f",
+      "bytes": 12677
+    },
+    {
+      "source": "experiments/common/neural_v2/data.py",
+      "paper_copy": "Xelatex/code/final/experiments/common/neural_v2/data.py",
+      "sha256": "130cefdd670cd7e0798b498a75970f85b050587663e35466b9fbbccba23868fb",
+      "bytes": 6398
+    },
+    {
+      "source": "experiments/common/neural_v2/physics.py",
+      "paper_copy": "Xelatex/code/final/experiments/common/neural_v2/physics.py",
+      "sha256": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587",
+      "bytes": 6408
+    },
+    {
+      "source": "experiments/exp008/absolute_hgb_forecast_adapter.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/absolute_hgb_forecast_adapter.py",
+      "sha256": "196f48b19e75c5cd94b905e55026c38d83bef70d0376b580a02d5d4b958aefb6",
+      "bytes": 1994
+    },
+    {
+      "source": "experiments/exp008/audited_store_bridge.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/audited_store_bridge.py",
+      "sha256": "f5d875720121c0ae856c398e70e5aa4c0ee877d5b9f008f4b380a3881f067dc6",
+      "bytes": 3414
+    },
+    {
+      "source": "experiments/exp008/battery_feedback.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/battery_feedback.py",
+      "sha256": "0c5fc0c108055a9e59ad2c2c5da942043d2d138e88c94d949b3a84b8df29a72f",
+      "bytes": 4730
+    },
+    {
+      "source": "experiments/exp008/closed_loop.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/closed_loop.py",
+      "sha256": "341fb21820abf22302bad4faa16dd2e7370e695fff87f0aafc62e2971ee26eec",
+      "bytes": 4567
+    },
+    {
+      "source": "experiments/exp008/controller_candidate.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/controller_candidate.py",
+      "sha256": "aea1b54c736c6efc9b1e1942996119a6c3eba37917f3e047c277d8f2ad004b1d",
+      "bytes": 21678
+    },
+    {
+      "source": "experiments/exp008/forecast.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast.py",
+      "sha256": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+      "bytes": 16667
+    },
+    {
+      "source": "experiments/exp008/forecast_absolute_extra_trees.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_absolute_extra_trees.py",
+      "sha256": "d546662bc67fb8c5c51a4125c070c3520f5869c832db83ed6268b959e95547b7",
+      "bytes": 22588
+    },
+    {
+      "source": "experiments/exp008/forecast_absolute_hgb.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_absolute_hgb.py",
+      "sha256": "77ef26d2064f6db95d8cc9da2fc8160e6cda7a9d09a219afcd0e8bb88ea76e80",
+      "bytes": 18089
+    },
+    {
+      "source": "experiments/exp008/forecast_calibration.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_calibration.py",
+      "sha256": "211aeebd165ef6922b92f9521fe9c3d6d50d41bdfb76a1cd3b89f8f2df041f62",
+      "bytes": 15104
+    },
+    {
+      "source": "experiments/exp008/forecast_hgb_extra_trees_half.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_hgb_extra_trees_half.py",
+      "sha256": "ed16c2f490e6b331cf193253caa201d4b492c62cdc7d7d3e001587fca781d2cc",
+      "bytes": 10248
+    },
+    {
+      "source": "experiments/exp008/forecast_net_hgb.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_net_hgb.py",
+      "sha256": "75d34ce09ceb7516d5be1d3e9fee4a835f0ee4991de7babb1f5308888a13a7ca",
+      "bytes": 12059
+    },
+    {
+      "source": "experiments/exp008/forecast_override_adapter.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_override_adapter.py",
+      "sha256": "3d7fbe4da43199bc72e49238a8a435a079bb8181118e0c01c2fe4580bc0f35fa",
+      "bytes": 3526
+    },
+    {
+      "source": "experiments/exp008/forecast_shape_diagnostic.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/forecast_shape_diagnostic.py",
+      "sha256": "c562f24000f353a84c76c7789226d178d932b06bc7d175950a4dbae9d8fe2c9b",
+      "bytes": 8739
+    },
+    {
+      "source": "experiments/exp008/hgb_linked_price_forecast.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/hgb_linked_price_forecast.py",
+      "sha256": "d5a575cb61158a6908a5b7c6bcd5e43a0bf827be7c1017afb33c69adb64dd394",
+      "bytes": 9519
+    },
+    {
+      "source": "experiments/exp008/impulse_feedback.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/impulse_feedback.py",
+      "sha256": "0611cd4cc286afd2bc9b636bcec76baad0a9631e3f3b2f679ca4cc59760e2b4a",
+      "bytes": 4189
+    },
+    {
+      "source": "experiments/exp008/load_energy_memory.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/load_energy_memory.py",
+      "sha256": "72141f45ca70024dcf8e9ebb8cee56bd794e82966d3431107b6194b3ecbf12ed",
+      "bytes": 5384
+    },
+    {
+      "source": "experiments/exp008/mode_budget_hold1_physical.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/mode_budget_hold1_physical.py",
+      "sha256": "fdf742a6685acb6d9fd3336d7df7604fb1fc77c3ddd108a1f81e5c657b0a6bb7",
+      "bytes": 7379
+    },
+    {
+      "source": "experiments/exp008/mode_planning_physical.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/mode_planning_physical.py",
+      "sha256": "736458b7c86037343eaf2cdbb8e64d50ac5b30d9cda40256470f9cc80606989a",
+      "bytes": 16907
+    },
+    {
+      "source": "experiments/exp008/neural_joint_calibration.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/neural_joint_calibration.py",
+      "sha256": "fd96b5bd2a9fefa65f80e205162e6a710b6eb80a7b35a0d6ff0c558c5198229b",
+      "bytes": 6923
+    },
+    {
+      "source": "experiments/exp008/planner.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/planner.py",
+      "sha256": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+      "bytes": 8443
+    },
+    {
+      "source": "experiments/exp008/q1.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/q1.py",
+      "sha256": "7cf7a452f9cd67aeb4634d01d30b8a1e52bb90cec8efbcdc0c4ec89c5267d155",
+      "bytes": 24864
+    },
+    {
+      "source": "experiments/exp008/risk_window.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/risk_window.py",
+      "sha256": "4cc8a38daa4fe1c9bd0419fb07da41fd3480be817b6c59b63ed9969116dfead9",
+      "bytes": 16339
+    },
+    {
+      "source": "experiments/exp008/unified_forecast.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/unified_forecast.py",
+      "sha256": "184e91502f70bf83088e3bc752661577f58f38cb34fa30ea9bd41a997480223c",
+      "bytes": 767
+    },
+    {
+      "source": "experiments/exp008/verify.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp008/verify.py",
+      "sha256": "0450e6d520cc0b55c3d73488257f07931e1a7d848e2ab20657fe3a9f85779e36",
+      "bytes": 16560
+    },
+    {
+      "source": "experiments/exp009/q12_assets.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q12_assets.py",
+      "sha256": "a75fbe0b4c50fa7572e885d0652967241ac853521be82cdbecffc0c073f10adc",
+      "bytes": 16201
+    },
+    {
+      "source": "experiments/exp009/q12_export.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q12_export.py",
+      "sha256": "815a48e0b8c3fedffb0f4db73cfa8521c29657bd0558a8642307bb3c6e0f640e",
+      "bytes": 7102
+    },
+    {
+      "source": "experiments/exp009/q12_forecast.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q12_forecast.py",
+      "sha256": "cb6717730a2d37468765246956d730b26efbcd44aaa7e38086e017e3cea0eca8",
+      "bytes": 4535
+    },
+    {
+      "source": "experiments/exp009/q12_run.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q12_run.py",
+      "sha256": "fbe484e3e7ef9ce5a2aeb7809a4a9284174d13159a2b8d8c267ca899ff620f75",
+      "bytes": 8888
+    },
+    {
+      "source": "experiments/exp009/q34_assets.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q34_assets.py",
+      "sha256": "6411a18204e06aa4dc1b18ca967567582a7e4ed76dc80bb5c2759e49633de741",
+      "bytes": 17887
+    },
+    {
+      "source": "experiments/exp009/q34_export.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q34_export.py",
+      "sha256": "718ff340c75a28b43ff975011b973e43e7ed51341b030c5f1be513e08199d393",
+      "bytes": 8785
+    },
+    {
+      "source": "experiments/exp009/q34_forecast.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q34_forecast.py",
+      "sha256": "cd573acb30a30d0da32bfcc5104e1820302fa4c3968a5e7fb517dc4bde8e63df",
+      "bytes": 3712
+    },
+    {
+      "source": "experiments/exp009/q34_planner.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q34_planner.py",
+      "sha256": "2847c1b77ddee45d2d5dc7d2e14c9aeccbeb99344bcb7d120ec7da7635be3276",
+      "bytes": 6220
+    },
+    {
+      "source": "experiments/exp009/q34_run.py",
+      "paper_copy": "Xelatex/code/final/experiments/exp009/q34_run.py",
+      "sha256": "c1887b99acfda62d4dcc3bfe8d269150a43be02224ac0897d62f5105af6ba87b",
+      "bytes": 13413
+    },
+    {
+      "source": "experiments/problem2/exp003/data.py",
+      "paper_copy": "Xelatex/code/final/experiments/problem2/exp003/data.py",
+      "sha256": "d65b40e386360d83484c221125d94b37eda15fcd562d499589ad8054c9d05cce",
+      "bytes": 10010
+    },
+    {
+      "source": "experiments/problem2/exp004/data.py",
+      "paper_copy": "Xelatex/code/final/experiments/problem2/exp004/data.py",
+      "sha256": "15270057a0743bb0176e9b541d3e638a83d597f17c365f6654f5338d9972e45a",
+      "bytes": 7417
+    },
+    {
+      "source": "experiments/problem2/exp004/predict.py",
+      "paper_copy": "Xelatex/code/final/experiments/problem2/exp004/predict.py",
+      "sha256": "ba9a642c994152c1477aa4ad382731bdfaec1dc23742db58ebd3236d8c01192c",
+      "bytes": 2504
+    },
+    {
+      "source": "experiments/problem2/tree_planning/model.py",
+      "paper_copy": "Xelatex/code/final/experiments/problem2/tree_planning/model.py",
+      "sha256": "ad0e25ebbeaed12e8051e3837688f9b2fd38d51e1b317da84380ad21988d1417",
+      "bytes": 9329
+    },
+    {
+      "source": "experiments/problem2/tree_planning/risk.py",
+      "paper_copy": "Xelatex/code/final/experiments/problem2/tree_planning/risk.py",
+      "sha256": "e6015c369f305e514d4af4f33e7ce17a07b0fa068da34f7df335605abdda2652",
+      "bytes": 11315
+    },
+    {
+      "source": "experiments/problem2/tree_planning/verify.py",
+      "paper_copy": "Xelatex/code/final/experiments/problem2/tree_planning/verify.py",
+      "sha256": "50cc28e37eb85d026700eb0a31b88934e9974c517208249199b1553593443f8a",
+      "bytes": 9760
+    },
+    {
+      "source": "scripts/finalize_exp009.py",
+      "paper_copy": "Xelatex/code/final/scripts/finalize_exp009.py",
+      "sha256": "a531521d66db98e652c3ad08f1543aa968ee970f534f014224c17da9f319762b",
+      "bytes": 13000
+    },
+    {
+      "source": "scripts/prepare_exp009_support.py",
+      "paper_copy": "Xelatex/code/final/scripts/prepare_exp009_support.py",
+      "sha256": "d1c7866e6b3c19cab8a262d34a27840f8317657f10caeb4ccb2d3a0b9a0af782",
+      "bytes": 1673
+    },
+    {
+      "source": "scripts/verify_exp009_delivery.py",
+      "paper_copy": "Xelatex/code/final/scripts/verify_exp009_delivery.py",
+      "sha256": "b892682b7951783d523e689326475746f0f66c29f39330d537740e6ea9b8a80f",
+      "bytes": 22120
+    }
+  ],
+  "inputs": {
+    "data/results/exp008/forecast_absolute_hgb/protocol.json": "ee35586ddd7d0818c8a7a026d7bdf3be6749ebc571adc5587336d7975053e235",
+    "data/results/exp008/forecast_absolute_hgb/provenance.json": "a579693bc6ecc4c2387569f72d33c4f63202799cf7d1f0868740ebf8312dc48d",
+    "data/results/exp008/forecast_absolute_hgb/training_audit.json": "ca8700c9cf803bf9a2fed7faed29690bcd2885b4b26d0fae39b4bce4773eaa87",
+    "data/results/exp008/forecast_absolute_hgb/causality_verification.json": "2304b92248abe318a3e1d22fb967ff582c095e4c3659131323f8f5ff3e6583cc",
+    "data/results/exp008/forecast_absolute_hgb/independent_verification.json": "99a7aad6829f08cb3eadd9d3962a64e112f40c4fa63fe0145ead689c3a580145",
+    "data/results/exp008/forecast_hgb_extra_trees_half/protocol.json": "22133990f741e67240e9091d546d21b706e721640f5c647e0722e0a2ed801a61",
+    "data/results/exp008/forecast_hgb_extra_trees_half/provenance.json": "00c5d7103fb1453ba0e579470c57c39279e8b1afd2041b14b77b9d02b3157230",
+    "data/results/exp008/forecast_hgb_extra_trees_half/metrics.csv": "22390a231f83636be3a13dff0c9ac8f7ed57852cb9dc8cd8c38717c58d40cfff",
+    "data/results/exp008/forecast_hgb_extra_trees_half/causality_verification.json": "e37c8be558267b4c3f7f7fedbb1ddb24a8ea5cde19a06cad50b87abb272536c6",
+    "data/results/exp008/forecast_hgb_extra_trees_half/independent_verification.json": "78475e909ba8931f3dd70c1bde68158018efe55239dd8f9f507983c54d3105b6",
+    "data/raw/附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "data/raw/附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "data/raw/附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "data/raw/附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "data/raw/附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3",
+    "data/templates/result1.xlsx": "28360e0974e7d6065394a8aba4e14a86773ae0036cc7d3ea1b211b515b03d688",
+    "data/templates/result2.xlsx": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+    "data/templates/result3.xlsx": "c59da470cabd0be23f602c95c8aa9d11ec224a0cdac216b3e1f218e65d006bdc",
+    "data/templates/result4-2.xlsx": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+    "data/templates/result4-3.xlsx": "c59da470cabd0be23f602c95c8aa9d11ec224a0cdac216b3e1f218e65d006bdc",
+    "data/results/exp008/forecast_absolute_hgb/direct_hgb_ridge28_memory_half.npz": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+    "data/results/exp008/forecast_hgb_extra_trees_half/hgb_extra_trees_half_ridge28_memory.npz": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a",
+    "experiments/common/neural_v2/protocol.json": "41132aa08c4437f2cdcefd20c1e02dafa801b699aff3650ebb0150e26af4a63c",
+    "experiments/problem2/exp003/protocol.json": "bba3a5c779e545cf9ff312fd3a264f7b7ecbb824f360e68ec8ce1cb4dd9eecac",
+    "experiments/problem2/exp004/protocol.json": "2db60f5d93a4fbf6fc9f4afe157153e4a0381a94b4bc8542cef7026fd31b2cf4",
+    "data/results/exp009/provenance/q12_run.before_doc_cleanup.py": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+    "reports/experiments/exp008/robustness/evidence/q1/capacity_0p9.json": "727268ccdfebdb2dd6fb78e7c7abecfd01a494fa4e6c7803303a0482461e6b3d",
+    "reports/experiments/exp008/robustness/evidence/q1/capacity_1p1.json": "74bdb4fb72b1fe3516619320c66af5dc35837cbf215c30546a996c21d7a2f923",
+    "reports/experiments/exp008/robustness/evidence/q1/center.json": "04c51e76037d2388e59248197e19ff68837c30fd785e4f2364bf560ce751112a",
+    "reports/experiments/exp008/robustness/evidence/q1/delta_0p0005.json": "97c7715563b463c470143c482e5e0256718de5995d3ab49110a345cfc4b11b9a",
+    "reports/experiments/exp008/robustness/evidence/q1/delta_0p0009.json": "0275242cde335ccd1fd45ddb8e8827ee9e7f9c4a61a4dd6191bd1d5f192f182a",
+    "reports/experiments/exp008/robustness/evidence/q1/delta_0p0011.json": "c312aba7ab48add961111e662ecac1932f2fafaa2862c2529ca051cbd912914c",
+    "reports/experiments/exp008/robustness/evidence/q1/delta_0p0020.json": "253696c1ef408a0e68deb8e8ce46771a30141c19544fe239599647565ecf1163",
+    "reports/experiments/exp008/robustness/evidence/q1/down_1.json": "1eadc9d88f3098f98d2b5bebf6f85d6ed17320f700144f8c58631827e7d67949",
+    "reports/experiments/exp008/robustness/evidence/q1/down_3.json": "7d2c6e91cd354fdd12975142e975ea42a2dc5a06762764c676523220d5926ff5",
+    "reports/experiments/exp008/robustness/evidence/q1/eta_rt_0p855.json": "1597e483e1b9d6770095e5e15052afac8bf5577618f0d563e6161fa4bf1fc645",
+    "reports/experiments/exp008/robustness/evidence/q1/eta_rt_0p945.json": "2661463593f01bdfc34f3844a25cb1df0060bded8ec551a6d21fb41835328ae0",
+    "reports/experiments/exp008/robustness/evidence/q1/protocol.json": "4d370ca01d180e6b95b8402f7694b45c982abf1ef6b54b6aa1f83c730aa6d866",
+    "reports/experiments/exp008/robustness/evidence/q1/ramp_1100.json": "f1f472ca6636c82b62986f627d0835f769a0ffe25cc08232e21660ba7bd0e5d2",
+    "reports/experiments/exp008/robustness/evidence/q1/ramp_900.json": "ba70a809d17d5beb5aa32c870ee123c736a33f7b0fac52025fda30c0105fc37f",
+    "reports/experiments/exp008/robustness/evidence/q1/summary.json": "e73f048bb258c156fc73ab5a9ddafd698e026e053303d4001f820cb08362e537",
+    "reports/experiments/exp008/robustness/evidence/q1/up_2.json": "050f3e6fa805875522cfa89a9ecb10e57c58fdd3f378080aefb3d017ec3ebfec",
+    "reports/experiments/exp008/robustness/evidence/q1/up_4.json": "06e2c0c2a29967efa68ec66c5ccb39acce7f1d665030147d032fcea02f8fe755",
+    "reports/experiments/exp008/robustness/evidence/q1/sensitivity.csv": "40ac730c03badfedc5dbf2fb450eb7e2214cee54a7786e93c6c7387978ba8041",
+    "reports/experiments/exp008/robustness/evidence/execution/protocol.json": "48f92fc5cea9876e42cdc4c6166a6bb38af441b4a57ccc35ed6f861a47fd457b",
+    "reports/experiments/exp008/robustness/evidence/execution/noise_summary.csv": "da69be5278fd79692e8401dd55f88a361f5c2c82958cedb62ec26ac2e592ecdb",
+    "reports/experiments/exp008/robustness/evidence/execution/summary.json": "72478c7edf89f9c3a85f439e00b0a89e885d334e0a2e26884bfc23591bfe473e",
+    "data/results/exp009/source_documentation_changes.json": "86867d74267214371945dfab8d0fa8e7f88086e9ceb75ed851db0e69d9ee30b1"
+  },
+  "trajectories": {
+    "data/results/exp009/q1/summary.json": "48c332884ebd4595609ac1a9f70d89fe39285026a671ef6229da38a2e915810d",
+    "data/results/exp009/q1/baseline.json": "fcd0e2c5251532041f20710755feffe13b07ac3313702dc1293ca745c06c0a3c",
+    "data/results/exp009/q1/revised.json": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+    "data/results/exp009/q2/dispatch.npz": "78fa3c1be76be6dee5f91343ddfd68cb3072a5c6f59853cd63729ffe199fb985",
+    "data/results/exp009/q2/summary.json": "3e03ceeda261d0ea967a65e2260bda886a9d22f6781a53c61618c579d4bfacf9",
+    "data/results/exp009/q3/dispatch_3.npz": "e8a03b01c3154409a260d64e79dbe1a209994069835337acd1e125415d7c32b4",
+    "data/results/exp009/q3/dispatch_365.npz": "76fbf0baa0c185641482016648582ad1fb6c83c377587c68acdd74f99df31e00",
+    "data/results/exp009/q3/warmup.npz": "fbc12ada379eb8925a05a3b7f31e4d8cf9b6707830948129992c601bcad442de",
+    "data/results/exp009/q3/summary.json": "cf7a62293bc24a2b211343d19f20a2439d5d5be4c5de2c9bdb4a42974da02b05",
+    "data/results/exp009/q4_2/dispatch.npz": "c865f01b68d58f62237b0fd3f1e7133de1b4029ce535acde3e6f094d52adb2db",
+    "data/results/exp009/q4_2/summary.json": "d634928b7401c290dfb287b19a3eb86b821da1c3068d7fb285df2cb62d64e258",
+    "data/results/exp009/q4_3/dispatch_365.npz": "faf781a52327f2eb7c1a5afc69df4bba9c0ebbf471704cd3c0f8a27848082afe",
+    "data/results/exp009/q4_3/dispatch_4-3.npz": "7b235246d549a5744b26b37a8ec531ff537e03e06dabf6bea850e92afa048dd6",
+    "data/results/exp009/q4_3/warmup.npz": "e2687241c80f325ce9a4da465bba88822adec0f3c89adb713180b31b85559414",
+    "data/results/exp009/q4_3/summary.json": "a07eea9975edb8fad42f7082916e3864fbe70fe74dcecd0839182a88721d8ca3"
+  },
+  "workbooks": {
+    "result1.xlsx": "7f31dfa652045dea90d2f385ea07fb05b2d7244a18cf03696bce27b5b8dce3c9",
+    "result2.xlsx": "b24d4a067864c242910d9527fb5ee7603ced325d03634e350ceb27f10b1f42dd",
+    "result3.xlsx": "37ba78be72496b5eb6053463d4ddf7b28181f268a5d965c7a33102e38aced3ac",
+    "result4-2.xlsx": "8789f13ebe93a1accc038bc134d824c0de72e928eadfb3b5b1bee9b2d627454b",
+    "result4-3.xlsx": "d3a2a636d62391e370b5b110c5ee68fd4c442dbf34b320544da570b706f192f1"
+  },
+  "support_package": {
+    "prepare_command": "python scripts/prepare_exp009_support.py",
+    "derived_slices": [
+      {
+        "source": "data/results/exp009/q3/dispatch_365.npz",
+        "target": "data/results/exp009/q3/dispatch_3.npz",
+        "period": "feb_dec"
+      },
+      {
+        "source": "data/results/exp009/q3/dispatch_365.npz",
+        "target": "data/results/exp009/q3/warmup.npz",
+        "period": "january"
+      },
+      {
+        "source": "data/results/exp009/q4_3/dispatch_365.npz",
+        "target": "data/results/exp009/q4_3/dispatch_4-3.npz",
+        "period": "feb_dec"
+      },
+      {
+        "source": "data/results/exp009/q4_3/dispatch_365.npz",
+        "target": "data/results/exp009/q4_3/warmup.npz",
+        "period": "january"
+      }
+    ],
+    "scope": "Only redundant cuts are omitted from ZIP; full 365-day arrays and all original hashes are retained. Git keeps every original slice."
+  },
+  "verification_command": "python scripts/verify_exp009_delivery.py",
+  "reproduction_commands": [
+    "python Xelatex/code/q1_reproduce.py --quick --out q1_output",
+    "python -m experiments.exp009.q12_run --scenario 2 --days 365 --out data/results/exp009/reproduced/q2",
+    "python -m experiments.exp009.q12_run --scenario 4-2 --days 365 --out data/results/exp009/reproduced/q4_2",
+    "python -m experiments.exp009.q34_run --scenario 3 --days 365 --label reproduction",
+    "python -m experiments.exp009.q34_run --scenario 4-3 --days 365 --label reproduction"
+  ],
+  "actual_run_commands": "See per-scenario protocol.json; original run sources remain hash-bound, with any documentation-only cleanup recorded separately.",
+  "forecast_scope": "Accepted issued prediction caches are reused; these solver commands do not retrain forecasting models. Exp008 forecast sources and historical training audits identify the upstream forecasting pipeline."
+}

@@ -1,0 +1,22 @@
+{
+  "范围": "P1 四个年度策略冷启动最小运行；Q1沿用已验收两层冻结轨迹不重新求解",
+  "输入快照": {
+    "experiments/exp009/q12_run.py": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+    "experiments/exp009/q12_forecast.py": "cb6717730a2d37468765246956d730b26efbcd44aaa7e38086e017e3cea0eca8",
+    "experiments/exp009/q34_run.py": "c1887b99acfda62d4dcc3bfe8d269150a43be02224ac0897d62f5105af6ba87b",
+    "experiments/exp009/q34_forecast.py": "cd573acb30a30d0da32bfcc5104e1820302fa4c3968a5e7fb517dc4bde8e63df",
+    "experiments/exp009/q34_planner.py": "2847c1b77ddee45d2d5dc7d2e14c9aeccbeb99344bcb7d120ec7da7635be3276"
+  },
+  "状态": "PASS",
+  "证据": {
+    "commands_exit_code": 0,
+    "q12": "p1_q12/P1.json",
+    "q34": "p1_q34/P1.json",
+    "independent_runs": 4,
+    "days_each": 3,
+    "causal_perturbation_cases": 28,
+    "exact_refund_cases": 4
+  },
+  "发现": [],
+  "返工": "无；开展全年运行后交P2，源码/参数实质变化使对应PASS失效。"
+}

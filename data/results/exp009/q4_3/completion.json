@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "full_year": true,
+  "wall_seconds": 127.18989429203793,
+  "evaluation_cost": 13539823.623476999,
+  "source_hashes": {
+    "experiments/exp009/q34_export.py": "718ff340c75a28b43ff975011b973e43e7ed51341b030c5f1be513e08199d393",
+    "experiments/exp009/q34_forecast.py": "cd573acb30a30d0da32bfcc5104e1820302fa4c3968a5e7fb517dc4bde8e63df",
+    "experiments/exp009/q34_run.py": "c1887b99acfda62d4dcc3bfe8d269150a43be02224ac0897d62f5105af6ba87b",
+    "experiments/exp009/q34_planner.py": "2847c1b77ddee45d2d5dc7d2e14c9aeccbeb99344bcb7d120ec7da7635be3276",
+    "experiments/exp008/planner.py": "b9b02be19b96dcce6ed11b133ee6ce5b81c2061da45076d3cf73451b5a3fb557",
+    "experiments/exp008/forecast.py": "081b1bb686e9c2429ce479076b9b5c56e4797a722815a47ad0775d48cdc91349",
+    "experiments/common/neural_v2/physics.py": "ff91e7f13a8e8468d27059084d033c6c72fef514344ea15e113ea9fed4f5e587"
+  },
+  "archive_sha256": "faf781a52327f2eb7c1a5afc69df4bba9c0ebbf471704cd3c0f8a27848082afe",
+  "solver_planning_seconds": 123.52346578310244,
+  "solver_feasible_all": true,
+  "run_command": ".venv/bin/python -m experiments.exp009.q34_run --scenario 4-3 --days 365"
+}

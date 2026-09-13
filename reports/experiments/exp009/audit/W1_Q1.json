@@ -1,0 +1,18 @@
+{
+  "范围": "W1 Q1现有章节修订证据路线，非全文W1",
+  "输入快照": {
+    "data/results/exp008/q1/revised.json": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d",
+    "data/results/exp008/q1/baseline.json": "fcd0e2c5251532041f20710755feffe13b07ac3313702dc1293ca745c06c0a3c",
+    "experiments/exp008/q1.py": "7cf7a452f9cd67aeb4634d01d30b8a1e52bb90cec8efbcdc0c4ec89c5267d155"
+  },
+  "状态": "PASS",
+  "证据": {
+    "cost_stage1": 34080.95139956883,
+    "cost_stage2": 34115.032450968385,
+    "purchase_kwh_stage2": 57560.64380388695,
+    "baseline_cost_stage1": 33801.49554222202,
+    "comparison": "工程附加约束代价279.46元，二层费用让步34.08元"
+  },
+  "发现": [],
+  "返工": "所有正式表图引用同一第二层trajectory；W2再核对实际生成物。"
+}

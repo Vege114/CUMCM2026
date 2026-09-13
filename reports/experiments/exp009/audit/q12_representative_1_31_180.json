@@ -1,0 +1,85 @@
+{
+  "scope": "Fresh selected-day MIP and refinement from archived legitimate starting boundary; not second full-year optimization",
+  "results": [
+    {
+      "scenario": "2",
+      "day": 1,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.000571418513356354,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 0.0,
+      "fresh_cost": 88848.08707593926,
+      "archived_cost": 88848.08707593926,
+      "cost_difference_yuan": 0.0,
+      "max_soc_difference_kwh": 0.0
+    },
+    {
+      "scenario": "2",
+      "day": 31,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.0003817299997572795,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 0.0,
+      "fresh_cost": 23399.200231294817,
+      "archived_cost": 23399.200231294817,
+      "cost_difference_yuan": 0.0,
+      "max_soc_difference_kwh": 0.0
+    },
+    {
+      "scenario": "2",
+      "day": 180,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.00012643163858418245,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 0.0,
+      "fresh_cost": 46778.35792837819,
+      "archived_cost": 46778.357928378195,
+      "cost_difference_yuan": -7.275957614183426e-12,
+      "max_soc_difference_kwh": 0.0
+    },
+    {
+      "scenario": "4-2",
+      "day": 1,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.00042490767021479813,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 0.0,
+      "fresh_cost": 109209.82959897848,
+      "archived_cost": 109209.82959897845,
+      "cost_difference_yuan": 2.9103830456733704e-11,
+      "max_soc_difference_kwh": 0.0
+    },
+    {
+      "scenario": "4-2",
+      "day": 31,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.0040674316476506656,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 4.791064998084039,
+      "fresh_cost": 19232.817483759238,
+      "archived_cost": 19236.96875701011,
+      "cost_difference_yuan": -4.151273250870872,
+      "max_soc_difference_kwh": 3.429873122870049
+    },
+    {
+      "scenario": "4-2",
+      "day": 180,
+      "forecast_and_all_error_paths_exact": true,
+      "fresh_mip_feasible": true,
+      "mip_gap": 0.0005954381595449095,
+      "mode_difference_slots": 0,
+      "max_purchase_difference_kwh": 0.0,
+      "fresh_cost": 51942.11048128601,
+      "archived_cost": 51942.11048128601,
+      "cost_difference_yuan": 0.0,
+      "max_soc_difference_kwh": 0.0
+    }
+  ],
+  "passed": true,
+  "interpretation": "5/6 selected days exact. Q4-2 day31 time-limited MILP returns another feasible purchase: cost difference -4.1513 yuan (0.0216%). This does not replace the archived controller trace and does not establish byte-for-byte repeatability for time-limited MILP."
+}

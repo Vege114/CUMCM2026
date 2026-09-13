@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "source": "experiments/exp009/q12_run.py",
+      "before_source": "data/results/exp009/provenance/q12_run.before_doc_cleanup.py",
+      "before_sha256": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+      "after_sha256": "fbe484e3e7ef9ce5a2aeb7809a4a9284174d13159a2b8d8c267ca899ff620f75",
+      "reason": "Replace the module docstring with public execution instructions; executable statements and AST excluding the module docstring are unchanged."
+    }
+  ],
+  "ast_equal_excluding_module_docstring": true,
+  "runtime_protocol_hashes_unchanged": true
+}

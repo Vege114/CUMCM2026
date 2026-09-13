@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "model_id": "hgb_extra_trees_half_ridge28_memory",
+  "archives": {
+    "hgb_extra_trees_half_raw": "9ca6b3e96d3416677aaf2b26937601c5793dbdb17b679fd8a18df0499e214b5f",
+    "hgb_extra_trees_half_ridge28": "546fdf2d6a4d2903d84d02fd5aedcc2531a3a9d2a04138c58a8b54ab9a343e44",
+    "hgb_extra_trees_half_ridge28_memory": "b473bafb95ff9526857d34eee60bc6596d005ec77cbae8ea790627afc3ca856a"
+  },
+  "raw_HGB_values_sha256": "5b2a0daea9a2b6341a281152abcfb436d9e829bcec68a8d0afeaca5c4fb87d25",
+  "raw_ExtraTrees_values_sha256": "ecfb86bbcdae7ab93935254c19c946071c9b8d738729e13d152b34792f687361",
+  "raw_exact_half_blend": true,
+  "protocol_sha256": "22133990f741e67240e9091d546d21b706e721640f5c647e0722e0a2ed801a61",
+  "source_and_input_hashes_unchanged": true
+}

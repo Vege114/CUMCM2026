@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "auditor_source_sha256": "15cd67b792a5f53bb77b9b1db00dea6c0010bd5e4be1363ca3469357d4f418b6",
+  "all334_raw_origins_and_exact_half_blend_verified": true,
+  "all334_Ridge28_and_independent_nonrecursive_half_memory_verified": true,
+  "all334_issued_errors_verified": true,
+  "all_four_gate_metrics_recomputed": {
+    "original_HGB_full": {
+      "rmse_kw": 362.89918485267737,
+      "high_price_rmse_kw": 348.1840276970736,
+      "daily_energy_rmse_kwh": 3610.6328106863552,
+      "cumulative_error_rmse_kwh": 2285.936944822583
+    },
+    "ExtraTrees_full": {
+      "rmse_kw": 357.4383426253771,
+      "high_price_rmse_kw": 343.07788262962004,
+      "daily_energy_rmse_kwh": 3587.3750709984797,
+      "cumulative_error_rmse_kwh": 2281.066059388908
+    },
+    "best_fixed_channel_composite_full": {
+      "rmse_kw": 359.41242095610505,
+      "high_price_rmse_kw": 344.2175894419878,
+      "daily_energy_rmse_kwh": 3510.2220914574987,
+      "cumulative_error_rmse_kwh": 2236.669614650253
+    },
+    "hgb_extra_trees_half_ridge28_memory": {
+      "rmse_kw": 357.1618393483832,
+      "high_price_rmse_kw": 342.42767245767953,
+      "daily_energy_rmse_kwh": 3542.7962393845705,
+      "cumulative_error_rmse_kwh": 2254.7986018358
+    }
+  },
+  "raw22_models_per_family_causality_from_signed_source_audits": true,
+  "seven_asymmetric_postprocessing_future_checks_present_and_passed": true,
+  "signed_sources_and_inputs_unchanged": true,
+  "predictive_gate_passed": true,
+  "development_not_independent_test": true,
+  "independent_dispatch_verification": {
+    "passed": true,
+    "errors": [],
+    "scenario": "2",
+    "days": 334,
+    "intervals": 48096,
+    "start_day": 31,
+    "max_balance_error_kwh": 0.0,
+    "max_soc_error_kwh": 9.094947017729282e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 9.094947017729282e-13,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 12581287.391136104,
+      "up_cost": 0.0,
+      "down_cost": 0.0,
+      "emergency_cost": 561451.7807731997,
+      "total_cost": 13142739.171909358
+    },
+    "recomputed_total_cost": 13142739.171909358,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 6370512.040300662,
+      "discharge_kwh": 5733360.745872072,
+      "throughput_kwh": 12103872.786172733,
+      "equivalent_full_cycles": 503.62880169925546,
+      "direction_reversals": 7019,
+      "direction_reversals_including_warmup_boundary": 7019,
+      "charging_slots": 23956,
+      "discharging_slots": 16375,
+      "active_slots": 40331,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 3568,
+      "discharge_starts": 3518,
+      "power_changes_count": 38926,
+      "power_ramp_total_kw": 33084958.93734079,
+      "power_ramp_total_kw_including_warmup_boundary": 33089786.177340787,
+      "power_ramp_max_kw_per_10min": 9784.681942058298,
+      "power_ramp_p95_kw_per_10min": 4739.7004400224305,
+      "mean_absolute_power_kw": 1509.964169931728,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 5000.0,
+      "initial_soc": 1421.7991105135516,
+      "final_soc": 1527.3036542625705,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 1,
+      "final_mode": -1,
+      "initial_power_kw": 172.75999999999976,
+      "final_power_kw": -353.5643231310696,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": true,
+      "checked_fields": 1002,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "goal": {
+      "passed": false,
+      "checks": {
+        "cost_reduced_at_least_8pct": false,
+        "direction_reversals_reduced": false,
+        "no_simultaneous_charge_discharge": true,
+        "physical_checks_passed": true,
+        "full_334_day_evaluation": true
+      },
+      "count_definition": "exp006 non-idle direction reversals; active ten-minute slots are a duration diagnostic",
+      "stricter_all_operation_metrics_passed": false,
+      "active_slots_also_reduced": false,
+      "baseline": {
+        "run_id": "exp006/primary",
+        "total_cost": 14066257.477256786,
+        "direction_reversals": 2729,
+        "active_slots": 23028,
+        "throughput_kwh": 11480847.039823763
+      },
+      "cost_threshold_yuan": 12940956.8791,
+      "cost_reduction_pct": 6.5654869949638766,
+      "direction_reversal_reduction_pct": -157.2004397215097,
+      "active_slot_reduction_pct": -75.1389612645475,
+      "throughput_reduction_pct": -5.42665313968449,
+      "throughput_also_reduced": false,
+      "cost_reduced_at_least_10pct": false,
+      "comparison_scope": "full comparable 334 days"
+    },
+    "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_hgb_extra_trees_half/lp_bridge/hgb_extra_trees_half_ridge28_memory_tree28_q08_buffer500_334days/dispatch_2.npz",
+    "source_sha256": "ce25055b4b0940a8c5b82ac256f6884a7c496421d509f8c0982064179b37578e"
+  },
+  "bridge_difference_vs_ExtraTrees_yuan": -5128.409043569118,
+  "bridge_goal_passed": false
+}

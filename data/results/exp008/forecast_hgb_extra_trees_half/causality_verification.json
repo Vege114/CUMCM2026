@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "day": 31,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 32,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 59,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 90,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 151,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 243,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    },
+    {
+      "day": 364,
+      "asymmetric_future_actual_and_both_source_forecasts": true,
+      "raw_prefix_ridge_and_memory_exactly_unchanged": true
+    }
+  ],
+  "all334_postprocessing_labels_before_issue": true,
+  "raw_training_causality_inherited_from_signed_model_audits": true
+}

@@ -1,0 +1,41 @@
+{
+  "q3_purchase": {
+    "source_archive": "data/results/exp009/q3/dispatch_3.npz",
+    "source_sha256": "e8a03b01c3154409a260d64e79dbe1a209994069835337acd1e125415d7c32b4",
+    "generator": "experiments/exp009/q34_assets.py",
+    "generator_sha256": "6411a18204e06aa4dc1b18ca967567582a7e4ed76dc80bb5c2759e49633de741",
+    "outputs": {
+      "pdf": "a1412402ccc5a083df7cf3d7b807cebbc8d843a3f80f1bc65a4c9776768a6d5e",
+      "png": "922f4cbc3f7a50bde0eaade87cc2aa57d2673b7b0819e92b1b7a31fffe8bb3e7",
+      "svg": "ff44e1dfeb3fad6aa5064a2753770e436298180f1cae2c57664ccf495586c0f4"
+    },
+    "dpi": 320,
+    "layout_check": []
+  },
+  "q3_storage": {
+    "source_archive": "data/results/exp009/q3/dispatch_3.npz",
+    "source_sha256": "e8a03b01c3154409a260d64e79dbe1a209994069835337acd1e125415d7c32b4",
+    "generator": "experiments/exp009/q34_assets.py",
+    "generator_sha256": "6411a18204e06aa4dc1b18ca967567582a7e4ed76dc80bb5c2759e49633de741",
+    "outputs": {
+      "pdf": "a1b27a9a09b9c690cb8f60cd12deec07ff39417a9775085e8b74244cf572ffd7",
+      "png": "3384d3dab649f3c00d763e73a1656c5e1aae96d364a4e3d4bbb47a0f2a90602a",
+      "svg": "893f0d3c7a8b3576baa7b52c5d61311e323af93ada2a7c112e6da18b5497ba5c"
+    },
+    "dpi": 320,
+    "layout_check": []
+  },
+  "q3_adjustments": {
+    "source_archive": "data/results/exp009/q3/dispatch_3.npz",
+    "source_sha256": "e8a03b01c3154409a260d64e79dbe1a209994069835337acd1e125415d7c32b4",
+    "generator": "experiments/exp009/q34_assets.py",
+    "generator_sha256": "6411a18204e06aa4dc1b18ca967567582a7e4ed76dc80bb5c2759e49633de741",
+    "outputs": {
+      "pdf": "ad543fc63d099079e83f406eb820539c695f997db89ca75842b7a7af90534a58",
+      "png": "141bad6f8c0f368aaa18f7b6da0e3c1d106ea17eed52c1c01d8e710b91872aeb",
+      "svg": "90e9eb90c7ebc082af8c18d1f617bd1387085603365b886ddb488df5908bbc91"
+    },
+    "dpi": 320,
+    "layout_check": []
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "scenario": "3",
+      "day": 0,
+      "slot": 0,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": null
+    },
+    {
+      "scenario": "3",
+      "day": 0,
+      "slot": 36,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": null
+    },
+    {
+      "scenario": "3",
+      "day": 1,
+      "slot": 0,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 144
+    },
+    {
+      "scenario": "3",
+      "day": 1,
+      "slot": 36,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 144
+    },
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 0,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 4464
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 36,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 4608
+    },
+    {
+      "scenario": "3",
+      "day": 60,
+      "slot": 72,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 8640
+    },
+    {
+      "scenario": "3",
+      "day": 180,
+      "slot": 108,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 25920
+    },
+    {
+      "scenario": "4-3",
+      "day": 0,
+      "slot": 0,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": null
+    },
+    {
+      "scenario": "4-3",
+      "day": 0,
+      "slot": 36,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": null
+    },
+    {
+      "scenario": "4-3",
+      "day": 1,
+      "slot": 0,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 144
+    },
+    {
+      "scenario": "4-3",
+      "day": 1,
+      "slot": 36,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 144
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 0,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 4464
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 36,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 4608
+    },
+    {
+      "scenario": "4-3",
+      "day": 60,
+      "slot": 72,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 8640
+    },
+    {
+      "scenario": "4-3",
+      "day": 180,
+      "slot": 108,
+      "future_mutation_identical": true,
+      "same_issued_history_identical": true,
+      "label_stop_max": 25920
+    }
+  ],
+  "scope": "adapter/current official issue/price/cold-start/residual paths; HGB training provenance inherited unchanged"
+}

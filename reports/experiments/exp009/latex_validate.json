@@ -1,0 +1,105 @@
+{
+  "main_tex": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/数模通用模板.tex",
+  "project_root": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex",
+  "pdf_path": "/Users/vegetarianwolf/Projects/CUMCM2026/完整论文.pdf",
+  "source_sha256": "3b9df2387065b556967640eef91af2c4a0dfa24d323460201c56eed4b34bf701",
+  "rendered_pages": 153,
+  "body_pages": 47,
+  "page_limit_scope": "body",
+  "pdf_audit": {
+    "pages": 153,
+    "blank_pages": [],
+    "page_sizes_pt": [
+      [
+        595.3,
+        841.9
+      ]
+    ],
+    "unembedded_fonts": [],
+    "raster_images": 4,
+    "min_image_dpi": 289,
+    "issues": []
+  },
+  "build_manifest": {
+    "schema_version": 1,
+    "created_at": "2026-09-13T08:14:55.433724+00:00",
+    "passed": true,
+    "main_tex": "数模通用模板.tex",
+    "project_root": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex",
+    "source_sha256": "3b9df2387065b556967640eef91af2c4a0dfa24d323460201c56eed4b34bf701",
+    "compiled_source_sha256": "3b9df2387065b556967640eef91af2c4a0dfa24d323460201c56eed4b34bf701",
+    "post_build_source_sha256": "3b9df2387065b556967640eef91af2c4a0dfa24d323460201c56eed4b34bf701",
+    "pdf_sha256": "0a89e9e24dcd8e0be7ee4c03d903fcb166ba70efb10429fb0c80a25a7f71ea57",
+    "project_manifest_sha256": null,
+    "engine": "xelatex",
+    "tools": {
+      "latexmk": {
+        "path": "/Library/TeX/texbin/latexmk",
+        "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+      },
+      "xelatex": {
+        "path": "/Library/TeX/texbin/xelatex",
+        "version": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+      }
+    },
+    "commands": [
+      {
+        "command": [
+          "/Library/TeX/texbin/latexmk",
+          "-norc",
+          "-gg",
+          "-xelatex",
+          "-e",
+          "$xelatex = 'xelatex -no-shell-escape %O %S'",
+          "-interaction=nonstopmode",
+          "-halt-on-error",
+          "-file-line-error",
+          "-outdir=build",
+          "数模通用模板.tex"
+        ],
+        "cwd": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex",
+        "returncode": 0,
+        "duration_seconds": 16.282
+      }
+    ],
+    "warnings": [],
+    "allowed_warnings": [],
+    "warning_override": {
+      "patterns": [],
+      "reason": null
+    },
+    "issues": [],
+    "reproduce": "/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/vegetarianwolf/Projects/CUMCM2026/tmp/conflict-resolution/skill/tools/latex/scripts/latex_paper.py build /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/数模通用模板.tex --engine xelatex --timeout 180 --publish /Users/vegetarianwolf/Projects/CUMCM2026/完整论文.pdf"
+  },
+  "thresholds": {
+    "min_content_units": 15000,
+    "min_pages": 20,
+    "min_equations": 5,
+    "min_figures": 8,
+    "min_tables": 3
+  },
+  "threshold_overrides": [
+    {
+      "name": "min_image_dpi",
+      "default": 300,
+      "value": 289,
+      "reason": "人工决定F33暂缓正文30页优化并接受既有约289dpi；保留当前TeX结构与完整程序附录"
+    }
+  ],
+  "metrics": {
+    "content_units": 22754,
+    "equations": 48,
+    "figures": 10,
+    "tables": 50,
+    "citations": 4,
+    "source_files": 27,
+    "question_figure_coverage": {
+      "q1": true,
+      "q2": true,
+      "q3": true,
+      "q4": true
+    }
+  },
+  "issues": [],
+  "passed": true
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Q3/Q4-3 independent full365 fresh solve and comparison; all output fields including original/final/actions/SOC/fees/versions/actual/price",
+  "status": "PASS",
+  "exit_code": 0,
+  "runs": [
+    {
+      "name": "q3",
+      "original_sha256": "76fbf0baa0c185641482016648582ad1fb6c83c377587c68acdd74f99df31e00",
+      "independent_sha256": "76fbf0baa0c185641482016648582ad1fb6c83c377587c68acdd74f99df31e00",
+      "max_array_difference": 0.0,
+      "rows": 365,
+      "days_source_identical": true
+    },
+    {
+      "name": "q4_3",
+      "original_sha256": "faf781a52327f2eb7c1a5afc69df4bba9c0ebbf471704cd3c0f8a27848082afe",
+      "independent_sha256": "faf781a52327f2eb7c1a5afc69df4bba9c0ebbf471704cd3c0f8a27848082afe",
+      "max_array_difference": 0.0,
+      "rows": 365,
+      "days_source_identical": true
+    }
+  ]
+}

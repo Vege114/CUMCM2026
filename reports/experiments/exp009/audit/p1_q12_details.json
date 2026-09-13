@@ -1,0 +1,91 @@
+{
+  "gate": "P1",
+  "status": "PASS",
+  "scope": "Q2/Q4-2 3-day exact-input cold-start vertical slices; 12 causal perturbations through last day",
+  "source_sha256": {
+    "experiments/exp009/q12_run.py": "b0cdc6a75d3c83aafc493eb7be42efdc955bf3c063323a091f4198cc5bf9676b",
+    "experiments/exp009/q12_forecast.py": "cb6717730a2d37468765246956d730b26efbcd44aaa7e38086e017e3cea0eca8"
+  },
+  "exit_code": 0,
+  "runs": [
+    {
+      "scenario": "2",
+      "days": 3,
+      "cost_yuan": 392804.4740402683,
+      "max_balance_error": 0.0,
+      "max_fee_error": 4.547473508864641e-13,
+      "cross_day_mode_verified": true
+    },
+    {
+      "scenario": "4-2",
+      "days": 3,
+      "cost_yuan": 454213.8302953925,
+      "max_balance_error": 0.0,
+      "max_fee_error": 4.547473508864641e-13,
+      "cross_day_mode_verified": true
+    }
+  ],
+  "causality": [
+    {
+      "scenario": "2",
+      "day": 0,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "2",
+      "day": 1,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "2",
+      "day": 2,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "2",
+      "day": 31,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "2",
+      "day": 180,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "2",
+      "day": 364,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "day": 0,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "day": 1,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "day": 2,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "day": 31,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "day": 180,
+      "future_actual_perturbation_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "day": 364,
+      "future_actual_perturbation_identical": true
+    }
+  ],
+  "limitations": "not full annual P2, figures, workbooks or final manuscript acceptance"
+}
