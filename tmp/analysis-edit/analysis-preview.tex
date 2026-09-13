@@ -1,0 +1,53 @@
+%! Mode:: "TeX:UTF-8"
+%! TEX program = xelatex
+\PassOptionsToPackage{quiet}{xeCJK}
+\PassOptionsToPackage{fontset=none}{ctex}
+\documentclass[withoutpreface,bwprint]{cumcmthesis}
+\setCJKmainfont[Path=fonts/,BoldFont=SourceHanSerifCN-Bold.otf]{SourceHanSerifCN-Regular.otf}
+\setCJKsansfont[Path=fonts/]{SourceHanSerifCN-Bold.otf}
+\setCJKmonofont[Path=fonts/]{SourceHanSerifCN-Regular.otf}
+\providecommand{\heiti}{\sffamily}
+\providecommand{\songti}{\CJKfamily{song}}
+\providecommand{\kaishu}{\CJKfamily{kai}}
+\usepackage{etoolbox}
+\usepackage{ctex}
+\BeforeBeginEnvironment{tabular}{\zihao{-5}}
+\usepackage[numbers,sort&compress]{natbib}  % 文献管理宏包
+\usepackage[framemethod=TikZ]{mdframed}  % 框架宏包
+\usepackage{url}  % 网页链接宏包
+% 子图宏包已由 cumcmthesis 类加载。
+% 2026年格式规范：电子版从摘要开始，承诺书及编号专用页另行处理。
+% 附件5明确要求PDF；format2026.doc允许PDF或Word，本模板统一输出PDF。
+% 规范未统一规定字体、字号和行距，保留本文现有设置。
+\geometry{a4paper,top=25mm,bottom=25mm,left=25mm,right=25mm}
+\pagestyle{plain} % 无页眉；阿拉伯页码居中置于页脚。
+\hypersetup{pdfauthor={},pdfsubject={},pdfkeywords={}} % 不写入参赛身份信息。
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}\renewcommand{\textbf}[1]{{\song\bfseries #1}}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!20]
+\tikzstyle{process} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=green!20]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{考虑预测更新与运行平稳性的微网购电调控策略}  % 论文标题
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文
+
+\begin{document}
+\pagestyle{plain}
+\setcounter{section}{1}
+\setcounter{page}{3}
+\begingroup
+\renewcommand{\baselinestretch}{1.12}\selectfont
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+\titlespacing*{\subsection}{0pt}{8pt}{5pt}
+\input{sections/02-问题分析}
+\clearpage
+\endgroup
+\end{document}

@@ -1,0 +1,40 @@
+Generation method: built-in image_gen tool (infographic-diagram).
+Style reference: supplied mathematical-modeling PPTX, especially slides 16 and 21.
+Paper asset: figures/problem-analysis-mindmap.png
+
+Use case: infographic-diagram.
+Asset type: final Chinese academic paper mind map, landscape PNG, target 2400 x 1000 (2.4:1), high resolution, white background, cropped close with only 3% safe margin.
+Primary request: Generate a beautifully typeset, fully accurate Chinese flowchart of four mathematical-modeling questions on microgrid electricity procurement. Directly generate the complete image. Style inspired by the Chinese mathematical modeling flowchart template: pastel colored grouping, fine outline rectangles, restrained filled headers, very clear dark text and orthogonal arrows. No illustrations, no shadows, no gradients, no decorative icons, no extra English headings or numerical results.
+Layout: a slim shared-foundation band at top, then three columns. Column 1 (left, 25% width) contains one vertically centered blue box for Question 1. Column 2 (middle, 30% width) has two stacked boxes: green Question 2 above and lavender Question 3 below, separated by enough vertical gap for a down arrow and label. Column 3 (right, 28% width) is a single pale apricot outlined Question 4 group with its header above and two stacked inner branches, with their centers exactly aligned with Q2 and Q3 respectively. Leave wide gutters between columns for connector labels. A slim neutral footer is a unifying methodology note, no extra arrows to footer.
+Colors: blue #486B92 with fill #EAF1F8, green #427F72 with fill #EAF4EF, lavender #79668F with fill #F1EDF6, apricot #AB724D with fill #FBF0E5. All body text deep charcoal #243746, generous font size, bold Chinese sans serif headers. Use balanced typography, meticulous Chinese characters, no overlaps or crossing arrows. All text is horizontal.
+Exact visible text:
+Top full-width band: "共同基础：10分钟尺度 · 供需平衡 · 储能约束 · 可用信息"
+Left box header: "问题一｜确定性调度"
+Left box three body lines:
+"典型日供需与分时电价"
+"最低费用 → 小幅费用让步"
+"平滑充放电动作"
+Middle top box header: "问题二｜日前风险调度"
+Middle top box body:
+"树模型融合 → 误差校准"
+"整日情景 → 模式与购电优化"
+Middle bottom box header: "问题三｜日内滚动调整"
+Middle bottom box body:
+"新预报校准 → 剩余时段规划"
+"调整代价与补购风险权衡"
+Right group header: "问题四｜波动电价扩展"
+Right group subheader, directly below main header: "历史电价 → 加权岭回归"
+Right upper branch:
+"4-2｜固定日前计划"
+"小时模式 → 购电修正"
+Right lower branch:
+"4-3｜日内滚动计划"
+"更新价格 → 双向调整"
+Footer band: "统一执行与评价：实测反馈 · 状态连续 · 实际费用 · 运行强度"
+Precise arrows:
+1) From left Q1 box right edge, an orthogonal elbow arrow leads to the middle-top Q2 box left edge. It has the label "引入供需不确定性" in the gutter, split to two short lines if necessary.
+2) A straight down arrow from Q2 bottom edge to Q3 top edge, label "增加日内预报" beside it. Only this arrow links Q2 to Q3.
+3) A straight horizontal right arrow from Q2 right edge to upper branch 4-2 left edge, with label "扩展电价" above it.
+4) A straight horizontal right arrow from Q3 right edge to lower branch 4-3 left edge, with label "扩展电价" above it.
+No arrow from 4-2 to 4-3. No extra implied dependencies. The two branches inside Question 4 are parallel extensions, not consecutive stages.
+Render only the described texts, no meta directions, no title beyond the specified bands and headers.
