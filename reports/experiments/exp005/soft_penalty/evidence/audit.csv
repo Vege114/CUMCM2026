@@ -1,0 +1,23 @@
+beta,check,value,limit,passed,check_label
+0.1,balance,2.1600499167107046e-12,1e-06,True,逐段供需平衡残差 / kWh
+0.1,soc,1.8189894035458565e-12,1e-06,True,SOC递推残差 / kWh
+0.1,bounds,9.094947017729282e-12,1e-06,True,电量与SOC边界超出 / kWh
+0.1,fixed_grid,0.0,1e-06,True,日内普通计划变化 / kWh
+0.1,actual_source,0.0,1e-06,True,实际输入与冻结原值差 / kW
+0.1,cross_day_soc,0.0,1e-06,True,跨日SOC断点 / kWh
+0.1,ramp,1000.0000000000407,1000.000001,True,相邻净功率最大变化 / kW
+0.1,node_constraints,1.206217348226346e-10,1e-06,True,规划节点最大约束残差
+0.1,cost_budget,4.3655745685100555e-11,1e-06,True,第二层超预算金额 / 元
+0.1,fees,4.3655745685100555e-11,1e-06,True,独立账单差额 / 元
+0.1,integer_variables,0.0,0.0,True,整数变量数
+0.01,balance,2.9558577807620168e-12,1e-06,True,逐段供需平衡残差 / kWh
+0.01,soc,1.043076736095827e-11,1e-06,True,SOC递推残差 / kWh
+0.01,bounds,2.000888343900442e-11,1e-06,True,电量与SOC边界超出 / kWh
+0.01,fixed_grid,0.0,1e-06,True,日内普通计划变化 / kWh
+0.01,actual_source,0.0,1e-06,True,实际输入与冻结原值差 / kW
+0.01,cross_day_soc,0.0,1e-06,True,跨日SOC断点 / kWh
+0.01,ramp,1000.0000000000505,1000.000001,True,相邻净功率最大变化 / kW
+0.01,node_constraints,3.7555736298600095e-10,1e-06,True,规划节点最大约束残差
+0.01,cost_budget,3.637978807091713e-11,1e-06,True,第二层超预算金额 / 元
+0.01,fees,4.3655745685100555e-11,1e-06,True,独立账单差额 / 元
+0.01,integer_variables,0.0,0.0,True,整数变量数

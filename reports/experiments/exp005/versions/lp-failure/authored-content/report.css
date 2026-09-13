@@ -1,0 +1,11 @@
+.failure-report { width: min(100%, 900px); max-width: 100%; box-sizing: border-box; margin-inline: auto; padding: 0 36px 64px; }
+.failure-report section { scroll-margin-top: 100px; margin: 2rem 0 3rem; }
+.failure-nav { display: flex; flex-wrap: wrap; gap: .6rem 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border, #ddd); }
+.failure-nav a { font-size: .87rem; text-decoration: none; color: var(--text-muted, #555); }
+.failure-table-scroll { max-width: 100%; overflow-x: auto; }
+.failure-table { border-collapse: collapse; width: 100%; font-size: .85rem; line-height: 1.6; }
+.failure-table th, .failure-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--border, #ddd); text-align: left; vertical-align: top; }
+.failure-table th { font-weight: 600; }
+.failure-table td.number { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.failure-controls { display: flex; flex-wrap: wrap; gap: .7rem; }
+@media (max-width: 600px) { .failure-report { padding-inline: 20px; } }

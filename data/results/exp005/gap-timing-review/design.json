@@ -1,0 +1,241 @@
+{
+  "scope": "18 paired saved windows; no policy replay or new official results",
+  "gaps": [
+    0.0,
+    0.0005,
+    0.001
+  ],
+  "physical_tolerance": 1e-06,
+  "time_limit_per_stage": 60,
+  "delta_and_delta_exec_unchanged": 0.001,
+  "selection": "three duration quantiles per disjoint stratum",
+  "population_windows": 7975,
+  "population_days": 55,
+  "selected": [
+    {
+      "date": "2025-02-10",
+      "slot": -1,
+      "seconds": 1.58747270796448,
+      "cost_seconds": 0.28213029098697007,
+      "smooth_seconds": 1.3053424169775099,
+      "nodes": 324,
+      "retries": 0,
+      "stratum": "midnight",
+      "stratum_count": 55
+    },
+    {
+      "date": "2025-03-03",
+      "slot": -1,
+      "seconds": 4.01558812498115,
+      "cost_seconds": 1.0776113329920918,
+      "smooth_seconds": 2.9379767919890583,
+      "nodes": 360,
+      "retries": 0,
+      "stratum": "midnight",
+      "stratum_count": 55
+    },
+    {
+      "date": "2025-03-13",
+      "slot": -1,
+      "seconds": 7.421829958911985,
+      "cost_seconds": 0.5208734169136733,
+      "smooth_seconds": 6.900956541998312,
+      "nodes": 468,
+      "retries": 0,
+      "stratum": "midnight",
+      "stratum_count": 55
+    },
+    {
+      "date": "2025-02-06",
+      "slot": 110,
+      "seconds": 0.01874716696329415,
+      "cost_seconds": 0.009747124975547194,
+      "smooth_seconds": 0.009000041987746954,
+      "nodes": 34,
+      "retries": 0,
+      "stratum": "rolling_lt_0.2s",
+      "stratum_count": 4461
+    },
+    {
+      "date": "2025-02-23",
+      "slot": 119,
+      "seconds": 0.048213290981948376,
+      "cost_seconds": 0.028768958058208227,
+      "smooth_seconds": 0.01944433292374015,
+      "nodes": 25,
+      "retries": 0,
+      "stratum": "rolling_lt_0.2s",
+      "stratum_count": 4461
+    },
+    {
+      "date": "2025-02-25",
+      "slot": 82,
+      "seconds": 0.12011083285324275,
+      "cost_seconds": 0.0728389578871429,
+      "smooth_seconds": 0.04727187496609986,
+      "nodes": 98,
+      "retries": 0,
+      "stratum": "rolling_lt_0.2s",
+      "stratum_count": 4461
+    },
+    {
+      "date": "2025-02-12",
+      "slot": 0,
+      "seconds": 0.2734172500204295,
+      "cost_seconds": 0.20346287498250604,
+      "smooth_seconds": 0.06995437503792346,
+      "nodes": 396,
+      "retries": 0,
+      "stratum": "rolling_0.2_to_0.75s",
+      "stratum_count": 2278
+    },
+    {
+      "date": "2025-03-26",
+      "slot": 36,
+      "seconds": 0.41515991697087884,
+      "cost_seconds": 0.13725929195061326,
+      "smooth_seconds": 0.2779006250202656,
+      "nodes": 252,
+      "retries": 0,
+      "stratum": "rolling_0.2_to_0.75s",
+      "stratum_count": 2278
+    },
+    {
+      "date": "2025-02-24",
+      "slot": 28,
+      "seconds": 0.5984181669773534,
+      "cost_seconds": 0.1587890830123797,
+      "smooth_seconds": 0.4396290839649737,
+      "nodes": 368,
+      "retries": 0,
+      "stratum": "rolling_0.2_to_0.75s",
+      "stratum_count": 2278
+    },
+    {
+      "date": "2025-02-24",
+      "slot": 23,
+      "seconds": 0.8215105420676991,
+      "cost_seconds": 0.27094362501520663,
+      "smooth_seconds": 0.5505669170524925,
+      "nodes": 445,
+      "retries": 0,
+      "stratum": "rolling_0.75_to_2s",
+      "stratum_count": 886
+    },
+    {
+      "date": "2025-03-03",
+      "slot": 38,
+      "seconds": 1.0356966250110418,
+      "cost_seconds": 0.48959337500855327,
+      "smooth_seconds": 0.5461032500024885,
+      "nodes": 250,
+      "retries": 0,
+      "stratum": "rolling_0.75_to_2s",
+      "stratum_count": 886
+    },
+    {
+      "date": "2025-03-12",
+      "slot": 25,
+      "seconds": 1.429491832968779,
+      "cost_seconds": 0.6027042919304222,
+      "smooth_seconds": 0.8267875410383567,
+      "nodes": 479,
+      "retries": 0,
+      "stratum": "rolling_0.75_to_2s",
+      "stratum_count": 886
+    },
+    {
+      "date": "2025-03-01",
+      "slot": 1,
+      "seconds": 2.2369771259836853,
+      "cost_seconds": 0.35365245898719877,
+      "smooth_seconds": 1.8833246669964865,
+      "nodes": 431,
+      "retries": 0,
+      "stratum": "rolling_2_to_7s",
+      "stratum_count": 262
+    },
+    {
+      "date": "2025-03-08",
+      "slot": 33,
+      "seconds": 3.058270917041227,
+      "cost_seconds": 0.34927666699513793,
+      "smooth_seconds": 2.7089942500460893,
+      "nodes": 471,
+      "retries": 0,
+      "stratum": "rolling_2_to_7s",
+      "stratum_count": 262
+    },
+    {
+      "date": "2025-03-21",
+      "slot": 20,
+      "seconds": 4.904911625897512,
+      "cost_seconds": 0.33109954197425395,
+      "smooth_seconds": 4.573812083923258,
+      "nodes": 412,
+      "retries": 0,
+      "stratum": "rolling_2_to_7s",
+      "stratum_count": 262
+    },
+    {
+      "date": "2025-03-22",
+      "slot": 8,
+      "seconds": 7.42854091594927,
+      "cost_seconds": 0.32419129100162536,
+      "smooth_seconds": 7.104349624947645,
+      "nodes": 460,
+      "retries": 0,
+      "stratum": "rolling_ge_7s",
+      "stratum_count": 33
+    },
+    {
+      "date": "2025-03-22",
+      "slot": 21,
+      "seconds": 10.155010791961104,
+      "cost_seconds": 0.20202516694553196,
+      "smooth_seconds": 9.952985625015572,
+      "nodes": 411,
+      "retries": 0,
+      "stratum": "rolling_ge_7s",
+      "stratum_count": 33
+    },
+    {
+      "date": "2025-03-22",
+      "slot": 16,
+      "seconds": 14.769659873913042,
+      "cost_seconds": 0.3264323329785839,
+      "smooth_seconds": 14.443227540934458,
+      "nodes": 416,
+      "retries": 0,
+      "stratum": "rolling_ge_7s",
+      "stratum_count": 33
+    }
+  ],
+  "strata": {
+    "midnight": {
+      "count": 55,
+      "historical_seconds": 296.7688050837023
+    },
+    "rolling_lt_0.2s": {
+      "count": 4461,
+      "historical_seconds": 286.8128205772955
+    },
+    "rolling_0.2_to_0.75s": {
+      "count": 2278,
+      "historical_seconds": 982.049338940531
+    },
+    "rolling_0.75_to_2s": {
+      "count": 886,
+      "historical_seconds": 990.8550855243811
+    },
+    "rolling_2_to_7s": {
+      "count": 262,
+      "historical_seconds": 909.0475325938314
+    },
+    "rolling_ge_7s": {
+      "count": 33,
+      "historical_seconds": 363.76440179068595
+    }
+  },
+  "forecast_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9"
+}

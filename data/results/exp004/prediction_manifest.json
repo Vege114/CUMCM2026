@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "signature": "cbaa564853ff15622ac9e9e377edb04c7512b166050d4c719a60de9eb61a5914",
+  "months": 11,
+  "training_groups": 99,
+  "variants": [
+    "no_season",
+    "causal_season",
+    "oracle_season"
+  ],
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "days": 334,
+  "shape": [
+    334,
+    144,
+    2
+  ],
+  "dtype": "float64",
+  "units": "kW",
+  "issue": "00:00; origin is start of interval; actual indices strictly below origin",
+  "archive_sha256": "6f7bcf27e420e2f05251820a5c1d8d1f87cd6234287e23505b33a51ae6d757b9",
+  "metadata_sha256": "3c1634e0c5b712a9fcdd477e3e52ad09f0ff89896327574bbe1eaa4019172e77"
+}

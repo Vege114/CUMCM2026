@@ -1,0 +1,16 @@
+test_bad_probability_and_parent (test_q2_stochastic_lp.StochasticLPTests.test_bad_probability_and_parent) ... ok
+test_d5a_emergency_can_charge (test_q2_stochastic_lp.StochasticLPTests.test_d5a_emergency_can_charge) ... ok
+test_empty_history_is_labelled_point_fallback (test_q2_stochastic_lp.StochasticLPTests.test_empty_history_is_labelled_point_fallback) ... ok
+test_fixed_grid_is_never_adjusted (test_q2_stochastic_lp.StochasticLPTests.test_fixed_grid_is_never_adjusted) ... ok
+test_full_battery_hard_ramp_exposes_overlap (test_q2_stochastic_lp.StochasticLPTests.test_full_battery_hard_ramp_exposes_overlap) ... ok
+test_invoice_no_tree_probability_or_auxiliary_fee (test_q2_stochastic_lp.StochasticLPTests.test_invoice_no_tree_probability_or_auxiliary_fee) ... ok
+test_paper_one_interval_example (test_q2_stochastic_lp.StochasticLPTests.test_paper_one_interval_example) ... ok
+test_replay_future_actual_cannot_change_prior_actions (test_q2_stochastic_lp.StochasticLPTests.test_replay_future_actual_cannot_change_prior_actions) ... ok
+test_scenario_donor_visibility_and_joint_residual (test_q2_stochastic_lp.StochasticLPTests.test_scenario_donor_visibility_and_joint_residual) ... ok
+test_shared_node_then_branch (test_q2_stochastic_lp.StochasticLPTests.test_shared_node_then_branch) ... ok
+test_tree_splits_by_prefix_never_future (test_q2_stochastic_lp.StochasticLPTests.test_tree_splits_by_prefix_never_future) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.033s
+
+OK

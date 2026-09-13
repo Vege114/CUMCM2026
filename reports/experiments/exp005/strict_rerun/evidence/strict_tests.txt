@@ -1,0 +1,10 @@
+test_branch_actions_exclusive_and_state_shared (test_strict_backend.StrictBackendTests.test_branch_actions_exclusive_and_state_shared) ... ok
+test_fixed_purchase_d5a_and_patch_restoration (test_strict_backend.StrictBackendTests.test_fixed_purchase_d5a_and_patch_restoration) ... ok
+test_forced_overlap_is_infeasible (test_strict_backend.StrictBackendTests.test_forced_overlap_is_infeasible) ... ok
+test_future_actual_does_not_change_prior_strict_actions (test_strict_backend.StrictBackendTests.test_future_actual_does_not_change_prior_strict_actions) ... ok
+test_one_interval_manual_cost (test_strict_backend.StrictBackendTests.test_one_interval_manual_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.108s
+
+OK

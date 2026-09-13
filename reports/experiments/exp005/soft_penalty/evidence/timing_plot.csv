@@ -1,0 +1,19 @@
+experiment,label,stage,seconds,groups,scope,source,item
+exp001,exp001,训练,5901.694830923923,165.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp001/training_metadata.json,exp001 · 训练
+exp002,exp002,训练,675.3243275849381,33.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp002/training_metadata.json,exp002 · 训练
+exp003,exp003,训练,390.40561621135566,33.0,历史训练任务累计；设备/目标数/样本数不同，仅描述,data/results/exp003/training_metadata.json,exp003 · 训练
+exp004,exp004 无季节,训练,35.342220874270424,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,exp004 无季节 · 训练
+exp004,exp004 历史季节,训练,34.712980289012194,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,exp004 历史季节 · 训练
+exp004,exp004 全年探索,训练,36.02507716487162,33.0,CPU两线程，33组累计；特征准备另计，不是端到端耗时,data/results/exp004/training_metadata.json,exp004 全年探索 · 训练
+exp001,exp001 同口径重算,调度执行,19.06835708755534,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv,exp001 同口径重算 · 调度执行
+exp002,exp002 正式风险,调度执行,907.7401532150108,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv,exp002 正式风险 · 调度执行
+exp002,exp002 同确定性,调度执行,17.69889313308522,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/baseline/exp002_q2_costs.csv,exp002 同确定性 · 调度执行
+exp003,exp003 正式,调度执行,12.398277213214897,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/dispatch_metrics.csv,exp003 正式 · 调度执行
+exp003,exp003 未校准,调度执行,12.66888682427816,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp003/dispatch_metrics.csv,exp003 未校准 · 调度执行
+exp004,exp004 无季节,调度执行,11.677327542915007,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv,exp004 无季节 · 调度执行
+exp004,exp004 历史季节,调度执行,12.273091197595932,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv,exp004 历史季节 · 调度执行
+exp004,exp004 全年探索,调度执行,12.331863418337887,334.0,主种子334日组装求解执行累计，非并行墙钟,data/results/exp004/dispatch_metrics.csv,exp004 全年探索 · 调度执行
+exp005,β=0.1,新增训练,0.0,334.0,334日；两组顺序运行，未重训。求解时间与回放时间有包含关系，不相加。,data/results/exp005/soft-penalty-beta-0.1/status.json,β=0.1 · 新增训练
+exp005,β=0.1,回放墙钟,1217.5211248330306,334.0,334日；两组顺序运行，未重训。求解时间与回放时间有包含关系，不相加。,data/results/exp005/soft-penalty-beta-0.1/status.json,β=0.1 · 回放墙钟
+exp005,β=0.01,新增训练,0.0,334.0,334日；两组顺序运行，未重训。求解时间与回放时间有包含关系，不相加。,data/results/exp005/soft-penalty-beta-0.01/status.json,β=0.01 · 新增训练
+exp005,β=0.01,回放墙钟,1400.2700899159536,334.0,334日；两组顺序运行，未重训。求解时间与回放时间有包含关系，不相加。,data/results/exp005/soft-penalty-beta-0.01/status.json,β=0.01 · 回放墙钟

@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-12T12:44:04.405177+00:00",
+  "report_scope": "Original beta=0 model; D4-A failure evidence only",
+  "visual_checks": [
+    "Eight-section narrative and three static figures inspected",
+    "Interactive chart axes readable after display-only four-decimal rounding",
+    "First/second-layer filter updates chart and 14:10 node table",
+    "Local/full-window filter updates chart extent",
+    "Desktop preview and restored native panel preview inspected"
+  ],
+  "console_errors_observed": [],
+  "viewport_override_reset": true,
+  "source_hashes_verified": 13,
+  "physical_certification": false
+}

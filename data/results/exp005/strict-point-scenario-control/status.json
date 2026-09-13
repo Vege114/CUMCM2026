@@ -1,0 +1,67 @@
+{
+  "status": "solver_stopped",
+  "failure": {
+    "date": "2025-02-23",
+    "scope": "execution",
+    "slot": 8,
+    "state": {
+      "soc": 3676.476142012336,
+      "previous_power_kw": 2110.43380469712
+    },
+    "horizon": 136,
+    "nodes": 460,
+    "stages": [
+      {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.29793425009120256,
+        "variables": 3356,
+        "integer_variables": 460,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 3.524291969370097e-12
+          }
+        ],
+        "numerical_retry_count": 0,
+        "mip_gap": 0.0,
+        "mip_dual_bound": 0.0,
+        "mip_node_count": 1,
+        "max_binary_residual": 1.1867959950590557e-13,
+        "max_exclusivity_residual": 1.4064304545228852e-12,
+        "max_overlap_kwh": 1.8947806286936004e-14
+      },
+      {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "seconds": 60.01400837500114,
+        "variables": 3356,
+        "integer_variables": 460,
+        "numerical_attempts": [
+          {
+            "status": 0,
+            "mip_feasibility_tolerance": 1e-06,
+            "max_physical_or_integrality_residual": 7.657911709097202e-05
+          },
+          {
+            "status": 1,
+            "mip_feasibility_tolerance": 1e-10,
+            "max_physical_or_integrality_residual": null
+          }
+        ],
+        "numerical_retry_count": 1,
+        "mip_gap": 0.8512594690310505,
+        "mip_dual_bound": 0.0033335483743092155,
+        "mip_node_count": 7123,
+        "max_binary_residual": 0.0,
+        "max_exclusivity_residual": 0.0,
+        "max_overlap_kwh": 0.0
+      }
+    ],
+    "status": 1
+  },
+  "completed_days": 22,
+  "seconds": 1642.0737088749884,
+  "original_code_unchanged": true
+}

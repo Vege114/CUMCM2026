@@ -1,0 +1,41 @@
+[
+  {
+    "date": "2025-02-01",
+    "planned_cost": 23813.63587510372,
+    "emergency_cost": 93.67350726162908,
+    "total_cost": 23907.309382365347,
+    "planned_kwh": 45660.510597900386,
+    "emergency_kwh": 25.291656499783887,
+    "initial_soc": 1421.7991105135516,
+    "final_soc": 1200.0,
+    "tv_kw": 24086.53160056322,
+    "plan_expected_cost": 23813.635875103722,
+    "max_overlap_kwh": 3.900879619322946e-12
+  },
+  {
+    "date": "2025-02-02",
+    "planned_cost": 51643.36945104969,
+    "emergency_cost": 7071.5033375591065,
+    "total_cost": 58714.8727886088,
+    "planned_kwh": 81309.70363241548,
+    "emergency_kwh": 2148.16873053376,
+    "initial_soc": 1200.0,
+    "final_soc": 1200.0,
+    "tv_kw": 47462.83513567782,
+    "plan_expected_cost": 51643.369451049686,
+    "max_overlap_kwh": 0.0
+  },
+  {
+    "date": "2025-02-03",
+    "planned_cost": 50041.27901744001,
+    "emergency_cost": 13118.30688564373,
+    "total_cost": 63159.58590308374,
+    "planned_kwh": 79404.12613306538,
+    "emergency_kwh": 3814.8024492443155,
+    "initial_soc": 1200.0,
+    "final_soc": 1200.0,
+    "tv_kw": 49577.611974155276,
+    "plan_expected_cost": 50041.279017440036,
+    "max_overlap_kwh": 0.0
+  }
+]

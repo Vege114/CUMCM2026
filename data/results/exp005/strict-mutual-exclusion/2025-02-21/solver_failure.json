@@ -1,0 +1,27 @@
+{
+  "date": "2025-02-21",
+  "scope": "execution",
+  "slot": 39,
+  "state": {
+    "soc": 4602.087774212393,
+    "previous_power_kw": -2864.48
+  },
+  "horizon": 105,
+  "nodes": 213,
+  "stages": [
+    {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.0752192089566961,
+      "variables": 1596,
+      "integer_variables": 213,
+      "mip_gap": 0.0,
+      "mip_dual_bound": 0.0,
+      "mip_node_count": 1,
+      "max_binary_residual": 1.7763568394002505e-15,
+      "max_exclusivity_residual": 1.4779288903810084e-12,
+      "max_overlap_kwh": 2.0842586915629605e-13
+    }
+  ],
+  "status": 0
+}
