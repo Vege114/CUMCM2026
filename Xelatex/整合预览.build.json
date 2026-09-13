@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-13T04:14:00.169944+00:00",
+  "passed": true,
+  "main_tex": "数模通用模板.tex",
+  "project_root": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/.q4-full",
+  "source_sha256": "ff942ee215ba97eb1b109fea8b62092c88cabe2f956e20818970c296e9c46071",
+  "compiled_source_sha256": "ff942ee215ba97eb1b109fea8b62092c88cabe2f956e20818970c296e9c46071",
+  "post_build_source_sha256": "ff942ee215ba97eb1b109fea8b62092c88cabe2f956e20818970c296e9c46071",
+  "pdf_sha256": "fcd9260df47eb0c3a72c438c4d0128f9cad496e4db81a9fad01654c425c44d1b",
+  "project_manifest_sha256": "ea154db6588d157b2c5c60fbbcb02964f4693fd152f24e147f1e9b5594fdc93a",
+  "engine": "xelatex",
+  "tools": {
+    "latexmk": {
+      "path": "/Library/TeX/texbin/latexmk",
+      "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    },
+    "xelatex": {
+      "path": "/Library/TeX/texbin/xelatex",
+      "version": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "/Library/TeX/texbin/latexmk",
+        "-norc",
+        "-gg",
+        "-xelatex",
+        "-e",
+        "$xelatex = 'xelatex -no-shell-escape %O %S'",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=build",
+        "数模通用模板.tex"
+      ],
+      "cwd": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/.q4-full",
+      "returncode": 0,
+      "duration_seconds": 6.026
+    }
+  ],
+  "warnings": [],
+  "allowed_warnings": [],
+  "warning_override": {
+    "patterns": [],
+    "reason": null
+  },
+  "issues": [],
+  "reproduce": "/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/vegetarianwolf/Projects/CUMCM2026/.work/math-modeling-runtime/tools/latex/scripts/latex_paper.py build /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/.q4-full/数模通用模板.tex --engine xelatex --timeout 180 --publish /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/整合预览.pdf --overwrite"
+}

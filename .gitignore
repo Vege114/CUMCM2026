@@ -75,3 +75,7 @@ paper/build/
 *.nav
 *.snm
 *.vrb
+
+# Isolated copies used to validate the Q4 chapter
+Xelatex/.q4-preview/
+Xelatex/.q4-full/

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-13T04:13:53.704712+00:00",
+  "passed": true,
+  "main_tex": "第四问预览.tex",
+  "project_root": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/.q4-preview",
+  "source_sha256": "46d19505dc54abf3e1c338a8b519141fb7562e78377337d6bc22d2e895217155",
+  "compiled_source_sha256": "46d19505dc54abf3e1c338a8b519141fb7562e78377337d6bc22d2e895217155",
+  "post_build_source_sha256": "46d19505dc54abf3e1c338a8b519141fb7562e78377337d6bc22d2e895217155",
+  "pdf_sha256": "0b4307ab01326493bebe3d37e276a312489f9690604ba66bf054a6de70f09ea9",
+  "project_manifest_sha256": "961f0bc9d0bb45fdf85d0ff890f2a8832726e04a74dc2955f095cbdc77a208dd",
+  "engine": "xelatex",
+  "tools": {
+    "latexmk": {
+      "path": "/Library/TeX/texbin/latexmk",
+      "version": "Latexmk, John Collins, 9 March 2026. Version 4.88"
+    },
+    "xelatex": {
+      "path": "/Library/TeX/texbin/xelatex",
+      "version": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "/Library/TeX/texbin/latexmk",
+        "-norc",
+        "-gg",
+        "-xelatex",
+        "-e",
+        "$xelatex = 'xelatex -no-shell-escape %O %S'",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-outdir=build",
+        "第四问预览.tex"
+      ],
+      "cwd": "/Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/.q4-preview",
+      "returncode": 0,
+      "duration_seconds": 1.87
+    }
+  ],
+  "warnings": [],
+  "allowed_warnings": [],
+  "warning_override": {
+    "patterns": [],
+    "reason": null
+  },
+  "issues": [],
+  "reproduce": "/Users/vegetarianwolf/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/vegetarianwolf/Projects/CUMCM2026/.work/math-modeling-runtime/tools/latex/scripts/latex_paper.py build /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/.q4-preview/第四问预览.tex --engine xelatex --timeout 180 --publish /Users/vegetarianwolf/Projects/CUMCM2026/Xelatex/第四问预览.pdf --overwrite"
+}
