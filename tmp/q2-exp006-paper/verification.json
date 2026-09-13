@@ -1,0 +1,17 @@
+{
+  "source": "exp006/primary",
+  "source_workbook_sha256": "eeb1c9ea684522df2787423ebc462d3c059e5108f9df443a601de779c1971938",
+  "checked_days": 334,
+  "checked_slots": 48096,
+  "checked_workbook_emergency_rows": 2963,
+  "specified_purchase_values": 24,
+  "specified_battery_blocks": 24,
+  "specified_soc_values": 8,
+  "specified_emergency_intervals": 37,
+  "tables_inserted": 11,
+  "actual_cost": 14066257.477256786,
+  "physical_and_projected_execution_check": "passed",
+  "workbook_full_readback": "passed",
+  "other_sections_unchanged": true,
+  "new_optimization_run": false
+}

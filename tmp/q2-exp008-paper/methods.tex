@@ -1,0 +1,169 @@
+% !TeX root = ../数模通用模板.tex
+% Final source: exp008/final_selection.json, scenario 2.
+\section{问题二的模型建立与求解}
+\label{sec:q2-prediction}
+
+问题二要求在每日0时制定全天购电计划，负载与光伏实况则在执行过程中逐步揭晓。计划电量全额计费，供电缺口另按当时电价的5倍补购，因此仅降低预测均方误差不足以保证调度费用最小。本文采用实验八最终方案，将历史树模型融合预测、共同充放电模式规划与固定模式下的购电精修相结合，在控制模式变化次数的同时，使购电决策充分考虑电池的实际响应。
+
+\subsection{融合预测与历史误差路径}
+\subsubsection{历史特征与树模型融合}
+
+设$d$为日期，$t=1,\ldots,144$为日内十分钟区间，$\Delta t=1/6$\,h。以$L_{d,t}$、$V_{d,t}$分别表示负载和光伏功率，净需求电量为$n_{d,t}=(L_{d,t}-V_{d,t})\Delta t$。预测仅使用附件2中发布时已经观测的历史数据及日历信息，电价使用附件1给定的固定分时电价$p_t$。
+
+分别为负载和光伏构造31维特征，包括昨日与上周同槽值、近3日和7日均值、近7日标准差、昨日整日统计量，以及日内一阶、二阶和星期正余弦编码。由直方图梯度提升树（HGB）与极端随机树（ExtraTrees）分别预测绝对功率，再作固定等权融合：
+\begin{equation}\label{eq:q2-blend}
+ \widehat y^{\mathrm{raw}}_{d,t}
+ =\tfrac12 f^{\mathrm{HGB}}_{k,y}(\mathbf x_{d,t})
+ +\tfrac12 f^{\mathrm{ET}}_{k,y}(\mathbf x_{d,t}),\qquad y\in\{L,V\}.
+\end{equation}
+式中，$k$为目标月份。HGB逐轮拟合残差并累加弱回归树，ExtraTrees对随机化分裂树的输出取平均；固定融合利用两类模型的差异，不依据当日实测结果改变权重。两通道均作非负截断；光伏日照范围由此前28个完整日正发电槽的并集确定，并向两侧各扩展20\,min，范围外置零。
+
+模型按月重新训练，月初之前最近7个完整日用于验证，更早且可构造特征的历史日用于训练。样本权重按90日半衰期衰减并归一化；当月模型参数冻结，每日只更新历史特征。HGB使用独立的历史验证周早停，ExtraTrees验证周仅用于误差记录。主要参数见表\ref{tab:q2-forecast-setup}。
+\begin{table}[htbp]
+\centering\small
+\caption{融合预测模型的固定参数}\label{tab:q2-forecast-setup}
+\begin{tabularx}{\textwidth}{p{2.2cm}X}
+\toprule 模型 & 参数设置\\\midrule
+HGB & 学习率0.08，最多100轮，最多15个叶节点，叶样本至少50，L2正则2；早停耐心10，改进容差$10^{-7}$\\
+ExtraTrees & 128棵树，叶样本至少10，全部特征参与候选分裂，不作bootstrap采样\\
+共同设置 & 平方误差准则，随机种子42，负载与光伏分别建模，原始预测各占$1/2$\\
+\bottomrule\end{tabularx}
+\end{table}
+
+\subsubsection{滚动残差校准与日偏差修正}
+
+对融合输出统一进行残差校准。每个通道使用此前至多28个已完成发布日的预测与实测，构造10维特征$\mathbf h_{d,t}$：截距、原始预测、昨日/上周/近3日同槽值与原始预测之差、另一通道预测，以及日内两阶正余弦。功率特征除以1000\,kW缩放，以历史实测减当时原始预测的缩放残差为响应，求解
+\begin{equation}\label{eq:q2-ridge}
+ \widehat{\boldsymbol\theta}_d
+ =(H_d^{\mathsf T}W_dH_d+\Lambda)^{-1}H_d^{\mathsf T}W_d\mathbf r_d,
+ \qquad \Lambda=\operatorname{diag}(2,20,\ldots,20).
+\end{equation}
+式中，$W_d$采用14日半衰期权重；光伏实测与预测均不超过1\,kW的历史槽额外乘0.1。将$1000\mathbf h_{d,t}^{\mathsf T}\widehat{\boldsymbol\theta}_d$还原为功率修正，并裁剪至$\pm\max\{100,3\sigma_{r,d}\}$\,kW，其中$\sigma_{r,d}$为该通道校准历史残差的均方根。校准后再次作非负与日照范围约束，记为$\widehat y^{\mathrm R}_{d,t}$。
+
+考虑负载日均偏差的短期延续性，对负载再加入昨日完整日平均残差的一半：
+\begin{equation}\label{eq:q2-memory}
+ \widehat L_{d,t}=\left[\widehat L^{\mathrm R}_{d,t}
+ +\frac{0.5}{144}\sum_{s=1}^{144}
+ (L_{d-1,s}-\widehat L^{\mathrm R}_{d-1,s})\right]_+,
+ \qquad \widehat V_{d,t}=\widehat V^{\mathrm R}_{d,t}.
+\end{equation}
+这里$[x]_+=\max(x,0)$。昨日残差相对于记忆修正前的岭校准输出计算，避免递归叠加。无历史发布记录时直接保留原始输出。完整管线在评价期的净需求功率RMSE为357.162\,kW。
+
+\subsubsection{整日历史误差场景}
+
+每日0时，从此前28个完整日取得各自发布预测的净需求误差，叠加到当前预测上，形成$K=28$条等权路径：
+\begin{equation}\label{eq:q2-paths}
+ \varepsilon_{h,t}=[(L_{h,t}-V_{h,t})-(\widehat L_{h,t}-\widehat V_{h,t})]\Delta t,
+ \qquad n^{(j)}_{d,t}=(\widehat L_{d,t}-\widehat V_{d,t})\Delta t+\varepsilon_{h_j,t}.
+\end{equation}
+每条路径保留同一历史日144槽的时间顺序以及负载、光伏的共同误差。正式预测发布前的一月误差使用明确标记的周期预测冷启动，不以事后拟合值替代历史发布值。为控制整数规划规模，先从按日期排序的28条路径中等距选取3条确定模式，再用全部28条路径精修购电。
+
+\subsection{共同模式与日前购电的联合规划}
+\subsubsection{物理约束与模式变化预算}
+
+以下省略日期下标。以$g_t\ge0$表示各场景共享的计划购电量，$u_t\in\{0,1\}$表示允许充电或放电的共同模式：$u_t=1$允许充电，$u_t=0$允许放电，两种模式均可实际空闲。场景$j$下的充、放电量、紧急购电、剩余电量与内部储电量分别记为$c_{j,t},d_{j,t},e_{j,t},w_{j,t},E_{j,t}$，满足
+\begin{equation}\label{eq:q2-scenario-physics}
+ \begin{aligned}
+ g_t+d_{j,t}+e_{j,t}-c_{j,t}-w_{j,t}&=n^{(j)}_t,\\
+ E_{j,t+1}&=E_{j,t}+\eta_c c_{j,t}-d_{j,t}/\eta_d,\\
+ 1200\le E_{j,t}\le10800,\quad
+ 0\le c_{j,t}&\le Uu_t,\quad0\le d_{j,t}\le U(1-u_t).
+ \end{aligned}
+\end{equation}
+式中，$U=5000\Delta t=833.3333$\,kWh。将题面90\%解释为往返效率，取$\eta_c=\eta_d=\sqrt{0.9}$；场景初态均为当日实际储电量。引入辅助二元变量$v_{j,t}$及$M_{j,t}=[n^{(j)}_t]_+$，增加
+\begin{equation}\label{eq:q2-no-emergency-charge}
+ 0\le c_{j,t}\le Uv_{j,t},\qquad
+ 0\le e_{j,t}\le M_{j,t}(1-v_{j,t}),\qquad w_{j,t}\ge0,
+\end{equation}
+从而禁止同槽紧急购电与充电同时发生。模式阶段的购电上界取$g_t\le[\max_j n^{(j)}_t]_++U$。
+
+为限制频繁改变充放电方向，设$z_t=|u_t-u_{t-1}|$为二元模式变化变量，使用精确异或约束：
+\begin{equation}\label{eq:q2-mode-budget}
+ \begin{gathered}
+ z_t\ge u_t-u_{t-1},\quad z_t\ge u_{t-1}-u_t,\\
+ z_t\le u_t+u_{t-1},\quad z_t\le2-u_t-u_{t-1},\qquad
+ \sum_{t=1}^{144}z_t\le8.
+ \end{gathered}
+\end{equation}
+其中$u_0$继承上日末计划模式，跨午夜变化计入当日预算。模式最短保持1槽，即10\,min；8次预算是本文的操作约束，并非题面硬件参数。实际SOC与计划模式分别跨日传递，计划模式不能用最近一次非空实际动作方向代替。
+
+\subsubsection{三场景混合整数规划}
+
+对选取的$K_0=3$条场景路径，在式\eqref{eq:q2-scenario-physics}--\eqref{eq:q2-mode-budget}约束下最小化
+\begin{equation}\label{eq:q2-mip-objective}
+ \sum_t p_tg_t+\frac1{K_0}\sum_{j=1}^{K_0}
+ \left[\sum_t\{5p_te_{j,t}+\lambda(c_{j,t}+d_{j,t})\}
+ -\tau_{\mathrm M}(E_{j,145}-1200)\right].
+\end{equation}
+式中，吞吐权重$\lambda=0.002$元/kWh；普通日$\tau_{\mathrm M}=\min_t p_t/\eta_c$，评价期最后一日取0。终值反映跨日库存的近似价值，问题二不要求日末储电量等于日初值。换向不另加软罚，吞吐罚与终值均不计入实际购电账单。
+
+该混合整数规划共享购电量与模式，但各场景的未来储能动作可随整条路径改变，因此只用于生成初始计划和模式，不能视为严格非预见性多阶段随机规划。求解时间上限为每日5\,s，目标相对间隙0.2\%；时间耗尽时保留经过可行性检查的当前解。
+
+\subsection{固定模式购电精修与实际执行}
+\subsubsection{与实际响应一致的购电精修}
+
+固定上述模式$\mathbf u$，对全部28条路径逐槽模拟实际响应。令$B_{j,t}=g_t-n^{(j)}_t$，则
+\begin{equation}\label{eq:q2-feedback}
+ \begin{aligned}
+ c_{j,t}&=u_t\min\{[B_{j,t}]_+,U,(10800-E_{j,t})/\eta_c\},\\
+ d_{j,t}&=(1-u_t)\min\{[-B_{j,t}]_+,U,(E_{j,t}-1200)\eta_d\},\\
+ e_{j,t}&=[-B_{j,t}-d_{j,t}]_+,\qquad
+ w_{j,t}=[B_{j,t}-c_{j,t}]_+.
+ \end{aligned}
+\end{equation}
+储电量按式\eqref{eq:q2-scenario-physics}递推。该规则仅在存在盈余时充电、存在缺口时放电，幅度由供需余缺、功率及容量共同决定，不再受某条规划意图动作的上限限制；模式不允许时动作取零，最终执行死区为0。
+
+将$c,d,e,E$视为购电向量$\mathbf g$经式\eqref{eq:q2-feedback}产生的函数，求解
+\begin{equation}\label{eq:q2-refine}
+ \begin{aligned}
+ \min_{\mathbf g\ge0}\ J(\mathbf g;\mathbf u)
+ ={}&\sum_t p_tg_t+\frac1{28}\sum_{j=1}^{28}\Bigl[
+ \sum_t\{5p_te_{j,t}(\mathbf g)\\
+ &+\lambda(c_{j,t}(\mathbf g)+d_{j,t}(\mathbf g))\}
+ -\tau_{\mathrm R}(E_{j,145}(\mathbf g)-1200)\Bigr].
+ \end{aligned}
+\end{equation}
+普通日$\tau_{\mathrm R}=0.45$元/储电kWh，最后一日为0。以整数规划购电量为初值，通过裁剪状态递推的反向求导计算分段梯度，采用L-BFGS-B进行至多120次迭代。该目标非光滑且非凸，得到的是固定模式下的局部数值解；模式选择和购电精修的终值系数不同，二者共同构成分步近似算法，不能合并解释为一个已获全局最优证明的模型。
+
+\subsubsection{计划锁定与真实结算}
+
+精修完成后，0时锁定全天144槽购电量和允许模式。实际运行以当前槽观测的$n_t$替换场景净需求，执行式\eqref{eq:q2-feedback}并连续更新真实SOC。日内不修改购电计划，储能无法补足的缺口全部紧急购电；未利用的剩余$w_t$可包含计划购电盈余，不能一概解释为弃光。评价期真实费用为
+\begin{equation}\label{eq:q2-real-cost}
+ C_2=\sum_{d,t}p_tg_{d,t}+5\sum_{d,t}p_te_{d,t}.
+\end{equation}
+其中不含吞吐罚、终端库存抵扣、售电收益或日内调整费。实际动作依赖当前观测及历史状态，场景未来动作不直接用于执行。
+
+按附件5，对2025年2月1日至12月31日334天、48096个十分钟槽评价。初态沿用一月预热结果$E_{1}=1421.7991105$\,kWh，初始允许模式为充电、已保持1槽；此后连续传递各日真实末SOC与末计划模式。全年逐槽核验的供电平衡残差为0，最大SOC递推残差为$9.09\times10^{-13}$\,kWh，跨日SOC残差为0，同时充放电和紧急购电充电槽数均为0。
+
+\clearpage
+\subsection{指定日期购电与储能结果}
+
+按题面表1、表2的排列方式，列出四个指定日的六个十分钟计划购电量、全天计划购电量和含紧急费的全天费用，以及六个4小时段的实际充放电量与日初、日末储电量。电量单位为kWh，费用单位为元；表中保留四位小数，合计使用原始精度计算。4小时内充、放电量同时为正表示该段内不同时槽分别发生充放电，不表示同槽同时动作。
+
+% SPECIFIED_TABLES
+
+\clearpage
+\subsection{紧急购电与综合评价}
+
+相邻紧急购电槽合并为连续区间。四个指定日共出现7个连续区间，全部列于表\ref{tab:q2-emergency-all}，各日期并列展示，横向同行不表示同时发生事件。
+
+% EMERGENCY_TABLE
+
+\subsubsection{费用与运行强度比较}
+
+% COMPARISON_TABLE
+
+实验八全年计划费为12634934.21元，紧急费为567047.74元，总费用13201981.95元。相较实验六正式主组，总费用减少864275.53元，降幅6.1443\%；实际非空换向从2729次降至2533次，减少7.1821\%。四个指定日中，6月21日紧急电量为212.0980\,kWh，集中在06:40--07:20，说明年度改进并不意味着每个日期的紧急电量均下降。
+
+非空换向先删除零动作再统计方向变化；启停段数则分别统计连续充电段和放电段的起点。后者由3791增至3898，活跃槽由23028增至37211，表明减少换向并不等于所有操作频度下降。实际非空方向序列是允许模式序列删除空闲后的子序列，全年8次/日预算给出2672次的上界，实测2533次并非直接使用预算值；因空闲可跨午夜，不能把该结论机械地解释为每一日实际换向均不超过当天计划变化数。
+
+作为补充，以$P_i=6(c_i-d_i)$计算连续评价期功率总变差$TV=\sum_{i=2}^{48096}|P_i-P_{i-1}|$，以$N_{\mathrm{EFC}}=(\eta_c\sum_i c_i+\sum_i d_i/\eta_d)/(2\times12000)$计算等效满循环。两项均有所下降，但它们只是运行强度指标，尚不能转化为电池寿命收益。历史比较中预测器与控制器同时改变，费用降幅亦不能单独归因于融合预测或模式预算。
+
+\subsubsection{结果保存与适用范围}
+
+334次模式规划均取得可行解，其中53次达到时间上限；平均相对间隙为0.1642\%，最大1.1202\%。购电精修59日满足求解器收敛条件，275日达到120次迭代上限。上述间隙仅针对模式阶段的代理目标，不能作为最终全年费用的最优误差界。
+
+完整策略采用实验八最终归档的\texttt{result2.xlsx}：“计划购电量”保存334日逐十分钟计划及日费用，“充放电量”保存4小时汇总和日初、日末储电量，“紧急购电量”保存全部连续补购区间。本文表格均由同一最终轨迹汇总，使用实际执行的充放电量与账单。
+
+本方案在相同物理与结算口径下同时降低费用和换向次数，但仍有三点限制：历史场景仅覆盖最近28日，难以充分表示罕见误差；模式规划具有场景未来可见的近似，购电精修也未取得全局最优保证；模型在已反复分析的2025年度上开发，正式种子仅为42，尚无独立年份与多种子稳定性证据。因此，6.1443\%应理解为本评价期的实测改善，而非未来年度的收益保证。
+\clearpage
