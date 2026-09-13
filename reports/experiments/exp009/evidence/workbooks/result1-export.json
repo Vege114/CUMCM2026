@@ -1,0 +1,32 @@
+{
+  "scenario": "1",
+  "output": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result1.xlsx",
+  "output_sha256": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+  "source_archive": {
+    "path": "data/results/exp009/q1/cost_only.json",
+    "sha256": "94db533f74c89178017f496c0a15fdeaa454420e275b301a5b5d97a6fd079f1a",
+    "bytes": 37027
+  },
+  "payload_sha256": "93813ebf48c67242ac7b841cbdda843e653d4d3333d9e74da20eb0df6cd39755",
+  "final_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+  "template_sha256": "28360e0974e7d6065394a8aba4e14a86773ae0036cc7d3ea1b211b515b03d688",
+  "template_sheets": [
+    "计划购电量",
+    "充放电量"
+  ],
+  "output_duplicate": "/Users/vegetarianwolf/Projects/CUMCM2026/outputs/exp009-cost-only-control/result1.xlsx",
+  "duplicate_sha256": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+  "units": "purchase, charge, discharge and SOC in kWh; settled bill in yuan",
+  "fee_semantics": "Each daily total bill repeats on original and final purchase sheets; count it only once.",
+  "q1_stage": 1,
+  "prior_exp008_goal_gate_applied": false,
+  "export_complete": true,
+  "independent_cell_and_visual_QA": "passed; see independent_cell_audit.json, saved_workbook_audit.json and visual_review.json",
+  "current_final_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+  "payload_metadata_refresh": {
+    "reason": "Root corrected only deterministic Q1 comparison seed from42 to null; workbook_data and source archive references are exactly unchanged",
+    "original_export_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+    "new_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+    "workbook_data_and_source_archive_unchanged": true
+  }
+}

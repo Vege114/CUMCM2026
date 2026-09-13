@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "reviewer": "independent audit subagent",
+  "method": "All13 PNG figures opened using view_image and visually inspected; SVG serialized point counts independently parsed in generator.",
+  "reviewed_pngs": [
+    {
+      "path": "reports/experiments/exp009/figures/battery/q1_deterministic_144_points.png",
+      "sha256": "3f8808a65497a0f28a9b1fad42b9713611553ee95375d5eb55a5c006a7ae5e51"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q2_all_48096_points.png",
+      "sha256": "b58cdd62250ca1716c807b605302dda42151f127fea45789520e0988423e75cf"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q2_random_days.png",
+      "sha256": "991e042a570ff77cc6f72d989cad0c27b71aaac727cffa81823f09f9487dc856"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q2_specified_days.png",
+      "sha256": "57dc32cf3390e2beb0da8d8b2ee40843ec87ea6220de016ebef0f67505b6183e"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q3_all_48096_points.png",
+      "sha256": "aa666f2401f9bd530516c00f5765ac74c5efaa81df08f3f02ce62b65bc09c323"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q3_random_days.png",
+      "sha256": "8dc9d078eb8b33bd8e16a2184a33a71ad57face7832a0fcc7abb33608bacde65"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q3_specified_days.png",
+      "sha256": "f0f3f762d219450b4ecce2dd0f8d35da1df4d2eb2c507942b132d079b918f848"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q4_2_all_48096_points.png",
+      "sha256": "7f9a95adeae29532139436bfd12d4f9e088402b2737789cb2695e07ca9b34afd"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q4_2_random_days.png",
+      "sha256": "c971ee1644592defc410820243bc0812c6df4d9088becd3845d8627e9280c52b"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q4_2_specified_days.png",
+      "sha256": "e3667702322abbfd3395a0aaf1f82a91942cdd31991d33a839e8a5e90e4d0084"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q4_3_all_48096_points.png",
+      "sha256": "5ac5b79e8e45008543246586b1414653b50da8d45f38d4b22d147b69816202c2"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q4_3_random_days.png",
+      "sha256": "2b09556f736b2aba7c64027ca731647882ef0b622369b883fbacb98f53eb8542"
+    },
+    {
+      "path": "reports/experiments/exp009/figures/battery/q4_3_specified_days.png",
+      "sha256": "cfbb72609d243a8f9dcd539eb0a044f15872c50d3d364d5075590c9c1192bfb2"
+    }
+  ],
+  "checks": [
+    "Chinese titles/axis labels/legends readable and not clipped",
+    "Common +/-5450kW y limits, +/-5000kW hardware lines and zero visible",
+    "exp008 gray dashed daily and exp009 blue solid daily; year traces in separate matched panels",
+    "Random dates exactly2025-04-15,2025-06-07,2025-12-06,2025-12-25",
+    "Specified dates exactly2025-03-20,2025-06-21,2025-09-23,2025-12-21",
+    "Annual range334days with warmup excluded, each original48096-point path retained",
+    "Q1 unlabelled calendar date: deterministic144-point day and hourly endpoints",
+    "No curve smoothing or visual selection of favorable dates"
+  ],
+  "limitations": [
+    "Dense annual traces are intentionally not downsampled; CSV andSVG retain individual10-minute points.",
+    "This is static artifact review, not browser interaction testing."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "scenario": "4-2",
+  "output": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result4-2.xlsx",
+  "output_sha256": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+  "source_archive": {
+    "path": "data/results/exp009/q4_2_cost_only/full334/dispatch_4-2.npz",
+    "sha256": "d6a06298f551a39e50c6393ca90c28ae7917db8d05941312a5729525fd15c96b",
+    "bytes": 2180823
+  },
+  "payload_sha256": "4ef226d51a56fb5da9ae8bee0be46e14ef70e5865fa87b96b78d05397f9b1d55",
+  "final_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+  "template_sha256": "1c26494cfc6d754e0bd9bff7e13e1126a73d2d2da6c5336eb251d89b9a1a1a47",
+  "template_sheets": [
+    "计划购电量",
+    "充放电量",
+    "紧急购电量"
+  ],
+  "output_duplicate": "/Users/vegetarianwolf/Projects/CUMCM2026/outputs/exp009-cost-only-control/result4-2.xlsx",
+  "duplicate_sha256": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+  "units": "purchase, charge, discharge and SOC in kWh; settled bill in yuan",
+  "fee_semantics": "Each daily total bill repeats on original and final purchase sheets; count it only once.",
+  "q1_stage": null,
+  "prior_exp008_goal_gate_applied": false,
+  "export_complete": true,
+  "independent_cell_and_visual_QA": "passed; see independent_cell_audit.json, saved_workbook_audit.json and visual_review.json",
+  "layout_refinement": {
+    "reason": "Prevent the kWh unit closing bracket wrapping alone in the daily total header",
+    "changed_columns": "EP:EQ on purchase sheets only",
+    "previous_sha256": "e696e6bcf32d67df0c09fcb443a0a271111fecdacfe8aff7772c8ebb5ec696d9",
+    "values_or_formulas_changed": false
+  },
+  "current_final_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+  "payload_metadata_refresh": {
+    "reason": "Root corrected only deterministic Q1 comparison seed from42 to null; workbook_data and source archive references are exactly unchanged",
+    "original_export_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+    "new_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+    "workbook_data_and_source_archive_unchanged": true
+  }
+}

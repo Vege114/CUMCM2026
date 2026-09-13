@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "day": 31,
+      "future_mutation_after_slot": 1,
+      "passed": true
+    },
+    {
+      "day": 31,
+      "future_mutation_after_slot": 36,
+      "passed": true
+    },
+    {
+      "day": 31,
+      "future_mutation_after_slot": 72,
+      "passed": true
+    },
+    {
+      "day": 31,
+      "future_mutation_after_slot": 108,
+      "passed": true
+    },
+    {
+      "day": 31,
+      "future_mutation_after_slot": 143,
+      "passed": true
+    },
+    {
+      "day": 32,
+      "future_mutation_after_slot": 1,
+      "passed": true
+    },
+    {
+      "day": 32,
+      "future_mutation_after_slot": 36,
+      "passed": true
+    },
+    {
+      "day": 32,
+      "future_mutation_after_slot": 72,
+      "passed": true
+    },
+    {
+      "day": 32,
+      "future_mutation_after_slot": 108,
+      "passed": true
+    },
+    {
+      "day": 32,
+      "future_mutation_after_slot": 143,
+      "passed": true
+    },
+    {
+      "day": 33,
+      "future_mutation_after_slot": 1,
+      "passed": true
+    },
+    {
+      "day": 33,
+      "future_mutation_after_slot": 36,
+      "passed": true
+    },
+    {
+      "day": 33,
+      "future_mutation_after_slot": 72,
+      "passed": true
+    },
+    {
+      "day": 33,
+      "future_mutation_after_slot": 108,
+      "passed": true
+    },
+    {
+      "day": 33,
+      "future_mutation_after_slot": 143,
+      "passed": true
+    }
+  ],
+  "fixed_q_and_mode_mask_locked_at_midnight": true,
+  "no_solver_rerun": true
+}

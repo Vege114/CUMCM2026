@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "all_four_screenshots_visually_reviewed": true,
+  "widths": [
+    736,
+    360
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "screenshot_hashes": {
+    "comparison-360-dark.png": "fdb650572ccddd7bd39b2229f6ee480b035f0703d15d8ec7e561770c451d226c",
+    "comparison-360-light.png": "17b9a2596bb82531f1bc2652fbd4cb83904711d8eaba415a4cd949600e9a8d63",
+    "comparison-736-dark.png": "6aba3f7141c569162262d65f696f17ccb78cd912bc9ac8b0efaf4ac075739785",
+    "comparison-736-light.png": "e7019da343c009557e63451912f6c9aa9d5b13e9d94faa24bb500f4edbea6855"
+  },
+  "HTML_sha256": "e9c016918128d1448f9011639b808a974e112fc4758027273b779a76a2931d90",
+  "browser_qa_sha256": "7ee43cc434264a3e316f90a07f74f6054435396e59513e6ded28b677afa5f4f9",
+  "data_audit_sha256": "39f8232a6d10b89323faecb8466cf004b2dd362df9a6464003ac33a4430cdc5d",
+  "checks": [
+    "Separate Q1 single-day and annual cost axes",
+    "Both versions have stable series colors and forecast marks at identical coordinates",
+    "All original144 points per curve retained in four common random days; 1152 source values",
+    "No labels overlap or clip at736/360",
+    "Light/dark foreground contrast and dashed009 versus solid008 curves readable",
+    "Historical001–006 include005 different-physics footnote;007 excluded",
+    "Series toggle, exact-cursor cross-series markers and touch/click pinning passed"
+  ],
+  "frozen_source_files": [
+    "experiments/exp009/inline_comparison.py",
+    "experiments/exp009/inline_comparison.template.html",
+    "experiments/exp009/inline_comparison_visual_qa.cjs"
+  ]
+}

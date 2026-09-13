@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "reason": "deterministic Q1 comparison seed42 corrected to null",
+  "current_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+  "all_five_workbook_inputs_and_archives_unchanged": [
+    {
+      "scenario": "1",
+      "input_sha256": "93813ebf48c67242ac7b841cbdda843e653d4d3333d9e74da20eb0df6cd39755",
+      "output_sha256": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+      "archive_sha256": "94db533f74c89178017f496c0a15fdeaa454420e275b301a5b5d97a6fd079f1a",
+      "unchanged": true
+    },
+    {
+      "scenario": "2",
+      "input_sha256": "51e057e9cc1b7d0d6af50911b22a7f68d2e61ef794a2dfc88aeae10dbc76563a",
+      "output_sha256": "8b7412780370da3b700166248be7aab072db4195b6599ce6954a6c224ad79a84",
+      "archive_sha256": "3492795fe18efc18bba89a83ba6ae3155e4ded82c39de992ab13c408a4f60024",
+      "unchanged": true
+    },
+    {
+      "scenario": "3",
+      "input_sha256": "0bfb2516c683cb39e9faf3d904369d0dd553bb9fe7f82503c986e4c2556942e1",
+      "output_sha256": "b10fbea9d786729c26f385a4d69f979375f400c0b457fef12eebe6515dfbe01a",
+      "archive_sha256": "25096216ccf761237f43c28566652d12fbde2c97959ce0f50db9e433064b0e46",
+      "unchanged": true
+    },
+    {
+      "scenario": "4-2",
+      "input_sha256": "4ef226d51a56fb5da9ae8bee0be46e14ef70e5865fa87b96b78d05397f9b1d55",
+      "output_sha256": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+      "archive_sha256": "d6a06298f551a39e50c6393ca90c28ae7917db8d05941312a5729525fd15c96b",
+      "unchanged": true
+    },
+    {
+      "scenario": "4-3",
+      "input_sha256": "5eceac043453f663fe78afd0d1b79472fd8f3660f4298782f77115a12225f73f",
+      "output_sha256": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993",
+      "archive_sha256": "eab3882ae55be1e31ada4d3718285046dcd7d48b9a3018c86b897ea1c6282d1b",
+      "unchanged": true
+    }
+  ],
+  "workbooks_rewritten": false
+}

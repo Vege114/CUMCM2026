@@ -1,0 +1,300 @@
+{
+  "passed": true,
+  "errors": [],
+  "source_commit_verified": true,
+  "code_commit": "50415037a399f9ee81fd2cb3a1b3ff36ac217078",
+  "checks": [
+    "all five archives and actual physics/billing",
+    "raw/source byte SHA256",
+    "all local Markdown links",
+    "eight main template sections",
+    "offline desktop/mobile browser",
+    "comparison arithmetic",
+    "exp008 tracked preservation",
+    "five workbooks independent cell/live formula/visual QA bound to current payload"
+  ],
+  "local_links": [
+    {
+      "source": "report.md",
+      "target": "data_hashes.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "record.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../../registry/exp009.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/exp008_exp009_cost.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/method_control_flow.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "record.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/figures/forecast/monthly_metrics.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/figures/forecast/lead_metrics.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/figures/forecast/daily_energy_metrics.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/evidence/other_question_forecasts.csv",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/evidence/forecast/annual_metrics.csv",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/evidence/forecast/monthly_metrics.csv",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/evidence/forecast/lead_metrics.csv",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/evidence/forecast/README.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/monthly_cost.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q1_deterministic_144_points.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q2_all_48096_points.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q2_random_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q2_specified_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q3_all_48096_points.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q3_random_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q3_specified_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q4_2_all_48096_points.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q4_2_random_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q4_2_specified_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q4_3_all_48096_points.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q4_3_random_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/battery/q4_3_specified_days.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "evidence/battery/final_evidence.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/runtime.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "specified_dates.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "result1.xlsx",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "result2.xlsx",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "result3.xlsx",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "result4-2.xlsx",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "result4-3.xlsx",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/history_cost.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/history_forecast.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/method_control_flow.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/figures/report/three_layer_control.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/evidence/three_layer_control_comparison.csv",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "figures/report/runtime.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "../exp008/figures/report/historical_runtime_descriptive.png",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "evidence/templates/report.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "evidence/workbooks/README.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "evidence/battery/final_evidence.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "data_hashes.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "tests.txt",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "evidence/delivery_qa.json",
+      "exists": true
+    },
+    {
+      "source": "specified_dates.md",
+      "target": "result1.xlsx",
+      "exists": true
+    },
+    {
+      "source": "specified_dates.md",
+      "target": "result2.xlsx",
+      "exists": true
+    },
+    {
+      "source": "specified_dates.md",
+      "target": "result3.xlsx",
+      "exists": true
+    },
+    {
+      "source": "specified_dates.md",
+      "target": "result4-2.xlsx",
+      "exists": true
+    },
+    {
+      "source": "specified_dates.md",
+      "target": "result4-3.xlsx",
+      "exists": true
+    }
+  ],
+  "file_count": 305,
+  "artifact_bytes": 107424659,
+  "source_sha256": "df0e506a2f2705b1b4b35e6915b1f995a7b3060d8b0f4fcd31068cbad6938e28",
+  "report_sha256": "91cfbaa1aa15dc07f8897987457199c8bdafc7cb79ed0094f0c2f6f99b035143",
+  "html_sha256": "6256a126c15f2f4518e8c1a0a210203c3302b975ba74d998526429286f77b2fe",
+  "workbooks": {
+    "1": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+    "2": "8b7412780370da3b700166248be7aab072db4195b6599ce6954a6c224ad79a84",
+    "3": "b10fbea9d786729c26f385a4d69f979375f400c0b457fef12eebe6515dfbe01a",
+    "4-2": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+    "4-3": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993"
+  }
+}

@@ -1,0 +1,2192 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>exp009 费用目标对照</title><style>
+    :root{color-scheme:light;--ink:#233440;--muted:#5c6b75;--rule:#dce3e7;--accent:#27647b}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;font-size:16px}header{border-bottom:1px solid var(--rule);padding:16px 24px}header span{color:var(--muted)}.layout{max-width:1440px;margin:auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:36px;padding:30px 32px}nav{align-self:start;position:sticky;top:20px;max-height:90vh;overflow:auto;font-size:14px}nav a{display:block;padding:5px 0;color:var(--muted);text-decoration:none}nav a:hover{color:var(--accent)}main{max-width:1100px;min-width:0}h1{font-size:30px;line-height:1.45;margin:0 0 28px}h2{font-size:25px;border-top:1px solid var(--rule);padding-top:30px;margin-top:44px}h3{font-size:20px;margin-top:32px}h4{font-size:17px}a{color:var(--accent)}p{margin:14px 0}strong{font-weight:600}img{display:block;max-width:100%;height:auto;margin:18px auto}.equation img{max-height:140px;width:auto;margin-left:0}.table-scroll{overflow-x:auto;margin:18px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6}th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}th{background:#edf3f6;font-weight:600;white-space:nowrap}td{overflow-wrap:anywhere}.numeric{white-space:nowrap;font-variant-numeric:tabular-nums}pre{background:#f3f6f8;padding:18px;overflow:auto;font-size:13px}code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.88em}blockquote{margin:16px 0;padding-left:16px;border-left:3px solid var(--rule)}button{font:inherit;font-size:14px;background:white;border:1px solid #b3c3cb;border-radius:4px;padding:6px 12px;color:var(--accent);cursor:pointer}footer{border-top:1px solid var(--rule);margin-top:40px;padding:25px;color:var(--muted)}@media(max-width:800px){.layout{display:block;padding:20px 16px}nav{position:static;max-height:none;display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}nav a{padding:0}h1{font-size:25px}h2{font-size:22px}body{font-size:15px}th,td{padding:7px 9px}}@media print{nav,header button{display:none}.layout{display:block;padding:0}main{max-width:none}body{font-size:10pt}h2{break-before:page}img,table{break-inside:avoid}.table-scroll{overflow:visible}}
+    </style></head><body><header><b>exp009</b> <span>数学建模实验记录</span> <button onclick="window.print()">打印</button></header><div class="layout"><nav aria-label="章节目录"><a href="#1">问题1</a><a href="#2">问题2</a><a href="#3">问题3</a><a href="#4-2">问题4-2</a><a href="#4-3">问题4-3</a></nav><main><h1 id="exp009">exp009 题目指定日期完整表格</h1>
+<p>所有电量单位kWh、费用单位元。区间左闭右开；原数据右端00:10对应00:00–00:10。调整购电量填最终绝对量，非增量。</p>
+<h2 id="1">问题1</h2>
+<p><a href="result1.xlsx">完整成果工作簿</a></p>
+<h3 id="1_1">附件1给定单日</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">480.4125</td>
+<td class="numeric">480.4125</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">445.4317</td>
+<td class="numeric">445.4317</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">622.3429</td>
+<td class="numeric">622.3429</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划57,572.3963kWh；最终计划57,572.3963kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">5,059.6443</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">-0.0000</td>
+<td class="numeric">7,372.1901</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">5,087.6737</td>
+<td class="numeric">1,702.9970</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">5,097.2764</td>
+<td class="numeric">91.2681</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">6,726.9889</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">5,059.6443</td>
+<td class="numeric">2,380.3707</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量6,000.0000kWh；24:00储电量6,000.0000kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<p>无紧急购电。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">34,080.9514</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">34,080.9514</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="2">问题2</h2>
+<p><a href="result2.xlsx">完整成果工作簿</a></p>
+<h3 id="2025-03-20">2025-03-20</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">653.0479</td>
+<td class="numeric">653.0479</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">806.6187</td>
+<td class="numeric">806.6187</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">673.1856</td>
+<td class="numeric">673.1856</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划65,502.1165kWh；最终计划65,502.1165kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,732.6102</td>
+<td class="numeric">316.4594</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">2,297.5968</td>
+<td class="numeric">6,457.0036</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">5,726.3189</td>
+<td class="numeric">2,732.1701</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">4,153.7179</td>
+<td class="numeric">701.1497</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">409.1797</td>
+<td class="numeric">5,973.9510</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,164.1833</td>
+<td class="numeric">3,622.7094</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量2,214.6875kWh；24:00储电量1,721.1646kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<p>无紧急购电。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">39,665.0871</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">39,665.0871</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-06-21">2025-06-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">221.0545</td>
+<td class="numeric">221.0545</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">117.3992</td>
+<td class="numeric">117.3992</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划31,311.4214kWh；最终计划31,311.4214kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">1,722.4617</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">786.9662</td>
+<td class="numeric">2,840.3112</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">8,242.2840</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">1,877.0045</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">20.3473</td>
+<td class="numeric">5,660.8251</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">2,404.6346</td>
+<td class="numeric">3,407.8316</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量5,263.0032kWh；24:00储电量3,541.3363kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06:50-07:20</td>
+<td class="numeric">30.0000</td>
+<td class="numeric">185.7624</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">18,351.6113</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">762.4459</td>
+<td class="numeric">19,114.0572</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-09-23">2025-09-23</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">497.1734</td>
+<td class="numeric">497.1734</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">608.7931</td>
+<td class="numeric">608.7931</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">734.1704</td>
+<td class="numeric">734.1704</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">91.9721</td>
+<td class="numeric">91.9721</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划68,821.6483kWh；最终计划68,821.6483kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,189.9501</td>
+<td class="numeric">50.3729</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">2,124.0130</td>
+<td class="numeric">5,528.6714</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">4,970.2941</td>
+<td class="numeric">1,896.6157</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">2,975.7836</td>
+<td class="numeric">403.6249</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">162.1497</td>
+<td class="numeric">5,932.4771</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">2,212.0732</td>
+<td class="numeric">3,310.1544</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量2,577.3544kWh；24:00储电量3,155.9679kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14:50-15:10</td>
+<td class="numeric">20.0000</td>
+<td class="numeric">79.7201</td>
+</tr>
+<tr>
+<td>16:10-16:20</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">20.7462</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">43,184.9394</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">354.7964</td>
+<td class="numeric">43,539.7357</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-12-21">2025-12-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">57.3988</td>
+<td class="numeric">57.3988</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">947.4073</td>
+<td class="numeric">947.4073</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">871.0682</td>
+<td class="numeric">871.0682</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">684.9622</td>
+<td class="numeric">684.9622</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">1.7259</td>
+<td class="numeric">1.7259</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划93,628.4252kWh；最终计划93,628.4252kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,488.5715</td>
+<td class="numeric">243.3981</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">3,686.0426</td>
+<td class="numeric">2,385.0192</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">5,264.9971</td>
+<td class="numeric">6,955.9970</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">6,777.3002</td>
+<td class="numeric">3,128.6009</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">274.3020</td>
+<td class="numeric">6,115.7544</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,108.3578</td>
+<td class="numeric">3,623.9697</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量2,122.7879kWh；24:00储电量1,792.7251kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:40-10:50</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">38.9609</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">59,880.0273</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">155.6490</td>
+<td class="numeric">60,035.6763</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3">问题3</h2>
+<p><a href="result3.xlsx">完整成果工作簿</a></p>
+<h3 id="2025-03-20_1">2025-03-20</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">447.5773</td>
+<td class="numeric">500.6572</td>
+<td class="numeric">53.0798</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">608.6065</td>
+<td class="numeric">608.6065</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">656.6705</td>
+<td class="numeric">696.6965</td>
+<td class="numeric">40.0260</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划61,281.3711kWh；最终计划63,469.0175kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,050.3368</td>
+<td class="numeric">105.3725</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">2,005.1894</td>
+<td class="numeric">6,431.5328</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">2,511.1889</td>
+<td class="numeric">2,353.2434</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">6,315.8909</td>
+<td class="numeric">254.7228</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">558.7373</td>
+<td class="numeric">5,150.8640</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">974.0372</td>
+<td class="numeric">3,662.5407</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量1,980.2131kWh；24:00储电量1,469.5751kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:00-10:00</td>
+<td class="numeric">60.0000</td>
+<td class="numeric">424.1339</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">37,622.3232</td>
+<td class="numeric">2,893.8162</td>
+<td class="numeric">2,088.8086</td>
+<td class="numeric">42,604.9480</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-06-21_1">2025-06-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">108.4892</td>
+<td class="numeric">108.4892</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划29,912.0530kWh；最终计划30,471.7404kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">234.9808</td>
+<td class="numeric">759.6424</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">1,117.1013</td>
+<td class="numeric">2,271.2884</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">9,774.8343</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">4.6761</td>
+<td class="numeric">6,408.0992</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,260.0869</td>
+<td class="numeric">2,790.9436</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量3,438.9619kWh；24:00储电量2,303.2169kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06:30-07:20</td>
+<td class="numeric">50.0000</td>
+<td class="numeric">176.8897</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">16,418.1112</td>
+<td class="numeric">791.3053</td>
+<td class="numeric">734.1891</td>
+<td class="numeric">17,943.6057</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-09-23_1">2025-09-23</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">294.9785</td>
+<td class="numeric">294.9785</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">524.6990</td>
+<td class="numeric">524.6990</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">738.3824</td>
+<td class="numeric">773.7332</td>
+<td class="numeric">35.3508</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.3603</td>
+<td class="numeric">2.0019</td>
+<td class="numeric">1.6417</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划64,812.2833kWh；最终计划65,893.5454kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,451.9896</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">1,981.3735</td>
+<td class="numeric">6,537.9082</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">4,911.5512</td>
+<td class="numeric">1,896.6157</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">4,574.6189</td>
+<td class="numeric">441.0970</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">64.9857</td>
+<td class="numeric">5,989.8262</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,529.7908</td>
+<td class="numeric">3,234.0167</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量2,069.8060kWh；24:00储电量2,452.8790kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20:20-20:30</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">6.3750</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">40,096.1623</td>
+<td class="numeric">1,694.6850</td>
+<td class="numeric">42.9962</td>
+<td class="numeric">41,833.8435</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-12-21_1">2025-12-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">977.8658</td>
+<td class="numeric">977.8658</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">839.5792</td>
+<td class="numeric">853.3803</td>
+<td class="numeric">13.8011</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">380.1336</td>
+<td class="numeric">380.1336</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划90,250.0665kWh；最终计划92,808.7228kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,958.4170</td>
+<td class="numeric">130.4514</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">3,860.2647</td>
+<td class="numeric">2,572.8438</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">5,252.8305</td>
+<td class="numeric">7,344.1808</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">7,777.3080</td>
+<td class="numeric">3,338.5636</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">16.8148</td>
+<td class="numeric">6,493.0281</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,021.8022</td>
+<td class="numeric">3,263.6790</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量1,336.4641kWh；24:00储电量1,500.8463kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>07:50-08:00</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">3.5040</td>
+</tr>
+<tr>
+<td>20:30-20:50</td>
+<td class="numeric">20.0000</td>
+<td class="numeric">215.7174</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">56,860.3594</td>
+<td class="numeric">2,733.8946</td>
+<td class="numeric">1,522.9054</td>
+<td class="numeric">61,117.1594</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-2">问题4-2</h2>
+<p><a href="result4-2.xlsx">完整成果工作簿</a></p>
+<h3 id="2025-03-20_2">2025-03-20</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">54.8095</td>
+<td class="numeric">54.8095</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">574.4798</td>
+<td class="numeric">574.4798</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">437.4736</td>
+<td class="numeric">437.4736</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">654.8032</td>
+<td class="numeric">654.8032</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">108.8493</td>
+<td class="numeric">108.8493</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划65,074.4618kWh；最终计划65,074.4618kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">6,662.7142</td>
+<td class="numeric">95.7362</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">1,703.4658</td>
+<td class="numeric">5,331.7123</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">5,761.8274</td>
+<td class="numeric">2,777.3772</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">3,470.7692</td>
+<td class="numeric">493.2415</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">6,063.9234</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">873.3232</td>
+<td class="numeric">2,669.9305</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量2,752.9803kWh；24:00储电量1,902.2946kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20:30-21:00</td>
+<td class="numeric">30.0000</td>
+<td class="numeric">23.5031</td>
+</tr>
+<tr>
+<td>21:20-21:30</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">1.7805</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">41,364.3941</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">159.3771</td>
+<td class="numeric">41,523.7712</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-06-21_2">2025-06-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">251.7640</td>
+<td class="numeric">251.7640</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">349.6242</td>
+<td class="numeric">349.6242</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划33,785.0076kWh；最终计划33,785.0076kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">3,730.0958</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">2,009.4236</td>
+<td class="numeric">1,773.2043</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">9,820.9646</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">4,515.6745</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">2,962.4357</td>
+<td class="numeric">3,776.1450</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量5,377.6959kWh；24:00储电量4,870.0681kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<p>无紧急购电。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">17,457.0506</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">17,457.0506</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-09-23_2">2025-09-23</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">14.3493</td>
+<td class="numeric">14.3493</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">504.5987</td>
+<td class="numeric">504.5987</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">500.8696</td>
+<td class="numeric">500.8696</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">712.6107</td>
+<td class="numeric">712.6107</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">130.7499</td>
+<td class="numeric">130.7499</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划68,446.1560kWh；最终计划68,446.1560kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">8,025.6557</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">5,039.4734</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">4,995.9974</td>
+<td class="numeric">1,893.2268</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">3,065.7476</td>
+<td class="numeric">563.7626</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">6,140.1424</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,845.5373</td>
+<td class="numeric">2,526.4940</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量3,186.1945kWh；24:00储电量3,161.4710kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15:00-15:10</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">7.3408</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">45,320.3723</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">27.8034</td>
+<td class="numeric">45,348.1758</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-12-21_2">2025-12-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">998.9668</td>
+<td class="numeric">998.9668</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">1,392.0583</td>
+<td class="numeric">1,392.0583</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">692.1815</td>
+<td class="numeric">692.1815</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划91,105.5554kWh；最终计划91,105.5554kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">4,862.0014</td>
+<td class="numeric">201.7484</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">791.4009</td>
+<td class="numeric">1,313.5075</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">4,369.8609</td>
+<td class="numeric">7,064.2840</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">7,708.0128</td>
+<td class="numeric">3,345.9600</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">381.2808</td>
+<td class="numeric">5,390.1796</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">2,794.0296</td>
+<td class="numeric">3,433.2327</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量6,187.5004kWh；24:00储电量4,149.9561kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02:10-02:20</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">5.6013</td>
+</tr>
+<tr>
+<td>06:20-06:30</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">2.9406</td>
+</tr>
+<tr>
+<td>17:20-17:30</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">2.9800</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">69,441.6409</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">45.5045</td>
+<td class="numeric">69,487.1454</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-3">问题4-3</h2>
+<p><a href="result4-3.xlsx">完整成果工作簿</a></p>
+<h3 id="2025-03-20_3">2025-03-20</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">447.5773</td>
+<td class="numeric">492.3110</td>
+<td class="numeric">44.7337</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">642.1417</td>
+<td class="numeric">642.1417</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">678.6308</td>
+<td class="numeric">678.6308</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">711.4507</td>
+<td class="numeric">720.2898</td>
+<td class="numeric">8.8391</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划61,646.2170kWh；最终计划63,635.9822kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">7,418.2304</td>
+<td class="numeric">1,361.5114</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">3,856.0429</td>
+<td class="numeric">7,165.4164</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">2,513.2978</td>
+<td class="numeric">2,353.2434</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">6,084.0583</td>
+<td class="numeric">254.7228</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">564.3952</td>
+<td class="numeric">6,627.2912</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,133.7005</td>
+<td class="numeric">2,135.5221</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量1,972.9927kWh；24:00储电量1,461.8055kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:00-10:00</td>
+<td class="numeric">60.0000</td>
+<td class="numeric">424.1339</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">38,899.1653</td>
+<td class="numeric">2,885.4781</td>
+<td class="numeric">2,202.3626</td>
+<td class="numeric">43,987.0060</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-06-21_3">2025-06-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">108.4892</td>
+<td class="numeric">108.4892</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划29,743.9384kWh；最终计划30,689.1251kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">1,606.4559</td>
+<td class="numeric">3,111.0628</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">1,685.8560</td>
+<td class="numeric">1,573.8827</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">9,774.8343</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">88.0693</td>
+<td class="numeric">6,475.0127</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">3,303.8044</td>
+<td class="numeric">4,937.7957</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量3,341.7829kWh；24:00储电量1,987.6575kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06:50-07:20</td>
+<td class="numeric">30.0000</td>
+<td class="numeric">177.4038</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">14,225.7901</td>
+<td class="numeric">870.4662</td>
+<td class="numeric">527.6335</td>
+<td class="numeric">15,623.8898</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-09-23_3">2025-09-23</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">294.9785</td>
+<td class="numeric">294.9785</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">524.6990</td>
+<td class="numeric">524.6990</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">725.4609</td>
+<td class="numeric">725.6931</td>
+<td class="numeric">0.2322</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.3603</td>
+<td class="numeric">2.0019</td>
+<td class="numeric">1.6417</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划64,857.5661kWh；最终计划66,381.5140kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">9,655.5375</td>
+<td class="numeric">7.6070</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">837.1132</td>
+<td class="numeric">7,152.0175</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">4,911.5512</td>
+<td class="numeric">1,896.6157</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">4,731.7381</td>
+<td class="numeric">443.5888</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">6,388.7445</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">1,379.0955</td>
+<td class="numeric">2,704.7093</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量1,552.1009kWh；24:00储电量2,364.0146kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20:10-20:20</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">10.2344</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">42,010.8164</td>
+<td class="numeric">2,063.0943</td>
+<td class="numeric">66.2726</td>
+<td class="numeric">44,140.1833</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2025-12-21_3">2025-12-21</h3>
+<p>表1：指定六个十分钟槽位</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>原计划购电</th>
+<th>最终购电</th>
+<th>调整增量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00-10:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>12:00-12:10</td>
+<td class="numeric">977.8658</td>
+<td class="numeric">977.8658</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>14:00-14:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+<tr>
+<td>16:00-16:10</td>
+<td class="numeric">868.6518</td>
+<td class="numeric">1,478.2175</td>
+<td class="numeric">609.5657</td>
+</tr>
+<tr>
+<td>18:00-18:10</td>
+<td class="numeric">680.6723</td>
+<td class="numeric">684.4418</td>
+<td class="numeric">3.7696</td>
+</tr>
+<tr>
+<td>20:00-20:10</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+<td class="numeric">0.0000</td>
+</tr>
+</tbody>
+</table></div>
+<p>全天总购电量：原计划90,382.1170kWh；最终计划92,891.8883kWh（紧急购电另列）。</p>
+<p>表2：六个四小时区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>实际充电量</th>
+<th>实际放电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-04:00</td>
+<td class="numeric">10,018.9493</td>
+<td class="numeric">151.6346</td>
+</tr>
+<tr>
+<td>04:00-08:00</td>
+<td class="numeric">2,597.2227</td>
+<td class="numeric">3,272.6844</td>
+</tr>
+<tr>
+<td>08:00-12:00</td>
+<td class="numeric">4,469.6225</td>
+<td class="numeric">7,201.1144</td>
+</tr>
+<tr>
+<td>12:00-16:00</td>
+<td class="numeric">8,422.8159</td>
+<td class="numeric">3,573.9640</td>
+</tr>
+<tr>
+<td>16:00-20:00</td>
+<td class="numeric">279.1407</td>
+<td class="numeric">6,204.2822</td>
+</tr>
+<tr>
+<td>20:00-24:00</td>
+<td class="numeric">2,678.9679</td>
+<td class="numeric">5,159.3249</td>
+</tr>
+</tbody>
+</table></div>
+<p>00:00储电量1,333.6273kWh；24:00储电量1,393.7556kWh。</p>
+<p>表3：全部连续紧急购电区间</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>持续分钟</th>
+<th>紧急购电量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>07:50-08:00</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">3.5040</td>
+</tr>
+<tr>
+<td>20:40-20:50</td>
+<td class="numeric">10.0000</td>
+<td class="numeric">214.4139</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>计划费</th>
+<th>调整费</th>
+<th>紧急费</th>
+<th>总费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="numeric">66,655.9720</td>
+<td class="numeric">3,535.9833</td>
+<td class="numeric">1,468.1801</td>
+<td class="numeric">71,660.1353</td>
+</tr>
+</tbody>
+</table></div></main></div><footer>费用按实际购电结算。固定exp008预测的单次完整对照，2025年为开发评价年度。</footer></body></html>

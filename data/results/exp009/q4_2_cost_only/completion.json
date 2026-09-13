@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "days": 334,
+  "wall_seconds": 685.6036927090026,
+  "sources_and_forecast_artifacts_unchanged": true,
+  "all334_inputs_exactly_exp008": true,
+  "no_retraining": true,
+  "no_partial_cost_selection": true,
+  "config": {
+    "scenario": "4-2",
+    "days": 334,
+    "start_day": 31,
+    "seed": 42,
+    "candidate_count": 1,
+    "block_slots": 6,
+    "initialization_scenarios": 3,
+    "refinement_history_days": 28,
+    "scenario_selection": "deterministic equally spaced historical origins",
+    "switching": 0.0,
+    "wear": 0.0,
+    "throughput": 0.0,
+    "variation": 0.0,
+    "deadband": 0.0,
+    "seconds": 5.0,
+    "gap": 0.002,
+    "refinement_maxiter": 120,
+    "refinement_terminal_value": 0.45,
+    "final_day_terminal_value": 0.0,
+    "initializer_terminal_value": "min(current predicted price)/ETA, unchanged; final day zero",
+    "changed_from_exp008": {
+      "switching": [
+        50.0,
+        0.0
+      ],
+      "wear_and_refinement_throughput": [
+        0.002,
+        0.0
+      ]
+    },
+    "unchanged": "forecast values, historical residuals, common hourly masks, physical constraints, scenario count, time/gap budgets, refinement algorithm, terminal values, strict-mask execution and settlement",
+    "price_information": "same scalar linked-HGB midnight price in every scenario; historical price residuals are archived but not used by the scalar objective",
+    "frozen_input_policy": "read only exogenous arrays from original planning archives, never old purchase/masks/SOC/recourse actions",
+    "partial_actual_cost_or_battery_counts_are_gates": false,
+    "feasibility_gate_days": 3,
+    "no_retraining": true,
+    "no_realized_outcome_selection": true,
+    "global_optimality_certificate": false,
+    "nonanticipative_recourse_certificate": false,
+    "terminal_value_is_retained_economic_inventory_approximation": true
+  }
+}

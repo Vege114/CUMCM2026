@@ -1,0 +1,989 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "width": 736,
+      "theme": "light",
+      "errors": [],
+      "layout": {
+        "width": 736,
+        "scrollWidth": 736,
+        "height": 1585,
+        "overflow": false,
+        "svgs": [
+          {
+            "name": "第一问给定单日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "单日费用（元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "第二至四问334日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测RMSE（kW）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "RMSE（kW）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测WAPE（%）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "WAPE（%）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "2025-04-15第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-06-07第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-06第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-25第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "第二问历史费用，005不同物理不排名",
+            "width": 736,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          }
+        ],
+        "essentialTitles": [
+          "exp008 → exp009：费用目标对照",
+          "第一问 · 给定单日",
+          "第二至四问 · 334日",
+          "午夜预测：exp008 = exp009",
+          "第二问 · 共同随机四日实际功率",
+          "2025-04-15",
+          "2025-06-07",
+          "2025-12-06",
+          "2025-12-25",
+          "第二问历史费用"
+        ]
+      },
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/evidence/inline/comparison-736-light.png",
+      "interaction": {
+        "before": {
+          "tooltipVisible": true,
+          "rows": 2,
+          "guideX": 182.42799377441406,
+          "markerX": [
+            182.42799377441406,
+            182.42799377441406
+          ]
+        },
+        "toggled": {
+          "hidden": true,
+          "oldPowerLines": 0,
+          "newPowerLines": 4
+        },
+        "after": {
+          "rows": 1,
+          "names": [
+            "exp009"
+          ]
+        },
+        "pinned": "2025-04-15功率读数已固定"
+      }
+    },
+    {
+      "width": 360,
+      "theme": "light",
+      "errors": [],
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "height": 2760,
+        "overflow": false,
+        "svgs": [
+          {
+            "name": "第一问给定单日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "单日费用（元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "第二至四问334日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测RMSE（kW）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "RMSE（kW）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测WAPE（%）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "WAPE（%）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "2025-04-15第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-06-07第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-06第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-25第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "第二问历史费用，005不同物理不排名",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          }
+        ],
+        "essentialTitles": [
+          "exp008 → exp009：费用目标对照",
+          "第一问 · 给定单日",
+          "第二至四问 · 334日",
+          "午夜预测：exp008 = exp009",
+          "第二问 · 共同随机四日实际功率",
+          "2025-04-15",
+          "2025-06-07",
+          "2025-12-06",
+          "2025-12-25",
+          "第二问历史费用"
+        ]
+      },
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/evidence/inline/comparison-360-light.png",
+      "interaction": {
+        "before": {
+          "tooltipVisible": true,
+          "rows": 2,
+          "guideX": 182.42799377441406,
+          "markerX": [
+            182.42799377441406,
+            182.42799377441406
+          ]
+        },
+        "toggled": {
+          "hidden": true,
+          "oldPowerLines": 0,
+          "newPowerLines": 4
+        },
+        "after": {
+          "rows": 1,
+          "names": [
+            "exp009"
+          ]
+        },
+        "pinned": "2025-04-15功率读数已固定"
+      }
+    },
+    {
+      "width": 736,
+      "theme": "dark",
+      "errors": [],
+      "layout": {
+        "width": 736,
+        "scrollWidth": 736,
+        "height": 1585,
+        "overflow": false,
+        "svgs": [
+          {
+            "name": "第一问给定单日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "单日费用（元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "第二至四问334日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测RMSE（kW）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "RMSE（kW）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测WAPE（%）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "WAPE（%）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "2025-04-15第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-06-07第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-06第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-25第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "第二问历史费用，005不同物理不排名",
+            "width": 736,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          }
+        ],
+        "essentialTitles": [
+          "exp008 → exp009：费用目标对照",
+          "第一问 · 给定单日",
+          "第二至四问 · 334日",
+          "午夜预测：exp008 = exp009",
+          "第二问 · 共同随机四日实际功率",
+          "2025-04-15",
+          "2025-06-07",
+          "2025-12-06",
+          "2025-12-25",
+          "第二问历史费用"
+        ]
+      },
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/evidence/inline/comparison-736-dark.png",
+      "interaction": {
+        "before": {
+          "tooltipVisible": true,
+          "rows": 2,
+          "guideX": 182.42799377441406,
+          "markerX": [
+            182.42799377441406,
+            182.42799377441406
+          ]
+        },
+        "toggled": {
+          "hidden": true,
+          "oldPowerLines": 0,
+          "newPowerLines": 4
+        },
+        "after": {
+          "rows": 1,
+          "names": [
+            "exp009"
+          ]
+        },
+        "pinned": "2025-04-15功率读数已固定"
+      }
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "errors": [],
+      "layout": {
+        "width": 360,
+        "scrollWidth": 360,
+        "height": 2760,
+        "overflow": false,
+        "svgs": [
+          {
+            "name": "第一问给定单日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "单日费用（元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "第二至四问334日实际费用",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测RMSE（kW）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "RMSE（kW）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "午夜预测WAPE（%）；exp008等于exp009",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "WAPE（%）"
+              },
+              {
+                "axis": "y",
+                "label": "模型 / 目标"
+              }
+            ],
+            "fullPowerCurves": []
+          },
+          {
+            "name": "2025-04-15第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-06-07第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-06第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "2025-12-25第二问原始144点实际电池功率",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "时点（小时，右端）"
+              },
+              {
+                "axis": "y",
+                "label": "净功率（kW）"
+              }
+            ],
+            "fullPowerCurves": [
+              {
+                "series": "exp008",
+                "points": 144,
+                "pathCommandPoints": 144
+              },
+              {
+                "series": "exp009",
+                "points": 144,
+                "pathCommandPoints": 144
+              }
+            ]
+          },
+          {
+            "name": "第二问历史费用，005不同物理不排名",
+            "width": 360,
+            "conflicts": [],
+            "outside": [],
+            "axisTitles": [
+              {
+                "axis": "x",
+                "label": "334日费用（万元）"
+              },
+              {
+                "axis": "y",
+                "label": "方案"
+              }
+            ],
+            "fullPowerCurves": []
+          }
+        ],
+        "essentialTitles": [
+          "exp008 → exp009：费用目标对照",
+          "第一问 · 给定单日",
+          "第二至四问 · 334日",
+          "午夜预测：exp008 = exp009",
+          "第二问 · 共同随机四日实际功率",
+          "2025-04-15",
+          "2025-06-07",
+          "2025-12-06",
+          "2025-12-25",
+          "第二问历史费用"
+        ]
+      },
+      "screenshot": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/evidence/inline/comparison-360-dark.png",
+      "interaction": {
+        "before": {
+          "tooltipVisible": true,
+          "rows": 2,
+          "guideX": 182.42799377441406,
+          "markerX": [
+            182.42799377441406,
+            182.42799377441406
+          ]
+        },
+        "toggled": {
+          "hidden": true,
+          "oldPowerLines": 0,
+          "newPowerLines": 4
+        },
+        "after": {
+          "rows": 1,
+          "names": [
+            "exp009"
+          ]
+        },
+        "pinned": "2025-04-15功率读数已固定"
+      }
+    }
+  ]
+}

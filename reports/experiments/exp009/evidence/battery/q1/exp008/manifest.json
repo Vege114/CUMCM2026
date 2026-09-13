@@ -1,0 +1,117 @@
+{
+  "source": {
+    "path": "data/results/exp008/q1/revised.json",
+    "sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d"
+  },
+  "verification": {
+    "passed": true,
+    "errors": [],
+    "scenario": "1",
+    "days": 1,
+    "intervals": 144,
+    "start_day": 0,
+    "max_balance_error_kwh": 1.2647660696529783e-12,
+    "max_soc_error_kwh": 4.547473508864674e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 0.0,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 34115.032450968385,
+      "up_cost": 0.0,
+      "down_cost": 0.0,
+      "emergency_cost": 0.0,
+      "total_cost": 34115.03245096839
+    },
+    "recomputed_total_cost": 34115.03245096839,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 20186.71370553619,
+      "discharge_kwh": 18168.042334982565,
+      "throughput_kwh": 38354.756040518754,
+      "equivalent_full_cycles": 1.5958998445807981,
+      "direction_reversals": 4,
+      "direction_reversals_including_warmup_boundary": 4,
+      "charging_slots": 57,
+      "discharging_slots": 42,
+      "active_slots": 99,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 4.7691628424217924e-11,
+      "charge_starts": 3,
+      "discharge_starts": 2,
+      "power_changes_count": 75,
+      "power_ramp_total_kw": 33209.166057607916,
+      "power_ramp_total_kw_including_warmup_boundary": 35744.95261136938,
+      "power_ramp_max_kw_per_10min": 1000.0000000000068,
+      "power_ramp_p95_kw_per_10min": 1000.0000000000023,
+      "mean_absolute_power_kw": 1598.1148350216124,
+      "max_charge_kw": 4999.631414496048,
+      "max_discharge_kw": 4268.670200000007,
+      "initial_soc": 6000.0,
+      "final_soc": 6000.0,
+      "minimum_soc": 1199.999999999999,
+      "maximum_soc": 10800.000000000004,
+      "initial_mode": 0,
+      "final_mode": 1,
+      "initial_power_kw": 0.0,
+      "final_power_kw": 2535.7865537614634,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": false,
+      "checked_fields": 0,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "second_raw_csv_calculation": {
+      "passed": true,
+      "total_cost_yuan": 34115.032450968385,
+      "max_balance_error_kwh": 1.4068746168049984e-12,
+      "max_soc_error_kwh": 4.547473508864674e-13
+    }
+  },
+  "warmup_source": null,
+  "initial_state_matches_verified_warmup": false,
+  "complete": true,
+  "scope": "deterministic single day",
+  "q1_specialized_checks": {
+    "source": {
+      "path": "data/results/exp008/q1/revised.json",
+      "sha256": "10dc3187996322cabc016779cd2a8a4b914dbeb3be6911c321b82190edc2242d"
+    },
+    "stages": [
+      {
+        "stage": 1,
+        "cost": 34080.95139956883,
+        "quantity": 57572.39629569833,
+        "smooth": 0.056210610005960504,
+        "gap": 0.0,
+        "seconds": 0.34634308295790106,
+        "nodes": 1
+      },
+      {
+        "stage": 2,
+        "cost": 34115.032450968385,
+        "quantity": 57560.64380388695,
+        "smooth": 0.036950809762227324,
+        "gap": 0.0,
+        "seconds": 7.5819095419719815,
+        "nodes": 1
+      }
+    ],
+    "configuration": {
+      "delta": 0.001,
+      "ramp": 1000.0,
+      "up": 3,
+      "down": 2,
+      "eta_rt": 0.9
+    },
+    "cyclic_total_variation_kw": 33209.16605760791,
+    "cyclic_mode_starts": 4,
+    "cyclic_min_on_minutes": 170,
+    "cyclic_min_off_minutes": 430,
+    "max_cyclic_step_kw": 1000.0000000000073,
+    "retained_minimum_active_power_kw": 1,
+    "mode_power_linking_and_engineering_constraints_passed": true,
+    "unit_note": "Q1 stored c/d already kW; converted once to kWh for shared verifier"
+  },
+  "power_csv_verified_against_arrays": true
+}

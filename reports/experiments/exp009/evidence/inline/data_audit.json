@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "output": "reports/experiments/exp009/comparison-inline.html",
+  "output_sha256": "e9c016918128d1448f9011639b808a974e112fc4758027273b779a76a2931d90",
+  "bytes": 34963,
+  "sources_sha256": {
+    "reports/experiments/exp009/final_payload.json": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+    "reports/experiments/exp009/evidence/history_forecast.csv": "7812bd5aaa9004d4826ae12412a9855d397ae58e05f5c966b7d8874a4d999603",
+    "reports/experiments/exp009/evidence/history_cost.csv": "9792204154b03095fbd7f9c7f0b9fd61cc30c285ca91f41b757aa84456179628",
+    "reports/experiments/exp009/evidence/battery/final_evidence.json": "733973876d6e001eb32ea88d6a650b83e5a8a5bc6efed7fe1114f1bb824f55fa",
+    "reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-04-15.csv": "a73f3f2e066ec8ba6ed5693b83138aaabf8092baf480853406f7524e8427e92e",
+    "reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-04-15.csv": "967a23f839ee02377cae635dd5cb7f081ad3d0f833d3770d2927565d919504bd",
+    "reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-06-07.csv": "9f5bc5b18f354c05436a8462feb7484351f2f58c412aa1ce6eadef1290e1b302",
+    "reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-06-07.csv": "1128e96bea824fbff94ed97b7967001989db31713d6d59b0d13b8a051773cc49",
+    "reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-12-06.csv": "71f9104841fab6c21232d7bbaf339be637bbd6a3f4b3c4eb70c06c4c9615bbe8",
+    "reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-12-06.csv": "2aa30b461eb83508b43da5fa399a941401d058b1f105895332f37cb25ccd31b4",
+    "reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-12-25.csv": "110dad8114c03b1fa9a37552d6b2da28827a648f90626969522414278568c2a0",
+    "reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-12-25.csv": "314e730f3c8dafd24e5d49f2505b1faceba08f92c522695c18351839f12375e4"
+  },
+  "template_sha256": "e418d6837b4298a120ecf2fbab11b5f46bf7f241e839df3bd13a1155df55f5a0",
+  "generator_sha256": "bc456c0a80831000ee00312cc8df922c692b02e69f86c109e3b53fcab02702ab",
+  "five_cost_comparisons": 5,
+  "forecast_metric_pairs_exactly_equal": 12,
+  "forecast_population": "all",
+  "power_random_dates": [
+    "2025-04-15",
+    "2025-06-07",
+    "2025-12-06",
+    "2025-12-25"
+  ],
+  "power_points_per_version_per_day": 144,
+  "power_values_are_complete_original_CSV_rows": true,
+  "q1_single_day_has_separate_axis": true,
+  "exp005_physical_difference_flagged": true,
+  "exp007_excluded": true,
+  "no_training_optimization_or_network_data_access": true
+}

@@ -1,0 +1,267 @@
+{
+  "experiment_id": "exp009",
+  "review_status": "passed_for_scientific_content",
+  "reviewer": "independent audit subagent /root/audit_resume",
+  "reviewed_at_utc": "2026-09-13T02:24:24.745558+00:00",
+  "scope": "Read-only scientific review of frozen protocol, implementation, existing run logs, report, methods and final payload. This finalization only scores existing audit evidence and hashes files; no new model fit, forecast selection, planning or dispatch run.",
+  "snapshot_sha256": {
+    "experiments/exp009/protocol.json": "189736eb3503ce824bb5ebd475a863b2e0c5a3ef02f5bdfa0a76d7ba3e4cbaf5",
+    "experiments/exp009/run_q1.py": "b10b3b658e3eda5ff309b55455a2661e00421b5d8d8d0930679a05238f96be40",
+    "experiments/exp009/q1_cost_model.py": "a5e37ae60ed01859f0a18d91b56e823503c3b9652e07df047b449863876e2228",
+    "experiments/exp009/run_q2.py": "9f03c57daa3a312116590c7ae3d61398a9f4a2cc383a14eb9c4a8ab20609b57a",
+    "experiments/exp009/q2_cost_model.py": "5db9c30fbe68ca98491dac6a0bb63677955a9bba91ac3e400a52a32060d3354d",
+    "experiments/exp009/run_update_cost_only.py": "26fbff9248b175f27ae4e2bae2fd7fc7880173643142bf070badcfeb54e0a663",
+    "experiments/exp009/update_cost_only_audit.py": "b70307fc590e6d9ff57396211032a99ab3701f4ad5603456ec2ad62f2f014491",
+    "experiments/exp009/q4_2_cost_only.py": "800ba9fda6a73448d786fa0e46034b8abc0389fade341c30967782ee79a3dd8c",
+    "experiments/exp009/q4_2_cost_only_audit.py": "14ecfdb5308949c4aab71931738c42c411a51a0902edfd28e84aa0329bf661bc",
+    "experiments/exp009/final_evidence.py": "7f4cc38f7a50d8e4c383d36b80ceec97627890ea66c61dad63976c0d12de6f95",
+    "experiments/exp009/report_payload.py": "f60729305150383e5f093616b99366f9bffcd97c806ec4f97e5e3b1ea0d641b5",
+    "reports/build_report_exp009.py": "5ab92a8914725755c2729354d5e6d1aa00f0a220bee60931aeb7bf6bb1a51c16",
+    "reports/experiments/exp009/report.md": "91cfbaa1aa15dc07f8897987457199c8bdafc7cb79ed0094f0c2f6f99b035143",
+    "reports/experiments/exp009/report.html": "6256a126c15f2f4518e8c1a0a210203c3302b975ba74d998526429286f77b2fe",
+    "reports/experiments/exp009/methods.md": "160fa3b0a92a88435c0ccf5d575841460b0fe03e49604df0929c6e2c95e4aae6",
+    "reports/experiments/exp009/final_payload.json": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+    "reports/experiments/exp009/evidence/battery/final_evidence.json": "733973876d6e001eb32ea88d6a650b83e5a8a5bc6efed7fe1114f1bb824f55fa",
+    "reports/experiments/exp009/evidence/solver_diagnostics.json": "4aa88d1f08c967369f96f89a64ff52916649b5aedf616be137de8499b65c9e1f",
+    "reports/experiments/exp009/evidence/runtime.csv": "50f515229a35e048ff22a2ab0794057c3bda0262f61d10c725282ef2eef50a0f",
+    "reports/experiments/exp009/data_hashes.json": "1f04178467d7bd281b1ab21c23ab193f21b7ab558a2967b07a2604fb1cb5ff22",
+    "data/results/exp009/q1/cost_only.json": "94db533f74c89178017f496c0a15fdeaa454420e275b301a5b5d97a6fd079f1a",
+    "data/results/exp009/q2_cost_only/planning_audit.json": "30d03a7cc28554f1d1226165544743b7378a0008556db551abf7c7528ad5a4ca",
+    "data/results/exp009/q2_cost_only/summary.json": "dcfe690d0326dc5d665574550de45b40ee50dc64d78409b39df8faaf701bc0f6",
+    "data/results/exp009/q2_cost_only/provenance.json": "b449a179f5af701b57155351bc42934a21b8b7faea7a349557ab18b20240bace",
+    "data/results/exp009/update_cost_only/full334/3/audit.json": "814a24c8599b3cd97507491e028a9e5a4f846ad391dbb486a4bb2ac896c65db0",
+    "data/results/exp009/update_cost_only/full334/4-3/audit.json": "85b06516e9b22d19d42008aa48524ae7a5c61e8fb0981e3ee8f3eb9646d53427",
+    "data/results/exp009/update_cost_only/summary.json": "17309718de5ba232adbba61d9a9e9c9f040f968eaa59b77081db16d08ed1c180",
+    "data/results/exp009/q4_2_cost_only/full334/audit.json": "126aee203a48cf99e0a08de4f9ad6ad09e68dc4b28c9b7fad6cb15bcf99db034",
+    "data/results/exp009/q4_2_cost_only/independent_audit.json": "bd520247cc8abaacbd59d5c0e46b7b63ee02025c1435fe57706a56db5c94f818",
+    "data/results/exp009/q4_2_cost_only/protocol.json": "c40029f6ce57a3a935793910b8237fdcf0449eb3c783d96ff1f161bf91d8822b",
+    "reports/experiments/exp009/evidence/templates/report.md": "03c218e21c13b5f05419629cdc238b58dc0ef8f7ef39e0dd6855047ea76a5cb4",
+    "reports/experiments/exp009/evidence/templates/history-comparison.md": "9bc10fd8bb5eef6934c8f2b9049310876309e2271c2fac115f7816f040c5931e",
+    "reports/experiments/exp009/evidence/templates/battery-power.md": "31226bfbdccec7eec858711ace76c03e2ad1e36b929d18a40f071d94da6cc058"
+  },
+  "template_origin_commit": "58fd537055dfa5ddb7460cee0413011bdb6d8526",
+  "template_eight_sections": [
+    "## 1. 结论与成绩",
+    "## 2. 题目指标及信息边界",
+    "## 3. 数据与时间验证",
+    "## 4. 逐步技术讲解",
+    "## 5. 实验设置",
+    "## 6. 结果及失败案例",
+    "## 7. 历次指标和技术路线对比",
+    "## 8. 复现说明"
+  ],
+  "numerical_validation": {
+    "passed": true,
+    "comparison_basis": "The report payload total for each question versus independent billing from its actual charge/discharge/purchase/SOC archives and the original raw CSV data; monetary objective penalties and terminal values are excluded. Different questions are not summed into one bill.",
+    "questions": [
+      {
+        "scenario": "1",
+        "report_payload_cost_yuan": 34080.951399568854,
+        "independent_raw_array_cost_yuan": 34080.95139956883,
+        "payload_minus_independent_yuan": 2.1827872842550278e-11,
+        "absolute_difference_yuan": 2.1827872842550278e-11,
+        "reported_change_vs_exp008_pct": -0.09990039273306836
+      },
+      {
+        "scenario": "2",
+        "report_payload_cost_yuan": 13215591.495018823,
+        "independent_raw_array_cost_yuan": 13215591.495018769,
+        "payload_minus_independent_yuan": 5.4016709327697754e-08,
+        "absolute_difference_yuan": 5.4016709327697754e-08,
+        "reported_change_vs_exp008_pct": 0.10308715108295907
+      },
+      {
+        "scenario": "3",
+        "report_payload_cost_yuan": 12787820.024906598,
+        "independent_raw_array_cost_yuan": 12787820.024906656,
+        "payload_minus_independent_yuan": -5.774199962615967e-08,
+        "absolute_difference_yuan": 5.774199962615967e-08,
+        "reported_change_vs_exp008_pct": -0.29972135451675097
+      },
+      {
+        "scenario": "4-2",
+        "report_payload_cost_yuan": 13978929.994015083,
+        "independent_raw_array_cost_yuan": 13978929.994015003,
+        "payload_minus_independent_yuan": 8.009374141693115e-08,
+        "absolute_difference_yuan": 8.009374141693115e-08,
+        "reported_change_vs_exp008_pct": -0.11148114670040712
+      },
+      {
+        "scenario": "4-3",
+        "report_payload_cost_yuan": 13573403.53627182,
+        "independent_raw_array_cost_yuan": 13573403.536271837,
+        "payload_minus_independent_yuan": -1.6763806343078613e-08,
+        "absolute_difference_yuan": 1.6763806343078613e-08,
+        "reported_change_vs_exp008_pct": -0.04762143134408161
+      }
+    ],
+    "maximum_absolute_total_cost_difference_yuan": 8.009374141693115e-08,
+    "difference_interpretation": "Floating-point summation order only; maximum difference is below 1e-6 yuan."
+  },
+  "verified_items": [
+    {
+      "item": "Predeclared treatment matrix",
+      "status": "passed",
+      "detail": "Q1 removes only the second objective, retaining cyclic ramp1000/min-on3/min-off2/PMIN1kW. Q2 removes cap8 and wear; Q3/4-3 remove wear/variation and charge deadband; Q4-2 removes switch50 and wear while keeping hourly mode grid. All five fixed candidates are reported, including the Q2 cost regression."
+    },
+    {
+      "item": "Raw data and time scope",
+      "status": "passed",
+      "detail": "All five original CSV byte hashes equal exp008. Q1 is the supplied deterministic 144-slot day. Each annual question uses the same Feb1-Dec31 2025,334days,48096slots; warmup is separate. Right-end ten-minute intervals and kW/kWh conversion are explicit."
+    },
+    {
+      "item": "Physical trajectories and fees",
+      "status": "passed",
+      "detail": "Independent actual-array checks cover balance, efficiency, SOC and power bounds, mutual exclusion within numerical tolerance, no emergency charging, own continuous SOC, original paid plan and final upward/downward/emergency settlement. Final terminal valuations and auxiliary objective terms are absent from reported fees."
+    },
+    {
+      "item": "Frozen forecast identity",
+      "status": "passed",
+      "detail": "Q2 and Q4-2 each compare334 issued inputs; Q3/4-3 each compare1336 issued prediction/path records with exp008. Prediction causality is supported by frozen source/value identity and inherited issue/future-mutation evidence, not by claiming a new all-year mutation experiment. No new HGB/ExtraTrees training; original online PV/price Ridge recomputation remains and produces identical issued values."
+    },
+    {
+      "item": "Cross-question model differences",
+      "status": "passed",
+      "detail": "Report preserves Q2 equal HGB/ExtraTrees blend versus single-HGB Q3/4 variants, legal official PV updates at0/6/12/18, linked10-column price model for4-2 versus original8-column price model for4-3. It does not claim one identical predictor across all questions."
+    },
+    {
+      "item": "Q2 cost regression",
+      "status": "passed",
+      "detail": "Planned expense decreases2695.063226386 yuan while emergency expense increases16304.6103030074 yuan, yielding13609.5470766202 yuan higher total. Finite-budget MIP, nonlinear fixed-mode local refinement and predictive rather than actual annual objective are disclosed. The combination treatment does not identify a single causal coefficient."
+    },
+    {
+      "item": "Solver status and failures",
+      "status": "passed",
+      "detail": "All actual calls are represented. Q2:334 feasible MIPs,0 timeouts,29 refinement successes/305 iteration limits. Q4-2:334 feasible MIPs,6 timeouts,30 refinement successes/304 iteration limits. Each rolling question:1336 optimal LP calls. Failed refinement retains the original algorithm current iterate without extra tuning. LP MIP-gap values remain null, not0; no global-optimality claim."
+    },
+    {
+      "item": "Historical comparisons",
+      "status": "passed",
+      "detail": "Same-horizon physical settlement is distinguished from forecast-selection fairness. Exp001/002 early-stop/development limitations remain disclosed. Exp005 hard ramp and emergency charging differences are identified as physically noncomparable and kept separate. Exp007 is omitted. Older8%/count acceptance gate is not applied to this user-requested control."
+    },
+    {
+      "item": "Power data and visualization",
+      "status": "passed",
+      "detail": "Independent evidence retains annual48096 raw points, fixed seed20260912 four dates and specified four dates, 144points/day, PNG+SVG, no smoothing or downsampling, across-midnight differences and separate warmup boundary. Q1 cyclic and linear diagnostics are explicitly separated."
+    },
+    {
+      "item": "Templates and missing measurements",
+      "status": "passed",
+      "detail": "Latest origin/main template snapshot is bound by hash; all eight report sections present. Single model seed42, Q1 seednull, missing isolated pure-fit/prediction/calibration timings and unavailable SD are not fabricated."
+    }
+  ],
+  "corrected_review_findings": [
+    {
+      "item": "Q1 cyclic total variation and starts",
+      "status": "fixed",
+      "detail": "Report uses cyclic TV33209.1661 to50943.2784kW and cyclic starts4 to6; linear49943.2784kW remains a separate CSV diagnostic rather than the headline cyclic quantity."
+    },
+    {
+      "item": "LP gap and precision",
+      "status": "fixed",
+      "detail": "LP gap_mean_pct/gap_max_pct are null; maximum constraint residuals are displayed3.6380e-12 and5.4570e-12, not rounded to apparent exactzero."
+    },
+    {
+      "item": "Q1 solver, seed and timing",
+      "status": "fixed",
+      "detail": "Q1 one feasible deterministic solve and observed gap0 recorded; Q1 comparison seednull; solver and wall times0.14851529092993587/0.15416820801328868sec included."
+    },
+    {
+      "item": "Planning terminal values and solver budgets",
+      "status": "fixed",
+      "detail": "MIP/LP ordinary-day terminal coefficient min(current forecast price)/sqrt(.9), refinement coefficient.45 and final-day0 are stated separately. Rolling LP20sec and inherited interfacegap1e-7 are disclosed without claiming an applicable MIP gap."
+    },
+    {
+      "item": "Price and billing coverage",
+      "status": "fixed",
+      "detail": "Q4-2 causal linked-price MAE/RMSE/WAPE, full battery intensity comparisons, and Q2 planned/emergency bill decomposition are included."
+    },
+    {
+      "item": "Fit wording",
+      "status": "fixed",
+      "detail": "No new HGB/ExtraTrees fits is distinguished from original online PV/price calibration computation. Historical training_seconds includes model.fit plus immediate validation predict; pure fit cannot be separated."
+    }
+  ],
+  "solver_diagnostics_snapshot": [
+    {
+      "scenario": "1",
+      "calls": 1,
+      "feasible": 1,
+      "gap_mean_pct": 0.0,
+      "gap_max_pct": 0.0,
+      "timeout_count": 0,
+      "refinement_success": null,
+      "refinement_maxiter": null,
+      "note": "单日确定性MILP；不使用年度预测种子"
+    },
+    {
+      "scenario": "2",
+      "calls": 334,
+      "feasible": 334,
+      "gap_mean_pct": 0.003024032430742129,
+      "gap_max_pct": 0.1798325121525345,
+      "timeout_count": 0,
+      "refinement_success": 29,
+      "refinement_maxiter": 305,
+      "note": "固定5秒；精修未收敛返回原算法当前解，未追加迭代"
+    },
+    {
+      "scenario": "3",
+      "calls": 1336,
+      "feasible": 1336,
+      "gap_mean_pct": null,
+      "gap_max_pct": null,
+      "timeout_count": 0,
+      "refinement_success": null,
+      "refinement_maxiter": null,
+      "max_constraint_residual": "3.6380e-12",
+      "note": "1336 LP optimal；MIP相对gap不适用"
+    },
+    {
+      "scenario": "4-2",
+      "calls": 334,
+      "feasible": 334,
+      "gap_mean_pct": 0.07215546489844456,
+      "gap_max_pct": 0.4448054082143749,
+      "timeout_count": 6,
+      "refinement_success": 30,
+      "refinement_maxiter": 304,
+      "note": "固定5秒；精修未收敛返回原算法当前解，未追加迭代"
+    },
+    {
+      "scenario": "4-3",
+      "calls": 1336,
+      "feasible": 1336,
+      "gap_mean_pct": null,
+      "gap_max_pct": null,
+      "timeout_count": 0,
+      "refinement_success": null,
+      "refinement_maxiter": null,
+      "max_constraint_residual": "5.4570e-12",
+      "note": "1336 LP optimal；MIP相对gap不适用"
+    }
+  ],
+  "known_scientific_limitations": [
+    "Scenario future actions remain an optimistic approximation rather than a fully nonanticipative multistage tree.",
+    "Fixed solver time budgets, feasible MIP incumbents and nonsmooth local refinement do not establish global annual-cost optimality.",
+    "The2025 year has been used for development; it is not an untouched test set.",
+    "One formal tree-model seed is available; no sample standard deviation can be estimated.",
+    "Battery intensity measures are proxies, not a calibrated lifespan/degradation model."
+  ],
+  "unresolved_scientific_findings": [],
+  "delivery_link_presence_at_review": {
+    "evidence/workbooks/README.md": true,
+    "tests.txt": true,
+    "evidence/delivery_qa.json": true
+  },
+  "delivery_boundary": {
+    "scientific_review_is_final_packaging_qa": false,
+    "pending_owner": "root delivery QA",
+    "pending_items": [
+      "Replace temporary code_commit metadata with the final source commit and regenerate report from the same verified numerical/method content.",
+      "Bind final report/payload/workbook/HTML and local-link hashes after final generation."
+    ],
+    "note": "All three previously mentioned tail links (workbook README, tests and delivery QA) now exist. Their final hashes and overall delivery readiness belong to root delivery QA."
+  },
+  "hash_validity_scope": "Hashes identify the files actually present at this scientific-review snapshot. A later rebuild that only replaces source-commit metadata or packaging links, while leaving these verified numbers and methods unchanged, does not invalidate the scientific findings; root delivery QA must bind the final files. Any change to numerical results, methods, selected archives or information boundaries requires renewed review."
+}

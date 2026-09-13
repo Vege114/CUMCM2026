@@ -1,0 +1,390 @@
+{
+  "passed": true,
+  "payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+  "files": [
+    {
+      "scenario": "1",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result1.xlsx",
+      "sha256": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+      "passed": true,
+      "source_archive": {
+        "path": "data/results/exp009/q1/cost_only.json",
+        "sha256": "94db533f74c89178017f496c0a15fdeaa454420e275b301a5b5d97a6fd079f1a",
+        "bytes": 37027
+      },
+      "scalar_comparisons": 318,
+      "all_exported_data_compared": true,
+      "sum_formulas_checked": 0,
+      "input_change_restore_recalculation_checks": 0,
+      "unexpected_formula_errors": 0,
+      "prior_exp008_goal_gate_applied": false,
+      "saved_file_previews": [
+        {
+          "sheetName": "计划购电量",
+          "range": "A1:B12",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-1-plan-first.png",
+          "sha256": "cfe2cfb099574fade7e263a411f2f686e24e15023544c3009d0c84c8ab0b7a56"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "A68:B78",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-1-plan-middle.png",
+          "sha256": "cf391738abd03da0bbc31187a390b34e750e372545fb2c55bcf0468a4cb3dc37"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "A135:B145",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-1-plan-last.png",
+          "sha256": "d544be33d1d4971d6912daf67f3062dd0415482594dc00da5c712bf8f16e0908"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1:E7",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-1-battery.png",
+          "sha256": "856543c827c8a3d0f08dcf425054d29bfdddd36e99726c67494600e6662a65d6"
+        }
+      ],
+      "engine": "Bundled @oai/artifact-tool; Excel desktop was not launched"
+    },
+    {
+      "scenario": "2",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result2.xlsx",
+      "sha256": "8b7412780370da3b700166248be7aab072db4195b6599ce6954a6c224ad79a84",
+      "passed": true,
+      "source_archive": {
+        "path": "data/results/exp009/q2_cost_only/dispatch.npz",
+        "sha256": "3492795fe18efc18bba89a83ba6ae3155e4ded82c39de992ab13c408a4f60024",
+        "bytes": 1870632
+      },
+      "scalar_comparisons": 63571,
+      "all_exported_data_compared": true,
+      "sum_formulas_checked": 334,
+      "input_change_restore_recalculation_checks": 3,
+      "unexpected_formula_errors": 0,
+      "prior_exp008_goal_gate_applied": false,
+      "saved_file_previews": [
+        {
+          "sheetName": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-计划购电量.png",
+          "sha256": "085818b86c7e3b12268cce16f497701eeb20c5f7a9e62d4387d009eeeea03dbb"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "A328:H335",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-计划购电量-last-days.png",
+          "sha256": "00b85e2942bac92cab9342c797da0d1d2784efa35f5d8cbc95dcbbd279c5e669"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-充放电量.png",
+          "sha256": "0fa6a8d5a2041b22d591183c4132aa957269a3a0caaca7336f3b61a4421f4736"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1997:F2005",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-充放电量-last.png",
+          "sha256": "a66ec7abb4c6c9bb8155de9344432e33c0fda654871af57767e716e66e57d92a"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-紧急购电量.png",
+          "sha256": "90268f660181ec9a113d1134ea40eafb3e98bbdf3b1dbe133ab167e88678b9a3"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A650:C658",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-紧急购电量-last.png",
+          "sha256": "40d8a24e51b6c7f8100a8e06073404cb8e9489efa8445989296fdd48dd9559b4"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "EN1:EQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-2-计划购电量-totals.png",
+          "sha256": "92f167c0dabbf7e0eff34c76889f22377d54838eab0ea952b8c3c6af42ea7e4b"
+        }
+      ],
+      "engine": "Bundled @oai/artifact-tool; Excel desktop was not launched"
+    },
+    {
+      "scenario": "3",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result3.xlsx",
+      "sha256": "b10fbea9d786729c26f385a4d69f979375f400c0b457fef12eebe6515dfbe01a",
+      "passed": true,
+      "source_archive": {
+        "path": "data/results/exp009/update_cost_only/full334/3/dispatch_3.npz",
+        "sha256": "25096216ccf761237f43c28566652d12fbde2c97959ce0f50db9e433064b0e46",
+        "bytes": 2032296
+      },
+      "scalar_comparisons": 112580,
+      "all_exported_data_compared": true,
+      "sum_formulas_checked": 668,
+      "input_change_restore_recalculation_checks": 6,
+      "unexpected_formula_errors": 0,
+      "prior_exp008_goal_gate_applied": false,
+      "saved_file_previews": [
+        {
+          "sheetName": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-计划购电量.png",
+          "sha256": "05475fe0da7a9c03d3a9d000ae834ae0258dff2edb77419be04f7305afd9576d"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "A328:H335",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-计划购电量-last-days.png",
+          "sha256": "137abd827fca1dc46736f93a32bf12b6675072175448c23a076e66accb90f457"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-调整购电量.png",
+          "sha256": "05475fe0da7a9c03d3a9d000ae834ae0258dff2edb77419be04f7305afd9576d"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "A328:H335",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-调整购电量-last-days.png",
+          "sha256": "137abd827fca1dc46736f93a32bf12b6675072175448c23a076e66accb90f457"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "AH1:AQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-six-hour-update.png",
+          "sha256": "4c51e9131e178d66982abc0732d55a87c9798d497bf0819d720046a321ea0a45"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-充放电量.png",
+          "sha256": "3714978d1ce4887aa93f6e030d9d6d854a71b60d0748576e4c8a4bb5625e0df3"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1997:F2005",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-充放电量-last.png",
+          "sha256": "6f3528d07dfa2b29005eef431b9313946a3dab8c5f973d61bc8f96a1b7e84fa0"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-紧急购电量.png",
+          "sha256": "b61145f61cb84c3373780eda661584adfb0fb4a67b2d3cb3e00ab5f405917a9a"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A461:C469",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-紧急购电量-last.png",
+          "sha256": "fb2392841236dc35f916615a6a3f58a47ea8ba6ce4481d8ecc31df26eaed1afb"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "EN1:EQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-计划购电量-totals.png",
+          "sha256": "aa00fe1c571772f46ae4ee480a392a990a899114ca8ec558256040eb12199793"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "EN1:EQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-3-调整购电量-totals.png",
+          "sha256": "c9d9787789a01fda3b839a622ec645c88b3cc9a1c3f985db99f152f3902e5856"
+        }
+      ],
+      "engine": "Bundled @oai/artifact-tool; Excel desktop was not launched"
+    },
+    {
+      "scenario": "4-2",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result4-2.xlsx",
+      "sha256": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+      "passed": true,
+      "source_archive": {
+        "path": "data/results/exp009/q4_2_cost_only/full334/dispatch_4-2.npz",
+        "sha256": "d6a06298f551a39e50c6393ca90c28ae7917db8d05941312a5729525fd15c96b",
+        "bytes": 2180823
+      },
+      "scalar_comparisons": 63709,
+      "all_exported_data_compared": true,
+      "sum_formulas_checked": 334,
+      "input_change_restore_recalculation_checks": 3,
+      "unexpected_formula_errors": 0,
+      "prior_exp008_goal_gate_applied": false,
+      "saved_file_previews": [
+        {
+          "sheetName": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-计划购电量.png",
+          "sha256": "5dac90afa8bd85ff59e2ec76a3eb9664f0791a0c39a8478fedd56a0066c94ecf"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "A328:H335",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-计划购电量-last-days.png",
+          "sha256": "a4eb03cc09332c740f7a868a69f57fbd531fb65ee4aacef4ade5c5e4783bd214"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-充放电量.png",
+          "sha256": "96ebe0bbdb3e88fec7639fae772e1b3eff0c538f4e28e7e01c5a5800637b5b8f"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1997:F2005",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-充放电量-last.png",
+          "sha256": "7e0b0e956ef596ea6c7cb4da2b2928d453bee3453c94b3d21cf5096637e7a74a"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-紧急购电量.png",
+          "sha256": "01982205f6b422ac8f17946df7dc003c1e3748bd14fb636dee7c352d7b45bdbc"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A696:C704",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-紧急购电量-last.png",
+          "sha256": "13275d6f8920e40ec4eb38eef74b39270f3a0deeec89ba7db82a3275d867b7fa"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "EN1:EQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-2-计划购电量-totals.png",
+          "sha256": "9084cf90a14eb9e2f90596bc2762a9e015242d36e63d61e4b78b1923824ff4eb"
+        }
+      ],
+      "engine": "Bundled @oai/artifact-tool; Excel desktop was not launched"
+    },
+    {
+      "scenario": "4-3",
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result4-3.xlsx",
+      "sha256": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993",
+      "passed": true,
+      "source_archive": {
+        "path": "data/results/exp009/update_cost_only/full334/4-3/dispatch_4-3.npz",
+        "sha256": "eab3882ae55be1e31ada4d3718285046dcd7d48b9a3018c86b897ea1c6282d1b",
+        "bytes": 2142358
+      },
+      "scalar_comparisons": 112757,
+      "all_exported_data_compared": true,
+      "sum_formulas_checked": 668,
+      "input_change_restore_recalculation_checks": 6,
+      "unexpected_formula_errors": 0,
+      "prior_exp008_goal_gate_applied": false,
+      "saved_file_previews": [
+        {
+          "sheetName": "计划购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-计划购电量.png",
+          "sha256": "5cae517414ca535736304af9c74ee839ee0f4409dc3d3880ce3db9ee8761b427"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "A328:H335",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-计划购电量-last-days.png",
+          "sha256": "89f2d4c31ec98c1cf638b14708dc325b58cdb06d9e8374701c459c490a7a58c8"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "A1:H8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-调整购电量.png",
+          "sha256": "5cae517414ca535736304af9c74ee839ee0f4409dc3d3880ce3db9ee8761b427"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "A328:H335",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-调整购电量-last-days.png",
+          "sha256": "89f2d4c31ec98c1cf638b14708dc325b58cdb06d9e8374701c459c490a7a58c8"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "AH1:AQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-six-hour-update.png",
+          "sha256": "4218bd96bec0198a86e7df0d0a9a884f153458b33651f26158921bc0f9f50f5d"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1:F9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-充放电量.png",
+          "sha256": "e656ecad585c580e04757546c137524095ac3c4fd4c51e567ee3d6f69aba5846"
+        },
+        {
+          "sheetName": "充放电量",
+          "range": "A1997:F2005",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-充放电量-last.png",
+          "sha256": "5070b5848eabfbd921d639128dea4525d20ef8b9622d509b97ec1a606eba3fc0"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A1:C9",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-紧急购电量.png",
+          "sha256": "34b4375072c121c0041570db21ba1b158688e35732e355a0da7ec73d4c7f1aae"
+        },
+        {
+          "sheetName": "紧急购电量",
+          "range": "A520:C528",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-紧急购电量-last.png",
+          "sha256": "f33a546ac3500660fb50f1c5f331f6af250068dad3eaee5f788d8c74008a4f7a"
+        },
+        {
+          "sheetName": "计划购电量",
+          "range": "EN1:EQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-计划购电量-totals.png",
+          "sha256": "20949e82f28c5c6d353df9fdd1b871897700d187e7a80dca771bb431aff92426"
+        },
+        {
+          "sheetName": "调整购电量",
+          "range": "EN1:EQ8",
+          "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/workbook-previews/saved-4-3-调整购电量-totals.png",
+          "sha256": "a67054d7d0308d7ff311aa69e37fd0f580beacbf4d829fdb474980a9edb3b621"
+        }
+      ],
+      "engine": "Bundled @oai/artifact-tool; Excel desktop was not launched"
+    }
+  ],
+  "total_scalar_comparisons": 352935,
+  "source_archive_independent_reconstruction": "independent_cell_audit.json",
+  "visual_QA_status": "see visual_review.json",
+  "original_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+  "payload_metadata_refresh": {
+    "reason": "Only Q1 comparison seed metadata corrected; exact workbook inputs and archive references checked, no workbook rewritten",
+    "verified": [
+      {
+        "scenario": "1",
+        "input_sha256": "93813ebf48c67242ac7b841cbdda843e653d4d3333d9e74da20eb0df6cd39755",
+        "output_sha256": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+        "archive_sha256": "94db533f74c89178017f496c0a15fdeaa454420e275b301a5b5d97a6fd079f1a",
+        "unchanged": true
+      },
+      {
+        "scenario": "2",
+        "input_sha256": "51e057e9cc1b7d0d6af50911b22a7f68d2e61ef794a2dfc88aeae10dbc76563a",
+        "output_sha256": "8b7412780370da3b700166248be7aab072db4195b6599ce6954a6c224ad79a84",
+        "archive_sha256": "3492795fe18efc18bba89a83ba6ae3155e4ded82c39de992ab13c408a4f60024",
+        "unchanged": true
+      },
+      {
+        "scenario": "3",
+        "input_sha256": "0bfb2516c683cb39e9faf3d904369d0dd553bb9fe7f82503c986e4c2556942e1",
+        "output_sha256": "b10fbea9d786729c26f385a4d69f979375f400c0b457fef12eebe6515dfbe01a",
+        "archive_sha256": "25096216ccf761237f43c28566652d12fbde2c97959ce0f50db9e433064b0e46",
+        "unchanged": true
+      },
+      {
+        "scenario": "4-2",
+        "input_sha256": "4ef226d51a56fb5da9ae8bee0be46e14ef70e5865fa87b96b78d05397f9b1d55",
+        "output_sha256": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+        "archive_sha256": "d6a06298f551a39e50c6393ca90c28ae7917db8d05941312a5729525fd15c96b",
+        "unchanged": true
+      },
+      {
+        "scenario": "4-3",
+        "input_sha256": "5eceac043453f663fe78afd0d1b79472fd8f3660f4298782f77115a12225f73f",
+        "output_sha256": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993",
+        "archive_sha256": "eab3882ae55be1e31ada4d3718285046dcd7d48b9a3018c86b897ea1c6282d1b",
+        "unchanged": true
+      }
+    ]
+  }
+}

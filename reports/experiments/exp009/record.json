@@ -1,0 +1,690 @@
+{
+  "environment": {
+    "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "dependencies": {
+      "numpy": "2.0.2",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.1"
+    },
+    "numerical_threads": 1,
+    "timing_scope": "current report environment; historical run metadata retained"
+  },
+  "model_configuration": {
+    "selected_Q2_model": "hgb_extra_trees_half_ridge28_memory",
+    "Q3_Q4_single_HGB_model": "direct_hgb_ridge28_memory_half",
+    "seed": 42,
+    "number_of_formal_seeds": 1,
+    "sample_seed_standard_deviation": null,
+    "seed_std_missing_reason": "Only one seed; no multi-seed stability estimate exists.",
+    "families": {
+      "HGB": {
+        "estimator": "sklearn.ensemble.HistGradientBoostingRegressor",
+        "fixed_configuration": {
+          "loss": "squared_error",
+          "max_leaf_nodes": 15,
+          "max_iter": 100,
+          "min_samples_leaf": 50,
+          "l2_regularization": 2.0,
+          "learning_rate": 0.08,
+          "early_stopping": true,
+          "random_state": 42,
+          "n_iter_no_change": 10,
+          "tol": 1e-07,
+          "scoring": "loss",
+          "validation_fraction": null
+        },
+        "protocol_source": "data/results/exp008/forecast_absolute_hgb/protocol.json",
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.0.2",
+        "features": [
+          "yesterday_load",
+          "yesterday_pv",
+          "yesterday_net",
+          "previous_week_load",
+          "previous_week_pv",
+          "previous_week_net",
+          "mean3_load",
+          "mean3_pv",
+          "mean3_net",
+          "mean7_load",
+          "mean7_pv",
+          "mean7_net",
+          "std7_load",
+          "std7_pv",
+          "std7_net",
+          "slot_sin",
+          "slot_cos",
+          "slot_sin2",
+          "slot_cos2",
+          "weekday_sin",
+          "weekday_cos",
+          "yesterday_mean_load",
+          "yesterday_mean_pv",
+          "yesterday_std_load",
+          "yesterday_std_pv",
+          "yesterday_min_load",
+          "yesterday_min_pv",
+          "yesterday_max_load",
+          "yesterday_max_pv",
+          "yesterday_mean_net",
+          "yesterday_std_net"
+        ],
+        "model_count": 22,
+        "targets": [
+          "absolute load kW",
+          "absolute PV kW"
+        ]
+      },
+      "ExtraTrees": {
+        "estimator": "sklearn.ensemble.ExtraTreesRegressor",
+        "fixed_configuration": {
+          "n_estimators": 128,
+          "min_samples_leaf": 10,
+          "max_features": 1.0,
+          "bootstrap": false,
+          "random_state": 42,
+          "n_jobs": 2,
+          "criterion": "squared_error"
+        },
+        "protocol_source": "data/results/exp008/forecast_absolute_extra_trees/protocol.json",
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.0.2",
+        "features": [
+          "yesterday_load",
+          "yesterday_pv",
+          "yesterday_net",
+          "previous_week_load",
+          "previous_week_pv",
+          "previous_week_net",
+          "mean3_load",
+          "mean3_pv",
+          "mean3_net",
+          "mean7_load",
+          "mean7_pv",
+          "mean7_net",
+          "std7_load",
+          "std7_pv",
+          "std7_net",
+          "slot_sin",
+          "slot_cos",
+          "slot_sin2",
+          "slot_cos2",
+          "weekday_sin",
+          "weekday_cos",
+          "yesterday_mean_load",
+          "yesterday_mean_pv",
+          "yesterday_std_load",
+          "yesterday_std_pv",
+          "yesterday_min_load",
+          "yesterday_min_pv",
+          "yesterday_max_load",
+          "yesterday_max_pv",
+          "yesterday_mean_net",
+          "yesterday_std_net"
+        ],
+        "model_count": 22,
+        "targets": [
+          "absolute load kW",
+          "absolute PV kW"
+        ],
+        "resolved_model_parameters": {
+          "bootstrap": false,
+          "ccp_alpha": 0.0,
+          "criterion": "squared_error",
+          "max_depth": null,
+          "max_features": 1.0,
+          "max_leaf_nodes": null,
+          "max_samples": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 10,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "monotonic_cst": null,
+          "n_estimators": 128,
+          "n_jobs": 2,
+          "oob_score": false,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        }
+      }
+    },
+    "unique_raw_models_for_blend": 44,
+    "architecture": "Two separate target regressors per monthly family; 31 engineered causal features per ten-minute slot. No CNN in this final forecast.",
+    "train_validation_schedule": "For zero-based month-start day D: train day7..D-8, validate dayD-7..D-1, issue only within current month. Daily features use earlier actuals; monthly fitted model remains frozen.",
+    "training_weights": "2**(-(train_cutoff_day-1-training_day)/90), normalized to mean1 and repeated144 times; train_cutoff_day=D-7.",
+    "HGB_early_stopping": "Prior7day explicit validation, patience10, tol1e-7; retain final fitted iteration. Not the later best-stage400 variant.",
+    "ExtraTrees_validation": "Same prior7day holdout, metrics only; no early stopping or model selection/refit on this holdout.",
+    "raw_physical_postprocessing": "Both channels nonnegative. PV daylight mask is past28complete days positive-PV union by slot, expanded20minutes each side.",
+    "raw_blend": {
+      "HGB_weight": 0.5,
+      "ExtraTrees_weight": 0.5,
+      "both_channels": true,
+      "fixed_before_evaluation": true,
+      "grid_or_weight_tuning": false,
+      "order": [
+        "causal raw HGB and raw ExtraTrees outputs",
+        "fixed arithmetic mean of both raw channels",
+        "Ridge28 recalibrated on that blend history",
+        "nonrecursive half daily load memory"
+      ]
+    },
+    "Ridge28": {
+      "regressions": "Separate load/PV residual ridge fits, each with cross-channel forecast feature",
+      "prior_issued_day_window": 28,
+      "half_life_days": 14,
+      "intercept_penalty": 2,
+      "other_coefficient_penalty": 20,
+      "feature_count_per_channel": 10,
+      "features": [
+        "1",
+        "raw_channel/1000",
+        "(yesterday_channel-raw_channel)/1000",
+        "(previous_week_channel-raw_channel)/1000",
+        "(mean3_channel-raw_channel)/1000",
+        "raw_other_channel/1000",
+        "sin(slot)",
+        "cos(slot)",
+        "sin(2slot)",
+        "cos(2slot)"
+      ],
+      "target": "(actual_channel-raw_channel)/1000",
+      "PV_sample_weight": "1 if rawPV>1 or actualPV>1; otherwise0.1, multiplied by age weight",
+      "correction_clip_kw": "plus/minus max(100,3*prior residualRMSE)",
+      "postprocess": "Nonnegative channels and same causal PV mask"
+    },
+    "load_memory": {
+      "coefficient": 0.5,
+      "formula": "load_final[d,t]=max(0,load_ridge[d,t]+0.5*mean_t(actual_load[d-1,t]-load_ridge[d-1,t]))",
+      "PV_unchanged": true,
+      "nonrecursive": true,
+      "residual_basis": "Previous underlying Ridge28 forecast, not its memory-adjusted output"
+    },
+    "cold_start": "Feb1 has no earlier issued output: calibration/memory pass through. January dispatch residual cold-start uses explicitly labelled periodic forecasts.",
+    "timing_evidence": [
+      {
+        "family": "HGB",
+        "stage": "22 primary fit plus validation-predict blocks",
+        "seconds": 44.97184687713161,
+        "measured": true,
+        "source": "data/results/exp008/forecast_absolute_hgb/training_audit.json",
+        "scope": "Original timer starts before model.fit and ends after the following model.predict(X_val), including surrounding call overhead. Excludes feature construction, formal prediction, calibration, audit retraining, dispatch and report; not pure fit time."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "22 primary fit plus validation-predict blocks",
+        "seconds": 63.233388833119534,
+        "measured": true,
+        "source": "data/results/exp008/forecast_absolute_extra_trees/training_audit.json",
+        "scope": "Original timer starts before model.fit and ends after the following model.predict(X_val), including surrounding call overhead. Excludes feature construction, formal prediction, calibration, audit retraining, dispatch and report; not pure fit time."
+      },
+      {
+        "family": "HGB",
+        "stage": "original pre-bridge pipeline wall time",
+        "seconds": 52.487478957977146,
+        "measured": true,
+        "source": "data/results/exp008/forecast_absolute_hgb/provenance.json:total_seconds_before_bridge",
+        "scope": "Whole original workflow before LP bridge, including audits; not pure inference time and not directly comparable to fit sums."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "original pre-bridge pipeline wall time",
+        "seconds": 83.76314004103187,
+        "measured": true,
+        "source": "data/results/exp008/forecast_absolute_extra_trees/provenance.json:elapsed_seconds_before_bridge",
+        "scope": "Whole original workflow before LP bridge, including audits; not pure inference time and not directly comparable to fit sums."
+      },
+      {
+        "family": "HGB",
+        "stage": "feature construction",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "HGB",
+        "stage": "prediction only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "HGB",
+        "stage": "Ridge28 only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "HGB",
+        "stage": "memory only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "feature construction",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "prediction only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "Ridge28 only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "memory only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "fixed_half_blend",
+        "stage": "feature construction",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "fixed_half_blend",
+        "stage": "prediction only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "fixed_half_blend",
+        "stage": "Ridge28 only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "fixed_half_blend",
+        "stage": "memory only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "No separate original timer; omitted rather than measured as zero. No rerun performed to manufacture timings."
+      },
+      {
+        "family": "HGB",
+        "stage": "fit only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "Original training_seconds also includes the subsequent validation prediction; a pure fit duration cannot be recovered."
+      },
+      {
+        "family": "ExtraTrees",
+        "stage": "fit only",
+        "seconds": null,
+        "measured": false,
+        "source": "",
+        "scope": "Original training_seconds also includes the subsequent validation prediction; a pure fit duration cannot be recovered."
+      }
+    ],
+    "development_not_independent_test": true,
+    "selection_context": "Inherited exp008 tree selection; exp009 has one predeclared treatment and no further selection.",
+    "reuse_note": "All model fits inherited unchanged from exp008; no new fit or hyperparameter selection in exp009."
+  },
+  "data_hashes": {
+    "data/raw/附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "data/raw/附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "data/raw/附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "data/raw/附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "data/raw/附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "experiment_id": "exp009",
+  "title": "exp008固定预测与物理口径下的费用唯一目标对照",
+  "scope": [
+    "1",
+    "2",
+    "3",
+    "4-2",
+    "4-3"
+  ],
+  "code_commit": "50415037a399f9ee81fd2cb3a1b3ff36ac217078",
+  "protocol": {
+    "experiment_id": "exp009",
+    "title": "exp008固定预测与物理口径下的费用唯一目标对照",
+    "base_commit": "b2ce6b6e4eef46512eb1092c408cef155a37f187",
+    "source_branch": "codex/exp009-cost-only-control",
+    "template_main_commit": "58fd537055dfa5ddb7460cee0413011bdb6d8526",
+    "user_request": "其他都保持不变，就是不用去管优化充放电次数，而是全部服务于最小化总费用这个目标函数，模型构建等等的方法基本不变，与这个exp008形成一个对照实验；做完报告后推送远程",
+    "formal_run_authorized": true,
+    "candidate_count_per_question": 1,
+    "selection_policy": "predeclared single controlled treatment; report every question including regressions; no tuning or selection by realized evaluation fees",
+    "evaluation": {
+      "start_day": 31,
+      "stop_day_exclusive": 365,
+      "days": 334,
+      "slots_per_day": 144,
+      "q1": "attachment1 given single day"
+    },
+    "fixed": {
+      "forecast": "exact accepted exp008 question-specific issued predictions, no retraining or changed calibration",
+      "random_seed": 42,
+      "raw_data": "same five input CSV byte hashes as exp008",
+      "storage": {
+        "capacity_kwh": 12000,
+        "soc_min_kwh": 1200,
+        "soc_max_kwh": 10800,
+        "eta_charge": "sqrt(0.9)",
+        "eta_discharge": "sqrt(0.9)",
+        "max_power_kw": 5000,
+        "actual_simultaneous_charge_discharge": false,
+        "actual_emergency_charging": false
+      },
+      "initial_soc_kwh": {
+        "1": 6000,
+        "2": 1421.7991105135516,
+        "3": 1507.622628752613,
+        "4-2": 1390.382746315672,
+        "4-3": 1522.7387288211346
+      },
+      "annual_initial_mode": 1,
+      "annual_initial_power_kw": 172.75999999999976,
+      "soc_state": "each treatment carries its own realized state; never copy exp008 later-day states",
+      "terminal_value": "unchanged economic continuation proxy for future purchases; zero on final evaluation day; excluded from actual bills",
+      "billing": "same actual original purchases, one final adjustment charge, fivefold emergency cost; true tariff only for settlement",
+      "model_classes": "same deterministic MILP, physical common-mode MIP plus fixed-mode L-BFGS refinement, or same rolling seven-scenario LP as the corresponding exp008 question",
+      "unknown_future": "same legal issue times and historical labels; no current-day future observations used for planning"
+    },
+    "treatment": {
+      "1": {
+        "secondary_smooth_start_short_run_objective": "removed; execute cost-optimal stage1 directly",
+        "ramp_kw_per_10min": 1000,
+        "min_on_slots": 3,
+        "min_off_slots": 2,
+        "min_active_power_kw": 1,
+        "physical_feasible_set": "unchanged, including ramp/minimum-duration safeguards",
+        "solver_seconds": 180,
+        "mip_rel_gap": 1e-09
+      },
+      "2": {
+        "daily_planned_switch_cap": "removed",
+        "switching_penalty": 0,
+        "wear_penalty": 0,
+        "refinement_throughput_penalty": 0,
+        "variation_penalty": 0,
+        "deadband_kwh": 0,
+        "mode_resolution_slots": 1,
+        "min_mode_hold_slots": 1,
+        "physical_scenarios": 3,
+        "refinement_history_days": 28,
+        "mip_seconds": 5,
+        "mip_rel_gap": 0.002,
+        "refinement_maxiter": 120
+      },
+      "3": {
+        "throughput_penalty": 0,
+        "variation_penalty": 0,
+        "charge_deadband_kwh": 0,
+        "representative_paths": 7,
+        "future_shortfall_weight": 1.5,
+        "updates": [
+          0,
+          36,
+          72,
+          108
+        ]
+      },
+      "4-2": {
+        "switching_penalty": 0,
+        "wear_penalty": 0,
+        "refinement_throughput_penalty": 0,
+        "variation_penalty": 0,
+        "deadband_kwh": 0,
+        "mode_resolution_slots": 6,
+        "physical_scenarios": 3,
+        "refinement_history_days": 28,
+        "mip_seconds": 5,
+        "mip_rel_gap": 0.002,
+        "refinement_maxiter": 120
+      },
+      "4-3": {
+        "throughput_penalty": 0,
+        "variation_penalty": 0,
+        "charge_deadband_kwh": 0,
+        "representative_paths": 7,
+        "future_shortfall_weight": 1.5,
+        "updates": [
+          0,
+          36,
+          72,
+          108
+        ]
+      }
+    },
+    "interpretation": "Remove intensity-related optimization and Q2 explicit switching budget. Do not enlarge battery hardware/ramp constraints or change the hourly discretization of the Q4-2 model. This is a controlled bundle of stated objective-related changes, not a one-coefficient causal experiment.",
+    "failure_policy": "retain feasible time-limited MIP incumbents with actual gaps; if no feasible incumbent or physical verification failure, stop and record the failure without silently increasing budgets or retuning; a numerical defect repair must be documented separately",
+    "reporting": {
+      "primary": "actual total cost",
+      "diagnostic_only": [
+        "reversals",
+        "episodes",
+        "active slots",
+        "throughput",
+        "EFC",
+        "power total variation"
+      ],
+      "year_status": "same repeatedly used2025 development evaluation; not an untouched holdout",
+      "comparators": "exp008 exactly plus prior historical experiments, exclude exp007",
+      "visual_seed": 20260912
+    },
+    "remote": {
+      "name": "origin",
+      "url": "https://github.com/Vege114/CUMCM2026.git",
+      "push": "new branch only; no force push or main merge"
+    }
+  },
+  "seeds": [
+    42
+  ],
+  "primary_seed": 42,
+  "new_forecast_fits": 0,
+  "seed_sample_standard_deviation": null,
+  "metrics": [
+    {
+      "scenario": "1",
+      "previous_experiment": "exp008",
+      "experiment": "exp009",
+      "role": "predeclared_cost_only_control",
+      "days": 1,
+      "seed": null,
+      "previous": 34115.032450968385,
+      "current": 34080.951399568854,
+      "absolute_change_yuan": -34.081051399531134,
+      "relative_change_pct": -0.09990039273306836,
+      "comparable": true,
+      "planned_cost_yuan": 34080.951399568854,
+      "up_adjustment_cost_yuan": 0.0,
+      "down_adjustment_cost_yuan": 0.0,
+      "emergency_cost_yuan": 0.0,
+      "adjustment_cost_yuan": 0.0,
+      "total_cost_yuan": 34080.951399568854,
+      "emergency_kwh": 0
+    },
+    {
+      "scenario": "2",
+      "previous_experiment": "exp008",
+      "experiment": "exp009",
+      "role": "predeclared_cost_only_control",
+      "days": 334,
+      "seed": 42,
+      "previous": 13201981.947942203,
+      "current": 13215591.495018823,
+      "absolute_change_yuan": 13609.547076620162,
+      "relative_change_pct": 0.10308715108295907,
+      "comparable": true,
+      "planned_cost_yuan": 12632239.14267758,
+      "up_adjustment_cost_yuan": 0.0,
+      "down_adjustment_cost_yuan": 0.0,
+      "emergency_cost_yuan": 583352.3523412447,
+      "adjustment_cost_yuan": 0.0,
+      "total_cost_yuan": 13215591.495018823,
+      "emergency_kwh": 104955.7812684371
+    },
+    {
+      "scenario": "3",
+      "previous_experiment": "exp008",
+      "experiment": "exp009",
+      "role": "predeclared_cost_only_control",
+      "days": 334,
+      "seed": 42,
+      "previous": 12826263.074326852,
+      "current": 12787820.024906598,
+      "absolute_change_yuan": -38443.049420254305,
+      "relative_change_pct": -0.29972135451675097,
+      "comparable": true,
+      "planned_cost_yuan": 11620322.95608568,
+      "up_adjustment_cost_yuan": 974441.7235607953,
+      "down_adjustment_cost_yuan": 0.0,
+      "emergency_cost_yuan": 193055.3452601235,
+      "adjustment_cost_yuan": 974441.7235607953,
+      "total_cost_yuan": 12787820.024906598,
+      "emergency_kwh": 37996.06269391478
+    },
+    {
+      "scenario": "4-2",
+      "previous_experiment": "exp008",
+      "experiment": "exp009",
+      "role": "predeclared_cost_only_control",
+      "days": 334,
+      "seed": 42,
+      "previous": 13994531.257936778,
+      "current": 13978929.994015083,
+      "absolute_change_yuan": -15601.26392169483,
+      "relative_change_pct": -0.11148114670040712,
+      "comparable": true,
+      "planned_cost_yuan": 13376143.787266407,
+      "up_adjustment_cost_yuan": 0.0,
+      "down_adjustment_cost_yuan": 0.0,
+      "emergency_cost_yuan": 602786.2067486761,
+      "adjustment_cost_yuan": 0.0,
+      "total_cost_yuan": 13978929.994015083,
+      "emergency_kwh": 107711.18723283753
+    },
+    {
+      "scenario": "4-3",
+      "previous_experiment": "exp008",
+      "experiment": "exp009",
+      "role": "predeclared_cost_only_control",
+      "days": 334,
+      "seed": 42,
+      "previous": 13579870.464961907,
+      "current": 13573403.53627182,
+      "absolute_change_yuan": -6466.92869008705,
+      "relative_change_pct": -0.04762143134408161,
+      "comparable": true,
+      "planned_cost_yuan": 12282382.089673847,
+      "up_adjustment_cost_yuan": 1073372.385764485,
+      "down_adjustment_cost_yuan": 0.0,
+      "emergency_cost_yuan": 217649.0608334875,
+      "adjustment_cost_yuan": 1073372.385764485,
+      "total_cost_yuan": 13573403.53627182,
+      "emergency_kwh": 44234.54599523198
+    }
+  ],
+  "models": [
+    "Q1 original-feasible-set cost MILP",
+    "Q2 frozen blend + uncapped physical modes + cost refinement",
+    "Q3 frozen HGB/official PV + cost LP",
+    "Q4-2 frozen linked price + hourly cost modes",
+    "Q4-3 frozen causal price + cost LP"
+  ],
+  "forecast_metrics_unchanged_from": "exp008",
+  "new_forecast_fits_scope": "HGB/ExtraTrees only; inherited online Ridge calibrations still computed for Q3/4-3",
+  "forecast_evidence": {
+    "annual_metrics": {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/forecast/annual_metrics.csv",
+      "sha256": "651629100ecd483f49d67877ea48801a97a7089fa14d8d47696fdd27ad707f64",
+      "bytes": 4653
+    },
+    "monthly_metrics": {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/forecast/monthly_metrics.csv",
+      "sha256": "1b82d3372560825ab8e738d84a3c6d3d0e0a35e7b74066b791692f6d5dafd70d",
+      "bytes": 48338
+    },
+    "lead_metrics": {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/forecast/lead_metrics.csv",
+      "sha256": "7908deec2c79a66e65853d056981a3e95353e03a543cfb1530c155eece03f507",
+      "bytes": 610266
+    },
+    "provenance": {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/forecast/provenance.json",
+      "sha256": "76a1c9ce24030d850825aab58a8165eb3b4b8ce1d74c27131d554185398f73b5",
+      "bytes": 15457
+    },
+    "model_configuration": {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/forecast/model_configuration.json",
+      "sha256": "56dc51705dcf6a5462536af5c0da67db8b024f899ae795bbb6a8da3c88473b92",
+      "bytes": 12433
+    },
+    "verification": {
+      "path": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp008/evidence/forecast/verification.json",
+      "sha256": "273cc8cedd7dc9ab3c39e97de64f5268bccc307cae9610610a128957d286c2ad",
+      "bytes": 2472
+    }
+  },
+  "source_sha256": {
+    "reports/build_report_exp009.py": "5ab92a8914725755c2729354d5e6d1aa00f0a220bee60931aeb7bf6bb1a51c16",
+    "experiments/exp009/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/exp009/delivery_check.py": "df0e506a2f2705b1b4b35e6915b1f995a7b3060d8b0f4fcd31068cbad6938e28",
+    "experiments/exp009/final_evidence.py": "7f4cc38f7a50d8e4c383d36b80ceec97627890ea66c61dad63976c0d12de6f95",
+    "experiments/exp009/inline_comparison.py": "bc456c0a80831000ee00312cc8df922c692b02e69f86c109e3b53fcab02702ab",
+    "experiments/exp009/q1_cost_model.py": "a5e37ae60ed01859f0a18d91b56e823503c3b9652e07df047b449863876e2228",
+    "experiments/exp009/q2_cost_model.py": "5db9c30fbe68ca98491dac6a0bb63677955a9bba91ac3e400a52a32060d3354d",
+    "experiments/exp009/q4_2_cost_only.py": "800ba9fda6a73448d786fa0e46034b8abc0389fade341c30967782ee79a3dd8c",
+    "experiments/exp009/q4_2_cost_only_audit.py": "14ecfdb5308949c4aab71931738c42c411a51a0902edfd28e84aa0329bf661bc",
+    "experiments/exp009/report_payload.py": "f60729305150383e5f093616b99366f9bffcd97c806ec4f97e5e3b1ea0d641b5",
+    "experiments/exp009/run_q1.py": "b10b3b658e3eda5ff309b55455a2661e00421b5d8d8d0930679a05238f96be40",
+    "experiments/exp009/run_q2.py": "9f03c57daa3a312116590c7ae3d61398a9f4a2cc383a14eb9c4a8ab20609b57a",
+    "experiments/exp009/run_update_cost_only.py": "26fbff9248b175f27ae4e2bae2fd7fc7880173643142bf070badcfeb54e0a663",
+    "experiments/exp009/update_cost_only_audit.py": "b70307fc590e6d9ff57396211032a99ab3701f4ad5603456ec2ad62f2f014491",
+    "experiments/exp009/verify_workbook_sources.py": "a41997121a05c034fdd62c5e9e806fb6cf04587d9d7fa8e74f64ba9ddb19bb1b",
+    "experiments/exp009/protocol.json": "189736eb3503ce824bb5ebd475a863b2e0c5a3ef02f5bdfa0a76d7ba3e4cbaf5"
+  },
+  "artifacts": {
+    "report": "experiments/exp009/report.md",
+    "html": "experiments/exp009/report.html",
+    "payload": "experiments/exp009/final_payload.json",
+    "workbooks": [
+      "experiments/exp009/result1.xlsx",
+      "experiments/exp009/result2.xlsx",
+      "experiments/exp009/result3.xlsx",
+      "experiments/exp009/result4-2.xlsx",
+      "experiments/exp009/result4-3.xlsx"
+    ]
+  },
+  "formal_run_executed": true,
+  "selection_performed": false,
+  "accepted_result_is_untouched_test": false
+}

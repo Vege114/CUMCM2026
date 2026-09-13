@@ -1,0 +1,1686 @@
+{
+  "passed": true,
+  "days": 334,
+  "checks": [
+    {
+      "day": 31,
+      "past_label_end_exclusive": 4464,
+      "exact_28_paths": true
+    },
+    {
+      "day": 32,
+      "past_label_end_exclusive": 4608,
+      "exact_28_paths": true
+    },
+    {
+      "day": 33,
+      "past_label_end_exclusive": 4752,
+      "exact_28_paths": true
+    },
+    {
+      "day": 34,
+      "past_label_end_exclusive": 4896,
+      "exact_28_paths": true
+    },
+    {
+      "day": 35,
+      "past_label_end_exclusive": 5040,
+      "exact_28_paths": true
+    },
+    {
+      "day": 36,
+      "past_label_end_exclusive": 5184,
+      "exact_28_paths": true
+    },
+    {
+      "day": 37,
+      "past_label_end_exclusive": 5328,
+      "exact_28_paths": true
+    },
+    {
+      "day": 38,
+      "past_label_end_exclusive": 5472,
+      "exact_28_paths": true
+    },
+    {
+      "day": 39,
+      "past_label_end_exclusive": 5616,
+      "exact_28_paths": true
+    },
+    {
+      "day": 40,
+      "past_label_end_exclusive": 5760,
+      "exact_28_paths": true
+    },
+    {
+      "day": 41,
+      "past_label_end_exclusive": 5904,
+      "exact_28_paths": true
+    },
+    {
+      "day": 42,
+      "past_label_end_exclusive": 6048,
+      "exact_28_paths": true
+    },
+    {
+      "day": 43,
+      "past_label_end_exclusive": 6192,
+      "exact_28_paths": true
+    },
+    {
+      "day": 44,
+      "past_label_end_exclusive": 6336,
+      "exact_28_paths": true
+    },
+    {
+      "day": 45,
+      "past_label_end_exclusive": 6480,
+      "exact_28_paths": true
+    },
+    {
+      "day": 46,
+      "past_label_end_exclusive": 6624,
+      "exact_28_paths": true
+    },
+    {
+      "day": 47,
+      "past_label_end_exclusive": 6768,
+      "exact_28_paths": true
+    },
+    {
+      "day": 48,
+      "past_label_end_exclusive": 6912,
+      "exact_28_paths": true
+    },
+    {
+      "day": 49,
+      "past_label_end_exclusive": 7056,
+      "exact_28_paths": true
+    },
+    {
+      "day": 50,
+      "past_label_end_exclusive": 7200,
+      "exact_28_paths": true
+    },
+    {
+      "day": 51,
+      "past_label_end_exclusive": 7344,
+      "exact_28_paths": true
+    },
+    {
+      "day": 52,
+      "past_label_end_exclusive": 7488,
+      "exact_28_paths": true
+    },
+    {
+      "day": 53,
+      "past_label_end_exclusive": 7632,
+      "exact_28_paths": true
+    },
+    {
+      "day": 54,
+      "past_label_end_exclusive": 7776,
+      "exact_28_paths": true
+    },
+    {
+      "day": 55,
+      "past_label_end_exclusive": 7920,
+      "exact_28_paths": true
+    },
+    {
+      "day": 56,
+      "past_label_end_exclusive": 8064,
+      "exact_28_paths": true
+    },
+    {
+      "day": 57,
+      "past_label_end_exclusive": 8208,
+      "exact_28_paths": true
+    },
+    {
+      "day": 58,
+      "past_label_end_exclusive": 8352,
+      "exact_28_paths": true
+    },
+    {
+      "day": 59,
+      "past_label_end_exclusive": 8496,
+      "exact_28_paths": true
+    },
+    {
+      "day": 60,
+      "past_label_end_exclusive": 8640,
+      "exact_28_paths": true
+    },
+    {
+      "day": 61,
+      "past_label_end_exclusive": 8784,
+      "exact_28_paths": true
+    },
+    {
+      "day": 62,
+      "past_label_end_exclusive": 8928,
+      "exact_28_paths": true
+    },
+    {
+      "day": 63,
+      "past_label_end_exclusive": 9072,
+      "exact_28_paths": true
+    },
+    {
+      "day": 64,
+      "past_label_end_exclusive": 9216,
+      "exact_28_paths": true
+    },
+    {
+      "day": 65,
+      "past_label_end_exclusive": 9360,
+      "exact_28_paths": true
+    },
+    {
+      "day": 66,
+      "past_label_end_exclusive": 9504,
+      "exact_28_paths": true
+    },
+    {
+      "day": 67,
+      "past_label_end_exclusive": 9648,
+      "exact_28_paths": true
+    },
+    {
+      "day": 68,
+      "past_label_end_exclusive": 9792,
+      "exact_28_paths": true
+    },
+    {
+      "day": 69,
+      "past_label_end_exclusive": 9936,
+      "exact_28_paths": true
+    },
+    {
+      "day": 70,
+      "past_label_end_exclusive": 10080,
+      "exact_28_paths": true
+    },
+    {
+      "day": 71,
+      "past_label_end_exclusive": 10224,
+      "exact_28_paths": true
+    },
+    {
+      "day": 72,
+      "past_label_end_exclusive": 10368,
+      "exact_28_paths": true
+    },
+    {
+      "day": 73,
+      "past_label_end_exclusive": 10512,
+      "exact_28_paths": true
+    },
+    {
+      "day": 74,
+      "past_label_end_exclusive": 10656,
+      "exact_28_paths": true
+    },
+    {
+      "day": 75,
+      "past_label_end_exclusive": 10800,
+      "exact_28_paths": true
+    },
+    {
+      "day": 76,
+      "past_label_end_exclusive": 10944,
+      "exact_28_paths": true
+    },
+    {
+      "day": 77,
+      "past_label_end_exclusive": 11088,
+      "exact_28_paths": true
+    },
+    {
+      "day": 78,
+      "past_label_end_exclusive": 11232,
+      "exact_28_paths": true
+    },
+    {
+      "day": 79,
+      "past_label_end_exclusive": 11376,
+      "exact_28_paths": true
+    },
+    {
+      "day": 80,
+      "past_label_end_exclusive": 11520,
+      "exact_28_paths": true
+    },
+    {
+      "day": 81,
+      "past_label_end_exclusive": 11664,
+      "exact_28_paths": true
+    },
+    {
+      "day": 82,
+      "past_label_end_exclusive": 11808,
+      "exact_28_paths": true
+    },
+    {
+      "day": 83,
+      "past_label_end_exclusive": 11952,
+      "exact_28_paths": true
+    },
+    {
+      "day": 84,
+      "past_label_end_exclusive": 12096,
+      "exact_28_paths": true
+    },
+    {
+      "day": 85,
+      "past_label_end_exclusive": 12240,
+      "exact_28_paths": true
+    },
+    {
+      "day": 86,
+      "past_label_end_exclusive": 12384,
+      "exact_28_paths": true
+    },
+    {
+      "day": 87,
+      "past_label_end_exclusive": 12528,
+      "exact_28_paths": true
+    },
+    {
+      "day": 88,
+      "past_label_end_exclusive": 12672,
+      "exact_28_paths": true
+    },
+    {
+      "day": 89,
+      "past_label_end_exclusive": 12816,
+      "exact_28_paths": true
+    },
+    {
+      "day": 90,
+      "past_label_end_exclusive": 12960,
+      "exact_28_paths": true
+    },
+    {
+      "day": 91,
+      "past_label_end_exclusive": 13104,
+      "exact_28_paths": true
+    },
+    {
+      "day": 92,
+      "past_label_end_exclusive": 13248,
+      "exact_28_paths": true
+    },
+    {
+      "day": 93,
+      "past_label_end_exclusive": 13392,
+      "exact_28_paths": true
+    },
+    {
+      "day": 94,
+      "past_label_end_exclusive": 13536,
+      "exact_28_paths": true
+    },
+    {
+      "day": 95,
+      "past_label_end_exclusive": 13680,
+      "exact_28_paths": true
+    },
+    {
+      "day": 96,
+      "past_label_end_exclusive": 13824,
+      "exact_28_paths": true
+    },
+    {
+      "day": 97,
+      "past_label_end_exclusive": 13968,
+      "exact_28_paths": true
+    },
+    {
+      "day": 98,
+      "past_label_end_exclusive": 14112,
+      "exact_28_paths": true
+    },
+    {
+      "day": 99,
+      "past_label_end_exclusive": 14256,
+      "exact_28_paths": true
+    },
+    {
+      "day": 100,
+      "past_label_end_exclusive": 14400,
+      "exact_28_paths": true
+    },
+    {
+      "day": 101,
+      "past_label_end_exclusive": 14544,
+      "exact_28_paths": true
+    },
+    {
+      "day": 102,
+      "past_label_end_exclusive": 14688,
+      "exact_28_paths": true
+    },
+    {
+      "day": 103,
+      "past_label_end_exclusive": 14832,
+      "exact_28_paths": true
+    },
+    {
+      "day": 104,
+      "past_label_end_exclusive": 14976,
+      "exact_28_paths": true
+    },
+    {
+      "day": 105,
+      "past_label_end_exclusive": 15120,
+      "exact_28_paths": true
+    },
+    {
+      "day": 106,
+      "past_label_end_exclusive": 15264,
+      "exact_28_paths": true
+    },
+    {
+      "day": 107,
+      "past_label_end_exclusive": 15408,
+      "exact_28_paths": true
+    },
+    {
+      "day": 108,
+      "past_label_end_exclusive": 15552,
+      "exact_28_paths": true
+    },
+    {
+      "day": 109,
+      "past_label_end_exclusive": 15696,
+      "exact_28_paths": true
+    },
+    {
+      "day": 110,
+      "past_label_end_exclusive": 15840,
+      "exact_28_paths": true
+    },
+    {
+      "day": 111,
+      "past_label_end_exclusive": 15984,
+      "exact_28_paths": true
+    },
+    {
+      "day": 112,
+      "past_label_end_exclusive": 16128,
+      "exact_28_paths": true
+    },
+    {
+      "day": 113,
+      "past_label_end_exclusive": 16272,
+      "exact_28_paths": true
+    },
+    {
+      "day": 114,
+      "past_label_end_exclusive": 16416,
+      "exact_28_paths": true
+    },
+    {
+      "day": 115,
+      "past_label_end_exclusive": 16560,
+      "exact_28_paths": true
+    },
+    {
+      "day": 116,
+      "past_label_end_exclusive": 16704,
+      "exact_28_paths": true
+    },
+    {
+      "day": 117,
+      "past_label_end_exclusive": 16848,
+      "exact_28_paths": true
+    },
+    {
+      "day": 118,
+      "past_label_end_exclusive": 16992,
+      "exact_28_paths": true
+    },
+    {
+      "day": 119,
+      "past_label_end_exclusive": 17136,
+      "exact_28_paths": true
+    },
+    {
+      "day": 120,
+      "past_label_end_exclusive": 17280,
+      "exact_28_paths": true
+    },
+    {
+      "day": 121,
+      "past_label_end_exclusive": 17424,
+      "exact_28_paths": true
+    },
+    {
+      "day": 122,
+      "past_label_end_exclusive": 17568,
+      "exact_28_paths": true
+    },
+    {
+      "day": 123,
+      "past_label_end_exclusive": 17712,
+      "exact_28_paths": true
+    },
+    {
+      "day": 124,
+      "past_label_end_exclusive": 17856,
+      "exact_28_paths": true
+    },
+    {
+      "day": 125,
+      "past_label_end_exclusive": 18000,
+      "exact_28_paths": true
+    },
+    {
+      "day": 126,
+      "past_label_end_exclusive": 18144,
+      "exact_28_paths": true
+    },
+    {
+      "day": 127,
+      "past_label_end_exclusive": 18288,
+      "exact_28_paths": true
+    },
+    {
+      "day": 128,
+      "past_label_end_exclusive": 18432,
+      "exact_28_paths": true
+    },
+    {
+      "day": 129,
+      "past_label_end_exclusive": 18576,
+      "exact_28_paths": true
+    },
+    {
+      "day": 130,
+      "past_label_end_exclusive": 18720,
+      "exact_28_paths": true
+    },
+    {
+      "day": 131,
+      "past_label_end_exclusive": 18864,
+      "exact_28_paths": true
+    },
+    {
+      "day": 132,
+      "past_label_end_exclusive": 19008,
+      "exact_28_paths": true
+    },
+    {
+      "day": 133,
+      "past_label_end_exclusive": 19152,
+      "exact_28_paths": true
+    },
+    {
+      "day": 134,
+      "past_label_end_exclusive": 19296,
+      "exact_28_paths": true
+    },
+    {
+      "day": 135,
+      "past_label_end_exclusive": 19440,
+      "exact_28_paths": true
+    },
+    {
+      "day": 136,
+      "past_label_end_exclusive": 19584,
+      "exact_28_paths": true
+    },
+    {
+      "day": 137,
+      "past_label_end_exclusive": 19728,
+      "exact_28_paths": true
+    },
+    {
+      "day": 138,
+      "past_label_end_exclusive": 19872,
+      "exact_28_paths": true
+    },
+    {
+      "day": 139,
+      "past_label_end_exclusive": 20016,
+      "exact_28_paths": true
+    },
+    {
+      "day": 140,
+      "past_label_end_exclusive": 20160,
+      "exact_28_paths": true
+    },
+    {
+      "day": 141,
+      "past_label_end_exclusive": 20304,
+      "exact_28_paths": true
+    },
+    {
+      "day": 142,
+      "past_label_end_exclusive": 20448,
+      "exact_28_paths": true
+    },
+    {
+      "day": 143,
+      "past_label_end_exclusive": 20592,
+      "exact_28_paths": true
+    },
+    {
+      "day": 144,
+      "past_label_end_exclusive": 20736,
+      "exact_28_paths": true
+    },
+    {
+      "day": 145,
+      "past_label_end_exclusive": 20880,
+      "exact_28_paths": true
+    },
+    {
+      "day": 146,
+      "past_label_end_exclusive": 21024,
+      "exact_28_paths": true
+    },
+    {
+      "day": 147,
+      "past_label_end_exclusive": 21168,
+      "exact_28_paths": true
+    },
+    {
+      "day": 148,
+      "past_label_end_exclusive": 21312,
+      "exact_28_paths": true
+    },
+    {
+      "day": 149,
+      "past_label_end_exclusive": 21456,
+      "exact_28_paths": true
+    },
+    {
+      "day": 150,
+      "past_label_end_exclusive": 21600,
+      "exact_28_paths": true
+    },
+    {
+      "day": 151,
+      "past_label_end_exclusive": 21744,
+      "exact_28_paths": true
+    },
+    {
+      "day": 152,
+      "past_label_end_exclusive": 21888,
+      "exact_28_paths": true
+    },
+    {
+      "day": 153,
+      "past_label_end_exclusive": 22032,
+      "exact_28_paths": true
+    },
+    {
+      "day": 154,
+      "past_label_end_exclusive": 22176,
+      "exact_28_paths": true
+    },
+    {
+      "day": 155,
+      "past_label_end_exclusive": 22320,
+      "exact_28_paths": true
+    },
+    {
+      "day": 156,
+      "past_label_end_exclusive": 22464,
+      "exact_28_paths": true
+    },
+    {
+      "day": 157,
+      "past_label_end_exclusive": 22608,
+      "exact_28_paths": true
+    },
+    {
+      "day": 158,
+      "past_label_end_exclusive": 22752,
+      "exact_28_paths": true
+    },
+    {
+      "day": 159,
+      "past_label_end_exclusive": 22896,
+      "exact_28_paths": true
+    },
+    {
+      "day": 160,
+      "past_label_end_exclusive": 23040,
+      "exact_28_paths": true
+    },
+    {
+      "day": 161,
+      "past_label_end_exclusive": 23184,
+      "exact_28_paths": true
+    },
+    {
+      "day": 162,
+      "past_label_end_exclusive": 23328,
+      "exact_28_paths": true
+    },
+    {
+      "day": 163,
+      "past_label_end_exclusive": 23472,
+      "exact_28_paths": true
+    },
+    {
+      "day": 164,
+      "past_label_end_exclusive": 23616,
+      "exact_28_paths": true
+    },
+    {
+      "day": 165,
+      "past_label_end_exclusive": 23760,
+      "exact_28_paths": true
+    },
+    {
+      "day": 166,
+      "past_label_end_exclusive": 23904,
+      "exact_28_paths": true
+    },
+    {
+      "day": 167,
+      "past_label_end_exclusive": 24048,
+      "exact_28_paths": true
+    },
+    {
+      "day": 168,
+      "past_label_end_exclusive": 24192,
+      "exact_28_paths": true
+    },
+    {
+      "day": 169,
+      "past_label_end_exclusive": 24336,
+      "exact_28_paths": true
+    },
+    {
+      "day": 170,
+      "past_label_end_exclusive": 24480,
+      "exact_28_paths": true
+    },
+    {
+      "day": 171,
+      "past_label_end_exclusive": 24624,
+      "exact_28_paths": true
+    },
+    {
+      "day": 172,
+      "past_label_end_exclusive": 24768,
+      "exact_28_paths": true
+    },
+    {
+      "day": 173,
+      "past_label_end_exclusive": 24912,
+      "exact_28_paths": true
+    },
+    {
+      "day": 174,
+      "past_label_end_exclusive": 25056,
+      "exact_28_paths": true
+    },
+    {
+      "day": 175,
+      "past_label_end_exclusive": 25200,
+      "exact_28_paths": true
+    },
+    {
+      "day": 176,
+      "past_label_end_exclusive": 25344,
+      "exact_28_paths": true
+    },
+    {
+      "day": 177,
+      "past_label_end_exclusive": 25488,
+      "exact_28_paths": true
+    },
+    {
+      "day": 178,
+      "past_label_end_exclusive": 25632,
+      "exact_28_paths": true
+    },
+    {
+      "day": 179,
+      "past_label_end_exclusive": 25776,
+      "exact_28_paths": true
+    },
+    {
+      "day": 180,
+      "past_label_end_exclusive": 25920,
+      "exact_28_paths": true
+    },
+    {
+      "day": 181,
+      "past_label_end_exclusive": 26064,
+      "exact_28_paths": true
+    },
+    {
+      "day": 182,
+      "past_label_end_exclusive": 26208,
+      "exact_28_paths": true
+    },
+    {
+      "day": 183,
+      "past_label_end_exclusive": 26352,
+      "exact_28_paths": true
+    },
+    {
+      "day": 184,
+      "past_label_end_exclusive": 26496,
+      "exact_28_paths": true
+    },
+    {
+      "day": 185,
+      "past_label_end_exclusive": 26640,
+      "exact_28_paths": true
+    },
+    {
+      "day": 186,
+      "past_label_end_exclusive": 26784,
+      "exact_28_paths": true
+    },
+    {
+      "day": 187,
+      "past_label_end_exclusive": 26928,
+      "exact_28_paths": true
+    },
+    {
+      "day": 188,
+      "past_label_end_exclusive": 27072,
+      "exact_28_paths": true
+    },
+    {
+      "day": 189,
+      "past_label_end_exclusive": 27216,
+      "exact_28_paths": true
+    },
+    {
+      "day": 190,
+      "past_label_end_exclusive": 27360,
+      "exact_28_paths": true
+    },
+    {
+      "day": 191,
+      "past_label_end_exclusive": 27504,
+      "exact_28_paths": true
+    },
+    {
+      "day": 192,
+      "past_label_end_exclusive": 27648,
+      "exact_28_paths": true
+    },
+    {
+      "day": 193,
+      "past_label_end_exclusive": 27792,
+      "exact_28_paths": true
+    },
+    {
+      "day": 194,
+      "past_label_end_exclusive": 27936,
+      "exact_28_paths": true
+    },
+    {
+      "day": 195,
+      "past_label_end_exclusive": 28080,
+      "exact_28_paths": true
+    },
+    {
+      "day": 196,
+      "past_label_end_exclusive": 28224,
+      "exact_28_paths": true
+    },
+    {
+      "day": 197,
+      "past_label_end_exclusive": 28368,
+      "exact_28_paths": true
+    },
+    {
+      "day": 198,
+      "past_label_end_exclusive": 28512,
+      "exact_28_paths": true
+    },
+    {
+      "day": 199,
+      "past_label_end_exclusive": 28656,
+      "exact_28_paths": true
+    },
+    {
+      "day": 200,
+      "past_label_end_exclusive": 28800,
+      "exact_28_paths": true
+    },
+    {
+      "day": 201,
+      "past_label_end_exclusive": 28944,
+      "exact_28_paths": true
+    },
+    {
+      "day": 202,
+      "past_label_end_exclusive": 29088,
+      "exact_28_paths": true
+    },
+    {
+      "day": 203,
+      "past_label_end_exclusive": 29232,
+      "exact_28_paths": true
+    },
+    {
+      "day": 204,
+      "past_label_end_exclusive": 29376,
+      "exact_28_paths": true
+    },
+    {
+      "day": 205,
+      "past_label_end_exclusive": 29520,
+      "exact_28_paths": true
+    },
+    {
+      "day": 206,
+      "past_label_end_exclusive": 29664,
+      "exact_28_paths": true
+    },
+    {
+      "day": 207,
+      "past_label_end_exclusive": 29808,
+      "exact_28_paths": true
+    },
+    {
+      "day": 208,
+      "past_label_end_exclusive": 29952,
+      "exact_28_paths": true
+    },
+    {
+      "day": 209,
+      "past_label_end_exclusive": 30096,
+      "exact_28_paths": true
+    },
+    {
+      "day": 210,
+      "past_label_end_exclusive": 30240,
+      "exact_28_paths": true
+    },
+    {
+      "day": 211,
+      "past_label_end_exclusive": 30384,
+      "exact_28_paths": true
+    },
+    {
+      "day": 212,
+      "past_label_end_exclusive": 30528,
+      "exact_28_paths": true
+    },
+    {
+      "day": 213,
+      "past_label_end_exclusive": 30672,
+      "exact_28_paths": true
+    },
+    {
+      "day": 214,
+      "past_label_end_exclusive": 30816,
+      "exact_28_paths": true
+    },
+    {
+      "day": 215,
+      "past_label_end_exclusive": 30960,
+      "exact_28_paths": true
+    },
+    {
+      "day": 216,
+      "past_label_end_exclusive": 31104,
+      "exact_28_paths": true
+    },
+    {
+      "day": 217,
+      "past_label_end_exclusive": 31248,
+      "exact_28_paths": true
+    },
+    {
+      "day": 218,
+      "past_label_end_exclusive": 31392,
+      "exact_28_paths": true
+    },
+    {
+      "day": 219,
+      "past_label_end_exclusive": 31536,
+      "exact_28_paths": true
+    },
+    {
+      "day": 220,
+      "past_label_end_exclusive": 31680,
+      "exact_28_paths": true
+    },
+    {
+      "day": 221,
+      "past_label_end_exclusive": 31824,
+      "exact_28_paths": true
+    },
+    {
+      "day": 222,
+      "past_label_end_exclusive": 31968,
+      "exact_28_paths": true
+    },
+    {
+      "day": 223,
+      "past_label_end_exclusive": 32112,
+      "exact_28_paths": true
+    },
+    {
+      "day": 224,
+      "past_label_end_exclusive": 32256,
+      "exact_28_paths": true
+    },
+    {
+      "day": 225,
+      "past_label_end_exclusive": 32400,
+      "exact_28_paths": true
+    },
+    {
+      "day": 226,
+      "past_label_end_exclusive": 32544,
+      "exact_28_paths": true
+    },
+    {
+      "day": 227,
+      "past_label_end_exclusive": 32688,
+      "exact_28_paths": true
+    },
+    {
+      "day": 228,
+      "past_label_end_exclusive": 32832,
+      "exact_28_paths": true
+    },
+    {
+      "day": 229,
+      "past_label_end_exclusive": 32976,
+      "exact_28_paths": true
+    },
+    {
+      "day": 230,
+      "past_label_end_exclusive": 33120,
+      "exact_28_paths": true
+    },
+    {
+      "day": 231,
+      "past_label_end_exclusive": 33264,
+      "exact_28_paths": true
+    },
+    {
+      "day": 232,
+      "past_label_end_exclusive": 33408,
+      "exact_28_paths": true
+    },
+    {
+      "day": 233,
+      "past_label_end_exclusive": 33552,
+      "exact_28_paths": true
+    },
+    {
+      "day": 234,
+      "past_label_end_exclusive": 33696,
+      "exact_28_paths": true
+    },
+    {
+      "day": 235,
+      "past_label_end_exclusive": 33840,
+      "exact_28_paths": true
+    },
+    {
+      "day": 236,
+      "past_label_end_exclusive": 33984,
+      "exact_28_paths": true
+    },
+    {
+      "day": 237,
+      "past_label_end_exclusive": 34128,
+      "exact_28_paths": true
+    },
+    {
+      "day": 238,
+      "past_label_end_exclusive": 34272,
+      "exact_28_paths": true
+    },
+    {
+      "day": 239,
+      "past_label_end_exclusive": 34416,
+      "exact_28_paths": true
+    },
+    {
+      "day": 240,
+      "past_label_end_exclusive": 34560,
+      "exact_28_paths": true
+    },
+    {
+      "day": 241,
+      "past_label_end_exclusive": 34704,
+      "exact_28_paths": true
+    },
+    {
+      "day": 242,
+      "past_label_end_exclusive": 34848,
+      "exact_28_paths": true
+    },
+    {
+      "day": 243,
+      "past_label_end_exclusive": 34992,
+      "exact_28_paths": true
+    },
+    {
+      "day": 244,
+      "past_label_end_exclusive": 35136,
+      "exact_28_paths": true
+    },
+    {
+      "day": 245,
+      "past_label_end_exclusive": 35280,
+      "exact_28_paths": true
+    },
+    {
+      "day": 246,
+      "past_label_end_exclusive": 35424,
+      "exact_28_paths": true
+    },
+    {
+      "day": 247,
+      "past_label_end_exclusive": 35568,
+      "exact_28_paths": true
+    },
+    {
+      "day": 248,
+      "past_label_end_exclusive": 35712,
+      "exact_28_paths": true
+    },
+    {
+      "day": 249,
+      "past_label_end_exclusive": 35856,
+      "exact_28_paths": true
+    },
+    {
+      "day": 250,
+      "past_label_end_exclusive": 36000,
+      "exact_28_paths": true
+    },
+    {
+      "day": 251,
+      "past_label_end_exclusive": 36144,
+      "exact_28_paths": true
+    },
+    {
+      "day": 252,
+      "past_label_end_exclusive": 36288,
+      "exact_28_paths": true
+    },
+    {
+      "day": 253,
+      "past_label_end_exclusive": 36432,
+      "exact_28_paths": true
+    },
+    {
+      "day": 254,
+      "past_label_end_exclusive": 36576,
+      "exact_28_paths": true
+    },
+    {
+      "day": 255,
+      "past_label_end_exclusive": 36720,
+      "exact_28_paths": true
+    },
+    {
+      "day": 256,
+      "past_label_end_exclusive": 36864,
+      "exact_28_paths": true
+    },
+    {
+      "day": 257,
+      "past_label_end_exclusive": 37008,
+      "exact_28_paths": true
+    },
+    {
+      "day": 258,
+      "past_label_end_exclusive": 37152,
+      "exact_28_paths": true
+    },
+    {
+      "day": 259,
+      "past_label_end_exclusive": 37296,
+      "exact_28_paths": true
+    },
+    {
+      "day": 260,
+      "past_label_end_exclusive": 37440,
+      "exact_28_paths": true
+    },
+    {
+      "day": 261,
+      "past_label_end_exclusive": 37584,
+      "exact_28_paths": true
+    },
+    {
+      "day": 262,
+      "past_label_end_exclusive": 37728,
+      "exact_28_paths": true
+    },
+    {
+      "day": 263,
+      "past_label_end_exclusive": 37872,
+      "exact_28_paths": true
+    },
+    {
+      "day": 264,
+      "past_label_end_exclusive": 38016,
+      "exact_28_paths": true
+    },
+    {
+      "day": 265,
+      "past_label_end_exclusive": 38160,
+      "exact_28_paths": true
+    },
+    {
+      "day": 266,
+      "past_label_end_exclusive": 38304,
+      "exact_28_paths": true
+    },
+    {
+      "day": 267,
+      "past_label_end_exclusive": 38448,
+      "exact_28_paths": true
+    },
+    {
+      "day": 268,
+      "past_label_end_exclusive": 38592,
+      "exact_28_paths": true
+    },
+    {
+      "day": 269,
+      "past_label_end_exclusive": 38736,
+      "exact_28_paths": true
+    },
+    {
+      "day": 270,
+      "past_label_end_exclusive": 38880,
+      "exact_28_paths": true
+    },
+    {
+      "day": 271,
+      "past_label_end_exclusive": 39024,
+      "exact_28_paths": true
+    },
+    {
+      "day": 272,
+      "past_label_end_exclusive": 39168,
+      "exact_28_paths": true
+    },
+    {
+      "day": 273,
+      "past_label_end_exclusive": 39312,
+      "exact_28_paths": true
+    },
+    {
+      "day": 274,
+      "past_label_end_exclusive": 39456,
+      "exact_28_paths": true
+    },
+    {
+      "day": 275,
+      "past_label_end_exclusive": 39600,
+      "exact_28_paths": true
+    },
+    {
+      "day": 276,
+      "past_label_end_exclusive": 39744,
+      "exact_28_paths": true
+    },
+    {
+      "day": 277,
+      "past_label_end_exclusive": 39888,
+      "exact_28_paths": true
+    },
+    {
+      "day": 278,
+      "past_label_end_exclusive": 40032,
+      "exact_28_paths": true
+    },
+    {
+      "day": 279,
+      "past_label_end_exclusive": 40176,
+      "exact_28_paths": true
+    },
+    {
+      "day": 280,
+      "past_label_end_exclusive": 40320,
+      "exact_28_paths": true
+    },
+    {
+      "day": 281,
+      "past_label_end_exclusive": 40464,
+      "exact_28_paths": true
+    },
+    {
+      "day": 282,
+      "past_label_end_exclusive": 40608,
+      "exact_28_paths": true
+    },
+    {
+      "day": 283,
+      "past_label_end_exclusive": 40752,
+      "exact_28_paths": true
+    },
+    {
+      "day": 284,
+      "past_label_end_exclusive": 40896,
+      "exact_28_paths": true
+    },
+    {
+      "day": 285,
+      "past_label_end_exclusive": 41040,
+      "exact_28_paths": true
+    },
+    {
+      "day": 286,
+      "past_label_end_exclusive": 41184,
+      "exact_28_paths": true
+    },
+    {
+      "day": 287,
+      "past_label_end_exclusive": 41328,
+      "exact_28_paths": true
+    },
+    {
+      "day": 288,
+      "past_label_end_exclusive": 41472,
+      "exact_28_paths": true
+    },
+    {
+      "day": 289,
+      "past_label_end_exclusive": 41616,
+      "exact_28_paths": true
+    },
+    {
+      "day": 290,
+      "past_label_end_exclusive": 41760,
+      "exact_28_paths": true
+    },
+    {
+      "day": 291,
+      "past_label_end_exclusive": 41904,
+      "exact_28_paths": true
+    },
+    {
+      "day": 292,
+      "past_label_end_exclusive": 42048,
+      "exact_28_paths": true
+    },
+    {
+      "day": 293,
+      "past_label_end_exclusive": 42192,
+      "exact_28_paths": true
+    },
+    {
+      "day": 294,
+      "past_label_end_exclusive": 42336,
+      "exact_28_paths": true
+    },
+    {
+      "day": 295,
+      "past_label_end_exclusive": 42480,
+      "exact_28_paths": true
+    },
+    {
+      "day": 296,
+      "past_label_end_exclusive": 42624,
+      "exact_28_paths": true
+    },
+    {
+      "day": 297,
+      "past_label_end_exclusive": 42768,
+      "exact_28_paths": true
+    },
+    {
+      "day": 298,
+      "past_label_end_exclusive": 42912,
+      "exact_28_paths": true
+    },
+    {
+      "day": 299,
+      "past_label_end_exclusive": 43056,
+      "exact_28_paths": true
+    },
+    {
+      "day": 300,
+      "past_label_end_exclusive": 43200,
+      "exact_28_paths": true
+    },
+    {
+      "day": 301,
+      "past_label_end_exclusive": 43344,
+      "exact_28_paths": true
+    },
+    {
+      "day": 302,
+      "past_label_end_exclusive": 43488,
+      "exact_28_paths": true
+    },
+    {
+      "day": 303,
+      "past_label_end_exclusive": 43632,
+      "exact_28_paths": true
+    },
+    {
+      "day": 304,
+      "past_label_end_exclusive": 43776,
+      "exact_28_paths": true
+    },
+    {
+      "day": 305,
+      "past_label_end_exclusive": 43920,
+      "exact_28_paths": true
+    },
+    {
+      "day": 306,
+      "past_label_end_exclusive": 44064,
+      "exact_28_paths": true
+    },
+    {
+      "day": 307,
+      "past_label_end_exclusive": 44208,
+      "exact_28_paths": true
+    },
+    {
+      "day": 308,
+      "past_label_end_exclusive": 44352,
+      "exact_28_paths": true
+    },
+    {
+      "day": 309,
+      "past_label_end_exclusive": 44496,
+      "exact_28_paths": true
+    },
+    {
+      "day": 310,
+      "past_label_end_exclusive": 44640,
+      "exact_28_paths": true
+    },
+    {
+      "day": 311,
+      "past_label_end_exclusive": 44784,
+      "exact_28_paths": true
+    },
+    {
+      "day": 312,
+      "past_label_end_exclusive": 44928,
+      "exact_28_paths": true
+    },
+    {
+      "day": 313,
+      "past_label_end_exclusive": 45072,
+      "exact_28_paths": true
+    },
+    {
+      "day": 314,
+      "past_label_end_exclusive": 45216,
+      "exact_28_paths": true
+    },
+    {
+      "day": 315,
+      "past_label_end_exclusive": 45360,
+      "exact_28_paths": true
+    },
+    {
+      "day": 316,
+      "past_label_end_exclusive": 45504,
+      "exact_28_paths": true
+    },
+    {
+      "day": 317,
+      "past_label_end_exclusive": 45648,
+      "exact_28_paths": true
+    },
+    {
+      "day": 318,
+      "past_label_end_exclusive": 45792,
+      "exact_28_paths": true
+    },
+    {
+      "day": 319,
+      "past_label_end_exclusive": 45936,
+      "exact_28_paths": true
+    },
+    {
+      "day": 320,
+      "past_label_end_exclusive": 46080,
+      "exact_28_paths": true
+    },
+    {
+      "day": 321,
+      "past_label_end_exclusive": 46224,
+      "exact_28_paths": true
+    },
+    {
+      "day": 322,
+      "past_label_end_exclusive": 46368,
+      "exact_28_paths": true
+    },
+    {
+      "day": 323,
+      "past_label_end_exclusive": 46512,
+      "exact_28_paths": true
+    },
+    {
+      "day": 324,
+      "past_label_end_exclusive": 46656,
+      "exact_28_paths": true
+    },
+    {
+      "day": 325,
+      "past_label_end_exclusive": 46800,
+      "exact_28_paths": true
+    },
+    {
+      "day": 326,
+      "past_label_end_exclusive": 46944,
+      "exact_28_paths": true
+    },
+    {
+      "day": 327,
+      "past_label_end_exclusive": 47088,
+      "exact_28_paths": true
+    },
+    {
+      "day": 328,
+      "past_label_end_exclusive": 47232,
+      "exact_28_paths": true
+    },
+    {
+      "day": 329,
+      "past_label_end_exclusive": 47376,
+      "exact_28_paths": true
+    },
+    {
+      "day": 330,
+      "past_label_end_exclusive": 47520,
+      "exact_28_paths": true
+    },
+    {
+      "day": 331,
+      "past_label_end_exclusive": 47664,
+      "exact_28_paths": true
+    },
+    {
+      "day": 332,
+      "past_label_end_exclusive": 47808,
+      "exact_28_paths": true
+    },
+    {
+      "day": 333,
+      "past_label_end_exclusive": 47952,
+      "exact_28_paths": true
+    },
+    {
+      "day": 334,
+      "past_label_end_exclusive": 48096,
+      "exact_28_paths": true
+    },
+    {
+      "day": 335,
+      "past_label_end_exclusive": 48240,
+      "exact_28_paths": true
+    },
+    {
+      "day": 336,
+      "past_label_end_exclusive": 48384,
+      "exact_28_paths": true
+    },
+    {
+      "day": 337,
+      "past_label_end_exclusive": 48528,
+      "exact_28_paths": true
+    },
+    {
+      "day": 338,
+      "past_label_end_exclusive": 48672,
+      "exact_28_paths": true
+    },
+    {
+      "day": 339,
+      "past_label_end_exclusive": 48816,
+      "exact_28_paths": true
+    },
+    {
+      "day": 340,
+      "past_label_end_exclusive": 48960,
+      "exact_28_paths": true
+    },
+    {
+      "day": 341,
+      "past_label_end_exclusive": 49104,
+      "exact_28_paths": true
+    },
+    {
+      "day": 342,
+      "past_label_end_exclusive": 49248,
+      "exact_28_paths": true
+    },
+    {
+      "day": 343,
+      "past_label_end_exclusive": 49392,
+      "exact_28_paths": true
+    },
+    {
+      "day": 344,
+      "past_label_end_exclusive": 49536,
+      "exact_28_paths": true
+    },
+    {
+      "day": 345,
+      "past_label_end_exclusive": 49680,
+      "exact_28_paths": true
+    },
+    {
+      "day": 346,
+      "past_label_end_exclusive": 49824,
+      "exact_28_paths": true
+    },
+    {
+      "day": 347,
+      "past_label_end_exclusive": 49968,
+      "exact_28_paths": true
+    },
+    {
+      "day": 348,
+      "past_label_end_exclusive": 50112,
+      "exact_28_paths": true
+    },
+    {
+      "day": 349,
+      "past_label_end_exclusive": 50256,
+      "exact_28_paths": true
+    },
+    {
+      "day": 350,
+      "past_label_end_exclusive": 50400,
+      "exact_28_paths": true
+    },
+    {
+      "day": 351,
+      "past_label_end_exclusive": 50544,
+      "exact_28_paths": true
+    },
+    {
+      "day": 352,
+      "past_label_end_exclusive": 50688,
+      "exact_28_paths": true
+    },
+    {
+      "day": 353,
+      "past_label_end_exclusive": 50832,
+      "exact_28_paths": true
+    },
+    {
+      "day": 354,
+      "past_label_end_exclusive": 50976,
+      "exact_28_paths": true
+    },
+    {
+      "day": 355,
+      "past_label_end_exclusive": 51120,
+      "exact_28_paths": true
+    },
+    {
+      "day": 356,
+      "past_label_end_exclusive": 51264,
+      "exact_28_paths": true
+    },
+    {
+      "day": 357,
+      "past_label_end_exclusive": 51408,
+      "exact_28_paths": true
+    },
+    {
+      "day": 358,
+      "past_label_end_exclusive": 51552,
+      "exact_28_paths": true
+    },
+    {
+      "day": 359,
+      "past_label_end_exclusive": 51696,
+      "exact_28_paths": true
+    },
+    {
+      "day": 360,
+      "past_label_end_exclusive": 51840,
+      "exact_28_paths": true
+    },
+    {
+      "day": 361,
+      "past_label_end_exclusive": 51984,
+      "exact_28_paths": true
+    },
+    {
+      "day": 362,
+      "past_label_end_exclusive": 52128,
+      "exact_28_paths": true
+    },
+    {
+      "day": 363,
+      "past_label_end_exclusive": 52272,
+      "exact_28_paths": true
+    },
+    {
+      "day": 364,
+      "past_label_end_exclusive": 52416,
+      "exact_28_paths": true
+    }
+  ],
+  "HGB_sha256": "adb914a26effb21e3117d7674d6c73d2488e97558b6fc9023163bb1d4b746095",
+  "linked_price_sha256": "acb2cc5aca100f5ffe4049ce65bdbb32a28fa9bf471b23459cc9055bb07abba0",
+  "raw_hashes": {
+    "附件1.csv": "ac5e0ff84e0e339ac6a703d0bb07cec2baf4326fea4025c83f51b0be10e5dabb",
+    "附件2_光伏发电实际功率.csv": "7020d6c8f695809b3c8a1730c50294f5c56723652f31e94a43eb132acf52f6d2",
+    "附件2_小区负载.csv": "4ecde20838ec8c6c1fb890d5cf378fb985d9d2c123fda3bf4458c4d8f6f27b56",
+    "附件3.csv": "f089243c6855ae069919ee4bd211420900eac42b547d0f22260ee943a9395cef",
+    "附件4.csv": "1fd4d83225f84bcd84683b030ec9fcf0d6e939c45d88888a0cda39a46f9aa1a3"
+  },
+  "reconstruction": "Current frozen forecast + complete past actual minus each historical own-issued prediction. January uses exactly periodic cold start. No action/solver/forecast training executed."
+}

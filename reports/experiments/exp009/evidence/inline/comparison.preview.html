@@ -1,0 +1,1592 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Comparison Inline</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Comparison Inline" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Comparison Inline&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 10px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover,
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;exp009-control-inline&quot;&gt;
+  &lt;h2&gt;exp008 → exp009：费用目标对照&lt;/h2&gt;
+  &lt;div class=&quot;exp009-legend&quot; aria-label=&quot;实验版本&quot;&gt;
+    &lt;button type=&quot;button&quot; aria-pressed=&quot;true&quot; data-version=&quot;exp008&quot;&gt;&lt;span class=&quot;exp009-swatch&quot; style=&quot;background:var(--viz-series-1)&quot;&gt;&lt;/span&gt;exp008 · 原方案&lt;/button&gt;
+    &lt;button type=&quot;button&quot; aria-pressed=&quot;true&quot; data-version=&quot;exp009&quot;&gt;&lt;span class=&quot;exp009-swatch&quot; style=&quot;background:var(--viz-series-2)&quot;&gt;&lt;/span&gt;exp009 · 费用目标&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;exp009-grid&quot;&gt;
+    &lt;section&gt;&lt;h3&gt;第一问 · 给定单日&lt;/h3&gt;&lt;div data-plot=&quot;cost-one&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+    &lt;section&gt;&lt;h3&gt;第二至四问 · 334日&lt;/h3&gt;&lt;div data-plot=&quot;cost-annual&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;午夜预测：exp008 = exp009&lt;/h3&gt;
+  &lt;div class=&quot;text-small&quot;&gt;全时段 · Q2融合模型 / Q3、Q4单HGB午夜基准&lt;/div&gt;
+  &lt;div class=&quot;exp009-grid&quot;&gt;
+    &lt;section&gt;&lt;div data-plot=&quot;forecast-rmse&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+    &lt;section&gt;&lt;div data-plot=&quot;forecast-wape&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;第二问 · 共同随机四日实际功率&lt;/h3&gt;
+  &lt;div class=&quot;text-small&quot;&gt;种子20260912 · 每日144个原始十分钟时点 · 正为充电，负为放电&lt;/div&gt;
+  &lt;div class=&quot;exp009-grid&quot; data-power-grid&gt;&lt;/div&gt;
+  &lt;h3&gt;第二问历史费用&lt;/h3&gt;
+  &lt;div data-plot=&quot;history-cost&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;text-small&quot;&gt;001为同物理重算；005带额外爬坡约束、允许应急充电，单列不排名。007省略。&lt;/div&gt;
+  &lt;div class=&quot;exp009-tooltip tooltip&quot; role=&quot;tooltip&quot; hidden&gt;&lt;/div&gt;
+  &lt;div class=&quot;sr-only&quot; aria-live=&quot;polite&quot; data-selection&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  #exp009-control-inline {position:relative;width:100%;color:var(--foreground)}
+  #exp009-control-inline .exp009-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+  #exp009-control-inline section {min-width:0}
+  #exp009-control-inline .exp009-legend {display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:8px 0 12px}
+  #exp009-control-inline .exp009-legend button {display:inline-flex;align-items:center;gap:7px;background:transparent;border:0;padding:4px 0;color:var(--foreground);font:inherit;cursor:pointer}
+  #exp009-control-inline .exp009-legend button[aria-pressed=&quot;false&quot;] .exp009-swatch {opacity:.2}
+  #exp009-control-inline .exp009-swatch {width:18px;height:3px;display:inline-block}
+  #exp009-control-inline .exp009-plot {display:block;width:100%;overflow:visible}
+  #exp009-control-inline .exp009-plot text {fill:var(--foreground);font-size:12px;font-weight:400}
+  #exp009-control-inline .exp009-plot .grid-line {stroke:var(--border);stroke-width:1}
+  #exp009-control-inline .exp009-plot .power-line {fill:none;stroke-width:1.4}
+  #exp009-control-inline .exp009-plot rect[data-chart-frame] {fill:none;stroke:var(--border);stroke-width:1}
+  #exp009-control-inline .exp009-tooltip {position:absolute;pointer-events:none;max-width:260px;background:var(--popover);color:var(--popover-foreground);z-index:2}
+  #exp009-control-inline .exp009-tooltip table {border-collapse:collapse}
+  #exp009-control-inline .exp009-tooltip td {padding:2px 5px;color:var(--popover-foreground)}
+  @media (max-width:620px) {#exp009-control-inline .exp009-grid {grid-template-columns:minmax(0,1fr)}}
+  @media (pointer:coarse) {#exp009-control-inline .exp009-legend button {min-height:44px}}
+&lt;/style&gt;
+&lt;script id=&quot;exp009-control-data&quot; type=&quot;application/json&quot;&gt;{&quot;costs&quot;:[{&quot;scenario&quot;:&quot;1&quot;,&quot;days&quot;:1,&quot;previous&quot;:34115.032450968385,&quot;current&quot;:34080.951399568854,&quot;relative_change_pct&quot;:-0.09990039273306836},{&quot;scenario&quot;:&quot;2&quot;,&quot;days&quot;:334,&quot;previous&quot;:13201981.947942203,&quot;current&quot;:13215591.495018823,&quot;relative_change_pct&quot;:0.10308715108295907},{&quot;scenario&quot;:&quot;3&quot;,&quot;days&quot;:334,&quot;previous&quot;:12826263.074326852,&quot;current&quot;:12787820.024906598,&quot;relative_change_pct&quot;:-0.29972135451675097},{&quot;scenario&quot;:&quot;4-2&quot;,&quot;days&quot;:334,&quot;previous&quot;:13994531.257936778,&quot;current&quot;:13978929.994015083,&quot;relative_change_pct&quot;:-0.11148114670040712},{&quot;scenario&quot;:&quot;4-3&quot;,&quot;days&quot;:334,&quot;previous&quot;:13579870.464961907,&quot;current&quot;:13573403.53627182,&quot;relative_change_pct&quot;:-0.04762143134408161}],&quot;forecast_scores&quot;:[{&quot;model&quot;:&quot;final_blend&quot;,&quot;family&quot;:&quot;Q2融合&quot;,&quot;target&quot;:&quot;load&quot;,&quot;label&quot;:&quot;负载&quot;,&quot;rmse_kw&quot;:182.98698621729875,&quot;wape_pct&quot;:2.9668556880686503,&quot;exp008_equals_exp009&quot;:true},{&quot;model&quot;:&quot;final_blend&quot;,&quot;family&quot;:&quot;Q2融合&quot;,&quot;target&quot;:&quot;pv&quot;,&quot;label&quot;:&quot;光伏&quot;,&quot;rmse_kw&quot;:307.0503899088877,&quot;wape_pct&quot;:6.44257200369873,&quot;exp008_equals_exp009&quot;:true},{&quot;model&quot;:&quot;final_blend&quot;,&quot;family&quot;:&quot;Q2融合&quot;,&quot;target&quot;:&quot;net_load&quot;,&quot;label&quot;:&quot;净负荷&quot;,&quot;rmse_kw&quot;:357.1618393483832,&quot;wape_pct&quot;:8.064833340403238,&quot;exp008_equals_exp009&quot;:true},{&quot;model&quot;:&quot;single_hgb&quot;,&quot;family&quot;:&quot;Q3/4单HGB&quot;,&quot;target&quot;:&quot;load&quot;,&quot;label&quot;:&quot;负载&quot;,&quot;rmse_kw&quot;:192.85525876759695,&quot;wape_pct&quot;:3.135815261727131,&quot;exp008_equals_exp009&quot;:true},{&quot;model&quot;:&quot;single_hgb&quot;,&quot;family&quot;:&quot;Q3/4单HGB&quot;,&quot;target&quot;:&quot;pv&quot;,&quot;label&quot;:&quot;光伏&quot;,&quot;rmse_kw&quot;:307.5828489793913,&quot;wape_pct&quot;:6.459442330857028,&quot;exp008_equals_exp009&quot;:true},{&quot;model&quot;:&quot;single_hgb&quot;,&quot;family&quot;:&quot;Q3/4单HGB&quot;,&quot;target&quot;:&quot;net_load&quot;,&quot;label&quot;:&quot;净负荷&quot;,&quot;rmse_kw&quot;:362.89918485267737,&quot;wape_pct&quot;:8.26347427928751,&quot;exp008_equals_exp009&quot;:true}],&quot;power_days&quot;:[{&quot;date&quot;:&quot;2025-04-15&quot;,&quot;series&quot;:{&quot;exp008&quot;:[4549.425959035459,4665.675222492877,4564.981641878083,4776.746975530426,4976.255796425951,4793.600646713473,844.1642273447217,4679.791339646339,4764.595460867959,237.1835776225685,418.6122659117141,699.0591936554661,4891.07461782618,446.635367788444,243.6739969852415,254.76595161074783,329.4554052008384,144.70818640540278,268.27189168400287,250.22464307615655,465.1295506088111,437.39741389019787,510.4160986010065,257.50336669885087,273.793988710494,449.5037646824735,598.0476763727424,392.59782964619035,183.9543572246512,473.3148267356027,484.5436125496535,243.82901260392785,4695.617335094602,2378.695535260794,0.0,-4279.02,-4178.2706,-3757.7182,-3417.0225,-3212.4779,-2988.6714,-2616.4775,-2100.6788,-1666.6448999999998,-1345.67,-1061.432376482225,-1599.3029000000006,-2306.3149999999996,-1932.6398000000008,-1406.1672,-1112.8024999999998,-547.8107,-72.58230000000003,0.0,0.0,0.0,1667.920304748885,1875.4846462313988,2089.5589496703024,1885.9976388492728,1556.8886000000002,1603.4912999999997,1949.6849999999995,2029.7087,2213.2389999999996,3570.459247917991,4330.969857657482,3500.0860740207772,3976.473709496536,4405.748862621784,4869.888257657483,2476.293824997234,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-30.122800000000097,-209.88720000000012,266.67777777777656,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-68.66291540389557,-34.69858803952275,0.0,-43.202416096027264,-126.10461746547207,-123.56117230429209,-3120.1150444322393,-4298.17,-4421.7596,-4451.720499999999,-4417.29,-4489.9329,-4506.441500000001,-4365.13,-4160.6563,-4166.3512,-4351.47,-4421.2576,-281.5829202502264,-195.63299443083451,-241.3841647091492,-107.3241695694926,0.0,-193.13071493944767,-416.9826238469173,432.40820170055576,1172.5934343569795,403.15269058995455,746.4407517060768,791.1218474924476,815.9810658995755,166.02304700314653,526.016528549708,606.6093490565295,450.5920936255875,556.5937673670414,622.3425323179733,358.82593844374264],&quot;exp009&quot;:[4637.440226380169,4736.478046087797,4731.933711114504,4860.6151759916465,4825.5465546930445,4848.246660020671,351.22900072217203,4291.228931562917,4593.796944301938,265.4443876925659,362.62170507680594,328.45257851861834,4770.834992385197,431.49717749280694,266.25010328951475,503.95986945520394,314.128692581058,-74.62421665399779,215.61644854674023,270.2263200535897,435.15235344782377,419.12078831643,488.4321824096776,219.54527044866904,278.3660411447904,446.63057026323486,641.2150334684957,393.9230590194868,175.8443577083881,470.97990270229775,507.6681590873473,323.6911549047102,4537.187617893573,2383.1538506854736,0.0,-4279.02,-4178.2706,-3757.7182,-3417.0225,-3212.4779,-2988.6714,-2616.4775,-2100.6788,-1666.6448999999998,-1345.67,-1100.2557377504802,-1599.3029000000006,-2306.3149999999996,-1932.6398000000008,-1406.1672,-1112.8024999999998,-547.8107,-72.58230000000003,0.0,0.0,0.0,1632.1981561279845,1868.8911935627827,2089.5116746550716,1885.9914180747464,1556.8886000000002,1603.4912999999997,1949.6849999999995,2029.7087,2213.2389999999996,3676.080724201453,4531.559759692451,3610.4167284406626,4144.782090146323,4574.159380724412,5000.0,1678.4273163191035,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-30.122800000000097,-209.88720000000012,266.67777777777656,0.0,0.0,0.0,0.0,0.0,0.0,-461.12916609823515,396.46422640340415,0.0,0.0,115.9015137057418,0.0,0.0,0.0,0.0,0.0,-68.13511800334868,-47.52567095396443,-23.827793304133134,-77.45468961887536,-129.23126622975542,-166.97024027034263,-3491.335979512879,-4298.17,-4421.7596,-4451.71891278595,-4417.29,-4489.9329,-4506.441500000001,-4365.13,-4160.6563,-4166.345511800472,-4351.47,-4421.2576,-312.5968644112745,165.28821434359202,131.34662014399805,259.6565657585322,361.6273877976082,-770.0415464349937,-468.03089033087144,581.5716505328262,5000.0,-1474.7395711321817,0.0,0.0,-200.7209701775116,-310.65063983113987,-82.80180505959038,0.0,-37.63917811233773,-56.41868234196204,-82.2557172336351,0.0]}},{&quot;date&quot;:&quot;2025-06-07&quot;,&quot;series&quot;:{&quot;exp008&quot;:[-64.669604190359,-231.98145686996304,-94.88984645079064,-38.3114777764157,-178.98148269336298,-391.25384122239336,-377.0113606042605,-155.65537557761297,0.0,0.0,-146.3737159164399,-261.3762151794947,-128.22016612285267,0.0,0.0,-138.42515584366834,-56.0522754082217,0.0,0.0,-112.45241836980892,-61.08323278122543,-342.00005707456694,-402.0751853867307,-165.92381612749057,-353.06487944825017,-226.90399449456615,0.0,-88.53992460660322,-103.63392675491002,0.0,-146.80313335312837,-88.77296758039506,-16.037484293191596,4513.224439373855,-522.053598762537,-1888.19,-1442.6688,-1248.0262,-1177.235,-876.3043773760112,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,531.7825000000003,557.1558999999997,854.4404999999997,1191.3574999999996,1240.7720999999997,1089.4828999999995,1042.7824999999998,1360.3896000000004,1682.2937999999997,1809.6400000000003,1885.5595000000003,2136.3542999999995,2453.8575,2569.047,2934.0317,3217.13,2623.6736000000005,2312.8421000000003,2442.455,2075.1366,1858.6807000000003,2037.335,2159.3734,2240.2357,2096.8899999999994,1549.9267,1663.2277000000004,2264.99,2079.5263,1592.9350000000004,1226.58,962.5486,1089.2315,1398.3225000000002,485.7433752328878,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-502.7056136516515,-396.19150805572735,-733.3176245559553,-1221.4207189096635,-2684.150196524516,-2911.893273800967,-3308.996262170674,-3680.0954172381216,-3848.149,-3678.75,-3623.0993,-3626.6336,-3634.43,-3730.3751,-3722.2475,-3710.54,-3959.6465,-3949.4429,-1722.0734528023231,0.0,0.0,0.0,343.2737088982317,171.19438601104457,0.0,-463.02128541834935,0.0,1865.531768941731,4599.302113771681,-201.676944610487,-272.3354569228942,-306.3518842373983,-506.4755660085058,-318.1253094483136,0.0,-183.44597434669743,-555.104196466526,-450.1099447898283,-424.4962872210248,-191.0858173864592],&quot;exp009&quot;:[-106.2774224881216,15.75823761151264,-142.86891556540843,-70.55963410821937,-191.90931925527943,-388.3114069377762,-381.36787754689794,-319.3293247363989,0.0,-3.669655676394541,-159.83401780500446,-349.3905157226951,-183.40289918553196,693.658594530217,263.39930122633314,530.9905942527544,-334.37773832686355,-79.2376391169422,0.0,716.5867504958809,694.3394577145997,391.27332282518466,197.31965476015543,-261.25119586377514,-394.4170847104317,-266.3791173392233,378.2099745377524,-222.18095592470763,-236.1667950616586,543.5009551319797,-263.48951151331585,-1068.4467172922562,-17.79165916376303,4458.110282221691,-2366.7891,-1888.19,-1442.6688,-1248.0262,-1177.235,-927.1228,-652.8296999999998,-165.27181401616306,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1191.3574999999996,1240.7720999999997,1089.4828999999995,1042.7824999999998,1360.3896000000004,1682.2937999999997,1809.6400000000003,1885.5595000000003,2136.3542999999995,2453.8575,2569.047,2934.0317,3217.13,2623.6736000000005,2312.8421000000003,2442.455,2075.1366,1858.6807000000003,2037.335,2159.3734,2240.2357,2096.8899999999994,1549.9267,1663.2277000000004,2264.99,2079.5263,1592.9350000000004,1226.58,962.5486,1089.2315,1398.3225000000002,1320.4898000000003,1108.6324752328817,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-799.5369444814871,-523.0932359371152,0.0,-740.8860773383424,-1177.7225727965656,-2703.37210123415,-2917.147883692261,-3304.528094761597,-3693.901230645528,-3848.149,-3678.75,-3623.0993,-3626.6336,-3634.43,-3730.3751,-3722.2475,-3710.54,-3959.6465,-3949.4429,-1300.655926822546,0.0,0.0,0.0,354.4639906617533,164.3587837200223,0.0,-466.9404969435987,0.0,2027.683298791416,4654.530264000203,-224.7068299755116,-260.40085710491167,-326.2302325173923,-493.1911488739387,-298.98743273265654,0.0,-146.37118248645254,-561.2088838911822,-404.2339953081006,-408.5482563166428,-186.5282620217704]}},{&quot;date&quot;:&quot;2025-12-06&quot;,&quot;series&quot;:{&quot;exp008&quot;:[4283.030518465179,4641.525159068278,4624.262929269406,4498.471785224277,4384.537848099648,4486.005013222451,539.5384991385928,2124.590375769839,4331.35398407198,157.09576553477962,154.2077567153592,159.21562194322462,4081.349861770884,0.0,325.42502863408845,126.45925500320334,94.637477831389,214.71327594219335,112.14617304362925,93.36426777973986,91.38688908624748,319.74770355636224,0.0,0.0,136.76273844667503,0.0,80.94730547142649,0.0,0.0,0.0,0.0,145.26519232439398,4172.552136892574,4905.304266180579,-348.6002925090629,-3341.88,-3186.0578,-3212.2581,-3362.94,-3183.1990000000005,-3417.071,-3934.0175,-3677.2258,-3174.4066999999995,-2904.425,-2810.9571,-2454.8509,-1948.9775,-1829.2916,-1760.7592999999997,-1379.0675,-742.3000999999999,-757.3921,-1208.0524999999998,-980.3201000000004,-670.5654000000004,-220.67591826770249,0.0,0.0,75.09749999999985,352.1866999999993,529.5681000000004,596.9075000000003,678.4965000000002,765.4695000000002,896.2449999999999,3250.7822054916783,1064.8574,1012.8050000000004,3236.7881257240283,4074.382383479663,3793.9329552468903,4454.293213913406,4986.309807803578,5000.0,5000.0,1964.5044000000005,1737.6174999999998,1837.4891,1749.6277,1409.255,1309.2306000000003,1297.764,1115.9725,681.5919999999996,354.74310000000014,0.0,0.0,0.0,956.0299945276648,365.2288352883004,164.71754612652677,365.6416458047668,343.7043482537619,0.0,0.0,-449.9175206091902,-329.07489841857887,-234.44430600790133,-436.0724730904758,-417.9690759312682,0.0,0.0,-51.96223265926585,0.0,0.0,-12.813723688169148,-2944.46,-2718.6518,-2697.6817,-2888.63,-2666.9868,-2632.2414,-2856.71,-2802.661,-2840.8864,-2999.25,-2863.8951,-2574.7175,-2492.31,-2837.458,-2996.0421,-2778.93,-2579.3403,-776.0098150893846,0.0,0.0,0.0,0.0,0.0,334.2994555239169,791.9364574413959,4688.408077574066,-526.8805376829143,0.0,-104.1068309930314,-202.52475648483448,-162.1516374899977,-63.05373383354788,-16.326581945256635,0.0,-126.35083685897824,-277.4482350387227,-275.12678176376176],&quot;exp009&quot;:[4624.933657069169,4867.778479844125,4434.76423201573,4647.399120629552,4811.01068856948,4642.110853212955,1015.0004452810768,3932.6894395939153,4737.208607434006,-155.90919045109354,0.0,-99.57287982924026,4530.163329868724,-266.75763154106664,0.0,-76.0105369905234,-271.8140586531408,-158.7370093729087,-230.7538395852538,-276.29019505267263,-257.6848620666882,-121.25082942157997,-109.5212395928968,-270.94028359135405,-390.0911459142435,0.0,85.62606579207818,-266.90940464246273,-563.8240581148939,207.3098785512991,0.0,141.03639064029392,4254.416576989515,4817.886301775178,-353.796857609738,-3341.88,-3186.0578,-3212.2581,-3362.94,-3183.1990000000005,-3417.071,-3934.0175,-3677.2258,-3174.4066999999995,-2904.425,-2810.9118980217395,-2454.8509,-1948.9775,-1829.2916,-1760.7592999999997,-1379.0675,-742.3000999999999,-757.3921,-1208.0524999999998,-818.8181825598416,0.0,0.0,0.0,0.0,75.09749999999985,352.1866999999993,529.5681000000004,596.9075000000003,678.4965000000002,765.4695000000002,896.2449999999999,3125.819067889552,1064.8574,1012.8075301627392,3004.9271209567873,3853.225393074532,3733.444401740093,4571.608440859196,4822.998973989661,4976.854934358846,5000.0,1964.5044000000005,1737.6174999999998,1837.4891,1749.6277,1409.255,1309.2306000000003,1297.764,1115.9725,681.5919999999996,354.74310000000014,0.0,0.0,0.0,910.7800687290372,373.5584608085138,175.31686307864285,335.3835051784412,509.3712814468076,0.0,-105.54575121313928,-621.9508680323796,95.23516812951152,-340.0640502866379,0.0,0.0,0.0,278.9193297174045,-130.76317802526398,0.0,0.0,-375.86276554524943,-2944.46,-2718.6518,-2697.6817,-2888.63,-2666.9868,-2632.2414,-2856.71,-2802.661,-2840.8864,-2999.25,-2863.8951,-2574.7175,-2492.31,-2837.458,-2996.0421,-2778.93,-2579.3403,-932.1484630051212,440.3516758013712,489.7494269749492,-537.821343485839,-158.18333290183375,-141.0863161110158,340.16218549464884,912.6833477711738,4673.387166383538,-252.63085856252337,0.0,-103.80265299606332,-195.179546016216,-166.52120432221454,-89.27730570511255,-43.86393027707345,-13.602387587489716,-141.472979649816,-310.88351601625834,-292.7653403545985]}},{&quot;date&quot;:&quot;2025-12-25&quot;,&quot;series&quot;:{&quot;exp008&quot;:[4509.757410844264,4871.569766054278,4780.499009188701,4582.9585452421015,4476.63861365187,4786.478953408661,2665.660522375844,4385.906219741488,4410.809108584593,419.83763476009017,656.956009959044,677.4051183471477,4574.663558822924,16.872503701401,309.41336827832856,58.740837362226785,94.91140817782092,430.9952794693786,457.31778809649177,292.87592362964415,421.3397669261997,356.8734060579718,879.5795615267716,89.85306541941327,142.38644503997693,448.78041261642056,666.3958673477305,414.9564248750753,0.0,0.0,117.8641581554441,294.83715852636647,4977.337895813802,2738.9642355367214,0.0,-4714.74031120645,-4997.473379256369,-484.2582294197352,-463.5050360736325,-37.00665653207625,-30.465110416314474,373.0066468657201,335.5923969031901,820.7641378762635,4681.054692180822,5000.0,-57.60694930649197,-4588.076136957673,-4523.657455017897,-4185.541713847296,-4425.182263964021,-4259.6771,-3993.2288,-3690.3674999999994,-2900.1337434467073,-2400.1449365701756,-2132.049259118685,0.0,-1333.9191134191965,-1677.3640143026576,-1387.168570772778,-717.9891682233904,-475.7649543405795,-664.4593975745331,0.0,5000.0,4900.839518353339,4487.636347142007,4174.075344514986,4643.5213351689745,4766.0581856651825,4505.356803021088,4535.127485675386,4852.192903692138,5000.0,2080.0850915705623,0.0,-309.28167600437916,-1425.2464,-1180.2545390117891,-1364.16,-1346.0186999999996,-1530.5317999999995,-1790.42,-1864.8124000000007,-2120.937,-2456.445,-2404.3241000000003,-2529.7199000000005,5000.0,5000.0,5000.0,5000.0,2580.1683500179756,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-253.10828709151224,-408.7148800376783,-193.5182986302057,-150.00755677351367,-73.42140023210868,-182.59952185589395,-3439.45045341987,-4127.536291298827,-4282.975250374216,-4246.103685323685,-4305.496191373945,-4413.73722669899,-4478.066226623875,-4448.00031489894,-4307.516285624146,-4044.68334394838,-4247.285635353605,-4464.6906,-427.97001290238495,-259.3823428094795,-164.8075537302384,-117.65810109191013,-141.79502113752096,-154.67323146379,-138.37636883748087,0.0,0.0,0.0,-73.38035263919164,0.0,0.0,0.0,0.0,-38.24994646500067,-269.56830897655095,-395.77295279348095,-193.82184314684412,0.0],&quot;exp009&quot;:[4668.842795284337,4946.558349093336,4978.41631486388,4768.01055762924,4693.773889020475,4815.283543804979,-277.6696378234569,4644.069153344595,4574.47628541361,1030.6303965875882,1228.1811241463397,2911.570276000303,4665.601003300351,-167.15053895505275,291.95100725961015,-141.0015478521791,-41.996866338794234,0.0,0.0,-172.735926118326,0.0,0.0,0.0,0.0,-23.495094699760557,0.0,0.0,394.63393552942944,0.0,0.0,0.0,0.0,5000.0,4028.356188258338,0.0,-4708.469572296977,-4997.994523922058,-517.3228145711746,-489.8277525820363,-2.3669809213081408,-46.50433177415789,398.0660107740082,377.401608217634,824.3807490478791,4652.183934631394,5000.0,-58.992967270438385,-4589.266531484216,-4529.515517673353,-4186.029543300927,-4422.484019709851,-4259.6771,-3993.2288,-3690.3674999999994,-2960.785637750886,-2392.982586848571,-2096.7749884200484,0.0,-1283.8512235307237,-1723.1755292891307,-1418.734003985695,-669.4573364394491,-417.1218534629315,-697.6258586320839,0.0,5000.0,4881.170235993805,4506.36837364645,4179.620563490402,4580.6979232759195,4777.898262404169,4458.215471194303,4498.364686735842,4855.882058498081,5000.0,2179.2578708301157,0.0,-273.81470184393106,-1425.2392955107152,-538.0902295004896,-1364.1320118852236,-1345.9610019830106,-1530.5317999999995,-1790.42,-1864.8124000000007,-2120.937,-2456.445,-2404.3241000000003,-2529.7199000000005,5000.0,5000.0,5000.0,5000.0,1827.141600803744,0.0,0.0,0.0,0.0,-183.335326267186,-241.29871289219727,392.305660258352,79.50993880763113,0.0,-245.7136778441004,-68.25364307489895,348.8525787988848,-253.71868205186135,-409.7774321900213,-185.0271452541681,-149.76547623238162,-84.39659812119862,-193.07650464078756,-3323.6134127730893,-4188.016285119129,-4294.464,-4300.254349701581,-4371.128859246968,-4471.6199,-4540.65599692498,-4513.345738436307,-4332.970920506321,-4085.102940216333,-4306.98,-4464.6906,-423.83174324483434,128.1045314524256,216.5933880242117,-145.95520862033118,162.7939429722519,-777.1184791415571,179.9582900152941,1029.4438677168623,4921.014426160571,-1811.611551816735,-163.41085361146656,-19.438468290003584,0.0,0.0,-69.767655508095,-150.31598184362406,-419.84967856073854,-550.2437973467322,-321.32538413177974,-6.702444057270554]}}],&quot;random_seed&quot;:20260912,&quot;history_cost&quot;:[{&quot;experiment&quot;:&quot;exp001&quot;,&quot;cost&quot;:15842654.1906855,&quot;comparable&quot;:true},{&quot;experiment&quot;:&quot;exp002&quot;,&quot;cost&quot;:15128897.4527102,&quot;comparable&quot;:true},{&quot;experiment&quot;:&quot;exp003&quot;,&quot;cost&quot;:14988622.6481765,&quot;comparable&quot;:true},{&quot;experiment&quot;:&quot;exp004&quot;,&quot;cost&quot;:13626145.4059908,&quot;comparable&quot;:true},{&quot;experiment&quot;:&quot;exp005&quot;,&quot;cost&quot;:14717882.165475884,&quot;comparable&quot;:false},{&quot;experiment&quot;:&quot;exp006&quot;,&quot;cost&quot;:14066257.4772568,&quot;comparable&quot;:true},{&quot;experiment&quot;:&quot;exp008&quot;,&quot;cost&quot;:13201981.947942205,&quot;comparable&quot;:true},{&quot;experiment&quot;:&quot;exp009&quot;,&quot;cost&quot;:13215591.495018823,&quot;comparable&quot;:true}],&quot;units&quot;:{&quot;cost_q1&quot;:&quot;yuan/single given day&quot;,&quot;cost_annual&quot;:&quot;yuan/334days&quot;,&quot;power&quot;:&quot;kW at each original10minute interval end&quot;,&quot;forecast&quot;:&quot;00:00 issue, all slots; not mixed with intraday releases&quot;},&quot;sources_sha256&quot;:{&quot;reports/experiments/exp009/final_payload.json&quot;:&quot;7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726&quot;,&quot;reports/experiments/exp009/evidence/history_forecast.csv&quot;:&quot;7812bd5aaa9004d4826ae12412a9855d397ae58e05f5c966b7d8874a4d999603&quot;,&quot;reports/experiments/exp009/evidence/history_cost.csv&quot;:&quot;9792204154b03095fbd7f9c7f0b9fd61cc30c285ca91f41b757aa84456179628&quot;,&quot;reports/experiments/exp009/evidence/battery/final_evidence.json&quot;:&quot;733973876d6e001eb32ea88d6a650b83e5a8a5bc6efed7fe1114f1bb824f55fa&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-04-15.csv&quot;:&quot;a73f3f2e066ec8ba6ed5693b83138aaabf8092baf480853406f7524e8427e92e&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-04-15.csv&quot;:&quot;967a23f839ee02377cae635dd5cb7f081ad3d0f833d3770d2927565d919504bd&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-06-07.csv&quot;:&quot;9f5bc5b18f354c05436a8462feb7484351f2f58c412aa1ce6eadef1290e1b302&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-06-07.csv&quot;:&quot;1128e96bea824fbff94ed97b7967001989db31713d6d59b0d13b8a051773cc49&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-12-06.csv&quot;:&quot;71f9104841fab6c21232d7bbaf339be637bbd6a3f4b3c4eb70c06c4c9615bbe8&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-12-06.csv&quot;:&quot;2aa30b461eb83508b43da5fa399a941401d058b1f105895332f37cb25ccd31b4&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp008/power_2025-12-25.csv&quot;:&quot;110dad8114c03b1fa9a37552d6b2da28827a648f90626969522414278568c2a0&quot;,&quot;reports/experiments/exp009/evidence/battery/q2/exp009/power_2025-12-25.csv&quot;:&quot;314e730f3c8dafd24e5d49f2505b1faceba08f92c522695c18351839f12375e4&quot;}}&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const root=document.getElementById(&#x27;exp009-control-inline&#x27;);
+  const data=JSON.parse(document.getElementById(&#x27;exp009-control-data&#x27;).textContent);
+  const colors={exp008:&#x27;var(--viz-series-1)&#x27;,exp009:&#x27;var(--viz-series-2)&#x27;};
+  const visible={exp008:true,exp009:true};
+  const tooltip=root.querySelector(&#x27;[role=&quot;tooltip&quot;]&#x27;);
+  const selected=root.querySelector(&#x27;[data-selection]&#x27;);
+  const names={&#x27;1&#x27;:&#x27;第一问&#x27;,&#x27;2&#x27;:&#x27;第二问&#x27;,&#x27;3&#x27;:&#x27;第三问&#x27;,&#x27;4-2&#x27;:&#x27;第四问2&#x27;,&#x27;4-3&#x27;:&#x27;第四问3&#x27;};
+  const number=d3.format(&#x27;,.2f&#x27;);
+  const powerGrid=root.querySelector(&#x27;[data-power-grid]&#x27;);
+  data.power_days.forEach((day,i)=&gt;{
+    const section=document.createElement(&#x27;section&#x27;);
+    const title=document.createElement(&#x27;h3&#x27;);title.textContent=day.date;
+    const plot=document.createElement(&#x27;div&#x27;);plot.dataset.plot=&#x27;power-&#x27;+i;
+    section.append(title,plot);powerGrid.append(section);
+  });
+  function label(svg,x,y,text,anchor=&#x27;middle&#x27;,cls=&#x27;&#x27;) {
+    return svg.append(&#x27;text&#x27;).attr(&#x27;x&#x27;,x).attr(&#x27;y&#x27;,y).attr(&#x27;text-anchor&#x27;,anchor).attr(&#x27;class&#x27;,cls).text(text);
+  }
+  function init(container,height,title,left,rightMargin=12) {
+    const width=Math.floor(container.getBoundingClientRect().width);
+    const svg=d3.select(container).selectAll(&#x27;svg&#x27;).data([0]).join(&#x27;svg&#x27;)
+      .attr(&#x27;class&#x27;,&#x27;exp009-plot&#x27;).attr(&#x27;viewBox&#x27;,`0 0 ${width} ${height}`).attr(&#x27;role&#x27;,&#x27;img&#x27;).attr(&#x27;aria-label&#x27;,title);
+    svg.selectAll(&#x27;*&#x27;).remove();svg.append(&#x27;title&#x27;).text(title);
+    const frame={left,top:18,right:width-rightMargin,bottom:height-55,width,height};
+    svg.append(&#x27;rect&#x27;).attr(&#x27;data-chart-frame&#x27;,&#x27;&#x27;).attr(&#x27;x&#x27;,frame.left).attr(&#x27;y&#x27;,frame.top)
+      .attr(&#x27;width&#x27;,frame.right-frame.left).attr(&#x27;height&#x27;,frame.bottom-frame.top);
+    return {svg,frame};
+  }
+  function axis(svg,f,x,xTitle,yTitle,formatter=d3.format(&#x27;~g&#x27;)) {
+    const ticks=x.ticks(f.width&lt;=400?3:4);
+    ticks.forEach(t=&gt;{
+      svg.append(&#x27;line&#x27;).attr(&#x27;class&#x27;,&#x27;grid-line&#x27;).attr(&#x27;x1&#x27;,x(t)).attr(&#x27;x2&#x27;,x(t)).attr(&#x27;y1&#x27;,f.top).attr(&#x27;y2&#x27;,f.bottom);
+      label(svg,x(t),f.bottom+19,formatter(t),&#x27;middle&#x27;,&#x27;tick-label&#x27;);
+    });
+    label(svg,(f.left+f.right)/2,f.height-8,xTitle,&#x27;middle&#x27;,&#x27;axis-title&#x27;).attr(&#x27;data-axis&#x27;,&#x27;x&#x27;);
+    label(svg,12,(f.top+f.bottom)/2,yTitle,&#x27;middle&#x27;,&#x27;axis-title&#x27;).attr(&#x27;data-axis&#x27;,&#x27;y&#x27;)
+      .attr(&#x27;transform&#x27;,`rotate(-90 12 ${(f.top+f.bottom)/2})`);
+  }
+  function verifyLabels(svg) {
+    const nodes=svg.selectAll(&#x27;text&#x27;).nodes();
+    const boxes=nodes.map(n=&gt;({n,b:n.getBoundingClientRect()}));
+    const sb=svg.node().getBoundingClientRect();const outside=[];const conflicts=[];
+    boxes.forEach(({n,b})=&gt;{if(b.left&lt;sb.left-1||b.right&gt;sb.right+1||b.top&lt;sb.top-1||b.bottom&gt;sb.bottom+1)outside.push(n.textContent);});
+    for(let i=0;i&lt;boxes.length;i++)for(let j=i+1;j&lt;boxes.length;j++){
+      const a=boxes[i].b,b=boxes[j].b;
+      if(a.left&lt;b.right+4&amp;&amp;a.right+4&gt;b.left&amp;&amp;a.top&lt;b.bottom+4&amp;&amp;a.bottom+4&gt;b.top)conflicts.push([boxes[i].n.textContent,boxes[j].n.textContent]);
+    }
+    svg.attr(&#x27;data-label-conflicts&#x27;,JSON.stringify(conflicts)).attr(&#x27;data-labels-outside&#x27;,JSON.stringify(outside));
+  }
+  function bars(container,rows,{title,unit,multiplier=1,height=270}) {
+    const {svg,frame:f}=init(container,height,title,88,85);
+    const extent=d3.extent(rows.map(r=&gt;r.value/multiplier).concat([0]));
+    const x=d3.scaleLinear().domain([extent[0],extent[1]*1.04]).range([f.left+2,f.right-2]);
+    axis(svg,f,x,unit,&#x27;方案&#x27;,d3.format(&#x27;,.0f&#x27;));
+    const y=d3.scaleBand().domain(rows.map(r=&gt;r.id)).range([f.top+8,f.bottom-8]).padding(.3);
+    rows.forEach(r=&gt;{
+      const yy=y(r.id),h=y.bandwidth();
+      label(svg,f.left-8,yy+h/2+4,r.label,&#x27;end&#x27;,&#x27;tick-label&#x27;);
+      if(r.version&amp;&amp;!visible[r.version])return;
+      const fill=r.version?colors[r.version]:&#x27;var(--foreground)&#x27;;
+      const g=svg.append(&#x27;g&#x27;).attr(&#x27;data-series&#x27;,r.version||&#x27;history&#x27;);
+      g.append(&#x27;rect&#x27;).attr(&#x27;x&#x27;,x(0)).attr(&#x27;y&#x27;,yy).attr(&#x27;width&#x27;,Math.max(0,x(r.value/multiplier)-x(0))).attr(&#x27;height&#x27;,h)
+        .attr(&#x27;fill&#x27;,fill).attr(&#x27;opacity&#x27;,r.comparable===false?.25:r.version?.72:.4);
+      label(g,x(r.value/multiplier)+6,yy+h/2+4,number(r.value/multiplier),&#x27;start&#x27;,&#x27;value-label&#x27;);
+      g.append(&#x27;title&#x27;).text(`${r.label}：${number(r.value)}元${r.comparable===false?&#x27;；不同物理口径，不排名&#x27;:&#x27;&#x27;}`);
+    });
+    verifyLabels(svg);
+  }
+  function score(container,key,unit) {
+    const {svg,frame:f}=init(container,286,`午夜预测${unit}；exp008等于exp009`,108,70);
+    const values=data.forecast_scores;const extent=d3.extent(values.map(r=&gt;r[key]).concat([0]));
+    const x=d3.scaleLinear().domain([extent[0],extent[1]*1.04]).range([f.left+3,f.right-3]);
+    axis(svg,f,x,unit,&#x27;模型 / 目标&#x27;,d3.format(&#x27;,.0f&#x27;));
+    const y=d3.scaleBand().domain(d3.range(values.length)).range([f.top+8,f.bottom-8]).padding(.4);
+    values.forEach((r,i)=&gt;{
+      const yy=y(i)+y.bandwidth()/2;const family=r.model===&#x27;final_blend&#x27;?&#x27;融合&#x27;:&#x27;单HGB&#x27;;
+      label(svg,f.left-8,yy+4,`${family}·${r.label}`,&#x27;end&#x27;,&#x27;tick-label&#x27;);
+      [&#x27;exp008&#x27;,&#x27;exp009&#x27;].filter(version=&gt;visible[version]).forEach(version=&gt;svg.append(&#x27;circle&#x27;)
+        .attr(&#x27;data-series&#x27;,version).attr(&#x27;cx&#x27;,x(r[key])).attr(&#x27;cy&#x27;,yy)
+        .attr(&#x27;r&#x27;,version===&#x27;exp008&#x27;?4.5:2.5).attr(&#x27;fill&#x27;,colors[version]));
+      label(svg,x(r[key])+8,yy+4,number(r[key]),&#x27;start&#x27;,&#x27;value-label&#x27;);
+    });verifyLabels(svg);
+  }
+  function hoverValue(values,x) {
+    const nearest=d3.bisector(d=&gt;d.x).center(values,x);
+    let a=nearest,b=nearest;
+    if(values[nearest].x&lt;x)b=Math.min(nearest+1,values.length-1);else a=Math.max(nearest-1,0);
+    const first=values[a],last=values[b];
+    return first.x===last.x?first.y:first.y+(last.y-first.y)*(x-first.x)/(last.x-first.x);
+  }
+  function power(container,day) {
+    const {svg,frame:f}=init(container,242,`${day.date}第二问原始144点实际电池功率`,64,12);
+    const series=Object.entries(day.series).map(([id,values])=&gt;({id,values:values.map((v,i)=&gt;({x:(i+1)/6,y:v}))}));
+    const all=series.flatMap(s=&gt;s.values);const xd=d3.extent(all,d=&gt;d.x),yd=d3.extent(all.map(d=&gt;d.y).concat([-5000,5000]));
+    const x=d3.scaleLinear().domain(xd).range([f.left+3,f.right-3]);
+    const pad=(yd[1]-yd[0])*.06;const y=d3.scaleLinear().domain([yd[0]-pad,yd[1]+pad]).range([f.bottom-3,f.top+3]);
+    axis(svg,f,x,&#x27;时点（小时，右端）&#x27;,&#x27;净功率（kW）&#x27;,d3.format(&#x27;~g&#x27;));
+    [-5000,0,5000].forEach(v=&gt;{
+      svg.append(&#x27;line&#x27;).attr(&#x27;class&#x27;,&#x27;grid-line&#x27;).attr(&#x27;x1&#x27;,f.left).attr(&#x27;x2&#x27;,f.right).attr(&#x27;y1&#x27;,y(v)).attr(&#x27;y2&#x27;,y(v));
+      label(svg,f.left-8,y(v)+4,d3.format(&#x27;,&#x27;)(v),&#x27;end&#x27;,&#x27;tick-label&#x27;);
+    });
+    const line=d3.line().x(d=&gt;x(d.x)).y(d=&gt;y(d.y));
+    series.filter(s=&gt;visible[s.id]).forEach(s=&gt;svg.append(&#x27;path&#x27;).datum(s.values).attr(&#x27;class&#x27;,&#x27;power-line&#x27;)
+      .attr(&#x27;data-series&#x27;,s.id).attr(&#x27;data-point-count&#x27;,s.values.length).attr(&#x27;stroke&#x27;,colors[s.id])
+      .attr(&#x27;stroke-dasharray&#x27;,s.id===&#x27;exp009&#x27;?&#x27;4 2&#x27;:null).attr(&#x27;d&#x27;,line));
+    const hover=svg.append(&#x27;g&#x27;).attr(&#x27;pointer-events&#x27;,&#x27;none&#x27;).attr(&#x27;visibility&#x27;,&#x27;hidden&#x27;);
+    const guide=hover.append(&#x27;line&#x27;).attr(&#x27;data-chart-hover-guide&#x27;,&#x27;&#x27;).attr(&#x27;stroke&#x27;,&#x27;var(--foreground)&#x27;).attr(&#x27;stroke-width&#x27;,1).attr(&#x27;y1&#x27;,f.top).attr(&#x27;y2&#x27;,f.bottom);
+    const dots={};series.forEach(s=&gt;{dots[s.id]=hover.append(&#x27;circle&#x27;).attr(&#x27;data-chart-hover-marker&#x27;,s.id).attr(&#x27;r&#x27;,3.5).attr(&#x27;fill&#x27;,colors[s.id]);});
+    let pinned=false;
+    const overlay=svg.append(&#x27;rect&#x27;).attr(&#x27;data-chart-hit&#x27;,&#x27;&#x27;).attr(&#x27;data-chart-hover-overlay&#x27;,&#x27;cross-series&#x27;)
+      .attr(&#x27;x&#x27;,f.left).attr(&#x27;y&#x27;,f.top).attr(&#x27;width&#x27;,f.right-f.left).attr(&#x27;height&#x27;,f.bottom-f.top).attr(&#x27;fill&#x27;,&#x27;transparent&#x27;);
+    function show(event) {
+      const px=Math.max(x.range()[0],Math.min(x.range()[1],d3.pointer(event,svg.node())[0]));
+      const hour=x.invert(px),rr=series.filter(s=&gt;visible[s.id]).map(s=&gt;({id:s.id,value:hoverValue(s.values,hour)}));
+      hover.attr(&#x27;visibility&#x27;,rr.length?&#x27;visible&#x27;:&#x27;hidden&#x27;);guide.attr(&#x27;x1&#x27;,px).attr(&#x27;x2&#x27;,px);
+      series.forEach(s=&gt;dots[s.id].attr(&#x27;visibility&#x27;,visible[s.id]?&#x27;visible&#x27;:&#x27;hidden&#x27;).attr(&#x27;cx&#x27;,px).attr(&#x27;cy&#x27;,y(hoverValue(s.values,hour))));
+      const mins=Math.round(hour*60),clock=String(Math.floor(mins/60)).padStart(2,&#x27;0&#x27;)+&#x27;:&#x27;+String(mins%60).padStart(2,&#x27;0&#x27;);
+      tooltip.replaceChildren();const head=document.createElement(&#x27;div&#x27;);head.textContent=`${day.date} ${clock} · 线性位置读数`;tooltip.append(head);
+      const table=document.createElement(&#x27;table&#x27;);rr.forEach(r=&gt;{const tr=document.createElement(&#x27;tr&#x27;);tr.dataset.tooltipSeries=r.id;
+        const name=document.createElement(&#x27;td&#x27;);name.textContent=r.id;const value=document.createElement(&#x27;td&#x27;);value.textContent=number(r.value)+&#x27; kW&#x27;;tr.append(name,value);table.append(tr);});tooltip.append(table);
+      tooltip.hidden=!rr.length;const box=root.getBoundingClientRect(),anchor=svg.node().getBoundingClientRect();
+      const tx=Math.min(root.clientWidth-tooltip.offsetWidth-5,Math.max(5,anchor.left-box.left+px+12));
+      tooltip.style.left=tx+&#x27;px&#x27;;tooltip.style.top=(anchor.top-box.top+f.top+10)+&#x27;px&#x27;;
+    }
+    overlay.on(&#x27;pointermove&#x27;,e=&gt;{if(!pinned)show(e);}).on(&#x27;pointerleave&#x27;,()=&gt;{if(!pinned){hover.attr(&#x27;visibility&#x27;,&#x27;hidden&#x27;);tooltip.hidden=true;}})
+      .on(&#x27;click&#x27;,e=&gt;{pinned=!pinned;show(e);selected.textContent=pinned?day.date+&#x27;功率读数已固定&#x27;:&#x27;功率读数跟随指针&#x27;;});
+    verifyLabels(svg);
+  }
+  function draw() {
+    if(root.clientWidth&lt;200)return;
+    const plot=name=&gt;root.querySelector(`[data-plot=&quot;${name}&quot;]`);
+    const one=data.costs.find(r=&gt;r.scenario===&#x27;1&#x27;);
+    bars(plot(&#x27;cost-one&#x27;),[&#x27;exp008&#x27;,&#x27;exp009&#x27;].map((version,i)=&gt;({id:version,label:version,version,value:one[i?&#x27;current&#x27;:&#x27;previous&#x27;]})),
+      {title:&#x27;第一问给定单日实际费用&#x27;,unit:&#x27;单日费用（元）&#x27;,height:270});
+    const annual=data.costs.filter(r=&gt;r.scenario!==&#x27;1&#x27;).flatMap(r=&gt;[&#x27;exp008&#x27;,&#x27;exp009&#x27;].map((version,i)=&gt;({id:r.scenario+version,
+      label:r.scenario+&#x27;·&#x27;+version.slice(3),version,value:r[i?&#x27;current&#x27;:&#x27;previous&#x27;]})));
+    bars(plot(&#x27;cost-annual&#x27;),annual,{title:&#x27;第二至四问334日实际费用&#x27;,unit:&#x27;334日费用（万元）&#x27;,multiplier:1e4,height:270});
+    score(plot(&#x27;forecast-rmse&#x27;),&#x27;rmse_kw&#x27;,&#x27;RMSE（kW）&#x27;);score(plot(&#x27;forecast-wape&#x27;),&#x27;wape_pct&#x27;,&#x27;WAPE（%）&#x27;);
+    data.power_days.forEach((day,i)=&gt;power(plot(&#x27;power-&#x27;+i),day));
+    bars(plot(&#x27;history-cost&#x27;),data.history_cost.map(r=&gt;({id:r.experiment,label:r.experiment+(r.comparable?&#x27;&#x27;:&#x27;†&#x27;),
+      version:[&#x27;exp008&#x27;,&#x27;exp009&#x27;].includes(r.experiment)?r.experiment:null,value:r.cost,comparable:r.comparable})),
+      {title:&#x27;第二问历史费用，005不同物理不排名&#x27;,unit:&#x27;334日费用（万元）&#x27;,multiplier:1e4,height:270});
+    root.dataset.rendered=&#x27;true&#x27;;
+  }
+  root.querySelectorAll(&#x27;[data-version]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{
+    const version=button.dataset.version;visible[version]=!visible[version];button.setAttribute(&#x27;aria-pressed&#x27;,String(visible[version]));
+    tooltip.hidden=true;selected.textContent=version+(visible[version]?&#x27;已显示&#x27;:&#x27;已隐藏&#x27;);draw();
+  }));
+  new ResizeObserver(draw).observe(root);draw();
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>

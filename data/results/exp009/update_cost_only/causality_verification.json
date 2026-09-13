@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "scenario": "3",
+      "day": 31,
+      "slot": 0,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "3",
+      "day": 32,
+      "slot": 36,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "3",
+      "day": 60,
+      "slot": 72,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "3",
+      "day": 180,
+      "slot": 108,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 31,
+      "slot": 0,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 32,
+      "slot": 36,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 60,
+      "slot": 72,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    },
+    {
+      "scenario": "4-3",
+      "day": 180,
+      "slot": 108,
+      "future_actual_and_unreleased_PV_mutation_identical": true,
+      "same_issue_history_identical": true
+    }
+  ],
+  "raw_HGB_and_Ridge_memory_training_causality": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/forecast_absolute_hgb/causality_verification.json",
+  "no_retraining": true,
+  "information_boundary": "Full CSVs are loaded by Data; causality refers to legal prefix use for planning and is tested by future suffix mutation, not a claim that later rows were never loaded."
+}

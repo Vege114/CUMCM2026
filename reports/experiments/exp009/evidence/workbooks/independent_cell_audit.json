@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "scenario": "1",
+      "passed": true,
+      "path": "reports/experiments/exp009/result1.xlsx",
+      "sha256": "2f93b4e7c3faa4e9a81a305c28c8c9ac43eccc958705d67b20b9f8d10acae9e5",
+      "source_archive": {
+        "path": "data/results/exp009/q1/cost_only.json",
+        "sha256": "94db533f74c89178017f496c0a15fdeaa454420e275b301a5b5d97a6fd079f1a",
+        "bytes": 37027
+      },
+      "days": 1,
+      "scalar_cells_compared_to_independently_rebuilt_source": 318,
+      "max_absolute_numeric_error": 9.094947017729282e-13,
+      "sum_formulas_verified": 0,
+      "emergency_event_rows_reconstructed": 0,
+      "original_purchase_total_kwh": 57572.39629569833,
+      "template_sheet_names_and_order_preserved": true,
+      "unexpected_formula_errors": 0,
+      "no_double_kW_to_kWh_conversion": true,
+      "repeated_fee_column_not_double_counted": true,
+      "duplicate_bytes_identical": true
+    },
+    {
+      "scenario": "2",
+      "passed": true,
+      "path": "reports/experiments/exp009/result2.xlsx",
+      "sha256": "8b7412780370da3b700166248be7aab072db4195b6599ce6954a6c224ad79a84",
+      "source_archive": {
+        "path": "data/results/exp009/q2_cost_only/dispatch.npz",
+        "sha256": "3492795fe18efc18bba89a83ba6ae3155e4ded82c39de992ab13c408a4f60024",
+        "bytes": 1870632
+      },
+      "days": 334,
+      "scalar_cells_compared_to_independently_rebuilt_source": 63237,
+      "max_absolute_numeric_error": 8.731149137020111e-11,
+      "sum_formulas_verified": 334,
+      "emergency_event_rows_reconstructed": 657,
+      "original_purchase_total_kwh": 20587735.18190477,
+      "template_sheet_names_and_order_preserved": true,
+      "unexpected_formula_errors": 0,
+      "no_double_kW_to_kWh_conversion": true,
+      "repeated_fee_column_not_double_counted": true,
+      "duplicate_bytes_identical": true
+    },
+    {
+      "scenario": "3",
+      "passed": true,
+      "path": "reports/experiments/exp009/result3.xlsx",
+      "sha256": "b10fbea9d786729c26f385a4d69f979375f400c0b457fef12eebe6515dfbe01a",
+      "source_archive": {
+        "path": "data/results/exp009/update_cost_only/full334/3/dispatch_3.npz",
+        "sha256": "25096216ccf761237f43c28566652d12fbde2c97959ce0f50db9e433064b0e46",
+        "bytes": 2032296
+      },
+      "days": 334,
+      "scalar_cells_compared_to_independently_rebuilt_source": 111912,
+      "max_absolute_numeric_error": 5.820766091346741e-11,
+      "sum_formulas_verified": 668,
+      "emergency_event_rows_reconstructed": 468,
+      "original_purchase_total_kwh": 19173494.360187493,
+      "template_sheet_names_and_order_preserved": true,
+      "unexpected_formula_errors": 0,
+      "no_double_kW_to_kWh_conversion": true,
+      "repeated_fee_column_not_double_counted": true,
+      "duplicate_bytes_identical": true
+    },
+    {
+      "scenario": "4-2",
+      "passed": true,
+      "path": "reports/experiments/exp009/result4-2.xlsx",
+      "sha256": "423ecec2f585a658f84b1258faf9b9173fa7af410a024eb56423cba7b5b0fff9",
+      "source_archive": {
+        "path": "data/results/exp009/q4_2_cost_only/full334/dispatch_4-2.npz",
+        "sha256": "d6a06298f551a39e50c6393ca90c28ae7917db8d05941312a5729525fd15c96b",
+        "bytes": 2180823
+      },
+      "days": 334,
+      "scalar_cells_compared_to_independently_rebuilt_source": 63375,
+      "max_absolute_numeric_error": 8.731149137020111e-11,
+      "sum_formulas_verified": 334,
+      "emergency_event_rows_reconstructed": 703,
+      "original_purchase_total_kwh": 20535154.793175414,
+      "template_sheet_names_and_order_preserved": true,
+      "unexpected_formula_errors": 0,
+      "no_double_kW_to_kWh_conversion": true,
+      "repeated_fee_column_not_double_counted": true,
+      "duplicate_bytes_identical": true
+    },
+    {
+      "scenario": "4-3",
+      "passed": true,
+      "path": "reports/experiments/exp009/result4-3.xlsx",
+      "sha256": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993",
+      "source_archive": {
+        "path": "data/results/exp009/update_cost_only/full334/4-3/dispatch_4-3.npz",
+        "sha256": "eab3882ae55be1e31ada4d3718285046dcd7d48b9a3018c86b897ea1c6282d1b",
+        "bytes": 2142358
+      },
+      "days": 334,
+      "scalar_cells_compared_to_independently_rebuilt_source": 112089,
+      "max_absolute_numeric_error": 7.275957614183426e-11,
+      "sum_formulas_verified": 668,
+      "emergency_event_rows_reconstructed": 527,
+      "original_purchase_total_kwh": 19224523.741990358,
+      "template_sheet_names_and_order_preserved": true,
+      "unexpected_formula_errors": 0,
+      "no_double_kW_to_kWh_conversion": true,
+      "repeated_fee_column_not_double_counted": true,
+      "duplicate_bytes_identical": true
+    }
+  ],
+  "final_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+  "method": "Independent Python standard-library XLSX XML reader and NumPy archive arithmetic. No authoring, payload-building, prediction or optimizer functions called.",
+  "total_scalar_cells": 350931,
+  "visual_and_live_formula_recalculation_evidence": "saved_workbook_audit.json and visual_review.json"
+}

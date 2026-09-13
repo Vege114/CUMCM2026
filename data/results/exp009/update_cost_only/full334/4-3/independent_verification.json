@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "scenario": "4-3",
+  "complete": true,
+  "days": 334,
+  "baseline": {
+    "passed": true,
+    "errors": [],
+    "scenario": "4-3",
+    "days": 334,
+    "intervals": 48096,
+    "start_day": 31,
+    "max_balance_error_kwh": 0.0,
+    "max_soc_error_kwh": 9.094947017729282e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 4.547473508864641e-13,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 12265276.060812254,
+      "up_cost": 1089701.9227077062,
+      "down_cost": 0.0,
+      "emergency_cost": 224892.48144194594,
+      "total_cost": 13579870.464961825
+    },
+    "recomputed_total_cost": 13579870.464961825,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 6627984.582937465,
+      "discharge_kwh": 5965492.301485385,
+      "throughput_kwh": 12593476.88442285,
+      "equivalent_full_cycles": 524.0016369111237,
+      "direction_reversals": 6625,
+      "direction_reversals_including_warmup_boundary": 6625,
+      "charging_slots": 18692,
+      "discharging_slots": 21004,
+      "active_slots": 39696,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 3896,
+      "discharge_starts": 3968,
+      "power_changes_count": 42496,
+      "power_ramp_total_kw": 36753201.456022985,
+      "power_ramp_total_kw_including_warmup_boundary": 36757880.64458926,
+      "power_ramp_max_kw_per_10min": 9025.669783068515,
+      "power_ramp_p95_kw_per_10min": 4563.271956260194,
+      "mean_absolute_power_kw": 1571.0425255018524,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 5000.0,
+      "initial_soc": 1522.7387288211346,
+      "final_soc": 1200.0,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 1,
+      "final_mode": -1,
+      "initial_power_kw": 172.75999999999976,
+      "final_power_kw": -3156.7212583268924,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": true,
+      "checked_fields": 13026,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/dispatch_4-3.npz",
+    "source_sha256": "be922b20ea385882362607373083211d8a854f8f15617060bb7448ffda30a437"
+  },
+  "candidate": {
+    "passed": true,
+    "errors": [],
+    "scenario": "4-3",
+    "days": 334,
+    "intervals": 48096,
+    "start_day": 31,
+    "max_balance_error_kwh": 0.0,
+    "max_soc_error_kwh": 9.094947017729282e-13,
+    "max_cross_day_soc_error_kwh": 0.0,
+    "max_slot_fee_error_yuan": 4.547473508864641e-13,
+    "source_actual_and_tariff_checked": true,
+    "billing": {
+      "planned_cost": 12282382.089673847,
+      "up_cost": 1073372.3857644848,
+      "down_cost": 0.0,
+      "emergency_cost": 217649.06083348757,
+      "total_cost": 13573403.536271837
+    },
+    "recomputed_total_cost": 13573403.536271837,
+    "reported_cost_excludes_penalties_and_terminal_value": true,
+    "battery_metrics": {
+      "charge_kwh": 7324650.195391093,
+      "discharge_kwh": 6592491.35269365,
+      "throughput_kwh": 13917141.548084745,
+      "equivalent_full_cycles": 579.0778894828644,
+      "direction_reversals": 9255,
+      "direction_reversals_including_warmup_boundary": 9255,
+      "charging_slots": 22088,
+      "discharging_slots": 21562,
+      "active_slots": 43650,
+      "simultaneous_slots": 0,
+      "max_overlap_kwh": 0.0,
+      "charge_starts": 4628,
+      "discharge_starts": 4628,
+      "power_changes_count": 43582,
+      "power_ramp_total_kw": 52481556.26540071,
+      "power_ramp_total_kw_including_warmup_boundary": 52486235.45396698,
+      "power_ramp_max_kw_per_10min": 9281.409608457594,
+      "power_ramp_p95_kw_per_10min": 4777.351504547393,
+      "mean_absolute_power_kw": 1736.1703528049832,
+      "max_charge_kw": 5000.0,
+      "max_discharge_kw": 5000.0,
+      "initial_soc": 1522.7387288211346,
+      "final_soc": 1200.0,
+      "minimum_soc": 1200.0,
+      "maximum_soc": 10800.0,
+      "initial_mode": 1,
+      "final_mode": -1,
+      "initial_power_kw": 172.75999999999976,
+      "final_power_kw": -3285.8020240951973,
+      "degradation_interpretation": "operating intensity proxies; not calibrated battery ageing or lifetime"
+    },
+    "causality_audit": {
+      "provided": true,
+      "checked_fields": 13026,
+      "scope": "provided issue/cutoff consistency only; forecast causality needs independent future-mutation tests"
+    },
+    "source": "/Users/vegetarianwolf/Projects/CUMCM2026/data/results/exp009/update_cost_only/full334/4-3/dispatch_4-3.npz",
+    "source_sha256": "eab3882ae55be1e31ada4d3718285046dcd7d48b9a3018c86b897ea1c6282d1b"
+  },
+  "cost_change_yuan": -6466.92868998833,
+  "cost_change_pct": -0.04762143134335872,
+  "billing_component_changes": {
+    "planned_cost": 17106.028861593455,
+    "up_cost": -16329.536943221465,
+    "down_cost": 0.0,
+    "emergency_cost": -7243.420608458371,
+    "total_cost": -6466.92868998833
+  },
+  "battery_metric_changes": {
+    "direction_reversals": 2630,
+    "charge_starts": 732,
+    "discharge_starts": 660,
+    "active_slots": 3954,
+    "throughput_kwh": 1323664.6636618953,
+    "equivalent_full_cycles": 55.076252571740724,
+    "power_ramp_total_kw": 15728354.809377722
+  },
+  "episodes": {
+    "exp008": 7864,
+    "exp009": 9256
+  },
+  "all_issue_hashes_equal": true,
+  "matched_issue_count": 1336,
+  "hashes_per_issue": [
+    "load_kw",
+    "pv_kw",
+    "price",
+    "28_net_error_paths",
+    "28_price_error_paths"
+  ],
+  "all_forecast_metadata_and_history_origins_equal": true,
+  "all_frozen_planner_dimensions_and_release_weights_equal": true,
+  "identity_module_qualifier_only": {
+    "exp008": "__main__.LinkedHGBForecasts",
+    "exp009": "experiments.exp008.absolute_hgb_update_dispatch.LinkedHGBForecasts"
+  },
+  "sole_numerical_changes": {
+    "throughput_penalty": [
+      0.005,
+      0.0
+    ],
+    "variation_penalty": [
+      0.001,
+      0.0
+    ],
+    "charge_deadband_kwh": [
+      20.0,
+      0.0
+    ]
+  },
+  "own_continuous_soc_verified": true,
+  "initial_soc_days_differing_from_exp008": 302,
+  "final_soc_kwh": 1200.0,
+  "solver_status_counts": {
+    "optimal": 1336
+  },
+  "solver_gap": {
+    "kind": "continuous_LP",
+    "mip_gap_not_applicable": true,
+    "max_constraint_residual": 5.4569682106375694e-12
+  },
+  "timing": {
+    "exp008_run_wall_seconds": 90.7251179999439,
+    "exp009_run_wall_seconds": 125.72365025000181,
+    "exp008_lp_solver_seconds_sum": 46.15947908279486,
+    "exp009_lp_solver_seconds_sum": 48.64335049933288,
+    "exp008_planning_seconds_sum": 87.33740540640429,
+    "exp009_planning_seconds_sum": 119.85509511828423,
+    "exp009_daily_loop_seconds_sum": 125.3878002151614,
+    "forecast_training_seconds": 0.0,
+    "new_forecast_fits": 0,
+    "interpretation": "Wall/LP/planning are distinct nested stages; runs are from different sessions with concurrent work, so descriptive timing is not a controlled hardware speedup claim."
+  },
+  "scope": "Single predeclared controlled treatment on the repeatedly used 2025 development year; no untouched holdout, no candidate selection, no Q2 8% gate.",
+  "planning_limitation": "The inherited seven-path LP has scenario-dependent battery recourse; it is an optimistic approximation, not a certified nonanticipative scenario tree. Actual greedy execution is independently physically verified.",
+  "source_sha256": {
+    "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/audit.json": "8a0e12cfa5fbe8a3382ba910722ae65bfb4ce59c8a49a66f7cd5b9d2da4ab3a3",
+    "data/results/exp008/absolute_hgb_update_dispatch/full334/4-3/completion.json": "c0f4f9f6151e959e0144e5afe10c186a766e6388afd48164670c96971c6a8f68",
+    "data/results/exp009/update_cost_only/full334/4-3/audit.json": "85b06516e9b22d19d42008aa48524ae7a5c61e8fb0981e3ee8f3eb9646d53427",
+    "data/results/exp009/update_cost_only/full334/4-3/completion.json": "2380228cac946cbaf9bc58599c8455da92142e7a9d2d3dc8ca2f20339f98d76c",
+    "data/results/exp002/warmup_4-3.npz": "05a729acfeb858142e28fdbce24dd2e09b52b33439d512bf0bdd75a5c5ff057f"
+  }
+}

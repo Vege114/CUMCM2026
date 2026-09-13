@@ -1,0 +1,59 @@
+[
+  {
+    "scenario": "1",
+    "calls": 1,
+    "feasible": 1,
+    "gap_mean_pct": 0.0,
+    "gap_max_pct": 0.0,
+    "timeout_count": 0,
+    "refinement_success": null,
+    "refinement_maxiter": null,
+    "note": "单日确定性MILP；不使用年度预测种子"
+  },
+  {
+    "scenario": "2",
+    "calls": 334,
+    "feasible": 334,
+    "gap_mean_pct": 0.003024032430742129,
+    "gap_max_pct": 0.1798325121525345,
+    "timeout_count": 0,
+    "refinement_success": 29,
+    "refinement_maxiter": 305,
+    "note": "固定5秒；精修未收敛返回原算法当前解，未追加迭代"
+  },
+  {
+    "scenario": "3",
+    "calls": 1336,
+    "feasible": 1336,
+    "gap_mean_pct": null,
+    "gap_max_pct": null,
+    "timeout_count": 0,
+    "refinement_success": null,
+    "refinement_maxiter": null,
+    "max_constraint_residual": "3.6380e-12",
+    "note": "1336 LP optimal；MIP相对gap不适用"
+  },
+  {
+    "scenario": "4-2",
+    "calls": 334,
+    "feasible": 334,
+    "gap_mean_pct": 0.07215546489844456,
+    "gap_max_pct": 0.4448054082143749,
+    "timeout_count": 6,
+    "refinement_success": 30,
+    "refinement_maxiter": 304,
+    "note": "固定5秒；精修未收敛返回原算法当前解，未追加迭代"
+  },
+  {
+    "scenario": "4-3",
+    "calls": 1336,
+    "feasible": 1336,
+    "gap_mean_pct": null,
+    "gap_max_pct": null,
+    "timeout_count": 0,
+    "refinement_success": null,
+    "refinement_maxiter": null,
+    "max_constraint_residual": "5.4570e-12",
+    "note": "1336 LP optimal；MIP相对gap不适用"
+  }
+]

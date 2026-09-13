@@ -1,0 +1,40 @@
+{
+  "scenario": "4-3",
+  "output": "/Users/vegetarianwolf/Projects/CUMCM2026/reports/experiments/exp009/result4-3.xlsx",
+  "output_sha256": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993",
+  "source_archive": {
+    "path": "data/results/exp009/update_cost_only/full334/4-3/dispatch_4-3.npz",
+    "sha256": "eab3882ae55be1e31ada4d3718285046dcd7d48b9a3018c86b897ea1c6282d1b",
+    "bytes": 2142358
+  },
+  "payload_sha256": "5eceac043453f663fe78afd0d1b79472fd8f3660f4298782f77115a12225f73f",
+  "final_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+  "template_sha256": "c59da470cabd0be23f602c95c8aa9d11ec224a0cdac216b3e1f218e65d006bdc",
+  "template_sheets": [
+    "计划购电量",
+    "调整购电量",
+    "充放电量",
+    "紧急购电量"
+  ],
+  "output_duplicate": "/Users/vegetarianwolf/Projects/CUMCM2026/outputs/exp009-cost-only-control/result4-3.xlsx",
+  "duplicate_sha256": "7174a826e39ded8b11f369a05e9543a13a6719cbdc68e77655c1553155f79993",
+  "units": "purchase, charge, discharge and SOC in kWh; settled bill in yuan",
+  "fee_semantics": "Each daily total bill repeats on original and final purchase sheets; count it only once.",
+  "q1_stage": null,
+  "prior_exp008_goal_gate_applied": false,
+  "export_complete": true,
+  "independent_cell_and_visual_QA": "passed; see independent_cell_audit.json, saved_workbook_audit.json and visual_review.json",
+  "layout_refinement": {
+    "reason": "Prevent the kWh unit closing bracket wrapping alone in the daily total header",
+    "changed_columns": "EP:EQ on purchase sheets only",
+    "previous_sha256": "68aa38ced75cbeef689e00c10227cf862c9c15fcee6893ca5e40ae25c7fe04d3",
+    "values_or_formulas_changed": false
+  },
+  "current_final_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+  "payload_metadata_refresh": {
+    "reason": "Root corrected only deterministic Q1 comparison seed from42 to null; workbook_data and source archive references are exactly unchanged",
+    "original_export_payload_sha256": "78108d51108c8ccdd5aa9f4b55d2b45cecad267427a1bb160daa182f558d1cb7",
+    "new_payload_sha256": "7aa9ee5fe5160ec4a99fe944c2e5eb3a7ee642c86a6d38398020f3a517541726",
+    "workbook_data_and_source_archive_unchanged": true
+  }
+}

@@ -1,0 +1,479 @@
+[
+  {
+    "path": "reports/experiments/exp009/figures/battery/q1_deterministic_144_points.png",
+    "sha256": "3f8808a65497a0f28a9b1fad42b9713611553ee95375d5eb55a5c006a7ae5e51",
+    "scenario": "1",
+    "kind": "deterministic_day",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q1_deterministic_144_points.svg",
+    "sha256": "4c58e04c8e7516f5a06cf8f79376f99d099cc6a36da1dfe8fb195915ec7ff981",
+    "scenario": "1",
+    "kind": "deterministic_day",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q2_random_days.png",
+    "sha256": "991e042a570ff77cc6f72d989cad0c27b71aaac727cffa81823f09f9487dc856",
+    "scenario": "2",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q2_random_days.svg",
+    "sha256": "78ab7042abf9366f63e4f6138a73ba32784b66440501d3b52f58bd0357083f7f",
+    "scenario": "2",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q2_specified_days.png",
+    "sha256": "57dc32cf3390e2beb0da8d8b2ee40843ec87ea6220de016ebef0f67505b6183e",
+    "scenario": "2",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q2_specified_days.svg",
+    "sha256": "56d74c3de72f509b3ff84d01d858005832f6a9a25b0fbef85240bf1998a31f63",
+    "scenario": "2",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q2_all_48096_points.png",
+    "sha256": "b58cdd62250ca1716c807b605302dda42151f127fea45789520e0988423e75cf",
+    "scenario": "2",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q2_all_48096_points.svg",
+    "sha256": "107095807555419cfa35e38f021dd767502e5e9b73cded9a15e2575a78e74610",
+    "scenario": "2",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": [
+      48096,
+      48096
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q3_random_days.png",
+    "sha256": "8dc9d078eb8b33bd8e16a2184a33a71ad57face7832a0fcc7abb33608bacde65",
+    "scenario": "3",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q3_random_days.svg",
+    "sha256": "e42c3ded242bc32832f4e714935b861d418fe24fdf18774f0ea910e208c43903",
+    "scenario": "3",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q3_specified_days.png",
+    "sha256": "f0f3f762d219450b4ecce2dd0f8d35da1df4d2eb2c507942b132d079b918f848",
+    "scenario": "3",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q3_specified_days.svg",
+    "sha256": "c77fcba6a143656fa7ad529b376eed0fe3816d1d9410abd00f3ec3e4a7a88207",
+    "scenario": "3",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q3_all_48096_points.png",
+    "sha256": "aa666f2401f9bd530516c00f5765ac74c5efaa81df08f3f02ce62b65bc09c323",
+    "scenario": "3",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q3_all_48096_points.svg",
+    "sha256": "eb68f65812bff9126fb041ce61c650a2e382b66350c11d59badf4e9d906614ff",
+    "scenario": "3",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": [
+      48096,
+      48096
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_2_random_days.png",
+    "sha256": "c971ee1644592defc410820243bc0812c6df4d9088becd3845d8627e9280c52b",
+    "scenario": "4-2",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_2_random_days.svg",
+    "sha256": "c6d8b1f3632f84291340f15184db6245d1a8d77e3db2983fb9e6d43f49873145",
+    "scenario": "4-2",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_2_specified_days.png",
+    "sha256": "e3667702322abbfd3395a0aaf1f82a91942cdd31991d33a839e8a5e90e4d0084",
+    "scenario": "4-2",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_2_specified_days.svg",
+    "sha256": "5dd354e0105cd6d3ef9288ed9e66545a37c2a013e874078e094e594223954642",
+    "scenario": "4-2",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_2_all_48096_points.png",
+    "sha256": "7f9a95adeae29532139436bfd12d4f9e088402b2737789cb2695e07ca9b34afd",
+    "scenario": "4-2",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_2_all_48096_points.svg",
+    "sha256": "4369d2faa22118b67afbba6d7703d83d09c5e5937f65b7e881627c2379f4847b",
+    "scenario": "4-2",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": [
+      48096,
+      48096
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_3_random_days.png",
+    "sha256": "2b09556f736b2aba7c64027ca731647882ef0b622369b883fbacb98f53eb8542",
+    "scenario": "4-3",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_3_random_days.svg",
+    "sha256": "e3a81c7b637844b37016e0536993007b23695174ed02462a6fbe54613d8c18b0",
+    "scenario": "4-3",
+    "kind": "random",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_3_specified_days.png",
+    "sha256": "cfbb72609d243a8f9dcd539eb0a044f15872c50d3d364d5075590c9c1192bfb2",
+    "scenario": "4-3",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_3_specified_days.svg",
+    "sha256": "314211b8193b93d6dd05b709843e31e9eab74d99da253c3362ae8b6eedd2b155",
+    "scenario": "4-3",
+    "kind": "specified",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 144,
+    "svg_serialized_path_point_counts": [
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144,
+      144
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_3_all_48096_points.png",
+    "sha256": "5ac5b79e8e45008543246586b1414653b50da8d45f38d4b22d147b69816202c2",
+    "scenario": "4-3",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": null,
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  },
+  {
+    "path": "reports/experiments/exp009/figures/battery/q4_3_all_48096_points.svg",
+    "sha256": "3ad00a449c31939af674d599fae2e563261aa25b3b755ed74df66dcc7cad741a",
+    "scenario": "4-3",
+    "kind": "annual",
+    "series": [
+      "exp008",
+      "exp009"
+    ],
+    "points_per_series_per_panel": 48096,
+    "svg_serialized_path_point_counts": [
+      48096,
+      48096
+    ],
+    "smoothing": false,
+    "downsampling": false,
+    "path_simplification": false
+  }
+]
